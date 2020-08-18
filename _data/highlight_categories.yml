@@ -1,0 +1,11 @@
+# Customize category order on the index page here. Unspecified categories
+# will be added alphabetically after these.
+- title: Team
+  description: Articles for the whole team
+  custom_order: []
+- title: Handbook
+  description: About this handbook
+- title: Product
+  description: Product and process
+- title: Development
+  description: Common Dev things across AppDev and DevOps

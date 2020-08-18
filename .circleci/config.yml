@@ -1,0 +1,55 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.6-node
+        environment:
+          BUNDLER_VERSION: 2.1.4
+    working_directory: ~/identity-handbook
+    steps:
+      - checkout
+      - run: gem update --system
+      - run: gem install bundler
+      # Load installed gems from cache if possible, bundle install then save cache
+      # Multiple caches are used to increase the chance of a cache hit
+      # when lock file changes, use increasingly general patterns to restore cache
+      - restore_cache:
+          keys:
+            - gem-cache-v1-{{ arch }}-{{ checksum "Gemfile.lock" }}
+            - gem-cache-v1-{{ arch }}
+            - gem-cache-v1
+      - restore_cache:
+          keys:
+            - yarn-packages-v1-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-
+      - run: bundle install --path vendor/bundle
+      - run: yarn install
+      - save_cache:
+          key: gem-cache-v1-{{ arch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - save_cache:
+          key: yarn-packages-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - run:
+          name: Run markdown source spec (catches things that might break the build)
+          command: bundle exec rspec `pwd`/spec/markdown_spec.rb
+      - run: bundle exec jekyll build
+      - run:
+          name: Run rspec
+          command: bundle exec rspec `pwd`/spec/
+      - run:
+          name: Run htmlproofer
+          command: bundle exec htmlproofer --disable-external --allow-hash-href `pwd`/_site
+      - run: find _site -type f
+      - persist_to_workspace:
+          root: "."
+          paths:
+            - "_site/*"
+workflows:
+  version: 2
+  # run on pull requests and after merges
+  build_and_deploy:
+    jobs:
+      - build

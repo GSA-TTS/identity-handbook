@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "anchor-js": "^4.2.2",
+    "identity-style-guide": "^2.2.1",
+    "simple-jekyll-search": "^1.7.7"
+  }
+}

@@ -1,0 +1,36 @@
+---
+---
+
+@charset 'utf-8';
+
+// Imports
+@import 'styles.css';
+
+// Hello! These styles are specific styles for
+// the Login.gov Handbook. Please refer to design.login.login-gov
+// for the broader design system to follow. kthxbai.
+
+// Search
+#search-results {
+
+  background-color: #ebf3fa;
+  position: absolute;
+  top: 20px;
+  z-index: 20;
+
+  li {
+    width: 250px;
+
+    &:first-child {
+      padding-top: 20px;
+    }
+
+    &:last-child {
+      padding-bottom: 20px;
+    }
+
+    &.no-results {
+      list-style: none;
+    }
+  }
+}

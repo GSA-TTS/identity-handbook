@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      {% if page.title %}
+        {{ page.title | strip_html }} |
+      {% endif %}
+      login.gov handbook
+    </title>
+    <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/main.css">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header class="usa-header usa-header--basic" role="banner">
+      <div class="usa-nav-container">
+        <div class="usa-navbar">
+          <div class="usa-logo" id="basic-logo">
+            <a href="/" title="Home" aria-label="Home">
+              <img src="{{site.baseurl}}/assets/img/login-gov-logo.svg" class="usa-logo__img" alt="login.gov">
+              <em class="usa-logo__text">Handbook</em>
+            </a>
+          </div>
+          <!--
+            <button class="usa-menu-btn">Menu</button>
+          -->
+        </div>
+        <nav role="navigation" class="usa-nav">
+          <button class="usa-nav__close"><img src="/assets/img/close.svg" alt="Close"></button>
+          <ul class="usa-nav__primary usa-accordion">
+            <!-- TODO: nav elements -->
+          </ul>
+
+          <div class="usa-nav__secondary-container">
+            <div class="usa-search usa-search--small" role="search">
+              <label class="usa-sr-only" for="basic-search-field-small">Search small</label>
+              <input type="text" id="search-input" name="search" placeholder="Search articles...">
+              <ul id="search-results"></ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="usa-layout-docs usa-section" id="main-content">
+      <div class="grid-container">
+          {{ content }}
+        </div>
+      </div>
+    </main>
+    <footer class="usa-footer usa-footer--slim" role="contentinfo">
+      <div class="grid-container usa-footer__return-to-top">
+        <div class="grid-row flex-align-center">
+          <div class="grid-col flex-1">
+            <a href="#">Return to top</a>
+          </div>
+          <div class="grid-col flex-auto">
+            <a href="{{ site.github_repo_url }}/edit/master/{{ page.path }}" class="usa-button usa-button--outline">Edit this page</a>
+          </div>
+        </div>
+      </div>
+      <div class="usa-footer__secondary-section">
+        <div class="grid-container">
+          <div class="usa-footer__logo grid-row grid-gap-2">
+            <div class="grid-col-auto">
+              <img src="{{site.baseurl}}/assets/img/gsa-logo-rev.svg" alt="U.S. General Services Administration logo" class="usa-footer__logo-img usa-footer__slim usa-footer__medium">
+            </div>
+            <div class="grid-col-auto">
+              <h3 class="usa-footer__logo-heading">U.S. General Services Administration</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="{{ site.baseurl }}/anchor.min.js"></script>
+    <script type="text/javascript">
+      anchors.add('#main-content h2, #main-content h3, #main-content [data-anchor]');
+    </script>
+    <script type="text/javascript" src="{{ site.baseurl }}/simple-jekyll-search.min.js"></script>
+    <script type="text/javascript">
+      var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('search-results'),
+        json: '/search.json',
+        noResultsText: '<li class="no-results">No results were found.</li>'
+      });
+    </script>
+  </body>
+</html>
