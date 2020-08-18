@@ -35,7 +35,6 @@ jobs:
       - run:
           name: Run markdown source spec (catches things that might break the build)
           command: bundle exec rspec `pwd`/spec/markdown_spec.rb
-      - run: GITHUB_ACCESS_TOKEN=${GITHUB_ACCESS_TOKEN} ./script/fetch-team-yml
       - run: bundle exec jekyll build
       - run:
           name: Run rspec
