@@ -10,6 +10,7 @@ setup:
 
 test: build
 	bundle exec rspec spec
+	bundle exec htmlproofer --disable-external --allow-hash-href `pwd`/_site
 
 clean:
 	rm -rf _site
