@@ -6,7 +6,7 @@ permalink: /
 
 # Login Handbook
 
-Welcome to the login.gov handbook! This is our open source team documentation.
+Welcome to the login.gov handbook! This is our open source team documentation!
 
 Please help us contribute and keep things up to date, and make sure
 to [avoid contributing sensitive information][sensitive-information].
