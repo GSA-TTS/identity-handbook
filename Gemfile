@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.8.6"
+gem "jekyll", "~> 4"
+gem "kramdown", ">= 2.3.0"
 
 group :jekyll_plugins do
   gem "jekyll-redirect-from"
