@@ -6,7 +6,7 @@ build: setup
 
 setup:
 	bundle
-	yarn install
+	npm install
 
 test: build
 	bundle exec rspec spec
