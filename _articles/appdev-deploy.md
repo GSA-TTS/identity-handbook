@@ -9,7 +9,7 @@ This is a guide for the Release Manager, the engineer who shepherds code to stag
 
 This guide assumes that:
 - You have a [GPG key set up with GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account) (for signing commits)
-- You have [set up `aws-vault`]({{site.baseurl}}/articles/devops-setting-up-aws-vault.html), and have can SSH (via `ssm-instance`) in to our production environment
+- You have [set up `aws-vault`](https://login-handbook.app.cloud.gov/articles/devops-setting-up-aws-vault.html), and have can SSH (via `ssm-instance`) in to our production environment
 
 ## Pre-deploy
 Every other Tuesday
