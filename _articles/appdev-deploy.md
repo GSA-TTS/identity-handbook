@@ -130,6 +130,10 @@ Every other Wednesday
     ./bin/ls-servers -e staging -r idp # check the load balance pool health
     ```
     - Check [NewRelic (Staging IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52446986/filterable_errors#/table?top_facet=transactionUiName&barchart=barchart) for errors
+    - Manually test the app in staging:
+        - Sign in to an account
+        - Sign up for an account
+        - Test proofing (identity verification) on the new account
     - Set a timer for one hour, then check NewRelic again for errors.
 
 ## Production
@@ -176,6 +180,11 @@ Every other Thursday
     ```
     ./bin/scale-in-old-instances prod idp
     ```
+
+1. Manually test the app in staging:
+    - Sign in to an account
+    - Sign up for an account
+    - Test proofing (identity verification) on the new account
 
 1. **PRODUCTION ONLY**: This step is required in production (but not staging)
     1. In the `identity-idp` repo, use your GPG key to tag the release.
