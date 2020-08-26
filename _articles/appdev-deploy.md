@@ -104,7 +104,7 @@ Every other Wednesday
 1. In the `identity-devops` repo:
    ```bash
    cd identity-devops
-   aws-vault exec production-poweruser -- /bin/zsh
+   aws-vault exec prod-power -- /bin/zsh
    ```
 1. Create a migration instance, and tail the logs to make sure things run cleanly
     ```bash
@@ -145,7 +145,7 @@ Every other Thursday
 1. In the `identity-devops` repo:
    ```bash
    cd identity-devops
-   aws-vault exec production-poweruser -- /bin/zsh
+   aws-vault exec prod-power -- /bin/zsh
    ```
 1. Create a migration instance, and tail the logs to make sure things run cleanly
     ```bash
