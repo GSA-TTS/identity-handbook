@@ -106,35 +106,38 @@ Every other Wednesday
    cd identity-devops
    aws-vault exec production-poweruser -- /bin/zsh
    ```
-1. Create a migration instance, and tail the logs to make sure things run cleanly
-    ```bash
-    ./bin/ls-servers -e staging # make sure there are no existing migration instances
-    ./bin/asg-size staging migration 1 # create one migration instance
-    # wait a few seconds
-    ./bin/ssm-instance --newest asg-staging-migration
-    ```
-    On the remote box
-    ```bash
-    /bin/bash # they start in a plain shell, you probably want bash
-    sudo tail -f /var/log/cloud-init-output.log
-         #   OR
-    sudo tail -f /var/log/syslog
-    ```
-    Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run. Then spin down the migration instance.
-    ```bash
-    ./bin/asg-size staging migration 0
-    ```
-1. Recycle the IDP instances to get the new code
-    ```bash
-    ./bin/asg-recycle staging idp
-    ./bin/ls-servers -e staging -r idp # check the load balance pool health
-    ```
-    - Check [NewRelic (Staging IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52446986/filterable_errors#/table?top_facet=transactionUiName&barchart=barchart) for errors
-    - Manually test the app in staging:
-        - Sign in to an account
-        - Sign up for an account
-        - Test proofing (identity verification) on the new account
-    - Set a timer for one hour, then check NewRelic again for errors.
+1. Recycle the IDP instances to get the new code, it automatically creates a new migration instance first.
+   ```bash
+   ./bin/asg-recycle staging idp
+   ```
+
+   1. Follow the progress of the migrations, ensure that they are working properly
+   ```bash
+   # may need to wait a few seconds after the recycle
+   ./bin/ssm-instance --newest asg-staging-migration
+   ```
+   On the remote box
+   ```bash
+   /bin/bash # they start in a plain shell, you probably want bash
+   sudo tail -f /var/log/cloud-init-output.log
+   # OR
+   sudo tail -f /var/log/syslog
+   ```
+   Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
+
+   1. Follow the progress of the IDP hosts spinning up
+
+      ```bash
+      ./bin/ls-servers -e staging -r idp # check the load balance pool health
+      ```
+
+    1. Manual Inspection and Testing
+      - Check [NewRelic (Staging IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52446986/filterable_errors#/table?top_facet=transactionUiName&barchart=barchart) for errors
+      - Manually test the app in staging:
+          - Sign in to an account
+          - Sign up for an account
+          - Test proofing (identity verification) on the new account
+      - Set a timer for one hour, then check NewRelic again for errors.
 
 ## Production
 Every other Thursday
@@ -147,32 +150,34 @@ Every other Thursday
    cd identity-devops
    aws-vault exec production-poweruser -- /bin/zsh
    ```
-1. Create a migration instance, and tail the logs to make sure things run cleanly
-    ```bash
-    ./bin/ls-servers -e prod # make sure there are no existing migration instances
-    ./bin/asg-size prod migration 1 # create one migration instance
-    # wait a few seconds
-    ./bin/ssm-instance --newest asg-prod-migration
-    ```
-    On the remote box
-    ```bash
-    /bin/bash # they start in a plain shell, you probably want bash
-    sudo tail -f /var/log/cloud-init-output.log
-         #   OR
-    sudo tail -f /var/log/syslog
-    ```
-    Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run. Then spin down the migration instance.
-    ```bash
-    ./bin/asg-size prod migration 0
-    ```
-1. Recycle the IDP instances to get the new code
-    ```bash
-    ./bin/asg-recycle prod idp
-    ./bin/ls-servers -e prod -r idp # check the load balance pool health
-    ```
+1. Recycle the IDP instances to get the new code, it automatically creates a new migration instance first.
+   ```bash
+   ./bin/asg-recycle prod idp
+   ```
 
-    - Check [NewRelic (Production IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52136858/traced_errors) for errors
-    - Set a timer for one hour, then check NewRelic again for errors.
+   1. Follow the progress of the migrations, ensure that they are working properly
+   ```bash
+   # may need to wait a few seconds after the recycle
+   ./bin/ssm-instance --newest asg-prod-migration
+   ```
+   On the remote box
+   ```bash
+   /bin/bash # they start in a plain shell, you probably want bash
+   sudo tail -f /var/log/cloud-init-output.log
+   # OR
+   sudo tail -f /var/log/syslog
+   ```
+   Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
+
+   1. Follow the progress of the IDP hosts spinning up
+
+      ```bash
+      ./bin/ls-servers -e prod -r idp # check the load balance pool health
+      ```
+
+    1. Manual Inspection
+      - Check [NewRelic (Production IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52136858/traced_errors) for errors
+      - Set a timer for one hour, then check NewRelic again for errors.
 
 1. **PRODUCTION ONLY**: This step is required in production (but not staging)
 
