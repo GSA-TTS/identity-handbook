@@ -22,6 +22,7 @@ Do *not* add any information to the handbook if it contains:
 - Internal networking names
 - Personal IP addresses or partner IP addresses
 - Personal phone numbers or email addresses
+- Google Group email addresses
 
 It's OK to include SSH instructions in runbooks, because those don't necessarily
 disclose what's going on inside our infrastructure.
