@@ -18,7 +18,5 @@ def file_at(path)
     File.new(full_path.to_s)
   elsif full_path.directory?
     File.new(full_path.join('index.html').to_s)
-  else
-    fail "could not locate file named #{path}"
   end
 end
