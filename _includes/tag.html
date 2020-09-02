@@ -1,0 +1,6 @@
+{% comment %}
+Shorthand for adding a styled tag.
+include:
+- name: the name of the tag (required)
+- color: color of the tag, defaults to red (optional)
+{% endcomment %}<span class="usa-tag {{ include.color | default: 'bg-red' }} float-right" data-filter="{{ include.name }}">{{ include.name }}</span>
