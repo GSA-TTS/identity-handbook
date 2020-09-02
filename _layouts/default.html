@@ -86,5 +86,36 @@
         noResultsText: '<li class="no-results">No results were found.</li>'
       });
     </script>
+    <script type="text/javascript" src="{{ site.baseurl }}/private-eye.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        PrivateEye({
+          defaultMessage: "This link is private to TTS.",
+          ignoreUrls: [
+            '18f.slack.com',
+            'anywhere.gsa.gov',
+            'bookit.gsa.gov',
+            'calendar.gsa.gov',
+            'connect.gsa.gov',
+            'docs.google.com',
+            'drive.google.com',
+            'ea.gsa.gov',
+            'email.gsa.gov',
+            'gcims.gsa.gov',
+            'gkey.gsa.gov',
+            'gsa-tts.slack.com',
+            'gsa.my.salesforce.com',
+            'gsaolu.gsa.gov',
+            'hrprod.hr.gsa.gov',
+            'insite.gsa.gov',
+            'mail.gsa.gov',
+            'meet.gsa.gov',
+            'pages-internal.18f.gov',
+            'tock.18f.gov',
+            'login-handbook.app.cloud.gov'
+          ]
+        });
+      }, false );
+    </script>
   </body>
 </html>
