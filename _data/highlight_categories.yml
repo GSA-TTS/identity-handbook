@@ -4,7 +4,6 @@
   description: Articles for the whole team
   custom_order:
     - _articles/project-principles.md
-    - _articles/team.md
     - _articles/onboarding.md
     - _articles/offboarding.md
 - title: Handbook
