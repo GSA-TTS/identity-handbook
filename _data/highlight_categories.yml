@@ -2,7 +2,11 @@
 # will be added alphabetically after these.
 - title: Team
   description: Articles for the whole team
-  custom_order: []
+  custom_order:
+    - _articles/project-principles.md
+    - _articles/team.md
+    - _articles/onboarding.md
+    - _articles/offboarding.md
 - title: Handbook
   description: About this handbook
 - title: Product
