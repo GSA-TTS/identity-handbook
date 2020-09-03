@@ -1,5 +1,5 @@
 ---
-title: Github
+title: GitHub
 description: Team code repos
 layout: article
 category: Development
