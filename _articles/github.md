@@ -18,7 +18,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18f/identity-pki**](https://github.com/18f/identity-pki)
   PIV/CAC application
 
-- [**18f/identity-idp-config**](https://github.com/18f/identity-idp-config){:class="private-link"} Service Provider (`service_providers.yml`) and Agency (`agencies.yml`) configuration repo that can be updated and deployed independently of the IDP.
+- [**18f/identity-idp-config**](https://github.com/18f/identity-idp-config) Service Provider (`service_providers.yml`) and Agency (`agencies.yml`) configuration repo that can be updated and deployed independently of the IDP.
 
 - [**18f/identity-dashboard**](https://github.com/18f/identity-dashboard)
   Partner Dashboard for viewing and editing service provider configurations (only in the INT environment).
@@ -58,10 +58,10 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 ### Infrastructure
 
-- [**18f/identity-devops**](https://github.com/18f/identity-devops){:class="private-link"}
+- [**18f/identity-devops**](https://github.com/18f/identity-devops)
   Chef and terraform
 
-- [**18f/identity-devops-private**](https://github.com/18f/identity-devops-private){:class="private-link"}
+- [**18f/identity-devops-private**](https://github.com/18f/identity-devops-private)
   Additional terraform configurations
 
 - [**18f/identity-terraform**](https://github.com/18f/identity-terraform)
@@ -108,9 +108,9 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18f/identity-handbook**](https://github.com/18f/identity-handbook)<br />
   [handbook.login.gov](https://handbook.login.gov/)<br />
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
-  Old, private version of this handbook! (Private to login.gov team only)
+  This handbook!
 
-- [**18f/identity-handbook-private**](https://github.com/18f/identity-handbook-private){:class="private-link"} <br />
+- [**18f/identity-handbook-private**](https://github.com/18f/identity-handbook-private) <br />
   [login-handbook.app.cloud.gov](https://login-handbook.app.cloud.gov/)<br />
   Hosted on: [Cloud.gov](https://dashboard.fr.cloud.gov/)<br />
   Old, private version of this handbook! (Private to login.gov team only)
