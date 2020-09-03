@@ -34,9 +34,9 @@ RSpec::Matchers.define :link_internally_for_handbook_articles do
       path = URI(a[:href]).path
 
       articles << path if file_at(path)
-
-      expect(articles).to be_empty
     end
+
+    expect(articles).to be_empty
   end
 
   failure_message do |actual|
