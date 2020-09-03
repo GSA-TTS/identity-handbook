@@ -24,3 +24,22 @@ RSpec::Matchers.define :have_unique_ids do
   end
 end
 
+RSpec::Matchers.define :link_internally_for_handbook_articles do
+  articles = Set.new
+
+  match do |actual|
+    doc = actual
+
+    doc.css('a[href*="login-handbook.app.cloud.gov"]').each do |a|
+      path = URI(a[:href]).path
+
+      articles << path if file_at(path)
+    end
+
+    expect(articles).to be_empty
+  end
+
+  failure_message do |actual|
+    "expected that #{actual.url} would not link to external version of articles in this handbook, but found:\n#{articles.to_a.join("\n")}"
+  end
+end

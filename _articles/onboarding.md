@@ -81,7 +81,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - UAT meeting
   - Demo Day / All Hands
 - Read some docs
-  - [Our definition(s) of done](https://login-handbook.app.cloud.gov/articles/definition-of-done.html)
+  - [Our definition(s) of done]({% link _articles/definition-of-done.md %})
   - [Login.gov design guide documentation](https://design.login.gov/)
 - Write some code
   - Assign yourself a Jira ticket
