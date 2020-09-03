@@ -29,7 +29,7 @@ TODO(margolis): link to a canonical SSH access setup place
 
 6. To access the Rails console, run `id-rails-console`. If this is your first time doing this, or if it's been a while since you last used `sudo` in prod, an alert will appear in the `#identity-events` Slack channel. It will say something like `New sudo
 Got a new person sudoing.  Make sure that this is OK.` If you see that event in Slack with your username, make sure to respond in that same channel confirming it was you.
-7. Once you are in the Rails console, you can look up a user by their email using `User.find_with_email`, such as `User.find_with_email('moncef.belyamani@gsa.gov')`.
+7. Once you are in the Rails console, you can look up a user by their email using `User.find_with_email`, such as `User.find_with_email('example.user@gsa.gov')`.
 
 Common user attributes you will want to look up:
 - `uuid`
