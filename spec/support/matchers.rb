@@ -32,6 +32,7 @@ RSpec::Matchers.define :link_internally_for_handbook_articles do
 
     doc.css('a[href*="login-handbook.app.cloud.gov"]').each do |a|
       path = URI(a[:href]).path
+      next if path == '/'
 
       articles << path if file_at(path)
     end
