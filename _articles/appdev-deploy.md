@@ -178,6 +178,7 @@ Every other Thursday
     1. Manual Inspection
       - Check [NewRelic (Production IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52136858/traced_errors) for errors
       - Set a timer for one hour, then check NewRelic again for errors.
+      - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
 1. **PRODUCTION ONLY**: This step is required in production (but not staging)
 
@@ -204,3 +205,33 @@ Every other Thursday
         1. Edit the Draft Release Notes started at the beginning of this process
         1. Enter the latest git tag corresponding to the code you just deployed
         1. Copy in the cleaned up release notes and publish them in GitHub
+
+### Rolling Back
+
+It's safer to roll back the IDP to a known good state than leave it up in a possibly bad one.
+
+Some criteria for rolling back:
+- Is the error visible for users?
+- Is the error going to create bad data that could cause future errors?
+- Is there a user-facing bug that could confuse users or produce a wrong result?
+- Do you need more than 15 minutes to confirm how bad the error is?
+
+If any of these are "yes", roll back. See more criteria at <https://outage.party/>.
+Staging is a pretty good match for production, so you should be able to fix and verify
+the bug in staging, where it won't affect end users.
+
+#### Steps to roll back
+
+1. Make a pull request to the `stages/prod` branch, to revert it back to the last deploy.
+
+    ```bash
+    git checkout stages/prod
+    git pull # make sure you're at the most recent SHA
+    git checkout revert-rc-123 # replace with the RC number
+    git revert -m 1 HEAD # assumes that the top commit on stages/prod is a merge
+    ```
+
+1. Open a pull request against `stages/prod`, get it approved, and merged. If urgent, get
+   ahold of somebody with admin merge permissions who can override waiting for CI to finish
+
+1. Recycle the app to get the new code out there (follow the [Production Deploy steps](#production))
