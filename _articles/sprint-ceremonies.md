@@ -18,7 +18,7 @@ work is ultimately up to that scrum team.
 
 ## Daily standup
 
-Daily standups keep the team in sync. These regular touchpoints enabled teams to
+Daily standups keep the team in sync. These regular touchpoints enable teams to
 identify opportunities for collaboration, surface blockers, and respond to
 changing circumstances. This is especially true in a virtual environment where
 team members need to be deliberate about staying in contact.
@@ -61,7 +61,7 @@ sprint and asks themselves:
 - **“Is this amount of work achievable in a sprint?”** The team should aim to
   complete all of the planned work in the 2 week sprint. If the team does not
   feel that is possible, then they should remove work from the sprint. This may
-  mean working with the product owner to adjust to the sprint goal to be
+  mean working with the product owner to adjust the sprint goal to be
   achievable.
 
 #### Planning for individual stories:
@@ -165,7 +165,7 @@ sprint. After reviewing the priorities there should be time to review new
 stories as a team, discuss them, and prioritize them in the backlog.
 
 Frequently, the volume of new stories is too high for the team to review every
-single new story during refinement.. If a story seems especially important or
+single new story during refinement. If a story seems especially important or
 has some context that needs discussion, team members should make a note to bring
 it up during this part of refinement.
 
