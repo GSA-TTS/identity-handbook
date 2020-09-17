@@ -20,7 +20,7 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
 - [Create a new issue in the `identity-devops` GitHub repository using the off-boarding template](https://github.com/18F/identity-devops/issues/new?template=offboard-devops.md) and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue
 - Check in `#admins-github` to ensure that GitHub access for this person has been removed (TTS `#people-ops` is usually on top of this). If this person is moving elsewhere in TTS ensure they have been removed from `identity-*` [GitHub teams](https://github.com/orgs/18F/teams/).
   - Note that CircleCI, CodeClimate, and Snyk rights are removed via GitHub integration
-- [Create a ticket in the Jira AdminTasks project](https://cm-jira.usa.gov/secure/CreateIssue!default.jspa) requesting that the user be removed from the Login.gov project (and deactivated if they are no longer working for GSA).
+- [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request that the user be removed from the Login.gov project (and deactivated if they are no longer working for GSA).
 - Use the [TTS Slack Form](https://goo.gl/forms/mKATdB9QuNo7AXVY2) to submit user modification
 - [Remove user from Login.gov Google Groups](https://groups.google.com/a/gsa.gov/forum/#!myforums)
 - [Remove the user from Hubspot](https://app.hubspot.com/settings/5531666/users)
