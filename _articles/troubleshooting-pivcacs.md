@@ -21,7 +21,7 @@ and how to add it.
 
     ```ruby
     # in a production console
-    User.find_with_email('user@exmaple.gov').uuid
+    User.find_with_email('user@example.gov').uuid
     ```
 
 1. Look up their key ID in our logs in Cloudwatch Insights logs
