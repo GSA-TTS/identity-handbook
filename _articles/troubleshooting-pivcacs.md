@@ -98,7 +98,7 @@ and how to add it.
     => "config/certs/C=US, O=U.S. Government, OU=Department of State, OU=PIV, OU=Certification Authorities, OU=U.S. Department of State PIV CA2.pem"
     ```
 
-    1. Test that the certificate was added correctly by **restarting the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/master/config/initializers/certificate_store.rb) so it's easier to restart that way)
+    1. Test that the certificate was added correctly by **closing and opeining the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/master/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
 
         ```ruby
         key_id = '8C:D6:D4:69:A9:E4:85:41:3A:6A:A6:5E:DA:51:1A:17:8D:92:8B:6C'
