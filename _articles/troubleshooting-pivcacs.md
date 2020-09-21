@@ -46,8 +46,7 @@ and how to add it.
    ```
 
 1. Use the rails console in [identity-pki](https://github.com/18f/identity-pki) to inspect the certificate that was downloaded from S3,
-   by using the [CertificateChainService](https://github.com/18F/identity-pki/pull/167/files#diff-3fde0fe593525bbb0141b783449f1b1c)
-   (currently it's on a branch)
+   by using the [CertificateChainService](https://github.com/18F/identity-pki/blob/master/app/services/certificate_chain_service.rb).
 
     ```ruby
     cert = Certificate.new(OpenSSL::X509::Certificate.new(File.read(File.join("path/to/cert"))))
