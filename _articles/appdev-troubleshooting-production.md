@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting"
+title: "Troubleshooting the IDP"
 description: Troubleshooting production exceptions and issues reported by customers
 layout: article
 category: AppDev
