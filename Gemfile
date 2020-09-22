@@ -5,6 +5,7 @@ gem "kramdown", ">= 2.3.0"
 
 group :jekyll_plugins do
   gem "jekyll-redirect-from"
+  gem "jekyll-last-modified-at"
 end
 
 group :test do
