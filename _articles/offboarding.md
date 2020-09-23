@@ -15,7 +15,7 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
 ### For offboarding assistant to complete
 
 - If this person is leaving GSA/TTS, review and share [leaving GSA/TTS guidance](https://handbook.tts.gsa.gov/leaving-tts/).
-  - If this person is unable to [email their resignation letter](https://handbook.tts.gsa.gov/leaving-tts/#1-email-your-resignation-letter) for any reason you must do it on their behalf. **This applies to contractors**.
+  - If this person is unable to [email their resignation letter](https://handbook.tts.gsa.gov/leaving-tts/#1-email-your-resignation-letter) for any reason you must do it on their behalf. **This also applies to contractors**.
 - If applicable, send an email to the login.gov team announcing that this employee is leaving Login.gov
 - [Create a new issue in the `identity-devops` GitHub repository using the off-boarding template](https://github.com/18F/identity-devops/issues/new?template=offboard-devops.md) and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue
 - Check in `#admins-github` to ensure that GitHub access for this person has been removed (TTS `#people-ops` is usually on top of this). If this person is moving elsewhere in TTS ensure they have been removed from `identity-*` [GitHub teams](https://github.com/orgs/18F/teams/).

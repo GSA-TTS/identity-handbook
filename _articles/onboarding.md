@@ -51,7 +51,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Sprint ceremonies
   - All-hands / Demo-day
   - Retros / IRLs
-- Help your buddy double check that they are on the correct Performance Plan in HRLinks
+- Help your buddy double check that they have a Performance Plan in HRLinks
 
 ## For UX team members
 
