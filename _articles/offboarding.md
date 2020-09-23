@@ -14,8 +14,8 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
 
 ### For offboarding assistant to complete
 
-- Review and share [leaving GSA/TTS guidance](https://handbook.tts.gsa.gov/leaving-tts/) with this person.
-  - If this person is unable to [email their resignation letter](https://handbook.tts.gsa.gov/leaving-tts/#1-email-your-resignation-letter) for any reason you must do it on their behalf.
+- If this person is leaving GSA/TTS, review and share [leaving GSA/TTS guidance](https://handbook.tts.gsa.gov/leaving-tts/).
+  - If this person is unable to [email their resignation letter](https://handbook.tts.gsa.gov/leaving-tts/#1-email-your-resignation-letter) for any reason you must do it on their behalf. **This applies to contractors**.
 - If applicable, send an email to the login.gov team announcing that this employee is leaving Login.gov
 - [Create a new issue in the `identity-devops` GitHub repository using the off-boarding template](https://github.com/18F/identity-devops/issues/new?template=offboard-devops.md) and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue
 - Check in `#admins-github` to ensure that GitHub access for this person has been removed (TTS `#people-ops` is usually on top of this). If this person is moving elsewhere in TTS ensure they have been removed from `identity-*` [GitHub teams](https://github.com/orgs/18F/teams/).
@@ -39,5 +39,6 @@ If a person leaves temporarily, for example to fill a Detail, they can have priv
 ### For offboarding assistant to complete
 
 - [Create a new issue in the `identity-devops` GitHub repository using the partial off-boarding template](https://github.com/18F/identity-devops/issues/new?template=offboard-devops-partial.md) and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue
+- Remove user from [`identity-admins` GitHub team](https://github.com/orgs/18F/teams/identity-admins/members?query=)
 - [Remove user from login-devops and login-security](https://groups.google.com/a/gsa.gov/forum/#!myforums)
 - Update the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
