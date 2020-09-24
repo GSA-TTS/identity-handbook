@@ -18,6 +18,7 @@ copy_to_destination:
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-last-modified-at
 
 exclude:
   - CONTRIBUTING.md

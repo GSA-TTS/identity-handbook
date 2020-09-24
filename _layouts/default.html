@@ -56,6 +56,7 @@
             <a href="#">Return to top</a>
           </div>
           <div class="grid-col flex-auto">
+            This page was last modified on {{ page.last_modified_at | date: '%b %e, %Y' }}
             <a href="{{ site.github_repo_url }}/edit/master/{{ page.path }}" class="usa-button usa-button--outline">Edit this page</a>
           </div>
         </div>
