@@ -31,7 +31,7 @@ private links and contact information useful for oncall infrastructure engineers
   * Certificate rotation
   * Regular cleanup
 * **Monitor Channels** - Keep an eye on #login-events and #login-secops-plan for items that may impact DevOps
-* **Update AMI images and references** - Monday of week 1 - 
+* **Update AMI images and references** - Monday of week 1 - See [Baking New AWS AMI Images](https://github.com/18F/identity-devops/wiki/Baking-New-AWS-AMI-Images)
 * **Release DevOps code** - Follow release schedule and steps in [Deploying Infrastructure Code](https://github.com/18F/identity-devops/wiki/Deploying-Infrastructure-Code)
 * **Coordinate with AppDev release manager** - For IdP staging (Tuesday) and production (Thursday) release days monitor release progress
 * **Review any open PRs**
