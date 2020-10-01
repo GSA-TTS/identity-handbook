@@ -157,7 +157,7 @@ An individual AWS IAM account can only be part of _one_ AccountType. If you requ
 If a new AWS account is added to the Login.gov organization, the following changes will be needed to provide IAM permissions/access to it.
 
 _Prerequisites:_
-* Determine the **Friendly Name**, **Alias**, **CLI Prefix**, **AWS Account ID**, and **Account Type** as per the other examples in [the AWS Accounts matrix]({{site.baseurl}}/articles/infrastructure-aws-accounts-and-roles.html#aws-accounts). Add a new line with those values to the matrix as part of a PR update to this document.
+* Determine the **Friendly Name**, **Alias**, **CLI Prefix**, **AWS Account ID**, and **Account Type** as per the other examples in [the AWS Accounts matrix]({{site.baseurl}}/articles/infrastructure-aws-accounts-and-roles.html). Add a new line with those values to the matrix as part of a PR update to this document.
 * Verify that there is at least one NON-Terraform-managed IAM user profile with the equivalent of _FullAdministrator_ permissions within the account. This user will perform the initial run of `terraform/all` to create the Roles in the account, allowing users within `terraform/master` to Assume these Roles.
 
 _Steps:_
