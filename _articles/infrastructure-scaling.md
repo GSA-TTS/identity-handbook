@@ -2,6 +2,6 @@
 title: "Infrastructure Scaling"
 description: Runbooks for scaling out or up various resources in anticipation of or response too added load
 layout: article
-category: "DevOps"
+category: Infrastructure
 redirect_to: https://github.com/18F/identity-devops/wiki/Infrastructure-Scaling
 ---

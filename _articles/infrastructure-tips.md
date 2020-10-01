@@ -2,7 +2,7 @@
 title: "Infrastructure Tips and Tricks"
 description: Helpful tips for AWS, Terraform, and other infrastructure related tech
 layout: article
-category: DevOps
+category: Infrastructure
 ---
 
 

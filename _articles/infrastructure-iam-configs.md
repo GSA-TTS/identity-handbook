@@ -2,12 +2,12 @@
 title: "AWS IAM User/Group/Role/Account Configurations"
 description: "Detailed information about our IAM configurations, and how to add/alter IAM components within our infrastructure."
 layout: article
-category: DevOps
+category: Infrastructure
 ---
 
 ## Overview
 
-A set of modules in [`identity-terraform`](https://github.com/18F/identity-terraform) are used to create the full mappings between the users, groups, roles, and accounts across the org. Please refer to the [AWS Accounts and IAM Groups/Roles]({{site.baseurl}}/articles/devops-aws-accounts-and-roles.html) page for specific data about our existing AWS accounts/groups/roles/etc.
+A set of modules in [`identity-terraform`](https://github.com/18F/identity-terraform) are used to create the full mappings between the users, groups, roles, and accounts across the org. Please refer to the [AWS Accounts and IAM Groups/Roles]({{site.baseurl}}/articles/infrastructure-aws-accounts-and-roles.html) page for specific data about our existing AWS accounts/groups/roles/etc.
 
 ## Terraform Configuration
 
@@ -157,7 +157,7 @@ An individual AWS IAM account can only be part of _one_ AccountType. If you requ
 If a new AWS account is added to the Login.gov organization, the following changes will be needed to provide IAM permissions/access to it.
 
 _Prerequisites:_
-* Determine the **Friendly Name**, **Alias**, **CLI Prefix**, **AWS Account ID**, and **Account Type** as per the other examples in [the AWS Accounts matrix]({{site.baseurl}}/articles/devops-aws-accounts-and-roles.html#aws-accounts). Add a new line with those values to the matrix as part of a PR update to this document.
+* Determine the **Friendly Name**, **Alias**, **CLI Prefix**, **AWS Account ID**, and **Account Type** as per the other examples in [the AWS Accounts matrix]({{site.baseurl}}/articles/infrastructure-aws-accounts-and-roles.html#aws-accounts). Add a new line with those values to the matrix as part of a PR update to this document.
 * Verify that there is at least one NON-Terraform-managed IAM user profile with the equivalent of _FullAdministrator_ permissions within the account. This user will perform the initial run of `terraform/all` to create the Roles in the account, allowing users within `terraform/master` to Assume these Roles.
 
 _Steps:_
