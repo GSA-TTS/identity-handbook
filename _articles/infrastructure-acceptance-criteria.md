@@ -1,9 +1,9 @@
 ---
-title: "Acceptance Criteria for DevOps PRs/Issues"
-description: "Detailed guide on how to file Issues and Pull Requests for the Login.gov DevOps Team."
+title: "Acceptance Criteria for Infrastructure PRs/Issues"
+description: "Detailed guide on how to file Issues and Pull Requests for the Login.gov Infrastructure Team."
 layout: article
 redirect_from:
-category: DevOps
+category: Infrastructure
 ---
 
 ## Overview
@@ -93,7 +93,7 @@ The full process of accepting, working on, and completing an Issue is as follows
     * Move Issue back to the **In Progress** column
     * Collaborate with the DevOps team (assigned engineer and/or others) to drive the story to completion
 
-An Issue is **Done** when ACs are met and evidence is documented. The On-Call addresses outstanding ACs daily to keep things moving, and will clear out any remaining Issues during the [weekly `AC Club` hangout]({{site.baseurl}}/articles/devops-ceremonies.html#ac-club), which provides a dedicated time for auditing/verifying Issues. The **Done** column is reset at the beginning of every sprint cycle.
+An Issue is **Done** when ACs are met and evidence is documented. The On-Call addresses outstanding ACs daily to keep things moving, and will clear out any remaining Issues during the [weekly `AC Club` hangout]({{site.baseurl}}/articles/infrastructure-ceremonies.html#ac-club), which provides a dedicated time for auditing/verifying Issues. The **Done** column is reset at the beginning of every sprint cycle.
 
 ## Pull Requests
 

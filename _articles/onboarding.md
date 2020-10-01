@@ -143,7 +143,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 ## For  Privileged Users (DevOps, SecOps, AppDev)
 
-- [Set up your personal sandbox environment in AWS](https://login-handbook.app.cloud.gov/articles/devops-personal-sandbox-env.html)
+- [Set up your personal sandbox environment in AWS](https://login-handbook.app.cloud.gov/articles/infrastructure-personal-sandbox-env.html)
 
 ## For non-GSA employees
 

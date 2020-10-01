@@ -2,7 +2,7 @@
 title: "Infrastructure Disaster Runbooks"
 description: Recovering from really really bad stuff
 layout: article
-category: DevOps
+category: Infrastructure
 ---
 
 ## Overview

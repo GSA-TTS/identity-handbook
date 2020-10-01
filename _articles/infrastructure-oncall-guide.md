@@ -1,8 +1,8 @@
 ---
-title: "On-Call Guide"
-description: Runbook/guide for processes/responsibilities for the weekly oncall DevOps members.
+title: "Team Radia On-Call Guide"
+description: Runbook/guide for processes/responsibilities for the weekly oncall engineers.
 layout: article
-category: DevOps
+category: Infrastructure
 ---
 
 ## Quick Reference
