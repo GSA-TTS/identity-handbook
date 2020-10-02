@@ -12,7 +12,7 @@ This guide assumes that:
 - You have [set up `aws-vault`]({{site.baseurl}}/articles/infrastructure-setting-up-aws-vault.html), and have can SSH (via `ssm-instance`) in to our production environment
 
 ## Pre-deploy
-Every other Tuesday
+Scheduled for every other Tuesday
 
 ### Cut a release branch
 
@@ -96,7 +96,7 @@ Adding Emails: Patch release to include #3821, fixes a bug with adding emails to
 ```
 
 ## Staging
-Every other Wednesday
+Scheduled for every other Wednesday
 
 1. Merge the staging promotion pull request (**NOT** a squashed merge, just a normal merge)
 1. Notify in Slack (`#login-product` and `#login-devops` channels)
@@ -140,7 +140,7 @@ Every other Wednesday
       - Set a timer for one hour, then check NewRelic again for errors.
 
 ## Production
-Every other Thursday
+Scheduled for every other Thursday
 
 1. Merge the production promotion pull request
 1. Notify in Slack (`#login-product` and `#login-devops` channels)
