@@ -14,6 +14,8 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
 
 ### For offboarding assistant to complete
 
+- - Add a new JIRA Issue to the [People-Ops board](https://cm-jira.usa.gov/secure/RapidBoard.jspa?projectKey=LPO&rapidView=2861) to track completion of offboarding tasks.
+  - `Create Bulk Sub Tasks` on the new issue and use the `Login.gov Offboarding Assistant Tasks` template.
 - If this person is leaving GSA/TTS, review and share [leaving GSA/TTS guidance](https://handbook.tts.gsa.gov/leaving-tts/).
   - If this person is unable to [email their resignation letter](https://handbook.tts.gsa.gov/leaving-tts/#1-email-your-resignation-letter) for any reason you must do it on their behalf. **This also applies to contractors**.
 - If applicable, send an email to the login.gov team announcing that this employee is leaving Login.gov

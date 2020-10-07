@@ -29,6 +29,8 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 As an on-boarding buddy you'll be a new employee's main point of contact and Login.gov guide for a couple weeks.
 Look at this work as a power multiplier, you are helping someone gain a firm foundation to work upon, you are starting up a new engine.
 
+- Add a new JIRA Issue to the [People-Ops board](https://cm-jira.usa.gov/secure/RapidBoard.jspa?projectKey=LPO&rapidView=2861) to track completion of onboarding tasks.
+  - `Create Bulk Sub Tasks` on the new issue and use the `Login.gov Onboarding Buddy Tasks` template.
 - Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on Slack.
   - *For members needing **push commit** access*: Also add to the [identity-core](https://github.com/orgs/18F/teams/identity-core/members) team (contact [team maintainers](https://github.com/orgs/18F/teams/identity-core/members?utf8=%E2%9C%93&query=%20role%3Amaintainer) for this)
   - *For members NOT needing **push** access*: Also add to the [identity-team-yml](https://github.com/orgs/18F/teams/identity-team-yml/members) team, which grants read-only access. (contact [team maintainers](https://github.com/orgs/18F/teams/identity-team-yml/members?utf8=%E2%9C%93&query=+role%3Amaintainer) for this)
