@@ -26,8 +26,7 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
 - Use the [TTS Slack Form](https://goo.gl/forms/mKATdB9QuNo7AXVY2) to submit user modification
 - [Remove user from Login.gov Google Groups](https://groups.google.com/a/gsa.gov/forum/#!myforums)
 - [Remove the user from Hubspot](https://app.hubspot.com/settings/5531666/users)
-- Remove UX members from GSA owned applications
-  - [InVision](https://www.invisionapp.com/)
+- [Remove user from Figma](https://www.figma.com/files/team/893580939040886405/Login.gov/members)
 - Remove the user as admins from any dashboards
   - [login.gov dashboard](https://dashboard.int.identitysandbox.gov)
   - [search.gov dashboard](https://search.gov)

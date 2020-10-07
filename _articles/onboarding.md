@@ -53,6 +53,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Sprint ceremonies
   - All-hands / Demo-day
   - Retros / IRLs
+- [Add user to Figma](https://www.figma.com/files/team/893580939040886405/Login.gov/members) if appropriate (e.g. on UX team or implementing interfaces)
 - Help your buddy double check that they have a Performance Plan in HRLinks
 
 ## For UX team members
