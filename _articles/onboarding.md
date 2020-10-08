@@ -60,7 +60,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 ## For Partnerhsips team members
 
-- Check out the [Partnerships Area of the handbook](https://login-handbook.app.cloud.gov/articles/partnerships.html)
+- Check out the [Partnerships Area of the handbook]({{site.baseurl}}/#partnerships)
 - Be sure to join the main Slack channels for our team, `#login` and `#login-partnerships`.
 - Add the following email address to your Google Calendar to see the Login Partnerships Team Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
 - Add the user to [Hubspot](https://app.hubspot.com/settings/5531666/users)
