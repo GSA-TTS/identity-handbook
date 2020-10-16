@@ -2,7 +2,7 @@
 title: "Deploying a Partner Service Provider Config to Production"
 layout: article
 description: "Process and proceeders when deploying a partner service provider config to production"
-category: AppDev
+category: Partnerships
 ---
 
 Here is a list of items that need to be completed to deploy the configuration for a partner SP (Service Provider) to Production.
