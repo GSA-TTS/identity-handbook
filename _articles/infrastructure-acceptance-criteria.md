@@ -8,7 +8,7 @@ category: Infrastructure
 
 ## Overview
 
-This document is used to define the ***acceptance criteria (AC)*** for GitHub Issues and Pull Requests concerning the Login.gov DevOps team. These primarily are created/filed within the `identity-devops` repo.
+This document is used to define the ***acceptance criteria (AC)*** for GitHub Issues and Pull Requests concerning the Login.gov DevOps team.
 
 ### Issue Readiness Requirements
 
@@ -138,7 +138,6 @@ All PRs containing Terraform changes ***must*** include the output of a `terrafo
 The output of `plan` should be formatted in a way that allows for efficient readability. Unless surrounding context is necessary, only include the lines of the plan containing the *actual* changes meant to take place. These lines can be easily extracted if the `plan` output is piped through the following commands:
 
    ~~~sh
-   tf-deploy <DEPLOYMENT_TYPE_AND_ENVIRONMENT> plan |
                   sed $'s,\x1b\\[[0-9;]*[a-zA-Z],,g' |
      grep --color=auto -E '(^\s+[-\#\+\~\>]|\s->)\s' |
                sed -E 's/(user_data += ").*"/\1\*"/'
