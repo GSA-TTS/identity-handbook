@@ -25,6 +25,7 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 - `@login-eng` members of the login.gov application engineer grop
 - `@login-finops` use this group to communicate with all login financial and acq operations team members
 - `@login-iaa-finance` Members of this group participate in IAA and finance activities
+- `@login-partnerships-team` Group to address login.gov partnerships team members
 - `@login-product-team` Group to address login.gov product managers
 - `@login-ux-team` Group for the design/UX team
 - `@login_leads` login team leads
