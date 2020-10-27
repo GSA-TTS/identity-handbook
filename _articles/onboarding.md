@@ -8,10 +8,11 @@ category: Team
 
 TTS Talent has [their own onboarding checklist in Google Drive](https://docs.google.com/spreadsheets/d/1w0WSTUT0l7q19mAI6c2QCIpCFs0Cei4eukaiiRBTbRA/edit#gid=1775743049) that they share with new employees. The Login.gov tab on that document has one item, a link to this page in our handbook.
 
-## For new Login.gov team members to complete themselves
+## For new login.gov team members to complete themselves
 
-- Read through the [Login Handbook]({{site.baseurl}})
+- Familiarize yourself with the [login.gov Handbook]({{site.url}})
 - Review the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
+- Review the [login.gov Design System](https://design.login.gov/)
 - Complete [GSA OLU](https://insite.gsa.gov/topics/training-and-development/online-university-olu?term=olu) IT Security Awareness Training, including accepting the GSA IT Rules of Behavior, which is required before we can give you access to any login.gov systems. If you joined GSA more than two months ago, you’ve already completed this task. (Detailees must complete similar organization driven training and provide as proof to login.gov team members)
 - Schedule virtual tea/coffee meetings with your team lead, other members of your team, and anyone else!  Tea is just a short (~20 min) one-on-one video meeting with the purpose of getting to know each other.
 - Once you've been added to Slack:
@@ -19,14 +20,19 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
   - Make sure to join `#login`, the main announcement channel for our team
   - Contractors with full Slack access should add the word "contractor" to their Slack profile for the benefit of the wider TTS audience.
 - Make sure your GitHub account is set up [like this](https://handbook.tts.gsa.gov/github/#setup).
-- Add the following email address to your Google Calendar to see the Login Services Shared Events calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
+- Add the following email address to your Google Calendar to see the Login.gov Shared Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
 - Add yourself to the [`team.yml`](https://github.com/18F/identity-private/blob/master/team/team.yml) file
 - Request access to relevant Google Groups, [the handbook has a list of active groups](https://login-handbook.app.cloud.gov/articles/email.html#internal-team-lists)
+- Add a signature to your GSA email account like this:
+  > **Human Person**<br>
+  > Login.gov Chief of Kittens<br>
+  > Technology Transformation Services<br>
+  > U.S. General Services Administration
 - (Optional) [Add your gpg key to github](https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/)
 
 ## For the on-boarding buddy to complete
 
-As an on-boarding buddy you'll be a new employee's main point of contact and Login.gov guide for a couple weeks.
+As an on-boarding buddy you'll be a new employee's main point of contact and login.gov guide for a couple weeks.
 Look at this work as a power multiplier, you are helping someone gain a firm foundation to work upon, you are starting up a new engine.
 
 - Add a new JIRA Issue to the [People-Ops board](https://cm-jira.usa.gov/secure/RapidBoard.jspa?projectKey=LPO&rapidView=2861) to track completion of onboarding tasks.
@@ -41,14 +47,14 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Federal employees are added as full Slack members by default.
   - Contractors who are working on TTS projects most or full-time can be added as full Slack members.
   - Other collaborators should be added as multi-channel guests.
-  - Full Slack access for Contractors is at the discretion of Login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
-- Add them to the [Login Services Shared Events calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com&ctz=America%2FLos_Angeles)
+  - Full Slack access for Contractors is at the discretion of login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
+- Add them to the [Login.gov Shared Calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com)
   - Non-GSA.gov email address: `See all event details` permission
   - With GSA.gov email address: `Make changes AND manage sharing`
-- [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the Login.gov project.
+- [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the login.gov project.
 - Approve their PR to update [`team.yml`](https://github.com/18F/identity-private/blob/master/team/team.yml) with their info
-- Verify their membership in all appropriate Google Groups. This will grant them permission to see the Login.gov Team Drive and other Google Docs
-- Update the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
+- Verify their membership in all appropriate Google Groups. This will grant them permission to see the login.gov Team Drive and other Google Docs
+- Update the [login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
 - Verify they have been added to all team events like
   - Sprint ceremonies
   - All-hands / Demo-day
@@ -65,7 +71,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 - Check out the [Partnerships Area of the handbook]({{site.baseurl}}/#partnerships)
 - Be sure to join the main Slack channels for our team, `#login` and `#login-partnerships`.
-- Add the following email address to your Google Calendar to see the Login Partnerships Team Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
+- Add the following email address to your Google Calendar to see the Login.gov Partnerships Team Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
 - Add the user to [Hubspot](https://app.hubspot.com/settings/5531666/users)
 
 
@@ -75,12 +81,12 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 - Use login.gov
   - Set up a login.gov account
-  - Try to proof your identity on login.gov
+  - Try to verify your identity on [login.gov/verify](https://secure.login.gov/verify)
 - Setup the apps
-  - [Set up your local IdP development environment](https://github.com/18F/identity-idp/blob/master/README.md)
+  - [Set up your local IdP development environment](https://github.com/18F/identity-idp#readme)
   - Get the IdP test suite to pass locally
-  - Get the OIDC and SAML apps working locally
-  - Get the Dashboard app running locally
+  - Get the [OIDC](https://github.com/18F/identity-oidc-sinatra#readme) and [SAML](https://github.com/18F/identity-saml-sinatra#readme) apps working locally
+  - Get the [Partner Dashboard](https://github.com/18f/identity-dashboard#readme) app running locally
 - Be a part of your scrum team's ceremonies by attending these meetings
   - Your scrum team's standup
   - Your scrum team's sprint planning
@@ -92,7 +98,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Demo Day / All Hands
 - Read some docs
   - [Our definition(s) of done]({% link _articles/definition-of-done.md %})
-  - [Login.gov design guide documentation](https://design.login.gov/)
+  - [Login.gov Design Guide](https://design.login.gov/)
 - Write some code
   - Assign yourself a Jira ticket
   - Open a pull request against the IdP
