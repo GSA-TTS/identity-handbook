@@ -6,7 +6,7 @@ category: Team
 
 ## TTS Onboarding
 
-TTS Talent has [their own onboarding checklist in Google Drive](https://docs.google.com/spreadsheets/d/1w0WSTUT0l7q19mAI6c2QCIpCFs0Cei4eukaiiRBTbRA/edit#gid=1775743049) that they share with new employees. The Login.gov tab on that document has one item, a link to this page in our handbook.
+TTS Talent has [their own onboarding checklist in Google Drive](https://docs.google.com/spreadsheets/d/1w0WSTUT0l7q19mAI6c2QCIpCFs0Cei4eukaiiRBTbRA/edit#gid=1775743049) that they share with new employees. The login.gov tab on that document has one item, a link to this page in our handbook.
 
 ## For new login.gov team members to complete themselves
 
