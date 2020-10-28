@@ -18,7 +18,7 @@ Expect this DoD to change over time.
 - Ensure that our accessibility posture has been maintained or improved, preferably via automated `aXe` tests
 - All code and tests have been merged to master in GitHub repo
 - The `application.yml` configurations have been updated as needed in deployed environments
-Database indexes exist for any new queries
+- Database indexes exist for any new queries
 - The dashboard and sample SPs have been updated if necessary
 - If multiple database migrations are necessary, the database migrations have been performed
 - The story is deployed to Dev and/or INT environments
