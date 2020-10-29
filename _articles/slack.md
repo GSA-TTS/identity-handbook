@@ -69,7 +69,7 @@ Here are some common Slack Channels for the login.gov team
 
 #### Design/UX
 
-- [`#login-ux`](https://gsa-tts.slack.com/archives/C0NGESUN5):
+- [`#login-ux`](https://gsa-tts.slack.com/archives/CEUQ9FXNJ):
   {% include tag.html name='design' color='bg-green' %}
   Channel for the user experience design team (research, visual, content)
 
