@@ -86,7 +86,7 @@ Here are some common Slack Channels for the login.gov team
   {% include tag.html name='appdev' color='bg-blue' %}
   Team Ada channel
 
-- [`#login-grace`](https://gsa-tts.slack.com/archives/C0NGESUN5):
+- [`#login-grace`](https://gsa-tts.slack.com/archives/C0184P9SCJ0):
   {% include tag.html name='appdev' color='bg-blue' %}
   Team Grace channel
 
