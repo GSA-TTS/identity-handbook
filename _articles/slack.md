@@ -78,6 +78,10 @@ Here are some common Slack Channels for the login.gov team
 
 #### Engineering/AppDev
 
+- [`#login-appdev`](https://gsa-tts.slack.com/archives/C0NGESUN5):
+  {% include tag.html name='appdev' color='bg-blue' %}
+  General IDP and Appdev matters
+
 - [`#login-ada`](https://gsa-tts.slack.com/archives/CNCGEHG1G):
   {% include tag.html name='appdev' color='bg-blue' %}
   Team Ada channel
