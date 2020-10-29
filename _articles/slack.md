@@ -88,7 +88,7 @@ Here are some common Slack Channels for the login.gov team
 
 - [`#login-katherine`](https://gsa-tts.slack.com/archives/C01710KMYUB):
   {% include tag.html name='appdev' color='bg-blue' %}
-  Team Katherin channel
+  Team Katherine channel
 
 - [`#login-reporting`](https://gsa-tts.slack.com/archives/C5E7EJWF7):
   Analytics and reporting channel
