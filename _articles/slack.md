@@ -69,7 +69,7 @@ Here are some common Slack Channels for the login.gov team
 
 #### Design/UX
 
-- [`#login-ux`](https://gsa-tts.slack.com/archives/C0NGESUN5):
+- [`#login-ux`](https://gsa-tts.slack.com/archives/CEUQ9FXNJ):
   {% include tag.html name='design' color='bg-green' %}
   Channel for the user experience design team (research, visual, content)
 
@@ -78,17 +78,21 @@ Here are some common Slack Channels for the login.gov team
 
 #### Engineering/AppDev
 
+- [`#login-appdev`](https://gsa-tts.slack.com/archives/C0NGESUN5):
+  {% include tag.html name='appdev' color='bg-blue' %}
+  General IDP and Appdev matters
+
 - [`#login-ada`](https://gsa-tts.slack.com/archives/CNCGEHG1G):
   {% include tag.html name='appdev' color='bg-blue' %}
   Team Ada channel
 
-- [`#login-grace`](https://gsa-tts.slack.com/archives/C0NGESUN5):
+- [`#login-grace`](https://gsa-tts.slack.com/archives/C0184P9SCJ0):
   {% include tag.html name='appdev' color='bg-blue' %}
   Team Grace channel
 
 - [`#login-katherine`](https://gsa-tts.slack.com/archives/C01710KMYUB):
   {% include tag.html name='appdev' color='bg-blue' %}
-  Team Katherin channel
+  Team Katherine channel
 
 - [`#login-reporting`](https://gsa-tts.slack.com/archives/C5E7EJWF7):
   Analytics and reporting channel

@@ -45,8 +45,8 @@ A pull request should be created from that latest branch to staging and producti
        - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
        - Release title: `RC #{SPRINT-NUMBER}`
        - *Save* the draft, do not publish as a pre-release
-   1. Release manager shares the draft release on #login-product with `@login-ux-team` to review content for plain language.
-   1. Release manager shares the draft release on #login-product with `@login-product-team` to ensure that no changes in the release are missing.
+   1. Release manager shares the draft release on #login-appdev with `@login-ux-team` to review content for plain language.
+   1. Release manager shares the draft release on #login-appdev with `@login-product-team` to ensure that no changes in the release are missing.
    1. Once approved, the release manager ensures all updates are saved in the release notes on GitHub.
 
 ### Release notes templates
@@ -99,7 +99,7 @@ Adding Emails: Patch release to include #3821, fixes a bug with adding emails to
 Scheduled for every other Wednesday
 
 1. Merge the staging promotion pull request (**NOT** a squashed merge, just a normal merge)
-1. Notify in Slack (`#login-product` and `#login-devops` channels)
+1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
     - e.g. `:recycle:  Starting idp RC <RELEASE_NUMBER> deploy to Staging`
 1. In the `identity-devops` repo:
    ```bash
@@ -143,7 +143,7 @@ Scheduled for every other Wednesday
 Scheduled for every other Thursday
 
 1. Merge the production promotion pull request
-1. Notify in Slack (`#login-product` and `#login-devops` channels)
+1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
     - e.g. `:recycle:  Starting idp RC <RELEASE_NUMBER> deploy to Production`
 1. In the `identity-devops` repo:
    ```bash

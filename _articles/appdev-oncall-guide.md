@@ -36,7 +36,7 @@ When handing off:
 
 ## Responsibilities
 
-1. Each day, check NewRelic for errors over the last 24h in `prod` and `staging` (there is a Slack reminder in `#login-product` for this)
+1. Each day, check NewRelic for errors over the last 24h in `prod` and `staging` (there is a Slack reminder in `#login-appdev` for this)
 1. Throughout the week, check for automated vulnerability pull requests and try to get them merged. These links to go GitHub pull request filters, search within these for ones to `identity-` repos:
 
     * [synk-bot][snyk]
