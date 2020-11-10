@@ -85,7 +85,7 @@ At this phase, communications should follow these steps (and any additional step
     - Does not yet meet threshold for reportable incident
     - Continue investigating and keep us in the loop
 * Real-time chat should happen in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/).
-* Create an issue in the [identity-security-private](https://github.com/18F/identity-devops-private/issues/new?template%3Dincident_commander_template.md) GitHub repository.
+* Create an issue in the [identity-security-private](https://github.com/18F/identity-security-private/issues/new?template%3Dincident_commander_template.md) GitHub repository.
 * Create a google docs
 * If incident is an outage SL updates the [Logon.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
 * Login.gov Agency Partners: send out an incident summary to LOGIN-PARTNERS@listserv.gsa.gov. Partner list: https://drive.google.com/drive/u/0/folders/0B4yIa0Upv1JJSkJOSmdsLWVOVmM)
