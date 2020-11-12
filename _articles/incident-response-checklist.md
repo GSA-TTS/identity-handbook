@@ -24,7 +24,7 @@ This is a quick checklist for any incident (security, privacy, outage, degraded 
  - System unavailable or functionality degraded
  - System under significant active attack from outside or inside threat
  - System integrity in question
-* [ ] [Severity assigned]({{site.baseurl}}/articles/secops-incident-response-guide.html#incident-serverities) (can be changed later as new information is collected)
+* [ ] [Severity assigned]({{site.baseurl}}/articles/secops-incident-response-guide.html#incident-severities) (can be changed later as new information is collected)
  - High - Confirmed PII breach, confirmed security penetration, complete outage
  - Medium - Suspected PII breach, suspected security penetration, partial outage
  - Low - Suspected attack, outage of non-prod persistent system (`int`)
