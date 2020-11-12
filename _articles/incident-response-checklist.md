@@ -19,12 +19,12 @@ This is a quick checklist for any incident (security, privacy, outage, degraded 
 
 ## Assess
 
-* [ ] [Incident confirmed]({{site.baseurl}}/articles/secops-incident-reponse-guide.html#initiate-phase)
+* [ ] [Incident confirmed]({{site.baseurl}}/articles/secops-incident-response-guide.html#initiate-phase)
  - System security potentially compromised
  - System unavailable or functionality degraded
  - System under significant active attack from outside or inside threat
  - System integrity in question
-* [ ] [Severity assigned]({{site.baseurl}}/articles/secops-incident-reponse-guide.html#incident-serverities) (can be changed later as new information is collected)
+* [ ] [Severity assigned]({{site.baseurl}}/articles/secops-incident-response-guide.html#incident-serverities) (can be changed later as new information is collected)
  - High - Confirmed PII breach, confirmed security penetration, complete outage
  - Medium - Suspected PII breach, suspected security penetration, partial outage
  - Low - Suspected attack, outage of non-prod persistent system (`int`)
@@ -56,5 +56,5 @@ This is a quick checklist for any incident (security, privacy, outage, degraded 
 # Resources
 
 * [Official login.gov Incident Response plan](https://drive.google.com/file/d/1Em3F3oZF_SRuuRLqwr6-pwlE4iNmT2ix/view) - The authoritative source
-* [login.gov Security Incident Response Guide]({{site.baseurl}}/articles/secops-incident-reponse-guide.html) - IR guidance and overview  - Defer to the official IR plan
+* [login.gov Security Incident Response Guide]({{site.baseurl}}/articles/secops-incident-response-guide.html) - IR guidance and overview  - Defer to the official IR plan
 * [NIST 800-61r2 Computer Security Incident Response Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
