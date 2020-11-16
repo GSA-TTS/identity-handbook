@@ -30,7 +30,7 @@ machine when done.
 
 ## Using `app-s3-secret`
 
-The easiest way to edit secrets is the `app-s3-secret` in the `identity-devops` repo.
+The easiest way to edit secrets is the `app-s3-secret` command in the `identity-devops` repo.
 
 These examples are for the IDP app in the `sandbox` AWS account and the `dev` environment:
 
