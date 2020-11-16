@@ -66,12 +66,18 @@ The lifecycle of a lambda:
         - The Lambda will download the encrypted image data from S3, and decrypt it
     - It will make HTTP requests via our outbound proxy to vendors
         - The request to the vendors will include either PII or decrypted image data
-    - When the lambda is done, it will HTTP POST back to the IDP
-        - It uses the `callback_url` with a unique token
-        - It authenticates by passing a `X-API-AUTH-TOKEN` header (shared secret) with the IDP, the token
-          is different per job (3 different jobs means there are 3 different authentication tokens)
-        - The IDP stores the result (which may contain PII) in Redis, symmetrically encrypted and
-          with a 60 second expiration
+6. When the lambda is done, it will HTTP POST back to the IDP
+    - It uses the `callback_url` with a unique token
+    - It authenticates by passing a `X-API-AUTH-TOKEN` header (shared secret) with the IDP, the token
+      is different per job (3 different jobs means there are 3 different authentication tokens)
+    - The IDP stores the result (which may contain PII) in Redis, symmetrically encrypted and
+      with a 60 second expiration.
+    - PII in the payload may include data from reading the driver's licese
+        - First name
+        - Last name
+        - Date of Birth
+        - Driver's license number
+        - Address
 7. On next `<meta>` refresh, the IDP will check Redis for the result for that particular job,
    and then continue with the rest of the flow
     - If after 60 seconds the IDP has not seen a response for the job, the IDP will decide the job
