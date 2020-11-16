@@ -7,7 +7,7 @@ category: "AppDev"
 
 ## Overview
 
-The IDP, Dashboard and PIVCAC apps load download their `application.yml`
+The IDP, Dashboard and PIVCAC apps download their `application.yml`
 when we activate/deploy an instance (see [`deploy/activate`][deploy-activate]
 and the [`activate.rb`][download-from-s3]). Since apps only download new values
 during instance activation **a recycle is necessary before apps can use
