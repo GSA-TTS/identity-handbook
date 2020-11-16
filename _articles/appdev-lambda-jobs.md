@@ -73,6 +73,8 @@ The lifecycle of a lambda:
           with a 60 second expiration
 7. On next `<meta>` refresh, the IDP will check Redis for the result for that particular job,
    and then continue with the rest of the flow
+    - If after 60 seconds the IDP has not seen a response for the job, the IDP will decide the job
+      has timed out, and show an error screen to the user, giving them an option to retry.
 
 [git-ref]: https://github.com/18F/identity-idp/blob/master/app/services/lambda_jobs/git_ref.rb
 
