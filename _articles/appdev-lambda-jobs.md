@@ -55,6 +55,7 @@ The lifecycle of a lambda:
         - Date of Birth
         - SSN
         - Driver's license number
+        - Address
 3. The IDP immediately kicks off a Lambda (IDP does not persist any of the form data)
     - The IDP is pinned to a particular SHA of the Lambda code, via its its source (see [`GIT_REF`][git-ref] constant)
     - The lambda payload contains a `callback_url` which has a unique token for the job
