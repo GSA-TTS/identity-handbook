@@ -42,7 +42,7 @@ aws-vault exec sandbox-power -- \
   ./bin/app-s3-secret --app idp --env dev
 ```
 
-**Recommended**: Just `grep` for the keys you want to check
+**Recommended**: `grep` for the keys you want to check
 
 ```bash
 cd identity-devops
