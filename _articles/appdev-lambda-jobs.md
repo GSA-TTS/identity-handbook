@@ -60,7 +60,7 @@ The lifecycle of a lambda:
     - The IDP is pinned to a particular SHA of the Lambda code, via its its source (see [`GIT_REF`][git-ref] constant)
     - The lambda payload contains a `callback_url` which has a unique token for the job
     - The lambda payload contains the values submitted from the form (S3 image urls, encryption keys, or PII as needed)
-4. The IDP will show a waiting page, refreshed via `<meta>` refresh tag
+4. The IDP will show a waiting page to the user
 5. The Lambda will process the jobs
     - (For image processing jobs only)
         - The Lambda will download the encrypted image data from S3, and decrypt it
