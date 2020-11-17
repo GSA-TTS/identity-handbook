@@ -78,8 +78,9 @@ The lifecycle of a lambda:
         - Date of Birth
         - Driver's license number
         - Address
-7. On next `<meta>` refresh, the IDP will check Redis for the result for that particular job,
-   and then continue with the rest of the flow
+7. The user waiting page will be polling for the result of the background job, where the IDP will
+   check Redis for the result for that particular job. Once it is complete, the user will continue
+   to the next step of the flow.
     - If after 60 seconds the IDP has not seen a response for the job, the IDP will decide the job
       has timed out, and show an error screen to the user, giving them an option to retry.
 
