@@ -43,12 +43,12 @@ The lifecycle of a lambda:
 
 1. (For image processing jobs only)
   - The IDP will generate pre-signed S3 URLs and pass them to the client/browser
-  - The browser will generate random encryption keys
+  - The browser will generate a random encryption key
   - The browser will AES-encrypt images and upload those encrypted images to the pre-signed S3 URLs
 2. The user submits a form to the IDP
     - For image processing jobs, the payload will contain:
         - S3 image URLs
-        - the encryption keys and IV
+        - the encryption key and IVs
     - For PII verification jobs, the payload will contain PII:
         - First name
         - Last name
