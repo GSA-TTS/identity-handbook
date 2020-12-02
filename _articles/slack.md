@@ -28,7 +28,10 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 - `@login-partnerships-team` Group to address login.gov partnerships team members
 - `@login-product-team` Group to address login.gov product managers
 - `@login-ux-team` Group for the design/UX team
+- `@login-appdev-team` Group for application development teams
 - `@login_leads` login team leads
+- `@login-feds` Group for login.gov federal FTE employees
+- `@github-admins-login` members of this group can edit [`identity-core`](https://github.com/orgs/18F/teams/identity-core) GitHub team membership
 
 ## Channels
 
