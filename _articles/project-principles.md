@@ -57,3 +57,7 @@ Login.gov provides a simple, secure way for the public to access their governmen
 - **Meaningful deadlines are not arbitrary.** Milestones should have a purpose.
 - **No HIPPOs** (highest paid person’s opinion). Titles and hierarchy don’t impact weight of ideas.
 - **Meetings are the exception, not the rule.** Have a clear understanding of who the meeting is with, who they are, the purpose of the meeting, and the intended outcomes.
+
+## Cost recovery
+
+As a government program that is not funded through appropriations, login.gov is required to be cost recoverable. Login.gov was created in 2017, and we are still on the path to cost recovery. As it currently stands we are on track to be cost recoverable by 2024. It is not login.gov's mission to make money; our goal is to be cost neutral.
