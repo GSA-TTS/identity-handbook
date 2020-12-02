@@ -11,6 +11,8 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 ## For new login.gov team members to complete themselves
 
 - Familiarize yourself with the [login.gov Handbook]({{site.url}})
+- Watch a [login.gov authentication overview](https://drive.google.com/file/d/1UFq0OAHgbLdPUXXj6FAIgSxtLyAfYxSa/view)
+- Watch a [login.gov identity verification overview](https://drive.google.com/file/d/1GanUUpkAcJCopQAPac4DSe10LREdSGZw/view)
 - Review the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
 - Review the [login.gov Design System](https://design.login.gov/)
 - Complete [GSA OLU](https://insite.gsa.gov/topics/training-and-development/online-university-olu?term=olu) IT Security Awareness Training, including accepting the GSA IT Rules of Behavior, which is required before we can give you access to any login.gov systems. If you joined GSA more than two months ago, you’ve already completed this task. (Detailees must complete similar organization driven training and provide as proof to login.gov team members)
@@ -37,7 +39,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 - Add a new JIRA Issue to the [People-Ops board](https://cm-jira.usa.gov/secure/RapidBoard.jspa?projectKey=LPO&rapidView=2861) to track completion of onboarding tasks.
   - `Create Bulk Sub Tasks` on the new issue and use the `Login.gov Onboarding Buddy Tasks` template.
-- Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on Slack.
+- Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on Slack. Cc `@github-admins-slack` on your request.
   - *For members needing **push commit** access*: Also add to the [identity-core](https://github.com/orgs/18F/teams/identity-core/members) team (contact [team maintainers](https://github.com/orgs/18F/teams/identity-core/members?utf8=%E2%9C%93&query=%20role%3Amaintainer) for this)
   - *For members NOT needing **push** access*: Also add to the [identity-team-yml](https://github.com/orgs/18F/teams/identity-team-yml/members) team, which grants read-only access. (contact [team maintainers](https://github.com/orgs/18F/teams/identity-team-yml/members?utf8=%E2%9C%93&query=+role%3Amaintainer) for this)
 - [Create a new issue in the `identity-devops` Github repository using the onboarding template](https://github.com/18F/identity-devops/issues/new?labels=administration&template=onboarding-devops.md&title=Onboarding+for+%5Binsert+new+team+member%27s+name%5D) and ping `@login-devops-oncall` in Slack to alert them to the new onboarding issue.
@@ -48,6 +50,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Contractors who are working on TTS projects most or full-time can be added as full Slack members.
   - Other collaborators should be added as multi-channel guests.
   - Full Slack access for Contractors is at the discretion of login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
+- Add to appropriate [login.gov Slack groups]({{site.url}}/articles/slack.html) like `login-feds` or `login-appdev-team`.
 - Add them to the [Login.gov Shared Calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com)
   - Non-GSA.gov email address: `See all event details` permission
   - With GSA.gov email address: `Make changes AND manage sharing`
