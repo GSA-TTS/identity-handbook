@@ -106,6 +106,7 @@ Scheduled for every other **Wednesday**
 1. In the `identity-devops` repo:
    ```bash
    cd identity-devops
+   git pull
    aws-vault exec prod-power -- /bin/zsh
    ```
 1. Recycle the IDP instances to get the new code, it automatically creates a new migration instance first.
