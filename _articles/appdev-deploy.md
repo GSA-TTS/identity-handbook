@@ -11,8 +11,10 @@ This guide assumes that:
 - You have a [GPG key set up with GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account) (for signing commits)
 - You have [set up `aws-vault`]({{site.baseurl}}/articles/infrastructure-setting-up-aws-vault.html), and have can SSH (via `ssm-instance`) in to our production environment
 
+Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of goood improvements all the time!
+
 ## Pre-deploy
-Scheduled for every other Tuesday
+Scheduled for every other **Tuesday**
 
 ### Cut a release branch
 
@@ -96,7 +98,7 @@ Adding Emails: Patch release to include #3821, fixes a bug with adding emails to
 ```
 
 ## Staging
-Scheduled for every other Wednesday
+Scheduled for every other **Wednesday**
 
 1. Merge the staging promotion pull request (**NOT** a squashed merge, just a normal merge)
 1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
@@ -104,6 +106,7 @@ Scheduled for every other Wednesday
 1. In the `identity-devops` repo:
    ```bash
    cd identity-devops
+   git pull
    aws-vault exec prod-power -- /bin/zsh
    ```
 1. Recycle the IDP instances to get the new code, it automatically creates a new migration instance first.
@@ -142,7 +145,7 @@ Scheduled for every other Wednesday
 ## Production
 Scheduled for every other Thursday
 
-1. Merge the production promotion pull request
+1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
 1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
     - e.g. `:recycle:  Starting idp RC <RELEASE_NUMBER> deploy to Production`
 1. In the `identity-devops` repo:
@@ -177,7 +180,6 @@ Scheduled for every other Thursday
 
     1. Manual Inspection
       - Check [NewRelic (Production IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52136858/traced_errors) for errors
-      - Set a timer for one hour, then check NewRelic again for errors.
       - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
 1. **PRODUCTION ONLY**: This step is required in production (but not staging)
@@ -187,7 +189,9 @@ Scheduled for every other Thursday
     ./bin/scale-in-old-instances prod idp
     ```
 
-1. Manually test the app in staging:
+1. Set a timer for one hour, then check NewRelic again for errors.
+
+1. Manually test the app in production:
     - Sign in to an account
     - Sign up for an account
     - Test proofing (identity verification) on the new account
