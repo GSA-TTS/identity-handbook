@@ -10,7 +10,7 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 
 ## For new login.gov team members to complete themselves
 
-- Familiarize yourself with the [login.gov Handbook]({{site.url}})
+- Familiarize yourself with the [login.gov Handbook]({{site.baseurl}})
 - Watch a [login.gov authentication overview](https://drive.google.com/file/d/1UFq0OAHgbLdPUXXj6FAIgSxtLyAfYxSa/view)
 - Watch a [login.gov identity verification overview](https://drive.google.com/file/d/1GanUUpkAcJCopQAPac4DSe10LREdSGZw/view)
 - Review the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
