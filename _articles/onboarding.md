@@ -50,7 +50,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Contractors who are working on TTS projects most or full-time can be added as full Slack members.
   - Other collaborators should be added as multi-channel guests.
   - Full Slack access for Contractors is at the discretion of login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
-- Add to appropriate [login.gov Slack groups]({{site.url}}/articles/slack.html) like `login-feds` or `login-appdev-team`.
+- Add to appropriate [login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
 - Add them to the [Login.gov Shared Calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com)
   - Non-GSA.gov email address: `See all event details` permission
   - With GSA.gov email address: `Make changes AND manage sharing`
@@ -136,7 +136,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Update the knapsack report for the IdP
   - Update the IdP's rubygem and npm dependencies
 - Learn to release the app
-  - Read the [release management guide]({{site.baseurl}}/articles/appdev-deploy.html)
+  - Read the [release management guide]({% link _articles/appdev-deploy.md %})
   - Shadow someone who is deploying the app
 - Get access to the login.gov static site setting in Federalist
 - Review some more documentation

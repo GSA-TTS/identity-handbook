@@ -17,11 +17,11 @@ private links and contact information useful for oncall infrastructure engineers
 * **Acknowledge pages** - Ack OpsGenie pages within 5 minutes if possible to ensure timely response and avoid rollover to secondary
 * **Appropriately respond to alert** - Assess impact to end users and service providers and judge severity, acting as Incident Response reporter if appropriate
 * **Check Production** - Review systems and logs for indicators of issues which are not yet monitored, or unexpected behaviors
-* **Initiate Incident Response (IR)** - Based on [Incident Severities]({{site.baseurl}}/articles/secops-incident-response-guide.html#incident-severities)
+* **Initiate Incident Response (IR)** - Based on [Incident Severities]({% link _articles/secops-incident-response-guide.md %}#incident-severities)
   * **High Severity** - Act immediately 24/7 and see through to remediation or confirmed handoff to other team members
   * **Medium Severity** - During business hours as a top priority
   * **Low Severity** - During business hours and yielding for release and other duties
-* **Initiate Incident Response (IR) Process** - Act as Situation Lead/Incident Commander following the [Security Incident Response Guide]({{site.baseurl}}/articles/secops-incident-response-guide.html)
+* **Initiate Incident Response (IR) Process** - Act as Situation Lead/Incident Commander following the [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
 * **Handle interrupts**
   * Administrative tasks (onboard/offboard/change access)
   * Urgent product, app, or ops team requests
@@ -104,7 +104,7 @@ Before going on-call for Identity DevOps ensure the following:
 * Comfortable navigating APM and Infrastructure areas in NewRelic
 * Comfortable reviewing logs in AWS CloudWatch and/or with cw CLI tool
 * Shadowed full set of deploys: dev, int, staging, and prod application and other infrastructure code
-* Reviewed [Security Incident Response Guide]({{site.baseurl}}/articles/secops-incident-response-guide.html)
+* Reviewed [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
 * Reviewed [past postmortems](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui)
 * Joined [#identity-situation](https://gsa-tts.slack.com/messages/login-situation/) channel
 * Joined [identity-devops Hangout](https://chat.google.com/room/AAAAJIpl9Oo) group (* Only for use in case of Slack outage)

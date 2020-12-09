@@ -155,4 +155,4 @@ Here's the step-by-step to enable the lambda background jobs workflow in the IDP
 
 3. Recyle the IDP so the changes take effect
 
-[secrets-config]: {{site.baseurl}}/articles/appdev-secrets-configuration.html
+[secrets-config]: {% link _articles/appdev-secrets-configuration.md %}

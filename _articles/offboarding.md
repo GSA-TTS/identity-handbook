@@ -24,8 +24,8 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
   - Note that CircleCI, CodeClimate, and Snyk rights are removed via GitHub integration
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request that the user be removed from the Login.gov project (and deactivated if they are no longer working for GSA).
 - Use the [TTS Slack Form](https://goo.gl/forms/mKATdB9QuNo7AXVY2) to submit user modification
-- Remove from [login.gov Slack groups]({{site.url}}/articles/slack.html).
-- Remove from [all accounts]({{site.url}}/articles/accounts.html)
+- Remove from [login.gov Slack groups]({% link _articles/slack.md %}).
+- Remove from [all accounts]({% link _articles/accounts.md %})
   - [Remove user from Login.gov Google Groups](https://groups.google.com/a/gsa.gov/forum/#!myforums)
   - [Remove the user from Hubspot](https://app.hubspot.com/settings/5531666/users)
   - [Remove user from Figma](https://www.figma.com/files/team/893580939040886405/Login.gov/members)
