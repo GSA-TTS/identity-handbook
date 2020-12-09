@@ -28,6 +28,6 @@ This page lists various services that login.gov team uses to do work.
 - OpsGenie
 - search.gov dashboard
 
-[onboarding]: {{site.url}}/articles/onboarding.html
-[offboarding]: {{site.url}}/articles/offboarding.html
+[onboarding]: {% link _articles/onboarding.md %}
+[offboarding]: {% link _articles/offboarding.md %}
 [handbook-appendix]: https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUzDmIxKn11DPJzk/edit#heading=h.1c3ohc5eqn5r

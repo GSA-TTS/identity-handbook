@@ -10,7 +10,7 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 
 ## For new login.gov team members to complete themselves
 
-- Familiarize yourself with the [login.gov Handbook]({{site.url}})
+- Familiarize yourself with the [login.gov Handbook]({{site.baseurl}})
 - Watch a [login.gov authentication overview](https://drive.google.com/file/d/1UFq0OAHgbLdPUXXj6FAIgSxtLyAfYxSa/view)
 - Watch a [login.gov identity verification overview](https://drive.google.com/file/d/1GanUUpkAcJCopQAPac4DSe10LREdSGZw/view)
 - Review the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
@@ -50,7 +50,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Contractors who are working on TTS projects most or full-time can be added as full Slack members.
   - Other collaborators should be added as multi-channel guests.
   - Full Slack access for Contractors is at the discretion of login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
-- Add to appropriate [login.gov Slack groups]({{site.url}}/articles/slack.html) like `login-feds` or `login-appdev-team`.
+- Add to appropriate [login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
 - Add them to the [Login.gov Shared Calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com)
   - Non-GSA.gov email address: `See all event details` permission
   - With GSA.gov email address: `Make changes AND manage sharing`
@@ -136,7 +136,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Update the knapsack report for the IdP
   - Update the IdP's rubygem and npm dependencies
 - Learn to release the app
-  - Read the [release management guide]({{site.baseurl}}/articles/appdev-deploy.html)
+  - Read the [release management guide]({% link _articles/appdev-deploy.md %})
   - Shadow someone who is deploying the app
 - Get access to the login.gov static site setting in Federalist
 - Review some more documentation

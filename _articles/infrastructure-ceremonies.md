@@ -67,7 +67,7 @@ Used for the weekly handoff between the current and previous On-Call team member
 - Previous On-Call(s): fill out "What ops stuff happened last week?" section of doc
 - Current On-Call(s): fill out "What ops stuff is happening this week?" section of doc
 
-Start the meeting with those sections of the doc, following the [On-Call review and handoff procedures]({{site.baseurl}}/articles/infrastructure-oncall-guide.html#procedure) when doing so. Follow the On-Call review with either [Sprint Planning](#sprint-planning) or [Backlog Refinement](#backlog-refinement) depending upon the week.
+Start the meeting with those sections of the doc, following the [On-Call review and handoff procedures]({% link _articles/infrastructure-oncall-guide.md %}#procedure) when doing so. Follow the On-Call review with either [Sprint Planning](#sprint-planning) or [Backlog Refinement](#backlog-refinement) depending upon the week.
 
 ### Sprint Retro
 (Part of [Weekly Omnibus](#weekly-omnibus); done at the start of a new sprint)
