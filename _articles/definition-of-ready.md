@@ -39,6 +39,7 @@ For example:
 Additional context is always useful, such as:
 
 - Clear steps to reproduce
+- Potential impact to users
 - Browser and operating system version
 - Links to more information (such as Salesforce ticket or Slack conversation links)
 
@@ -48,4 +49,4 @@ Tasks are JIRA tickets that track important work on our team. Specific examples 
 > * Enginering: Backfills, code refactors, etc.
 > * UX: Writing research plans, designing a new layout, etc.
 
-Differentiating between tasks and stories allows us to gauge whether the output of our efforts (all the work we do) has induced outcomes (tangible user impact). It provides indicators to the team to gauge whether we need to revisit our stories and tasks Examples: were there too many unknowns taking on a story, can some tasks be structured to be stories etc. 
+Differentiating between tasks and stories allows us to gauge whether the output of our efforts (all the work we do) has induced outcomes (tangible user impact). It provides indicators to the team to gauge whether we need to revisit our stories and tasks Examples: were there too many unknowns taking on a story, can some tasks be structured to be stories etc.
