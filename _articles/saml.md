@@ -39,4 +39,4 @@ SamlIdp::AssertionBuilder#raw
 
 ## Testing with SAML-sinatra
 
-One difficulty is that the response is encrypted, so it's hard to use tools to just see the contents of the response. The easiest way to get around this is to modify your local idp's Gemfile to pick up a local copy of the `saml_idp` gem, then comment out everything in `SamlResponse#signed_assertion` [except the line](https://github.com/18F/saml_idp/blob/master/lib/saml_idp/saml_response.rb#L70) `assertion_builder.signed`.
+The SAML Sample app receives encrypted responses by default, but there is now an option to skip the encryption if desired so the response XML can be inspected in the browser tools listed above.
