@@ -7,8 +7,10 @@ category: Infrastructure
 
 ## Quick Reference
 
-The [DevOps Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) contains
+* [DevOps Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) contains
 private links and contact information useful for oncall infrastructure engineers at login.gov.
+* [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arrises
+* [Troubleshooting Quick Reference]({{site.baseurl}}/articles/incident-response-checklist.html) - when you are troubleshooting and not sure where to start 
 
 ## Responsibilities
 
@@ -35,7 +37,7 @@ private links and contact information useful for oncall infrastructure engineers
 * **Release DevOps code** - Follow release schedule and steps in [Deploying Infrastructure Code](https://github.com/18F/identity-devops/wiki/Deploying-Infrastructure-Code)
 * **Coordinate with AppDev release manager** - For IdP staging (Tuesday) and production (Thursday) release days monitor release progress
 * **Review any open PRs**
-* **Check ACs for issues in Pending Acceptance** - Unless issue is your own
+* **Check ACs for issues in Pending Acceptance** - Once released to `prod` (or a specific environment if specified in the AC of the issue), unless issue is your own
 * **Ensure clean handoff of ongoing issues**
 * **Discuss prior week's issues in standup**
 * **Maintain the #login-devops channel topic**
