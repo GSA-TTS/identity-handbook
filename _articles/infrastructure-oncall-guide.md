@@ -10,7 +10,7 @@ category: Infrastructure
 * [DevOps Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) contains
 private links and contact information useful for oncall infrastructure engineers at login.gov.
 * [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arrises
-* [Troubleshooting Quick Reference]({{site.baseurl}}/articles/incident-response-checklist.html) - when you are troubleshooting and not sure where to start 
+* [Troubleshooting Quick Reference]({{site.baseurl}}/articles/troubleshooting-quick-reference.html) - when you are troubleshooting and not sure where to start 
 
 ## Responsibilities
 
