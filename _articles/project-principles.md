@@ -7,7 +7,7 @@ category: Team
 ---
 
 ## Our vision
-To improve how the public interacts with government through a single login experience that is designed around their needs and addresses their paint points.
+To improve how the public interacts with government through a single login experience that is designed around their needs and addresses their pain points.
 
 ### Mission statement
 
