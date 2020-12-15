@@ -40,3 +40,38 @@ SamlIdp::AssertionBuilder#raw
 ## Testing with SAML-sinatra
 
 The SAML Sample app receives encrypted responses by default, but there is now an option to skip the encryption if desired so the response XML can be inspected in the browser tools listed above.
+
+## Invalid Signature
+
+If, when logging in to the SAML Sinatra sample app, you get an error saying:
+
+> Authentication Error! <br/>
+> Invalid Signature on SAML Response.
+
+This is usually caused by a mismatch between the IdP certificate used to sign the response, and the recorded signature of the certificate which is saved in the environment variable `idp_cert_fingerprint` (either in config/application.yml, or the environment variables in the deployed environment).
+
+To fix this, grab the certificate from the response, e.g.,
+
+```
+<KeyInfo 
+    xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <ds:X509Data>
+        <ds:X509Certificate>
+        MII/KeepCopyingButBreakItUpInto64CharacterLinesWhenYouSaveItHere...TheLastLineMayNotBeExactly64CharactersAndThatsOK=
+        </ds:X509Certificate>
+    </ds:X509Data>
+</KeyInfo>
+```
+edit it to look like a normal certificate (or find the orig), e.g., 
+```
+-----BEGIN CERTIFICATE-----
+MII/KeepCopyingButBreakItUpInto64CharacterLinesWhenYouSaveItHere
+...
+TheLastLineMayNotBeExactly64CharactersAndThatsOK=
+-----END CERTIFICATE-----
+```
+and finally calculate the fingerprint:
+```
+$ openssl x509 -noout -fingerprint -sha1 -inform pem -in file.crt
+SHA1 Fingerprint=AB:CD:EF:12:34:56:78:90:A1:B2:C3:D4:E5:F6:1A:2B:3C:4D:5E:6F
+```
