@@ -100,16 +100,16 @@ To temporarily take on-call:
 Before going on-call for Identity DevOps ensure the following:
 
 * On-boarding ticket completed
-* Using identity-master account in AWS Console and able to switch to FullAdmin roles in 18f-identity, 18f-identity-dev, identity-sms-prod, and identity-sms-dev accounts
+* Access [AWS accounts]({{site.baseurl}}/articles/infrastructure-aws-accounts-and-roles.html)
 * Laptop with AWS credentials to access same accounts from CLI
 * Comfortable with sandbox tasks (Terraform plan and apply, navigating instances)
 * Comfortable navigating APM and Infrastructure areas in NewRelic
 * Comfortable reviewing logs in AWS CloudWatch and/or with cw CLI tool
-* Shadowed full set of deploys: dev, int, staging, and prod application and other infrastructure code
+* Shadowed full set of deploys: `dev`, `int`, `staging`, and `prod` application and other infrastructure code
 * Reviewed [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
 * Reviewed [past postmortems](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui)
 * Joined [#identity-situation](https://gsa-tts.slack.com/messages/login-situation/) channel
-* Joined [identity-devops Hangout](https://chat.google.com/room/AAAAJIpl9Oo) group (* Only for use in case of Slack outage)
+* Joined [identity-devops Hangout](https://chat.google.com/room/AAAAJIpl9Oo) group (* In case of Slack outage)
 * Able to SSH into production instances
 * OpsGenie app installed on phone and signed in
 * [OpsGenie profile and notifications](https://login-gov.app.opsgenie.com/settings/user/profile) configured
@@ -125,10 +125,10 @@ Before going on-call for Identity DevOps ensure the following:
   * Confirm
   * Use `/genie help` to get started or see the [OpsGenie - Slack Integration Docs](https://docs.opsgenie.com/docs/slack-app-integration)
 * Created test alarm in OpsGenie to verify notification works (*Please ack before 5 minutes to avoid notifying secondary)
-* Test IdP account with SMS and PIV enabled in:
-  * int
-  * staging
-  * prod
+* Created and tested GSA email IdP account with SMS and PIV enabled in:
+  * `int`
+  * `staging`
+  * `prod`
 * FEELING READY? You got this.
 
 ## Additional Resources
