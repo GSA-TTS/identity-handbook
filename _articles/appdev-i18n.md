@@ -5,7 +5,7 @@ description: "Process and guidelines for localization and string translation"
 category: AppDev
 ---
 
-Login.gov is currently available in English, Spanish, and French. This guide covers the tools available to translate the application, and the processes around introducing and translating new strings.
+Login.gov is currently available in English (American), Spanish (Mexican), and French (Canadian). This guide covers the tools available to translate the application, and the processes around introducing and translating new strings.
 
 ## Internationalization APIs
 
@@ -63,6 +63,6 @@ You can also take advantage of some automated tooling to assist in this process:
 
 ### How to request translations
 
-As mentioned earlier in this guide, the same YAML structure should exist for all supported locales, including the translated text values. Even if you are not a native speaker of the language, you should plan to include a translated value.
+Translations are requested when content is added or updated on secure.login.gov and login.gov. You can find specific guidance on how to request translations in the [Login.gov guidance document](https://docs.google.com/document/d/16RVO4Gr1bBTt8RV14Jsi1U77lKCBWRagowZbjdsXQ0w/edit).
 
 You can find specific guidance on how to request translations in the [Login.gov guidance document](https://docs.google.com/document/d/16RVO4Gr1bBTt8RV14Jsi1U77lKCBWRagowZbjdsXQ0w/edit).
