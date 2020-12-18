@@ -43,9 +43,9 @@ As new screens are added or existing views are updated, the set of localized str
 
 ### When should strings be added?
 
-Page copy will often change through the process of design iteration and by feedback from others on the team. It is up to the developer's discretion when to add strings to `config/locales`, as opposed to using temporary text in an in-progress implementation.
+During the design process, the page copy may often change through iteration and feedback from the team and/or directly from the public. UX Team members will include layouts that display English, French and Spanish translations prior to handing off for Engineering to build. You can read more about that process here:  
 
-However, keep in mind:
+NOTE:
 
 - To avoid mistakenly leaving text as untranslated, it can help to introduce the string sooner rather than later.
 - The naming of the string key should ideally be generalized enough to not be tightly coupled with the exact text, which can improve resilience to changes in copy.
@@ -61,12 +61,8 @@ You can also take advantage of some automated tooling to assist in this process:
 - Running `i18n-tasks add-missing` will generate placeholder values for all missing keys.
   - [See documentation for "`i18n-tasks add-missing`"](https://github.com/glebm/i18n-tasks#add-missing-keys)
 
-### How to translate strings?
+### How to request translations
 
 As mentioned earlier in this guide, the same YAML structure should exist for all supported locales, including the translated text values. Even if you are not a native speaker of the language, you should plan to include a translated value.
 
-This can be done by…
-
-1. Reaching out to colleagues within TTS who are native speakers of the language
-2. Or, making a best effort at a translation using a service like [Google Translate](https://translate.google.com/)
-3. Or, using the available professional translation services with whom Login.gov contracts. Contact Amber Van Amburg on Slack for more information.
+You can find specific guidance on how to request translations in the [Login.gov guidance document](https://docs.google.com/document/d/16RVO4Gr1bBTt8RV14Jsi1U77lKCBWRagowZbjdsXQ0w/edit).
