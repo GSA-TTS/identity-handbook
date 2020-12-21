@@ -1,6 +1,6 @@
 ---
 title: "Lambda Background Jobs"
-description: "Overview of and launch checklist for our Lambda workers"
+description: "Overview of and launch checklist for our async Lambda workers"
 layout: article
 category: "AppDev"
 ---
@@ -15,29 +15,12 @@ Generally, the jobs fall into two categories:
 1. ID card scanning (image processing jobs)
 2. PII verification
 
-```
-      +--------->  AWS S3  <------------+
-      |                                 |
-      |                                 |
- User (browser)                         |
-      |                                 |
-      |                      +----------+-----------+
-      |                      |                      |
-      v           +--------->+ AWS Lambda Functions |
-+-----+-----+     |          |                      |
-|           +-----+          ++---------+-----------+
-|    IDP    |                 |         |
-|           |    HTTP POST    |         v
-|           +<----------------+   Outbound Proxy
-+--+-----+--+                           |
-   |     |                              |
-   |     |                              |
-   |     |                              v
-   |     |                           Vendors
-   v     v
-Redis  Postgres
-```
-(to update this diagram, copy-paste this to and from <http://asciiflow.com>)
+
+![architecture diagram of async/lambda]({{site.baseurl}}/images/lambda-async-diagram.png)
+
+(to update this diagram, edit the [Async/Lambda Architecture][figma] file in Figma and re-export it)
+
+[figma]: https://www.figma.com/file/w3TLJopAqDMjER3uCo8Y6v/Async%2FLambda-Architecture?node-id=0%3A1
 
 The lifecycle of a lambda:
 
