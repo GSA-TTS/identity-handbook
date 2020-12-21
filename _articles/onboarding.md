@@ -22,7 +22,7 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
   - Make sure to join `#login`, the main announcement channel for our team
   - Contractors with full Slack access should add the word "contractor" to their Slack profile for the benefit of the wider TTS audience.
 - Make sure your GitHub account is set up [like this](https://handbook.tts.gsa.gov/github/#setup).
-- Add the following email address to your Google Calendar to see the Login.gov Shared Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
+- Add the following email address to your Google Calendar to see the login.gov Shared Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
 - Add yourself to the [`team.yml`](https://github.com/18F/identity-private/blob/master/team/team.yml) file
 - Request access to relevant Google Groups, [the handbook has a list of active groups](https://login-handbook.app.cloud.gov/articles/email.html#internal-team-lists)
 - Add a signature to your GSA email account like this:
@@ -38,7 +38,7 @@ As an on-boarding buddy you'll be a new employee's main point of contact and log
 Look at this work as a power multiplier, you are helping someone gain a firm foundation to work upon, you are starting up a new engine.
 
 - Add a new JIRA Issue to the [People-Ops board](https://cm-jira.usa.gov/secure/RapidBoard.jspa?projectKey=LPO&rapidView=2861) to track completion of onboarding tasks.
-  - `Create Bulk Sub Tasks` on the new issue and use the `Login.gov Onboarding Buddy Tasks` template.
+  - `Create Bulk Sub Tasks` on the new issue and use the `login.gov Onboarding Buddy Tasks` template.
 - Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on Slack. Cc `@github-admins-slack` on your request.
   - *For members needing **push commit** access*: Also add to the [identity-core](https://github.com/orgs/18F/teams/identity-core/members) team (contact [team maintainers](https://github.com/orgs/18F/teams/identity-core/members?utf8=%E2%9C%93&query=%20role%3Amaintainer) for this)
   - *For members NOT needing **push** access*: Also add to the [identity-team-yml](https://github.com/orgs/18F/teams/identity-team-yml/members) team, which grants read-only access. (contact [team maintainers](https://github.com/orgs/18F/teams/identity-team-yml/members?utf8=%E2%9C%93&query=+role%3Amaintainer) for this)
@@ -51,7 +51,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Other collaborators should be added as multi-channel guests.
   - Full Slack access for Contractors is at the discretion of login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
 - Add to appropriate [login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
-- Add them to the [Login.gov Shared Calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com)
+- Add them to the [login.gov Shared Calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com)
   - Non-GSA.gov email address: `See all event details` permission
   - With GSA.gov email address: `Make changes AND manage sharing`
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the login.gov project.
@@ -67,14 +67,14 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 ## For UX team members
 
-- Familiarize yourself with the [Login.gov Design System](https://design.login.gov/)
-- Familiarize yourself with the [Login.gov UX Drive Folders](https://drive.google.com/drive/folders/12qRTGijG9oOU8FRvZfK30qAN4v8LCzHG)
+- Familiarize yourself with the [login.gov Design System](https://design.login.gov/)
+- Familiarize yourself with the [login.gov UX Drive Folders](https://drive.google.com/drive/folders/12qRTGijG9oOU8FRvZfK30qAN4v8LCzHG)
 
 ## For Partnerhsips team members
 
 - Check out the [Partnerships Area of the handbook]({{site.baseurl}}/#partnerships)
 - Be sure to join the main Slack channels for our team, `#login` and `#login-partnerships`.
-- Add the following email address to your Google Calendar to see the Login.gov Partnerships Team Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
+- Add the following email address to your Google Calendar to see the login.gov Partnerships Team Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
 - Add the user to [Hubspot](https://app.hubspot.com/settings/5531666/users)
 
 
@@ -101,7 +101,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Demo Day / All Hands
 - Read some docs
   - [Our definition(s) of done]({% link _articles/definition-of-done.md %})
-  - [Login.gov Design Guide](https://design.login.gov/)
+  - [login.gov Design Guide](https://design.login.gov/)
 - Write some code
   - Assign yourself a Jira ticket
   - Open a pull request against the IdP
