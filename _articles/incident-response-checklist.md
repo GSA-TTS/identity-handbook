@@ -55,6 +55,6 @@ This is a quick checklist for any incident (security, privacy, outage, degraded 
 
 # Resources
 
-* [Official login.gov Incident Response plan](https://drive.google.com/file/d/1Em3F3oZF_SRuuRLqwr6-pwlE4iNmT2ix/view): The authoritative source
+* [Official login.gov Incident Response plan](https://drive.google.com/file/d/1AQ_TMf7M7WZjHo6hlJ5L3lUxzA57f2oQ/view?usp=sharing): The authoritative source
 * [login.gov Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %}): IR guidance and overview, defer to the official IR plan
 * [NIST 800-61r2 Computer Security Incident Response Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
