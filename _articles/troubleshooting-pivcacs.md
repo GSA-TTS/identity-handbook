@@ -11,6 +11,8 @@ Using a PIV/CAC with login.gov relies on a certificate trust chain. The [identit
 repo tracks trusted issuing certificates in source control. We need to know that a certificate is used to issue PIVs
 before we trust it (since not all certificates are used for issuing PIVs).
 
+Related article: [Common OpenSSL command line recipes]({% link _articles/openssl-recipes.md %})
+
 ## Steps
 
 If a user writes in that they can't log in to login.gov with their PIV and get errors like "The certificate you selected is invalid",
