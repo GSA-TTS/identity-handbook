@@ -18,7 +18,7 @@ Login.gov provides a simple, secure way for the public to access their governmen
 ## Strategic pillars
 
 ### Help agencies focus on their core missions, not identity
-*We do the work so agencies don’t have to.* Login.gov enables and creates a seamless way for the public to engage and interact with their agency through a secure, user friendly login experience. We are a a trustworthy government partner to the governement agencies that integrate with login.gov.
+*We do the work so agencies don’t have to.* Login.gov enables and creates a seamless way for the public to engage and interact with their agency through a secure, user friendly login experience. We are a trustworthy government partner to the government agencies that integrate with login.gov.
 
 ### Lower barriers to accessing government services for the public
 *We decrease the friction of using government services online.*
@@ -27,7 +27,7 @@ Login.gov provides a simple, secure way for the public to access their governmen
 *We are stringent about security and privacy best practices.* Login.gov takes seriously the use of authentication and identity best security practices at every stage of the login.gov experience. You can read more about that in our [privacy and security statement](https://login.gov/policy/).
 
 ### Drive accountability + transparency
-*We help improve public trust in government by being open source.* Login.gov shares our processes with the public and govnerment agency partners early and often and publicly abide by security and privacy standards.
+*We help improve public trust in government by being open source.* Login.gov shares our processes with the public and government agency partners early and often and publicly abide by security and privacy standards.
 
 <hr>
 
@@ -57,7 +57,3 @@ Login.gov provides a simple, secure way for the public to access their governmen
 - **Meaningful deadlines are not arbitrary.** Milestones should have a purpose.
 - **No HIPPOs** (highest paid person’s opinion). Titles and hierarchy don’t impact weight of ideas.
 - **Meetings are the exception, not the rule.** Have a clear understanding of who the meeting is with, who they are, the purpose of the meeting, and the intended outcomes.
-
-## Cost recovery
-
-As a government program that is not funded through appropriations, login.gov is required to be cost recoverable. Login.gov was created in 2017, and we are still on the path to cost recovery. As it currently stands we are on track to be cost recoverable by 2024. It is not login.gov's mission to make money; our goal is to be cost neutral.
