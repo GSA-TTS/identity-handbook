@@ -22,7 +22,7 @@ Documenting our matrix is an on-going process. The partnerships team continually
 5. [Product](#product)
 6. [Shipping Public/Client-Facing Materials](#client-materials)
 7. [Technical](#technical)
-7. [Service](#service)
+8. [Service](#service)
 
 <a name="agreements-template"></a>
 
