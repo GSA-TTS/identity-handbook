@@ -138,3 +138,34 @@ Certificate:
          69:88:fd:9a
 </code></pre>
 </details>
+
+## Convert PKCS7 (`.p7b`) to PEM
+
+Sometimes Cerficate Authority certs are available in PKCS7 format but we need them in PEM format for our app.
+
+For these examples, we'll use a variable `$p7b_path`
+
+```bash
+p7b_path="/path/to/your.p7b"
+```
+
+1. Figure out what encoding the `.p7b` is
+
+    - If the `file` identities the file as "data", then it's likely in the binary **DER** format
+    - Otherwise it's probably the ASCII **PEM** format already
+
+    ```bash
+    file "$p7b_path"
+    file.p7b: data
+    ```
+
+2. Convert the file, it prints to stdout. This Ruby script will take the PEM files and write them to files that match our PKI naming convention:
+
+    ```bash
+    openssl pkcs7 -print_certs \
+        -in "$p7b_path" \
+        -inform der \
+        -outform pem | \
+        ruby -r openssl \
+             -e 'STDIN.read.split("\n\n").each_with_index { |cert, i| subject = OpenSSL::X509::Certificate.new(cert).subject.to_s(OpenSSL::X509::Name::COMPAT); File.open("config/certs/#{subject} #{"%02d" % i}.pem", "w") { |f| f.puts cert } }'
+    ```
