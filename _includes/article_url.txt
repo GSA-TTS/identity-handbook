@@ -1,5 +1,0 @@
-{%- if include.article.redirect_to -%}
-  {{ article.redirect_to }}
-{%- else -%}
-  {{ article.url | prepend: site.baseurl }}
-{%- endif -%}

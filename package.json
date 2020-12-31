@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@18f/private-eye": "^2.0.0",
-    "anchor-js": "^4.2.2",
-    "identity-style-guide": "^2.2.1"
-  }
-}
