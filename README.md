@@ -17,8 +17,6 @@ make run
 
 ## Running Tests
 
-You can use the command below to test your code against the checks we've established in Circle CI.
-
 ```
 make test
 ```
