@@ -14,3 +14,9 @@ article and it will be automatically linked to from the index of all articles.
 ```
 make run
 ```
+
+## Running Tests
+
+```
+make test
+```
