@@ -67,23 +67,30 @@ Things to consider when assessing severity:
   * Whether the issue is in a primary or secondary flow
 
 1. High severity - involves an active (launched) partner in Production environment
-    a. High-sev incidents successfully compromise the confidentiality/integrity of Personally Identifiable Information (PII), impact the availability of services for a large number of customers, or have significant financial impact.
 
-    -OR-
+    1. High-sev incidents successfully compromise the confidentiality/integrity of Personally Identifiable Information (PII), impact the availability of services for a large number of customers, or have significant financial impact.
 
-    An active (launched) login.gov partner is reporting that no user can authenticate or proof.
+        **OR**
 
-    b. Required to be addressed immediately and ongoing until resolved.
+        An active (launched) login.gov partner is reporting that no user can authenticate or proof.
+
+    1. Required to be addressed immediately and ongoing until resolved.
+
 2. Medium severity
-    a. Med-sev incidents represent attempts (possibly un- or not-yet-successful) at breaching PII, or those with limited availability/financial impact.
-    -OR-
-    An active (Launched) login.gov partner is reporting that some users are not able to authenticate or proof in production.
-    -OR-
-    A partner is reporting that the sandbox/INT environment is down and no user can authenticate or proof.
 
-    b. Will be addressed immediately during business hours
+    1. Med-sev incidents represent attempts (possibly un- or not-yet-successful) at breaching PII, or those with limited availability/financial impact.
 
-    c. Responders should attempt to consult stakeholders before causing downtime, but may proceed without them if they can’t be contacted in a reasonable time-frame.
+        **OR**
+
+        An active (Launched) login.gov partner is reporting that some users are not able to authenticate or proof in production.
+
+        **OR**
+
+        A partner is reporting that the sandbox/INT environment is down and no user can authenticate or proof.
+
+    2. Will be addressed immediately during business hours
+
+    3. Responders should attempt to consult stakeholders before causing downtime, but may proceed without them if they can’t be contacted in a reasonable time-frame.
 
 3. Low Severity  
     a. Low-sev incidents don’t affect PII, and have no availability or financial impact.
