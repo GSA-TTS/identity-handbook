@@ -15,7 +15,6 @@ distribute the load. Before being added to the oncall rotation, an engineer must
 3. SSM access to production
 4. Join #identity-situation channel and #login-partnerships
 
-
 ## OpsGenie Team & Rotations
 
 For OpsGenie access, ask Mo and the devops team.
@@ -96,3 +95,7 @@ Things to consider when assessing severity:
   * Generally expected to be answered in five business days.
   * More complicated requests may take longer; expected turnaround should be communicated.
   * On occasion, requests are deemed urgent and should be made a priority.
+
+## Internal login.gov on-call guidance
+
+Additional on-call guidance, including time in-lieu is available in the [Internal login.gov on-call guidance Google Doc](https://docs.google.com/document/d/1mOU3rnBJUKiMNFnz-odudmzNCo06CoKsAlCX1ZrK4ZY/edit#)
