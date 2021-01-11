@@ -57,7 +57,11 @@ As new screens are added or existing views are updated, the set of localized str
 
 Content will change through the process of design iteration and feedback. It is up to the team's discretion when to add strings to `config/locales`, as opposed to using temporary text in an in-progress implementation.
 
+<<<<<<< HEAD
 However, keep in mind:
+=======
+**Note**:
+>>>>>>> f3f1432fbc6b865564881f5687a3f8d8f687ff6e
 
 - To avoid mistakenly leaving text as untranslated, it can help to introduce the string sooner rather than later.
 - The naming of the string key should ideally be generalized enough to not be tightly coupled with the exact text, which can improve resilience to changes in copy.
