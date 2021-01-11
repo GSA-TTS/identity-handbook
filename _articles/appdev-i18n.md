@@ -1,11 +1,23 @@
 ---
-title: "Internationalization (i18n)"
+title: "Translation process"
 layout: article
-description: "Process and guidelines for localization and string translation"
+description: "Process and guidelines for localization and string translation (i18n)"
 category: AppDev
 ---
 
 Login.gov is currently available in English, Spanish, and French. This guide covers the tools available to translate the application, and the processes around introducing and translating new strings.
+
+## Translating content guidance
+
+Content on [secure.login.gov](https://secure.login.gov) and [login.gov](https://login.gov) is offered in the following languages:
+
+- English (U.S.)
+- French (Canada)
+- Spanish (Mexico)
+
+Translations are requested when content is added or updated on secure.login.gov and login.gov. You can find specific guidance on how to request translations in the [login.gov guidance document](https://docs.google.com/document/d/1-wNXxyvxrsUeHkMOfhBpoSTCTZULOXNlCkBdNxiLa3c/edit).
+
+**NOTE:** partners.login.gov and developers.login.gov are not expected to be translated.
 
 ## Internationalization APIs
 
@@ -43,9 +55,9 @@ As new screens are added or existing views are updated, the set of localized str
 
 ### When should strings be added?
 
-Page copy will often change through the process of design iteration and by feedback from others on the team. It is up to the developer's discretion when to add strings to `config/locales`, as opposed to using temporary text in an in-progress implementation.
+Content will change through the process of design iteration and feedback. It is up to the team's discretion when to add strings to `config/locales`, as opposed to using temporary text in an in-progress implementation.
 
-However, keep in mind:
+**Note**:
 
 - To avoid mistakenly leaving text as untranslated, it can help to introduce the string sooner rather than later.
 - The naming of the string key should ideally be generalized enough to not be tightly coupled with the exact text, which can improve resilience to changes in copy.
@@ -60,13 +72,3 @@ You can also take advantage of some automated tooling to assist in this process:
   - [See documentation for "Managing translation files"](https://github.com/18f/identity-idp#managing-translation-files)
 - Running `i18n-tasks add-missing` will generate placeholder values for all missing keys.
   - [See documentation for "`i18n-tasks add-missing`"](https://github.com/glebm/i18n-tasks#add-missing-keys)
-
-### How to translate strings?
-
-As mentioned earlier in this guide, the same YAML structure should exist for all supported locales, including the translated text values. Even if you are not a native speaker of the language, you should plan to include a translated value.
-
-This can be done by…
-
-1. Reaching out to colleagues within TTS who are native speakers of the language
-2. Or, making a best effort at a translation using a service like [Google Translate](https://translate.google.com/)
-3. Or, using the available professional translation services with whom Login.gov contracts. Contact Amber Van Amburg on Slack for more information.
