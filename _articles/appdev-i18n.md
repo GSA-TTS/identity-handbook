@@ -1,7 +1,7 @@
 ---
 title: "Translation process"
 layout: article
-description: "Process and guidelines for localization and string translation"
+description: "Process and guidelines for localization and string translation (i18n)"
 category: AppDev
 ---
 
