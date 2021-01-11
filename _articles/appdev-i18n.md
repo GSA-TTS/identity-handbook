@@ -45,7 +45,7 @@ As new screens are added or existing views are updated, the set of localized str
 
 During the design process, the page copy may often change through iteration and feedback from the team and/or directly from the public. UX Team members will include layouts that display English, French and Spanish translations prior to handing off for Engineering to build. You can read more about that process here:  
 
-NOTE:
+**Note**:
 
 - To avoid mistakenly leaving text as untranslated, it can help to introduce the string sooner rather than later.
 - The naming of the string key should ideally be generalized enough to not be tightly coupled with the exact text, which can improve resilience to changes in copy.
