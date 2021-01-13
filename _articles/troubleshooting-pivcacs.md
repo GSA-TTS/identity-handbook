@@ -51,8 +51,8 @@ and how to add it.
    by using the [CertificateChainService](https://github.com/18F/identity-pki/blob/master/app/services/certificate_chain_service.rb).
 
     ```ruby
-    cert = Certificate.new(OpenSSL::X509::Certificate.new(File.read(File.join("path/to/cert"))))
-    CertificateChainService.new.call(cert)
+    cert = Certificate.new(OpenSSL::X509::Certificate.new(File.read("path/to/cert")))
+    chain = CertificateChainService.new.debug(cert)
     ```
 
     It will print out a list of certificates, their issuers, and `key_id`s.
@@ -86,17 +86,24 @@ and how to add it.
     # => nil
     ```
 
-1. If you want to add a certificate to our repo, write the PEM data to an appropriately named file in `config/certs`
-
-    - Extension: `.pem`
-    - Filename: The subject, but transformed to remove slashes (we keep spaces)
+    Load all the missing certs in the chain:
 
     ```ruby
-    subject = "/C=US/O=U.S. Government/OU=Department of State/OU=PIV/OU=Certification Authorities/OU=U.S. Department of State PIV CA2"
-    escaped = subject.split('/').select(&:present?).join(', ')
-    => "C=US, O=U.S. Government, OU=Department of State, OU=PIV, OU=Certification Authorities, OU=U.S. Department of State PIV CA2"
-    path = File.join('config/certs', "#{escaped}.pem")
-    => "config/certs/C=US, O=U.S. Government, OU=Department of State, OU=PIV, OU=Certification Authorities, OU=U.S. Department of State PIV CA2.pem"
+    missing = CertificateChainService.new.debug(cert)
+    # => [Certificate .... ]
+    ```
+
+1. If you want to add a certificate to our repo, write the PEM data to an appropriately named file in `config/certs`
+
+    - `Certificate#pem_filename` creates a filename that matches our file naming conventions based on the Subject
+    - `Certificate#to_pem` outputs the Subject + Issuer in addition to the PEM
+
+    ```ruby
+    missing.first.pem_filename
+    # => "C=US, O=U.S. Government, OU=Department of State, OU=PIV, OU=Certification Authorities, OU=U.S. Department of State PIV CA2.pem"
+    missing.each do |cert|
+      File.open("config/certs/#{cert.pem_filename}", 'w') { |f| f.puts cert.to_pem }
+    end
     ```
 
     1. Test that the certificate was added correctly by **closing and opeining the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/master/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
