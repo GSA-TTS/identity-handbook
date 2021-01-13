@@ -89,7 +89,7 @@ and how to add it.
     Load all the missing certs in the chain:
 
     ```ruby
-    missing = CertificateChainService.new.debug(cert)
+    missing = CertificateChainService.new.missing(cert)
     # => [Certificate .... ]
     ```
 
