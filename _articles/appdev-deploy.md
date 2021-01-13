@@ -5,7 +5,7 @@ description: "Release Manager's Guide"
 category: AppDev
 ---
 
-This is a guide for the Release Manager, the engineer who shepherds code to staging and production for a given release.
+This is a guide for the Release Manager, the engineer who shepherds code to production for a given release. This guide is written for the idp, but also applies to the pivcac (identity-pki) server.
 
 This guide assumes that:
 - You have a [GPG key set up with GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account) (for signing commits)
@@ -14,7 +14,9 @@ This guide assumes that:
 Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of goood improvements all the time!
 
 ## Pre-deploy
-Scheduled for every other **Tuesday**
+Scheduled for every other **Tuesday/Wednesday**
+
+Be certain the Sprint ending Tuesday has been closed out and all stories' PRs merged.
 
 ### Cut a release branch
 
@@ -27,18 +29,17 @@ The release branch should be cut from latest and it should be the date of the pr
   git push -u origin HEAD
   ```
 
-### Create pull requests
+### Create pull request
 
-A pull request should be created from that latest branch to staging and production:
+A pull request should be created from that latest branch to production:
 
-   1. Staging: `stages/staging`
-   2. Production: `stages/prod`
+   1. Production: `stages/prod`
 
-   When creating the pull requests:
+   When creating the pull request:
 
-   - Title them clearly with the RC number (sprint number), ex **"Deploy RC 112 to Staging"**
+   - Title them clearly with the RC number (sprint number), ex **"Deploy RC 112 to Prod"**
        - Unsure what the sprint number is? [Check JIRA for the active sprint](https://cm-jira.usa.gov/secure/RapidBoard.jspa?rapidView=1953&projectKey=LG), or look a the last release and add one.
-   - Add the label **`status - promotion`** to each pull request that will be included in the release.
+   - Add the label **`status - promotion`** to the pull request that will be included in the release.
 
 ### Prepare release notes
 
@@ -98,49 +99,8 @@ Adding Emails: Patch release to include #3821, fixes a bug with adding emails to
 ```
 
 ## Staging
-Scheduled for every other **Wednesday**
 
-1. Merge the staging promotion pull request (**NOT** a squashed merge, just a normal merge)
-1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
-    - e.g. `:recycle:  Starting idp RC <RELEASE_NUMBER> deploy to Staging`
-1. In the `identity-devops` repo:
-   ```bash
-   cd identity-devops
-   git pull
-   aws-vault exec prod-power -- /bin/zsh
-   ```
-1. Recycle the IDP instances to get the new code, it automatically creates a new migration instance first.
-   ```bash
-   ./bin/asg-recycle staging idp
-   ```
-
-   1. Follow the progress of the migrations, ensure that they are working properly
-   ```bash
-   # may need to wait a few seconds after the recycle
-   ./bin/ssm-instance --newest asg-staging-migration
-   ```
-   On the remote box
-   ```bash
-   /bin/bash # they start in a plain shell, you probably want bash
-   sudo tail -f /var/log/cloud-init-output.log
-   # OR
-   sudo tail -f /var/log/syslog
-   ```
-   Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
-
-   1. Follow the progress of the IDP hosts spinning up
-
-      ```bash
-      ./bin/ls-servers -e staging -r idp # check the load balance pool health
-      ```
-
-    1. Manual Inspection and Testing
-      - Check [NewRelic (Staging IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52446986/filterable_errors#/table?top_facet=transactionUiName&barchart=barchart) for errors
-      - Manually test the app in staging:
-          - Sign in to an account
-          - Sign up for an account
-          - Test proofing (identity verification) on the new account
-      - Set a timer for one hour, then check NewRelic again for errors.
+Staging used to be deployed by this process, but this was changed to deploy the `master` branch to the staging environment every day.
 
 ## Production
 Scheduled for every other Thursday
@@ -182,7 +142,7 @@ Scheduled for every other Thursday
       - Check [NewRelic (Production IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52136858/traced_errors) for errors
       - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
-1. **PRODUCTION ONLY**: This step is required in production (but not staging)
+1. **PRODUCTION ONLY**: This step is required in production
 
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down)
     ```
@@ -196,7 +156,7 @@ Scheduled for every other Thursday
     - Sign up for an account
     - Test proofing (identity verification) on the new account
 
-1. **PRODUCTION ONLY**: This step is required in production (but not staging)
+1. **PRODUCTION ONLY**: This step is required in production
     1. In the `identity-idp` repo, use your GPG key to tag the release.
         ```bash
         cd identity-idp
