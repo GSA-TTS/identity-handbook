@@ -14,7 +14,7 @@ This is a quick checklist for any incident (security, privacy, outage, degraded 
 * Situation Lead (SL) role assigned (or self-assigned): Usually the team member who discovers the problem OR takes up response to outside report
 * Situation Lead: Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN)
 * Situation Lead: Slack or OpsGenie used to alert additional login.gov responders. At a minimum, on call members of infrastructure, application, and security teams should be alerted
-* Situation Lead: Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template%3Dincident_commander_template.md)  **Sensitive information like PII, secrets, etc MAY NOT be logged in the incident**
+* Situation Lead: Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)  **Sensitive information like PII, secrets, etc MAY NOT be logged in the incident**
 * Situation Lead: Hangout started and shared in #login-situation
 
 ## Assess

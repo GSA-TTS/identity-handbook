@@ -49,7 +49,7 @@ The responders work to contain and remediate the issue; timelines vary based on 
   - Two phases to close out: finished urgent response, and fully closed
      - For an incident to remain in the active emergency phase, it must need all hands on deck no matter the time of day/night. If the initial remediation is complete, then urgent response can conclude, which ends the discussion in #login-situation and clears the topic in that channel.
      - This doesn’t mean response is finished. There may still be more follow up tasks required during business hours for the team to fully close out the incident ticket.
- 
+
 ### Retrospective
 The responding team holds a retrospective to analyze the incident, capture follow-up action items and lessons-learned, and write a formal report.
 
@@ -80,12 +80,12 @@ Note that at this point the issue’s status is “investigating” — we haven
 At this phase, communications should follow these steps (and any additional steps listed at :
 
 * IC notifies [#login](https://gsa-tts.slack.com/messages/login/) channel that an incident is underway in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/), brief summary
-* The IC should inform GSA of the investigation by emailing itservicedesk@gsa.gov, gsa-ir@gsa.gov with a description of the incident, via a single email to all three addresses WITHIN one (1) hour of the finding. 
+* The IC should inform GSA of the investigation by emailing itservicedesk@gsa.gov, gsa-ir@gsa.gov with a description of the incident, via a single email to all three addresses WITHIN one (1) hour of the finding.
 * GSA-IR team responds:
     - Does not yet meet threshold for reportable incident
     - Continue investigating and keep us in the loop
 * Real-time chat should happen in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/).
-* Create an issue in the [identity-security-private](https://github.com/18F/identity-security-private/issues/new?template%3Dincident_commander_template.md) GitHub repository.
+* Create an issue in the [identity-security-private](https://github.com/18F/identity-security-private/issues/new?template=incidents.md) GitHub repository.
 * Create a google docs
 * If incident is an outage IC updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
 * Login.gov Agency Partners: send out an incident summary to LOGIN-PARTNERS@listserv.gsa.gov. Partner list: https://drive.google.com/drive/u/0/folders/0B4yIa0Upv1JJSkJOSmdsLWVOVmM)
@@ -135,7 +135,7 @@ This sitrep should be:
 
 Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts, and update to open Statuspage incident if applicable).
 
-### Remediate Phase 
+### Remediate Phase
 
 At this point, we’re trying to fix the issue! Remediation will be very situation-specific, so specific steps are hard to suggest. However, a few **guidelines** to follow during this process:
 
@@ -153,7 +153,7 @@ At this point, we’re trying to fix the issue! Remediation will be very situati
 
   * For Low-severity issues, the team should notify as above, and not take action until a mutually-agreed-on course of action has been determined.
 
-* Remediation can sometimes take a long time. If the issue progresses for more than 3 hours without being resolved, the IC should plan for a long remediation. 
+* Remediation can sometimes take a long time. If the issue progresses for more than 3 hours without being resolved, the IC should plan for a long remediation.
 
 This means:
 * Determine if remediation efforts should be “business hours” or “24⁄7." This will depend on the severity of the issue, and whether breaches are ongoing.
@@ -175,7 +175,7 @@ Comms at the Remediate phase
 
 * For user impacting incidents, users must be kept up to date via the [Logon.gov Statuspage](https://logingov.statuspage.io/)  ([Statuspage Admin Interface](https://manage.statuspage.io/login))
 
-### Retrospective Phase 
+### Retrospective Phase
 
 The final step in handling a security incident is figuring out what we learned. The IC (or one of the ICs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report.
 
