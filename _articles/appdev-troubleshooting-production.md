@@ -11,7 +11,7 @@ Before you can access any systems, you will need to
  - Get cleared for SSH access via PIV into login.gov systems
 
 To get SSH access, the public key from your PIV card must be added to the servers you would like to access.
-Follow the instructions at the beginning of [this article](https://login-handbook.app.cloud.gov/articles/piv-ssh.html) to extract your public key and send it to a member of the DevOps team.
+Follow the instructions at the beginning of [this article]({% link _articles/piv-ssh.md %}) to extract your public key and send it to a member of the DevOps team.
 
 ## Setting up your machine for SSH access via PIV
 
