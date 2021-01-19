@@ -73,41 +73,45 @@ The outgoing oncall person should let the incoming person know about any outstan
 SecOps Incident Response Guide located [here](https://handbook.login.gov/articles/secops-incident-response-guide.html)
 
 Things to consider when assessing severity:
-  * If PII is involved
-  * The environment it is in and status of partner(s) impacted
-  * Number of users impacted
-  * Whether the issue is in a primary or secondary flow  
+* If PII is involved
+* The environment it is in and status of partner(s) impacted
+* Number of users impacted
+* Whether the issue is in a primary or secondary flow
 
+### High severity
+Involves an active (launched) partner in Production environment
 
+* High-sev incidents successfully compromise the confidentiality/integrity of Personally Identifiable Information (PII), impact the availability of services for a large number of customers, or have significant financial impact.
 
-*High severity* - involves an active (launched) partner in Production environment
-  * High-sev incidents successfully compromise the confidentiality/integrity of Personally Identifiable Information (PII), impact the availability of services for a large number of customers, or have significant financial impact.
+**OR**
 
-### **OR**
+* An active (launched) login.gov partner is reporting that no user can authenticate or proof.
+* Required to be addressed immediately and ongoing until resolved.
 
-  * An active (launched) login.gov partner is reporting that no user can authenticate or proof.
-  * Required to be addressed immediately and ongoing until resolved.
+### Medium severity
 
-*Medium severity*
-  * Med-sev incidents represent attempts (possibly un- or not-yet-successful) at breaching PII, or those with limited availability/financial impact.
+* Med-sev incidents represent attempts (possibly un- or not-yet-successful) at breaching PII, or those with limited availability/financial impact.
 
-###  **OR**  
-  * An active (Launched) login.gov partner is reporting that some users are not able to authenticate or proof in production.
+**OR**
 
-### **OR**
-  * A partner is reporting that the sandbox/INT environment is down and no user can authenticate or proof.
-  * Will be addressed immediately during business hours
-  * Responders should attempt to consult stakeholders before causing downtime, but may proceed without them if they can’t be contacted in a reasonable time-frame.
+* An active (Launched) login.gov partner is reporting that some users are not able to authenticate or proof in production.
 
-*Low Severity*  
-  * Low-sev incidents don’t affect PII, and have no availability or financial impact. A new partner recently deployed to production is launching their application after hours and reporting that users cannot authenticate or proof. A partner is reporting that some users are not able to authenticate or proof in sandbox/INT
-  * Responders should avoid service degradation unless stakeholders agree.
-  * Will be addressed in the normal course of business and prioritized against other Jira issues pending (or potentially added to the backlog for future).
+**OR**
 
-*Inspector General (IG) Requests*
-  * Generally expected to be answered in five business days.
-  * More complicated requests may take longer; expected turnaround should be communicated.
-  * On occasion, requests are deemed urgent and should be made a priority.
+* A partner is reporting that the sandbox/INT environment is down and no user can authenticate or proof.
+* Will be addressed immediately during business hours
+* Responders should attempt to consult stakeholders before causing downtime, but may proceed without them if they can’t be contacted in a reasonable time-frame.
+
+### Low Severity
+* Low-sev incidents don’t affect PII, and have no availability or financial impact. A new partner recently deployed to production is launching their application after hours and reporting that users cannot authenticate or proof. A partner is reporting that some users are not able to authenticate or proof in sandbox/INT
+* Responders should avoid service degradation unless stakeholders agree.
+* Will be addressed in the normal course of business and prioritized against other Jira issues pending (or potentially added to the backlog for future).
+
+### Inspector General (IG) Requests
+
+* Generally expected to be answered in five business days.
+* More complicated requests may take longer; expected turnaround should be communicated.
+* On occasion, requests are deemed urgent and should be made a priority.
 
 ## Internal login.gov on-call guidance
 
