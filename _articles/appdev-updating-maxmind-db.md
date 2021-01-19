@@ -32,10 +32,20 @@ export local_maxmind_path=[path from step 2]</code></pre>
       aws s3 cp "$local_maxmind_path" "s3://${sandbox_bucket}/common/GeoIP2-City.mmdb"
     ```
 
-    Verify by recycling the IDP, and then move on to production:
+    Updating the files in production:
 
     ```bash
     # prod
     aws-vault exec prod-power -- \
       aws s3 cp "$local_maxmind_path" "s3://${prod_bucket}/common/GeoIP2-City.mmdb"
+    ```
+
+4. Verifying MaxMind database metadata
+
+    In a Rails console, run this command to look up the timestamp associated with the MaxMind database.
+    It should correspond to the date of the file downloaded in step 2.
+
+    ```ruby
+    Time.at(Geocoder::Query.new('8.8.8.8').lookup.instance_variable_get(:@mmdb).metadata['build_epoch'])
+    => 2021-01-18 20:21:47 +0000
     ```
