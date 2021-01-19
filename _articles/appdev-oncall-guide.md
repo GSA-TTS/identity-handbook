@@ -55,6 +55,19 @@ The outgoing oncall person should let the incoming person know about any outstan
    * Requests will be forwarded via email.
    * It is expected that the AppDev who receives the request will be the one to complete it, even if it extends beyond the on-call week.
 
+* Expiring PKI Certs
+
+    ![Screenshot of expiring PKI Slack alert]({{ site.baseurl }}/images/slack-pki-cert-alert.jpg)
+
+    If you see a Slack alert like this, it means that a cert used to verify PIV/CAC cards will expire in 30 days. Check the
+    [Federal Public Key Infrastructure Guides Certificate Authorities](https://fpki.idmanagement.gov/ca/) list for info
+    on the the most up to date certs.
+
+    Related articles:
+      - [Common OpenSSL command line recipes]({% link _articles/openssl-recipes.md %})
+      - [PIV/CAC Debugging guide]({% link _articles/troubleshooting-pivcacs.md %})
+
+
 ## Response Times
 
 SecOps Incident Response Guide located [here](https://handbook.login.gov/articles/secops-incident-response-guide.html)
