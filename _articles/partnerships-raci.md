@@ -13,149 +13,171 @@ It is a [responsibility assignment matrix](https://en.wikipedia.org/wiki/Respons
 
 Documenting our matrix is an on-going process. The partnerships team continually updates the [detailed source of truth in this Google Doc](https://docs.google.com/spreadsheets/d/1GV9FOdXtbY4cmMupPMMz0nrhTgTWMVZkzWPXO18bEZw/edit#gid=0). When new high-level trends are identified they are added to the high-level overview table below.
 
-## High level overview
+## Agreements - Template Change
 
-1. [Agreements - Template Change](#agreements-template)
-2. [Agreements - Establishing/Adjusting Terms](#agreements-terms)
-3. [Financial](#financial)
-4. [Managing the Service Providers in Prod](#service-providers)
-5. [Product](#product)
-6. [Shipping Public/Client-Facing Materials](#client-materials)
-7. [Technical](#technical)
-8. [Service](#service)
+### Responsible
 
-<a name="agreements-template"></a>
+1. Login Partnerships
+2. TTS Agreements
+3. Partner IAA POC
 
-| Agreements - Template Change |  |
-|---|-----|
-| **Login** Leadership | A |
-| **Login** Finance | C |
-| **Login** Partnerships | R |
-| **Login** Product | I |
-| **Login** Infrastructure | I |
-| **Login** UX |  |
-| **TTS** Leadership | I |
-| **TTS** OGC | C |  
-| **TTS** Agreements | R |  
-| **Partner** IAA POC | R  |
-| **Partner** App POC |  |
-| **Partner** OGC | C |
+### Accountable
 
-<a name="agreements-terms"></a>
+1. Login Leadership
 
-| Agreements - Establishing/Adjusting Terms |  |
-|---|-----|
-| **Login** Leadership | I |
-| **Login** Finance | C |
-| **Login** Partnerships | R/A |
-| **Login** Product |  |
-| **Login** Infrastructure |  |
-| **Login** UX |  |
-| **TTS** Leadership |  |
-| **TTS** OGC | C |  
-| **TTS** Agreements | R/A |  
-| **Partner** IAA POC | R/A  |
-| **Partner** App POC |  |
-| **Partner** OGC |  |
+### Consulted
 
-<a name="financial"></a>
+1. Login Finance
+2. TTS OGC
+3. Partner OGC
 
-| Financial |  |
-|---|-----|
-| **Login** Leadership | C |
-| **Login** Finance | C |
-| **Login** Partnerships | R/A |
-| **Login** Product |  |
-| **Login** Infrastructure |  |
-| **Login** UX |  |
-| **TTS** Leadership |  |
-| **TTS** OGC | C |  
-| **TTS** Agreements | R |  
-| **Partner** IAA POC | R  |
-| **Partner** App POC |  |
-| **Partner** OGC |  |
+### Informed
 
-<a name="service-providers"></a>
+1. Login Product
+2. Login Infrastructure
+3. TTS Leadership
 
-| Managing the Service Providers in Prod |  |
-|---|-----|
-| **Login** Leadership |  |
-| **Login** Finance |  |
-| **Login** Partnerships | R/A |
-| **Login** Product | I |
-| **Login** Infrastructure | I |
-| **Login** UX |  |
-| **TTS** Leadership |  |
-| **TTS** OGC |  |  
-| **TTS** Agreements | I |  
-| **Partner** IAA POC | C  |
-| **Partner** App POC | R |
-| **Partner** OGC |  |
+## Agreements - Establishing/Adjusting Terms
 
-<a name="product"></a>
+### Responsible
 
-| Product |  |
-|---|-----|
-| **Login** Leadership | C |
-| **Login** Finance | C |
-| **Login** Partnerships | R |
-| **Login** Product | R/A |
-| **Login** Infrastructure | C |
-| **Login** UX |  |
-| **TTS** Leadership |  |
-| **TTS** OGC |  |  
-| **TTS** Agreements |  |  
-| **Partner** IAA POC | I  |
-| **Partner** App POC | I |
-| **Partner** OGC |  |
+1. Login Partnerships
+2. TTS Agreements
+3. Partner IAA POC
 
-<a name="client-materials"></a>
+### Accountable
 
-| Shipping Public/Client-Facing Materials |  |
-|---|-----|
-| **Login** Leadership | C |
-| **Login** Finance | I |
-| **Login** Partnerships | R/A |
-| **Login** Product |  |
-| **Login** Infrastructure |  |
-| **Login** UX | C |
-| **TTS** Leadership |  |
-| **TTS** OGC |  |  
-| **TTS** Agreements | I |  
-| **Partner** IAA POC |   |
-| **Partner** App POC |  |
-| **Partner** OGC |  |
+1. Login Partnerships
+2. TTS Agreements
+3. Partner IAA POC
 
-<a name="technical"></a>
+### Consulted
 
-| Technical |  |
-|---|-----|
-| **Login** Leadership |  |
-| **Login** Finance |  |
-| **Login** Partnerships | R/A |
-| **Login** Product |  |
-| **Login** Infrastructure | C |
-| **Login** UX |  |
-| **TTS** Leadership |  |
-| **TTS** OGC |  |  
-| **TTS** Agreements |  |  
-| **Partner** IAA POC |  |
-| **Partner** App POC | I |
-| **Partner** OGC |  |
+1. Login Finance
+2. TTS OGC
 
-<a name="service"></a>
+### Informed
 
-| Service |  |
-|---|-----|
-| **Login** Leadership | A |
-| **Login** Finance | C |
-| **Login** Partnerships | R/A |
-| **Login** Product | C |
-| **Login** Infrastructure | C |
-| **Login** UX | C |
-| **TTS** Leadership |  |
-| **TTS** OGC |  |  
-| **TTS** Agreements |  |  
-| **Partner** IAA POC | I |
-| **Partner** App POC | I |
-| **Partner** OGC |  |
+1. Login Leadership
+
+## Financial
+
+### Responsible
+
+1. Login Partnerships
+2. TTS Agreements
+3. Partner IAA POC
+
+### Accountable
+
+1. Login Partnerships
+
+### Consulted
+
+1. Login Leadership
+2. Login Finance
+3. TTS OGC
+### Informed
+
+## Managing the Service Providers in Prod
+
+### Responsible
+
+1. Login Partnerships
+2. Partner App POC
+
+### Accountable
+
+1. Login Partnerships
+
+### Consulted
+
+1. Partner IAA POC
+### Informed
+
+1. Login Product
+2. Login Infrastructure
+3. TTS Agreements
+
+## Product
+
+### Responsible
+
+1. Login Partnerships
+2. Login Product
+
+### Accountable
+
+1. Login Product
+
+### Consulted
+
+1. Login Leadership
+2. Login Finance
+3. Login Infrastructure
+
+### Informed
+
+1. Partner IAA POC
+2. Partner App POC
+
+## Shipping Public/Client-Facing Materials
+
+### Responsible
+
+1. Login Partnerships
+
+### Accountable
+
+1. Login Partnerships
+
+### Consulted
+
+1. Login Leadership
+2. Login UX
+
+### Informed
+
+1. Login Finance
+2. TTS Agreements
+
+## Technical
+
+### Responsible
+
+1. Login Partnerships
+
+### Accountable
+
+1. Login Partnerships
+
+### Consulted
+
+1. Login Infrastructure
+
+### Informed
+
+1. Partner App POC
+
+## Service
+
+### Responsible
+
+1. Login Partnerships
+
+### Accountable
+
+1. Login Partnerships
+2. Login Leadership
+
+### Consulted
+
+1. Login Infrastructure
+2. Login Finance
+3. Login Product
+4. Login UX
+
+### Informed
+
+1. Partner App POC
+2. Partner IAA POC
