@@ -2,6 +2,7 @@
 title: "RACI framework for Partnerships team"
 layout: article
 category: Partnerships
+toc_h_max: 2
 ---
 
 ## Partnerships RACI framework
