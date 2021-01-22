@@ -13,7 +13,7 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 - Familiarize yourself with the [login.gov Handbook]({{site.baseurl}})
 - Watch a [login.gov authentication overview](https://drive.google.com/file/d/1UFq0OAHgbLdPUXXj6FAIgSxtLyAfYxSa/view)
 - Watch a [login.gov identity verification overview](https://drive.google.com/file/d/1GanUUpkAcJCopQAPac4DSe10LREdSGZw/view)
-- Watch a [login.gov security overview](https://drive.google.com/drive/folders/1GW76S5yV91I5MCkIs-4cBf_wBUCJ2Iv8)
+- Watch a [login.gov security overview](https://drive.google.com/file/d/1ZR4uin3dJZmq7nOvgROcv95_mcRPmx0n/view?usp=sharing)
 - Review the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
 - Review the [login.gov Design System](https://design.login.gov/)
 - Complete [GSA OLU](https://insite.gsa.gov/topics/training-and-development/online-university-olu?term=olu) IT Security Awareness Training, including accepting the GSA IT Rules of Behavior, which is required before we can give you access to any login.gov systems. If you joined GSA more than two months ago, you’ve already completed this task. (Detailees must complete similar organization driven training and provide as proof to login.gov team members)
