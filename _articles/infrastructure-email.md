@@ -70,6 +70,7 @@ To manually check the MTA-STS configuration:
 
 * Fetch the current policy from https://mta-sts.login.gov/.well-known/mta-sts.txt
 * Check the MTA-STS TXT record:
+
 ~~~
 $ nslookup -type=txt _mta-sts.login.gov
 Server:		127.0.0.53
@@ -78,7 +79,9 @@ Address:	127.0.0.53#53
 Non-authoritative answer:
 _mta-sts.login.gov	text = "v=STSv1; id=59784add0f027f4ce93efbe6bc286e1a"
 ~~~
+
 * Check the reporting record:
+
 ~~~
 $ nslookup -type=txt _smtp._tls.login.gov
 Server:		127.0.0.53
@@ -97,7 +100,7 @@ special addresses under `@login.gov` do send out email.  All outbound email from
 
 ### AWS SES
 
-AWS Simple Email Service (SES) is used to deliver messages to login.gov users.  
+AWS Simple Email Service (SES) is used to deliver messages to login.gov users.
 
 ### Sender Policy Framework (SPF)
 
@@ -105,10 +108,12 @@ Sender Policy Framework uses a TXT record to specify which mail servers (MXes) a
 to send email out on behalf of a domain.
 
 * To check the `login.gov` SPF record:
+
 ~~~
 $ nslookup -type=txt login.gov | grep spf
 login.gov descriptive text "v=spf1 include:amazonses.com include:_spf.google.com ~all"
 ~~~
+
 * `include` elements reference other SPF records that include their own list of MXes.  Notably:
   * `amazonses.com` - Amazon Simple Email Service (SES) servers, as used for transactional email
   * `_spf.google.com` - Google GMail servers, as used for organizational email
@@ -126,6 +131,7 @@ Contact GSA email support if you have questions regarding DKIM keys for GMail.
 
 Once the keys are defined they are referenced in outbound email as part of a DKIM signature value.
 Here is an example:
+
 ~~~
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
 d=login.gov; s=google;
@@ -139,7 +145,7 @@ d=1e100.net; s=20161030;
 ### Domain-based Message Authentication, Reporting, and Conformance (DMARC)
 
 DMARC allows a domain to define a set of policies applicable to email
-sent from the domain.  
+sent from the domain.
 
 
 Flow Diagram (from [RFC7498](https://tools.ietf.org/html/rfc7489))
@@ -171,6 +177,7 @@ Flow Diagram (from [RFC7498](https://tools.ietf.org/html/rfc7489))
 ~~~
 
 Note the verification of DKIM and SPF.  To check the DMARC policy for `login.gov`:
+
 ~~~
 $ nslookup -type=txt _dmarc.login.gov
 _dmarc.login.gov descriptive text "v=DMARC1; p=reject; pct=100; fo=1; ri=3600; rua=mailto:dmarc-reports@login.gov,mailto:reports@dmarc.cyber.dhs.gov; ruf=mailto:dmarc-forensics@login.gov"
@@ -184,12 +191,13 @@ The above specifies:
 * `rua=mailto:dmarc-reports@login.gov,mailto:reports@dmarc.cyber.dhs.gov` - Send email delivery reports to the listed `login.gov` group and the standard DHS report destination
 * `ruf=mailto:dmarc-forensics@login.gov` - Send forensic reports to the listed `login.gov` group
 
-# Querying Authoritative DNS Servers
+## Querying Authoritative DNS Servers
 
 If you are making DNS changes and want to validate the changes quickly without waiting for
 your DNS cache to expire and existing record, or if you suspect a DNS caching issue, you can query the authoritative DNS servers for login.gov using the following instructions.
 
 * Lookup the NS records using an official `.gov` nameserver:
+
 ~~~
 $ nslookup -type=ns login.gov a.gov-servers.net
 Server:		a.gov-servers.net
@@ -204,7 +212,9 @@ login.gov	nameserver = ns-1641.awsdns-13.co.uk.
 login.gov	nameserver = ns-249.awsdns-31.com.
 login.gov	nameserver = ns-1458.awsdns-54.org.
 ~~~
+
 * Perform further lookups for `login.gov` records using an authoritative server by including the nameserver at the end of the query.  For example, to get the list of MX records for `login.gov` using an the `ns-521.awsdns-01.net` listed above:
+
 ~~~
 $ nslookup -type=mx login.gov ns-521.awsdns-01.net
 Server:		ns-521.awsdns-01.net
