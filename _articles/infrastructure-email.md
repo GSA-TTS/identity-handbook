@@ -5,24 +5,7 @@ layout: article
 category: Infrastructure
 ---
 
-<!-- TOC -->
-
-- [Overview](#overview)
-- [Inbound Delivery to @login.gov](#inbound-delivery-to-logingov)
-- [GMail In](#gmail-in)
-  - [SMTP MTA Strict Transport Security (MTA-STS)](#smtp-mta-strict-transport-security-mta-sts)
-- [Outbound Sending from @login.gov](#outbound-sending-from-logingov)
-  - [GMail Out](#gmail-out)
-  - [AWS SES](#aws-ses)
-  - [Sender Policy Framework (SPF)](#sender-policy-framework-spf)
-  - [DomainKeys Identified Email (DKIM)](#domainkeys-identified-email-dkim)
-  - [Domain-based Message Authentication, Reporting, and Conformance (DMARC)](#domain-based-message-authentication-reporting-and-conformance-dmarc)
-- [Querying Authoritative DNS Servers](#querying-authoritative-dns-servers)
-- [Further Reading](#further-reading)
-
-<!-- /TOC -->
-
-# Overview
+## Overview
 
 login.gov uses GMail for organizational email and AWS SES for outbound transactional email to users.
 
@@ -35,9 +18,9 @@ addresses.  It includes command line examples showing how to check current DNS r
 and other SMTP related settings.  Unless otherwise specified, all DNS records are served
 by AWS Route53 and all configuration is managed as code with Terraform.
 
-# Inbound Delivery to @login.gov
+## Inbound Delivery to @login.gov
 
-# GMail In
+## GMail In
 
 Inbound email to `@login.gov` is directed by DNS MX records which list the SMTP servers
 that can receive email for `@login.gov` addresses:
@@ -62,7 +45,7 @@ Your tests may show a different address.   In addition, note the `Non-authoratat
 `Authoratative answers can be found from:` lines are due to using a forwarder instead of querying
 the authoritative DNS servers for login.gov directly.  See [Querying Authoritative DNS Servers](#querying-authoritative-dns-servers) if you wish to query login.gov's authoritative DNS servers directly in cases of suspected DNS cache issues.__
 
-## SMTP MTA Strict Transport Security (MTA-STS)
+### SMTP MTA Strict Transport Security (MTA-STS)
 
 MTA-STS is roughly the equivalent of [HTTP Strict Transport Security (HSTS)](https://tools.ietf.org/html/rfc6797)
 for email.  It allows a domain to specify that all inbound email to the domain must use TLS
@@ -105,18 +88,18 @@ Non-authoritative answer:
 _smtp._tls.login.gov	text = "v=TLSRPTv1;rua=mailto:tls.reports@gsa.gov,mailto:tls-reports@login.gov"
 ~~~
 
-# Outbound Sending from @login.gov
+## Outbound Sending from @login.gov
 
-## GMail Out
+### GMail Out
 
 Most login.gov team members send email using their `@gsa.gov` address.  Some Google Groups and other
 special addresses under `@login.gov` do send out email.  All outbound email from `@login.gov` addresses
 
-## AWS SES
+### AWS SES
 
 AWS Simple Email Service (SES) is used to deliver messages to login.gov users.  
 
-## Sender Policy Framework (SPF)
+### Sender Policy Framework (SPF)
 
 Sender Policy Framework uses a TXT record to specify which mail servers (MXes) are allowed
 to send email out on behalf of a domain.
@@ -131,7 +114,7 @@ login.gov descriptive text "v=spf1 include:amazonses.com include:_spf.google.com
   * `_spf.google.com` - Google GMail servers, as used for organizational email
 * `~all` - Explicit deny of any other MX from sending email on behalf of `login.gov`
 
-## DomainKeys Identified Email (DKIM)
+### DomainKeys Identified Email (DKIM)
 
 DomainKeys Identified Email (DKIM) allows a sending domain to declare cryptographic keys that will be used to sign
 all outbound email from the domain.  Since `login.gov` uses GMail and SES, both of which have DKIM keys in place and published, we simply need to reference those keys in DNS.  (As opposed to managing our own keys.)   References are defined in TXT records as follows:
@@ -153,7 +136,7 @@ X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
 d=1e100.net; s=20161030;
 ~~~
 
-## Domain-based Message Authentication, Reporting, and Conformance (DMARC)
+### Domain-based Message Authentication, Reporting, and Conformance (DMARC)
 
 DMARC allows a domain to define a set of policies applicable to email
 sent from the domain.  
@@ -238,11 +221,10 @@ login.gov	mail exchanger = 30 aspmx5.googlemail.com.
 
 Note - Implementation of DNSSEC is pending for `login.gov` domains.
 
-# Further Reading
+## Further Reading
 
 * [RFC5321 - Simple Mail Transfer Protocol](https://tools.ietf.org/html/rfc5321)
 * [RFC6376 - DomainKeys Identified Mail (DKIM) Signatures](https://tools.ietf.org/html/rfc6376)
 * [RFC7208 - Sender Policy Framework (SPF) for Authorizing Use of Domains in Email, Version 1](https://tools.ietf.org/html/rfc7208)
 * [RFC7489 - Domain-based Message Authentication, Reporting, and Conformance (DMARC)](https://tools.ietf.org/html/rfc7489)
 * [RFC8461 - SMTP MTA Strict Transport Security (MTA-STS)](https://tools.ietf.org/html/rfc8461)
-
