@@ -16,8 +16,6 @@ Note: it is a good idea to make sure you have the latest pulled down from identi
 ## Pre-deploy
 Scheduled for every other **Tuesday/Wednesday**
 
-Be certain the Sprint ending Tuesday has been closed out and all stories' PRs merged.
-
 ### Cut a release branch
 
 The release branch should be cut from latest and it should be the date of the production release (ex `stages/rc-2020-06-17`):
@@ -37,8 +35,10 @@ A pull request should be created from that latest branch to production:
 
    When creating the pull request:
 
-   - Title them clearly with the RC number (sprint number), ex **"Deploy RC 112 to Prod"**
-       - Unsure what the sprint number is? [Check JIRA for the active sprint](https://cm-jira.usa.gov/secure/RapidBoard.jspa?rapidView=1953&projectKey=LG), or look a the last release and add one.
+   - Title them clearly with the RC number, ex **"Deploy RC 112 to Prod"**
+       - If it's a full release of changes from the main branch, add one to the last release number
+       - If it's a patch release, increment the fractional part, ex **"Deploy RC 112.1 to Prod"**
+       - Unsure what the last release was? Check the [releases page](https://github.com/18F/identity-idp/releases/)
    - Add the label **`status - promotion`** to the pull request that will be included in the release.
 
 ### Prepare release notes
@@ -46,7 +46,7 @@ A pull request should be created from that latest branch to production:
    1. The audience for the release notes are partner agencies and their developers. Notes should be written in [plain language](https://plainlanguage.gov/) and clearly demonstrate the impact on the end user or agency.
    1. Release manager writes a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
        - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
-       - Release title: `RC #{SPRINT-NUMBER}`
+       - Release title: `RC #{NUMBER}`
        - *Save* the draft, do not publish as a pre-release
    1. Release manager shares the draft release on #login-appdev with `@login-ux-team` to review content for plain language.
    1. Release manager shares the draft release on #login-appdev with `@login-product-team` to ensure that no changes in the release are missing.
@@ -59,7 +59,7 @@ Below are a set of templates that Release Managers can use when writing various 
 #### Template: Official release candidate notes
 
 ``` markdown
-# RC [Sprint Number]
+# RC [Number]
 
 ## Improvements/Changes
 - [Category]: [Change] and [end user impact]. [Pull request #___ ]
@@ -89,7 +89,7 @@ Below are a set of templates that Release Managers can use when writing various 
 #### Template: Patch release notes
 
 ``` markdown
-# RC [Sprint Number].[x]
+# RC [Number].[x]
 - [Category]: [Change] and [end user impact, if there is one]. [Pull request #___ ]
 
 <!-- Example
