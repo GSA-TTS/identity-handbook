@@ -191,7 +191,7 @@ the bug in staging, where it won't affect end users.
     ```bash
     git checkout stages/prod
     git pull # make sure you're at the most recent SHA
-    git checkout revert-rc-123 # replace with the RC number
+    git checkout -b revert-rc-123 # replace with the RC number
     git revert -m 1 HEAD # assumes that the top commit on stages/prod is a merge
     ```
 
