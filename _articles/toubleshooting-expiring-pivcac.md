@@ -42,7 +42,7 @@ To run the rake task, invoke it like this:
 
 ```shell
 # Replace the following with the expiring cert key ID:
-EXPORT expiring_key_id='CF:79:3C:ED:4D:BC:19:25:F2:45:69:4E:12:2F:9C:29:53:C9:A7:46'
+export expiring_key_id='CF:79:3C:ED:4D:BC:19:25:F2:45:69:4E:12:2F:9C:29:53:C9:A7:46'
 bundle exec rake certs:find_replacement\[$expiring_key_id\]
 ```
 
