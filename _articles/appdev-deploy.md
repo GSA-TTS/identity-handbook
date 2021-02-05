@@ -147,6 +147,7 @@ Scheduled for every other Thursday
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down)
     ```
     ./bin/scale-in-old-instances prod idp
+    ./bin/scale-in-old-instances prod idpxtra
     ```
 
 1. Set a timer for one hour, then check NewRelic again for errors.
