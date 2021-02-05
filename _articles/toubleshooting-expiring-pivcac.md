@@ -75,7 +75,7 @@ You can run `bundle exec rspec spec/certs/store_spec.rb` to validate this.
 ## Using the Subject Information Access extension
 
 It is possible to use openssl to perform the checks this rake task performs in
-you terminal.
+your terminal.
 
 First determine which certificate is the signing key for the expiring cert.
 You can do this by using the rails console.
