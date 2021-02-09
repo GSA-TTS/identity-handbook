@@ -12,7 +12,7 @@ expiration and probably a new subject key and subject key ID.
 
 The best place to look for a re-issued certificate is on the signing cert for
 that certificate.
-Within the PKI sphere, signing or parent cert will have a "Subject Information
+Within the PKI sphere, the signing or parent cert will have a "Subject Information
 Access" extension.
 This extension will contain a URL to a repository containing the bundle of
 certificates issued by the signing cert.
