@@ -30,7 +30,7 @@ Team Grace is the other appdev team that works on the IDP.
 Team Katherine is named after [Katherine Johnson][katherine], a mathematician
 who was a key part of early NASA spaceflights.
 
-Team Katherine focuses on our marketing site and design.
+Team Katherine focuses on our static sites and design.
 
 [katherine]: https://en.wikipedia.org/wiki/Katherine_Johnson
 
