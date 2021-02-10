@@ -1,11 +1,18 @@
 ---
-title: "Deploying the IDP"
+title: "Deploying new IDP and PKI code"
 layout: article
 description: "Release Manager's Guide"
 category: AppDev
 ---
 
-This is a guide for the Release Manager, the engineer who shepherds code to production for a given release. This guide is written for the idp, but also applies to the pivcac (identity-pki) server.
+This is a guide for the Release Manager, the engineer who shepherds code to production for a given release.
+
+When deploying a new release, the release manager should make sure to deploy new code for the following:
+
+- [18f/identity-idp](https://github.com/18f/identity-idp)
+- [18f/identity-pki](https://github.com/18f/identity-pki)
+
+This guide is written for the idp, but also applies to the pivcac (identity-pki) server.
 
 This guide assumes that:
 - You have a [GPG key set up with GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account) (for signing commits)
