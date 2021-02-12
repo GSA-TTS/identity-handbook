@@ -46,7 +46,7 @@ Each day, check NewRelic for server and browser errors over the last 24h in `pro
 
 We want to get as many errors fixed as possible, so make sure JIRA tickets are filed all errors in NewRelic. Search JIRA to check that tickets have or haven't been filed already.
 
-### Fix Vulnerability
+### Fix Vulnerabilities
 
 Throughout the week, check for automated vulnerability pull requests and try to get them merged. These links to go GitHub pull request filters, search within these for ones to `identity-` repos:
 
