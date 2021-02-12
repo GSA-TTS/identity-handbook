@@ -38,13 +38,17 @@ The outgoing oncall person should let the incoming person know about any outstan
 
 ## Responsibilities
 
-* Each day, check NewRelic for server and browser errors over the last 24h in `prod` and `staging` (there is a Slack reminder in `#login-appdev` for this)
-    - [NewRelic Server Errors](https://one.newrelic.com/launcher/nr1-core.explorer?platform[accountId]=1376370&platform[timeRange][duration]=43200000&pane=eyJiYXJjaGFydCI6ImJhcmNoYXJ0IiwidG9wRmFjZXQiOiJ0cmFuc2FjdGlvblVpTmFtZSIsInBhZ2UiOiJ0YWJsZSIsIm5lcmRsZXRJZCI6ImVycm9ycy11aS5vdmVydmlldyIsImVudGl0eUlkIjoiTVRNM05qTTNNSHhCVUUxOFFWQlFURWxEUVZSSlQwNThOVEl4TXpZNE5UZyJ9&sidebars[0]=eyJuZXJkbGV0SWQiOiJucjEtY29yZS5hY3Rpb25zIiwiZW50aXR5SWQiOiJNVE0zTmpNM01IeEJVRTE4UVZCUVRFbERRVlJKVDA1OE5USXhNelk0TlRnIiwic2VsZWN0ZWROZXJkbGV0Ijp7Im5lcmRsZXRJZCI6ImVycm9ycy11aS5vdmVydmlldyJ9fQ)
-    - [NewRelic Browser Errors](https://one.newrelic.com/launcher/nr1-core.explorer?pane=eyJuZXJkbGV0SWQiOiJicm93c2VyLW5yMS5icm93c2VyLWpzLWVycm9ycyIsImVudGl0eUlkIjoiTVRNM05qTTNNSHhDVWs5WFUwVlNmRUZRVUV4SlEwRlVTVTlPZkRVeU1qRTBNelk0In0=&sidebars[0]=eyJuZXJkbGV0SWQiOiJucjEtY29yZS5hY3Rpb25zIiwiZW50aXR5SWQiOiJNVE0zTmpNM01IeENVazlYVTBWU2ZFRlFVRXhKUTBGVVNVOU9mRFV5TWpFME16WTQiLCJzZWxlY3RlZE5lcmRsZXQiOnsibmVyZGxldElkIjoiYnJvd3Nlci1ucjEuYnJvd3Nlci1qcy1lcnJvcnMifX0=&platform[accountId]=1376370&platform[timeRange][duration]=43200000&platform[$isFallbackTimeRange]=false)
+### Check NewRelic
 
-    We want to get as many errors fixed as possible, so make sure JIRA tickets are filed all errors in NewRelic. Search JIRA to check that tickets have or haven't been filed already.
+Each day, check NewRelic for server and browser errors over the last 24h in `prod` and `staging` (there is a Slack reminder in `#login-appdev` for this)
+- [NewRelic Server Errors](https://one.newrelic.com/launcher/nr1-core.explorer?platform[accountId]=1376370&platform[timeRange][duration]=43200000&pane=eyJiYXJjaGFydCI6ImJhcmNoYXJ0IiwidG9wRmFjZXQiOiJ0cmFuc2FjdGlvblVpTmFtZSIsInBhZ2UiOiJ0YWJsZSIsIm5lcmRsZXRJZCI6ImVycm9ycy11aS5vdmVydmlldyIsImVudGl0eUlkIjoiTVRNM05qTTNNSHhCVUUxOFFWQlFURWxEUVZSSlQwNThOVEl4TXpZNE5UZyJ9&sidebars[0]=eyJuZXJkbGV0SWQiOiJucjEtY29yZS5hY3Rpb25zIiwiZW50aXR5SWQiOiJNVE0zTmpNM01IeEJVRTE4UVZCUVRFbERRVlJKVDA1OE5USXhNelk0TlRnIiwic2VsZWN0ZWROZXJkbGV0Ijp7Im5lcmRsZXRJZCI6ImVycm9ycy11aS5vdmVydmlldyJ9fQ)
+- [NewRelic Browser Errors](https://one.newrelic.com/launcher/nr1-core.explorer?pane=eyJuZXJkbGV0SWQiOiJicm93c2VyLW5yMS5icm93c2VyLWpzLWVycm9ycyIsImVudGl0eUlkIjoiTVRNM05qTTNNSHhDVWs5WFUwVlNmRUZRVUV4SlEwRlVTVTlPZkRVeU1qRTBNelk0In0=&sidebars[0]=eyJuZXJkbGV0SWQiOiJucjEtY29yZS5hY3Rpb25zIiwiZW50aXR5SWQiOiJNVE0zTmpNM01IeENVazlYVTBWU2ZFRlFVRXhKUTBGVVNVOU9mRFV5TWpFME16WTQiLCJzZWxlY3RlZE5lcmRsZXQiOnsibmVyZGxldElkIjoiYnJvd3Nlci1ucjEuYnJvd3Nlci1qcy1lcnJvcnMifX0=&platform[accountId]=1376370&platform[timeRange][duration]=43200000&platform[$isFallbackTimeRange]=false)
 
-* Throughout the week, check for automated vulnerability pull requests and try to get them merged. These links to go GitHub pull request filters, search within these for ones to `identity-` repos:
+We want to get as many errors fixed as possible, so make sure JIRA tickets are filed all errors in NewRelic. Search JIRA to check that tickets have or haven't been filed already.
+
+### Fix Vulnerability
+
+Throughout the week, check for automated vulnerability pull requests and try to get them merged. These links to go GitHub pull request filters, search within these for ones to `identity-` repos:
 
     * [synk-bot][snyk]
     * [dependabot][dependabot]
@@ -52,22 +56,23 @@ The outgoing oncall person should let the incoming person know about any outstan
 [snyk]: https://github.com/search?q=user%3A18F+user%3AGSA+is%3Aopen+archived%3Afalse+author%3Asnyk-bot&type=Issues
 [dependabot]: https://github.com/search?o=asc&q=user%3A18F+user%3AGSA+author%3Aapp%2Fdependabot+is%3Aopen+archived%3Afalse&s=created&type=Issues
 
-* Inspector General (IG) Requests
-   * Guide for responding to IG requests can be found [here](https://github.com/18F/identity-security-private/wiki/%5BWIP%5D-Responding-to-IG-Data-Requests)
-   * Requests will be forwarded via email.
-   * It is expected that the AppDev who receives the request will be the one to complete it, even if it extends beyond the on-call week.
+###  Inspector General (IG) Requests
 
-* Expiring PKI Certs
+* Check the [Guide for responding to IG requests](https://github.com/18F/identity-security-private/wiki/%5BWIP%5D-Responding-to-IG-Data-Requests)
+* Requests will be forwarded via email.
+* It is expected that the AppDev who receives the request will be the one to complete it, even if it extends beyond the on-call week.
 
-    ![Screenshot of expiring PKI Slack alert]({{ site.baseurl }}/images/slack-pki-cert-alert.jpg)
+### Expiring PKI Certs
 
-    If you see a Slack alert like this, it means that a cert used to verify PIV/CAC cards will expire in 30 days. Check the
-    [Federal Public Key Infrastructure Guides Certificate Authorities](https://fpki.idmanagement.gov/ca/) list for info
-    on the the most up to date certs.
+![Screenshot of expiring PKI Slack alert]({{ site.baseurl }}/images/slack-pki-cert-alert.jpg)
 
-    Related articles:
-      - [Common OpenSSL command line recipes]({% link _articles/openssl-recipes.md %})
-      - [PIV/CAC Debugging guide]({% link _articles/troubleshooting-pivcacs.md %})
+If you see a Slack alert like this, it means that a cert used to verify PIV/CAC cards will expire in 30 days. Check the
+[Federal Public Key Infrastructure Guides Certificate Authorities](https://fpki.idmanagement.gov/ca/) list for info
+on the the most up to date certs.
+
+Related articles:
+  - [Common OpenSSL command line recipes]({% link _articles/openssl-recipes.md %})
+  - [PIV/CAC Debugging guide]({% link _articles/troubleshooting-pivcacs.md %})
 
 
 ## Response Times
