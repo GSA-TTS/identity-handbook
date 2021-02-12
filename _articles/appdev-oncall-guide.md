@@ -50,8 +50,8 @@ We want to get as many errors fixed as possible, so make sure JIRA tickets are f
 
 Throughout the week, check for automated vulnerability pull requests and try to get them merged. These links to go GitHub pull request filters, search within these for ones to `identity-` repos:
 
-    * [synk-bot][snyk]
-    * [dependabot][dependabot]
+* [synk-bot][snyk]
+* [dependabot][dependabot]
 
 [snyk]: https://github.com/search?q=user%3A18F+user%3AGSA+is%3Aopen+archived%3Afalse+author%3Asnyk-bot&type=Issues
 [dependabot]: https://github.com/search?o=asc&q=user%3A18F+user%3AGSA+author%3Aapp%2Fdependabot+is%3Aopen+archived%3Afalse&s=created&type=Issues
