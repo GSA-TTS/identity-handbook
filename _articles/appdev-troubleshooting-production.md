@@ -4,14 +4,15 @@ description: Troubleshooting production exceptions and issues reported by custom
 layout: article
 category: AppDev
 ---
-### Prerequisites
+## Prerequisites
 
 Before you can access any systems, you will need to
  - Obtain a PIV card reader
  - Get cleared for SSH access via PIV into login.gov systems
+ - [Set up AWS-vault](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault)
 
 To get SSH access, the public key from your PIV card must be added to the servers you would like to access.
-Follow the instructions at the beginning of [this article]({% link _articles/piv-ssh.md %}) to extract your public key and send it to a member of the DevOps team.
+Follow the instructions at the beginning of [this article]({% link _articles/piv-ssh.md %}) to extract your public key and follow the instructions in the [DevOps wiki](https://github.com/18F/identity-devops/wiki/Setting-Up-your-Login.gov-Infrastructure-Configuration#terraform--chef) to add it to our servers.
 
 ## Setting up your machine for SSH access via PIV
 
