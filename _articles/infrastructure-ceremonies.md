@@ -110,21 +110,6 @@ During the discussion, each team member is empowered to:
 
 ## Miscellaneous
 
-### AC Club
-
-Dedicated time used to address any open PRs or un-accepted ACs requiring love and approval.
-
-- Prior to `AC Club` time On-Call should:
-  - Check the following repos for straggling PRs:
-    - [`identity-devops`](https://github.com/18F/identity-devops)
-    - [`identity-devops-private`](https://github.com/18F/identity-devops-private)
-    - [`identity-terraform`](https://github.com/18F/identity-terraform)
-    - [`identity-cookbooks`](https://github.com/18F/identity-cookbooks)
-    - [`identity-base-image`](https://github.com/18F/identity-base-image)
-  - Check the [Login.gov Infrastructure Board](https://github.com/orgs/18F/projects/5) for items in the `Pending Acceptance` column
-- SlackBot will in #login-devops if anyone has an AC or PR to discuss, as a reminder.
-- On-Call will meet with anyone with outstanding ACs or PRs in AC Club Hangout (see meeting invite)
-
 ### Toil
 _**Toil**_ is used to describe work that does not materially affect production, or the way the team operates, but is (often) essential work that leads to additional tech debt if it is not addressed. It is thusly named as **the `work:value` ratio** is further skewed towards the work side than the value side.
 

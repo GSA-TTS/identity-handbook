@@ -54,9 +54,9 @@ An example:
 > 
 > *Acceptance Criteria:*
 > 
-> 1. Users *are* able to upload files to the bucket via the web form in `dev`
+> 1. Users *are* able to upload files to the bucket via the web form in `prod`
 > 2. Bucket policy/permissions fall within specifications for compliance/security, while still providing access for #1
-> 3. Web application is working properly and passing health checks in `dev`
+> 3. Web application is working properly and passing health checks in `prod`
 
 In this Issue:
 1. The audience, their needs, and the impact/value resulting from this Issue being completed, are all clearly defined
@@ -84,16 +84,16 @@ The full process of accepting, working on, and completing an Issue is as follows
 1. Issue is opened and assigned to the [**Login.gov Infrastructure** GitHub Project](https://github.com/orgs/18F/projects/5), which will automatically place it in the **Backlog** column.
 2. Before adding an Issue to the **To Do (This Sprint)** column -- to be worked on during the current sprint cycle -- a DevOps engineer verifies that Acceptance Criteria exists on the Issue, and that its objectives are clearly detailed. Issues *cannot* leave the backlog unless they satisfy this criteria -- the *Readiness Requirements*.
 3. Once the Issue is in **To Do**, the assigned engineer follows through on the story to meet the defined AC.
-4. Once the solution for an Issue has reached the specified AC environment **(`prod` by default)** the assigned engineer adds notes in the Issue with evidence (test steps, output, screenshots) to prove AC is met, and moves the Issue to the **Pending Acceptance** column. (These are separate from example outputs like `terraform plan`, which represent actions *to be executed*, rather than changes *put into place successfully*.)
-5. The Primary On-Call engineer (or Secondary On-Call, in the case of an Issue worked on by the Primary), acting as the Accepting Engineer for this Issue, performs the following:
-  * Reviews existing tests/evidence within the Issue
-  * **If needed,** completes additional testing/evidence collection for any unproven AC, and adds these findings/output to the Issue
-  * If AC is met, the Accepting Engineer moves Issue to the **Done**. Otherwise, they will:
-    * Note why the AC has not been met
-    * Move Issue back to the **In Progress** column
-    * Collaborate with the DevOps team (assigned engineer and/or others) to drive the story to completion
+4. Once the solution for an Issue has reached the specified AC environment **(`prod` by default)** the assigned engineer adds notes in the Issue with **evidence** (test steps, output, screenshots) to prove AC is met, and moves the Issue to the **Done** column.
 
-An Issue is **Done** when ACs are met and evidence is documented. The On-Call addresses outstanding ACs daily to keep things moving, and will clear out any remaining Issues during the [weekly `AC Club` hangout]({% link _articles/infrastructure-ceremonies.md %}#ac-club), which provides a dedicated time for auditing/verifying Issues. The **Done** column is reset at the beginning of every sprint cycle.
+An Issue is only **Done** when ACs are met and **evidence** is recorded to prove that the value described in the story has been delivered.  What is **evidence**?   It can be any of:
+* A link to a functional test that proves the feature/function is working (This is the preferred choice!)
+* A screenshot showing the feature/function working
+* Shell output showing commands and output to validate the intended functionality
+
+__Remember: We are here to deliver value, not lines of code, or Terraform plans, or reams of documents!  Evidence must focus on the value and not the work done.__
+
+The Product Owner and Scrum Master will review items in **Done** and provide feedback.
 
 ## Pull Requests
 

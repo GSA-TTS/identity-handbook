@@ -37,7 +37,6 @@ private links and contact information useful for oncall infrastructure engineers
 * **Release DevOps code** - Follow release schedule and steps in [Deploying Infrastructure Code](https://github.com/18F/identity-devops/wiki/Deploying-Infrastructure-Code)
 * **Coordinate with AppDev release manager** - For IdP staging (Tuesday) and production (Thursday) release days monitor release progress
 * **Review any open PRs**
-* **Check ACs for issues in Pending Acceptance** - Once released to `prod` (or a specific environment if specified in the AC of the issue), unless issue is your own
 * **Ensure clean handoff of ongoing issues**
 * **Discuss prior week's issues in standup**
 * **Maintain the #login-devops channel topic**
@@ -50,7 +49,6 @@ private links and contact information useful for oncall infrastructure engineers
 * **Work escalated page** - Act as primary if/until issue can be handed off to primary
 * **Override OpsGenie to take primary if scheduled primary is unavailable**
 * **Assist with active incidents** - Provide additional technical support or offer to take Situation Lead duties
-* **Check ACs for issues in Pending Acceptance belonging to primary on-call** 
 * **Help out with excess toil**
 * **Offer material and psychological support to primary** - Empathize! Proactively reach out if they have experienced high stress situations or worked over 8 hours
 
