@@ -28,7 +28,6 @@ These events are shared within the [login.gov shared calendar](https://calendar.
 | [Sprint Planning](#sprint-planning)       |   X   |       |       |       |       |       |       |       |       |       |
 | [Backlog Refinement](#backlog-refinement) |       |       |       |       |       |   X   |       |       |       |       |
 | [Strategy](#strategy)                     |       |       |       |   X   |       |       |       |       |       |       |
-| [AC Club](#ac-club)                       |       |       |       |   X   |       |       |       |       |       |       |
 | [Wargames](#wargames)                     |       |       |       |       |       |       |       |       |   X   |       |
 
 
