@@ -30,11 +30,11 @@ Rotating the certificates happens in two phases: first adding the new certificat
     - Edit the env configs via `bin/app-s3-secret --env <ENV> --app idp --edit` in the `identity-devops` repo.
     - So this:
 	 ```yaml
-	 saml_endpoint_configs: '[{"suffix":"2019","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2020","secret_key_passphrase":"XXXXXXXXXXXX"}]'
+	 saml_endpoint_configs: '[{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"}]'
 	 ```
     - Becomes:
 	 ```yaml
-	 saml_endpoint_configs: '[{"suffix":"2019","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2020","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"}]'
+	 saml_endpoint_configs: '[{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2022","secret_key_passphrase":"XXXXXXXXXXXX"}]'
 	 ```
     - Recycle the env to make new configs take effect.
 3. Confirm the new endpoint is live by going to `/api/saml/metadata20XX` in that environment's idp.
@@ -56,11 +56,11 @@ Rotating the certificates happens in two phases: first adding the new certificat
 Greetings Login.gov Partner,
 
 This email is intended for all partners who have a SAML integration with Login.gov. OpenID Connect (OIDC) integrations are not affected.
-The 2019 certificates for <https://idp.int.identitysandbox.gov/> and <https://secure.login.gov/> each expire on April 1, 2020. So the transition from 2019 to 2020 endpoints should take place before April 1, 2020.
+The 2021 certificates for <https://idp.int.identitysandbox.gov/> and <https://secure.login.gov/> each expire on April 1, 2022. So the transition from 2021 to 2022 endpoints should take place before April 1, 2022.
 
 Briefly:
-- `/api/saml/metadata2019` becomes `/api/saml/metadata2020`
-- `/api/saml/auth2019` becomes `/api/saml/auth2020`
+- `/api/saml/metadata2021` becomes `/api/saml/metadata2022`
+- `/api/saml/auth2021` becomes `/api/saml/auth2022`
 
 Please refer to the developer documentation for more details:
 <https://developers.login.gov/saml/>
@@ -84,7 +84,7 @@ The following considerations are essential for a successful removal:
 - **Communicate**
     - All plans/changes should be announced in #login-appdev and #login-devops
 - **SLOW ROLLOUT**
-    - Remove enpoints in lower environments first and ensure partners are not having problems (give it a few days).
+    - Remove endpoints in lower environments first and ensure partners are not having problems (give it a few days).
     - With no problems in lower, proceed to `staging`, let run for a few days.
     - Finally, when we are confident that all partners are off the old endpoint, *schedule* making the updates to `prod`
         - **Do not** remove an endpoint from `prod` on the same day as a production code deploy!
@@ -118,13 +118,13 @@ The following considerations are essential for a successful removal:
     ```
 2. If the endpoint is no longer in use, remove references to the old 20XX cert in secrets saml_endpoint_configs:
     - Edit the env configs via `bin/app-s3-secret --env <ENV> --app idp --edit` in the `identity-devops` repo.
-    - For example, if expiring the 2019 endpoint:
+    - For example, if expiring the 2021 endpoint:
 	 ```yaml
-	 saml_endpoint_configs: '[{"suffix":"2019","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2020","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"}]'
+	 saml_endpoint_configs: '[{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2022","secret_key_passphrase":"XXXXXXXXXXXX"}]'
 	 ```
     - Becomes:
 	 ```yaml
-	 saml_endpoint_configs: '[{"suffix":"2020","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"}]'
+	 saml_endpoint_configs: '[{"suffix":"2022","secret_key_passphrase":"XXXXXXXXXXXX"}]'
 	 ```
 3. Recycle the environment and monitor for any errors. Revert immediately if errors occur.
 4. Once we are confident that the scaling back is successful, a PR in `identity-devops` to remove the old cert from the deployed instances can be generated.
