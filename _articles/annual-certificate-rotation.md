@@ -9,19 +9,21 @@ The Login.gov SAML certificate is valid for just over one year. Every spring, Lo
 
 The certificates are issued to create an overlap period of about a month, during which all partners using SAML should migrate at their convenience to the new endpoint URLs for the current year.
 
-The 202X certificates for `idp.int.identitysandbox.gov` and `secure.login.gov` each expire on April 1st the next year. So the transition from 2021 to 2022 endpoints should take place in February or March 2022.
+The 20XX certificates for `idp.int.identitysandbox.gov` and `secure.login.gov` each expire on April 1st the next year. So the transition from 2021 to 2022 endpoints should take place starting in January of 2022 and resolving around April 2022.
 
 Please refer to the developer documentation for more details: <https://developers.login.gov/saml/>
 
+Rotating the certificates happens in two phases: first adding the new certificates (should happen around Jan 1), then retiring the old certificates once partners have switched over (should happen around April-June).
+
 ## Steps to add the new SAML certificate:
-1. Contact DevOps to create a ticket to generate the SAML 202X key and cert.
+1. Contact DevOps to create a ticket to generate the SAML 20XX key and cert.
     - Cert/Key get generated and saved to a secure S3 bucket
     - Certificate passphrases are saved to a Google sheet (limited distribution)
     - A PR in the `identity-devops` repo to copy the new cert down to new instances via Chef is created and merged.
     - Follow up to ensure the new key and cert have been pushed all the way to new production instances.
     - Ensure that the new certificate expires on April 1st the next year.
         - `openssl x509 -in saml20xx.crt -text -noout`
-2. Update reference to the new 202X cert in secrets saml_endpoint_configs:
+2. Update reference to the new 20XX cert in secrets saml_endpoint_configs:
     - You will need to append the new certificate to saml_endpoint_configs in the secrets file in `dev`, `int`, `staging` and `prod` environments.
         - Do not update the configs until you have confirmed that the certs have been pushed to instances in that env (see above).
     - Get access to the new certificate's passphrase from the engineer who generated the new certs (e.g., via a shared Google doc)
@@ -34,8 +36,10 @@ Please refer to the developer documentation for more details: <https://developer
 	 ```yaml
 	 saml_endpoint_configs: '[{"suffix":"2019","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2020","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"}]'
 	 ```
-3. New SAML 202X has been tested using a new test app on the Dashboard
-    - Create a new "SAML 202X" test app on <https://dashboard.int.identitysandbox.gov/> to test the new certificate endpoints.
+    - Recycle the env to make new configs take effect.
+3. Confirm the new endpoint is live by going to `/api/saml/metadata20XX` in that environment's idp.
+3. New SAML 20XX has been tested using a new test app on the Dashboard
+    - Create a new "SAML 20XX" test app on <https://dashboard.int.identitysandbox.gov/> to test the new certificate endpoints.
 
 4. Update <https://developers.login.gov/saml/> article to use the new year endpoints
     - Update <https://developers.login.gov/saml/> article found in [18F/identity-dev-docs](https://github.com/18F/identity-dev-docs) to use the new year certificate.
