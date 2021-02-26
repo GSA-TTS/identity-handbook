@@ -38,16 +38,16 @@ Rotating the certificates happens in two phases: first adding the new certificat
 	 ```
     - Recycle the env to make new configs take effect.
 3. Confirm the new endpoint is live by going to `/api/saml/metadata20XX` in that environment's idp.
-3. New SAML 20XX has been tested using a new test app on the Dashboard
+4. New SAML 20XX has been tested using a new test app on the Dashboard
     - Create a new "SAML 20XX" test app on <https://dashboard.int.identitysandbox.gov/> to test the new certificate endpoints.
 
-4. Update <https://developers.login.gov/saml/> article to use the new year endpoints
+5. Update <https://developers.login.gov/saml/> article to use the new year endpoints
     - Update <https://developers.login.gov/saml/> article found in [18F/identity-dev-docs](https://github.com/18F/identity-dev-docs) to use the new year certificate.
     - The endpoints change like this:
     - `/api/saml/metadata2021` → `/api/saml/metadata2022`
     - `/api/saml/auth2021` → `/api/saml/auth2022`
 
-5. Send notification to our SAML partners technical contacts
+6. Send notification to our SAML partners technical contacts
     - Provide a list of all SAML issuers in Prod to Partnerships and ask for the technical contacts.
     - Send a message to the technical contacts from <partners@login.gov> with subject "Login.gov Annual Certificate Rotation."
     - Here is an example:
