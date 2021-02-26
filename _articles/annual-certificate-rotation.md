@@ -13,16 +13,19 @@ The 202X certificates for `idp.int.identitysandbox.gov` and `secure.login.gov` e
 
 Please refer to the developer documentation for more details: <https://developers.login.gov/saml/>
 
-**NOTE:** Do not assume that partners are not using out-of-date endpoints. It is a good idea to separate out the addition of the new year's certs/endpoints and the removal of older years certs/endpoints.
-
 ## Steps to add the new SAML certificate:
 1. Contact DevOps to create a ticket to generate the SAML 202X key and cert.
-    - Cert/Key get saved to a secure S3 bucket
-    - Follow up to ensure the new key and cert have been pushed (via chef) all the way to new production instances.
+    - Cert/Key get generated and saved to a secure S3 bucket
+    - Certificate passphrases are saved to a Google sheet (limited distribution)
+    - A PR in the `identity-devops` repo to copy the new cert down to new instances via Chef is created and merged.
+    - Follow up to ensure the new key and cert have been pushed all the way to new production instances.
     - Ensure that the new certificate expires on April 1st the next year.
+        - `openssl x509 -in saml20xx.crt -text -noout`
 2. Update reference to the new 202X cert in secrets saml_endpoint_configs:
-    - Do not update the configs until you have confirmed that the certs are being pushed to instances in that env (see above).
-    - You will need to append the new certificate to saml_endpoint_configs in the secrets file in `dev`, `int`, `staging` and `prod` environments. Edit the env configs via `bin/app-s3-secret --env <ENV> --app idp --edit` in the `identity-devops` repo.
+    - You will need to append the new certificate to saml_endpoint_configs in the secrets file in `dev`, `int`, `staging` and `prod` environments.
+        - Do not update the configs until you have confirmed that the certs have been pushed to instances in that env (see above).
+    - Get access to the new certificate's passphrase from the engineer who generated the new certs (e.g., via a shared Google doc)
+    - Edit the env configs via `bin/app-s3-secret --env <ENV> --app idp --edit` in the `identity-devops` repo.
     - So this:
 	 ```yaml
 	 saml_endpoint_configs: '[{"suffix":"2019","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2020","secret_key_passphrase":"XXXXXXXXXXXX"}]'
@@ -69,9 +72,23 @@ U.S. General Services Administration
 </blockquote>
 
 
-## Steps to remove and old SAML certificate:
-1. Run a CloudWatch query to ensure that partners are no longer the endpoint for the year being retired, e.g.,
+## Steps to remove an old SAML certificate:
+
+Removing an endpoint can result in a disruption of service if a partner is still referencing the old endpoint. Do not assume that old endpoints are not in use, even well after the certificates have expired.
+
+The following considerations are essential for a successful removal:
+- **Communicate**
+    - All plans/changes should be announced in #login-appdev and #login-devops
+- **SLOW ROLLOUT**
+    - Remove enpoints in lower environments first and ensure partners are not having problems (give it a few days).
+    - With no problems in lower, proceed to `staging`, let run for a few days.
+    - Finally, when we are confident that all partners are off the old endpoint, *schedule* making the updates to `prod`
+        - **Do not** remove an endpoint from `prod` on the same day as a production code deploy!
+
+1. Run a CloudWatch query to ensure that partners are no longer using the endpoint for the year being retired:
+    - Run the following query over the past week on the `prod_/srv/idp/shared/log/production.log` to get a count of authentications per endpoint year:
     ```
+    # file prod_/srv/idp/shared/log/production.log
     fields
       substr(replace(path, "/api/saml/auth", ""), 0, 4) AS year,
       @timestamp, @message
@@ -79,9 +96,25 @@ U.S. General Services Administration
     | filter path like "/api/saml/auth"
     | stats count(*) by year
     ```
-2. If the endpoint is no longer in use, remove reference to the old 20XX cert in secrets saml_endpoint_configs:
-    - You will need to append the new certificate to saml_endpoint_configs in the secrets file in `dev`, `int`, `staging` and `prod` environments. Edit the env configs via `bin/app-s3-secret --env <ENV> --app idp --edit` in the `identity-devops` repo.
-    - So this:
+    - Run the following query over the past week on the `prod_/var/log/nginx/access.log` to get an idea of which partners are using which endpoints:
+    ```
+    # file prod_/var/log/nginx/access.log
+    fields @timestamp, @message
+    | parse @message 'http_referer="*"' as http_referer
+    | parse @message 'uri_path="*"' as path
+    | sort @timestamp desc
+    | filter path like "/api/saml/auth"
+    | filter http_referer not like "secure.login.gov"
+    | limit 20
+    | display
+      replace(path, "/api/saml/auth", "") AS year,
+      http_referer AS http_referer,
+      @timestamp
+    | stats count(*) by year, http_referer
+    ```
+2. If the endpoint is no longer in use, remove references to the old 20XX cert in secrets saml_endpoint_configs:
+    - Edit the env configs via `bin/app-s3-secret --env <ENV> --app idp --edit` in the `identity-devops` repo.
+    - For example, if expiring the 2019 endpoint:
 	 ```yaml
 	 saml_endpoint_configs: '[{"suffix":"2019","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2020","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"}]'
 	 ```
