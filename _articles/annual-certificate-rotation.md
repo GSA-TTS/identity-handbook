@@ -23,7 +23,10 @@ Rotating the certificates happens in two phases: first adding the new certificat
     - Follow up to ensure the new key and cert have been pushed all the way to new production instances.
     - Ensure that the new certificate expires on April 1st the next year.
         - `openssl x509 -in saml20xx.crt -text -noout`
-2. Update reference to the new 20XX cert in secrets saml_endpoint_configs:
+2. Wait here until `identity-devops` has been deployed through to `prod`!   Until a given environment has the updated `identity-devops` code applied
+   it will NOT copy the new certificate from S3 on to the `idp` instances.  As the release progresses, you can follow along
+   with the next steps.
+3. Update reference to the new 20XX cert in secrets saml_endpoint_configs:
     - You will need to append the new certificate to saml_endpoint_configs in the secrets file in `dev`, `int`, `staging` and `prod` environments.
         - Do not update the configs until you have confirmed that the certs have been pushed to instances in that env (see above).
     - Get access to the new certificate's passphrase from the engineer who generated the new certs (e.g., via a shared Google doc)
@@ -37,17 +40,17 @@ Rotating the certificates happens in two phases: first adding the new certificat
 	 saml_endpoint_configs: '[{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2022","secret_key_passphrase":"XXXXXXXXXXXX"}]'
 	 ```
     - Recycle the env to make new configs take effect.
-3. Confirm the new endpoint is live by going to `/api/saml/metadata20XX` in that environment's idp.
-4. New SAML 20XX has been tested using a new test app on the Dashboard
+4. Confirm the new endpoint is live by going to `/api/saml/metadata20XX` in that environment's idp.
+5. New SAML 20XX has been tested using a new test app on the Dashboard
     - Create a new "SAML 20XX" test app on <https://dashboard.int.identitysandbox.gov/> to test the new certificate endpoints.
 
-5. Update <https://developers.login.gov/saml/> article to use the new year endpoints
+6. Update <https://developers.login.gov/saml/> article to use the new year endpoints
     - Update <https://developers.login.gov/saml/> article found in [18F/identity-dev-docs](https://github.com/18F/identity-dev-docs) to use the new year certificate.
     - The endpoints change like this:
     - `/api/saml/metadata2021` → `/api/saml/metadata2022`
     - `/api/saml/auth2021` → `/api/saml/auth2022`
 
-6. Send notification to our SAML partners technical contacts
+7. Send notification to our SAML partners technical contacts
     - Provide a list of all SAML issuers in Prod to Partnerships and ask for the technical contacts.
     - Send a message to the technical contacts from <partners@login.gov> with subject "Login.gov Annual Certificate Rotation."
     - Here is an example:
