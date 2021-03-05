@@ -44,7 +44,7 @@ category: "AppDev"
 
 ## Configuring applications for local development
 
-In a Windows virtual machine, the host machine can be resolved at the IP address `10.0.2.2` with VirtualBox's default network settings. Many applications will bind only to `localhost`. Refer to the project's documentation for more information about how to bind to other addresses. Typically, this occurs by passing the host as an environment variable (e.g. `HOST=10.0.2.2 make run`).
+In a Windows virtual machine, the host machine can be resolved at the IP address `10.0.2.2` with VirtualBox's default network settings. Many applications will bind only to `localhost`. Refer to the project's documentation for more information about how to bind to other addresses. Typically, this can be done by passing the host as an environment variable (e.g. `HOST=10.0.2.2 make run`).
 
 For the IDP, see: ["Testing on a mobile device or in a virtual machine"](https://github.com/18F/identity-idp#testing-on-a-mobile-device-or-in-a-virtual-machine)
 
