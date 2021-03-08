@@ -50,7 +50,7 @@ The lifecycle of a job:
         - The request to the vendors will include either PII or decrypted image data
 6. When the worker process is done, it will
     - Update the jobs table to mark the job as done, and
-    - Store the result  (which may contain PII) in Redis, symmetrically encrypted and
+    - Store the result (which may contain PII) in Redis, symmetrically encrypted and
       with a 60 second expiration.
     - PII in the payload may include data from reading the driver's licese
         - First name
