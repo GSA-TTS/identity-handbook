@@ -30,7 +30,7 @@ The lifecycle of a job:
 2. The user submits a form to the IDP
     - For image processing jobs, the payload will contain:
         - S3 image URLs
-        - the encryption key and IVs
+        - the encryption key and initialization vectors (IVs)
     - For PII verification jobs, the payload will contain PII:
         - First name
         - Last name
@@ -68,4 +68,3 @@ The lifecycle of a job:
 
 The code for the workers lives in the same repository as the IDP, but is deployed to separate worker
 instances.
-
