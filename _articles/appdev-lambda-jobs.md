@@ -1,5 +1,5 @@
 ---
-title: "Lambda Background Jobs"
+title: "Background Jobs: Lambda"
 description: "Overview of and launch checklist for our async Lambda workers"
 layout: article
 category: "AppDev"
