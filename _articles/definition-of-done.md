@@ -16,7 +16,7 @@ Expect this DoD to change over time.
 - 0 errors 0 warnings in CodeClimate
 - Tests have been written. New or modified features have feature coverage. Code coverage of the entire test suite is not reduced
 - Ensure that our accessibility posture has been maintained or improved, preferably via automated `aXe` tests
-- All code and tests have been merged to master in GitHub repo
+- All code and tests have been merged to main in GitHub repo
 - The `application.yml` configurations have been updated as needed in deployed environments
 - Database indexes exist for any new queries
 - The dashboard and sample SPs have been updated if necessary
@@ -51,7 +51,7 @@ Expect this DoD to change over time.
 - If there is a potential security impact someone has told `@Mo` about it
 - If we are affecting storage or transmission of PII somebody has told the privacy officer `@richard.speidel`
 - The release management guide has been updated for changes to the deploy process
-- The [Entity Relationship Diagrams](https://github.com/18F/identity-idp/blob/master/docs/ARCHITECTURE.md#entity-relationship-diagram) have been updated if the db schema has changed.
+- The [Entity Relationship Diagrams](https://github.com/18F/identity-idp/blob/main/docs/ARCHITECTURE.md#entity-relationship-diagram) have been updated if the db schema has changed.
 - The help content on the static site has been updated and new FAQ content has been created if necessary
 - User journey/interface are connected to user personas and listed in the login handbook. 
 

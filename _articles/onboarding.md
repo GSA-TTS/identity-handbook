@@ -24,7 +24,7 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
   - Contractors with full Slack access should add the word "contractor" to their Slack profile for the benefit of the wider TTS audience.
 - Make sure your GitHub account is set up [like this](https://handbook.tts.gsa.gov/github/#setup).
 - Add the following email address to your Google Calendar to see the login.gov Shared Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
-- Add yourself to the [`team.yml`](https://github.com/18F/identity-private/blob/master/team/team.yml) file
+- Add yourself to the [`team.yml`](https://github.com/18F/identity-private/blob/main/team/team.yml) file
 - Request access to relevant Google Groups, [the handbook has a list of active groups](https://login-handbook.app.cloud.gov/articles/email.html#internal-team-lists)
 - Add a signature to your GSA email account like this:
   > **Human Person**<br>
@@ -57,7 +57,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Non-GSA.gov email address: `See all event details` permission
   - With GSA.gov email address: `Make changes AND manage sharing`
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the login.gov project.
-- Approve their PR to update [`team.yml`](https://github.com/18F/identity-private/blob/master/team/team.yml) with their info
+- Approve their PR to update [`team.yml`](https://github.com/18F/identity-private/blob/main/team/team.yml) with their info
 - Verify their membership in all appropriate Google Groups. This will grant them permission to see the login.gov Team Drive and other Google Docs
   - Add everyone to `login-all@`
   - Add feds to `login-team@`, and contractors to `login-team-contractors@`
@@ -110,7 +110,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Write some code
   - Assign yourself a Jira ticket
   - Open a pull request against the IdP
-  - Squash and merge a pull request into master on the IdP
+  - Squash and merge a pull request into main on the IdP
 - Get access to these lower environments
   - `dev`
   - `int`

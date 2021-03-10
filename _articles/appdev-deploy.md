@@ -29,7 +29,7 @@ The release branch should be cut from latest and it should be the date of the pr
 
   ```bash
   cd identity-idp
-  git checkout master && git pull
+  git checkout main && git pull
   git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
   git push -u origin HEAD
   ```
@@ -107,7 +107,7 @@ Adding Emails: Patch release to include #3821, fixes a bug with adding emails to
 
 ## Staging
 
-Staging used to be deployed by this process, but this was changed to deploy the `master` branch to the staging environment every day.
+Staging used to be deployed by this process, but this was changed to deploy the `main` branch to the staging environment every day.
 
 ## Production
 Scheduled for every other Thursday

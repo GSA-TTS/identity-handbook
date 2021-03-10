@@ -48,7 +48,7 @@ and how to add it.
    ```
 
 1. Use the rails console in [identity-pki](https://github.com/18f/identity-pki) to inspect the certificate that was downloaded from S3,
-   by using the [CertificateChainService](https://github.com/18F/identity-pki/blob/master/app/services/certificate_chain_service.rb).
+   by using the [CertificateChainService](https://github.com/18F/identity-pki/blob/main/app/services/certificate_chain_service.rb).
 
     ```ruby
     cert = Certificate.new(OpenSSL::X509::Certificate.new(File.read("path/to/cert")))
@@ -106,7 +106,7 @@ and how to add it.
     end
     ```
 
-    1. Test that the certificate was added correctly by **closing and opeining the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/master/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
+    1. Test that the certificate was added correctly by **closing and opeining the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/main/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
 
         ```ruby
         key_id = '8C:D6:D4:69:A9:E4:85:41:3A:6A:A6:5E:DA:51:1A:17:8D:92:8B:6C'
