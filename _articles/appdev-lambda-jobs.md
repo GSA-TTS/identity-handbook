@@ -67,7 +67,7 @@ The lifecycle of a lambda:
     - If after 60 seconds the IDP has not seen a response for the job, the IDP will decide the job
       has timed out, and show an error screen to the user, giving them an option to retry.
 
-[git-ref]: https://github.com/18F/identity-idp/blob/master/app/services/lambda_jobs/git_ref.rb
+[git-ref]: https://github.com/18F/identity-idp/blob/main/app/services/lambda_jobs/git_ref.rb
 
 ## Deploys
 
@@ -82,7 +82,7 @@ The IDP is pinned to a specific SHA of the `identity-idp-functions` via its [`GI
 to get the IDP to use newer lambda code, you need to make a pull request to the IDP to update that file.
 
 [identity-idp-functions]: https://github.com/18F/identity-idp-functions
-[circleci]: https://github.com/18F/identity-idp-functions/blob/master/.circleci/config.yml
+[circleci]: https://github.com/18F/identity-idp-functions/blob/main/.circleci/config.yml
 
 ## Configuration
 
