@@ -29,9 +29,9 @@ Here is a list of items that need to be completed to deploy the configuration fo
     * **If this is an SAML integration** (Not OpenID Connect), then please ensure that `SAML Assertion Encryption` is enabled and `Assertion Consumer Logout Service URL` is defined.
 
 6. Create a PR on the [identity-idp-config](https://github.com/18f/identity-idp-config) repo that consists of:
-    * App configuration added to [`service_providers.yml`](https://github.com/18F/identity-idp-config/blob/master/service_providers.yml)
-    * A logo image in [`/public/assets/images/sp-logos`](https://github.com/18F/identity-idp-config/tree/master/public/assets/images/sp-logos)
-    * A certificate file in [`/certs/sp`](https://github.com/18F/identity-idp-config/tree/master/certs/sp)
+    * App configuration added to [`service_providers.yml`](https://github.com/18F/identity-idp-config/blob/main/service_providers.yml)
+    * A logo image in [`/public/assets/images/sp-logos`](https://github.com/18F/identity-idp-config/tree/main/public/assets/images/sp-logos)
+    * A certificate file in [`/certs/sp`](https://github.com/18F/identity-idp-config/tree/main/certs/sp)
 
 7. After merging the above PR you will need to deploy the configuration change by migrating and recycling the IDP in **both**:
     - In Staging ([deploy commands for staging]({{ '/articles/appdev-deploy.html#staging' | prepend: site.baseurl }}))
