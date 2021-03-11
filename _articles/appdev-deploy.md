@@ -40,8 +40,9 @@ the `stages/prod` branch.
 Err on the side of overcommunication about deploys: make sure to post in the
 steps in Slack as they are happening.
 
-Especially overcommunicate about off-cycle/mid-cycle deploys, as
-they are considered being scheduled, and can release changes before expected.
+Especially overcommunicate about off-cycle/mid-cycle deploys: especially
+as they are being planned or evaluated. Most people expect changes deployed
+on a schedule so early releases can be surprising.
 
 ## Deploy Guide
 
