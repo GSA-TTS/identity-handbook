@@ -16,40 +16,9 @@ We deploy { two sample apps } &times; { two environments } in cloud.gov:
 
 ## Deploying
 
-From inside the repository for the app you want to deploy:
+The sample apps deploy automatically to both `dev` and `int` environments when changes are merged to the `main` branch.
 
-1. Create the `deploy.json` file
+Refer to each project's CircleCI configuration for details on the deployment workflow:
 
-    ```bash
-rake login:deploy_json
-```
-
-1. Log in to cloud.gov in the [CloudFoundry CLI][cf-cli]. It will prompt you to get an OTP from <https://login.fr.cloud.gov/passcode>.
-
-    ```bash
-cf login -a api.fr.cloud.gov --sso
-```
-
-    - When it prompts you to select an org, choose **gsa-login-prototyping**
-    - When it prompts you for an environment, pick **dev** or **int**, depending on where you are deploying
-
-1. Push the app
-
-    - Double-check the deployed apps in the environment
-
-        ```bash
-        cf apps # list the deployed apps
-        ```
-
-    - Push the code, the app should be one of:
-
-        - **dev-identity-oidc-sinatra**
-        - **dev-identity-saml-sinatra**
-        - **int-identity-oidc-sinatra**
-        - **int-identity-saml-sinatra**
-
-        ```bash
-    cf push int-identity-saml-sinatra
-    ```
-
-[cf-cli]: https://docs.cloudfoundry.org/cf-cli/install-go-cli.html
+- [identity-oidc-sinatra/.circleci/config.yml](https://github.com/18F/identity-oidc-sinatra/blob/main/.circleci/config.yml)
+- [identity-saml-sinatra/.circleci/config.yml](https://github.com/18F/identity-saml-sinatra/blob/main/.circleci/config.yml)
