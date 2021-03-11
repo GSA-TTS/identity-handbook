@@ -38,7 +38,7 @@ the `stages/prod` branch.
 ### Communications
 
 Err on the side of overcommunication about deploys: the steps are the are
-happening. Especially overcommunicate about off-cyclel/mid-cycle deploys, as
+happening. Especially overcommunicate about off-cycle/mid-cycle deploys, as
 they are considered being scheduled, and can release changes before expected.
 
 ## Deploy Guide
