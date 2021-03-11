@@ -29,7 +29,7 @@ the `stages/prod` branch.
 
 | Type | What | When | Who |
 | ---- | ---- | ---- | --- |
-| **Full Deploy** |  The normal deplo, releases all changes on the `main`  branch to production. | Every 2 weeks | [AppDev Deploy Manager rotation][deployer-rotation] |
+| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Every 2 weeks | [AppDev Deploy Manager rotation][deployer-rotation] |
 | **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [AppDev Deploy Manager rotation][deployer-rotation], or engineer handling the urgent issue |
 | **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
 
