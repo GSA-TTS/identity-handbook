@@ -3,7 +3,48 @@ title: "Deploying new IDP and PKI code"
 layout: article
 description: "Release Manager's Guide"
 category: AppDev
+toc_h_max: 4
 ---
+
+## General Information
+
+A few notes on our deploy process.
+
+### Cadence
+
+**When to deploy:** ✅
+- Typically we do a full deploy every 2 weeks on a Thursday, to coincide with a
+  sprint ending
+
+**When _not_ to deploy:** ❌
+- We try to avoid deploying on Fridays, to minimize the chances of introducing a
+  bug and having to scramble to fix it before the weekend
+- During New Years/winter break, or any other time when many team members are
+  on vacation
+
+### Types of Deploys
+
+All deploys to production require a code reviewer to approve the changes to
+the `stages/prod` branch.
+
+| Type | What | When | Who |
+| ---- | ---- | ---- | --- |
+| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Every 2 weeks | [AppDev Deploy Manager rotation][deployer-rotation] |
+| **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [AppDev Deploy Manager rotation][deployer-rotation], or engineer handling the urgent issue |
+| **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
+
+[deployer-rotation]: https://login-gov.app.opsgenie.com/settings/schedule/detail/7f1b7c07-e6de-4990-8b59-01cc4c681542
+
+### Communications
+
+Err on the side of overcommunication about deploys: make sure to post in the
+steps in Slack as they are happening.
+
+Especially overcommunicate about off-cycle/mid-cycle deploys: especially
+as they are being planned or evaluated. Most people expect changes deployed
+on a schedule so early releases can be surprising.
+
+## Deploy Guide
 
 This is a guide for the Release Manager, the engineer who shepherds code to production for a given release.
 
@@ -20,10 +61,10 @@ This guide assumes that:
 
 Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of goood improvements all the time!
 
-## Pre-deploy
+### Pre-deploy
 Scheduled for every other **Tuesday/Wednesday**
 
-### Cut a release branch
+#### Cut a release branch
 
 The release branch should be cut from latest and it should be the date of the production release (ex `stages/rc-2020-06-17`):
 
@@ -34,7 +75,7 @@ The release branch should be cut from latest and it should be the date of the pr
   git push -u origin HEAD
   ```
 
-### Create pull request
+#### Create pull request
 
 A pull request should be created from that latest branch to production:
 
@@ -48,7 +89,7 @@ A pull request should be created from that latest branch to production:
        - Unsure what the last release was? Check the [releases page](https://github.com/18F/identity-idp/releases/)
    - Add the label **`status - promotion`** to the pull request that will be included in the release.
 
-### Prepare release notes
+#### Prepare release notes
 
    1. The audience for the release notes are partner agencies and their developers. Notes should be written in [plain language](https://plainlanguage.gov/) and clearly demonstrate the impact on the end user or agency.
    1. Release manager writes a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
@@ -59,11 +100,11 @@ A pull request should be created from that latest branch to production:
    1. Release manager shares the draft release on #login-appdev with `@login-product-team` to ensure that no changes in the release are missing.
    1. Once approved, the release manager ensures all updates are saved in the release notes on GitHub.
 
-### Release notes templates
+#### Release notes templates
 
 Below are a set of templates that Release Managers can use when writing various types of release notes for the [Login.gov Identity Provider (IdP) code base](https://github.com/18F/identity-idp).
 
-#### Template: Official release candidate notes
+##### Template: Official release candidate notes
 
 ``` markdown
 # RC [Number]
@@ -93,7 +134,7 @@ Below are a set of templates that Release Managers can use when writing various 
 -->
 
 ```
-#### Template: Patch release notes
+##### Template: Patch release notes
 
 ``` markdown
 # RC [Number].[x]
@@ -105,11 +146,11 @@ Adding Emails: Patch release to include #3821, fixes a bug with adding emails to
 
 ```
 
-## Staging
+### Staging
 
 Staging used to be deployed by this process, but this was changed to deploy the `main` branch to the staging environment every day.
 
-## Production
+### Production
 Scheduled for every other Thursday
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
@@ -178,7 +219,7 @@ Scheduled for every other Thursday
         1. Enter the latest git tag corresponding to the code you just deployed
         1. Copy in the cleaned up release notes and publish them in GitHub
 
-### Rolling Back
+#### Rolling Back
 
 It's safer to roll back the IDP to a known good state than leave it up in a possibly bad one.
 
@@ -192,7 +233,7 @@ If any of these are "yes", roll back. See more criteria at <https://outage.party
 Staging is a pretty good match for production, so you should be able to fix and verify
 the bug in staging, where it won't affect end users.
 
-#### Steps to roll back
+##### Steps to roll back
 
 1. Make a pull request to the `stages/prod` branch, to revert it back to the last deploy.
 
