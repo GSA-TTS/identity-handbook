@@ -37,8 +37,10 @@ the `stages/prod` branch.
 
 ### Communications
 
-Err on the side of overcommunication about deploys: the steps as they are
-happening. Especially overcommunicate about off-cycle/mid-cycle deploys, as
+Err on the side of overcommunication about deploys: make sure to post in the
+steps in Slack as they are happening.
+
+Especially overcommunicate about off-cycle/mid-cycle deploys, as
 they are considered being scheduled, and can release changes before expected.
 
 ## Deploy Guide
