@@ -181,7 +181,7 @@ For these examples, we'll read from `$pfx_path` and export to `$private_pem` and
 ```bash
 pfx_path="/in/some.pfx"
 private_pem="/out/private.pem"
-public_pem="/out/private.pem"
+public_pem="/out/public.pem"
 ```
 
 1. Export the private key
