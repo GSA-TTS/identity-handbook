@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting OpenSSL Command Line Recipes"
-description: "Commands for common certificate tasks, useful for PIV/CAC"
+description: "Commands for common certificate tasks, useful for PIV/CAC or AAMVA credentials"
 layout: article
 category: "AppDev"
 ---
@@ -155,17 +155,81 @@ p7b_path="/path/to/your.p7b"
     - Otherwise it's probably the ASCII **PEM** format already
 
     ```bash
-    file "$p7b_path"
-    file.p7b: data
+file "$p7b_path"
+file.p7b: data
     ```
 
 2. Convert the file, it prints to stdout. This Ruby script will take the PEM files and write them to files that match our PKI naming convention:
 
     ```bash
-    openssl pkcs7 -print_certs \
-        -in "$p7b_path" \
-        -inform der \
-        -outform pem | \
-        ruby -r openssl \
-             -e 'STDIN.read.split("\n\n").each_with_index { |cert, i| subject = OpenSSL::X509::Certificate.new(cert).subject.to_s(OpenSSL::X509::Name::COMPAT); File.open("config/certs/#{subject} #{"%02d" % i}.pem", "w") { |f| f.puts cert } }'
+openssl pkcs7 -print_certs \
+    -in "$p7b_path" \
+    -inform der \
+    -outform pem | \
+    ruby -r openssl \
+         -e 'STDIN.read.split("\n\n").each_with_index { |cert, i| subject = OpenSSL::X509::Certificate.new(cert).subject.to_s(OpenSSL::X509::Name::COMPAT); File.open("config/certs/#{subject} #{"%02d" % i}.pem", "w") { |f| f.puts cert } }'
+    ```
+
+## Convert PKCS12 (`.pfx`) to PEM
+
+PFX contains a public-private key pair. It may be protected by a password, and if so, the commands
+below will prompt for the password on stdin.
+
+For these examples, we'll read from `$pfx_path` and export to `$private_pem` and `$public_pem`.
+
+```bash
+pfx_path="/in/some.pfx"
+private_pem="/out/private.pem"
+public_pem="/out/private.pem"
+```
+
+1. Export the private key
+
+    ```bash
+openssl pkcs12 \
+    -in "$pfx_path" \
+    -nocerts \
+    -out "$private_pem" \
+    -nodes
+    ```
+
+2. Export the public key
+
+    ```bash
+openssl pkcs12 \
+    -in "$pfx_path" \
+    -clcerts \
+    -out "$public_pem" \
+    -nodes
+    ```
+
+#### Password Encoding from AAMVA
+
+These instructions may be hyper-specific to AAMVA and their processes, but hopefully they can be
+useful to somebody else in the future.
+
+AAMVA sent a password in a `.txt` file that was UTF-16LE encoded, with control characters embedded.
+Specifically, the UTF Byte order mark (BOM), which is in the file but not a valid part of the password.
+The BOM as hexadecimal is `FEFF`, so if you look at the file in Ruby it might look like:
+
+```ruby
+File.read('password.txt')
+=> "\xFF\xFE...."
+```
+
+A few ways to convert the password so that OpensSSL accepted it:
+
+* TextEdit on macOS
+
+    1. Open the file in TextEdit
+    1. Duplicate it (shift-cmd-S)
+    1. Save it (cmd-S) as a new file
+    1. Choose UTF-8 as the encoding
+
+* Ruby
+
+    ```ruby
+File.open('out.txt', 'w') do |out|
+    out.write File.read('in.txt', mode: 'rb', encoding: 'UTF-16LE').encode('UTF-8')
+end
     ```
