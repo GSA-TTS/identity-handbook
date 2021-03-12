@@ -173,7 +173,8 @@ openssl pkcs7 -print_certs \
 ## Convert PKCS12 (`.pfx`) to PEM
 
 PFX contains a public-private key pair. It may be protected by a password, and if so, the commands
-below will prompt for the password on stdin.
+below will prompt for the password on stdin. Is the password from AAMVA and OpenSSL isn't accepting it?
+See notes about [Password Encoding from AAMVA](#password-encoding-from-aamva) below.
 
 For these examples, we'll read from `$pfx_path` and export to `$private_pem` and `$public_pem`.
 
