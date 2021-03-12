@@ -217,7 +217,7 @@ File.read('password.txt')
 => "\xFF\xFE...."
 ```
 
-A few ways to convert the password so that OpensSSL accepted it:
+A few ways to convert the password so that OpenSSL accepted it:
 
 * TextEdit on macOS
 
