@@ -72,7 +72,7 @@ with a separate 12-byte random IV per image. It uses AES-GCM.
 ### Server-Side Encryption
 
 The server stores job arguments in RDS. The Ruby code encrypts arguments that contain PII
-using the same encryption to encode a session: AES-256-GCM inside of and AWS KMS.
+using the same encryption to encode a session: AES-256-GCM inside of an AWS KMS-encrypted message.
 The AES key is the application's `session_encryption_key`, stored with the application secrets.
 
 ### Logging
