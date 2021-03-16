@@ -25,12 +25,12 @@ The lifecycle of a job:
 
 1. (For image processing jobs only)
   - The IDP will generate pre-signed S3 URLs and pass them to the client/browser
-  - The browser will generate a random encryption key
-  - The browser will AES-encrypt images and upload those encrypted images to the pre-signed S3 URLs
+  - The browser will generate a random encryption key (see notes on [client-side encryption](#client-side-encryption))
+  - The browser will AES-encrypt images and upload those encrypted images to the pre-signed S3 URLs (see notes on [client-side encryption](#client-side-encryption))
 2. The user submits a form to the IDP
     - For image processing jobs, the payload will contain:
         - S3 image URLs
-        - the encryption key and initialization vectors (IVs)
+        - the encryption key and initialization vectors (IVs) (see notes on [client-side encryption](#client-side-encryption))
     - For PII verification jobs, the payload will contain PII:
         - First name
         - Last name
@@ -40,7 +40,7 @@ The lifecycle of a job:
         - Address
 3. The IDP will enqueue a background job
     - Job parameters are persisted to the PSQL database
-    - Sensitive parameters are symmetrically encrypted by a server-side IDP key
+    - Sensitive parameters are symmetrically encrypted by a server-side IDP key (see notes on [server-side encryption](#server-side-encryption))
 4. The IDP will show a waiting page to the user
 4. The Worker host polls the background jobs table. When it pulls a job:
     - Writes to the jobs table to mark the job as claimed
@@ -63,6 +63,26 @@ The lifecycle of a job:
    to the next step of the flow.
     - If after 60 seconds the IDP has not seen a response for the job, the IDP will decide the job
       has timed out, and show an error screen to the user, giving them an option to retry.
+
+### Client-Side Encryption
+
+The browser encrypts images before they are uploaded to S3. The browser generates 256-bit AES key,
+with a separate 12-byte random IV per image. It uses AES-GCM.
+
+### Server-Side Encryption
+
+The server stores job arguments in RDS. The Ruby code encrypts arguments that contain PII
+using the same encryption to encode a session: AES-256-GCM inside of an AWS KMS-encrypted message.
+The AES key is the application's `session_encryption_key`, stored with the application secrets.
+The application secrets are sensitive config items are stored live in S3 in YAML files, and are
+pulled down when the app launches and read into memory.
+
+### Logging
+
+Logging for the workers will go to `log/production.log` just like the IDP web hosts,
+which will be ingested into Cloudwatch.
+
+DelayedJob logs job durations by default.
 
 ## Deploys
 
