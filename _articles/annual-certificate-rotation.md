@@ -13,7 +13,7 @@ The 20XX certificates for `idp.int.identitysandbox.gov` and `secure.login.gov` e
 
 Please refer to the developer documentation for more details: <https://developers.login.gov/saml/>
 
-Rotating the certificates happens in two phases: first adding the new certificates (should happen around Jan 1), then retiring the old certificates once partners have switched over (should happen around April-June).
+Rotating the certificates happens in two phases: first adding the new certificates (should happen around Jan 1), then retiring the old certificates once partners have switched over (should happen around July 1).
 
 ## Steps to add the new SAML certificate:
 1. Contact DevOps to create a ticket to generate the SAML 20XX key and cert.
@@ -50,34 +50,7 @@ Rotating the certificates happens in two phases: first adding the new certificat
     - `/api/saml/metadata2021` → `/api/saml/metadata2022`
     - `/api/saml/auth2021` → `/api/saml/auth2022`
 
-7. Send notification to our SAML partners technical contacts
-    - Provide a list of all SAML issuers in Prod to Partnerships and ask for the technical contacts.
-    - Send a message to the technical contacts from <partners@login.gov> with subject "Login.gov Annual Certificate Rotation."
-    - Here is an example:
-
-<blockquote class="padding-left-5 border-left-05" markdown="1">
-Greetings Login.gov Partner,
-
-This email is intended for all partners who have a SAML integration with Login.gov. OpenID Connect (OIDC) integrations are not affected.
-The 2021 certificates for <https://idp.int.identitysandbox.gov/> and <https://secure.login.gov/> each expire on April 1, 2022. So the transition from 2021 to 2022 endpoints should take place before April 1, 2022.
-
-Briefly:
-- `/api/saml/metadata2021` becomes `/api/saml/metadata2022`
-- `/api/saml/auth2021` becomes `/api/saml/auth2022`
-
-Please refer to the developer documentation for more details:
-<https://developers.login.gov/saml/>
-
-If you have any questions, please send an email to <partners@login.gov>.
-
-Thank you,
-
-Partnerships team | [login.gov](http://login.gov/)
-Technology Transformation Services
-U.S. General Services Administration
-[partners@login.gov](mailto:partners@login.gov)
-</blockquote>
-
+7. Send notification to our SAML partners' technical contacts following the [SAML rotation communication plan](https://docs.google.com/document/d/1nsxtJtqZK0GAhBjzkSVGUdvpl8I9k3jNynOB2FGxsSM/edit#).
 
 ## Steps to remove an old SAML certificate:
 
@@ -85,7 +58,7 @@ Removing an endpoint can result in a disruption of service if a partner is still
 
 The following considerations are essential for a successful removal:
 - **Communicate**
-    - All plans/changes should be announced in #login-appdev and #login-devops
+    - All plans/changes should be announced in #login-appdev and #login-devops, as well as communicated to partners following the [SAML rotation communications plan](https://docs.google.com/document/d/1nsxtJtqZK0GAhBjzkSVGUdvpl8I9k3jNynOB2FGxsSM/edit#).
 - **SLOW ROLLOUT**
     - Remove endpoints in lower environments first and ensure partners are not having problems (give it a few days).
     - With no problems in lower, proceed to `staging`, let run for a few days.
