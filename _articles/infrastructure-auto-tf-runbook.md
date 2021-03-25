@@ -119,7 +119,7 @@ under `auto-terraform/networkfw*` log groups.
 #### Adding new targets
 
 If you have more terraform directories you would like to auto-tf in identity-devops,
-just go add them in like the other entries in https://github.com/18F/identity-devops/blob/main/terraform/tooling/tooling/pipelines.tf
+just go add them in like the other entries in <https://github.com/18F/identity-devops/blob/main/terraform/tooling/tooling/pipelines.tf>
 
 So a plain terraform directory like you would deploy using `tf-deploy all/tooling apply` would
 look like this:
