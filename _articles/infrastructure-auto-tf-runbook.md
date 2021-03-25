@@ -174,7 +174,7 @@ module "tspencer" {
 ```
 
 Be sure to get your branches and accounts right.  One thing to note is that
-the personal environments use the `main` branch of https://github.com/18F/identity-devops-private/
+the personal environments use the `main` branch of <https://github.com/18F/identity-devops-private/>
 to do the deploy, so if you make changes in there, it will automatically redeploy too.
 
 #### Tests!
