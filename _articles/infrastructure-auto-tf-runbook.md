@@ -232,7 +232,7 @@ https://pkg.go.dev/github.com/gruntwork-io/terratest
 We will undoubtably need to update the version of terraform and the
 various plugins that it uses in the future.
 
-You can update this bundle by editing `bin/terraform-bundle` to update versions of plugins and tf
+You can update this bundle by editing `bin/terraform-bundle.sh` to update versions of plugins and tf
 and then running `aws-vault exec tooling-admin -- bin/terraform-bundle.sh`,
 which will upload the new bundle to the tooling auto-tf bucket.  You will then
 need to update the `tfbundle` variable in the `module-pipeline/variables` file.
