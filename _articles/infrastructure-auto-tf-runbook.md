@@ -14,7 +14,6 @@ we tried to use AWS CodePipeline and CodeBuild to automate our terraform runs.  
 is being called "auto-terraform" or "auto-tf".
 
 ## Architecture
-![auto-tf architecture diagram]({{site.baseurl}}/images/auto_terraform.png)
 
 The auto-tf stuff runs in it's own VPC in the login-tooling account.
 Codebuild notices changes in the branch you specify and thus will trigger
