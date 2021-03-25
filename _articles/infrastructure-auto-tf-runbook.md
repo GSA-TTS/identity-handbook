@@ -88,7 +88,7 @@ external access to prevent supply chain attacks, the better.
 
 ### UI
 
-You can find the pipelines if you go to https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-west-2
+You can find the pipelines if you go to <https://us-west-2.console.aws.amazon.com/codesuite/codepipeline/pipelines?region=us-west-2>
 in the tooling account.
 
 ### Re-running a pipeline
@@ -250,4 +250,3 @@ enable the transition again.
 **BE SURE TO RE-ENABLE THIS LATER ON**
 
 Have fun!
-
