@@ -224,9 +224,9 @@ stuff should work as well, like `go get -u` and so on.
 
 ##### Terratest Resources
 
-https://terratest.gruntwork.io/docs/
+- <https://terratest.gruntwork.io/docs/>
 
-https://pkg.go.dev/github.com/gruntwork-io/terratest
+- <https://pkg.go.dev/github.com/gruntwork-io/terratest>
 
 
 #### Updating Terraform Bundle
