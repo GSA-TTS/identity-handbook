@@ -15,6 +15,8 @@ is being called "auto-terraform" or "auto-tf".
 
 ## Architecture
 
+![auto-tf architecture diagram]({{site.baseurl}}/images/auto_terraform.png)
+
 The auto-tf stuff runs in it's own VPC in the login-tooling account.
 Codebuild notices changes in the branch you specify and thus will trigger
 the pipeline for the tf dir specified.
@@ -235,7 +237,7 @@ various plugins that it uses in the future.
 You can update this bundle by editing `bin/terraform-bundle.sh` to update versions of plugins and tf
 and then running `aws-vault exec tooling-admin -- bin/terraform-bundle.sh`,
 which will upload the new bundle to the tooling auto-tf bucket.  You will then
-need to update the `tfbundle` variable in the `module-pipeline/variables` file.
+need to update the `tfbundle` variable in the `module-pipeline/variables.tf` file.
 
 #### Pausing Pipelines
 
