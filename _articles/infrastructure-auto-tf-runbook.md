@@ -188,7 +188,7 @@ be run after every deployment.
 Technically, you can run any commands in `test.sh`, but that script should
 probably mostly just be used to set up environment variables and give different
 arguments to the main testing software, which is probably going to be
-Terratest:  https://terratest.gruntwork.io/
+Terratest:  <https://terratest.gruntwork.io/>
 
 
 ##### Running tests locally
