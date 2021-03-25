@@ -133,7 +133,7 @@ module "alltooling" {
   # This is the gitref to check out in identity-devops
   gitref = "main"
   # This is the account to deploy tf_dir into
-  account = "034795980528"
+  account = "XXXXXXXXXXX"
 
   # pass in global config using module composition (https://www.terraform.io/docs/modules/composition.html)
   auto_tf_vpc_id            = module.main.auto_tf_vpc_id
@@ -160,7 +160,7 @@ module "tspencer" {
   # This is the gitref to check out in identity-devops
   gitref = "stages/tspencer"
   # This is the account to deploy tf_dir into
-  account = "894947205914"
+  account = "XXXXXXXXXXX"
 
   # pass in global config using module composition (https://www.terraform.io/docs/modules/composition.html)
   auto_tf_vpc_id            = module.main.auto_tf_vpc_id
@@ -247,3 +247,6 @@ steps.  This will cause the latest change to get stuck there until you
 enable the transition again.
 
 **BE SURE TO RE-ENABLE THIS LATER ON**
+
+Have fun!
+
