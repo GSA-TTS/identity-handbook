@@ -2,7 +2,7 @@
 title: "SecOps Incident Response Guide"
 description: "Security Incident Response Guide"
 layout: article
-category: "SecOps"
+category: "Team"
 ---
 
 This document outlines login.gov’s internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we’ll take to resolve them.
