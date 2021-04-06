@@ -1,6 +1,6 @@
 ---
 title: "Sprint Team Roles"
-description: "List of our sprint team roles and a list of responsibilities"
+description: "List of our sprint team roles and responsibilities"
 layout: article
 category: "Team"
 ---
