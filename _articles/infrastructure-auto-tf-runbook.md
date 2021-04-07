@@ -121,7 +121,7 @@ under `auto-terraform/networkfw*` log groups.
 To `auto-tf` enable your sandbox:
 
 1. Create a new branch from main
-1. Add a section to `terraform/tooling/tooling/app_sandboxes.yml` to with a key name of
+1. Add an entry to `terraform/tooling/tooling/app_sandboxes.yml` with a key name of
    your environment and a value of the branch of `identity-devops` you wish to deploy.
    Example: Adding the environment `brunoland` deploying from `stages/brunoland`:
 
