@@ -34,6 +34,15 @@ Team Katherine focuses on our static sites and design.
 
 [katherine]: https://en.wikipedia.org/wiki/Katherine_Johnson
 
+
+## Radia
+
+Team Radia is named after [Radia Perlman][radia], the inventor of the spanning-tree protocol.
+
+Team Radia focuses on the platform and tools underpinning login.gov.
+
+[radia]: https://en.wikipedia.org/wiki/Radia_Perlman
+
 ## Ursula
 
 Team Ursula is named after [Ursula Burns][ursula], who has been CEO of technology
