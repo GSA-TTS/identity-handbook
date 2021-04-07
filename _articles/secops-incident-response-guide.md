@@ -5,40 +5,6 @@ layout: article
 category: "Team"
 ---
 
-<!-- TOC -->
-
-- [Introduction](#introduction)
-- [Overview](#overview)
-  - [Roles](#roles)
-  - [Phases](#phases)
-    - [Initiate](#initiate)
-    - [Assess](#assess)
-    - [Remediate](#remediate)
-    - [Retrospective](#retrospective)
-- [Response process](#response-process)
-  - [Initiate Phase](#initiate-phase)
-    - [Comms at the Initiate phase](#comms-at-the-initiate-phase)
-  - [Assess Phase](#assess-phase)
-    - [Comms at the Assess phase](#comms-at-the-assess-phase)
-  - [Remediate Phase](#remediate-phase)
-  - [Retrospective Phase](#retrospective-phase)
-- [Incident Severities](#incident-severities)
-  - [**1 - High Severity**](#1---high-severity)
-  - [**2 - Medium Severity**](#2---medium-severity)
-  - [**3 - Low Severity**](#3---low-severity)
-- [Frequently Asked Questions / Expectations](#frequently-asked-questions--expectations)
-  - [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to)
-  - [What is an incident?](#what-is-an-incident)
-  - [When do you declare an incident?](#when-do-you-declare-an-incident)
-  - [When do you engage GSA-IR?](#when-do-you-engage-gsa-ir)
-  - [How should I prioritize assisting with an incident vs. my other work?](#how-should-i-prioritize-assisting-with-an-incident-vs-my-other-work)
-  - [When should I report into the situation room?](#when-should-i-report-into-the-situation-room)
-  - [What is expected when participating?](#what-is-expected-when-participating)
-  - [What if I can't participate?](#what-if-i-cant-participate)
-  - [Why do I need to participate in contingency planning exercises (wargames) and IR Fire Drills?](#why-do-i-need-to-participate-in-contingency-planning-exercises-wargames-and-ir-fire-drills)
-
-<!-- /TOC -->
-
 ## Introduction
 
 This document outlines login.gov’s process for responding to incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we’ll take to resolve them.
