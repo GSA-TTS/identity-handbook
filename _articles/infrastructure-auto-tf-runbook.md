@@ -116,7 +116,24 @@ under `auto-terraform/networkfw*` log groups.
 
 ### Common Tasks
 
-#### Adding new targets
+#### Adding new application sandbox environments
+
+To `auto-tf` enable your sandbox:
+
+1. Create a new branch from main
+1. Add an entry to `terraform/tooling/tooling/app_sandboxes.yml` with a key name of
+   your environment and a value of the branch of `identity-devops` you wish to deploy.
+   Example: Adding the environment `brunoland` deploying from `stages/brunoland`:
+
+   ~~~
+   brunoland: stages/brunoland
+   ~~~
+
+1. Commit, push your branch to GitHub, and create a PR
+1. Once merged a deployment pipeline for your environment will be automatically created
+1. Push changes to your branch to trigger `auto-tf`!
+
+#### Adding other new targets
 
 If you have more terraform directories you would like to auto-tf in identity-devops,
 just go add them in like the other entries in <https://github.com/18F/identity-devops/blob/main/terraform/tooling/tooling/pipelines.tf>
@@ -146,7 +163,7 @@ module "alltooling" {
 }
 ```
 
-A personal environment that you would deploy using `tf-deploy app tspencer apply` would
+An application environment requiring customization you would deploy using `tf-deploy app tspencer apply` would
 look like this:
 ```
 # deploy the tspencer environment to the sandbox account on the stages/tspencer branch!
