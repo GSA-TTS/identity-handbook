@@ -39,7 +39,7 @@ Team Katherine focuses on our static sites and design.
 
 Team Radia is named after [Radia Perlman][radia], the inventor of the spanning-tree protocol.
 
-Team Radia focuses on infrastructure and operations.
+Team Radia focuses on the platform and tools underpinning login.gov.
 
 [radia]: https://en.wikipedia.org/wiki/Radia_Perlman
 
