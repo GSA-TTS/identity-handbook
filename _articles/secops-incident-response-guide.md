@@ -338,7 +338,7 @@ Anyone with access to production, including:
 
 ### When should I report into the situation room?
 
-* Business hours - Responders as defined in [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to?)
+* Business hours - Responders as defined in [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to)
 * After hours - DevOps On Call and Application On Call - Additional resources will be brought in via OpsGenie notification
 
 ### What is expected when participating?
