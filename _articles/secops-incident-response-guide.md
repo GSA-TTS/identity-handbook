@@ -1,19 +1,28 @@
 ---
-title: "SecOps Incident Response Guide"
+title: "Incident Response Guide"
 description: "Security Incident Response Guide"
 layout: article
-category: "SecOps"
+category: "Team"
 ---
 
-This document outlines login.gov’s internal process for responding to security incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we’ll take to resolve them.
+## Introduction
 
-Version for the FedRAMP Agency ATO package can be found here [Login.gov Incident Response Plan](https://drive.google.com/open?id=1Em3F3oZF_SRuuRLqwr6-pwlE4iNmT2ix)
+This document outlines login.gov’s process for responding to incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we’ll take to resolve them.
+
+See the [Incident Response Checklist]({% link _articles/incident-response-checklist.md %}) for a quick reference.
+
+The formal version from the FedRAMP Agency ATO package can be found here [Login.gov Incident Response Plan](https://drive.google.com/open?id=1Em3F3oZF_SRuuRLqwr6-pwlE4iNmT2ix)
+
 
 ## Overview
 
 At a high level, incident response follows this process:
 
-### Initiate
+### Roles
+
+### Phases
+
+#### Initiate
 
 An TTS staff member inside or outside the login.gov team (the reporter) notices and reports a login.gov-related incident, using the TTS incident response process and notifying the login.gov team in the #login-situation Slack channel.
 
@@ -28,12 +37,12 @@ The IC follows this Login.gov IR Plan and may follow [TTS incident response proc
 - IC uses [OpsGenie](https://www.opsgenie.com/) to reach teams and team members as needed
 - If incident is an outage (problem impacting users' ability to use Login.gov), IC updates the [Logon.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
 
-### Assess
+#### Assess
 
 - The IC forms a team (responders) to determine if the event is actually a confirmed incident, and if so assesses the severity (investigating).
 - The IC sends out an initial situation report (sitrep), or a false-alarm notification.
 
-### Remediate
+#### Remediate
 
 - The IC coordinates, communicates, and tracks the investigation and remediation.
 
@@ -50,7 +59,7 @@ The responders work to contain and remediate the issue; timelines vary based on 
      - For an incident to remain in the active emergency phase, it must need all hands on deck no matter the time of day/night. If the initial remediation is complete, then urgent response can conclude, which ends the discussion in #login-situation and clears the topic in that channel.
      - This doesn’t mean response is finished. There may still be more follow up tasks required during business hours for the team to fully close out the incident ticket.
 
-### Retrospective
+#### Retrospective
 The responding team holds a retrospective to analyze the incident, capture follow-up action items and lessons-learned, and write a formal report.
 
 Real-time communication happens in Slack.
@@ -254,3 +263,82 @@ Guidelines for addressing Low-sev issues:
 * Responders should avoid service degradation unless stakeholders agree.
 
 * Sitreps should be sent approximately daily.
+
+## Frequently Asked Questions / Expectations
+
+### Who does the Incident Response Guide apply to?
+
+Anyone with access to production, including:
+* All SREs
+* All SecOps
+* All developers
+* All partnerships technical resources
+* Representatives from the following teams:
+  * UX
+  * User Support
+
+### What is an incident?
+
+* Anything that presents an immediate risk to **Confidentiality**, **Integrity**, or **Availability** of public login.gov services
+* If it smells like an incident, declare an incident
+  * False positives are normal and useful to keep us sharp
+  * Long delays while deciding if something is an incident are not acceptable
+* When in doubt, call it out!
+
+### When do you declare an incident?
+
+* Immediately!  
+* Failing to report an incident in a timely manner after discovery jeopardizes login.gov - FISMA requires timely reporting and declaring an incident and following our policy ensures we do not fail to meet that requirement
+
+### When do you engage GSA-IR?
+
+* Always - (Max of 60 minutes) GSA Incident Response is here to support our mission and protect our users, our agency, our program, and you!
+* Even if it is low priority/no big deal? - That is not a determination that can be made alone, and GSA-IR will constructively challenge assumptions to ensure it is indeed no big deal
+
+### How should I prioritize assisting with an incident vs. my other work?
+
+* Incidents are always highest priority!
+* Development, planning, and meeting activities should be paused during participation in an incident
+* When the Situation Lead acknowledges you are not needed for incident response activities you can resume normal work
+* Engineering and Infrastructure leads are happy to answer questions about prioritization and your need to drop everything and participate
+
+### When should I report into the situation room?
+
+* Business hours - Responders as defined in [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to)
+* After hours - DevOps On Call and Application On Call - Additional resources will be brought in via OpsGenie notification
+
+### What is expected when participating?
+
+* Situation Lead (SL) - Once declared, leads the process until the incident is resolved OR Situation Lead role is handed off
+  * Ensures process is followed
+  * Stays in situation room
+  * Delegates activities - Does NOT act as Technical Lead
+  * Ensures communication and mitigation are being addressed by others
+  * Makes sure everything that needs doing is being done
+  * Checks in with participants for status updates
+  * Make sure that people have something to do, and if not, communicate clearly that they can drop
+* Participants
+  * Provide clear updates to the team
+  * If unfilled or someone needs to rotate out, volunteers to serve in one of the defined roles:
+    * Technical lead (TL): Leads technical investigation and mitigation
+    * Comms lead (CL): Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
+    * Scribe (S): Relays information discussed in war room (hangout) to #login-situation and aids SL in recording incident
+  * If assigned a specific role or task, sees it through until it is complete OR handed off to another participant and confirmed by the SL
+  * Be ready to answer SL/others when questions arise
+  * Scribe your activities and artifacts in #login-situation
+
+### What if I can't participate?
+
+* We are humans, it is OK!  All the same reasons for not working at a given time apply to incidents.
+* If asked to join, let the Situation Lead know you cannot at this time.
+* If you are participating but need to drop off:
+  * Ensure any role or activity you are responsible for has been handed off to another participant
+  * Let the Situation Lead know you are dropping off
+  * Wait for confirmation from the Situation Lead before dropping
+
+### Why do I need to participate in contingency planning exercises (wargames) and IR Fire Drills?
+
+* **Resources** - It takes a full team to respond, and every participant is important! 
+* **Readiness** - Only through practice will we be and remain ready to meet the challenges login.gov faces
+* **Refinement** - Only through participating fully can we refine our processes to improve response and efficiency
+* **Regulation (Law)** - Per FISMA and our FedRAMP authorization we must follow [NIST 800-61r2](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) - Computer Security Incident Handling Guide
