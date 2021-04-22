@@ -17,6 +17,9 @@ Order articles by custom sorting first
 {%   for article in sorted_articles %}
 {%     if file == article.path and article.category == include.category %}
  - [{{article.title}}]({% include article_url.txt article=article %})
+   {%- if article.deprecated -%}
+     {: .deprecated-link} (deprecated)
+   {%- endif -%}
    {% if article.description %}<br/>{{ article.description }}{% endif %}
 {%     endif %}
 {%   endfor %}
@@ -29,6 +32,9 @@ Remaining articles (get sorted alphabetically)
 {%   if article.category == include.category %}
 {%     unless include.custom_order contains article.path %}
  - [{{article.title}}]({% include article_url.txt article=article %})
+   {%- if article.deprecated -%}
+     {: .deprecated-link} (deprecated)
+   {%- endif -%}
    {% if article.description %}<br/>{{ article.description }}{% endif %}
 {%     endunless %}
 {%   endif %}
