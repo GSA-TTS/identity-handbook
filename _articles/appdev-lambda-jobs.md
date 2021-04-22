@@ -3,7 +3,18 @@ title: "Background Jobs: Lambda"
 description: "Overview of and launch checklist for our async Lambda workers"
 layout: article
 category: "AppDev"
+deprecated: true
 ---
+
+<div class="usa-alert usa-alert--info">
+  <div class="usa-alert__body">
+    <p class="usa-alert__text" markdown="1">
+**Note**: This article is deprecated, we have removed the code for this
+approach in favor of a [Ruby Workers]({% link _articles/appdev-ruby-worker-jobs.md %}) approach, but are
+leaving this article up as a reference.
+    </p>
+  </div>
+</div>
 
 ## Overview
 
