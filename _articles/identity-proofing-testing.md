@@ -41,7 +41,7 @@ you can upload a [specially-formatted YML file](https://developers.login.gov/tes
 Our developer docs have [sample SSNs](https://developers.login.gov/testing/#personal-information-verification)
 to get desired behavior.
 
-## Sample Phone Numberes
+## Sample Phone Numbers
 
 We also have [sample phone numbers](https://developers.login.gov/testing/#phone-number-verification)
 to generate various proofing responses.
