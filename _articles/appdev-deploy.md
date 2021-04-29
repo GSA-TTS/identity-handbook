@@ -238,8 +238,8 @@ the bug in staging, where it won't affect end users.
 To quickly remove new servers and leave old servers up:
 
 ```bash
-aws-vault exec prod-power -- ./bin/scale-out-old-instances prod idp
-aws-vault exec prod-power -- ./bin/scale-out-old-instances prod idpxtra
+aws-vault exec prod-power -- ./bin/scale-in-new-instances prod idp
+aws-vault exec prod-power -- ./bin/scale-in-new-instances prod idpxtra
 ```
 
 ##### Steps to roll back
