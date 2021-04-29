@@ -159,17 +159,16 @@ Scheduled for every other Thursday
 1. In the `identity-devops` repo:
    ```bash
    cd identity-devops
-   aws-vault exec prod-power -- /bin/zsh
    ```
 1. Recycle the IDP instances to get the new code, it automatically creates a new migration instance first.
    ```bash
-   ./bin/asg-recycle prod idp
+   aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
 
    1. Follow the progress of the migrations, ensure that they are working properly
    ```bash
    # may need to wait a few seconds after the recycle
-   ./bin/ssm-instance --newest asg-prod-migration
+   aws-vault exec prod-power -- ./bin/ssm-instance --newest asg-prod-migration
    ```
    On the remote box
    ```bash
@@ -183,7 +182,7 @@ Scheduled for every other Thursday
    1. Follow the progress of the IDP hosts spinning up
 
       ```bash
-      ./bin/ls-servers -e prod -r idp # check the load balance pool health
+      aws-vault exec prod-power -- ./bin/ls-servers -e prod -r idp # check the load balance pool health
       ```
 
     1. Manual Inspection
@@ -194,8 +193,8 @@ Scheduled for every other Thursday
 
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down)
     ```
-    ./bin/scale-in-old-instances prod idp
-    ./bin/scale-in-old-instances prod idpxtra
+    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
+    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
     ```
 
 1. Set a timer for one hour, then check NewRelic again for errors.
