@@ -192,7 +192,7 @@ Scheduled for every other Thursday
 1. **PRODUCTION ONLY**: This step is required in production
 
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down)
-    ```
+    ```bash
     aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
     aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
     ```
@@ -231,6 +231,15 @@ Some criteria for rolling back:
 If any of these are "yes", roll back. See more criteria at <https://outage.party/>.
 Staging is a pretty good match for production, so you should be able to fix and verify
 the bug in staging, where it won't affect end users.
+
+##### Scaling Out
+
+To quickly remove new servers and leave old servers up:
+
+```bash
+aws-vault exec prod-power -- ./bin/scale-out-old-instances prod idp
+aws-vault exec prod-power -- ./bin/scale-out-old-instances prod idpxtra
+```
 
 ##### Steps to roll back
 
