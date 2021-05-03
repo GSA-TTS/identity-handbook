@@ -22,7 +22,7 @@ plugins:
 
 exclude:
   - CONTRIBUTING.md
-  - yarn.lock
+  - package-lock.json
   - Makefile
   - package.json
   - Gemfile
