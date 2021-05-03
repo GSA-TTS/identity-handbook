@@ -49,7 +49,6 @@ jobs:
             - "_site/*"
 workflows:
   version: 2
-  # run on pull requests and after merges
-  build_and_deploy:
+  build:
     jobs:
       - build
