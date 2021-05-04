@@ -32,6 +32,7 @@ the `stages/prod` branch.
 | **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Every 2 weeks | [AppDev Deploy Manager rotation][deployer-rotation] |
 | **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [AppDev Deploy Manager rotation][deployer-rotation], or engineer handling the urgent issue |
 | **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
+| **Config Recyle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
 
 [deployer-rotation]: https://login-gov.app.opsgenie.com/settings/schedule/detail/7f1b7c07-e6de-4990-8b59-01cc4c681542
 
@@ -159,17 +160,16 @@ Scheduled for every other Thursday
 1. In the `identity-devops` repo:
    ```bash
    cd identity-devops
-   aws-vault exec prod-power -- /bin/zsh
    ```
 1. Recycle the IDP instances to get the new code, it automatically creates a new migration instance first.
    ```bash
-   ./bin/asg-recycle prod idp
+   aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
 
-   1. Follow the progress of the migrations, ensure that they are working properly
+   1. Follow the progress of the migrations, ensure that they are working properly <a id="follow-the-process" />
    ```bash
    # may need to wait a few seconds after the recycle
-   ./bin/ssm-instance --newest asg-prod-migration
+   aws-vault exec prod-power -- ./bin/ssm-instance --newest asg-prod-migration
    ```
    On the remote box
    ```bash
@@ -183,7 +183,7 @@ Scheduled for every other Thursday
    1. Follow the progress of the IDP hosts spinning up
 
       ```bash
-      ./bin/ls-servers -e prod -r idp # check the load balance pool health
+      aws-vault exec prod-power -- ./bin/ls-servers -e prod -r idp # check the load balance pool health
       ```
 
     1. Manual Inspection
@@ -193,9 +193,9 @@ Scheduled for every other Thursday
 1. **PRODUCTION ONLY**: This step is required in production
 
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down)
-    ```
-    ./bin/scale-in-old-instances prod idp
-    ./bin/scale-in-old-instances prod idpxtra
+    ```bash
+    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
+    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
     ```
 
 1. Set a timer for one hour, then check NewRelic again for errors.
@@ -233,6 +233,15 @@ If any of these are "yes", roll back. See more criteria at <https://outage.party
 Staging is a pretty good match for production, so you should be able to fix and verify
 the bug in staging, where it won't affect end users.
 
+##### Scaling Out
+
+To quickly remove new servers and leave old servers up:
+
+```bash
+aws-vault exec prod-power -- ./bin/scale-in-new-instances prod idp
+aws-vault exec prod-power -- ./bin/scale-in-new-instances prod idpxtra
+```
+
 ##### Steps to roll back
 
 1. Make a pull request to the `stages/prod` branch, to revert it back to the last deploy.
@@ -248,3 +257,24 @@ the bug in staging, where it won't affect end users.
    ahold of somebody with admin merge permissions who can override waiting for CI to finish
 
 1. Recycle the app to get the new code out there (follow the [Production Deploy steps](#production))
+
+### Config Recycle
+
+A config recycle is an abbreviated "deploy" that deploys the same code, but lets boxes pick up
+new configurations (config from S3, or service provides from `identity-idp-config`).
+
+1. Make the config changes
+
+1. Recyle the boxes. It's OK to skip migration instances if we **know for certain** there are
+   no migrations, which there shouldn't be if there is no new code merges to `stages/prod`:
+
+   ```bash
+   aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
+   ```
+
+1. In production, it's important to remember to still scale out old IDP and IDPxtra instances.
+
+    ```bash
+    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
+    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
+    ```
