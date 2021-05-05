@@ -4,7 +4,7 @@ layout: default
 
 <div class="grid-row grid-gap">
   <aside class="tablet:grid-col-3">
-    <nav>
+    <nav class="table-of-contents">
       {% assign h_max = page.toc_h_max | default: 3 %}
       {% include toc.html
                  html=content
