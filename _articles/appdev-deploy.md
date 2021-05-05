@@ -69,26 +69,39 @@ Scheduled for every other **Tuesday/Wednesday**
 
 The release branch should be cut from latest and it should be the date of the production release (ex `stages/rc-2020-06-17`):
 
-  ```bash
-  cd identity-idp
-  git checkout main && git pull
-  git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
-  git push -u origin HEAD
-  ```
+```bash
+cd identity-$REPO
+git checkout main && git pull
+git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
+git push -u origin HEAD
+```
 
 #### Create pull request
 
-A pull request should be created from that latest branch to production:
+A pull request should be created from that latest branch to production: **`stages/prod`**. When creating the pull request:
 
-   1. Production: `stages/prod`
+- Title it clearly with the RC number, ex **"Deploy RC 112 to Prod"**
+   - If it's a full release of changes from the main branch, add one to the last release number
+   - If it's a patch release, increment the fractional part, ex **"Deploy RC 112.1 to Prod"**
+   - Unsure what the last release was? Check the [releases page](https://github.com/18F/identity-idp/releases/)
+- Add the label **`status - promotion`** to the pull request that will be included in the release.
+- If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
-   When creating the pull request:
+#### Resolving merge conflicts
 
-   - Title them clearly with the RC number, ex **"Deploy RC 112 to Prod"**
-       - If it's a full release of changes from the main branch, add one to the last release number
-       - If it's a patch release, increment the fractional part, ex **"Deploy RC 112.1 to Prod"**
-       - Unsure what the last release was? Check the [releases page](https://github.com/18F/identity-idp/releases/)
-   - Add the label **`status - promotion`** to the pull request that will be included in the release.
+A full release after a patch release often results in merge conflicts. To resolve these automatically, we
+create a git commit with an explicit merge strategy to "true-up" with the `main` branch (replace all changes on
+`stages/prod` with whatever is on `main`)
+
+```bash
+cd identity-$REPO
+git checkout main && git fetch && git pull
+git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
+git merge -s ours origin/stages/prod # custom merge strategy
+git push -u origin HEAD
+```
+
+The last step may need a force push (add `-f`). Force-pushing to an RC branch is safe bec.
 
 #### Prepare release notes
 
