@@ -101,7 +101,7 @@ git merge -s ours origin/stages/prod # custom merge strategy
 git push -u origin HEAD
 ```
 
-The last step may need a force push (add `-f`). Force-pushing to an RC branch is safe bec.
+The last step may need a force push (add `-f`). Force-pushing to an RC branch is safe.
 
 #### Prepare release notes
 
