@@ -4,13 +4,15 @@ layout: default
 
 <div class="grid-row grid-gap">
   <aside class="tablet:grid-col-3">
-    <nav class="table-of-contents">
+    <nav>
       {% assign h_max = page.toc_h_max | default: 3 %}
       {% include toc.html
                  html=content
                  sanitize=true
-                 class="inline_toc"
+                 class="inline_toc usa-accordion usa-sidenav"
                  id="my_toc"
+                 item_class="usa-sidenav__item"
+                 submenu_class="usa-sidenav__sublist"
                  h_min=2
                  h_max=h_max %}
     </nav>
