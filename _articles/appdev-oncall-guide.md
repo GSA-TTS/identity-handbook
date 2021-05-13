@@ -26,6 +26,10 @@ Rotations:
 1. [Primary Oncall ("End-User Primary")](https://login-gov.app.opsgenie.com/settings/schedule/detail/142b8527-8ef6-4d9d-b81e-24b45d0499ba)
 2. [Secondary Oncall ("End-User Secondary")](https://login-gov.app.opsgenie.com/settings/schedule/detail/1271f41d-aa0c-4a3e-86aa-23162ab5fc9d)
 
+## Emergency Contacts
+
+For login.gov and vendor emergency contact information see [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts)
+
 ## Handoff
 
 The AppDev Rotation hands off every **Monday at 12pm Eastern (9am Pacific)**.
