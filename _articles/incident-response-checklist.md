@@ -14,7 +14,7 @@ This is a quick checklist for any incident (security, privacy, outage, degraded 
 * Situation Lead (SL) assigned - Responsible for ensuring all following steps are completed
 * Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN)
 * SL and team assemble in War Room (*Posted at top of #login-situation channel)
-* Slack or OpsGenie used to alert additional responders
+* Slack or OpsGenie used to alert additional responders  (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Roles assigned 
   * **Technical lead (TL)**: Leads technical investigation and mitigation
   * **Comms lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
