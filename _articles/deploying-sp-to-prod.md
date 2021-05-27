@@ -7,13 +7,12 @@ category: Partnerships
 
 Here is a list of items that need to be completed to deploy the configuration for a partner SP (Service Provider) to Production.
 
-<div class="usa-alert usa-alert--info">
-  <div class="usa-alert__body">
-    <p class="usa-alert__text" markdown="1">
-      **Note to AppDev**: You should probably work with the Partnership team to ensure that steps 1-4 are complete.
-    </p>
-  </div>
-</div>
+
+{%- capture alert_content -%}
+**Note to AppDev**: You should probably work with the Partnership team to ensure that steps 1-4 are complete.
+{%- endcapture %}
+
+{% include alert.html content=alert_content %}
 
 1. Ensure that the IAA is signed for the hubspot deal. You should see a "IAA Approved" with an "IAA Number" on the deal. Please contact Silke if unsure. If the IAA is not approved, then let the partner know that the app cannot be deployed to production until the IAA is signed.
 

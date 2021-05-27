@@ -34,13 +34,11 @@ category: "AppDev"
 
 8. Log in to the virtual machine
 
-    <div class="usa-alert usa-alert--info">
-      <div class="usa-alert__body">
-        <p class="usa-alert__text" markdown="1">
-          The password is `Passw0rd!`
-        </p>
-      </div>
-    </div>
+   {%- capture alert_content -%}
+   The password is `Passw0rd!`
+   {%- endcapture -%}
+
+   {% include alert.html content=alert_content %}
 
 ## Configuring applications for local development
 
