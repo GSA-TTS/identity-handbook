@@ -2,7 +2,7 @@
 title: "Incident Response Guide"
 description: "Security Incident Response Guide"
 layout: article
-category: "Team"
+category: "Security"
 ---
 
 ## Introduction
