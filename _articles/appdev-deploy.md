@@ -13,8 +13,7 @@ A few notes on our deploy process.
 ### Cadence
 
 **When to deploy:** ✅
-- Typically we do a full deploy every 2 weeks on a Thursday, to coincide with a
-  sprint ending
+- Typically we do a full deploy every week on Thursday.
 
 **When _not_ to deploy:** ❌
 - We try to avoid deploying on Fridays, to minimize the chances of introducing a
@@ -29,12 +28,12 @@ the `stages/prod` branch.
 
 | Type | What | When | Who |
 | ---- | ---- | ---- | --- |
-| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Every 2 weeks | [AppDev Deploy Manager rotation][deployer-rotation] |
-| **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [AppDev Deploy Manager rotation][deployer-rotation], or engineer handling the urgent issue |
+| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Every week | [AppDev Primary Oncall][deployer-rotation] |
+| **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [AppDev Primary Oncall][deployer-rotation], or engineer handling the urgent issue |
 | **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
 | **Config Recyle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
 
-[deployer-rotation]: https://login-gov.app.opsgenie.com/settings/schedule/detail/7f1b7c07-e6de-4990-8b59-01cc4c681542
+[deployer-rotation]: https://login-gov.app.opsgenie.com/settings/schedule/detail/142b8527-8ef6-4d9d-b81e-24b45d0499ba
 
 ### Communications
 
@@ -63,7 +62,7 @@ This guide assumes that:
 Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of goood improvements all the time!
 
 ### Pre-deploy
-Scheduled for every other **Tuesday/Wednesday**
+Scheduled for every **Tuesday**
 
 #### Cut a release branch
 
@@ -165,7 +164,7 @@ Adding Emails: Patch release to include #3821, fixes a bug with adding emails to
 Staging used to be deployed by this process, but this was changed to deploy the `main` branch to the staging environment every day.
 
 ### Production
-Scheduled for every other Thursday
+Scheduled for every Thursday
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
 1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
