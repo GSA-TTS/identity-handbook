@@ -32,4 +32,4 @@ It takes 5-7 business days for letters to arrive. It is common to not receive an
 
 ## I want to do this!
 
-If you'd like to volunteer to receive and record letters, don't hesitate to post in #login-appdev or add an agenda item to the [Engingeering Huddle](https://docs.google.com/document/d/1g_V2vlT79tScBKIVw7M4UXf15TrG69iUrLHE0yE1GGI/).
+If you'd like to volunteer to receive and record letters, don't hesitate to post in #login-appdev or add an agenda item to the [Engingeering Huddle](https://docs.google.com/document/d/1g_V2vlT79tScBKIVw7M4UXf15TrG69iUrLHE0yE1GGI/). The information is stored in the secrets storage under `gpo_designated_receiver_pii` and requires the keys `first_name`, `last_name`, `address1`, `city` `state` and `zipcode`.
