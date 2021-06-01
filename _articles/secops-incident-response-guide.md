@@ -2,14 +2,20 @@
 title: "Incident Response Guide"
 description: "Security Incident Response Guide"
 layout: article
-category: "Team"
+category: "Security"
 ---
 
 ## Introduction
 
 This document outlines login.gov’s process for responding to incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we’ll take to resolve them.
 
-See the [Incident Response Checklist]({% link _articles/incident-response-checklist.md %}) for a quick reference.
+{%- capture alert_content -%}
+This is the full explicit document!
+<br />
+In a situation? Check the [Incident Response Checklist]({% link _articles/incident-response-checklist.md %}) for a quick reference.
+{%- endcapture -%}
+
+{% include alert.html content=alert_content %}
 
 The formal version from the FedRAMP Agency ATO package can be found here [Login.gov Incident Response Plan](https://drive.google.com/open?id=1Em3F3oZF_SRuuRLqwr6-pwlE4iNmT2ix)
 

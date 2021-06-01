@@ -40,10 +40,10 @@ See the IDP's README for info on [how to set up and run the smoke tests][idpsmok
 ### Failed to Find Email that Matched
 
 ```
-     Failure/Error: raise "failed to find email that matched #{regex}"
+Failure/Error: raise "failed to find email that matched #{regex}"
 
-     RuntimeError:
-       failed to find email that matched (?-mix:(?<link>https?:.+reset_password_token=[\w\-]+))
+RuntimeError:
+   failed to find email that matched (?-mix:(?<link>https?:.+reset_password_token=[\w\-]+))
 ```
 
 This error occurs when we are expecting to find an email matching a given, regex.
@@ -68,16 +68,14 @@ signing in to login.gov. Occasionally those sites go down, and so the smoke test
 that use those sites fail.
 
 
-<div class="usa-alert usa-alert--info usa-alert--no-icon" >
-  <div class="usa-alert__body">
-    <p class="usa-alert__text" markdown="1">
-      **Note**: To have more control over these smoke tests, ideally we would
-      host our own sample apps in production. Unfortunately, hosting an app
-      in production requires including it in our ATO boundary, so to mimimize
-      headaches, we choose to rely on partners like this.
-    </p>
-  </div>
-</div>
+{%- capture alert_content -%}
+**Note**: To have more control over these smoke tests, ideally we would
+host our own sample apps in production. Unfortunately, hosting an app
+in production requires including it in our ATO boundary, so to mimimize
+headaches, we choose to rely on partners like this.
+{%- endcapture -%}
+
+{% include alert.html content=alert_content %}
 
 **What to do**: Check the partner site manually, if it's down, try signing
 in to login.gov through another partner site to make sure things are still up.
