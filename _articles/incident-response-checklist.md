@@ -18,7 +18,7 @@ This is a quick checklist for any incident (security, privacy, outage, degraded 
   * **Scribe (S)**: Relays information discussed in war room (hangout) to #login-situation and aids Situation Lead in recording incident
 * Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN)
 * Situation Lead and team assemble in War Room (*Posted at top of #login-situation channel)
-* Slack or OpsGenie used to alert additional responders  (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
+* Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
 * Email sent to GSA Incident Response <gsa-ir@gsa.gov> AND IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called) **within 1 hour** of start of incident ([Alternate contact methods](https://insite.gsa.gov/employee-resources/information-technology))
 
