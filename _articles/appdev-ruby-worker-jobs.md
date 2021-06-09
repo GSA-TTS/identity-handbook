@@ -94,7 +94,10 @@ instances.
 To enable ruby workers in an environment:
 
 1. Set **ruby_workers_enabled**: `'true'` in its [`application.yml`]({% link _articles/appdev-secrets-configuration.md %})
-2. Set terraform variables for worker sizes to be positive integers [(example pull request)](https://github.com/18F/identity-devops-private/pull/1513/files):
-  - **asg_worker_min**: 2
-  - **asg_worker_desired**: 2
-  - **asg_worker_max**: 8 (or something)
+2. Set terraform variables:
+    - Positive worker sizes to be positive integers [(example pull request)](https://github.com/18F/identity-devops-private/pull/1513/files):
+        - **asg_worker_min**: 2
+        - **asg_worker_desired**: 2
+        - **asg_worker_max**: 8 (or something)
+    - Enable worker alarms for alerting [(example pull request)](https://github.com/18F/identity-devops-private/pull/1514/files)
+        - **idp_worker_alarms_enabled**: 1
