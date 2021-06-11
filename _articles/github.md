@@ -41,14 +41,14 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18f/identity-proofer-gem**](https://github.com/18f/identity-proofer-gem)
   Provdes a generic interface around identity proofing (IDV, identity verification) that is implemented by other gems
 
-- [**18f/identity-lexisnexis-api-client-gem**](https://github.com/18f/identity-lexisnexis-api-client-gem)
-  Implementation of the identity-proofer interface for LexisNexis
-
-- [**18f/identity-aamva-api-client-gem**](https://github.com/18f/identity-aamva-api-client-gem)
-  Implementation of the identity-proofer interface for AAMVA for drivers licenses
-
 - [**18f/identity-validations**](https://github.com/18f/identity-validations)
   Gem that provides shared validations for the ServiceProvider model across the IDP and dashboard
+
+- [**18f/identity-lexisnexis-api-client-gem**](https://github.com/18f/identity-lexisnexis-api-client-gem){: .deprecated-link} (Archived)
+  Implementation of the identity-proofer interface for LexisNexis. This code has been moved into the IDP codebase.
+
+- [**18f/identity-aamva-api-client-gem**](https://github.com/18f/identity-aamva-api-client-gem){: .deprecated-link} (Archived)
+  Implementation of the identity-proofer interface for AAMVA for drivers licenses. This code has been moved into the IDP codebase.
 
 ### Example Applications
 
