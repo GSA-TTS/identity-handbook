@@ -38,8 +38,8 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18F/omniauth_login_dot_gov**](https://github.com/18F/omniauth_login_dot_gov)
   Provides an Omniauth strategy for login.gov that helps other projects integrate with login.gov more easily. Some use cases include the [identity-dashboard](https://github.com/18f/identity-dashboard) as well as Touchpoints, USMC and search.gov
 
-- [**18f/identity-proofer-gem**](https://github.com/18f/identity-proofer-gem)
-  Provdes a generic interface around identity proofing (IDV, identity verification) that is implemented by other gems
+- [**18f/identity-proofer-gem**](https://github.com/18f/identity-proofer-gem){: .deprecated-link} (Archived)
+  Provdes a generic interface around identity proofing (IDV, identity verification) that is implemented by other proofers. This code has been moved into the IDP codebase.
 
 - [**18f/identity-validations**](https://github.com/18f/identity-validations)
   Gem that provides shared validations for the ServiceProvider model across the IDP and dashboard
