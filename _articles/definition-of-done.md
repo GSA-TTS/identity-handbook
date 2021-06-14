@@ -23,7 +23,6 @@ Expect this DoD to change over time.
 - If multiple database migrations are necessary, the database migrations have been performed
 - The story is deployed to Dev and/or INT environments
 - Appropriate refactoring has been done as part of developing the story
-  - Modified slim files are converted to HTML-ERB
   - Dead code has been pruned
   - The login.gov design system is used in views
 - New code must be free of medium and highlevel static and dynamic security vulnerabilities as reported by Snyk
