@@ -35,6 +35,17 @@ Team Katherine focuses on our static sites and design.
 [katherine]: https://en.wikipedia.org/wiki/Katherine_Johnson
 
 
+## Mary
+
+Team Mary is named after [Mary Poppendieck][mary], a computer scientist and
+visionary in the application of lean manufacturing principles to the world
+of software development.
+
+Team Mary is focused on building a new software factory and minimal platform to
+speed our secure development processes.
+
+[mary]: http://www.poppendieck.com/people.htm
+
 ## Radia
 
 Team Radia is named after [Radia Perlman][radia], the inventor of the spanning-tree protocol.
