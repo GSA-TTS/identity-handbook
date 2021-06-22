@@ -42,7 +42,7 @@ The SL follows this Login.gov IR Plan and may follow [TTS incident response proc
    - Other: https://github.com/18F/identity-private/issues
 - The SL notifies [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) that an incident has been declared
 - SL uses [OpsGenie](https://www.opsgenie.com/) to reach teams and team members as needed
-- If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Logon.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
+- If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
 
 #### Assess
 
@@ -189,7 +189,7 @@ Comms at the Remediate phase
 
 * The SL should continue to post updated sitreps on a regular cadence (the section on severities, below, suggests cadences for each level). These sitreps should be sent to Slack, to GSA-IT and US-CERT via email, and to any other stakeholders identified throughout the process (e.g. clients).
 
-* For user impacting incidents, users must be kept up to date via the [Logon.gov Statuspage](https://logingov.statuspage.io/)  ([Statuspage Admin Interface](https://manage.statuspage.io/login))
+* For user impacting incidents, users must be kept up to date via the [Login.gov Statuspage](https://logingov.statuspage.io/)  ([Statuspage Admin Interface](https://manage.statuspage.io/login))
 
 ### Retrospective Phase
 
