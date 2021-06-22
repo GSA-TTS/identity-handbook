@@ -7,6 +7,14 @@ category: "Team"
 
 This is a quick checklist for any incident (security, privacy, outage, degraded service, etc.) to ensure the team can focus on time critical mitigation/remediation while still communicating appropriately.
 
+{%- capture alert_content -%}
+This is a checklist/overview document!
+<br />
+For detailed information see the [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
+{%- endcapture -%}
+
+{% include alert.html content=alert_content %}
+
 # Checklist
 
 ## Initiate
@@ -66,6 +74,8 @@ Upon remediation:
 
 # Resources
 
-* [Official login.gov Incident Response plan](https://drive.google.com/file/d/1AQ_TMf7M7WZjHo6hlJ5L3lUxzA57f2oQ/view?usp=sharing): The authoritative source
 * [login.gov Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %}): IR guidance and overview, defer to the official IR plan
+* [Official login.gov Incident Response plan](https://drive.google.com/file/d/1AQ_TMf7M7WZjHo6hlJ5L3lUxzA57f2oQ/view?usp=sharing): The authoritative source for login
+* [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/)
+* [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
 * [NIST 800-61r2 Computer Security Incident Response Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
