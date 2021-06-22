@@ -33,7 +33,7 @@ At a high level, incident response follows this process:
 
 An TTS staff member inside or outside the login.gov team (the reporter) notices and reports a login.gov-related incident, using the TTS incident response process and notifying the login.gov team in the #login-situation Slack channel.
 
-- The first responder on the login.gov team (which could be the reporter if the reporter is on the team) becomes the initial Situation Lead (IC).
+- The first responder on the login.gov team (which could be the reporter if the reporter is on the team) becomes the initial Situation Lead (SL).
 
 The SL follows this Login.gov IR Plan and may follow [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/) (or supports the reporter if the reporter already started it) as a supplement, including notifying GSA IT (itservicedesk@gsa.gov, gsa-ir@gsa.gov), opening a Google Doc, and creating an issue in the DevOps GitHub repository to track the event.
 - Create a ticket in the appropriate repository
@@ -85,7 +85,7 @@ When a person outside the login.gov team (the reporter) notices a login.gov-rela
 
 The first person to notice an incident, they should begin reporting it by using the this incident response process and posting about it in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) (including notifying the login.gov leads).
 
-The first participant becomes the initial SL and carries out the next steps in the response. The IC’s responsibility is coordination, not necessarily investigation. The IC’s primary role is to guide the process. The first responder may remain SL throughout the process, or they may hand off SL duties later in the process.
+The first participant becomes the initial SL and carries out the next steps in the response. The SL’s responsibility is coordination, not necessarily investigation. The SL’s primary role is to guide the process. The first responder may remain SL throughout the process, or they may hand off SL duties later in the process.
 
 The SL makes sure that the Login.gov incident response process is followed, including supporting the reporter if the reporter already started it, or starting it if nobody has started it yet.
 
@@ -136,7 +136,7 @@ At this point, the SL should write an initial **situation report** (“sitrep”
 > https://github.com/18F/identity-security-private/issues/12345
 >
 > - ` ** Severity: high `
-> - ` ** IC: Farmer Jane `
+> - ` ** SL: Farmer Jane `
 > - ` ** Responders: Spot the Dog, Farmer Dave `
 >
 > We've confirmed reports of escaped chickens. Looks like a fox may
@@ -155,7 +155,7 @@ Updates and real-time chat should continue as above (updates on the GitHub issue
 
 At this point, we’re trying to fix the issue! Remediation will be very situation-specific, so specific steps are hard to suggest. However, a few **guidelines** to follow during this process:
 
-* The IC’s responsibility is coordination, communication, and information-collection. The remediation team will be focused on resolving the issue, so it’s up to the SL to make sure that we properly track what happened, how we’re fixing it, who’s doing what, etc. Ideally, the notes kept by the SL should be sufficient for an outside investigator to independently follow the work of the response team and validate the team’s work.
+* The SL’s responsibility is coordination, communication, and information-collection. The remediation team will be focused on resolving the issue, so it’s up to the SL to make sure that we properly track what happened, how we’re fixing it, who’s doing what, etc. Ideally, the notes kept by the SL should be sufficient for an outside investigator to independently follow the work of the response team and validate the team’s work.
 
 * Similarly, the team will develop a list of **remediation steps**. The SL is likewise responsible for tracking those, making sure they’re assigned and followed-up, and verifying them as they’re completed. These may be tracked in the central GitHub issue as well. The SL should distinguish between immediate concerns which should be completed before the incident is considered resolved and long-term improvements/hardening which can be deferred to the Retrospective.
 
@@ -193,7 +193,7 @@ Comms at the Remediate phase
 
 ### Retrospective Phase
 
-The final step in handling a security incident is figuring out what we learned. The SL (or one of the ICs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report.
+The final step in handling a security incident is figuring out what we learned. The SL (or one of the SLs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report.
 
 Conducting retrospectives is out of the scope of this document, but as a crash course, here’s an [introduction to blameless postmortems](https://codeascraft.com/2012/05/22/blameless-postmortems/). We follow the basic steps listed at [login-gov-postmortems](https://drive.google.com/open?id=1A9y94VgHPOcaCCTdGRh0aWINOrBjUwo2ZepzBlTM--8).
 
@@ -210,7 +210,7 @@ This report should be posted as a final comment on the GitHub issue, which can t
 
 ## Incident Severities
 
-Severity ratings drive the actions of the response team. Below are the severities ratings we use, some examples of incidents that might fall into that bucket, and some guidelines for ICs and response teams about how to treat each class of incident.
+Severity ratings drive the actions of the response team. Below are the severities ratings we use, some examples of incidents that might fall into that bucket, and some guidelines for SLs and response teams about how to treat each class of incident.
 
 Note the severities may (and often will) change during the lifecycle of the incident. That’s normal.
 
