@@ -24,7 +24,7 @@ Generally, the jobs fall into two categories:
 The lifecycle of a job:
 
 1. (For image processing jobs only)
-  - The IDP will generate pre-signed S3 URLs and pass them to the client/browser
+  - The IDP will generate pre-signed S3 URLs and pass them to the client/browser. The pre-signed URL expiration matches the maximum session duration to guarantee that it won't expire while the user's session is still active.
   - The browser will generate a random encryption key (see notes on [client-side encryption](#client-side-encryption))
   - The browser will AES-encrypt images and upload those encrypted images to the pre-signed S3 URLs (see notes on [client-side encryption](#client-side-encryption))
 2. The user submits a form to the IDP
