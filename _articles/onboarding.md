@@ -69,6 +69,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - [Add user to Figma](https://www.figma.com/files/team/893580939040886405/Login.gov/members) if appropriate (e.g. on UX team or implementing interfaces)
 - Help your buddy double check that they have a Performance Plan in HRLinks
 - Ensure that your buddy has working VPN access. For contractors the request originates with our CO.
+- Ensure that your buddy's lead has 30, 60, and 90 day check-ins scheduled with the new employee. Any concerns during these reviews should be raised to the Contracting Officers Representative or the employee's supervisor.
 
 ## For UX team members
 
