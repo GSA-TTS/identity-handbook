@@ -5,6 +5,7 @@ layout: null
   {% for article in site.articles %}
     {
       "title"    : "{{ article.title | escape }}",
+      "desc"     : {{ article.description | jsonify }},
       "category" : "{{ article.category }}",
       "tags"     : "{{ article.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ article.url }}",
