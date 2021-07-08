@@ -208,6 +208,7 @@ Scheduled for every Thursday
     ```bash
     aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
     aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
+    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod worker
     ```
 
 1. Set a timer for one hour, then check NewRelic again for errors.
@@ -252,6 +253,7 @@ To quickly remove new servers and leave old servers up:
 ```bash
 aws-vault exec prod-power -- ./bin/scale-in-new-instances prod idp
 aws-vault exec prod-power -- ./bin/scale-in-new-instances prod idpxtra
+aws-vault exec prod-power -- ./bin/scale-in-new-instances prod worker
 ```
 
 ##### Steps to roll back
