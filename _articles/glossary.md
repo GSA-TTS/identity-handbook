@@ -10,7 +10,7 @@ toc_h_max: 2
 
 The goal of the glossary is to define common Identity terms so that all parties can communicate about Identity without confusion. Some terms are used differently in specific contexts or dialects; we will map where these terms are used incorrectly or interchangeably. 
 
-An "industry" glossary worth scanning: http://solutionsreview.com/identity-management/identity-management-glossary/
+An "industry" glossary worth scanning: <https://solutionsreview.com/identity-management/identity-management-glossary/>
 
 ---
 
