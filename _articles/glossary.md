@@ -15,6 +15,13 @@ Inter-Agency Agreement
 A contract between government agencies. For login.gov, these are the contracts
 we have with other agencies that let them use login.gov as partners/clients.
 
+### IdV
+Identity Verification (Identity Proofing)
+
+This is the process we go through to verify user's identities. We use the terms proofing and identity verification interchangeably. We follow the [NIST 800-63-3][nist-800-63-3] guidelines for enrollment and identity proofing.
+
+[nist-800-63-3]: https://pages.nist.gov/800-63-3/
+
 ### GTC
 General Terms and Conditions
 
