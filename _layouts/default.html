@@ -84,7 +84,7 @@
       var sjs = SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('search-results'),
-        json: '/search.json',
+        json: '{{ site.baseurl }}/search.json',
         noResultsText: '<li class="no-results">No results were found.</li>'
       });
     </script>
