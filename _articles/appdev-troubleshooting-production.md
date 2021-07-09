@@ -14,10 +14,6 @@ Before you can access any systems, you will need to
 To get SSH access, the public key from your PIV card must be added to the servers you would like to access.
 Follow the instructions at the beginning of [this article]({% link _articles/piv-ssh.md %}) to extract your public key and follow the instructions in the [DevOps wiki](https://github.com/18F/identity-devops/wiki/Setting-Up-your-Login.gov-Infrastructure-Configuration#terraform--chef) to add it to our servers.
 
-## Setting up your machine for SSH access via PIV
-
-TODO(margolis): link to a canonical SSH access setup place
-
 ## Looking up a user in the production DB
 1. If you are not in a GSA office, make sure to connect to the GSA network via VPN
 2. Insert your PIV card
@@ -44,29 +40,3 @@ user = User.find_with_email('example.user@gsa.gov')
 user.uuid
 ```
 
-## Looking up a user's activity in Kibana
-
-### SSH into the ELK server
-From the root of the `identity-devops` repo:
-```bash
-AWS_PROFILE=login.gov bin/ssh-instance -L 5601:localhost:5601 asg-prod-elk
-```
-
-### Launch Kibana
-1. Launch any browser and go to http://localhost:5601
-
-
-### Look up a user by their UUID
-1. In the top right corner, click on `Last 15 minutes`, then click on `Last 30 days`
-2. In the search field, delete the `*` and type `events.properties.user_id:"some-uuid"`. Make sure the UUID is enclosed in double quotes.
-4. In the left hand column, under `Available Fields`, look for `name` (it should be at the top under `Popular`), hover over it, and click the `add` button. This will show you the names of the events they performed in reverse chronological order. Start at the bottom and work your way up to see their event history.
-
-Note that looking up a user by their UUID will not give you the full picture of what they did since some requests they can make are unauthenticated. To get the full picture, you will also need their `visitor_id`. You can get that by first looking up their UUID, then in the left hand column, click the `add` button next to `visitor_id`. If you're lucky, they used the same browser. If not, you'll need to search each `visitor_id` separately.
-
-### Look up a user by their visitor_id
-1. In the top right corner, click on `Last 15 minutes`, then click on `Last 30 days`
-2. In the search field, delete the `*` and type `events.visitor_id:"some-uuid"`. Make sure the UUID is enclosed in double quotes.
-4. In the left hand column, under `Available Fields`, look for `name` (it should be at the top under `Popular`), hover over it, and click the `add` button. This will show you the names of the events they performed in reverse chronological order. Start at the bottom and work your way up to see their event history.
-
-### Kibana workshop video
-Moncef gave an overview of how he uses Kibana, and the session was recorded. You can watch it here: <https://drive.google.com/open?id=1VZdLSx5D_on7mrPZWzPSDP24s_iSBSwb>
