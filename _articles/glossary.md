@@ -18,6 +18,8 @@ An "industry" glossary worth scanning: <https://solutionsreview.com/identity-man
 ### AAMVA
 > American Association of Motor Vehicle Administrators
 
+An association of DMVs from many states, AAMVA provides an API we use to validate driver's license data.
+
 ### Attribute-Based Access Control
 
 ### (Single-Source) Attribute Providers
