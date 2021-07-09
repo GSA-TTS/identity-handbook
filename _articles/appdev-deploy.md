@@ -64,13 +64,23 @@ Note: it is a good idea to make sure you have the latest pulled down from identi
 ### Pre-deploy
 Scheduled for every **Tuesday**
 
+#### Test the proofing flow in staging
+
+Since identity proofing requires an actual person's PII, we don't have a good mechanism for automated testing of the live proofing flow.
+As a work-around, we test by proofing in staging, then cutting a release from the code deployed to staging.
+
+Before cutting a release, make sure to test in staging.
+If there are specific commits that need to be deployed, make sure to recycle staging first to include those commits.
+
+Once you've run through proofing in staging, the next step is to cut a release from the code that is deployed to staging.
+
 #### Cut a release branch
 
-The release branch should be cut from latest and it should be the date of the production release (ex `stages/rc-2020-06-17`):
+The release branch should be cut from code tested in staging and it should be the date of the production release (ex `stages/rc-2020-06-17`):
 
 ```bash
 cd identity-$REPO
-git checkout main && git pull
+git fetch && git checkout $(curl --silent https://idp.staging.login.gov/api/deploy.json | jq -r .git_sha)
 git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
 git push -u origin HEAD
 ```
