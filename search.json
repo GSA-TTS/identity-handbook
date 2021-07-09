@@ -4,9 +4,10 @@ layout: null
 [
   {% for article in site.articles %}
     {
-      "title"    : "{{ article.title | escape }}",
-      "category" : "{{ article.category }}",
-      "tags"     : "{{ article.tags | join: ', ' }}",
+      "title"    : {{ article.title | jsonify }},
+      "desc"     : {{ article.description | jsonify }},
+      "category" : {{ article.category | jsonify }},
+      "tags"     : {{ article.tags | join: ', ' | jsonify }},
       "url"      : "{{ site.baseurl }}{{ article.url }}",
       "date"     : "{{ article.date }}",
       "content"  : {{ article.content | strip_html | jsonify}}
