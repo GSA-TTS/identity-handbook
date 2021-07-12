@@ -11,7 +11,7 @@ The backend to the login.gov marketing site [Contact Form](https://login.gov/con
 a Salesforce instance.
 
 The backend will reject form posts that contain dropdown values it does not know about,
-so new agencies need to be added explicitly with the help of the Salesforce TEam
+so new agencies need to be added explicitly with the help of the Salesforce team
 
 ## Configuration
 
