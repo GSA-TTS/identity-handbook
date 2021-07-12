@@ -15,7 +15,7 @@ so new agencies need to be added explicitly with the help of the Salesforce team
 
 ## Configuration
 
-To streamline working with the Salesforce team and their QA/valdiation process,
+To streamline working with the Salesforce team and their QA/validation process,
 we've set up our Federalist preview site to
 
 - disable captchas
