@@ -3,6 +3,11 @@ title: "Deploying the Sample Apps"
 description: "How to deploy oidc-sinatra and saml-sinatra to cloud.gov"
 layout: article
 category: "AppDev"
+envs:
+- dev
+- int
+- staging
+- prod
 ---
 
 ## Apps
@@ -11,8 +16,9 @@ We deploy { two sample apps } &times; { two environments } in cloud.gov:
 
 | | [OpenID Connect](https://github.com/18f/identity-oidc-sinatra/) | [SAML](https://github.com/18f/identity-oidc-saml/) |
 |---|-----|
-| int | <https://int-identity-oidc-sinatra.app.cloud.gov> | <https://int-identity-saml-sinatra.app.cloud.gov> |
-| dev | <https://dev-identity-oidc-sinatra.app.cloud.gov> | <https://dev-identity-saml-sinatra.app.cloud.gov>
+{% for env in page.envs -%}
+| {{ env }} | <https://{{ env }}-identity-oidc-sinatra.app.cloud.gov> | <https://{{ env }}-identity-saml-sinatra.app.cloud.gov> |
+{% endfor %}
 
 ## Deploying
 
