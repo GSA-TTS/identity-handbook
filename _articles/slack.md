@@ -12,7 +12,7 @@ We use Slack extensively!
 
 - All channels begin with `#login-`
 - All channels with external collaborators start with `#login-partners-`
-- Team channels look like `#login-team-<name>`
+- Sprint team channels look like `#login-team-<name>`
 
 ## Groups
 
