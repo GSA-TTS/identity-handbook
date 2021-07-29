@@ -41,8 +41,11 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18f/identity-validations**](https://github.com/18f/identity-validations)
   Gem that provides shared validations for the ServiceProvider model across the IDP and dashboard
 
+- [**18f/identity-doc-auth**](https://github.com/18f/identity-doc-auth){: .deprecated-link} (Archived)
+  Provides a library for performing document authentication. This code has been moved into the IDP codebase.
+
 - [**18f/identity-proofer-gem**](https://github.com/18f/identity-proofer-gem){: .deprecated-link} (Archived)
-  Provdes a generic interface around identity proofing (IDV, identity verification) that is implemented by other proofers. This code has been moved into the IDP codebase.
+  Provides a generic interface around identity proofing (IDV, identity verification) that is implemented by other proofers. This code has been moved into the IDP codebase.
 
 - [**18f/identity-lexisnexis-api-client-gem**](https://github.com/18f/identity-lexisnexis-api-client-gem){: .deprecated-link} (Archived)
   Implementation of the identity-proofer interface for LexisNexis. This code has been moved into the IDP codebase.
