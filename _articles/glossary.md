@@ -27,7 +27,7 @@ Also called 2FA and two-factor authentication, two-step authentication is a way 
 
 How certain we are the owner of an account logged in to that account. Based on [NIST 800-63-3][nist-800-63-3].
 
-login.gov supports
+Login.gov supports
 - AAL 2: multifactor authentication
 - AAL 3: unphishable credential, requires WebAuthn or a PIV/CAC
 
@@ -119,7 +119,7 @@ A contract between government agencies. For Login.gov, these are the contracts w
 **Identity Assurance Level**
 How certain we are somebody is who they say they are. Based on [NIST 800-63-3][nist-800-63-3].
 
-login.gov supports:
+Login.gov supports:
 - IAL 1: a lightly verified identity
 - IAL 2: a verified identity
 

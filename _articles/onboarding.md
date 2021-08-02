@@ -10,12 +10,12 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 
 ## For new Login.gov team members to complete themselves
 
-- Familiarize yourself with the [login.gov Handbook]({{site.baseurl}})
-- Watch a [login.gov authentication overview](https://drive.google.com/file/d/1UFq0OAHgbLdPUXXj6FAIgSxtLyAfYxSa/view)
-- Watch a [login.gov identity verification overview](https://drive.google.com/file/d/1GanUUpkAcJCopQAPac4DSe10LREdSGZw/view)
-- Watch a [login.gov security overview](https://drive.google.com/file/d/1ZR4uin3dJZmq7nOvgROcv95_mcRPmx0n/view?usp=sharing)
+- Familiarize yourself with the [Login.gov Handbook]({{site.baseurl}})
+- Watch a [Login.gov authentication overview](https://drive.google.com/file/d/1UFq0OAHgbLdPUXXj6FAIgSxtLyAfYxSa/view)
+- Watch a [Login.gov identity verification overview](https://drive.google.com/file/d/1GanUUpkAcJCopQAPac4DSe10LREdSGZw/view)
+- Watch a [Login.gov security overview](https://drive.google.com/file/d/1ZR4uin3dJZmq7nOvgROcv95_mcRPmx0n/view?usp=sharing)
 - Review the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
-- Review the [login.gov Design System](https://design.login.gov/)
+- Review the [Login.gov Design System](https://design.login.gov/)
 - Complete [GSA OLU](https://insite.gsa.gov/topics/training-and-development/online-university-olu?term=olu) IT Security Awareness Training, including accepting the GSA IT Rules of Behavior, which is required before we can give you access to any Login.gov systems. If you joined GSA more than two months ago, you’ve already completed this task. (Detailees must complete similar organization driven training and provide as proof to Login.gov team members)
 - Schedule virtual tea/coffee meetings with your team lead, other members of your team, and anyone else!  Tea is just a short (~20 min) one-on-one video meeting with the purpose of getting to know each other.
 - Once you've been added to Slack:
@@ -40,7 +40,7 @@ As an on-boarding buddy you'll be a new employee's main point of contact and Log
 Look at this work as a power multiplier, you are helping someone gain a firm foundation to work upon, you are starting up a new engine.
 
 - Add a new JIRA Issue to the [People-Ops board](https://cm-jira.usa.gov/secure/RapidBoard.jspa?projectKey=LPO&rapidView=2861) to track completion of onboarding tasks.
-  - `Create Bulk Sub Tasks` on the new issue and use the `login.gov Onboarding Buddy Tasks` template.
+  - `Create Bulk Sub Tasks` on the new issue and use the `Login.gov Onboarding Buddy Tasks` template.
 - Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on Slack. Cc `@github-admins-slack` on your request.
   - *For members needing **push commit** access*: Also add to the [identity-core](https://github.com/orgs/18F/teams/identity-core/members) team (contact [team maintainers](https://github.com/orgs/18F/teams/identity-core/members?utf8=%E2%9C%93&query=%20role%3Amaintainer) for this)
   - *For members NOT needing **push** access*: Also add to the [identity-team-yml](https://github.com/orgs/18F/teams/identity-team-yml/members) team, which grants read-only access. (contact [team maintainers](https://github.com/orgs/18F/teams/identity-team-yml/members?utf8=%E2%9C%93&query=+role%3Amaintainer) for this)
@@ -52,8 +52,8 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Contractors who are working on TTS projects most or full-time can be added as full Slack members.
   - Other collaborators should be added as multi-channel guests.
   - Full Slack access for Contractors is at the discretion of Login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
-- Add to appropriate [login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
-- Add them to the [login.gov Shared Calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com)
+- Add to appropriate [Login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
+- Add them to the [Login.gov Shared Calendar](https://calendar.google.com/calendar/embed?src=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g%40group.calendar.google.com)
   - Non-GSA.gov email address: `See all event details` permission
   - With GSA.gov email address: `Make changes AND manage sharing`
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the Login.gov project.
@@ -61,7 +61,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Verify their membership in all appropriate Google Groups. This will grant them permission to see the Login.gov Team Drive and other Google Docs
   - Add everyone to `login-all@`
   - Add feds to `login-team@`, and contractors to `login-team-contractors@`
-- Update the [login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
+- Update the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
 - Verify they have been added to all team events like
   - Sprint ceremonies
   - All-hands / Demo-day
@@ -73,8 +73,8 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 ## For UX team members
 
-- Familiarize yourself with the [login.gov Design System](https://design.login.gov/)
-- Familiarize yourself with the [login.gov UX Drive Folders](https://drive.google.com/drive/folders/12qRTGijG9oOU8FRvZfK30qAN4v8LCzHG)
+- Familiarize yourself with the [Login.gov Design System](https://design.login.gov/)
+- Familiarize yourself with the [Login.gov UX Drive Folders](https://drive.google.com/drive/folders/12qRTGijG9oOU8FRvZfK30qAN4v8LCzHG)
 
 ## For Partnerhsips team members
 
@@ -107,7 +107,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Demo Day / All Hands
 - Read some docs
   - [Our definition(s) of done]({% link _articles/definition-of-done.md %})
-  - [login.gov Design Guide](https://design.login.gov/)
+  - [Login.gov Design Guide](https://design.login.gov/)
 - Write some code
   - Assign yourself a Jira ticket
   - Open a pull request against the IdP

@@ -15,7 +15,7 @@ Content on [secure.login.gov](https://secure.login.gov) and [login.gov](https://
 - French (Canada)
 - Spanish (Mexico)
 
-Translations are requested when content is added or updated on secure.login.gov and login.gov. You can find specific guidance on how to request translations in the [login.gov guidance document](https://docs.google.com/document/d/1-wNXxyvxrsUeHkMOfhBpoSTCTZULOXNlCkBdNxiLa3c/edit).
+Translations are requested when content is added or updated on secure.login.gov and login.gov. You can find specific guidance on how to request translations in the [Login.gov guidance document](https://docs.google.com/document/d/1-wNXxyvxrsUeHkMOfhBpoSTCTZULOXNlCkBdNxiLa3c/edit).
 
 **NOTE:** partners.login.gov and developers.login.gov are not expected to be translated.
 

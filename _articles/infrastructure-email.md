@@ -7,7 +7,7 @@ category: Infrastructure
 
 ## Overview
 
-login.gov uses GMail for organizational email and AWS SES for outbound transactional email to users.
+Login.gov uses GMail for organizational email and AWS SES for outbound transactional email to users.
 
 In order to serve the public it is important that email is delivered reliably to the public
 when they sign up or make account changes.  It is also important that Login.gov team
@@ -58,7 +58,7 @@ receiving system using the same trust framework used for HTTPS.
 **WARNING - If receiving email servers are added or removed for login.gov, changes must be reflected
 in the MTA-STS policy to prevent inbound email to `@login.gov` addresses from bouncing.**
 
-Due to the complexity in properly serving MTA-STS, login.gov developed a Terraform based method
+Due to the complexity in properly serving MTA-STS, Login.gov developed a Terraform based method
 that:
 * Defines the list of MXes in code
 * Builds the policy file and pushes it to S3
