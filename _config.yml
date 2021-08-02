@@ -1,6 +1,6 @@
 # Jekyll config
 
-title: login.gov Handbook
+title: Login.gov Handbook
 baseurl: ""
 url: "https://handbook.login.gov"
 github_repo_url: https://github.com/18F/identity-handbook  # enables "edit this page" button

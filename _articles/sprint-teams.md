@@ -5,7 +5,7 @@ layout: article
 category: "Team"
 ---
 
-Here are the login.gov sprint teams, they're named after famous women in STEM fields.
+Here are the Login.gov sprint teams, they're named after famous women in STEM fields.
 
 ## Ada
 
@@ -50,7 +50,7 @@ speed our secure development processes.
 
 Team Radia is named after [Radia Perlman][radia], the inventor of the spanning-tree protocol.
 
-Team Radia focuses on the platform and tools underpinning login.gov.
+Team Radia focuses on the platform and tools underpinning Login.gov.
 
 [radia]: https://en.wikipedia.org/wiki/Radia_Perlman
 

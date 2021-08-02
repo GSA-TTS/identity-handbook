@@ -28,7 +28,7 @@ Rotations:
 
 ## Emergency Contacts
 
-For login.gov and vendor emergency contact information see [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts)
+For Login.gov and vendor emergency contact information see [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts)
 
 ## Handoff
 
@@ -96,7 +96,7 @@ Involves an active (launched) partner in Production environment
 
 **OR**
 
-* An active (launched) login.gov partner is reporting that no user can authenticate or proof.
+* An active (launched) Login.gov partner is reporting that no user can authenticate or proof.
 * Required to be addressed immediately and ongoing until resolved.
 
 ### Medium severity
@@ -105,7 +105,7 @@ Involves an active (launched) partner in Production environment
 
 **OR**
 
-* An active (Launched) login.gov partner is reporting that some users are not able to authenticate or proof in production.
+* An active (Launched) Login.gov partner is reporting that some users are not able to authenticate or proof in production.
 
 **OR**
 
@@ -124,6 +124,6 @@ Involves an active (launched) partner in Production environment
 * More complicated requests may take longer; expected turnaround should be communicated.
 * On occasion, requests are deemed urgent and should be made a priority.
 
-## Internal login.gov on-call guidance
+## Internal Login.gov on-call guidance
 
-Additional on-call guidance, including time in-lieu is available in the [Internal login.gov on-call guidance Google Doc](https://docs.google.com/document/d/1mOU3rnBJUKiMNFnz-odudmzNCo06CoKsAlCX1ZrK4ZY/edit#)
+Additional on-call guidance, including time in-lieu is available in the [Internal Login.gov on-call guidance Google Doc](https://docs.google.com/document/d/1mOU3rnBJUKiMNFnz-odudmzNCo06CoKsAlCX1ZrK4ZY/edit#)

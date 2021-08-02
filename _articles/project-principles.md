@@ -18,13 +18,13 @@ Login.gov provides a simple, secure way for the public to access their governmen
 ## Strategic pillars
 
 ### Help agencies focus on their core missions, not identity
-*We do the work so agencies don’t have to.* Login.gov enables and creates a seamless way for the public to engage and interact with their agency through a secure, user friendly login experience. We are a trustworthy government partner to the government agencies that integrate with login.gov.
+*We do the work so agencies don’t have to.* Login.gov enables and creates a seamless way for the public to engage and interact with their agency through a secure, user friendly login experience. We are a trustworthy government partner to the government agencies that integrate with Login.gov.
 
 ### Lower barriers to accessing government services for the public
 *We decrease the friction of using government services online.*
 
 ### Protect users’ security + privacy
-*We are stringent about security and privacy best practices.* Login.gov takes seriously the use of authentication and identity best security practices at every stage of the login.gov experience. You can read more about that in our [privacy and security statement](https://login.gov/policy/).
+*We are stringent about security and privacy best practices.* Login.gov takes seriously the use of authentication and identity best security practices at every stage of the Login.gov experience. You can read more about that in our [privacy and security statement](https://login.gov/policy/).
 
 ### Drive accountability + transparency
 *We help improve public trust in government by being open source.* Login.gov shares our processes with the public and government agency partners early and often and publicly abide by security and privacy standards.

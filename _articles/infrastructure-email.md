@@ -10,7 +10,7 @@ category: Infrastructure
 login.gov uses GMail for organizational email and AWS SES for outbound transactional email to users.
 
 In order to serve the public it is important that email is delivered reliably to the public
-when they sign up or make account changes.  It is also important that login.gov team
+when they sign up or make account changes.  It is also important that Login.gov team
 members receive email in order to support the public and agency partners.
 
 This page provides an overview of how email is delivered to and sent from `@login.gov`
@@ -97,12 +97,12 @@ See [Runbook: Email - MTA-STS](https://github.com/18F/identity-devops/wiki/Runbo
 
 ### GMail Out
 
-Most login.gov team members send email using their `@gsa.gov` address.  Some Google Groups and other
+Most Login.gov team members send email using their `@gsa.gov` address.  Some Google Groups and other
 special addresses under `@login.gov` do send out email.  All outbound email from `@login.gov` addresses
 
 ### AWS SES
 
-AWS Simple Email Service (SES) is used to deliver messages to login.gov users.
+AWS Simple Email Service (SES) is used to deliver messages to Login.gov users.
 
 ### Sender Policy Framework (SPF)
 

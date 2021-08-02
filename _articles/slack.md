@@ -21,21 +21,21 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 
 ### Team Handles
 
-- `@login-devops-team` Group to tag the login.gov devops team
-- `@login-eng` members of the login.gov application engineer grop
+- `@login-devops-team` Group to tag the Login.gov devops team
+- `@login-eng` members of the Login.gov application engineer grop
 - `@login-finops` use this group to communicate with all login financial and acq operations team members
 - `@login-iaa-finance` Members of this group participate in IAA and finance activities
-- `@login-partnerships-team` Group to address login.gov partnerships team members
-- `@login-product-team` Group to address login.gov product managers
+- `@login-partnerships-team` Group to address Login.gov partnerships team members
+- `@login-product-team` Group to address Login.gov product managers
 - `@login-ux-team` Group for the design/UX team
 - `@login-appdev-team` Group for application development teams
 - `@login_leads` login team leads
-- `@login-feds` Group for login.gov federal FTE employees
+- `@login-feds` Group for Login.gov federal FTE employees
 - `@github-admins-login` members of this group can edit [`identity-core`](https://github.com/orgs/18F/teams/identity-core) GitHub team membership
 
 ## Channels
 
-Here are some common Slack Channels for the login.gov team
+Here are some common Slack Channels for the Login.gov team
 
 
 **Filter by**
@@ -77,7 +77,7 @@ Here are some common Slack Channels for the login.gov team
   Channel for the user experience design team (research, visual, content)
 
 - [`#login-public-site`](https://gsa-tts.slack.com/archives/CNZCW01PX)
-  Discussion around the login.gov marketing/brochure/public site
+  Discussion around the Login.gov marketing/brochure/public site
 
 #### Engineering/AppDev
 
@@ -126,7 +126,7 @@ Here are some common Slack Channels for the login.gov team
   Channel for automated notifications from AWS SOC monitoring
 
 - [`#login-load-testing`](https://gsa-tts.slack.com/archives/C010L0SE4E8):
-  Discussion around load testing of login.gov
+  Discussion around load testing of Login.gov
 
 - [`#login-compliance`](https://gsa-tts.slack.com/archives/C3X5AJ8RK)
   FedRAMP and other Compliance information
@@ -150,7 +150,7 @@ Here are some common Slack Channels for the login.gov team
   Discussion and coordination around this handbook
 
 - [`#login-leads`](https://gsa-tts.slack.com/archives/CR3TL6JTB):
-  login.gov leadership team channel
+  Login.gov leadership team channel
 
 - [`#login-professional-development`](https://gsa-tts.slack.com/archives/C013NBL04AF):
   Discussion and coordination around professional development, attending conferences, etc.

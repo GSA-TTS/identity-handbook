@@ -1,13 +1,13 @@
 ---
 title: "Troubleshooting PIV/CAC logins"
-description: "If somebody has trouble using their PIV/CAC with login.gov"
+description: "If somebody has trouble using their PIV/CAC with Login.gov"
 layout: article
 category: "AppDev"
 ---
 
 ## Background
 
-Using a PIV/CAC with login.gov relies on a certificate trust chain. The [identity-pki](https://github.com/18f/identity-pki)
+Using a PIV/CAC with Login.gov relies on a certificate trust chain. The [identity-pki](https://github.com/18f/identity-pki)
 repo tracks trusted issuing certificates in source control. We need to know that a certificate is used to issue PIVs
 before we trust it (since not all certificates are used for issuing PIVs).
 
@@ -15,7 +15,7 @@ Related article: [Common OpenSSL command line recipes]({% link _articles/openssl
 
 ## Steps
 
-If a user writes in that they can't log in to login.gov with their PIV and get errors like "The certificate you selected is invalid",
+If a user writes in that they can't log in to Login.gov with their PIV and get errors like "The certificate you selected is invalid",
 then we are probably missing an issuing certificate for their PIV. These steps outline how to find out what that certificate is,
 and how to add it.
 

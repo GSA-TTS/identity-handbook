@@ -1,7 +1,7 @@
-# login.gov handbook
+# Login.gov handbook
 
-The repository that backs the [login.gov handbook](https://handbook.login.gov/),
-the login.gov team's open source handbook.
+The repository that backs the [Login.gov handbook](https://handbook.login.gov/),
+the Login.gov team's open source handbook.
 
 ## Contributing
 

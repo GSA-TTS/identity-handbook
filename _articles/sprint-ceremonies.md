@@ -33,7 +33,7 @@ It is important that answers to these questions are kept brief. Anything that
 can’t be covered in a few minutes can be taken to a breakout in the time after
 standup.
 
-Standups are open meetings and can be attended by anyone from login.gov. It is
+Standups are open meetings and can be attended by anyone from Login.gov. It is
 important that attendees who don’t contribute directly to the team’s work
 remember they are attending standup as an observer. They should not interfere
 with the standup. Any issues they want to discuss should be addressed

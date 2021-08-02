@@ -64,7 +64,7 @@ receiving and SMS to confirm deliverability of SMS and email.
 ```
 
 A few of our tests use partner websites (such as USAJOBS in production) to test
-signing in to login.gov. Occasionally those sites go down, and so the smoke tests
+signing in to Login.gov. Occasionally those sites go down, and so the smoke tests
 that use those sites fail.
 
 
@@ -78,5 +78,5 @@ headaches, we choose to rely on partners like this.
 {% include alert.html content=alert_content %}
 
 **What to do**: Check the partner site manually, if it's down, try signing
-in to login.gov through another partner site to make sure things are still up.
+in to Login.gov through another partner site to make sure things are still up.
 

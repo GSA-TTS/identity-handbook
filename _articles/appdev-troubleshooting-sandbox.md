@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting the Sandbox"
-description: Troubleshooting issues with the login.gov sandbox/int environment
+description: Troubleshooting issues with the Login.gov sandbox/int environment
 layout: article
 category: AppDev
 ---

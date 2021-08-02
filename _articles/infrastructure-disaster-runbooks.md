@@ -7,7 +7,7 @@ category: Infrastructure
 
 ## Overview
 
-There are two items in the login.gov infrastructure that can not be replaced:
+There are two items in the Login.gov infrastructure that can not be replaced:
 
 * RDS PostgreSQL Database - All the users' encrypted bundles live here.  Recovering from a backup will result
   in some users having to recreate accounts or reset passwords.  (See [Recovering RDS](#recovering-rds))

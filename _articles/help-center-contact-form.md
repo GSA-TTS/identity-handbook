@@ -7,7 +7,7 @@ category: "AppDev"
 
 ## Background
 
-The backend to the login.gov marketing site [Contact Form](https://login.gov/contact/) is
+The backend to the Login.gov marketing site [Contact Form](https://login.gov/contact/) is
 a Salesforce instance.
 
 The backend will reject form posts that contain dropdown values it does not know about,
