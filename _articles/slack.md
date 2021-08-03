@@ -8,6 +8,12 @@ toc_h_max: 4
 
 We use Slack extensively!
 
+## Channel naming conventions
+
+- All channels begin with `#login-`
+- All channels with external collaborators start with `#login-partners-`
+- Sprint team channels look like `#login-team-<name>`
+
 ## Groups
 
 Use these to ping a large group of people, without having to **@here** or **@channel** a room full of the wrong people.
