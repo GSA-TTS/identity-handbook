@@ -7,7 +7,7 @@ category: "Team"
 
 ## Overview
 
-This glossary is for possibly-confusing terms and abbrevations that come up working on, or talking about, login.gov.
+This glossary is for possibly-confusing terms and abbrevations that come up working on, or talking about, Login.gov.
 
 Many of them are related to Identity Management ecosystem, our goal is to
 provide common terms to communicate about Identity without confusion. We will
@@ -27,7 +27,7 @@ Also called 2FA and two-factor authentication, two-step authentication is a way 
 
 How certain we are the owner of an account logged in to that account. Based on [NIST 800-63-3][nist-800-63-3].
 
-login.gov supports
+Login.gov supports
 - AAL 2: multifactor authentication
 - AAL 3: unphishable credential, requires WebAuthn or a PIV/CAC
 
@@ -101,7 +101,7 @@ Multi-factor authentication is a process that requires users to present valid ex
 ### GTC
 **General Terms and Conditions**
 
-The long term agreement that establishes the relationship between login.gov and an agency. These typically span a 5 year period.
+The long term agreement that establishes the relationship between Login.gov and an agency. These typically span a 5 year period.
 
 ### Hub
 Hub is the idea of an identity "traffic controller" that interacts with requesters and requestees during an identity authentication workflow. It "manages communications between Users, [RP](#rp) and [IdP](#idp). It makes sure that users can _assert_ their identities securely and safely, and that relying parties can be confident that users are who they say they are."
@@ -113,13 +113,13 @@ Source: [Wikipedia](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Lang
 ### IAA
 **Inter-Agency Agreement**
 
-A contract between government agencies. For login.gov, these are the contracts we have with other agencies that let them use login.gov as partners/clients.
+A contract between government agencies. For Login.gov, these are the contracts we have with other agencies that let them use Login.gov as partners/clients.
 
 ### IAL
 **Identity Assurance Level**
 How certain we are somebody is who they say they are. Based on [NIST 800-63-3][nist-800-63-3].
 
-login.gov supports:
+Login.gov supports:
 - IAL 1: a lightly verified identity
 - IAL 2: a verified identity
 
@@ -160,7 +160,7 @@ This is the process we go through to verify user's identities. We use the terms 
 
 *Note: LOA has been succeeded by the newer [IAL](#ial) and [AAL](#aal) levels*
 
-Level of Assurance describes the degree of confidence in the vetting processes required for a user leading up to and including an authentication. With login.gov, it's the degree of confidence we require and that partner government agencies require ["that a user is who they say they are"](https://alphagov.github.io/identity-assurance-documentation/shared/glossary.html), per [Gov.UK Verify](https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify), Great Britain's identity assurance service.
+Level of Assurance describes the degree of confidence in the vetting processes required for a user leading up to and including an authentication. With Login.gov, it's the degree of confidence we require and that partner government agencies require ["that a user is who they say they are"](https://alphagov.github.io/identity-assurance-documentation/shared/glossary.html), per [Gov.UK Verify](https://www.gov.uk/government/publications/introducing-govuk-verify/introducing-govuk-verify), Great Britain's identity assurance service.
 
 * Level of Assurance 1 (LOA1): Used when an entity needs to know that the same user is returning to the service but doesn’t need to know who that user is; low confidence in the asserted identity’s validity.
 * Level of Assurance 2 (LOA2): Used when an entity needs to know who the user is and that they're real; some confidence in the asserted identity’s validity.
@@ -191,7 +191,7 @@ An identity record present in the database that is missing one or more of the at
 Token valid for one use. See https://en.wikipedia.org/wiki/One-time_password
 
 ### Passcode
-A **passcode** works like a password but uses only numbers. In previous iterations, login.gov used **one-time passcode** to refer to the six-digit code sent during phone confirmation. However, usability tests suggested that the one-two sequence of **two-factor authentication** and **one-time passcode** might be misleading to non-experts.
+A **passcode** works like a password but uses only numbers. In previous iterations, Login.gov used **one-time passcode** to refer to the six-digit code sent during phone confirmation. However, usability tests suggested that the one-two sequence of **two-factor authentication** and **one-time passcode** might be misleading to non-experts.
 * In technical documentation, use **one-time passcode** on first reference, OTP on second. Don’t use **one-time password** or **TOTP** unless it is clearly explained as an alternate term. 
 * Never use these alternatives in the interface. Instead, **use "security code"** to refer to any OTP sent to confirm device ownership.
 
@@ -222,7 +222,7 @@ A trusted entity that establishes and vouches for the identity or attributes of 
 
 ### Service Provider
 **SP**
-An application (or applications) within an ecosystem that provides a service to users; examples of SPs that relate to login.gov include vets.gov, myssa, and ELIS.
+An application (or applications) within an ecosystem that provides a service to users; examples of SPs that relate to Login.gov include vets.gov, myssa, and ELIS.
 
 ### SLO
 **Single LogOut**
@@ -239,10 +239,10 @@ This is the code that would be displayed on a user's authenticator app, such as 
 Short for [Trusted Traveler Programs](https://ttp.cbp.dhs.gov/).
 
 ### User
-A user is the person accessing the government service via login.gov. For clarity, refer to agency partners as **partners** or **integrators**.
+A user is the person accessing the government service via Login.gov. For clarity, refer to agency partners as **partners** or **integrators**.
 
 ### Verification
-Identity proofing or verifying the identity of a user requires that user to provide information about themselves and answering questions to prove that they're really who they say they are. When login.gov conducts identity proofing, we need users to give us:
+Identity proofing or verifying the identity of a user requires that user to provide information about themselves and answering questions to prove that they're really who they say they are. When Login.gov conducts identity proofing, we need users to give us:
 * An government-issued identifier such as their Social Security number
 * Financial or utility account information
 * An address on record with an institution that also verified (such as a phone company or a mortgage holder)

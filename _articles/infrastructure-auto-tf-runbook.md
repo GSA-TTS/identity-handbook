@@ -31,7 +31,7 @@ so that we are using tooling that we have specified, and not something dynamical
 The terraform stuff is only allowed
 to access `github.com`, amazon API endpoints, and probably a few more over time,
 in an attempt to make this system really locked down,
-since it will be the lever that can move anything in the login.gov system.
+since it will be the lever that can move anything in the Login.gov system.
 
 It also requires `iam_auto_terraform_enabled` to not be disabled in the account(s) you
 are deploying to.  Right now, `terraform/all/prod/main.tf` and `terraform/all/sms-prod/main.tf`
@@ -41,7 +41,7 @@ to bring auto-terraform into our ATO boundary.
 ## Security!
 
 This is a tremendously powerful tool.  Once fully deployed, this system will
-be able to change/delete pretty much everything in the whole login.gov world.
+be able to change/delete pretty much everything in the whole Login.gov world.
 As such, we need to be SUPER careful about the tools used here, how they are
 used, etc.  This system should be as simple and self-contained as possible,
 with as few permissions granted as we can make it.

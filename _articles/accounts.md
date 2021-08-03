@@ -16,13 +16,13 @@ who have admin access to the various services
 
 ## Services
 
-This page lists various services that login.gov team uses to do work.
+This page lists various services that Login.gov team uses to do work.
 
 - Figma
 - Google SearchConsole
 - Hubspot
-- login.gov dashboard
-- login.gov Google Groups
+- Login.gov dashboard
+- Login.gov Google Groups
 - NewRelic
 - NPM Package registry
 - OpsGenie

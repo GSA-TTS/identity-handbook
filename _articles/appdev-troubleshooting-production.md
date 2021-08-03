@@ -8,7 +8,7 @@ category: AppDev
 
 Before you can access any systems, you will need to
  - Obtain a PIV card reader
- - Get cleared for SSH access via PIV into login.gov systems
+ - Get cleared for SSH access via PIV into Login.gov systems
  - [Set up AWS-vault](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault)
 
 To get SSH access, the public key from your PIV card must be added to the servers you would like to access.

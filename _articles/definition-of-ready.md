@@ -11,12 +11,12 @@ JIRA tickets, and slightly different expectations for each.
 
 ## Stories
 
-Stories are told from user perspectives (where users can't be the login.gov
+Stories are told from user perspectives (where users can't be the Login.gov
 team). They're written in the form *"as **X**, I want to **Y** so that **Z**."*
 For example:
 
 > As a user, I want to provide consent when an SP asks for how current my verified
-> information is, so that I have full control of what login.gov is sharing about me.
+> information is, so that I have full control of what Login.gov is sharing about me.
 
 Often stories list out **AC**s, or **Acceptance Criteria**, for example
 

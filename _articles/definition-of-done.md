@@ -24,7 +24,7 @@ Expect this DoD to change over time.
 - The story is deployed to Dev and/or INT environments
 - Appropriate refactoring has been done as part of developing the story
   - Dead code has been pruned
-  - The login.gov design system is used in views
+  - The Login.gov design system is used in views
 - New code must be free of medium and highlevel static and dynamic security vulnerabilities as reported by Snyk
 - If the story will not be ready to be released to users or there is a serious possibility of failure then the changes are behind a feature flag
 - Analytics logging has been updated and new events have been added if needed

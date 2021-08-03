@@ -5,7 +5,7 @@ layout: article
 category: "Team"
 ---
 
-Here are the current login.gov sprint team roles and responsibilities.
+Here are the current Login.gov sprint team roles and responsibilities.
 This is a living document and will evolve as our teams do.
 
 ## All Team Members
@@ -14,7 +14,7 @@ This is a living document and will evolve as our teams do.
 - Attends agile ceremonies (daily standup, backlog refinement, planning, retros)
 - Look for ways the team can work more efficiently, save cost, and brings that up in a helpful way.
 - Demos work at Demo day
-- Attends team-wide meetings like login.gov all-hands
+- Attends team-wide meetings like Login.gov all-hands
 - Generally working during “core hours” (roughly 12-4 EST)
 - Understand the team’s goals and help the team work towards them
 - Help the team plan for future sprints 
@@ -75,13 +75,13 @@ This is a living document and will evolve as our teams do.
 - Facilitate and guide teams through UX explorations in studios/workshops
 - Collaborate with Product Owners, Scrum Masters, UX Writers and Engineers to receive feedback early (and often!) on visual design work
 - Review front-end improvements throughout the development process and support and provide feedback to Engineers
-- Write, perform and synthesize research methods that help to enhance various login.gov products
+- Write, perform and synthesize research methods that help to enhance various Login.gov products
 - Advocate for product improvements to Product Owners based on research findings
 - Create prompts, prototypes, and exercises that encourage conversation.
 
 ## UX Writer
 
-- Creates and edits content on various login.gov products and services
-- Write, perform and synthesize research methods that help to enhance various login.gov products
+- Creates and edits content on various Login.gov products and services
+- Write, perform and synthesize research methods that help to enhance various Login.gov products
 - Create knowledge articles and email templates in salesforce for contact center when a new app launches 
 

@@ -7,7 +7,7 @@ category: "Security"
 
 ## Introduction
 
-This document outlines login.gov’s process for responding to incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we’ll take to resolve them.
+This document outlines Login.gov’s process for responding to incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we’ll take to resolve them.
 
 {%- capture alert_content -%}
 This is the full explicit document!
@@ -31,9 +31,9 @@ At a high level, incident response follows this process:
 
 #### Initiate
 
-An TTS staff member inside or outside the login.gov team (the reporter) notices and reports a login.gov-related incident, using the TTS incident response process and notifying the login.gov team in the #login-situation Slack channel.
+An TTS staff member inside or outside the Login.gov team (the reporter) notices and reports a Login.gov-related incident, using the TTS incident response process and notifying the Login.gov team in the #login-situation Slack channel.
 
-- The first responder on the login.gov team (which could be the reporter if the reporter is on the team) becomes the initial Situation Lead (SL).
+- The first responder on the Login.gov team (which could be the reporter if the reporter is on the team) becomes the initial Situation Lead (SL).
 
 The SL follows this Login.gov IR Plan and may follow [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/) (or supports the reporter if the reporter already started it) as a supplement, including notifying GSA IT (itservicedesk@gsa.gov, gsa-ir@gsa.gov), opening a Google Doc, and creating an issue in the DevOps GitHub repository to track the event.
 - Create a ticket in the appropriate repository
@@ -79,11 +79,11 @@ For full details, read on.
 
 ### Initiate Phase
 
-An incident begins when someone becomes aware of a potential incident. We define “incident” broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of login.gov.
+An incident begins when someone becomes aware of a potential incident. We define “incident” broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Login.gov.
 
-When a person outside the login.gov team (the reporter) notices a login.gov-related incident, they should begin reporting it by using the 18F incident response process (need link here), and then post about it in #login-situation. If they don’t get acknowledgment from the login.gov team right away, they should escalate by contacting the login.gov leads directly until they receive acknowledgment of their report.
+When a person outside the Login.gov team (the reporter) notices a Login.gov-related incident, they should begin reporting it by using the 18F incident response process (need link here), and then post about it in #login-situation. If they don’t get acknowledgment from the Login.gov team right away, they should escalate by contacting the Login.gov leads directly until they receive acknowledgment of their report.
 
-The first person to notice an incident, they should begin reporting it by using the this incident response process and posting about it in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) (including notifying the login.gov leads).
+The first person to notice an incident, they should begin reporting it by using the this incident response process and posting about it in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) (including notifying the Login.gov leads).
 
 The first participant becomes the initial SL and carries out the next steps in the response. The SL’s responsibility is coordination, not necessarily investigation. The SL’s primary role is to guide the process. The first responder may remain SL throughout the process, or they may hand off SL duties later in the process.
 
@@ -165,7 +165,7 @@ At this point, we’re trying to fix the issue! Remediation will be very situati
 
   * For High-severity incidents, the team should take action immediately, even if this causes disruption. A notification about the disruption should be sent out as soon as possible, but the team needs no permission to take action at this level.
 
-  * For Medium-severity incidents, the team should notify the login.gov leads of the planned action, and help them assess the relative risk of disruption vs. security. If the leads are unavailable via Slack, they should be contacted using the phone numbers in their Slack profiles. The team should reach a collaborative decision on action, with a bias towards disruption. If they can’t be reached within 1 hour, the team may take action without them.
+  * For Medium-severity incidents, the team should notify the Login.gov leads of the planned action, and help them assess the relative risk of disruption vs. security. If the leads are unavailable via Slack, they should be contacted using the phone numbers in their Slack profiles. The team should reach a collaborative decision on action, with a bias towards disruption. If they can’t be reached within 1 hour, the team may take action without them.
 
   * For Low-severity issues, the team should notify as above, and not take action until a mutually-agreed-on course of action has been determined.
 
@@ -286,7 +286,7 @@ Anyone with access to production, including:
 
 ### What is an incident?
 
-* Anything that presents an immediate risk to **Confidentiality**, **Integrity**, or **Availability** of public login.gov services
+* Anything that presents an immediate risk to **Confidentiality**, **Integrity**, or **Availability** of public Login.gov services
 * If it smells like an incident, declare an incident
   * False positives are normal and useful to keep us sharp
   * Long delays while deciding if something is an incident are not acceptable
@@ -295,7 +295,7 @@ Anyone with access to production, including:
 ### When do you declare an incident?
 
 * Immediately!  
-* Failing to report an incident in a timely manner after discovery jeopardizes login.gov - FISMA requires timely reporting and declaring an incident and following our policy ensures we do not fail to meet that requirement
+* Failing to report an incident in a timely manner after discovery jeopardizes Login.gov - FISMA requires timely reporting and declaring an incident and following our policy ensures we do not fail to meet that requirement
 
 ### When do you engage GSA-IR?
 
@@ -346,7 +346,7 @@ Anyone with access to production, including:
 ### Why do I need to participate in contingency planning exercises (wargames) and IR Fire Drills?
 
 * **Resources** - It takes a full team to respond, and every participant is important! 
-* **Readiness** - Only through practice will we be and remain ready to meet the challenges login.gov faces
+* **Readiness** - Only through practice will we be and remain ready to meet the challenges Login.gov faces
 * **Refinement** - Only through participating fully can we refine our processes to improve response and efficiency
-* **Required** - GSA authorizes login.gov to operate, in part on the understanding that we will adhere to [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
+* **Required** - GSA authorizes Login.gov to operate, in part on the understanding that we will adhere to [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
 * **Regulation (Law)** - Per FISMA we must follow [NIST 800-61r2](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) - Computer Security Incident Handling Guide

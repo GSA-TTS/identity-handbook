@@ -7,7 +7,7 @@ category: Development
 
 ## Repositories
 
-View a [list of all repositories](https://github.com/topics/login-gov) tagged for login.gov
+View a [list of all repositories](https://github.com/topics/login-gov) tagged for Login.gov
 
 ### Applications
 
@@ -25,7 +25,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 - [**18f/identity-charts**](https://github.com/18f/identity-charts) <br />
   [login-charts-server.app.cloud.gov](https://login-charts-server.app.cloud.gov/)<br />
-  Metrics dashboard for login.gov
+  Metrics dashboard for Login.gov
 
 ### Libraries
 
@@ -36,7 +36,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
   Gem that provides functionality for our Ruby applications on our EC2 infrastructure to download secrets and read configs.
 
 - [**18F/omniauth_login_dot_gov**](https://github.com/18F/omniauth_login_dot_gov)
-  Provides an Omniauth strategy for login.gov that helps other projects integrate with login.gov more easily. Some use cases include the [identity-dashboard](https://github.com/18f/identity-dashboard) as well as Touchpoints, USMC and search.gov
+  Provides an Omniauth strategy for Login.gov that helps other projects integrate with Login.gov more easily. Some use cases include the [identity-dashboard](https://github.com/18f/identity-dashboard) as well as Touchpoints, USMC and search.gov
 
 - [**18f/identity-validations**](https://github.com/18f/identity-validations)
   Gem that provides shared validations for the ServiceProvider model across the IDP and dashboard
@@ -79,7 +79,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 ### Design
 
 - [**18f/identity-design-assets**](https://github.com/18f/identity-design-assets)
-  A place for the login.gov design team to version and store design assets (illustrations, sketch files, etc.)
+  A place for the Login.gov design team to version and store design assets (illustrations, sketch files, etc.)
 
 ### Static Sites
 
@@ -91,7 +91,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18f/identity-style-guide**](https://github.com/18f/identity-style-guide)<br />
   [design.login.gov](https://design.login.gov)<br />
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
-  Walkthrough of login.gov common styles. The respository also hosts the `identity-style-guide` npm package that contains the actual styles.
+  Walkthrough of Login.gov common styles. The respository also hosts the `identity-style-guide` npm package that contains the actual styles.
 
 - [**18f/identity-dev-docs**](https://github.com/18f/identity-dev-docs)<br />
   [developers.login.gov](https://developers.login.gov)<br />
@@ -101,7 +101,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18f/connect.gov**](https://github.com/18F/connect.gov)<br />
   [connect.gov](https://connect.gov/)<br />
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
-  A site to disambiguate the login.gov's predecessor `connect.gov` from Connecticut's ConnectCT `connect.ct.gov`
+  A site to disambiguate the Login.gov's predecessor `connect.gov` from Connecticut's ConnectCT `connect.ct.gov`
 
 - [**18f/identity-partners-site**](https://github.com/18F/identity-partners-site/pull/1)<br />
   Eventually <https://partners.login.gov> but temporarily preview at <https://cg-23777731-2d5f-44ad-8cd2-5dc27ca6af07.app.cloud.gov/preview/18f/identity-partners-site/initial-content/> <br />
@@ -116,11 +116,11 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18f/identity-handbook-private**](https://github.com/18f/identity-handbook-private) <br />
   [login-handbook.app.cloud.gov](https://login-handbook.app.cloud.gov/)<br />
   Hosted on: [Cloud.gov](https://dashboard.fr.cloud.gov/)<br />
-  Old, private version of this handbook! (Private to login.gov team only)
+  Old, private version of this handbook! (Private to Login.gov team only)
 
 ## Permissions
 
-All login.gov repos should have the following permissions. They can be changed by a current admin under "Settings" > "Manage Access" in Github.
+All Login.gov repos should have the following permissions. They can be changed by a current admin under "Settings" > "Manage Access" in Github.
 
 | Group Name | Role |
 | -----------|------|

@@ -19,7 +19,7 @@ We currently use the **Login.gov Infrastructure** board <https://github.com/orgs
 
 
 ## Schedule
-These events are shared within the [login.gov shared calendar](https://calendar.google.com/calendar?cid=Z3NhLmdvdl82b3Z1bDZwY3NtZ2Q0MG84cHFuN3FtZ2U1Z0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t.)
+These events are shared within the [Login.gov shared calendar](https://calendar.google.com/calendar?cid=Z3NhLmdvdl82b3Z1bDZwY3NtZ2Q0MG84cHFuN3FtZ2U1Z0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t.)
 
 |                                           | 1.Mon | 1.Tue | 1.Wed | 1.Thu | 1.Fri | 2.Mon | 2.Tue | 2.Wed | 2.Thu | 2.Fri |
 |-------------------------------------------|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
