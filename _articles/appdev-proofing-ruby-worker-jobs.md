@@ -1,22 +1,23 @@
 ---
-title: "Background Jobs: Ruby Workers"
-description: "Overview of our background jobs using DelayedJob"
+title: "Background Jobs: Proofing Ruby Workers"
+description: "Overview and architecture of our proofing background jobs"
 layout: article
 category: "AppDev"
+redirect_from: /articles/appdev-ruby-worker-jobs.html
 ---
 
 ## Overview
 
 To minimize long-running requests in the IDP, we've moved calls that talk to vendors
 to background jobs. We have implemented those background jobs as jobs using
-[DelayedJob](https://github.com/collectiveidea/delayed_job).
+[GoodJob](https://github.com/bensheldon/good_job).
 
-Generally, the jobs fall into two categories:
+We have two kinds of proofing jobs
 
 1. ID card scanning (image processing jobs)
 2. PII verification
 
-![architecture diagram of async/ruby workers]({{site.baseurl}}/images/ruby-worker-async-diagram.png)
+![architecture diagram of async/ruby workers]({{site.baseurl}}/images/ruby-worker-proofing-async-diagram.png)
 (to update this diagram, edit the [Async Architecture][figma] file in Figma and re-export it)
 
 [figma]: https://www.figma.com/file/w3TLJopAqDMjER3uCo8Y6v/Async-Worker-Architecture?node-id=104%3A3
@@ -82,7 +83,7 @@ pulled down when the app launches and read into memory.
 Logging for the workers will go to `log/production.log` just like the IDP web hosts,
 which will be ingested into Cloudwatch.
 
-DelayedJob logs job durations by default.
+GoodJob logs job durations by default.
 
 ## Deploys
 

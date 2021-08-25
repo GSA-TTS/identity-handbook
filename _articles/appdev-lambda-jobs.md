@@ -8,7 +8,7 @@ deprecated: true
 
 {%- capture alert_content -%}
 **Note**: This article is deprecated, we have removed the code for this
-approach in favor of a [Ruby Workers]({% link _articles/appdev-ruby-worker-jobs.md %}) approach, but are
+approach in favor of a [Ruby Workers]({% link _articles/appdev-proofing-ruby-worker-jobs.md %}) approach, but are
 leaving this article up as a reference.
 {%- endcapture -%}
 
