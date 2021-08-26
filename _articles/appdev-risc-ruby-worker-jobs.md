@@ -2,7 +2,7 @@
 title: "Background Jobs: RISC Ruby Workers"
 description: "Overview and architecture of our RISC notification jobs"
 layout: article
-category: "AppDev"
+category: "Architecture"
 ---
 
 ## Overview
