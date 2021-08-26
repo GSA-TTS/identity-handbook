@@ -2,7 +2,6 @@
 title: "Reporting Dashboard"
 description: "Overview of reporting dashboard architecture for data.login.gov"
 layout: article
-# Category for the article (required)
 category: "Architecture"
 ---
 
