@@ -108,6 +108,11 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
   A site to present information for partners
 
+- [**18f/identity-reporting**](https://github.com/18f/identity-reporting)<br />
+  [login.gov](https://data.login.gov)<br />
+  Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
+  Public reporting dashboard.
+
 - [**18f/identity-handbook**](https://github.com/18f/identity-handbook)<br />
   [handbook.login.gov](https://handbook.login.gov/)<br />
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
