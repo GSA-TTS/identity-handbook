@@ -1,10 +1,8 @@
 ---
-layout: default
-title: Home
+title: Login Handbook
 permalink: /
+layout: article
 ---
-
-# Login Handbook
 
 Welcome to the Login.gov handbook! This is our open source team documentation!
 
