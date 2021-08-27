@@ -26,7 +26,7 @@ This S3 bucket is exposed publicly via a CloudFront distribution.
 
 ### Frontend
 
-The [data.login.gov][data-login-gov] frontend, the [18f/identity-reporting repo][frontend-repo]
+The [data.login.gov][data-login-gov] frontend, [18f/identity-reporting repo][frontend-repo],
 is served by Federalist. The code is a Javascript-driven Single-Page App that dynamically loads
 data from our cloudfront distro.
 
