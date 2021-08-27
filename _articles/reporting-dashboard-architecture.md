@@ -22,7 +22,7 @@ and then and write JSON files to a private S3 bucket.
 (<abbr title="nota bene">nb</abbr> this is a *different* bucket than for Login.gov internal
 reports which includes billing information).
 
-This S3 bucket is exposed public via a Cloudfront distribution.
+This S3 bucket is exposed publicly via a CloudFront distribution.
 
 ### Frontend
 
