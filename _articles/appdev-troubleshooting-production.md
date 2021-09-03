@@ -21,7 +21,7 @@ Follow the instructions at the beginning of [this article]({% link _articles/piv
 4. If you haven't already, clone the [identity-devops](https://github.com/18F/identity-devops) repo and `cd` into it
 5. Run this (or your alias if you set one up). You should now be SSH'd into one of the production servers.
     ```bash
-    aws-vault exec production-power -- bin/ssm-instance --newest asg-prod-idp
+    aws-vault exec prod-power -- bin/ssm-instance --newest asg-prod-idp
     ```
 
 6. To access the Rails console, run `id-rails-console`. If this is your first time doing this, or if it's been a while since you last used `sudo` in prod, an alert will appear in the `#identity-events` Slack channel. It will say something like `New sudo
