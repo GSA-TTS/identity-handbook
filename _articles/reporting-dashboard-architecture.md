@@ -11,7 +11,7 @@ We serve a dashboard at [data.login.gov][data-login-gov] with metrics that are s
 share with the public
 
 ![architecture diagram of reporting dashboard]({{site.baseurl}}/images/reporting-dashboard-diagram.png)
-(to update this diagram, edit the [Async Architecture][figma] file in Figma and re-export it)
+(to update this diagram, edit the [data.login.gov report architecture][figma] file in Figma and re-export it)
 
 [figma]: https://www.figma.com/file/DGQZwlRbJtEZGJH0t2iMvD/data.login.gov-report-architecture
 
