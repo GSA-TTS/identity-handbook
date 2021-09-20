@@ -29,7 +29,7 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 - Add a signature to your GSA email account like this:
   > **Human Person**<br>
   > Login.gov Chief of Kittens<br>
-  > Technology Transformation Services<br>
+  > Technology Transformation <br>
   > U.S. General Services Administration
 - [Request Admin rights on your TTS Macbook](https://handbook.tts.gsa.gov/equipment/#admin-rights) if you require it, e.g. if you are a developer.
 - (Optional) [Add your gpg key to github](https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/)
@@ -227,7 +227,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Clean up `tfsec` findings in the `sast` [CI workflow](https://app.circleci.com/pipelines/github/18F/identity-devops)
 - Get access to production
 - Deploy the infrastructure code to `staging` and pair to deploy the code to `prod`
-- Review the [Oncall Guide]({% link _article/infrastructure-oncall-guide.md %})
+- Review the [Oncall Guide]({% link _articles/infrastructure-oncall-guide.md %})
 - Join the on-call rotation
 ## For non-GSA employees
 
