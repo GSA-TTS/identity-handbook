@@ -121,7 +121,6 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 - Say hello, and get to know the team
   - Schedule a virtual coffee with our Director, Amos S
-  - Schedule a virtual coffee with our Deputy Director, Caitlin H.
 - Add things to Jira
   - Write a user story and add a ticket for it in Jira
   - Write a bug report and add a ticket for it in Jira
@@ -133,6 +132,8 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Listen in on another team's standup
   - Listen in on another team's sprint planning
   - Listen in on another team's backlog refinement
+- [Set up your personal sandbox environment in AWS](https://github.com/18F/identity-devops/wiki/Building-a-Personal-Sandbox-Environment)
+- Add a new user in the [cloud.gov `gsa-login-prototyping` org](https://dashboard.fr.cloud.gov/cloud-foundry/2oBn9LBurIXUNpfmtZCQTCHnxUM/organizations/fc240d49-f678-4325-8384-c88d92d60982/users)
 - Figure out where to look for issues
   - Get access to New Relic and track down a bug
   - Follow an account creation in Cloudwatch
@@ -167,11 +168,67 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Use S3 logs to review a user's activity in the past year
 - Write a simple service provider app from scratch using a language other than ruby
 
-## For  Privileged Users (DevOps, SecOps, AppDev)
+## For SRE/DevOps and Security Engineers
 
-- [Set up your personal sandbox environment in AWS](https://login-handbook.app.cloud.gov/articles/infrastructure-personal-sandbox-env.html)
-- Add a new user in the [cloud.gov `gsa-login-prototyping` org](https://dashboard.fr.cloud.gov/cloud-foundry/2oBn9LBurIXUNpfmtZCQTCHnxUM/organizations/fc240d49-f678-4325-8384-c88d92d60982/users)
+### In the first 30 days
 
+- Use Login.gov
+  - Set up a Login.gov account
+  - Try to verify your identity on [login.gov/verify](https://secure.login.gov/verify)
+- Be a part of your scrum team's ceremonies by attending these meetings
+  - Your scrum team's standup
+  - Your scrum team's sprint planning
+  - Your scrum team's retro
+  - Backlog refinement
+  - Demo Day / All Hands
+- Read some docs
+  - Peruse public handbook [Infrastructure section](https://handbook.login.gov/#infrastructure)
+  - Peruse the non-public [identity-devops wiki](https://github.com/18F/identity-devops/wiki)
+  - Skim the Login.gov System Security Plan (SSP) - Ask the Infrastructure or Security lead for the latest  (This can not be published)
+- Get access to AWS (non-prod)
+- [Set up your personal sandbox environment in AWS](https://github.com/18F/identity-devops/wiki/Building-a-Personal-Sandbox-Environment)
+- Update some documentation
+- Be a part of the Login.gov reliability, security, and engineering culture
+  - Attend Engineering Huddle
+  - Attend Contingency Planning Wargames
+### In the first 60 days
+
+- Review our [Acceptance Criteria for Infrastructure PRs/Issues]({% link _articles/infrastructure-acceptance-criteria.md %})
+- Write some code
+  - Assign yourself a ticket from your team's board - Ask about a good starter issue!
+  - Work with your team to deliver a solution
+  - Open a pull request
+  - Merge it upon approval
+- Review someone else's pull request
+- Update more documentation
+- Say hello, and get to know the team
+  - Schedule a virtual coffee with our Director, Amos S
+  - Schedule a virtual coffee with other leads outside your direct team
+- Add things to GitHub Issues or Jira
+  - Write a user story
+  - Write a bug report
+- See how other teams operate
+  - Listen in on another team's standup
+  - Listen in on another team's sprint planning
+  - Listen in on another team's backlog refinement
+- Learn about our troubleshooting tools with the [Troubleshooting Quick Reference](https://github.com/18F/identity-devops/wiki/Troubleshooting-Quick-Reference)
+- Learn about our incident handling processes with the [Incident Response Checklist]({% link _articles/incident-response-checklist.md %})
+- Learn to release the infrastructure and tooling code
+  - Read [Wiki: Deploying Infrastructure Code](https://github.com/18F/identity-devops/wiki/Deploying-Infrastructure-Code)
+  - Shadow someone who is deploying the infrastructure code
+- Review some more documentation
+  - Review <developers.login.gov>
+  - Review [NIST 800-63](https://pages.nist.gov/800-63-3/)
+### In the first 90 days
+
+- Sign in to Login.gov with a screen reader
+- Write some more code
+  - Cut a new `identity-devops` release with updated AMIs
+  - Clean up `tfsec` findings in the `sast` [CI workflow](https://app.circleci.com/pipelines/github/18F/identity-devops)
+- Get access to production
+- Deploy the infrastructure code to `staging` and pair to deploy the code to `prod`
+- Review the [Oncall Guide]({% link _article/infrastructure-oncall-guide.md %})
+- Join the on-call rotation
 ## For non-GSA employees
 
 ### Physical access to GSA HQ at 1800 F
