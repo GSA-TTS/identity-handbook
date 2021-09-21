@@ -29,7 +29,7 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 - Add a signature to your GSA email account like this:
   > **Human Person**<br>
   > Login.gov Chief of Kittens<br>
-  > Technology Transformation <br>
+  > Technology Transformation Services<br>
   > U.S. General Services Administration
 - [Request Admin rights on your TTS Macbook](https://handbook.tts.gsa.gov/equipment/#admin-rights) if you require it, e.g. if you are a developer.
 - (Optional) [Add your gpg key to github](https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/)
@@ -191,6 +191,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Be a part of the Login.gov reliability, security, and engineering culture
   - Attend Engineering Huddle
   - Attend Contingency Planning Wargames
+
 ### In the first 60 days
 
 - Review our [Acceptance Criteria for Infrastructure PRs/Issues]({% link _articles/infrastructure-acceptance-criteria.md %})
@@ -219,6 +220,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Review some more documentation
   - Review <developers.login.gov>
   - Review [NIST 800-63](https://pages.nist.gov/800-63-3/)
+
 ### In the first 90 days
 
 - Sign in to Login.gov with a screen reader
@@ -229,6 +231,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Deploy the infrastructure code to `staging` and pair to deploy the code to `prod`
 - Review the [Oncall Guide]({% link _articles/infrastructure-oncall-guide.md %})
 - Join the on-call rotation
+
 ## For non-GSA employees
 
 ### Physical access to GSA HQ at 1800 F
