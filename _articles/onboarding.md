@@ -76,7 +76,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Familiarize yourself with the [Login.gov Design System](https://design.login.gov/)
 - Familiarize yourself with the [Login.gov UX Drive Folders](https://drive.google.com/drive/folders/12qRTGijG9oOU8FRvZfK30qAN4v8LCzHG)
 
-## For Partnerhsips team members
+## For Partnerships team members
 
 - Check out the [Partnerships Area of the handbook]({{site.baseurl}}/#partnerships)
 - Be sure to join the main Slack channels for our team, `#login` and `#login-partnerships`.
