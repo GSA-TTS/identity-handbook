@@ -1,10 +1,12 @@
 ---
-title: Cost Recoverability
+title: Funding and Cost Recoverability
 layout: article
 description: |
   How Login.gov is funded and what it means
 category: Team
 ---
+
+## Overview
 
 Login.gov, like a number of other programs in TTS, does not receive annual
 appropriations from Congress and must therefore be cost-recoverable. This means
@@ -21,3 +23,14 @@ achieve and sustain cost-recoverability.
 
 For more information about Login.gov's funding and cost-recoverability please
 see [All things money](https://docs.google.com/document/d/1bnySzQ8xX3-Q7PHJUDysslwaggoXvDTMlUuRlnI8j0w/edit#).
+
+## Funding During Government Shutdown
+
+Login.gov will continue to operate in case of a temporary lapse in Federal government
+appropriations.
+
+* Per [2430.2 ADM The U.S. General Services Administration Continuity of Operations Mission Essential Functions](https://insite.gsa.gov/directives-library/the-us-general-services-administration-continuity-of-operations-mission-essential-functions-24302-adm?term=OMA%202430.2%20MEF), Login.gov is classified as a Mission Essential Function (MEF) and must continue to operate as part of the Continuity of Operations (COOP) Federal initiative.
+
+* Login.gov is funded through the Acquisition Service Fund (ASF).  Per [4220.1N ADM Operations in the Absence of Appropriations](https://www.gsa.gov/directive/operations-in-the-absence-of-appropriations-):
+"The ASF is an exempt funding source not immediately affected by a lapse in appropriations."
+
