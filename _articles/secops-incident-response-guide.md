@@ -35,7 +35,7 @@ An TTS staff member inside or outside the Login.gov team (the reporter) notices 
 
 - The first responder on the Login.gov team (which could be the reporter if the reporter is on the team) becomes the initial Situation Lead (SL).
 
-The SL follows this Login.gov IR Plan and may follow [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/) (or supports the reporter if the reporter already started it) as a supplement, including notifying GSA IT (itservicedesk@gsa.gov, gsa-ir@gsa.gov), opening a Google Doc, and creating an issue in the DevOps GitHub repository to track the event.
+The SL follows this Login.gov IR Plan and may follow [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/) (or supports the reporter if the reporter already started it) as a supplement, including notifying GSA IT (itservicedesk@gsa.gov, gsa-ir@gsa.gov) using [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA), creating a new [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy), and creating an issue in the DevOps GitHub repository to track the event.
 - Create a ticket in the appropriate repository
    - Availability/system: https://github.com/18F/identity-devops-private/issues
    - Security: https://github.com/18F/identity-security-private/issues
