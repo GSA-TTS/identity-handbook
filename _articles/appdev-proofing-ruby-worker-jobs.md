@@ -95,7 +95,7 @@ instances.
 To enable ruby workers in an environment:
 
 1. Update the env's [`application.yml`]({% link _articles/appdev-secrets-configuration.md %})
-  - Set **ruby_workers_enabled**: `'true'` (this enables async for resolution, address jobs)
+  - Set **ruby_workers_idv_enabled**: `'true'` (this enables async for resolution, address jobs)
   - Set **doc_auth_enable_presigned_s3_urls**: `'true'` (this enables async for document proofig job)
 2. Set terraform variables:
     - Positive worker sizes to be positive integers [(example pull request)](https://github.com/18F/identity-devops-private/pull/1513/files):
