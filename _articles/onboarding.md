@@ -29,7 +29,10 @@ The following onboarding tasks are applicable to all employees.
   - Make sure to join `#login`, the main announcement channel for our team
   - Contractors with full Slack access should add the word "contractor" to their Slack profile for the benefit of the wider TTS audience.
 - Make sure your GitHub account is set up [like this](https://handbook.tts.gsa.gov/github/#setup).
-- Add the Login.gov Shared Calendar to the Google Calendar "My calendars" list: click `Other Calendars +`, select `From URL`, then paste in `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`. 
+- Add the Login.gov Shared Calendar to your Google Calendar:
+    - Under "My calendars" list, click "Other Calendars +"
+    - Select "From URL"
+    - Then paste in `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`. 
 - Add yourself to the [`team.yml`](https://github.com/18F/identity-private/blob/main/team/team.yml) file
 - Request access to relevant Google Groups, [the handbook has a list of active groups](https://login-handbook.app.cloud.gov/articles/email.html#internal-team-lists)
 - Add a signature to your GSA email account like this:
