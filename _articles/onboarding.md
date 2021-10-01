@@ -8,6 +8,12 @@ category: Team
 
 TTS Talent has [their own onboarding checklist in Google Drive](https://docs.google.com/spreadsheets/d/1w0WSTUT0l7q19mAI6c2QCIpCFs0Cei4eukaiiRBTbRA/edit#gid=1775743049) that they share with new employees. The Login.gov tab on that document has one item, a link to this page in our handbook.
 
+## Login.gov team onboarding documents
+
+Each Login.gov team has their own personalized [GDoc/Onboarding Template / Checklist](https://drive.google.com/drive/folders/1Zq00M0H4QzXTLvFK3IMN-vhMcsKkx0f3?usp=sharing), you'll get one of these documents when you start at Login.gov.
+
+The following onboarding tasks are applicable to all employees.
+
 ## For new Login.gov team members to complete themselves
 
 - Familiarize yourself with the [Login.gov Handbook]({{site.baseurl}})
@@ -67,107 +73,6 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Help your buddy double check that they have a Performance Plan in HRLinks
 - Ensure that your buddy has working VPN access. For contractors the request originates with our CO.
 - Ensure that your buddy's lead has 30, 60, and 90 day check-ins scheduled with the new employee. Any concerns during these reviews should be raised to the Contracting Officers Representative or the employee's supervisor.
-
-## For UX team members
-
-- Familiarize yourself with the [Login.gov Design System](https://design.login.gov/)
-- Familiarize yourself with the [Login.gov UX Drive Folders](https://drive.google.com/drive/folders/12qRTGijG9oOU8FRvZfK30qAN4v8LCzHG)
-
-## For Partnerships team members
-
-- Check out the [Partnerships Area of the handbook]({{site.baseurl}}/#partnerships)
-- Be sure to join the main Slack channels for our team, `#login` and `#login-partnerships`.
-- Add the following email address to your Google Calendar to see the Login.gov Partnerships Team Calendar: `gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com`
-- Add the user to [Hubspot](https://app.hubspot.com/settings/5531666/users)
-
-
-## For AppDev Engineers
-
-### In the first 30 days
-
-- Use Login.gov
-  - Set up a Login.gov account
-  - Try to verify your identity on [login.gov/verify](https://secure.login.gov/verify)
-- Setup the apps
-  - [Set up your local IdP development environment](https://github.com/18F/identity-idp#readme)
-  - Get the IdP test suite to pass locally
-  - Get the [OIDC](https://github.com/18F/identity-oidc-sinatra#readme) and [SAML](https://github.com/18F/identity-saml-sinatra#readme) apps working locally
-  - Get the [Partner Dashboard](https://github.com/18f/identity-dashboard#readme) app running locally
-- Be a part of your scrum team's ceremonies by attending these meetings
-  - Your scrum team's standup
-  - Your scrum team's sprint planning
-  - Your scrum team's retro
-  - All-team backlog refinement
-  - Design Huddle
-  - PR Review Session
-  - UAT meeting
-  - Demo Day / All Hands
-- Read some docs
-  - [Our definition(s) of done]({% link _articles/definition-of-done.md %})
-  - [Login.gov Design Guide](https://design.login.gov/)
-- Write some code
-  - Assign yourself a Jira ticket
-  - Open a pull request against the IdP
-  - Squash and merge a pull request into main on the IdP
-- Get access to these lower environments
-  - `dev`
-  - `int`
-- Review the product roadmap in Jira
-
-### In the first 60 days
-
-- Say hello, and get to know the team
-  - Schedule a virtual coffee with our Director, Amos S
-  - Schedule a virtual coffee with our Deputy Director, Caitlin H.
-- Add things to Jira
-  - Write a user story and add a ticket for it in Jira
-  - Write a bug report and add a ticket for it in Jira
-- Review someone else's pull request
-- Set up pairing time with a teammate to cover these things
-  - How we work with proofing vendors
-  - Our encryption model for user PII
-- See how other teams operate
-  - Listen in on another team's standup
-  - Listen in on another team's sprint planning
-  - Listen in on another team's backlog refinement
-- Figure out where to look for issues
-  - Get access to New Relic and track down a bug
-  - Follow an account creation in Cloudwatch
-  - Follow a sign-in in Cloudwatch
-- Add an item to a retro document
-- Write some more code
-  - Update the knapsack report for the IdP
-  - Update the IdP's rubygem and npm dependencies
-- Learn to release the app
-  - Read the [release management guide]({% link _articles/appdev-deploy.md %})
-  - Shadow someone who is deploying the app
-- Get access to the Login.gov static site setting in Federalist
-- Review some more documentation
-  - Review <developers.login.gov>
-  - Review [NIST 800-63](https://pages.nist.gov/800-63-3/)
-
-### In the first 90 days
-
-- Sign in to Login.gov with a screen reader
-- Write some more code
-  - Make a change to the Login.gov static site
-  - Make a change to the Login.gov partner dashboard
-  - Make a change to the Login.gov sample app
-- Get access to upper environments
-  - Get SSH access to staging
-  - Get SSH access to prod
-- Get the [identity-pki](https://github.com/18F/identity-pki) repo running locally
-- Release the app
-  - Deploy the app to staging
-  - Deploy the app to production
-- Join the on-call rotation
-- Use S3 logs to review a user's activity in the past year
-- Write a simple service provider app from scratch using a language other than ruby
-
-## For  Privileged Users (DevOps, SecOps, AppDev)
-
-- [Set up your personal sandbox environment in AWS](https://login-handbook.app.cloud.gov/articles/infrastructure-personal-sandbox-env.html)
-- Add a new user in the [cloud.gov `gsa-login-prototyping` org](https://dashboard.fr.cloud.gov/cloud-foundry/2oBn9LBurIXUNpfmtZCQTCHnxUM/organizations/fc240d49-f678-4325-8384-c88d92d60982/users)
 
 ## For non-GSA employees
 
