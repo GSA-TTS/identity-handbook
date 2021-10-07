@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.6-node
+      - image: cimg/ruby:2.7-node
         environment:
           BUNDLER_VERSION: 2.1.4
     working_directory: ~/identity-handbook
