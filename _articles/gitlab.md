@@ -9,7 +9,7 @@ category: Infrastructure
 
 GitLab leverages OmniAuth to allow users to sign in using a variety of sersvices, including Login.gov (via SAML). To configure this:
 
-1. Generate a cert and private key by following the instructions at https://developers.login.gov/testing/#creating-a-public-certificate:
+1. Generate a cert and private key by following the instructions at <https://developers.login.gov/testing/#creating-a-public-certificate>:
 ```
 openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt
 ```
