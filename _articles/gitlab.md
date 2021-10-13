@@ -14,7 +14,7 @@ GitLab leverages OmniAuth to allow users to sign in using a variety of sersvices
 openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt
 ```
 
-1. Grab the IDP sandbox signing certficate from https://developers.login.gov/saml/ and get its fingerprint:
+1. Grab the IDP sandbox signing certificate from <https://developers.login.gov/saml/> and get its fingerprint:
 ```
 curl -s https://idp.int.identitysandbox.gov/api/saml/metadata2021 \
 | xml sel -N x="http://www.w3.org/2000/09/xmldsig#" -t -v '(//x:X509Certificate)[1]' \
