@@ -201,6 +201,8 @@ A collection of random characters (words and numerals) or short words used to ac
 ### PII
 **Personally Identifiable Information**
 
+See [PII Guidance]({% link _articles/pii-guidance.md %}) for more on safe handling of PII.
+
 ### RP
 **Relying Party**
 
