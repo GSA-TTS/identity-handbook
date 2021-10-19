@@ -37,9 +37,7 @@ category: "Team"
 
 ### Incidents
 
-{%- capture alert_content -%}
-In a situation? Check the [Incident Response Checklist]({% link _articles/incident-response-checklist.md %}) for a quick reference.
-{%- endcapture -%}
+**In a situation? Check the [Incident Response Checklist]({% link _articles/incident-response-checklist.md %}) for a quick reference.**
 
 #### Breach
 
