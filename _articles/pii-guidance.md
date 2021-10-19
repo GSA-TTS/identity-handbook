@@ -7,7 +7,7 @@ category: "Team"
 
 ## Overview
 
-**Personally Identifiable Information** is any information that may be used to identify a member of the public.   Login.gov and the GSA are committed to the privacy of the public, and all members of the Login.gov team must ensure PII is protected at all times.   See <https://login.gov/policy/> and <https://login.gov/policy/our-privacy-act-statement/> for more on our official stance on privacy and the regulations and law that govern us.
+**Personally Identifiable Information** is any information that may be used to identify a member of the public. Login.gov and the GSA are committed to the privacy of the public, and all members of the Login.gov team must ensure PII is protected at all times. See <https://login.gov/policy/> and <https://login.gov/policy/our-privacy-act-statement/> for more on our official stance on privacy and the regulations and law that govern us.
 
 ## PII Handling Guidance
 
