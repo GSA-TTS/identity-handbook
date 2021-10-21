@@ -19,6 +19,7 @@ private links and contact information useful for oncall infrastructure engineers
 * **Acknowledge pages** - Ack OpsGenie pages within 5 minutes if possible to ensure timely response and avoid rollover to secondary
 * **Appropriately respond to alert** - Assess impact to end users and service providers and judge severity, acting as Incident Response reporter if appropriate
 * **Check Production** - Review systems and logs for indicators of issues which are not yet monitored, or unexpected behaviors
+* **Alert `@login-appdev-oncall` if production may be impacted** - Make sure they are aware anytime things are going poorly in production
 * **Initiate Incident Response (IR)** - Based on [Incident Severities]({% link _articles/secops-incident-response-guide.md %}#incident-severities)
   * **High Severity** - Act immediately 24/7 and see through to remediation or confirmed handoff to other team members
   * **Medium Severity** - During business hours as a top priority
