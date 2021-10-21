@@ -28,6 +28,8 @@ Rotations:
 
 ## Emergency Contacts
 
+Your first emergency contact should always be `@login-devops-oncall` - Make sure they are aware anytime things are going poorly.
+
 For Login.gov and vendor emergency contact information see [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts)
 
 ## Handoff
