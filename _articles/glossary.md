@@ -98,6 +98,10 @@ A factor is a type of evidence that users can provide to prove they own an ident
 Multi-factor authentication is a process that requires users to present valid examples of multiple factors. NB: We have rewritten the names of the factors for greater clarity and precision. _See also **Authentication**, **[Two-Factor Authentication](#2fa)** and **[Multi-Factor Authentication](#mfa)**_ definitions.
 
 
+### FYSA
+**For Your Situational Awareness**
+Similar to FYI (For Your Information). In government context, FYI can mean for one individual only, or information that should not be shared, but FYSA can be used to indicate the information can be shared.
+
 ### GTC
 **General Terms and Conditions**
 
