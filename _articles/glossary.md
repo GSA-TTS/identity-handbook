@@ -100,7 +100,7 @@ Multi-factor authentication is a process that requires users to present valid ex
 
 ### FYSA
 **For Your Situational Awareness**
-Similar to FYI (For Your Information). In government context, FYI can mean for one invidivual only, or information that should not be shared, but FYSA can be used to indicate the infirmation can be shared.
+Similar to FYI (For Your Information). In government context, FYI can mean for one individual only, or information that should not be shared, but FYSA can be used to indicate the information can be shared.
 
 ### GTC
 **General Terms and Conditions**
