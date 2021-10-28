@@ -18,7 +18,6 @@ If a user accidentally uploads real PII to our sandbox environment, follow the s
     ```
 3. Once the SSM session is established, run the following commands to start a Rails console session:
     ```bash
-    /bin/bash
     cd /srv/idp/current
     sudo -uwebsrv ALLOW_CONSOLE_DB_WRITE_ACCESS=true bin/rails c
     ```
