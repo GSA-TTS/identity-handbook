@@ -195,7 +195,6 @@ Scheduled for every Thursday
    ```
    On the remote box
    ```bash
-   /bin/bash # they start in a plain shell, you probably want bash
    sudo tail -f /var/log/cloud-init-output.log
    # OR
    sudo tail -f /var/log/syslog
