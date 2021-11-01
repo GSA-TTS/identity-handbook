@@ -43,7 +43,7 @@ The SL follows this Login.gov IR Plan and may follow [TTS incident response proc
 - The SL notifies [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) that an incident has been declared
 - SL uses [OpsGenie](https://www.opsgenie.com/) to reach teams and team members as needed
 - If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
-  - If the cause of the incident is determined to be an outage in a 3rd party vendor, turn on the vendor outage page in the idp via the [Vendor Outage Response Process](https://handbook.tts.gsa.gov/vendor-outage-response-process/)
+  - If the cause of the incident is determined to be an outage in a 3rd party vendor, turn on the vendor outage page in the idp via the [Vendor Outage Response Process]({% link _articles/vendor-outage-response-process.md %})
 
 #### Assess
 
