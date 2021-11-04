@@ -29,7 +29,6 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 ### Team Handles
 
 - `@login-devops-team` Group to tag the Login.gov devops team
-- `@login-eng` members of the Login.gov application engineer grop
 - `@login-finops` use this group to communicate with all login financial and acq operations team members
 - `@login-iaa-finance` Members of this group participate in IAA and finance activities
 - `@login-partnerships-team` Group to address Login.gov partnerships team members
