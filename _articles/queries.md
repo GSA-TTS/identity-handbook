@@ -14,3 +14,11 @@ Returns the number of fully registered users.
 ```ruby
 RegistrationLog.where.not(registered_at: nil).count
 ```
+
+## IAL2 Users
+
+Returns the number of users with IAL2 credentials.
+
+```ruby
+Profile.where(active: true).count
+```
