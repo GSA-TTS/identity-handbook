@@ -39,7 +39,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
   Gem that provides shared validations for the ServiceProvider model across the IDP and dashboard
 
 - [**18f/identity-telephony**](https://github.com/18f/identity-telephony){: .deprecated-link} (Archived)
-Gem that provides a common interface for voice and SMS features across multiple vendor backends. This code has been moved into the IDP codebase.
+  Gem that provides a common interface for voice and SMS features across multiple vendor backends. This code has been moved into the IDP codebase.
 
 - [**18f/identity-doc-auth**](https://github.com/18f/identity-doc-auth){: .deprecated-link} (Archived)
   Provides a library for performing document authentication. This code has been moved into the IDP codebase.
