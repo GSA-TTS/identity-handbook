@@ -109,7 +109,7 @@ and how to add it.
     Writing certificate to ./config/certs/C=US, O=CertiPath, OU=Certification Authorities, CN=CertiPath Bridge CA - G3.pem
     ```
 
-    1. Test that the certificate(s) was added correctly by **closing and opeining the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/main/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
+    1. Test that the certificate(s) was added correctly by **closing and opening the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/main/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
 
         ```ruby
         key_id = '7A:8B:3C:06:92:DC:1E:A8:D2:82:AC:1B:74:6F:74:3D:4E:D1:A8:9B'
