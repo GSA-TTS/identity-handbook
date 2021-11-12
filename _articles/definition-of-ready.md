@@ -14,7 +14,7 @@ If a product design, user research, or content design ticket will be primarily a
 ## Stories
 
 Stories are told from user perspectives. Users cannot be a member of the Login.gov
-team or others that may have an influence bias of our product (e.g. other TTS employees who have pre-existing knowledge of our service). Stories are written in the form *"as **X**, I want to **Y** so that **Z**."*
+team or others that may have an influence over or, bias of, our product (e.g. other TTS employees who have pre-existing knowledge of our service). Stories are written in the form *"as **X**, I want to **Y** so that **Z**."*
 For example:
 
 > As a user, I want to provide consent when an agency partner (sometimes referred to as a service provider or SP) asks how my  information is shared, so that I have full control of what information Login.gov is sharing about me.
