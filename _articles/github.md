@@ -29,9 +29,6 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 ### Libraries
 
-- [**18f/identity-telephony**](https://github.com/18f/identity-telephony)
-  Gem that provides a common interface for voice and SMS features across multiple vendor backends
-
 - [**18f/identity-hostdata**](https://github.com/18f/identity-hostdata)
   Gem that provides functionality for our Ruby applications on our EC2 infrastructure to download secrets and read configs.
 
@@ -40,6 +37,9 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 - [**18f/identity-validations**](https://github.com/18f/identity-validations)
   Gem that provides shared validations for the ServiceProvider model across the IDP and dashboard
+
+- [**18f/identity-telephony**](https://github.com/18f/identity-telephony){: .deprecated-link} (Archived)
+  Gem that provides a common interface for voice and SMS features across multiple vendor backends. This code has been moved into the IDP codebase.
 
 - [**18f/identity-doc-auth**](https://github.com/18f/identity-doc-auth){: .deprecated-link} (Archived)
   Provides a library for performing document authentication. This code has been moved into the IDP codebase.
