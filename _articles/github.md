@@ -29,9 +29,6 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 ### Libraries
 
-- [**18f/identity-telephony**](https://github.com/18f/identity-telephony)
-  Gem that provides a common interface for voice and SMS features across multiple vendor backends
-
 - [**18f/identity-hostdata**](https://github.com/18f/identity-hostdata)
   Gem that provides functionality for our Ruby applications on our EC2 infrastructure to download secrets and read configs.
 
