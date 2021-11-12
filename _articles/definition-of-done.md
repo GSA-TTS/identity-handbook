@@ -31,19 +31,18 @@ Expect this DoD to change over time.
 
 ### Design
 
-- Interface / user journey changes are approved by design folks in order to release the story to production, or the story is controlled by a Feature Flag
-- If a usability test is necessary, a usability test plan has been developed or there is a Jira issue for it
-- Conforms to Section 508 standards by both manual and automated scanning methods
-- The new design uses components from the design system
-- Notify the design team when a new design component is not yet in the design system, so it can be added and the team can be notified. 
-- New components that aren’t a part of the design system are added if they’re used frequently
-- Graphics and mockups are saved in [design repository](https://github.com/18f/identity-design-assets). If private mockup/design, save in login drive / design folder
-- User journey/interface are connected to user personas and listed in the login handbook. 
+- Interface and user journey changes are approved by the UX Team in order to release the story to production, or the story is controlled by a Feature Flag. Changes are approved by relevant SMEs to ensure consistency and quality of our product.
+- If a usability test is needed, a Jira task to develop a usability testing plan has been created.
+- Conforms to Section 508 standards by both manual and automated scanning methods.
+- The new design uses components from the Login Design System (design.login.gov, Figma).
+- Notify the Design System UX SME and Design System Manager when a new design component is not yet in the design system, so it can be considered. 
+- Visual graphics and mockups are saved in the relevant Figma shared folder (example: Identity, Authentication). Research artifacts, content, translations, and sensitive artifacts are saved in [the shared Login.gov User Experience Google Drive folder](https://drive.google.com/drive/folders/12qRTGijG9oOU8FRvZfK30qAN4v8LCzHG).
+- For UX Tasks: implementation and/or testing tickets should be created in Jira for the next step to complete the work or hand off to the next phase. 
 
 ### Content
 
-- Content changes are written, reviewed and approved.
-- Content changes are complete for the contact center email templates and knowledge articles.
+- Content changes are written, reviewed and approved by the relevant UX and Product team members.
+- French (Canada) and Spanish (Mexico) translations are included. See [Login.gov Translation Process](https://docs.google.com/document/d/1-wNXxyvxrsUeHkMOfhBpoSTCTZULOXNlCkBdNxiLa3c/edit?usp=sharing).
 
 ### Documentation
 
