@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting and Managing PIV/CAC logins"
-description: "If somebody has trouble using their PIV/CAC with Login.gov"
+description: "If somebody has trouble using their PIV/CAC with Login.gov, and also how to download new certificates from Certificate Authorities"
 layout: article
 category: "AppDev"
 ---
