@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting PIV/CAC logins"
+title: "Troubleshooting and Managing PIV/CAC logins"
 description: "If somebody has trouble using their PIV/CAC with Login.gov"
 layout: article
 category: "AppDev"
