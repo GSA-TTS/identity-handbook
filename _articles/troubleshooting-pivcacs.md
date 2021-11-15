@@ -1,6 +1,6 @@
 ---
-title: "Troubleshooting PIV/CAC logins"
-description: "If somebody has trouble using their PIV/CAC with Login.gov"
+title: "Troubleshooting PIV/CAC logins and Managing Certificates"
+description: "If somebody has trouble using their PIV/CAC with Login.gov, and also how to download new certificates from Certificate Authorities"
 layout: article
 category: "AppDev"
 ---
@@ -93,27 +93,37 @@ and how to add it.
     # => [Certificate .... ]
     ```
 
-1. If you want to add a certificate to our repo, write the PEM data to an appropriately named file in `config/certs`
+1. If you want to add the missing certificates to our repo, run `rake certs:find_missing[path/to/cert.pem]`
 
-    - `Certificate#pem_filename` creates a filename that matches our file naming conventions based on the Subject
-    - `Certificate#to_pem` outputs the Subject + Issuer in addition to the PEM
+    The script will prompt you to add missing certificates to the `config/certs` folder:
 
-    ```ruby
-    missing.first.pem_filename
-    # => "C=US, O=U.S. Government, OU=Department of State, OU=PIV, OU=Certification Authorities, OU=U.S. Department of State PIV CA2.pem"
-    missing.each do |cert|
-      File.open("config/certs/#{cert.pem_filename}", 'w') { |f| f.puts cert.to_pem }
-    end
+    ```shell
+    Expiration: 2023-02-18 16:08:44 UTC
+    Subject: /C=US/O=CertiPath/OU=Certification Authorities/CN=CertiPath Bridge CA - G3
+    Issuer: /C=US/O=U.S. Government/OU=FPKI/CN=Federal Bridge CA G4
+    SHA1 Fingerpint: 77d6cf512ec6054e9ddf37a37d83c4955228e21c
+    Key ID: 7A:8B:3C:06:92:DC:1E:A8:D2:82:AC:1B:74:6F:74:3D:4E:D1:A8:9B
+
+    Would you like to save this cert? Type (y)es to save.
+    y
+    Writing certificate to ./config/certs/C=US, O=CertiPath, OU=Certification Authorities, CN=CertiPath Bridge CA - G3.pem
     ```
 
-    1. Test that the certificate was added correctly by **closing and opeining the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/main/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
+    1. Test that the certificate(s) was added correctly by **closing and opening the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/main/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
 
         ```ruby
-        key_id = '8C:D6:D4:69:A9:E4:85:41:3A:6A:A6:5E:DA:51:1A:17:8D:92:8B:6C'
+        key_id = '7A:8B:3C:06:92:DC:1E:A8:D2:82:AC:1B:74:6F:74:3D:4E:D1:A8:9B'
         CertificateStore.instance[key_id]
         => #<Certificate:0x00007fd564fa89a8 ...>
         ```
+    1. Test that the end-user certificate is now valid
 
-    1. Commit the new `.pem` to source control and make a pull request
+        ```ruby
+        cert = Certificate.new(OpenSSL::X509::Certificate.new(File.read("path/to/cert")))
+        cert.validate_cert
+        # => "valid"
+        ```
+
+    1. Commit the new `.pem` file(s) to source control and make a pull request
 
     1. Once merged, deploy the change to **INT** and ask the reporters to confirm the fixes
