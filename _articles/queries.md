@@ -15,6 +15,14 @@ For queries that take longer than the default timeout (2.5s), run the following 
 ActiveRecord::Base.connection.execute 'SET statement_timeout = 200000'
 ```
 
+## Total Registered
+
+Returns the number of users that created accounts (this includes users who may not have fully registered, see [Fully Registered Users](#fully-registered-users) for that query)
+
+```ruby
+User.count
+```
+
 ## Fully Registered Users
 
 Returns the number of fully registered users.
