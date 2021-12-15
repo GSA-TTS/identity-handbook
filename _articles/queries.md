@@ -23,6 +23,13 @@ Returns the number of users that created accounts (this includes users who may n
 User.count
 ```
 
+To approximate the count at a past point in time, substitute `date` below:
+
+```ruby
+date = Date.new(2021, 1, 1)
+User.where('created_at <= ?', date).count
+```
+
 ## Fully Registered Users
 
 Returns the number of fully registered users.
@@ -33,10 +40,24 @@ Returns the number of fully registered users.
 RegistrationLog.where.not(registered_at: nil).count
 ```
 
+To approximate the count at a past point in time, substitute `date` below:
+
+```ruby
+date = Date.new(2021, 1, 1)
+RegistrationLog.where('registered_at <= ?', date).count
+```
+
 ## IAL2 Users
 
 Returns the number of users with IAL2 credentials.
 
 ```ruby
 Profile.where(active: true).count
+```
+
+To approximate the count at a past point in time, substitute `date` below:
+
+```ruby
+date = Date.new(2021, 1, 1)
+Profile.where(active: true).where('activated_at < ?', date).count
 ```
