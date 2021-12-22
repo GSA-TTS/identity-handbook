@@ -34,6 +34,8 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 - `@login-partnerships-team` Group to address Login.gov partnerships team members
 - `@login-product-team` Group to address Login.gov product managers
 - `@login-ux-team` Group for the design/UX team
+- `@login-grace` Group to tag Grace sprint team
+- `@login-katherine` Groupt to tag Katherine sprint team
 - `@login-appdev-team` Group for application development teams
 - `@login_leads` login team leads
 - `@login-feds` Group for Login.gov federal FTE employees
