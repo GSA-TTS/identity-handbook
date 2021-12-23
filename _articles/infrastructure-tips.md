@@ -36,8 +36,6 @@ unset $bucket_name
 As you plan the addition of a new resource, or refactor code for an existing one,
 carefully consider the scope of the resource.
 
-
-
 Example: IAM Roles are global to an AWS account, so they do not need to be created
 again in a new region.   S3 buckets are regional so you would want to create
 a given bucket in a new region.
