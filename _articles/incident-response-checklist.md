@@ -24,8 +24,8 @@ For detailed information see the [Security Incident Response Guide]({% link _art
   * **Technical lead (TL)**: Leads technical investigation and mitigation
   * **Comms lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
   * **Scribe (S)**: Relays information discussed in war room (hangout) to #login-situation and aids Situation Lead in recording incident
-* Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN)
-* Situation Lead and team assemble in War Room (*Posted at top of #login-situation channel)
+* Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN) using `@here` to get everyone's attention
+* Situation Lead and team assemble in War Room (See the Topic in #login-situation channel for the link)
 * Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
 * Incident Review document started: [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy)
@@ -62,7 +62,7 @@ Loop through per-role items until remediation is complete.
   * Regular updates to interested parties provided
   * StatusPage updated as status changes
 * Scribe
-  * Ensure a full record is being maintained
+  * Ensure a full record is being maintained in Slack
 
 
 Upon remediation:
