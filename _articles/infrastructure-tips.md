@@ -57,7 +57,7 @@ a given bucket in a new region.
 | RDS                            | aws_db*                                   | region    |                                                                                                                       |
 | DynamoDB                       | aws_dynamodb*                             | region    |                                                                                                                       |
 | ElastiCache                    | aws_elasticache*                          | region    |                                                                                                                       |
-| EC2                            |                                           |   az      | See [AWS: EC2](https://www.terraform.io/docs/providers/aws/r/ami.html)                                                |
+| EC2                            |                                           |   az      | See [AWS: EC2](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ami)                       |
 | Flow Log                       | aws_flow_log*                             | region    |                                                                                                                       |
 | IAM                            | aws_iam*                                  | global    |                                                                                                                       |
 | Internet Gateway               | aws_internet_gateway                      | region    |                                                                                                                       |
@@ -69,7 +69,7 @@ a given bucket in a new region.
 | Pinpoint SMS Channel           | aws_pinpoint_sms_channel                  | region    |                                                                                                                       |
 | Redshift                       | aws_reshift*                              | region    |                                                                                                                       |
 | Route53                        | aws_route53*                              | global    |                                                                                                                       |
-| Route53 Public Zone            | aws_route53_zone                          | universal | Public DNS zones must be universally unique
+| Route53 Public Zone            | aws_route53_zone                          | universal | Public DNS zones must be universally unique                                                                           |
 | Route Table                    | aws_route_table*                          | region    |                                                                                                                       |
 | S3 Account Public Access Block | aws_s3_account_public_access_block        | global    |                                                                                                                       |
 | S3 Bucket Resource             | aws_s3_bucket*                            | region    | Buckets are regional, but the names are universal                                                                     |
@@ -82,7 +82,7 @@ a given bucket in a new region.
 | VPC                            | aws_vpc*                                  | region    |                                                                                                                       |
 | WAF Regional                   | aws_wafregional*                          | region    |                                                                                                                       |
 
-This is not guaranteed accurate!   Update incorrect information and add specific
+This is not guaranteed accurate!  Update incorrect information and add specific
 resources that have differing scope.
 
 Note that "universal" is simplified.  Items marked "universal" must
