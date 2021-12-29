@@ -38,7 +38,7 @@ the [daily business schedule in identity-devops][identity-devops-schedule].
 In these environments
 
 - dev
-- (personal sandbox evn)
+- (personal sandbox environments)
 
 Deploys are scheduled every 6 hours at **5am, 11am, 5pm, 11pm UTC**.
 
