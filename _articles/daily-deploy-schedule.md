@@ -23,7 +23,8 @@ In these lower environments
 
 ### Schedule
 
-The daily deploys are scheduled for **weekdays at 12am and 5pm UTC**
+The daily deploys are scheduled for **weekdays at 12am and 5pm UTC**. See
+the [daily business schedule in identity-devops][identity-devops-schedule].
 
 |  | UTC | Eastern | Central | Mountain | Pacific |
 |--| --- | --- | --- | --- | --- |
@@ -31,3 +32,5 @@ The daily deploys are scheduled for **weekdays at 12am and 5pm UTC**
 | Standard time<br />(November-March)         | 12am | 7pm | 6pm | 5pm | 4pm |
 | Daylight savings time<br />(March-November) | 5pm | 1pm | 12pm | 11am | 10am |
 | Standard time<br />(November-March)         | 5pm | 12pm | 11am | 10am | 9am |
+
+[identity-devops-schedule]: https://github.com/18F/identity-terraform/blob/3a37047cfae6949dab1150025c528ccc5332f837/asg_recycle/main.tf#L44-L78
