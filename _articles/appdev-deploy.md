@@ -1,7 +1,7 @@
 ---
 title: "Deploying new IDP and PKI code"
 layout: article
-description: "Release Manager's Guide"
+description: "Release Manager's Guide for Production"
 category: AppDev
 toc_h_max: 4
 ---
@@ -171,7 +171,7 @@ Adding Emails: Patch release to include #3821, fixes a bug with adding emails to
 
 ### Staging
 
-Staging used to be deployed by this process, but this was changed to deploy the `main` branch to the staging environment every day.
+Staging used to be deployed by this process, but this was changed to deploy the `main` branch to the staging environment every day. See [daily deploy schedule]({% link _articles/daily-deploy-schedule.md %}) for more details.
 
 ### Production
 Scheduled for every Thursday
