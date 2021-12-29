@@ -17,7 +17,7 @@ These apps are deployed on weekdays:
 
 In these lower environments
 
-- dev
+- dm
 - int
 - staging
 
