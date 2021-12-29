@@ -27,7 +27,6 @@ The following onboarding tasks are applicable to all employees.
 - Once you've been added to Slack:
   - Make sure your account is set up [like this](https://handbook.tts.gsa.gov/slack/).
   - Make sure to join `#login`, the main announcement channel for our team
-  - Contractors with full Slack access should add the word "contractor" to their Slack profile for the benefit of the wider TTS audience.
 - Make sure your GitHub account is set up [like this](https://handbook.tts.gsa.gov/github/#setup).
 - Add the Login.gov Shared Calendar to your Google Calendar:
     - Make sure you've been added to the [Login Team google group](https://groups.google.com/a/login.gov/g/login-team)
