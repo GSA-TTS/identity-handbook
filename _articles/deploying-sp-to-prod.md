@@ -7,35 +7,43 @@ category: Partnerships
 
 Here is a list of items that need to be completed to deploy the configuration for a partner SP (Service Provider) to Production.
 
+1. Ensure that the IAA is signed and includes the application explicitly in the Description of Service or Statement of Work.
 
-{%- capture alert_content -%}
-**Note to AppDev**: You should probably work with the Partnership team to ensure that steps 1-4 are complete.
-{%- endcapture %}
+2. Ensure that the **Contact Center Fact Sheet** was sent from Smartsheet. This is done by setting the **Integration Ticket Status** of the Smartsheet ticket to anything after **IAA Review**.
 
-{% include alert.html content=alert_content %}
+3. Ensure that the production configuration has been provided by the partner (e.g. valid Dashboard URL in the Smartsheet ticket) and includes the following:
+  * All production urls should have `.gov`, `.mil` or a dedicated `.com` address and point to an ATO-ed environment. It should not be a local IP or have things like "dev", "qa",  or "mikes-macbook" in the urls.
+  * If the app does not have a logo, then the partner will need to upload one before it can be deployed. You can find the [logo guidelines here](https://developers.login.gov/design-guidelines/#agency-logo-guidelines).
 
-1. Ensure that the IAA is signed for the hubspot deal. You should see a "IAA Approved" with an "IAA Number" on the deal. Please contact Silke if unsure. If the IAA is not approved, then let the partner know that the app cannot be deployed to production until the IAA is signed.
+4. Create a PR in the [identity-idp-config](https://github.com/18f/identity-idp-config) repo that consists of:
+  * App configuration added to [`service_providers.yml`](https://github.com/18F/identity-idp-config/blob/main/service_providers.yml)
+  * A logo image in [`/public/assets/images/sp-logos`](https://github.com/18F/identity-idp-config/tree/main/public/assets/images/sp-logos)
+  * A certificate file in [`/certs/sp`](https://github.com/18F/identity-idp-config/tree/main/certs/sp)
+  * Integration parameters added to [`integrations.yml`](https://github.com/18F/identity-idp-config/blob/main/integrations.yml)
+  * The integration's `issuer` added to the `integrations` attribute of the associated IAA Order in [`iaa_orders.yml`](https://github.com/18F/identity-idp-config/blob/main/iaa_orders.yml)
 
-2. Ensure that the hubspot deal has been populated with information that comes from [this hubspot template email](https://app.hubspot.com/templates/5531666/edit/13393058). If the email was not sent, then send this template from the hubspot deal to Program Management POC.
+5. The PR should be reviewed by another integration engineer and merged into `main`.
 
-3. Ensure that the **Contact Center Fact Sheet** was sent from the hubspot deal. Click on the Emails tab and search for the **"NOTICE: A new Login.gov app is launching"** email. If the email was not sent, then send [this template form the hubspot deal](https://app.hubspot.com/templates/5531666/edit/9282726). This template email should go to the [Contact Center Fact Sheet Email List (see handbook appendix)](https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUzDmIxKn11DPJzk/edit#heading=h.2dv73pe5frx0)
+6. Generally speaking, we rely on the [weekly IdP deployment process]({% link _articles/appdev-deploy.md %}) to pull in configuration changes, especially new integration launches. If a manual deployment is required, follow the directions below:
+  * **If no new logo files are being added in this PR,** you can simply spin up a migration instance in the appropriate environment (replace `prod` with `staging` if deploying integration to staging):
+    ```sh
+    bin/awsv prod bin/asg-recycle prod migration
+    ```
+    Once the `db:migrate` task has completed in the deployment process, the changes should be reflected in the IdP. You can monitor the deployment process using the following commands:
+    ```sh
+    bin/awsv prod bin/ssm-instance --newest asg-prod-migration # shell into the new migration instance once it is initially provisioned
+    sudo tail -f /var/log/syslog
+    ```
+  * Otherwise, a full recycle will be necessary following the [deploy commands for production]({% link _articles/appdev-deploy.md %}#production).
 
-4. Ensure that the production app has been created on the Dashboard. The partner should be responding with a link to an app in the dashboard with "Production" in the name. The partner may provide the Issuer for the app instead. In this case you can [search for the issuer here](https://dashboard.int.identitysandbox.gov/service_providers/all). You can also check the Dashboard Team URL on the hubspot deal to see if the prod config was created. If not, then [send this template](https://app.hubspot.com/templates/5531666/edit/12106190 ) from the hubspot deal to the Technical POC:
+7. To verify that changes are complete, you may (but are not required to) shell into an `idp` instance in the appropriate environment and check using the Rails console:
+    ```sh
+    bin/awsv prod bin/ssm-instance --newest asg-prod-idp # shell into an idp instance
+    id-rails-console # open a Rails console, enter explanation when prompted
+    ```
+    ```ruby
+    sp = ServiceProvider.find_by(issuer: 'ISSUER_FROM_CONFIGURATION')
+    # verify attribute change or presence of record for new integrations
+    ```
 
-5. Make sure the app meets the following criteria:
-    * All production urls should have `.gov`, `.mil` or a dedicated `.com` address and point to an ATO'd environment. It should not be a local IP or have things like "dev", "qa",  or "mikes-macbook" in the urls.
-    * If the app does not have a logo, then the partner will need to upload one before it can be deployed. You can find the [logo guidelines here](https://developers.login.gov/design-guidelines/#agency-logo-guidelines).
-    * **If this is an SAML integration** (Not OpenID Connect), then please ensure that `SAML Assertion Encryption` is enabled and `Assertion Consumer Logout Service URL` is defined.
-
-6. Create a PR on the [identity-idp-config](https://github.com/18f/identity-idp-config) repo that consists of:
-    * App configuration added to [`service_providers.yml`](https://github.com/18F/identity-idp-config/blob/main/service_providers.yml)
-    * A logo image in [`/public/assets/images/sp-logos`](https://github.com/18F/identity-idp-config/tree/main/public/assets/images/sp-logos)
-    * A certificate file in [`/certs/sp`](https://github.com/18F/identity-idp-config/tree/main/certs/sp)
-
-7. After merging the above PR you will need to deploy the configuration change by migrating and recycling the IDP in **both**:
-    - In Staging ([deploy commands for staging]({{ '/articles/appdev-deploy.html#staging' | prepend: site.baseurl }}))
-    - In Production ([deploy commands for production]({{ '/articles/appdev-deploy.html#production' | prepend: site.baseurl }}))
-
-8. Open the hubspot deal for this partner and Inform the Technical POC and Program Management POC that the app has been deployed to production. You should also tell them to:
-
-    > Change your production endpoint urls to **https://secure.login.gov/**
+8. Notify the person who requested the launch / change that the configuration should be live in production and that they should test that everything looks good.
