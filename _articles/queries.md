@@ -61,3 +61,19 @@ To approximate the count at a past point in time, substitute `date` below:
 date = Date.new(2021, 1, 1)
 Profile.where(active: true).where('activated_at < ?', date).count
 ```
+
+## Active Partners
+
+**Note**: The queries below can be run locally in the [`18F/identity-idp-config`](https://github.com/18F/identity-idp-config) project by running `bin/data_console` from within the root directory, instead of from a production instance. You will need to remove the `Agreements::` module from the Model name (i.e. start with just `PartnerAccount`) for queries run in the config repo.
+
+The following query returns a list of the currently active Partner Accounts (i.e. organizations with an active IAA).
+
+```ruby
+Agreements::PartnerAccount.includes(:agency, :partner_account_status).where(partner_account_statuses: { name: 'active' }).distinct
+```
+
+The following query will return a list of the partners *with an active integration in production*, which may be a subset of the list of active partners.
+
+```ruby
+Agreements::PartnerAccount.includes(:agency, integrations: :service_provider).where(service_providers: { restrict_to_deploy_env: 'prod', active: true }).distinct
+```
