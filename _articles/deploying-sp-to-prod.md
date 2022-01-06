@@ -1,7 +1,7 @@
 ---
 title: "Deploying a Partner Service Provider Config to Production"
 layout: article
-description: "Process and proceeders when deploying a partner service provider config to production"
+description: "Process and procedures when deploying a partner service provider config to production"
 category: Partnerships
 ---
 
