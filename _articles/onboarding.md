@@ -28,7 +28,7 @@ The following onboarding tasks are applicable to all employees.
   - Make sure your account is set up [like this](https://handbook.tts.gsa.gov/slack/).
   - Make sure to join `#login`, the main announcement channel for our team
 - Make sure your GitHub account is set up [like this](https://handbook.tts.gsa.gov/github/#setup).
-- Request access to relevant [Google Groups](https://groups.google.com/), [the handbook has a list of active groups](https://login-handbook.app.cloud.gov/articles/email.html#internal-team-lists)
+- Request access to relevant [Google Groups](https://groups.google.com/). The handbook has a [list of active groups](https://login-handbook.app.cloud.gov/articles/email.html#internal-team-lists).
   - Federal employees should be added to `login-team-feds@`
   - Contractors should be added to `login-team-contractors@`
 - Add the Login.gov Shared Calendar to your Google Calendar:
