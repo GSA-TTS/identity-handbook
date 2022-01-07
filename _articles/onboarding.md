@@ -32,7 +32,7 @@ The following onboarding tasks are applicable to all employees.
   - Federal employees should be added to `login-team-feds@`
   - Contractors should be added to `login-team-contractors@`
 - Add the Login.gov Shared Calendar to your Google Calendar:
-    - Make sure you've been added to the [Login Team Feds google group](https://groups.google.com/a/login.gov/g/login-team) or the [Login Team Contractors google group](https://groups.google.com/a/gsa.gov/g/login-team-contractors)
+    - Make sure you've been added to the [Login Team Feds Google group](https://groups.google.com/a/login.gov/g/login-team) or the [Login Team Contractors Google group](https://groups.google.com/a/gsa.gov/g/login-team-contractors)
     - Go to https://calendar.google.com/calendar/render?cid=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com
     - Click "Add" when prompted to add the calendar
     - You should see "Login.gov shared calendar" under "My Calendars"
