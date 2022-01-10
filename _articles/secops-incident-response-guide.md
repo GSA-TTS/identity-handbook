@@ -35,15 +35,25 @@ An TTS staff member inside or outside the Login.gov team (the reporter) notices 
 
 - The first responder on the Login.gov team (which could be the reporter if the reporter is on the team) becomes the initial Situation Lead (SL).
 
-The SL follows this Login.gov IR Plan and may follow [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/) (or supports the reporter if the reporter already started it) as a supplement, including notifying GSA IT (itservicedesk@gsa.gov, gsa-ir@gsa.gov) using [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA), creating a new [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy), and creating an issue in the DevOps GitHub repository to track the event.
-- Create a ticket in the appropriate repository
-   - Availability/system: https://github.com/18F/identity-devops-private/issues
-   - Security: https://github.com/18F/identity-security-private/issues
-   - Other: https://github.com/18F/identity-private/issues
-- The SL notifies [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) that an incident has been declared
-- SL uses [OpsGenie](https://www.opsgenie.com/) to reach teams and team members as needed
-- If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
-  - If the cause of the incident is determined to be an outage in a 3rd party vendor, turn on the vendor outage page in the idp via the [Vendor Outage Response Process]({% link _articles/vendor-outage-response-process.md %})
+The SL follows this Login.gov IR Plan and may additionally reference [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/)
+
+Initial steps:
+
+* The SL notifies [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) that an incident has been declared using @here to ensure everyone is aware
+* Responders assemble in the War Room ((See the Topic in #login-situation channel for the link)
+* Roles are assigned when possible as responders join the incident:
+  * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
+  * **Technical lead (TL)**: Leads technical investigation and mitigation
+  * **Comms lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
+  * **Scribe (SC)**: Relays information discussed in war room (hangout) to #login-situation and aids Situation Lead in recording incident
+* **SL**: Uses Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
+* **TL**: Leads technical response, delegating technical tasks as needed
+* **SC**: Records all activities in #login-situation channel to create a timeline
+* **CL**: Creates the official tracking issue for the incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
+* **CL**: Creates the Incident Review document by copying [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and shares a link in #login-situation
+* **CL**: Uses [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov> AND IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called) **within 1 hour** of start of incident
+* **CL**: If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
+* **SL**: If the cause of the incident is determined to be an outage in a 3rd party vendor, turn on the vendor outage page in the idp via the [Vendor Outage Response Process]({% link _articles/vendor-outage-response-process.md %})
 
 #### Assess
 

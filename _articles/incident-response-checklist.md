@@ -19,17 +19,18 @@ For detailed information see the [Security Incident Response Guide]({% link _art
 
 ## Initiate
 
+* **SL**: Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN) using `@here` to get everyone's attention
+* Situation Lead and team assemble in War Room (See the Topic in #login-situation channel for the link)
 * Roles assigned
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
   * **Technical lead (TL)**: Leads technical investigation and mitigation
   * **Comms lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
-  * **Scribe (S)**: Relays information discussed in war room (hangout) to #login-situation and aids Situation Lead in recording incident
-* Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN) using `@here` to get everyone's attention
-* Situation Lead and team assemble in War Room (See the Topic in #login-situation channel for the link)
-* Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
-* Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
-* Incident Review document started: [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy)
-* Used [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov> AND IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called) **within 1 hour** of start of incident ([Alternate contact methods](https://insite.gsa.gov/employee-resources/information-technology))
+  * **Scribe (SC)**: Relays information discussed in war room (hangout) to #login-situation and aids Situation Lead in recording incident
+* **SL**: Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
+* **SC**: Recording activities in #login-situation channel
+* **CL**: Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
+* **CL**: Incident Review document started and shared [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy)
+* **CL**: Used [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov> AND IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called) **within 1 hour** of start of incident ([Alternate contact methods](https://insite.gsa.gov/employee-resources/information-technology))
 
 ## Assess
 
