@@ -35,9 +35,9 @@ Login.gov incident response operates under the GSA Incident Response framework. 
   * [Remediate Phase](#remediate-phase)
   * [Retrospective Phase](#retrospective-phase)
 * [Incident Severities](#incident-severities)
-  * [**1 - High Severity**](#**1---high-severity**)
-  * [**2 - Medium Severity**](#**2---medium-severity**)
-  * [**3 - Low Severity**](#**3---low-severity**)
+  * [High Severity](#high-severity)
+  * [Medium Severity](#medium-severity)
+  * [Low Severity](#low-severity)
 * [Frequently Asked Questions / Expectations](#frequently-asked-questions-/-expectations)
 
 ## Overview
@@ -252,7 +252,7 @@ Severity ratings drive the actions of the response team. Below are the severitie
 
 Note the severities may (and often will) change during the lifecycle of the incident. That’s normal.
 
-### **1 - High Severity**
+### High Severity
 
 High-sev incidents successfully compromise the confidentiality/integrity of Personally Identifiable Information (PII), impact the availability of services for a large number of customers, or have significant financial impact. Examples include:
 
@@ -272,7 +272,7 @@ Guidelines for addressing High-sev issues:
 
 * Sitreps should be sent every hour, or more.
 
-### **2 - Medium Severity**
+### Medium Severity
 
 Medium-sev incidents represent attempts (possibly un- or not-yet-successful) at breaching PII, or those with limited availability/financial impact. Examples include:
 
@@ -292,7 +292,7 @@ Guidelines for addressing Medium-sev issues:
 
 * Sitreps should be sent approximately twice a day.
 
-### **3 - Low Severity**
+### Low Severity
 
 Low-sev incidents don’t affect PII, and have no availability or financial impact. Examples include:
 * Attempted compromise of non-important systems (staging/dm/qa/demo, etc.)
