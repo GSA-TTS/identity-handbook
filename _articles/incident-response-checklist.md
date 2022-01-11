@@ -19,18 +19,17 @@ For detailed information see the [Security Incident Response Guide]({% link _art
 
 ## Initiate
 
-* **SL**: Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN) using `@here` to get everyone's attention
+* Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN) using `@here` to get everyone's attention
 * Situation Lead and team assemble in War Room (See the Topic in #login-situation channel for the link)
-* Roles assigned
+* Roles assigned and duties started:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
-  * **Technical lead (TL)**: Leads technical investigation and mitigation
-  * **Comms lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
-  * **Scribe (SC)**: Relays information discussed in war room (hangout) to #login-situation and aids Situation Lead in recording incident
-* **SL**: Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
-* **SC**: Recording activities in #login-situation channel
-* **CL**: Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
-* **CL**: Incident Review document started and shared [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy)
-* **CL**: Used [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov> AND IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called) **within 1 hour** of start of incident ([Alternate contact methods](https://insite.gsa.gov/employee-resources/information-technology))
+    * Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
+  * **Scribe (SC)**: Notes activities in war room (hangout) to #login-situation to produce timeline / share with others not in room
+  * **Technical Lead (TL)**: Leads technical investigation and mitigation
+  * **Comms Lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
+    * Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
+    * Incident Review document started and shared [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy)
+    * Used [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov> AND IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called) **within 1 hour** of start of incident ([Alternate contact methods](https://insite.gsa.gov/employee-resources/information-technology))
 
 ## Assess
 
@@ -53,16 +52,16 @@ For detailed information see the [Security Incident Response Guide]({% link _art
 Loop through per-role items until remediation is complete.
 
 **By Role**
-* Situation Lead
+* Situation Lead (SL)
   * Wellbeing of group monitored, including self (Tired and stressed humans make poor decisions)
   * Rotations of all roles planned and performed to prevent any responder spending more than 3 hours in role
-* Technical Lead
+* Technical Lead (TL)
   * Lead technical response till issue is remediated
   * **OR** role is handed off
-* Comms Lead
+* Comms Lead (CL)
   * Regular updates to interested parties provided
   * StatusPage updated as status changes
-* Scribe
+* Scribe (SC)
   * Ensure a full record is being maintained in Slack
 
 
@@ -77,6 +76,7 @@ Upon remediation:
 # Resources
 
 * [Login.gov Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %}): IR guidance and overview, defer to the official IR plan
+gs 
 * [Official Login.gov Incident Response plan](https://drive.google.com/file/d/1AQ_TMf7M7WZjHo6hlJ5L3lUxzA57f2oQ/view?usp=sharing): The authoritative source for login
 * [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/)
 * [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
