@@ -21,11 +21,28 @@ The formal version from the FedRAMP Agency ATO package can be found here [Login.
 
 Login.gov incident response operates under the GSA Incident Response framework.  See [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf) for detailed GSA IR guidance.
 
+## Contents
+
+* [Overview](#overview)
+  * [Phases](#phases)
+    * [Initiate](#initiate)
+    * [Assess](#assess)
+    * [Remediate](#remediate)
+    * [Retrospective](#retrospective)
+* [Response process](#response-process)
+  * [Initiate Phase](#initiate-phase)
+  * [Assess Phase](#assess-phase)
+  * [Remediate Phase](#remediate-phase)
+  * [Retrospective Phase](#retrospective-phase)
+* [Incident Severities](#incident-severities)
+  * [**1 - High Severity**](#**1---high-severity**)
+  * [**2 - Medium Severity**](#**2---medium-severity**)
+  * [**3 - Low Severity**](#**3---low-severity**)
+* [Frequently Asked Questions / Expectations](#frequently-asked-questions-/-expectations)
+
 ## Overview
 
 At a high level, incident response follows this process:
-
-### Roles
 
 ### Phases
 
