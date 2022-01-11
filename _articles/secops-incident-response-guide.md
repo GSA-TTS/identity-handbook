@@ -38,7 +38,7 @@ Login.gov incident response operates under the GSA Incident Response framework. 
   * [High Severity](#high-severity)
   * [Medium Severity](#medium-severity)
   * [Low Severity](#low-severity)
-* [Frequently Asked Questions / Expectations](#frequently-asked-questions-/-expectations)
+* [Frequently Asked Questions and Expectations](#frequently-asked-questions-and-expectations)
 
 ## Overview
 
@@ -309,7 +309,7 @@ Guidelines for addressing Low-sev issues:
 
 * Sitreps should be sent approximately daily.
 
-## Frequently Asked Questions / Expectations
+## Frequently Asked Questions and Expectations
 
 ### Who does the Incident Response Guide apply to?
 
@@ -332,7 +332,7 @@ Anyone with access to production, including:
 
 ### When do you declare an incident?
 
-* Immediately!  
+* Immediately!
 * Failing to report an incident in a timely manner after discovery jeopardizes Login.gov - FISMA requires timely reporting and declaring an incident and following our policy ensures we do not fail to meet that requirement
 
 ### When do you engage GSA-IR?
