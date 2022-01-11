@@ -76,7 +76,6 @@ Upon remediation:
 # Resources
 
 * [Login.gov Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %}): IR guidance and overview, defer to the official IR plan
-gs 
 * [Official Login.gov Incident Response plan](https://drive.google.com/file/d/1AQ_TMf7M7WZjHo6hlJ5L3lUxzA57f2oQ/view?usp=sharing): The authoritative source for login
 * [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/)
 * [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
