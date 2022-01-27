@@ -5,6 +5,7 @@ redirect_from:
 - /articles/definition_of_done.html
 - /articles/definition_of_done
 category: Product
+description: Checklist for work to be done, and accepted via an Acceptance Thread
 ---
 
 All stories must comply with the current Definition of Done in order to be considered Complete and Accepted. Some items might not apply to all stories, and conscious exceptions are OK.
@@ -71,15 +72,23 @@ Only Product Owners and Scrum Masters have permission to mark JIRAs as completed
 Acceptance Threads in Slack.
 
 ![screenshot of example thread with labelled key points]({{site.baseurl}}/images/acceptance-thread.jpg)
+(to update this diagram, edit the [acceptance thread][figma] file in Figma and re-export it)
+
+[figma]: https://www.figma.com/file/osdrHegSpj9sRk9CCuAIQd/Untitled?node-id=0%3A1
+
 
 Key items as part of an acceptance thread:
 
-- The `:thread:` emoji and "Acceptance thread" indicate that this is an acceptance thread
-- Links to the JIRA ticket, and provides a brief description for context
-- Includes steps to verify the changes that are accessible to non-engineers
-   - Sometimes, for tickets that don't have UI changes, includes a description of what changed and links
+- In the main post:
+  - The `:thread:` emoji and "Acceptance thread" indicate that this is an acceptance thread
+  - Link to the JIRA ticket
+  - Provide a brief description for context since JIRA numbers are not memorable
+- In the thread:
+  - Includes steps so that anyone can replicate and review.
+  - Specify which environment changes were deployed to, and provide a link to that environmment
+  - Provide screenshots if possible
+  - Sometimes, for tickets that don't have UI changes, includes a description of what changed and links
      to a Pull Request
-- Specify which environment changes were deployed to, and provide a link to that environmment
-- Provide screenshots if possible
-- Tag via @-mention the relevant people for review, usually the Product Manager, Scrum Master, and
-  anybody tagged as a reviewer in the JIRA
+  - Tag the relevant people for review, usually the Product Manager, Scrum Master, and
+    anybody tagged as a reviewer in the ticket. Include the ticket in the message to help provide
+    context in the notification.
