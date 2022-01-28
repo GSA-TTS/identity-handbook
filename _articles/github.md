@@ -109,7 +109,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
   A site to present information for partners
 
 - [**18f/identity-reporting**](https://github.com/18f/identity-reporting)<br />
-  [login.gov](https://data.login.gov)<br />
+  [data.login.gov](https://data.login.gov)<br />
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
   Public reporting dashboard.
 
