@@ -9,9 +9,10 @@ category: "Architecture"
 
 To reduce operational complexity and minimize deployment time, artifacts for IDP hosts are built in migration hosts. The artifacts consist of Login.gov's IDP source code repositories, Ruby and Javascript dependencies downloaded via RubyGems and Node Package Manager (NPM), and compiled frontend assets. This functionality is currently backwards compatible, and deployments will fall back to existing behavior if an artifact is not available.
 
-![architecture diagram of reporting dashboard]({{site.baseurl}}/images/idp-artifact-building-architecture.jpg)
+[![architecture diagram of reporting dashboard][image]][image]
 (to update this diagram, edit the [IDP artifact-building architecture][figma] file in Figma and re-export it)
 
+[image]: {{site.baseurl}}/images/idp-artifact-building-architecture.jpg
 [figma]: https://www.figma.com/file/sam6yEo5qFMqJ29Y4jb4me/IDP-Artifact-Building-Architecture
 
 ### Building and Uploading Artifacts

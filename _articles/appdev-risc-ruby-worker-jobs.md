@@ -11,9 +11,10 @@ Our implementation of [RISC Security Event Token](https://developers.login.gov/s
 
 To minimize the impact of external HTTP requests on our application performance, we moved those calls to background jobs.
 
-![architecture diagram of async/ruby workers]({{site.baseurl}}/images/ruby-worker-risc-async-diagram.png)
+[![architecture diagram of async/ruby workers][image]][image]
 (to update this diagram, edit the [Async Architecture][figma] file in Figma and re-export it)
 
+[image]: {{site.baseurl}}/images/ruby-worker-risc-async-diagram.png
 [figma]: https://www.figma.com/file/w3TLJopAqDMjER3uCo8Y6v/Async-Worker-Architecture?node-id=104%3A3
 
 The lifecycle of a job:

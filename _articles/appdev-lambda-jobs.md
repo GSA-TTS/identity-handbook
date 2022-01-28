@@ -25,10 +25,11 @@ Generally, the jobs fall into two categories:
 2. PII verification
 
 
-![architecture diagram of async/lambda]({{site.baseurl}}/images/lambda-async-diagram.png)
+[![architecture diagram of async/lambda][image]][image]
 
 (to update this diagram, edit the [Async/Lambda Architecture][figma] file in Figma and re-export it)
 
+[image]: {{site.baseurl}}/images/lambda-async-diagram.png
 [figma]: https://www.figma.com/file/w3TLJopAqDMjER3uCo8Y6v/Async%2FLambda-Architecture?node-id=0%3A1
 
 The lifecycle of a lambda:

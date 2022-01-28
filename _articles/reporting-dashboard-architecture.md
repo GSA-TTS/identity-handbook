@@ -10,9 +10,10 @@ category: "Architecture"
 We serve a dashboard at [data.login.gov][data-login-gov] with metrics that are safe to
 share with the public
 
-![architecture diagram of reporting dashboard]({{site.baseurl}}/images/reporting-dashboard-diagram.png)
+[![architecture diagram of reporting dashboard][image]][image]
 (to update this diagram, edit the [data.login.gov report architecture][figma] file in Figma and re-export it)
 
+[image]: {{site.baseurl}}/images/reporting-dashboard-diagram.png
 [figma]: https://www.figma.com/file/DGQZwlRbJtEZGJH0t2iMvD/data.login.gov-report-architecture
 
 ### Data
