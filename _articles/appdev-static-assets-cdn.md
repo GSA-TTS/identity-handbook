@@ -12,9 +12,10 @@ like images, CSS, and JavaScript from public CloudFront distributions.   This so
 404s when a browser accesses a page served from a newly deployed application server which then fails to
 load when directed to an older application server which does not have the new asset.
 
-![architecture diagram of static asset cloudfront CDN]({{site.baseurl}}/images/static-cdn-diagram.png)
+[![architecture diagram of static asset cloudfront CDN][image]][image]
 (to update this diagram, edit the [cloudfront static asset architecture][figma] file in Figma and re-export it)
 
+[image]: {{site.baseurl}}/images/static-cdn-diagram.png
 [figma]: https://www.figma.com/file/EyRJkb84OMXEKLhKfmSkGA/cloudfront-static-asset-architecture
 
 ### Populating Static Assets

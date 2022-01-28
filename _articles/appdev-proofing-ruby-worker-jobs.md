@@ -17,9 +17,10 @@ We have two kinds of proofing jobs
 1. ID card scanning (image processing jobs)
 2. PII verification
 
-![architecture diagram of async/ruby workers]({{site.baseurl}}/images/ruby-worker-proofing-async-diagram.png)
+[![architecture diagram of async/ruby workers][image]][image]
 (to update this diagram, edit the [Async Architecture][figma] file in Figma and re-export it)
 
+[image]: {{site.baseurl}}/images/ruby-worker-proofing-async-diagram.png
 [figma]: https://www.figma.com/file/w3TLJopAqDMjER3uCo8Y6v/Async-Worker-Architecture?node-id=104%3A3
 
 The lifecycle of a job:

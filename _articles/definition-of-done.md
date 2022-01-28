@@ -71,9 +71,10 @@ Expect this DoD to change over time.
 Only Product Owners and Scrum Masters have permission to mark JIRAs as completed. To help them review tickets, we create
 Acceptance Threads in Slack.
 
-![screenshot of example thread with labelled key points]({{site.baseurl}}/images/acceptance-thread.jpg)
+[![screenshot of example thread with labelled key points][image]][image]
 (to update this diagram, edit the [acceptance thread][figma] file in Figma and re-export it)
 
+[image]: {{site.baseurl}}/images/acceptance-thread.jpg
 [figma]: https://www.figma.com/file/osdrHegSpj9sRk9CCuAIQd/Untitled?node-id=0%3A1
 
 
