@@ -1,6 +1,6 @@
 ---
 title: GitHub
-description: Team code repos
+description: Team code repos, permissions, notification strategies
 layout: article
 category: Development
 ---
@@ -137,3 +137,33 @@ All Login.gov repos should have the following permissions. They can be changed b
 We should not have any individual access, only team access.
 
 ![Repository Permissions Screenshot]({{site.baseurl}}/images/github-repo-permissions.png)
+
+## Email Notifications and Filters
+
+Default settings for GitHub can generate a lot of email that can be tough to sift through. Here
+are some strategies for helping manage these notifications:
+
+1. Create Gmail filters to help highlight mentions:
+
+    - A filter to get emails out of the Inbox
+
+      **list:18F.github.com**<br />
+      Skip Inbox, Apply label: github
+
+    - A mentions/me filter to highlight Pull Requests you're participating in (such as being tagged
+      as a reviewer)
+
+      **from:notifications@github.com to:me**<br />
+      Apply label: github-me
+
+   Example:
+
+   ![Gmail GitHub filters]({{site.baseurl}}/images/gmail-github-filters.png)
+
+1. In GitHub, only have notifications on for repositories you care about (unwatch all others).
+   The 18F org has many repos that do not affect Login.gov.
+   For example, set up "All Activity" for `identity-` repos, and "Participating" for all others.
+
+   | Key Repositories       | Other Repositories |
+   | -----------------------|--------------------|
+   | ![All Activity]({{site.baseurl}}/images/github-all-activity.png) | ![Participating]({{site.baseurl}}/images/github-participating.png) |
