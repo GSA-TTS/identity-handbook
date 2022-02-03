@@ -63,7 +63,7 @@ a given bucket in a new region.
 | Internet Gateway               | aws_internet_gateway                      | region    |                                                                                                                       |
 | Kinesis                        | aws_kinesis*                              | region    |                                                                                                                       |
 | KMS                            | aws_kms*                                  | region    |                                                                                                                       |
-| Lambda                         | aws_lambda*                               | region    |                                                                                                                       |
+| Lambda                         | aws_lambda*                               | region    |[How to Manage AWS Lambda Functions](https://spacelift.io/blog/terraform-aws-lambda)                                           |
 | Network ACL                    | aws_network_acl*, aws_default_network_acl | region    |                                                                                                                       |
 | Pinpoint App                   | aws_pinpoint_app                          | region    | A.K.A. "Pinpoint Project"                                                                                             |
 | Pinpoint SMS Channel           | aws_pinpoint_sms_channel                  | region    |                                                                                                                       |
