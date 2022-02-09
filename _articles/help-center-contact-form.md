@@ -1,6 +1,6 @@
 ---
 title: "Contact Form Updating Instructions"
-description: "Procedure for adding an agency to the Contact Form in the Help Center"
+description: "Procedure for updating fields in the Help Center's Contact Form"
 layout: article
 category: "AppDev"
 ---
@@ -10,8 +10,15 @@ category: "AppDev"
 The backend to the Login.gov marketing site [Contact Form](https://login.gov/contact/) is
 a Salesforce instance.
 
+{%- capture alert_content -%}
 The backend will reject form posts that contain dropdown values it does not know about,
-so new agencies need to be added explicitly with the help of the Salesforce team
+so new field options need to be added explicitly with the help of the Salesforce team
+before we can deploy changes on our side.
+{%- endcapture -%}
+{% include alert.html content=alert_content alert_class="usa-alert--error" %}
+
+The **agency** field allows freeform responses, so it does not need to go through this
+manual approval process anymore.
 
 ## Configuration
 
