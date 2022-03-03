@@ -7,6 +7,8 @@ github_repo_url: https://github.com/18F/identity-handbook  # enables "edit this 
 
 markdown: kramdown
 
+idp_base_url: http://localhost:3000
+
 collections:
   articles:
     output: true
