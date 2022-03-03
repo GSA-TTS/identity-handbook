@@ -5,6 +5,14 @@ layout: article
 category: Reporting
 ---
 
+{% if site.env.BRANCH == 'main' %}
+  {% assign idp_base_url = site.env.IDP_BASE_URL %}
+{% else %}
+  {% assign idp_base_url = site.env.IDP_BASE_URL_PREVIEW %}
+{% endif %}
+
+{% assign idp_base_url = idp_base_url | default: 'https://secure.login.gov' %}
+
 <div markdown="1">
 These are the events that are documented in the IDP. Each event has can have custom
 properties that go under `event_properties` in the final payload:
@@ -22,7 +30,7 @@ properties that go under `event_properties` in the final payload:
 
 <div
   id="events-container"
-  data-idp-base-url="{{ site.idp_base_url }}">
+  data-idp-base-url="{{ idp_base_url }}">
 </div>
 
 <template data-template-name="event-template">
