@@ -155,7 +155,7 @@ properties that go under `event_properties` in the final payload:
     }
 
     const { idpBaseUrl } = container.dataset;
-    window.fetch(`${idpBaseUrl}/api/analytics-events.json`)
+    window.fetch(`${idpBaseUrl}/api/analytics-events`)
       .then((response) => response.json())
       .then(({ events }) => {
         events.sort(({ event_name: a}, { event_name: b}) => a.localeCompare(b))
