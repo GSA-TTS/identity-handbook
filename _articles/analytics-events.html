@@ -25,15 +25,18 @@ properties that go under `event_properties` in the final payload:
   data-idp-base-url="{{ site.idp_base_url }}">
 </div>
 
-<template id="event-template">
+<template data-template-name="event-template">
   <h3 data-item="event_name"></h3>
   <p data-item="description"></p>
 
   <h4 data-hidden-if-empty="attributes">Attributes</h4>
   <ul data-each="attributes"></ul>
+
+  <h4>Example</h4>
+  <code><pre data-item="example"></pre></code>
 </template>
 
-<template id="attribute-template">
+<template data-template-name="attribute-template">
   <li>
     <kbd data-item="name"></kbd>
     <span data-item="types"></span>
@@ -41,20 +44,18 @@ properties that go under `event_properties` in the final payload:
   </li>
 </template>
 
-<template id="sidenav-item-template">
+<template data-template-name="sidenav-item-template">
   <li class="usa-sidenav__item">
     <a></a>
   </li>
 </template>
 
-
-
 <script type="text/javascript">
   function loadAnalyticsEvents() {
     const container = document.querySelector('#events-container');
-    const eventTemplate = document.querySelector('#event-template');
-    const attributeTemplate = document.querySelector('#attribute-template');
-    const sideNavItemTemplate = document.querySelector('#sidenav-item-template');
+    const eventTemplate = document.querySelector('[data-template-name=event-template]');
+    const attributeTemplate = document.querySelector('[data-template-name=attribute-template]');
+    const sideNavItemTemplate = document.querySelector('[data-template-name=sidenav-item-template]');
     const sideNav = document.querySelector('#sidenav');
 
     if (!container || !eventTemplate || !attributeTemplate || !sideNavItemTemplate) {
@@ -71,6 +72,52 @@ properties that go under `event_properties` in the final payload:
       return attributeElem;
     }
 
+    /**
+     * @return {string}
+     */
+    function buildExample({ event_name, attributes }) {
+      const attributeExamples = attributes.map(({ name, types, description }) => {
+        const key = JSON.stringify(name);
+        const value = types.flatMap((type) => {
+          switch(type) {
+            case 'Boolean':
+              return ['true', 'false'];
+            case 'Integer':
+              return 0;
+            case 'Hash':
+              return '{}';
+            default:
+              return type;
+          }
+        }).join(' | ');
+
+        let example = `${key}: ${value},`;
+
+        if (description) {
+          example += ` // ${description}`;
+        }
+
+        return example;
+      });
+
+      if (attributeExamples.length) {
+        attributeExamples.unshift('');
+        attributeExamples.push('');
+      }
+
+      const eventProperties = attributeExamples.
+        join("\n      ").
+        replace(/(  $)/, ''); // fix last line indentation
+
+      const example = `{
+  "name": ${JSON.stringify(event_name)},
+  "properties": {
+    "event_properties": {${eventProperties}}
+  }
+}`;
+      return example;
+    }
+
     function buildEventElem({ event_name, description, attributes }) {
       const elem = eventTemplate.content.cloneNode(true);
 
@@ -83,6 +130,8 @@ properties that go under `event_properties` in the final payload:
 
       attributes.sort(({ name: a }, { name: b }) => a.localeCompare(b))
         .forEach((attribute) => attributesList.appendChild(buildAttributeElem(attribute)));
+
+      elem.querySelector('[data-item=example]').innerText = buildExample({ event_name, attributes })
 
       return elem;
     }
