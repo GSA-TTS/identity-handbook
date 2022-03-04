@@ -137,9 +137,12 @@ function Event({ event_name, description, attributes = [] }) {
             Attributes
             <${Anchor} slug=${urlify(event_name + ' Attributes')} />
           </h4>
-          <ul>
-            ${attributes.map((attribute) => html`<${Attribute} ...${attribute} />` )}
-          </ul>
+          <details>
+            <summary>Show attribute details</summary>
+            <ul>
+              ${attributes.map((attribute) => html`<${Attribute} ...${attribute} />` )}
+            </ul>
+          </details>
         ` : undefined
       }
 
