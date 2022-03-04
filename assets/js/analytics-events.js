@@ -50,7 +50,7 @@ window.urlify = urlify;
 
 const html = htm.bind(h);
 
-function Anchor({ slug, icon = '\u00a7' }) {
+function Anchor({ slug, icon = String.fromCharCode(59851) }) {
   const setRef = (dom) => {
     if (dom && document.location.hash.slice(1) === slug) {
       setTimeout(() => dom.scrollIntoView(), 0);
