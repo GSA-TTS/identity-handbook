@@ -51,8 +51,15 @@ window.urlify = urlify;
 const html = htm.bind(h);
 
 function Anchor({ slug, icon = '\u00a7' }) {
+  const setRef = (dom) => {
+    if (dom && document.location.hash.slice(1) === slug) {
+      setTimeout(() => dom.scrollIntoView(), 0);
+    }
+  }
+
   return html`
-    <a class="anchorjs-link"
+    <a ref=${setRef}
+       class="anchorjs-link"
        aria-label="Anchor"
        data-anchorjs-icon=${icon}
        id=${slug}
@@ -116,14 +123,8 @@ function Attribute({ name, types, description }) {
 }
 
 function Event({ event_name, description, attributes = [] }) {
-  const setRef = (dom) => {
-    if (dom && document.location.hash.slice(1) === urlify(event_name)) {
-      dom.scrollIntoView();
-    }
-  }
-
   return html`
-    <div ref=${setRef}>
+    <div>
       <h3>
         ${event_name}
         <${Anchor} slug=${urlify(event_name)} />
