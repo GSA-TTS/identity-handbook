@@ -169,6 +169,20 @@ function SidebarNavItem({ name }) {
    `;
 }
 
+function ErrorPage({ error, url }) {
+  return html`
+    <div class="usa-alert usa-alert--error">
+      <div class="usa-alert__body">
+        <h5 class="usa-alert__heading">Error loading event definitions</h5>
+        <div class="usa-alert__text">
+          <p>There was an error loading event definitions from <a href=${url}>${url}</a>:</p>
+          <p>${error.message}</p>
+        </div>
+      </div>
+    </div>
+  `
+}
+
 function Sidenav({ events }) {
   return html`${events.map(({ event_name: name }) =>
     html`<${SidebarNavItem} name=${name} />`
@@ -177,12 +191,14 @@ function Sidenav({ events }) {
 
 const container = document.querySelector('#events-container');
 const { idpBaseUrl } = container.dataset;
+const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
 const sidenav = document.querySelector('#sidenav');
 
-window.fetch(`${idpBaseUrl}/api/analytics-events`)
+window.fetch(eventsUrl)
   .then((response) => response.json())
   .then(({ events }) => {
     render(html`<${Events} events=${events} />`, container);
     render(html`<${Sidenav} events=${events} />`, sidenav);
-  });
+  })
+  .catch((error) => render(html`<${ErrorPage} url=${eventsUrl} error=${error} />`, container));
