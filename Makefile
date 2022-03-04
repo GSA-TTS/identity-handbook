@@ -1,8 +1,8 @@
-run: setup
-	bundle exec jekyll serve --watch
+run: setup .env
+	/bin/bash -c "source .env && bundle exec jekyll serve --watch"
 
-build: setup
-	bundle exec jekyll build
+build: setup .env
+	/bin/bash -c "source .env && bundle exec jekyll build"
 
 setup:
 	bundle
@@ -14,5 +14,8 @@ test: build
 
 clean:
 	rm -rf _site
+
+.env:
+	cp -n .env.example .env
 
 .PHONY: setup clean

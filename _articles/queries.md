@@ -2,7 +2,7 @@
 title: "Reporting Queries"
 description: "Queries to run in the Rails console for common reporting questions"
 layout: article
-category: "AppDev"
+category: "Reporting"
 ---
 
 ## Query timeout

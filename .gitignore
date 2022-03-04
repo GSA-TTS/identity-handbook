@@ -7,6 +7,5 @@ node_modules/
 .DS_Store
 .vscode
 .idea
+.env
 
-# pulled dynamically in the build/deploy process
-_data/team.yml
