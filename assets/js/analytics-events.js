@@ -55,6 +55,7 @@ function Anchor({ slug, icon = '\u00a7' }) {
     <a class="anchorjs-link"
        aria-label="Anchor"
        data-anchorjs-icon=${icon}
+       id=${slug}
        href=${`#${slug}`}
        style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>`;
 }
@@ -115,30 +116,38 @@ function Attribute({ name, types, description }) {
 }
 
 function Event({ event_name, description, attributes = [] }) {
-  return html`
-    <h3>
-      ${event_name}
-      <${Anchor} slug=${urlify(event_name)} />
-    </h3>
-    <p>${description}</p>
-
-    ${
-      attributes?.length ? html`
-        <h4>
-          Attributes
-          <${Anchor} slug=${urlify(event_name + ' Attributes')} />
-        </h4>
-        <ul>
-          ${attributes.map((attribute) => html`<${Attribute} ...${attribute} />` )}
-        </ul>
-      ` : undefined
+  const setRef = (dom) => {
+    if (dom && document.location.hash.slice(1) === urlify(event_name)) {
+      dom.scrollIntoView();
     }
+  }
 
-    <h4>
-      Example
-      <${Anchor} slug=${urlify(event_name + ' Example')} />
-    </h4>
-    <${Example} event_name=${event_name} attributes=${attributes} />
+  return html`
+    <div ref=${setRef}>
+      <h3>
+        ${event_name}
+        <${Anchor} slug=${urlify(event_name)} />
+      </h3>
+      <p>${description}</p>
+
+      ${
+        attributes?.length ? html`
+          <h4>
+            Attributes
+            <${Anchor} slug=${urlify(event_name + ' Attributes')} />
+          </h4>
+          <ul>
+            ${attributes.map((attribute) => html`<${Attribute} ...${attribute} />` )}
+          </ul>
+        ` : undefined
+      }
+
+      <h4>
+        Example
+        <${Anchor} slug=${urlify(event_name + ' Example')} />
+      </h4>
+      <${Example} event_name=${event_name} attributes=${attributes} />
+    </div>
   `;
 }
 

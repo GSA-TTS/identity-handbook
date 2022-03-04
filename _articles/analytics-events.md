@@ -15,6 +15,8 @@ category: Reporting
 These are the events that are documented in the IDP. Each event has can have custom
 properties that go under `event_properties` in the final payload:
 
+### Events
+
 ```json
 {
   "name": "Event Name",
