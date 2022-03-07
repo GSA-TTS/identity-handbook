@@ -25,6 +25,7 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 
 - `@login-appdev-oncall` The application developer oncall
 - `@login-devops-oncall` The devops oncall
+- `@login-deployer` The weekly [appdev app deployer]({% link _articles/appdev-deploy-rotation.md %})
 
 ### Team Handles
 
