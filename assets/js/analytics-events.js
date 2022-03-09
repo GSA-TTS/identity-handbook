@@ -193,12 +193,17 @@ const container = document.querySelector('#events-container');
 const { idpBaseUrl } = container.dataset;
 const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
-const sidenav = document.querySelector('#sidenav');
+const sidenav = document.querySelector('#sidenav .usa-sidenav__sublist:last-child');
 
 window.fetch(eventsUrl)
   .then((response) => response.json())
   .then(({ events }) => {
     render(html`<${Events} events=${events} />`, container);
     render(html`<${Sidenav} events=${events} />`, sidenav);
+
+    const headerToReplace = document.querySelector('#event-list');
+    if (headerToReplace) {
+      headerToReplace.hidden = true;
+    }
   })
   .catch((error) => render(html`<${ErrorPage} url=${eventsUrl} error=${error} />`, container));
