@@ -19,11 +19,16 @@ For detailed information see the [Security Incident Response Guide]({% link _art
 
 ## Initiate
 
-* Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN) using `@here` to get everyone's attention
+* Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN)
 * Situation Lead and team assemble in War Room (See the Topic in #login-situation channel for the link)
+* Situation Lead asks for more participants if needed:
+  * During business hours:
+    * Call in on-call members using the @login-appdev-oncall and @login-devops-oncall handles in Slack
+    * Use @here in #login-situation if still understaffed
+  * After hours:
+    * Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Roles assigned and duties started:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
-    * Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
   * **Scribe (SC)**: Notes activities in war room (hangout) to #login-situation to produce timeline / share with others not in room
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
   * **Comms Lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public

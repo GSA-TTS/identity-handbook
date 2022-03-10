@@ -56,8 +56,14 @@ The SL follows this Login.gov IR Plan and may additionally reference [TTS incide
 
 Initial steps:
 
-* The SL notifies [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) that an incident has been declared using @here to ensure everyone is aware
+* The SL notifies [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) that an incident has been declared
 * Responders assemble in the War Room ((See the Topic in #login-situation channel for the link)
+* SL requests more responders if needed:
+  * During business hours:
+    * Call in on-call members using the @login-appdev-oncall and @login-devops-oncall handles in Slack
+    * Use @here in #login-situation if still understaffed
+  * After hours:
+    * Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Roles are assigned when possible as responders join the incident:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
@@ -66,7 +72,7 @@ Initial steps:
 
 Roles proceed as follows:
 * **Situation Lead (SL)**:
-  * Uses Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
+  * Requests additional responders as needed, including a new SL if they need to cycle off
   * Ensures roles and team are coordinated and have what they need
   * Shares context on what is happening and asks clarifying questions
 * **Tech Lead (TL)**:
@@ -328,7 +334,7 @@ Anyone with access to production, including:
 * If it smells like an incident, declare an incident
   * False positives are normal and useful to keep us sharp
   * Long delays while deciding if something is an incident are not acceptable
-* When in doubt, call it out!
+* When in doubt, call it out!  (If someone asks if it is an incident, it is probably an incident)
 
 ### When do you declare an incident?
 
@@ -342,14 +348,18 @@ Anyone with access to production, including:
 
 ### How should I prioritize assisting with an incident vs. my other work?
 
-* Incidents are always highest priority!
+* If you are on call (primary or secondary) you are expected to join situations immediately
+* Incidents are always highest priority!  If you are asked to join, please check in
 * Development, planning, and meeting activities should be paused during participation in an incident
 * When the Situation Lead acknowledges you are not needed for incident response activities you can resume normal work
 * Engineering and Infrastructure leads are happy to answer questions about prioritization and your need to drop everything and participate
 
 ### When should I report into the situation room?
 
-* Business hours - Responders as defined in [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to)
+* Business hours:
+  * The current AppDev Primary and Secondary on-call
+  * The current DevOps Primary and Secondary on-call
+  * Additional Responders as needed - The Situation Lead can call in anyone defined in [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to)
 * After hours - DevOps On Call and Application On Call - Additional resources will be brought in via OpsGenie notification
 
 ### What is expected when participating?
@@ -361,7 +371,7 @@ Anyone with access to production, including:
   * Ensures communication and mitigation are being addressed by others
   * Makes sure everything that needs doing is being done
   * Checks in with participants for status updates
-  * Make sure that people have something to do, and if not, communicate clearly that they can drop
+  * Makes sure that people have something to do, and if not, communicates clearly that they can drop
 * Participants
   * Provide clear updates to the team
   * If unfilled or someone needs to rotate out, volunteers to serve in one of the defined roles:
