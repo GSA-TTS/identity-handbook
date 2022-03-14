@@ -46,14 +46,12 @@ const urlify = new function() {
   this.urlify = this.urlify.bind(this);
 }().urlify;
 
-window.urlify = urlify;
-
 const html = htm.bind(h);
 
 function Anchor({ slug, icon = String.fromCharCode(59851) }) {
-  const setRef = (dom) => {
-    if (dom && document.location.hash.slice(1) === slug) {
-      setTimeout(() => dom.scrollIntoView(), 0);
+  const setRef = (node) => {
+    if (node && document.location.hash.slice(1) === slug) {
+      setTimeout(() => node.scrollIntoView(), 0);
     }
   }
 
@@ -100,7 +98,7 @@ function Example({ event_name, attributes }) {
 
   const eventProperties = attributeExamples.
     join("\n      ").
-    replace(/(  $)/, ''); // fix last line indentation
+    replace(/  $/, ''); // fix last line indentation
 
   const example = `{
   name: ${JSON.stringify(event_name)},
@@ -156,9 +154,7 @@ function Event({ event_name, description, attributes = [] }) {
 }
 
 function Events({ events }) {
-  return html`${events.map((event) =>
-    html`<${Event} ...${event} />`
-  )}`;
+  return events.map((event) => html`<${Event} ...${event} />`);
 }
 
 function SidebarNavItem({ name }) {
@@ -184,9 +180,7 @@ function ErrorPage({ error, url }) {
 }
 
 function Sidenav({ events }) {
-  return html`${events.map(({ event_name: name }) =>
-    html`<${SidebarNavItem} name=${name} />`
-  )}`;
+  return events.map(({ event_name: name }) => html`<${SidebarNavItem} name=${name} />`);
 }
 
 const container = document.querySelector('#events-container');
