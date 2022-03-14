@@ -35,18 +35,13 @@ jobs:
       - run:
           name: Run markdown source spec (catches things that might break the build)
           command: bundle exec rspec `pwd`/spec/markdown_spec.rb
-      - run: bundle exec jekyll build
       - run:
-          name: Run rspec
-          command: bundle exec rspec `pwd`/spec/
+          name: Run lints
+          command: make lint
       - run:
-          name: Run htmlproofer
-          command: bundle exec htmlproofer --disable-external --allow-hash-href `pwd`/_site
+          name: Run test
+          command: make test
       - run: find _site -type f
-      - persist_to_workspace:
-          root: "."
-          paths:
-            - "_site/*"
 workflows:
   version: 2
   build:

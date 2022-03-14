@@ -5,5 +5,15 @@
     "htm": "^3.1.0",
     "identity-style-guide": "^6.3.0",
     "preact": "^10.6.6"
+  },
+  "devDependencies": {
+    "@18f/eslint-plugin-identity": "^2.0.0",
+    "eslint": "^8.11.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  },
+  "scripts": {
+    "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx"
   }
 }

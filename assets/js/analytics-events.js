@@ -1,10 +1,13 @@
-import { h, Component, render } from '../../preact.module.js';
-import htm from '../../htm.module.js';
+// eslint-disable-next-line import/no-unresolved
+import { h, render } from "../../preact.module.js";
+// eslint-disable-next-line import/no-unresolved
+import htm from "../../htm.module.js";
 
 // Copied from https://github.com/bryanbraun/anchorjs
-const urlify = new function() {
+const { urlify } = new (function () {
   // hax to make the below copy-paste more easily
   this.options = { truncate: 64 };
+  /* eslint-disable */
 
   /**
    * Urlify - Refine text so it makes a good ID.
@@ -42,9 +45,10 @@ const urlify = new function() {
       .toLowerCase();                       // "⚡⚡-dont-forget-url-fragments-should-be-i18n-friendly-hyphenated"
   };
 
+  /* eslint-enable */
   // hax to make the above copy-paste more easily
   this.urlify = this.urlify.bind(this);
-}().urlify;
+})();
 
 const html = htm.bind(h);
 
@@ -53,55 +57,58 @@ function Anchor({ slug, icon = String.fromCharCode(59851) }) {
     if (node && document.location.hash.slice(1) === slug) {
       setTimeout(() => node.scrollIntoView(), 0);
     }
-  }
+  };
 
-  return html`
-    <a ref=${setRef}
-       class="anchorjs-link"
-       aria-label="Anchor"
-       data-anchorjs-icon=${icon}
-       id=${slug}
-       href=${`#${slug}`}
-       style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a>`;
+  return html`<a
+    ref=${setRef}
+    class="anchorjs-link"
+    aria-label="Anchor"
+    data-anchorjs-icon=${icon}
+    id=${slug}
+    href=${`#${slug}`}
+    style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"
+  ></a>`;
 }
 
-function Example({ event_name, attributes }) {
+function Example({ event_name: eventName, attributes }) {
   function typeExample(type) {
-    switch(type) {
-      case 'Boolean':
-        return ['true', 'false'];
-      case 'Integer':
+    switch (type) {
+      case "Boolean":
+        return ["true", "false"];
+      case "Integer":
         return 0;
-      case 'Hash':
-        return '{}';
+      case "Hash":
+        return "{}";
       default:
         return type;
     }
   }
 
-  const attributeExamples = attributes.flatMap(({ name, types, description }) => {
-    const value = types.flatMap((type) => typeExample(type)).join(' | ');
+  const attributeExamples = attributes.flatMap(
+    ({ name, types, description }) => {
+      const value = types.flatMap((type) => typeExample(type)).join(" | ");
 
-    let example = [`${name}: ${value},`];
+      const example = [`${name}: ${value},`];
 
-    if (description) {
-      example.unshift(`// ${description}`);
+      if (description) {
+        example.unshift(`// ${description}`);
+      }
+
+      return example;
     }
-
-    return example;
-  });
+  );
 
   if (attributeExamples.length) {
-    attributeExamples.unshift('');
-    attributeExamples.push('');
+    attributeExamples.unshift("");
+    attributeExamples.push("");
   }
 
-  const eventProperties = attributeExamples.
-    join("\n      ").
-    replace(/  $/, ''); // fix last line indentation
+  const eventProperties = attributeExamples
+    .join("\n      ")
+    .replace(/ {2}$/, ""); // fix last line indentation
 
   const example = `{
-  name: ${JSON.stringify(event_name)},
+  name: ${JSON.stringify(eventName)},
   properties: {
     event_properties: {${eventProperties}}
   }
@@ -114,41 +121,45 @@ function Attribute({ name, types, description }) {
   return html`
     <li>
       <kbd>${name}</kbd>
-      ${ types?.length ? html`${' '}<span>(${types.join(', ')})</span>` : undefined }
+      ${types?.length
+        ? html`${" "}<span>(${types.join(", ")})</span>`
+        : undefined}
       <p>${description}</p>
     </li>
   `;
 }
 
-function Event({ event_name, description, attributes = [] }) {
+function Event({ event_name: eventName, description, attributes = [] }) {
   return html`
     <div>
       <h3>
-        ${event_name}
-        <${Anchor} slug=${urlify(event_name)} />
+        ${eventName}
+        <${Anchor} slug=${urlify(eventName)} />
       </h3>
       <p>${description}</p>
 
-      ${
-        attributes?.length ? html`
-          <h4>
-            Attributes
-            <${Anchor} slug=${urlify(event_name + ' Attributes')} />
-          </h4>
-          <details>
-            <summary>Show attribute details</summary>
-            <ul>
-              ${attributes.map((attribute) => html`<${Attribute} ...${attribute} />` )}
-            </ul>
-          </details>
-        ` : undefined
-      }
+      ${attributes?.length
+        ? html`
+            <h4>
+              Attributes
+              <${Anchor} slug=${urlify(`${eventName} Attributes`)} />
+            </h4>
+            <details>
+              <summary>Show attribute details</summary>
+              <ul>
+                ${attributes.map(
+                  (attribute) => html`<${Attribute} ...${attribute} />`
+                )}
+              </ul>
+            </details>
+          `
+        : undefined}
 
       <h4>
         Example
-        <${Anchor} slug=${urlify(event_name + ' Example')} />
+        <${Anchor} slug=${urlify(`${eventName} Example`)} />
       </h4>
-      <${Example} event_name=${event_name} attributes=${attributes} />
+      <${Example} event_name=${eventName} attributes=${attributes} />
     </div>
   `;
 }
@@ -162,7 +173,7 @@ function SidebarNavItem({ name }) {
     <li class="usa-sidenav__item">
       <a href=${`#${urlify(name)}`}>${name}</a>
     </li>
-   `;
+  `;
 }
 
 function ErrorPage({ error, url }) {
