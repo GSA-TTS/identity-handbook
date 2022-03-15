@@ -70,7 +70,11 @@ function Anchor({ slug, icon = String.fromCharCode(59851) }) {
   ></a>`;
 }
 
-function Example({ event_name: eventName, attributes }) {
+function Example({
+  event_name: eventName,
+  previous_event_names: previousEventNames,
+  attributes,
+}) {
   function typeExample(type) {
     switch (type) {
       case "Boolean":
@@ -107,8 +111,12 @@ function Example({ event_name: eventName, attributes }) {
     .join("\n      ")
     .replace(/ {2}$/, ""); // fix last line indentation
 
+  const names = [eventName, ...previousEventNames]
+    .map((s) => JSON.stringify(s))
+    .join(" | ");
+
   const example = `{
-  name: ${JSON.stringify(eventName)},
+  name: ${names},
   properties: {
     event_properties: {${eventProperties}}
   }
@@ -129,7 +137,12 @@ function Attribute({ name, types, description }) {
   `;
 }
 
-function Event({ event_name: eventName, description, attributes = [] }) {
+function Event({
+  event_name: eventName,
+  previous_event_names: previousEventNames,
+  description,
+  attributes = [],
+}) {
   return html`
     <div>
       <h3>
@@ -137,10 +150,17 @@ function Event({ event_name: eventName, description, attributes = [] }) {
         <${Anchor} slug=${urlify(eventName)} />
       </h3>
       <p>${description}</p>
-
+      ${previousEventNames?.length
+        ? html`<h4>
+              Previous Event Names
+              <${Anchor} slug=${urlify(`${eventName} Previous`)} />
+            </h4>
+            <ul>
+              ${previousEventNames.map((name) => html`<li>${name}</li>`)}
+            </ul>`
+        : undefined}
       ${attributes?.length
-        ? html`
-            <h4>
+        ? html`<h4>
               Attributes
               <${Anchor} slug=${urlify(`${eventName} Attributes`)} />
             </h4>
@@ -151,15 +171,18 @@ function Event({ event_name: eventName, description, attributes = [] }) {
                   (attribute) => html`<${Attribute} ...${attribute} />`
                 )}
               </ul>
-            </details>
-          `
+            </details>`
         : undefined}
 
       <h4>
         Example
         <${Anchor} slug=${urlify(`${eventName} Example`)} />
       </h4>
-      <${Example} event_name=${eventName} attributes=${attributes} />
+      <${Example}
+        event_name=${eventName}
+        previous_event_names=${previousEventNames}
+        attributes=${attributes}
+      />
     </div>
   `;
 }
