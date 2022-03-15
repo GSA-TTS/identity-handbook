@@ -199,7 +199,7 @@ function Sidenav({ events }) {
   );
 }
 
-export function LoadAnalyticsEvents() {
+export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container");
   const { idpBaseUrl } = container.dataset;
   const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
