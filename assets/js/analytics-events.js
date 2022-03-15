@@ -182,33 +182,45 @@ function ErrorPage({ error, url }) {
       <div class="usa-alert__body">
         <h5 class="usa-alert__heading">Error loading event definitions</h5>
         <div class="usa-alert__text">
-          <p>There was an error loading event definitions from <a href=${url}>${url}</a>:</p>
+          <p>
+            There was an error loading event definitions from
+            <a href=${url}>${url}</a>:
+          </p>
           <p>${error.message}</p>
         </div>
       </div>
     </div>
-  `
+  `;
 }
 
 function Sidenav({ events }) {
-  return events.map(({ event_name: name }) => html`<${SidebarNavItem} name=${name} />`);
+  return events.map(
+    ({ event_name: name }) => html`<${SidebarNavItem} name=${name} />`
+  );
 }
 
-const container = document.querySelector('#events-container');
-const { idpBaseUrl } = container.dataset;
-const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
+export function LoadAnalyticsEvents() {
+  const container = document.querySelector("#events-container");
+  const { idpBaseUrl } = container.dataset;
+  const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
-const sidenav = document.querySelector('#sidenav .usa-sidenav__sublist:last-child');
+  const sidenav = document.querySelector(
+    "#sidenav .usa-sidenav__sublist:last-child"
+  );
 
-window.fetch(eventsUrl)
-  .then((response) => response.json())
-  .then(({ events }) => {
-    render(html`<${Events} events=${events} />`, container);
-    render(html`<${Sidenav} events=${events} />`, sidenav);
+  window
+    .fetch(eventsUrl)
+    .then((response) => response.json())
+    .then(({ events }) => {
+      render(html`<${Events} events=${events} />`, container);
+      render(html`<${Sidenav} events=${events} />`, sidenav);
 
-    const headerToReplace = document.querySelector('#event-list');
-    if (headerToReplace) {
-      headerToReplace.hidden = true;
-    }
-  })
-  .catch((error) => render(html`<${ErrorPage} url=${eventsUrl} error=${error} />`, container));
+      const headerToReplace = document.querySelector("#event-list");
+      if (headerToReplace) {
+        headerToReplace.hidden = true;
+      }
+    })
+    .catch((error) =>
+      render(html`<${ErrorPage} url=${eventsUrl} error=${error} />`, container)
+    );
+}

@@ -79,4 +79,8 @@ For additional events see the [legacy Analytics Event documentation][legacy-docu
   data-idp-base-url="{{ idp_base_url }}">
 </div>
 
-<script type="module" src="{{ "/assets/js/analytics-events.js" | prepend: site.baseurl }}"></script>
+<script type="module">
+import { LoadAnalyticsEvents } from '{{ "/assets/js/analytics-events.js" | prepend: site.baseurl }}';
+
+LoadAnalyticsEvents();
+</script>
