@@ -122,7 +122,7 @@ function Example({
   }
 }`;
 
-  return html`<code><pre>${example}</pre></code>`;
+  return html`<code><pre class="overflow-x-scroll">${example}</pre></code>`;
 }
 
 function Attribute({ name, types, description }) {
