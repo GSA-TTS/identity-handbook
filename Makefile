@@ -8,6 +8,9 @@ setup:
 	bundle
 	npm install
 
+lint:
+	npm run lint
+
 test: build
 	bundle exec rspec spec
 	bundle exec htmlproofer --disable-external --allow-hash-href `pwd`/_site
@@ -18,4 +21,4 @@ clean:
 .env:
 	cp -n .env.example .env
 
-.PHONY: setup clean
+.PHONY: run build setup lint
