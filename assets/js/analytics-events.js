@@ -111,7 +111,7 @@ function Example({
     .join("\n      ")
     .replace(/ {2}$/, ""); // fix last line indentation
 
-  const names = [eventName, ...previousEventNames]
+  const names = [eventName, ...(previousEventNames || [])]
     .map((s) => JSON.stringify(s))
     .join(" | ");
 
