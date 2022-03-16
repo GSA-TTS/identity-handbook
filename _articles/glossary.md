@@ -107,6 +107,11 @@ Similar to FYI (For Your Information). In government context, FYI can mean for o
 
 The long term agreement that establishes the relationship between Login.gov and an agency. These typically span a 5 year period.
 
+### GPO
+**Government Publishing Office** ([gpo.gov](https://www.gpo.gov/))
+
+A federal agency that can print and send letters. Login.gov uses GPO to send letters with our verify-by-mail flow. See [GPO Designated Receiver]({% link _articles/gpo-designated-receiver.md %}) for some example letter templates.
+
 ### Hub
 Hub is the idea of an identity "traffic controller" that interacts with requesters and requestees during an identity authentication workflow. It "manages communications between Users, [RP](#rp) and [IdP](#idp). It makes sure that users can _assert_ their identities securely and safely, and that relying parties can be confident that users are who they say they are."
 
@@ -226,8 +231,8 @@ A trusted entity that establishes and vouches for the identity or attributes of 
 ### SAML
 **Security Assertion Markup Language**
 
-### Service Provider
-**SP**
+### SP
+**Service Provider**
 An application (or applications) within an ecosystem that provides a service to users; examples of SPs that relate to Login.gov include vets.gov, myssa, and ELIS.
 
 ### SLO
