@@ -233,6 +233,7 @@ A trusted entity that establishes and vouches for the identity or attributes of 
 
 ### SP
 **Service Provider**
+
 An application (or applications) within an ecosystem that provides a service to users; examples of SPs that relate to Login.gov include vets.gov, myssa, and ELIS.
 
 ### SLO
