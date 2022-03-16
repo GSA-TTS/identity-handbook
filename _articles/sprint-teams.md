@@ -40,7 +40,7 @@ and navy officer
 * **Namesake**: [Mary Poppendieck][mary], a computer scientist and
   visionary in the application of lean manufacturing principles to the world
   of software development
-* **Focus area**: A new software factory and minimal platform to
+* **Focus area**: _Developer Experience_ - A new software factory and minimal platform to
   speed our secure development processes
 
 [mary]: http://www.poppendieck.com/people.htm
@@ -48,7 +48,8 @@ and navy officer
 ## Radia
 
 * **Namesake**: [Radia Perlman][radia], the inventor of the spanning-tree protocol
-* **Focus area**: The platform and tools underpinning Login.gov.
+* **Focus area**: _Cloud Infrastructure_ - The cloud architectures and resources that make
+  up our minimal platform
 
 [radia]: https://en.wikipedia.org/wiki/Radia_Perlman
 
