@@ -208,12 +208,12 @@ Scheduled for every Thursday
       ```
 
     1. Manual Inspection
-      - Check [NewRelic (Production IDP)](https://rpm.newrelic.com/accounts/1376370/applications/52136858/traced_errors) for errors
+      - Check [NewRelic (prod.login.gov)](https://one.newrelic.com/nr1-core/errors-ui/overview/MTM3NjM3MHxBUE18QVBQTElDQVRJT058NTIxMzY4NTg) for errors
       - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
 1. **PRODUCTION ONLY**: This step is required in production
 
-    Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down)
+    Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
     ```bash
     aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
     aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
@@ -277,7 +277,7 @@ aws-vault exec prod-power -- ./bin/scale-in-new-instances prod worker
     ```
 
 1. Open a pull request against `stages/prod`, get it approved, and merged. If urgent, get
-   ahold of somebody with admin merge permissions who can override waiting for CI to finish
+   ahold of [somebody with admin merge permissions](https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUzDmIxKn11DPJzk/edit#heading=h.dm83ewdwp8o) who can override waiting for CI to finish
 
 1. Recycle the app to get the new code out there (follow the [Production Deploy steps](#production))
 
