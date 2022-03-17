@@ -213,7 +213,7 @@ Scheduled for every Thursday
 
 1. **PRODUCTION ONLY**: This step is required in production
 
-    Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down)
+    Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
     ```bash
     aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
     aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
