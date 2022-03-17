@@ -277,7 +277,7 @@ aws-vault exec prod-power -- ./bin/scale-in-new-instances prod worker
     ```
 
 1. Open a pull request against `stages/prod`, get it approved, and merged. If urgent, get
-   ahold of somebody with admin merge permissions who can override waiting for CI to finish
+   ahold of [somebody with admin merge permissions](https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUzDmIxKn11DPJzk/edit#) who can override waiting for CI to finish
 
 1. Recycle the app to get the new code out there (follow the [Production Deploy steps](#production))
 
