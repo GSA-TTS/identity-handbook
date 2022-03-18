@@ -77,6 +77,7 @@ Roles proceed as follows:
   * Shares context on what is happening and asks clarifying questions
 * **Tech Lead (TL)**:
   * Leads technical response, delegating technical tasks as needed
+  * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) and initiates use
   * Ensures screen sharing and other methods are used
 * **Scribe (SC)**:
   * Records all activities in #login-situation channel to create a timeline

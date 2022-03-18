@@ -31,6 +31,8 @@ For detailed information see the [Security Incident Response Guide]({% link _art
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
   * **Scribe (SC)**: Notes activities in war room (hangout) to #login-situation to produce timeline / share with others not in room
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
+    * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks)
+    * Ensures execution of relevant runbook steps, subdelegating as needed
   * **Comms Lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
     * Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
     * Incident Review document started and shared [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy)
@@ -48,6 +50,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
   - **Medium**: Suspected PII breach, suspected security penetration, partial outage
   - **Low**: Suspected attack, outage of non-prod persistent system (`int`)
 * If user or partner impacting, [StatusPage updated](https://manage.statuspage.io/login)
+* Checked [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) for relevant runbooks to execute
 * If secure shared notepad is needed, Google Doc opened and shared <https://drive.google.com/drive/folders/1TWTMp_w55niNuqC7vTPDEe5vkxaiP4P0>  (Contents should be copied to official issue)
 
 ## Remediate
