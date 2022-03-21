@@ -1,0 +1,41 @@
+backend:
+  name: github
+  repo: 18f/identity-handbook
+  base_url: https://federalistapp.18f.gov
+  auth_endpoint: external/auth/github
+  preview_context: federalist/build
+  branch: main
+
+  # optional
+  use_graphql: true
+
+media_folder: images
+
+collections:
+  - label: Articles
+    label_singular: Article
+    name: help
+    folder: _articles
+    create: true
+    summary: '{{category}}: {{title}}'
+    sortable_fields: ['category', 'title', 'commit_date', 'commit_author']
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'article' }
+      - { label: 'Title', name: 'title', widget: 'string', tagname: 'h1' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Redirect from', name: 'redirect_from', widget: list, required: false }
+      - { label: 'Redirect to', name: 'redirect_to', widget: 'string', required: false }
+      - label: 'Category'
+        name: category
+        widget: 'select'
+        options:
+          - AppDev
+          - Development
+          - Handbook
+          - Infrastructure
+          - Partnerships
+          - Product
+          - Reporting
+          - Security
+          - Team
+        default: 'get-started'
