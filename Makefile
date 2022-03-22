@@ -1,8 +1,7 @@
 run:
 	make -j2 watch_js watch_jekyll
 
-build:
-	make build_js & make build_jekyll
+build: build_js build_jekyll
 
 build_jekyll: setup .env
 	/bin/bash -c "source .env && bundle exec jekyll build"
