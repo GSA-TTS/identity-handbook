@@ -259,10 +259,29 @@ need to update the `tfbundle` variable in the `module-pipeline/variables.tf` fil
 #### Pausing Pipelines
 
 If you are testing out changes and don't want everything to auto-deploy
-for some reason, you can go into the pipelines that you want to not operate and
-click on the "Disable transition" button either after the source or the plan
-steps.  This will cause the latest change to get stuck there until you
+for some reason, you can use the AWS console or CLI to pause operations.
+This will cause the latest change to get stuck there until you
 enable the transition again.
+
+##### AWS Console
+
+You can go into the pipelines that you want to not operate and
+click on the "Disable transition" button after the source 
+steps. 
+
+
+##### CLI
+
+You can disable and enable autoterraform using `bin/disable-autotf` and `bin/enable-autotf` respectively.
+Usage instruction can be found with `-h` flag.
+ 
+```
+bin/disable-autotf [-rvh] ENV
+```
+
+```
+bin/enable-autotf [-vh] ENV
+```
 
 **BE SURE TO RE-ENABLE THIS LATER ON**
 
