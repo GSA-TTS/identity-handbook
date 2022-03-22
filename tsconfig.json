@@ -8,8 +8,9 @@
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
     "jsxImportSource": "preact",
+    "baseUrl": ".",
     "paths": {
-      "*": ["./assets/js/typings/*"]
+      "*": ["assets/js/typings/*"]
     }
   },
   "include": ["assets/js/*"]
