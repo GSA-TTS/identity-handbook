@@ -25,10 +25,4 @@ make test
 
 The site is configured to use [NetlifyCMS](https://www.netlifycms.org/), so you can make changes via UI only by going to <https://handbook.login.gov/admin>.
 
-To use the CMS locally, while `make run` is running, also run:
-
-```
-npx netlify-cms-proxy-server
-```
-
-Then view it locally at <http://localhost:4000/admin>.
+To use the CMS locally, while the server is running, view it locally at <http://localhost:4000/admin>.
