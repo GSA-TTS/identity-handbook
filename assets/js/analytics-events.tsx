@@ -1,7 +1,9 @@
 import { h, render, Fragment } from "preact";
-import { urlify } from "anchor-js";
+import Anchor from "anchor-js";
 
-function Anchor({ slug, icon = String.fromCharCode(59851) }) {
+const { urlify } = new Anchor();
+
+function AnchorLink({ slug, icon = String.fromCharCode(59851) }) {
   const setRef = (node) => {
     if (node && document.location.hash.slice(1) === slug) {
       setTimeout(() => node.scrollIntoView(), 0);
@@ -107,14 +109,14 @@ function Event({
     <div>
       <h3>
         {eventName}
-        <Anchor slug={urlify(eventName)} />
+        <AnchorLink slug={urlify(eventName)} />
       </h3>
       <p>{description}</p>
       {previousEventNames?.length ? (
         <>
           <h4>
             Previous Event Names
-            <Anchor slug={urlify(`${eventName} Previous`)} />
+            <AnchorLink slug={urlify(`${eventName} Previous`)} />
           </h4>
           <ul>
             {previousEventNames.map((name) => (
@@ -127,7 +129,7 @@ function Event({
         <>
           <h4>
             Attributes
-            <Anchor slug={urlify(`${eventName} Attributes`)} />
+            <AnchorLink slug={urlify(`${eventName} Attributes`)} />
           </h4>
           <details>
             <summary>Show attribute details</summary>
@@ -141,7 +143,7 @@ function Event({
       ) : undefined}
       <h4>
         Example
-        <Anchor slug={urlify(`${eventName} Example`)} />
+        <AnchorLink slug={urlify(`${eventName} Example`)} />
       </h4>
       <Example
         event_name={eventName}
