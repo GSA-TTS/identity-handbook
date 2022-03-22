@@ -23,7 +23,7 @@
   "scripts": {
     "clean": "rm -rf assets/js/build",
     "prebuild": "npm run clean",
-    "build": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/js/build --bundle --format=esm",
+    "build": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/build --bundle --format=esm",
     "prestart": "npm run clean",
     "start": "npm run build -- --watch",
     "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx",
