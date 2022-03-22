@@ -27,6 +27,7 @@
     "prestart": "npm run clean",
     "start": "npm run build -- --watch",
     "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx",
+    "typecheck": "tsc",
     "federalist": "npm run build"
   }
 }

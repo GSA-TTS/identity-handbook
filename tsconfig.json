@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "strictNullChecks": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "noEmit": true,
     "jsx": "preserve",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
