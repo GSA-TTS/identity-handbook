@@ -1,5 +1,6 @@
-import { h, render, Fragment } from "preact";
+import { h, render, Fragment, VNode } from "preact";
 import Anchor from "anchor-js";
+import { loggedInUser } from "./private";
 
 const anchor = new Anchor();
 const urlify = anchor.urlify.bind(anchor);
@@ -167,21 +168,36 @@ function SidebarNavItem({ name }) {
   );
 }
 
-function ErrorPage({ error, url }) {
+function AlertComponent({
+  heading,
+  content,
+}: {
+  heading?: string;
+  content?: VNode | string;
+}) {
   return (
     <div className="usa-alert usa-alert--error">
       <div className="usa-alert__body">
-        <h5 className="usa-alert__heading">Error loading event definitions</h5>
-        <div className="usa-alert__text">
-          <p>
-            There was an error loading event definitions from{" "}
-            <a href={url}>{url}</a>:
-          </p>
-          <p>{error.message}</p>
-        </div>
+        <h5 className="usa-alert__heading">{heading}</h5>
+        <div className="usa-alert__text">{content}</div>
       </div>
     </div>
   );
+}
+
+function ErrorPage({ error, url }) {
+  return AlertComponent({
+    heading: "Error loading event definitions",
+    content: (
+      <>
+        <p>
+          There was an error loading event definitions from{" "}
+          <a href={url}>{url}</a>:
+        </p>
+        <p>{error.message}</p>
+      </>
+    ),
+  });
 }
 
 function Sidenav({ events }) {
@@ -190,28 +206,39 @@ function Sidenav({ events }) {
 
 export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container") as HTMLElement;
-  const { idpBaseUrl } = container.dataset;
-  const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
-  const sidenav = document.querySelector(
-    "#sidenav .usa-sidenav__sublist:last-child"
-  ) as HTMLElement;
+  if (loggedInUser()) {
+    const { idpBaseUrl } = container.dataset;
+    const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
-  window
-    .fetch(eventsUrl)
-    .then((response) => response.json())
-    .then(({ events }) => {
-      render(<Events events={events} />, container);
-      render(<Sidenav events={events} />, sidenav);
+    const sidenav = document.querySelector(
+      "#sidenav .usa-sidenav__sublist:last-child"
+    ) as HTMLElement;
 
-      const headerToReplace = document.querySelector(
-        "#event-list"
-      ) as HTMLElement;
-      if (headerToReplace) {
-        headerToReplace.hidden = true;
-      }
-    })
-    .catch((error) =>
-      render(<ErrorPage url={eventsUrl} error={error} />, container)
+    window
+      .fetch(eventsUrl)
+      .then((response) => response.json())
+      .then(({ events }) => {
+        render(<Events events={events} />, container);
+        render(<Sidenav events={events} />, sidenav);
+
+        const headerToReplace = document.querySelector(
+          "#event-list"
+        ) as HTMLElement;
+        if (headerToReplace) {
+          headerToReplace.hidden = true;
+        }
+      })
+      .catch((error) =>
+        render(<ErrorPage url={eventsUrl} error={error} />, container)
+      );
+  } else {
+    render(
+      <AlertComponent
+        heading="Error loading event definitions"
+        content="Please log in"
+      />,
+      container
     );
+  }
 }

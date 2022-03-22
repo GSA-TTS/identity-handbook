@@ -33,6 +33,12 @@
             <!-- TODO: nav elements -->
           </ul>
 
+          <ul class="usa-nav__secondary-links">
+            <li class="usa-nav__secondary-item">
+              <div id="private-login-button-container"></div>
+            </li>
+          </ul>
+
           <div class="usa-nav__secondary-container">
             <div class="usa-search usa-search--small" role="search">
               <label class="usa-sr-only" for="basic-search-field-small">Search small</label>
@@ -92,6 +98,13 @@
         loadAnchors();
         loadPrivateEye();
       }, false);
+    </script>
+    <script type="module">
+      import { setUpPrivate } from '{{ "/assets/build/private.js" | prepend: site.baseurl }}';
+
+      setUpPrivate({
+        buttonContainer: document.getElementById('private-login-button-container'),
+      })
     </script>
   </body>
 </html>
