@@ -23,7 +23,7 @@
   "scripts": {
     "clean": "rm -rf assets/build",
     "prebuild:common": "npm run clean",
-    "build:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/build --bundle --format=esm",
+    "build:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/build --bundle --format=esm --splitting",
     "build:dev": "npm run build:common -- --sourcemap=inline",
     "build:prod": "npm run build:common -- --minify",
     "build": "npm run build:prod",
