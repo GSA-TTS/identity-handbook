@@ -276,11 +276,11 @@ You can disable and enable autoterraform using `bin/disable-autotf` and `bin/ena
 Usage instruction can be found with `-h` flag.
  
 ```
-bin/disable-autotf [-rvh] ENV
+bin/disable-autotf
 ```
 
 ```
-bin/enable-autotf [-vh] ENV
+bin/enable-autotf
 ```
 
 **BE SURE TO RE-ENABLE THIS LATER ON**
