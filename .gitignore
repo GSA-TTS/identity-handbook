@@ -3,6 +3,7 @@ _site
 .jekyll-metadata
 .jekyll-cache
 node_modules/
+assets/js/build
 
 .DS_Store
 .vscode

@@ -1,8 +1,20 @@
-run: setup .env
+run:
+	make -j2 watch_js watch_jekyll
+
+build:
+	make build_js & make build_jekyll
+
+build_jekyll: setup .env
+	/bin/bash -c "source .env && bundle exec jekyll build"
+
+watch_jekyll: .env
 	/bin/bash -c "source .env && bundle exec jekyll serve --watch"
 
-build: setup .env
-	/bin/bash -c "source .env && bundle exec jekyll build"
+build_js: setup
+	npm run build
+
+watch_js:
+	npm start
 
 setup:
 	bundle

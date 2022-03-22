@@ -3,7 +3,7 @@
 title: Login.gov Handbook
 baseurl: ""
 url: "https://handbook.login.gov"
-github_repo_url: https://github.com/18F/identity-handbook  # enables "edit this page" button
+github_repo_url: https://github.com/18F/identity-handbook # enables "edit this page" button
 
 markdown: kramdown
 
@@ -15,8 +15,6 @@ copy_to_destination:
   - node_modules/identity-style-guide/dist/assets
   - node_modules/anchor-js/anchor.min.js
   - node_modules/@18f/private-eye/private-eye.js
-  - node_modules/preact/dist/preact.module.js
-  - node_modules/htm/dist/htm.module.js
 
 plugins:
   - jekyll-redirect-from

@@ -9,5 +9,15 @@
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "pragma": "h",
+      "fragment": "Fragment",
+      "version": "16.2"
+    }
+  },
+  "rules": {
+    "react/jsx-uses-react": "error"
   }
 }

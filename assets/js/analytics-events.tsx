@@ -1,0 +1,214 @@
+import { h, render, Fragment } from "preact";
+import { urlify } from "anchor-js";
+
+function Anchor({ slug, icon = String.fromCharCode(59851) }) {
+  const setRef = (node) => {
+    if (node && document.location.hash.slice(1) === slug) {
+      setTimeout(() => node.scrollIntoView(), 0);
+    }
+  };
+
+  return (
+    // See: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/423
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    <a
+      ref={setRef}
+      className="anchorjs-link"
+      aria-label="Anchor"
+      data-anchorjs-icon={icon}
+      id={slug}
+      href={`#${slug}`}
+      style={{ font: "1em / 1 anchorjs-icons", paddingLeft: "0.375em" }}
+    />
+  );
+}
+
+function Example({
+  event_name: eventName,
+  previous_event_names: previousEventNames,
+  attributes,
+}) {
+  function typeExample(type) {
+    switch (type) {
+      case "Boolean":
+        return ["true", "false"];
+      case "Integer":
+        return 0;
+      case "Hash":
+        return "{}";
+      default:
+        return type;
+    }
+  }
+
+  const attributeExamples = attributes.flatMap(
+    ({ name, types, description }) => {
+      const value = types.flatMap((type) => typeExample(type)).join(" | ");
+
+      const example = [`${name}: ${value},`];
+
+      if (description) {
+        example.unshift(`// ${description}`);
+      }
+
+      return example;
+    }
+  );
+
+  if (attributeExamples.length) {
+    attributeExamples.unshift("");
+    attributeExamples.push("");
+  }
+
+  const eventProperties = attributeExamples
+    .join("\n      ")
+    .replace(/ {2}$/, ""); // fix last line indentation
+
+  const names = [eventName, ...(previousEventNames || [])]
+    .map((s) => JSON.stringify(s))
+    .join(" | ");
+
+  const example = `{
+  name: ${names},
+  properties: {
+    event_properties: {${eventProperties}}
+  }
+}`;
+
+  return (
+    <code>
+      <pre className="overflow-x-scroll">{example}</pre>
+    </code>
+  );
+}
+
+function Attribute({ name, types, description }) {
+  return (
+    <li>
+      <kbd>{name}</kbd>
+      {types?.length > 0 && (
+        <>
+          {" "}
+          <span>({types.join(", ")})</span>
+        </>
+      )}
+      <p>{description}</p>
+    </li>
+  );
+}
+
+function Event({
+  event_name: eventName,
+  previous_event_names: previousEventNames,
+  description,
+  attributes = [],
+}) {
+  return (
+    <div>
+      <h3>
+        {eventName}
+        <Anchor slug={urlify(eventName)} />
+      </h3>
+      <p>{description}</p>
+      {previousEventNames?.length ? (
+        <>
+          <h4>
+            Previous Event Names
+            <Anchor slug={urlify(`${eventName} Previous`)} />
+          </h4>
+          <ul>
+            {previousEventNames.map((name) => (
+              <li>{name}</li>
+            ))}
+          </ul>
+        </>
+      ) : undefined}
+      {attributes?.length ? (
+        <>
+          <h4>
+            Attributes
+            <Anchor slug={urlify(`${eventName} Attributes`)} />
+          </h4>
+          <details>
+            <summary>Show attribute details</summary>
+            <ul>
+              {attributes.map((attribute) => (
+                <Attribute {...attribute} />
+              ))}
+            </ul>
+          </details>
+        </>
+      ) : undefined}
+      <h4>
+        Example
+        <Anchor slug={urlify(`${eventName} Example`)} />
+      </h4>
+      <Example
+        event_name={eventName}
+        previous_event_names={previousEventNames}
+        attributes={attributes}
+      />
+    </div>
+  );
+}
+
+function Events({ events }) {
+  return events.map((event) => <Event {...event} />);
+}
+
+function SidebarNavItem({ name }) {
+  return (
+    <li className="usa-sidenav__item">
+      <a href={`#${urlify(name)}`}>{name}</a>
+    </li>
+  );
+}
+
+function ErrorPage({ error, url }) {
+  return (
+    <div className="usa-alert usa-alert--error">
+      <div className="usa-alert__body">
+        <h5 className="usa-alert__heading">Error loading event definitions</h5>
+        <div className="usa-alert__text">
+          <p>
+            There was an error loading event definitions from{" "}
+            <a href={url}>{url}</a>:
+          </p>
+          <p>{error.message}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Sidenav({ events }) {
+  return events.map(({ event_name: name }) => <SidebarNavItem name={name} />);
+}
+
+export function loadAnalyticsEvents() {
+  const container = document.querySelector("#events-container") as HTMLElement;
+  const { idpBaseUrl } = container.dataset;
+  const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
+
+  const sidenav = document.querySelector(
+    "#sidenav .usa-sidenav__sublist:last-child"
+  ) as HTMLElement;
+
+  window
+    .fetch(eventsUrl)
+    .then((response) => response.json())
+    .then(({ events }) => {
+      render(<Events events={events} />, container);
+      render(<Sidenav events={events} />, sidenav);
+
+      const headerToReplace = document.querySelector(
+        "#event-list"
+      ) as HTMLElement;
+      if (headerToReplace) {
+        headerToReplace.hidden = true;
+      }
+    })
+    .catch((error) =>
+      render(<ErrorPage url={eventsUrl} error={error} />, container)
+    );
+}
