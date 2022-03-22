@@ -22,11 +22,14 @@
     "typescript": "^4.6.2"
   },
   "scripts": {
-    "clean": "rm -rf assets/js/build",
-    "prebuild": "npm run clean",
-    "build": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/js/build --bundle --format=esm",
+    "clean": "rm -rf assets/build",
+    "prebuild:common": "npm run clean",
+    "build:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/build --bundle --format=esm",
+    "build:dev": "npm run build:common -- --sourcemap=inline",
+    "build:prod": "npm run build:common -- --minify",
+    "build": "npm run build:prod",
     "prestart": "npm run clean",
-    "start": "npm run build -- --watch",
+    "start": "npm run build:dev -- --watch",
     "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc",
     "federalist": "npm run build"
