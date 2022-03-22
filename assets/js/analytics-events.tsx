@@ -1,7 +1,7 @@
 import { h, render, Fragment } from "preact";
 import Anchor from "anchor-js";
 
-const anchor = new Anchor();
+const anchor = new Anchor() as any;
 const urlify = anchor.urlify.bind(anchor);
 
 function AnchorLink({ slug, icon = String.fromCharCode(59851) }) {
