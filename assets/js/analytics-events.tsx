@@ -1,11 +1,34 @@
 import { h, render, Fragment } from "preact";
 import Anchor from "anchor-js";
 
+interface AnalyticsEventAttribute {
+  name: string;
+  types: string[];
+  description: string;
+}
+
+interface AnalyticsEvent {
+  event_name: string;
+  previous_event_names?: string[];
+  description: string;
+  attributes: AnalyticsEventAttribute[];
+}
+
+interface AnalyticsEventsResponse {
+  events: AnalyticsEvent[];
+}
+
 const anchor = new Anchor();
 const urlify = anchor.urlify.bind(anchor);
 
-function AnchorLink({ slug, icon = String.fromCharCode(59851) }) {
-  const setRef = (node) => {
+function AnchorLink({
+  slug,
+  icon = String.fromCharCode(59851),
+}: {
+  slug: string;
+  icon?: string;
+}) {
+  const setRef = (node: HTMLElement | null) => {
     if (node && document.location.hash.slice(1) === slug) {
       setTimeout(() => node.scrollIntoView(), 0);
     }
@@ -30,8 +53,8 @@ function Example({
   event_name: eventName,
   previous_event_names: previousEventNames,
   attributes,
-}) {
-  function typeExample(type) {
+}: Pick<AnalyticsEvent, "event_name" | "previous_event_names" | "attributes">) {
+  function typeExample(type: string) {
     switch (type) {
       case "Boolean":
         return ["true", "false"];
@@ -85,7 +108,7 @@ function Example({
   );
 }
 
-function Attribute({ name, types, description }) {
+function Attribute({ name, types, description }: AnalyticsEventAttribute) {
   return (
     <li>
       <kbd>{name}</kbd>
@@ -105,7 +128,7 @@ function Event({
   previous_event_names: previousEventNames,
   description,
   attributes = [],
-}) {
+}: AnalyticsEvent) {
   return (
     <div>
       <h3>
@@ -155,11 +178,17 @@ function Event({
   );
 }
 
-function Events({ events }) {
-  return events.map((event) => <Event {...event} />);
+function Events({ events }: { events: AnalyticsEvent[] }) {
+  return (
+    <>
+      {events.map((event) => (
+        <Event {...event} />
+      ))}
+    </>
+  );
 }
 
-function SidebarNavItem({ name }) {
+function SidebarNavItem({ name }: { name: string }) {
   return (
     <li className="usa-sidenav__item">
       <a href={`#${urlify(name)}`}>{name}</a>
@@ -167,7 +196,7 @@ function SidebarNavItem({ name }) {
   );
 }
 
-function ErrorPage({ error, url }) {
+function ErrorPage({ error, url }: { error: Error; url: string }) {
   return (
     <div className="usa-alert usa-alert--error">
       <div className="usa-alert__body">
@@ -184,8 +213,14 @@ function ErrorPage({ error, url }) {
   );
 }
 
-function Sidenav({ events }) {
-  return events.map(({ event_name: name }) => <SidebarNavItem name={name} />);
+function Sidenav({ events }: { events: AnalyticsEvent[] }) {
+  return (
+    <>
+      {events.map(({ event_name: name }) => (
+        <SidebarNavItem name={name} />
+      ))}
+    </>
+  );
 }
 
 export function loadAnalyticsEvents() {
