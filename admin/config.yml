@@ -38,4 +38,5 @@ collections:
           - Reporting
           - Security
           - Team
-        default: 'get-started'
+        default: Team
+      - { label: 'Body', name: 'body', widget: 'markdown' }
