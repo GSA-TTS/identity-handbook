@@ -26,6 +26,7 @@
     "build": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/js/build --bundle --format=esm",
     "prestart": "npm run clean",
     "start": "npm run build -- --watch",
-    "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx",
+    "federalist": "npm run build"
   }
 }
