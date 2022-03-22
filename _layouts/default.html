@@ -85,8 +85,8 @@
       });
     </script>
     <script type="module">
-      import { loadAnchors } from '{{ "/assets/js/build/anchors.js" | prepend: site.baseurl }}';
-      import { loadPrivateEye } from '{{ "/assets/js/build/private-links.js" | prepend: site.baseurl }}';
+      import { loadAnchors } from '{{ "/assets/build/anchors.js" | prepend: site.baseurl }}';
+      import { loadPrivateEye } from '{{ "/assets/build/private-links.js" | prepend: site.baseurl }}';
 
       document.addEventListener('DOMContentLoaded', () => {
         loadAnchors();
