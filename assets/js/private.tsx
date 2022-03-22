@@ -1,37 +1,5 @@
-import { h, render, Fragment } from "preact";
+import { h, render } from "preact";
 import { useState } from "preact/hooks";
-
-function PrivateLoginButton({
-  initialUser: initialUser,
-}: {
-  initialUser?: NetlifyUser;
-}) {
-  const [currentUser, setCurrentUser] = useState(initialUser);
-
-  if (currentUser) {
-    return (
-      <div>
-        <img
-          src={currentUser.avatar_url}
-          alt="Current User Avatar"
-          height="30"
-        />
-        @{currentUser.login}
-        <button
-          class="usa-button usa-button--gray"
-          onClick={() => {
-            logOut();
-            setCurrentUser(undefined);
-          }}
-        >
-          Log Out
-        </button>
-      </div>
-    );
-  } else {
-    return <a class="usa-button" href="/admin">Private Login</a>;
-  }
-}
 
 interface NetlifyUser {
   avatar_url: string;
@@ -58,6 +26,38 @@ export function loggedInUser(): NetlifyUser | undefined {
 
 function logOut() {
   localStorage.removeItem(NETLIFY_USER_KEY);
+}
+
+function PrivateLoginButton({ initialUser }: { initialUser?: NetlifyUser }) {
+  const [currentUser, setCurrentUser] = useState(initialUser);
+
+  if (currentUser) {
+    return (
+      <div>
+        <img
+          src={currentUser.avatar_url}
+          alt="Current User Avatar"
+          height="30"
+        />
+        @{currentUser.login}
+        <button
+          type="button"
+          className="usa-button usa-button--gray"
+          onClick={() => {
+            logOut();
+            setCurrentUser(undefined);
+          }}
+        >
+          Log Out
+        </button>
+      </div>
+    );
+  }
+  return (
+    <a className="usa-button" href="/admin">
+      Private Login
+    </a>
+  );
 }
 
 export function setUpPrivate({
