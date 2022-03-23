@@ -14,10 +14,6 @@ interface AnalyticsEvent {
   attributes: AnalyticsEventAttribute[];
 }
 
-interface AnalyticsEventsResponse {
-  events: AnalyticsEvent[];
-}
-
 const anchor = new Anchor();
 const urlify = anchor.urlify.bind(anchor);
 
