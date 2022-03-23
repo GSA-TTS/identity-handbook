@@ -1,9 +1,7 @@
 import Anchor from "anchor-js";
 import PrivateEye from "@18f/private-eye";
 import "simple-jekyll-search";
-
-// eslint-disable-next-line import/no-unresolved
-import { SimpleJekyllSearchGlobals } from "simple-jekyll-search-types";
+import type { SimpleJekyllSearchGlobals } from "simple-jekyll-search-types";
 
 export const loadAnchors = () => {
   new Anchor().add(
