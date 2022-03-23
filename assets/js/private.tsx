@@ -44,16 +44,17 @@ function PrivateLoginButton({ baseUrl }: { baseUrl: string }) {
 
   if (currentUser) {
     return (
-      <div>
+      <div className="display-flex flex-align-center">
         <img
           src={currentUser.avatar_url}
           alt="Current User Avatar"
           height="30"
+          className="margin-right-1"
         />
         @{currentUser.login}
         <button
           type="button"
-          className="usa-button usa-button--gray"
+          className="usa-button usa-button--gray margin-left-1"
           onClick={logOut}
         >
           Log Out
