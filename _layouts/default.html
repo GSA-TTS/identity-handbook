@@ -36,7 +36,12 @@
           <div class="usa-nav__secondary-container">
             <div class="usa-search usa-search--small" role="search">
               <label class="usa-sr-only" for="basic-search-field-small">Search small</label>
-              <input type="text" id="search-input" name="search" placeholder="Search articles...">
+              <input
+                type="text"
+                id="search-input"
+                name="search"
+                placeholder="Search articles..."
+                data-search-json-path="{{ site.baseurl }}/search.json" />
               <ul id="search-results"></ul>
             </div>
           </div>
@@ -84,12 +89,7 @@
       document.addEventListener('DOMContentLoaded', () => {
         loadAnchors();
         loadPrivateEye();
-        loadSimpleJekyllSearch({
-          searchInput: document.getElementById('search-input'),
-          resultsContainer: document.getElementById('search-results'),
-          json: '{{ site.baseurl }}/search.json',
-          noResultsText: '<li class="no-results">No results were found.</li>',
-        });
+        loadSimpleJekyllSearch();
       }, false);
     </script>
   </body>

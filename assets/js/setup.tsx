@@ -1,10 +1,7 @@
 import Anchor from "anchor-js";
 import PrivateEye from "@18f/private-eye";
 import "simple-jekyll-search";
-import {
-  SimpleJekyllSearchParams,
-  SimpleJekyllSearchGlobals,
-} from "simple-jekyll-search-types";
+import { SimpleJekyllSearchGlobals } from "simple-jekyll-search-types";
 
 export const loadAnchors = () => {
   new Anchor().add(
@@ -51,15 +48,13 @@ export const loadPrivateEye = () => {
   });
 };
 
-export const loadSimpleJekyllSearch = ({
-  searchInput,
-  resultsContainer,
-  json,
-  noResultsText,
-}: SimpleJekyllSearchParams) =>
+export const loadSimpleJekyllSearch = () => {
+  const searchInput = document.getElementById("search-input") as HTMLElement;
+
   (window as SimpleJekyllSearchGlobals).SimpleJekyllSearch({
     searchInput,
-    resultsContainer,
-    json,
-    noResultsText,
+    resultsContainer: document.getElementById("search-results") as HTMLElement,
+    json: searchInput.dataset.searchJsonPath as string,
+    noResultsText: '<li class="no-results">No results were found.</li>',
   });
+};
