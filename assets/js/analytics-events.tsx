@@ -193,7 +193,7 @@ function SidebarNavItem({ name }: { name: string }) {
   );
 }
 
-function AlertComponent({
+function Alert({
   heading,
   content,
 }: {
