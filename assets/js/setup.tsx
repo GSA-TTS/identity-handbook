@@ -2,6 +2,7 @@ import Anchor from "anchor-js";
 import PrivateEye from "@18f/private-eye";
 import "simple-jekyll-search";
 import type { SimpleJekyllSearchGlobals } from "simple-jekyll-search-types";
+import { setUpPrivate } from "./private";
 
 export const loadAnchors = () => {
   new Anchor().add(
@@ -56,3 +57,5 @@ export const loadSimpleJekyllSearch = () => {
     noResultsText: '<li class="no-results">No results were found.</li>',
   });
 };
+
+export { setUpPrivate };

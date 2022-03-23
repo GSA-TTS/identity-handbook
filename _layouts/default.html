@@ -13,7 +13,7 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body data-base-url="{{ site.baseurl }}">
+  <body data-base-url="{{site.baseurl}}">
     <header class="usa-header usa-header--basic" role="banner">
       <div class="usa-nav-container">
         <div class="usa-navbar">
@@ -31,6 +31,12 @@
           <button class="usa-nav__close"><img src="/assets/img/close.svg" alt="Close"></button>
           <ul class="usa-nav__primary usa-accordion">
             <!-- TODO: nav elements -->
+          </ul>
+
+          <ul class="usa-nav__secondary-links">
+            <li class="usa-nav__secondary-item">
+              <span id="private-login-button-container" class="margin-right-1"></span>
+            </li>
           </ul>
 
           <div class="usa-nav__secondary-container">
@@ -79,12 +85,14 @@
         loadAnchors,
         loadPrivateEye,
         loadSimpleJekyllSearch,
+        setUpPrivate
       } from '{{ "/assets/build/setup.js" | prepend: site.baseurl }}';
 
       document.addEventListener('DOMContentLoaded', () => {
         loadAnchors();
         loadPrivateEye();
         loadSimpleJekyllSearch();
+        setUpPrivate();
       }, false);
     </script>
   </body>

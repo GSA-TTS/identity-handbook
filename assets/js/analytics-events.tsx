@@ -1,5 +1,6 @@
-import { h, render, Fragment } from "preact";
+import { h, render, Fragment, ComponentChildren } from "preact";
 import Anchor from "anchor-js";
+import { loggedInUser, PrivateLoginLink } from "./private";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -192,20 +193,32 @@ function SidebarNavItem({ name }: { name: string }) {
   );
 }
 
-function ErrorPage({ error, url }: { error: Error; url: string }) {
+function Alert({
+  heading,
+  children,
+}: {
+  heading?: string;
+  children: ComponentChildren;
+}) {
   return (
     <div className="usa-alert usa-alert--error">
       <div className="usa-alert__body">
-        <h5 className="usa-alert__heading">Error loading event definitions</h5>
-        <div className="usa-alert__text">
-          <p>
-            There was an error loading event definitions from{" "}
-            <a href={url}>{url}</a>:
-          </p>
-          <p>{error.message}</p>
-        </div>
+        <h5 className="usa-alert__heading">{heading}</h5>
+        <div className="usa-alert__text">{children}</div>
       </div>
     </div>
+  );
+}
+
+function ErrorPage({ error, url }: { error: Error; url: string }) {
+  return (
+    <Alert heading="Error loading event definitions">
+      <p>
+        There was an error loading event definitions from{" "}
+        <a href={url}>{url}</a>:
+      </p>
+      <p>{error.message}</p>
+    </Alert>
   );
 }
 
@@ -221,28 +234,39 @@ function Sidenav({ events }: { events: AnalyticsEvent[] }) {
 
 export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container") as HTMLElement;
-  const { idpBaseUrl } = container.dataset;
-  const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
+  const jekyllBaseUrl = document.body.dataset.baseUrl as string;
 
-  const sidenav = document.querySelector(
-    "#sidenav .usa-sidenav__sublist:last-child"
-  ) as HTMLElement;
+  if (loggedInUser()) {
+    const { idpBaseUrl } = container.dataset;
+    const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
-  window
-    .fetch(eventsUrl)
-    .then((response) => response.json())
-    .then(({ events }) => {
-      render(<Events events={events} />, container);
-      render(<Sidenav events={events} />, sidenav);
+    const sidenav = document.querySelector(
+      "#sidenav .usa-sidenav__sublist:last-child"
+    ) as HTMLElement;
 
-      const headerToReplace = document.querySelector(
-        "#event-list"
-      ) as HTMLElement;
-      if (headerToReplace) {
-        headerToReplace.hidden = true;
-      }
-    })
-    .catch((error) =>
-      render(<ErrorPage url={eventsUrl} error={error} />, container)
+    window
+      .fetch(eventsUrl)
+      .then((response) => response.json())
+      .then(({ events }) => {
+        render(<Events events={events} />, container);
+        render(<Sidenav events={events} />, sidenav);
+
+        const headerToReplace = document.querySelector(
+          "#event-list"
+        ) as HTMLElement;
+        if (headerToReplace) {
+          headerToReplace.hidden = true;
+        }
+      })
+      .catch((error) =>
+        render(<ErrorPage url={eventsUrl} error={error} />, container)
+      );
+  } else {
+    render(
+      <Alert heading="Error loading event definitions">
+        Event definitions require <PrivateLoginLink baseUrl={jekyllBaseUrl} />
+      </Alert>,
+      container
     );
+  }
 }
