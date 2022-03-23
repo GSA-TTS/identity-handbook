@@ -13,7 +13,7 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body>
+  <body data-base-url="{{ site.baseurl }}">
     <header class="usa-header usa-header--basic" role="banner">
       <div class="usa-nav-container">
         <div class="usa-navbar">
@@ -74,23 +74,17 @@
         </div>
       </div>
     </footer>
-
-    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/simple-jekyll-search.min.js"></script>
-    <script type="text/javascript">
-      var sjs = SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('search-results'),
-        json: '{{ site.baseurl }}/search.json',
-        noResultsText: '<li class="no-results">No results were found.</li>'
-      });
-    </script>
     <script type="module">
-      import { loadAnchors } from '{{ "/assets/build/anchors.js" | prepend: site.baseurl }}';
-      import { loadPrivateEye } from '{{ "/assets/build/private-links.js" | prepend: site.baseurl }}';
+      import {
+        loadAnchors,
+        loadPrivateEye,
+        loadSimpleJekyllSearch,
+      } from '{{ "/assets/build/setup.js" | prepend: site.baseurl }}';
 
       document.addEventListener('DOMContentLoaded', () => {
         loadAnchors();
         loadPrivateEye();
+        loadSimpleJekyllSearch();
       }, false);
     </script>
   </body>

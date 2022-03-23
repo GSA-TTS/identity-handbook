@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "strict": true,
-    "noImplicitAny": false,
     "esModuleInterop": true,
     "noEmit": true,
     "jsx": "preserve",
@@ -11,7 +10,8 @@
     "baseUrl": ".",
     "paths": {
       "*": ["assets/js/typings/*"]
-    }
+    },
+    "lib": ["ES2020"]
   },
   "include": ["assets/js/*"]
 }
