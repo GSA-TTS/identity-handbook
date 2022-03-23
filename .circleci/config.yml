@@ -39,6 +39,9 @@ jobs:
           name: Run lints
           command: make lint
       - run:
+          name: Run JavaScript typechecking
+          command: make typecheck
+      - run:
           name: Run test
           command: make test
       - run: find _site -type f

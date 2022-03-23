@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "jsxImportSource": "preact",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["assets/js/typings/*"]
+    }
+  },
+  "include": ["assets/js/*"]
+}

@@ -1,8 +1,19 @@
-run: setup .env
+run: build_js
+	make -j2 watch_js watch_jekyll
+
+build: setup build_js build_jekyll
+
+build_jekyll: .env
+	/bin/bash -c "source .env && bundle exec jekyll build"
+
+watch_jekyll: .env
 	/bin/bash -c "source .env && bundle exec jekyll serve --watch"
 
-build: setup .env
-	/bin/bash -c "source .env && bundle exec jekyll build"
+build_js:
+	npm run build
+
+watch_js:
+	npm start
 
 setup:
 	bundle
@@ -10,6 +21,9 @@ setup:
 
 lint:
 	npm run lint
+
+typecheck:
+	npm run typecheck
 
 test: build
 	bundle exec rspec spec
@@ -21,4 +35,4 @@ clean:
 .env:
 	cp -n .env.example .env
 
-.PHONY: run build setup lint
+.PHONY: run build build_jekyll watch_jekyll build_js watch_js setup lint typecheck test clean
