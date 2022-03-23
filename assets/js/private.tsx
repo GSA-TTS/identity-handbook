@@ -39,15 +39,11 @@ function useCurrentUser(): [NetlifyUser | undefined, () => void] {
   return [currentUser, logOut];
 }
 
-export function PrivateLoginButton({ baseUrl }: { baseUrl: string }): VNode {
-  return (
-    <a className="usa-button" href={`${baseUrl}/admin`}>
-      Private Login
-    </a>
-  );
+export function PrivateLoginLink({ baseUrl }: { baseUrl: string }): VNode {
+  return <a href={`${baseUrl}/admin`}>Private Login</a>;
 }
 
-function PrivateLoginButtonOrAvatar({ baseUrl }: { baseUrl: string }) {
+function PrivateLoginLinkOrAvatar({ baseUrl }: { baseUrl: string }) {
   const [currentUser, logOut] = useCurrentUser();
 
   if (currentUser) {
@@ -70,7 +66,7 @@ function PrivateLoginButtonOrAvatar({ baseUrl }: { baseUrl: string }) {
       </div>
     );
   }
-  return <PrivateLoginButton baseUrl={baseUrl} />;
+  return <PrivateLoginLink baseUrl={baseUrl} />;
 }
 
 export function setUpPrivate() {
@@ -80,5 +76,5 @@ export function setUpPrivate() {
 
   const baseUrl = document.body.dataset.baseUrl as string;
 
-  render(<PrivateLoginButtonOrAvatar baseUrl={baseUrl} />, buttonContainer);
+  render(<PrivateLoginLinkOrAvatar baseUrl={baseUrl} />, buttonContainer);
 }

@@ -1,6 +1,6 @@
 import { h, render, Fragment, ComponentChildren } from "preact";
 import Anchor from "anchor-js";
-import { loggedInUser, PrivateLoginButton } from "./private";
+import { loggedInUser, PrivateLoginLink } from "./private";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -264,8 +264,7 @@ export function loadAnalyticsEvents() {
   } else {
     render(
       <Alert heading="Error loading event definitions">
-        <p>Please log in</p>
-        <PrivateLoginButton baseUrl={jekyllBaseUrl} />
+        Event definitions require <PrivateLoginLink baseUrl={jekyllBaseUrl} />
       </Alert>,
       container
     );
