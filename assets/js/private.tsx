@@ -62,7 +62,7 @@ function PrivateLoginButton({ baseUrl }: { baseUrl: string }) {
     );
   }
   return (
-    <a className="usa-button" href={baseUrl + "/admin"}>
+    <a className="usa-button" href={`${baseUrl}/admin`}>
       Private Login
     </a>
   );
