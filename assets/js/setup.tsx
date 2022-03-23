@@ -51,12 +51,10 @@ export const loadPrivateEye = () => {
 };
 
 export const loadSimpleJekyllSearch = () => {
-  const searchInput = document.getElementById("search-input") as HTMLElement;
-
   (window as SimpleJekyllSearchGlobals).SimpleJekyllSearch({
-    searchInput,
+    searchInput: document.getElementById("search-input") as HTMLElement,
     resultsContainer: document.getElementById("search-results") as HTMLElement,
-    json: searchInput.dataset.searchJsonPath as string,
+    json: `${document.body.dataset.baseUrl}/search.json`,
     noResultsText: '<li class="no-results">No results were found.</li>',
   });
 };
