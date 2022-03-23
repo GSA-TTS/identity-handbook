@@ -210,7 +210,7 @@ function AlertComponent({
   );
 }
 
-function ErrorPage({ error, url }: { error: Error, url: string }) {
+function ErrorPage({ error, url }: { error: Error; url: string }) {
   return AlertComponent({
     heading: "Error loading event definitions",
     content: (
