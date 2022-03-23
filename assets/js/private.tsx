@@ -24,12 +24,23 @@ export function loggedInUser(): NetlifyUser | undefined {
   }
 }
 
-function logOut() {
+function removeLoggedInUser() {
   localStorage.removeItem(NETLIFY_USER_KEY);
 }
 
-function PrivateLoginButton({ initialUser }: { initialUser?: NetlifyUser }) {
-  const [currentUser, setCurrentUser] = useState(initialUser);
+function useCurrentUser(): [NetlifyUser | undefined, () => void] {
+  const [currentUser, setCurrentUser] = useState(loggedInUser());
+
+  const logOut = () => {
+    removeLoggedInUser();
+    setCurrentUser(undefined);
+  };
+
+  return [currentUser, logOut];
+}
+
+function PrivateLoginButton({ baseUrl }: { baseUrl: string }) {
+  const [currentUser, logOut] = useCurrentUser();
 
   if (currentUser) {
     return (
@@ -43,10 +54,7 @@ function PrivateLoginButton({ initialUser }: { initialUser?: NetlifyUser }) {
         <button
           type="button"
           className="usa-button usa-button--gray"
-          onClick={() => {
-            logOut();
-            setCurrentUser(undefined);
-          }}
+          onClick={logOut}
         >
           Log Out
         </button>
@@ -54,16 +62,18 @@ function PrivateLoginButton({ initialUser }: { initialUser?: NetlifyUser }) {
     );
   }
   return (
-    <a className="usa-button" href="/admin">
+    <a className="usa-button" href={baseUrl + "/admin"}>
       Private Login
     </a>
   );
 }
 
-export function setUpPrivate({
-  buttonContainer,
-}: {
-  buttonContainer: HTMLElement;
-}) {
-  render(<PrivateLoginButton initialUser={loggedInUser()} />, buttonContainer);
+export function setUpPrivate() {
+  const buttonContainer = document.getElementById(
+    "private-login-button-container"
+  ) as HTMLElement;
+
+  const baseUrl = document.body.dataset.baseUrl as string;
+
+  render(<PrivateLoginButton baseUrl={baseUrl} />, buttonContainer);
 }

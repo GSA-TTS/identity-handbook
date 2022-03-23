@@ -13,7 +13,7 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body>
+  <body data-base-url="{{site.baseurl}}">
     <header class="usa-header usa-header--basic" role="banner">
       <div class="usa-nav-container">
         <div class="usa-navbar">
@@ -102,9 +102,7 @@
     <script type="module">
       import { setUpPrivate } from '{{ "/assets/build/private.js" | prepend: site.baseurl }}';
 
-      setUpPrivate({
-        buttonContainer: document.getElementById('private-login-button-container'),
-      });
+      setUpPrivate();
     </script>
   </body>
 </html>
