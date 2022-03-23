@@ -211,7 +211,7 @@ function Alert({
 }
 
 function ErrorPage({ error, url }: { error: Error; url: string }) {
-  return AlertComponent({
+  return <AlertComponent
     heading: "Error loading event definitions",
     content: (
       <>
