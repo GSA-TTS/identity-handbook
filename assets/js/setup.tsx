@@ -1,3 +1,4 @@
+import { setUpPrivate } from "./private";
 import Anchor from "anchor-js";
 import PrivateEye from "@18f/private-eye";
 import "simple-jekyll-search";
@@ -58,3 +59,5 @@ export const loadSimpleJekyllSearch = () => {
     noResultsText: '<li class="no-results">No results were found.</li>',
   });
 };
+
+export { setUpPrivate };
