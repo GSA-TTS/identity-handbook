@@ -1,4 +1,4 @@
-import { h, render } from "preact";
+import { h, render, VNode } from "preact";
 import { useState } from "preact/hooks";
 
 interface NetlifyUser {
@@ -39,7 +39,15 @@ function useCurrentUser(): [NetlifyUser | undefined, () => void] {
   return [currentUser, logOut];
 }
 
-function PrivateLoginButton({ baseUrl }: { baseUrl: string }) {
+export function PrivateLoginButton({ baseUrl }: { baseUrl: string }): VNode {
+  return (
+    <a className="usa-button" href={`${baseUrl}/admin`}>
+      Private Login
+    </a>
+  );
+}
+
+function PrivateLoginButtonOrAvatar({ baseUrl }: { baseUrl: string }) {
   const [currentUser, logOut] = useCurrentUser();
 
   if (currentUser) {
@@ -62,11 +70,7 @@ function PrivateLoginButton({ baseUrl }: { baseUrl: string }) {
       </div>
     );
   }
-  return (
-    <a className="usa-button" href={`${baseUrl}/admin`}>
-      Private Login
-    </a>
-  );
+  return <PrivateLoginButton baseUrl={baseUrl} />;
 }
 
 export function setUpPrivate() {
@@ -76,5 +80,5 @@ export function setUpPrivate() {
 
   const baseUrl = document.body.dataset.baseUrl as string;
 
-  render(<PrivateLoginButton baseUrl={baseUrl} />, buttonContainer);
+  render(<PrivateLoginButtonOrAvatar baseUrl={baseUrl} />, buttonContainer);
 }

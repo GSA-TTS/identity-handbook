@@ -1,6 +1,6 @@
-import { h, render, Fragment, VNode } from "preact";
+import { h, render, Fragment, ComponentChildren } from "preact";
 import Anchor from "anchor-js";
-import { loggedInUser } from "./private";
+import { loggedInUser, PrivateLoginButton } from "./private";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -195,34 +195,31 @@ function SidebarNavItem({ name }: { name: string }) {
 
 function Alert({
   heading,
-  content,
+  children,
 }: {
   heading?: string;
-  content?: VNode | string;
+  children: ComponentChildren;
 }) {
   return (
     <div className="usa-alert usa-alert--error">
       <div className="usa-alert__body">
         <h5 className="usa-alert__heading">{heading}</h5>
-        <div className="usa-alert__text">{content}</div>
+        <div className="usa-alert__text">{children}</div>
       </div>
     </div>
   );
 }
 
 function ErrorPage({ error, url }: { error: Error; url: string }) {
-  return <AlertComponent
-    heading: "Error loading event definitions",
-    content: (
-      <>
-        <p>
-          There was an error loading event definitions from{" "}
-          <a href={url}>{url}</a>:
-        </p>
-        <p>{error.message}</p>
-      </>
-    ),
-  });
+  return (
+    <Alert heading="Error loading event definitions">
+      <p>
+        There was an error loading event definitions from{" "}
+        <a href={url}>{url}</a>:
+      </p>
+      <p>{error.message}</p>
+    </Alert>
+  );
 }
 
 function Sidenav({ events }: { events: AnalyticsEvent[] }) {
@@ -237,6 +234,7 @@ function Sidenav({ events }: { events: AnalyticsEvent[] }) {
 
 export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container") as HTMLElement;
+  const jekyllBaseUrl = document.body.dataset.baseUrl as string;
 
   if (loggedInUser()) {
     const { idpBaseUrl } = container.dataset;
@@ -265,10 +263,10 @@ export function loadAnalyticsEvents() {
       );
   } else {
     render(
-      <AlertComponent
-        heading="Error loading event definitions"
-        content="Please log in"
-      />,
+      <Alert heading="Error loading event definitions">
+        <p>Please log in</p>
+        <PrivateLoginButton baseUrl={jekyllBaseUrl} />
+      </Alert>,
       container
     );
   }
