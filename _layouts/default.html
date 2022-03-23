@@ -80,23 +80,17 @@
         </div>
       </div>
     </footer>
-
-    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/simple-jekyll-search.min.js"></script>
-    <script type="text/javascript">
-      var sjs = SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('search-results'),
-        json: '{{ site.baseurl }}/search.json',
-        noResultsText: '<li class="no-results">No results were found.</li>'
-      });
-    </script>
     <script type="module">
-      import { loadAnchors } from '{{ "/assets/build/anchors.js" | prepend: site.baseurl }}';
-      import { loadPrivateEye } from '{{ "/assets/build/private-links.js" | prepend: site.baseurl }}';
+      import {
+        loadAnchors,
+        loadPrivateEye,
+        loadSimpleJekyllSearch,
+      } from '{{ "/assets/build/setup.js" | prepend: site.baseurl }}';
 
       document.addEventListener('DOMContentLoaded', () => {
         loadAnchors();
         loadPrivateEye();
+        loadSimpleJekyllSearch();
       }, false);
     </script>
     <script type="module">
