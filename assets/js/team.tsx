@@ -39,7 +39,7 @@ function TeamMemberRoster({ members }: { members: TeamMember[] }) {
       {members
         .sort(({ name: aName }, { name: bName }) => aName.localeCompare(bName))
         .map(({ name, github, email, subteam, responsibilities, fed, aws }) => (
-          <li>
+          <li key={github}>
             <strong>{name}</strong> <GithubLink username={github} />
             <br />
             Email: {email}
@@ -63,7 +63,7 @@ function AlumRoster({ members }: { members: Alum[] }) {
       {members
         .sort(({ name: aName }, { name: bName }) => aName.localeCompare(bName))
         .map(({ name, github }) => (
-          <li>
+          <li key={github}>
             <strong>{name}</strong> <GithubLink username={github} />
           </li>
         ))}
