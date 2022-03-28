@@ -4,11 +4,13 @@
     "anchor-js": "^4.2.2",
     "htm": "^3.1.0",
     "identity-style-guide": "^6.3.0",
+    "js-yaml": "^4.1.0",
     "preact": "^10.6.6",
     "simple-jekyll-search": "^1.10.0"
   },
   "devDependencies": {
     "@18f/eslint-plugin-identity": "^2.0.0",
+    "@types/js-yaml": "^4.0.5",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "esbuild": "^0.14.27",
