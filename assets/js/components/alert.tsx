@@ -10,7 +10,7 @@ export function Alert({
   return (
     <div className="usa-alert usa-alert--error">
       <div className="usa-alert__body">
-        <h5 className="usa-alert__heading">{heading}</h5>
+        {heading && <h5 className="usa-alert__heading">{heading}</h5>}
         <div className="usa-alert__text">{children}</div>
       </div>
     </div>
