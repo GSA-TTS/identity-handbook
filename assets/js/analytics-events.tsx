@@ -1,6 +1,7 @@
-import { h, render, Fragment, ComponentChildren } from "preact";
+import { h, render, Fragment } from "preact";
 import Anchor from "anchor-js";
 import { loggedInUser, PrivateLoginLink } from "./private";
+import { Alert } from "./components/alert";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -190,23 +191,6 @@ function SidebarNavItem({ name }: { name: string }) {
     <li className="usa-sidenav__item">
       <a href={`#${urlify(name)}`}>{name}</a>
     </li>
-  );
-}
-
-function Alert({
-  heading,
-  children,
-}: {
-  heading?: string;
-  children: ComponentChildren;
-}) {
-  return (
-    <div className="usa-alert usa-alert--error">
-      <div className="usa-alert__body">
-        <h5 className="usa-alert__heading">{heading}</h5>
-        <div className="usa-alert__text">{children}</div>
-      </div>
-    </div>
   );
 }
 

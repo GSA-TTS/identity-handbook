@@ -28,6 +28,7 @@ export const loadPrivateEye = () => {
       "github.com/18f/identity-devops",
       "github.com/18f/identity-devops-private",
       "github.com/18f/identity-handbook-private",
+      "github.com/18f/identity-private",
       "github.com/18f/identity-idp-config",
       "gkey.gsa.gov",
       "gsa-tts.slack.com",
