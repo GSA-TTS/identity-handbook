@@ -69,7 +69,7 @@ function PrivateLoginLinkOrAvatar({ baseUrl }: { baseUrl: string }) {
   return <PrivateLoginLink baseUrl={baseUrl} />;
 }
 
-export function setUpPrivate() {
+export function setUpPrivateLogin() {
   const buttonContainer = document.getElementById(
     "private-login-button-container"
   ) as HTMLElement;

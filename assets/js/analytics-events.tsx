@@ -1,7 +1,8 @@
 import { h, render, Fragment } from "preact";
-import Anchor from "anchor-js";
 import { loggedInUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
+import { urlify } from "./urlify";
+import { renderSidenav } from "./components/sidenav";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -15,9 +16,6 @@ interface AnalyticsEvent {
   description: string;
   attributes: AnalyticsEventAttribute[];
 }
-
-const anchor = new Anchor();
-const urlify = anchor.urlify.bind(anchor);
 
 function AnchorLink({
   slug,
@@ -186,14 +184,6 @@ function Events({ events }: { events: AnalyticsEvent[] }) {
   );
 }
 
-function SidebarNavItem({ name }: { name: string }) {
-  return (
-    <li className="usa-sidenav__item">
-      <a href={`#${urlify(name)}`}>{name}</a>
-    </li>
-  );
-}
-
 function ErrorPage({ error, url }: { error: Error; url: string }) {
   return (
     <Alert heading="Error loading event definitions">
@@ -206,16 +196,6 @@ function ErrorPage({ error, url }: { error: Error; url: string }) {
   );
 }
 
-function Sidenav({ events }: { events: AnalyticsEvent[] }) {
-  return (
-    <>
-      {events.map(({ event_name: name }) => (
-        <SidebarNavItem name={name} />
-      ))}
-    </>
-  );
-}
-
 export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container") as HTMLElement;
   const jekyllBaseUrl = document.body.dataset.baseUrl as string;
@@ -224,16 +204,16 @@ export function loadAnalyticsEvents() {
     const { idpBaseUrl } = container.dataset;
     const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
-    const sidenav = document.querySelector(
-      "#sidenav .usa-sidenav__sublist:last-child"
-    ) as HTMLElement;
-
     window
       .fetch(eventsUrl)
       .then((response) => response.json())
-      .then(({ events }) => {
+      .then(({ events }: { events: AnalyticsEvent[] }) => {
         render(<Events events={events} />, container);
-        render(<Sidenav events={events} />, sidenav);
+
+        renderSidenav({
+          navigation: events.map(({ event_name: name }) => name),
+          appendToExisting: true,
+        });
 
         const headerToReplace = document.querySelector(
           "#event-list"

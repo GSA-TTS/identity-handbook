@@ -85,14 +85,14 @@
         loadAnchors,
         loadPrivateEye,
         loadSimpleJekyllSearch,
-        setUpPrivate
+        setUpPrivateLogin
       } from '{{ "/assets/build/setup.js" | prepend: site.baseurl }}';
 
       document.addEventListener('DOMContentLoaded', () => {
         loadAnchors();
         loadPrivateEye();
         loadSimpleJekyllSearch();
-        setUpPrivate();
+        setUpPrivateLogin();
       }, false);
     </script>
   </body>

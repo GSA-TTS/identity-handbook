@@ -29,3 +29,7 @@ to [avoid contributing sensitive information][sensitive-information].
                articles=site.articles %}
 {%   endunless %}
 {% endfor %}
+
+### Private
+
+- [Private Articles]({% link private.md %})
