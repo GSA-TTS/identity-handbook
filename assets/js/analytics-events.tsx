@@ -1,8 +1,9 @@
 import { h, render, Fragment } from "preact";
+import { createPortal } from "preact/compat";
 import { loggedInUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
 import { urlify } from "./urlify";
-import { renderSidenav } from "./components/sidenav";
+import { Sidenav } from "./components/sidenav";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -119,12 +120,14 @@ function Attribute({ name, types, description }: AnalyticsEventAttribute) {
   );
 }
 
-function Event({
-  event_name: eventName,
-  previous_event_names: previousEventNames,
-  description,
-  attributes = [],
-}: AnalyticsEvent) {
+function Event({ event }: { event: AnalyticsEvent }) {
+  const {
+    event_name: eventName,
+    previous_event_names: previousEventNames,
+    description,
+    attributes = [],
+  } = event;
+
   return (
     <div>
       <h3>
@@ -175,11 +178,17 @@ function Event({
 }
 
 function Events({ events }: { events: AnalyticsEvent[] }) {
+  const sidenav = document.querySelector(
+    "#sidenav .usa-sidenav__sublist:last-child"
+  ) as HTMLElement;
+  const navigation = events.map(({ event_name: name }) => name);
+
   return (
     <>
       {events.map((event) => (
-        <Event {...event} />
+        <Event event={event} />
       ))}
+      {createPortal(<Sidenav navigation={navigation} />, sidenav)}
     </>
   );
 }
@@ -209,11 +218,6 @@ export function loadAnalyticsEvents() {
       .then((response) => response.json())
       .then(({ events }: { events: AnalyticsEvent[] }) => {
         render(<Events events={events} />, container);
-
-        renderSidenav({
-          navigation: events.map(({ event_name: name }) => name),
-          appendToExisting: true,
-        });
 
         const headerToReplace = document.querySelector(
           "#event-list"

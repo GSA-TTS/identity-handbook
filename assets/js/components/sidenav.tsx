@@ -1,4 +1,4 @@
-import { render, h, Fragment } from "preact";
+import { h, Fragment } from "preact";
 import { urlify } from "../urlify";
 
 type NavItem = string | string[];
@@ -28,26 +28,10 @@ export function Sidenav({ navigation }: { navigation: Navigation }) {
   );
 }
 
-export function renderSidenav({
-  navigation,
-  appendToExisting = false,
-}: {
-  navigation: Navigation;
-  appendToExisting?: boolean;
-}) {
-  if (appendToExisting) {
-    const sidenav = document.querySelector(
-      "#sidenav .usa-sidenav__sublist:last-child"
-    ) as HTMLElement;
-
-    render(<Sidenav navigation={navigation} />, sidenav);
-  } else {
-    const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
-    render(
-      <ul className="usa-accordion usa-sidenav" id="sidenav">
-        <Sidenav navigation={navigation} />
-      </ul>,
-      nav
-    );
-  }
+export function SidenavWithWrapper({ navigation }: { navigation: Navigation }) {
+  return (
+    <ul className="usa-accordion usa-sidenav" id="sidenav">
+      <Sidenav navigation={navigation} />
+    </ul>
+  );
 }

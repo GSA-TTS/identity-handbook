@@ -2,7 +2,8 @@ import { h, render, Fragment } from "preact";
 import { load as loadYAML } from "js-yaml";
 import { marked } from "marked";
 import Markup from "preact-markup";
-import { useEffect, useMemo } from "preact/hooks";
+import { useMemo } from "preact/hooks";
+import { createPortal } from "preact/compat";
 import { loggedInUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
 import {
@@ -10,21 +11,26 @@ import {
   GitHubDirectory,
   GitHubFileWithContent,
 } from "./github";
-import { renderSidenav, Navigation } from "./components/sidenav";
+import { Navigation, SidenavWithWrapper } from "./components/sidenav";
 
 export function PrivateArticlesIndex({
   articles,
 }: {
   articles: GitHubDirectory;
 }) {
+  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
+
   return (
-    <ul>
-      {articles.map((article) => (
-        <li key={article.path}>
-          <a href={`#!/${article.path}`}>{article.name}</a>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {articles.map((article) => (
+          <li key={article.path}>
+            <a href={`#!/${article.path}`}>{article.name}</a>
+          </li>
+        ))}
+      </ul>
+      {createPortal(<SidenavWithWrapper navigation={[]} />, nav)}
+    </>
   );
 }
 
@@ -70,6 +76,7 @@ function buildNavigation(headings: Heading[]): Navigation {
 }
 
 function PrivateArticle({ article }: { article: GitHubFileWithContent }) {
+  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
   const [, frontMatterString, content] = atob(article.content).split("---");
   const frontMatter = loadYAML(frontMatterString) as Frontmatter;
 
@@ -95,14 +102,11 @@ function PrivateArticle({ article }: { article: GitHubFileWithContent }) {
     return [parsedContent, buildNavigation(headings)];
   }, [content]);
 
-  useEffect(() => {
-    renderSidenav({ navigation });
-  }, [content]);
-
   return (
     <>
       <h1>{frontMatter.title}</h1>
       <Markup markup={parsed} trim={false} />
+      {createPortal(<SidenavWithWrapper navigation={navigation} />, nav)}
     </>
   );
 }
@@ -146,7 +150,6 @@ function renderPage() {
         }
 
         render(<PrivateArticlesIndex articles={dir} />, container);
-        renderSidenav({ navigation: [] });
       });
     }
   } else {
