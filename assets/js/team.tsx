@@ -68,7 +68,6 @@ function AlumRoster({ members }: { members: Alum[] }) {
 }
 
 export function loadTeam() {
-  const jekyllBaseUrl = document.body.dataset.baseUrl as string;
   const currentUser = loggedInUser();
 
   if (currentUser) {
@@ -101,7 +100,7 @@ export function loadTeam() {
 
     render(
       <Alert heading="Error loading team roster">
-        Team roster requires <PrivateLoginLink baseUrl={jekyllBaseUrl} />
+        Team roster requires <PrivateLoginLink />
       </Alert>,
       errorContainer
     );
