@@ -114,8 +114,8 @@ function renderPage() {
   const ref = container.dataset.privateHandbookBranch;
 
   if (currentUser) {
-    const firstH1 = document.querySelector('h1');
-    if (firstH1?.innerText.includes('Private Articles')) {
+    const firstH1 = document.querySelector("h1");
+    if (firstH1?.innerText.includes("Private Articles")) {
       firstH1.hidden = true;
     }
 
