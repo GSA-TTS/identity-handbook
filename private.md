@@ -17,7 +17,5 @@ layout: article
     setUpPrivatePage
   } from '{{ "/assets/build/private-articles.js" | prepend: site.baseurl }}';
 
-  document.addEventListener('DOMContentLoaded', () => {
-    setUpPrivatePage();
-  }, false);
+  setUpPrivatePage();
 </script>
