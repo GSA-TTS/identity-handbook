@@ -43,7 +43,10 @@ export function PrivateArticlesIndex() {
         {articles &&
           articles.map((article) => (
             <li key={article.path}>
-              <a href={`#!/${article.path}`} className="usa-link">
+              <a
+                href={`?article=${encodeURIComponent(article.path)}`}
+                className="usa-link"
+              >
                 {article.name}
               </a>
             </li>
@@ -176,24 +179,10 @@ function PrivateArticle({ articlePath }: { articlePath: string }) {
   );
 }
 
-function useArticleHash() {
-  const [articlePath, setArticlePath] = useState(null as string | null);
-  useEffect(() => {
-    function onHashChange() {
-      if (window.location.hash[1] === "!") {
-        setArticlePath(window.location.hash.slice(3));
-      } else {
-        setArticlePath(null);
-      }
-    }
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
-  return articlePath;
-}
-
 function PrivatePage() {
-  const articlePath = useArticleHash();
+  const articlePath = new URL(document.location.toString()).searchParams.get(
+    "article"
+  );
   const [currentUser] = useCurrentUser();
 
   useEffect(() => {
