@@ -207,7 +207,6 @@ function ErrorPage({ error, url }: { error: Error; url: string }) {
 
 export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container") as HTMLElement;
-  const jekyllBaseUrl = document.body.dataset.baseUrl as string;
 
   if (loggedInUser()) {
     const { idpBaseUrl } = container.dataset;
@@ -232,7 +231,7 @@ export function loadAnalyticsEvents() {
   } else {
     render(
       <Alert heading="Error loading event definitions">
-        Event definitions require <PrivateLoginLink baseUrl={jekyllBaseUrl} />
+        Event definitions require <PrivateLoginLink />
       </Alert>,
       container
     );

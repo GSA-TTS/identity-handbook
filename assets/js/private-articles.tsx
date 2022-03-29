@@ -1,33 +1,51 @@
-import { h, render, Fragment } from "preact";
+import { h, render, Fragment, createContext } from "preact";
+import { useEffect, useMemo, useState, useContext } from "preact/hooks";
 import { load as loadYAML } from "js-yaml";
 import { marked } from "marked";
 import Markup from "preact-markup";
-import { useMemo } from "preact/hooks";
 import { createPortal } from "preact/compat";
-import { loggedInUser, PrivateLoginLink } from "./private";
+import { useQuery } from "preact-fetching";
+import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
-import {
-  fetchGitHubFile,
-  GitHubDirectory,
-  GitHubFileWithContent,
-} from "./github";
+import { fetchGitHubFile } from "./github";
 import { Navigation, SidenavWithWrapper } from "./components/sidenav";
 
-export function PrivateArticlesIndex({
-  articles,
-}: {
-  articles: GitHubDirectory;
-}) {
+const GitHubContext = createContext({
+  ref: undefined,
+} as { ref?: string });
+
+export function PrivateArticlesIndex() {
   const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
+  const [currentUser] = useCurrentUser();
+  const { ref } = useContext(GitHubContext);
+
+  const { data: articles } = useQuery(`articlesIndex`, () => {
+    if (!currentUser) {
+      return [];
+    }
+    return fetchGitHubFile({
+      token: currentUser.token,
+      repo: "18f/identity-handbook-private",
+      path: "_articles",
+      ref,
+    }).then((dir) => {
+      if (!Array.isArray(dir)) {
+        return [];
+      }
+
+      return dir;
+    });
+  });
 
   return (
     <>
       <ul>
-        {articles.map((article) => (
-          <li key={article.path}>
-            <a href={`#!/${article.path}`}>{article.name}</a>
-          </li>
-        ))}
+        {articles &&
+          articles.map((article) => (
+            <li key={article.path}>
+              <a href={`#!/${article.path}`}>{article.name}</a>
+            </li>
+          ))}
       </ul>
       {createPortal(<SidenavWithWrapper navigation={[]} />, nav)}
     </>
@@ -75,12 +93,37 @@ function buildNavigation(headings: Heading[]): Navigation {
   return navigation;
 }
 
-function PrivateArticle({ article }: { article: GitHubFileWithContent }) {
+function PrivateArticle({ articlePath }: { articlePath: string }) {
+  const [currentUser] = useCurrentUser();
+  const { ref } = useContext(GitHubContext);
   const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
-  const [, frontMatterString, content] = atob(article.content).split("---");
-  const frontMatter = loadYAML(frontMatterString) as Frontmatter;
 
-  const [parsed, navigation] = useMemo(() => {
+  const { data: article } = useQuery(`article:${articlePath}`, () => {
+    if (!currentUser) {
+      return undefined;
+    }
+    return fetchGitHubFile({
+      token: currentUser.token,
+      repo: "18f/identity-handbook-private",
+      path: articlePath,
+      ref,
+    }).then((file) => {
+      if (Array.isArray(file)) {
+        return undefined;
+      }
+
+      return file;
+    });
+  });
+
+  const [title, parsed, navigation] = useMemo(() => {
+    if (!article) {
+      return [];
+    }
+
+    const [, frontMatterString, content] = atob(article.content).split("---");
+    const frontMatter = loadYAML(frontMatterString) as Frontmatter;
+
     const headings: Heading[] = [];
     const headingCollector = (token: marked.Token) => {
       if (token.type === "heading") {
@@ -99,70 +142,69 @@ function PrivateArticle({ article }: { article: GitHubFileWithContent }) {
 
     const parsedContent = marked.parse(content);
 
-    return [parsedContent, buildNavigation(headings)];
-  }, [content]);
+    return [frontMatter.title, parsedContent, buildNavigation(headings)];
+  }, [article?.path]);
 
   return (
     <>
-      <h1>{frontMatter.title}</h1>
-      <Markup markup={parsed} trim={false} />
-      {createPortal(<SidenavWithWrapper navigation={navigation} />, nav)}
+      {title && parsed && navigation ? (
+        <>
+          <h1>{title}</h1>
+          <Markup markup={parsed} trim={false} />
+          {createPortal(<SidenavWithWrapper navigation={navigation} />, nav)}
+        </>
+      ) : undefined}
     </>
   );
 }
 
-function renderPage() {
-  const jekyllBaseUrl = document.body.dataset.baseUrl as string;
-  const currentUser = loggedInUser();
-  const container = document.getElementById("private-container") as HTMLElement;
-  const ref = container.dataset.privateHandbookBranch;
+function useArticleHash() {
+  const [articlePath, setArticlePath] = useState(null as string | null);
+  useEffect(() => {
+    function onHashChange() {
+      if (window.location.hash[1] === "!") {
+        setArticlePath(window.location.hash.slice(3));
+      } else {
+        setArticlePath(null);
+      }
+    }
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+  return articlePath;
+}
 
-  if (currentUser) {
+function PrivatePage() {
+  const articlePath = useArticleHash();
+  const [currentUser] = useCurrentUser();
+
+  useEffect(() => {
     const firstH1 = document.querySelector("h1");
     if (firstH1?.innerText.includes("Private Articles")) {
-      firstH1.hidden = true;
+      firstH1.hidden = !!articlePath && !!currentUser;
     }
+  });
 
-    if (document.location.hash.length > 3) {
-      const articlePath = document.location.hash.slice(3);
-
-      fetchGitHubFile({
-        token: currentUser.token,
-        repo: "18f/identity-handbook-private",
-        path: articlePath,
-        ref,
-      }).then((file) => {
-        if (Array.isArray(file)) {
-          return;
-        }
-
-        render(<PrivateArticle article={file} />, container);
-      });
-    } else {
-      fetchGitHubFile({
-        token: currentUser.token,
-        repo: "18f/identity-handbook-private",
-        path: "_articles",
-        ref,
-      }).then((dir) => {
-        if (!Array.isArray(dir)) {
-          return;
-        }
-
-        render(<PrivateArticlesIndex articles={dir} />, container);
-      });
+  if (currentUser) {
+    if (articlePath) {
+      return <PrivateArticle articlePath={articlePath} />;
     }
-  } else {
-    render(
-      <Alert heading="Error loading private articles">
-        Private articles require <PrivateLoginLink baseUrl={jekyllBaseUrl} />
-      </Alert>,
-      container
-    );
+    return <PrivateArticlesIndex />;
   }
+  return (
+    <Alert heading="Error loading private articles">
+      Private articles require <PrivateLoginLink />
+    </Alert>
+  );
 }
 
 export function setUpPrivatePage() {
-  renderPage();
-  window.addEventListener("hashchange", () => renderPage(), false);
+  const container = document.getElementById("private-container") as HTMLElement;
+  const ref = container.dataset.privateHandbookBranch;
+  render(
+    <GitHubContext.Provider value={{ ref }}>
+      <PrivatePage />
+    </GitHubContext.Provider>,
+    container
+  );
 }
