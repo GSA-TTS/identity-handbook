@@ -1,8 +1,12 @@
 import { h, render, Fragment } from "preact";
 import { load as loadYAML } from "js-yaml";
+import { createPortal } from "preact/compat";
+import { useQuery } from "preact-fetching";
 import { Alert } from "./components/alert";
-import { loggedInUser, PrivateLoginLink } from "./private";
+import { PrivateLoginLink, useCurrentUser } from "./private";
 import { fetchGitHubFile } from "./github";
+import { AnchorLink } from "./components/anchor-link";
+import { SidenavWithWrapper } from "./components/sidenav";
 
 interface TeamMember {
   name: string;
@@ -67,42 +71,66 @@ function AlumRoster({ members }: { members: Alum[] }) {
   );
 }
 
-export function loadTeam() {
-  const currentUser = loggedInUser();
+function Rosters() {
+  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
+  const [currentUser] = useCurrentUser();
 
-  if (currentUser) {
-    const teamContainer = document.getElementById(
-      "team-container"
-    ) as HTMLElement;
-    const alumniContainer = document.getElementById(
-      "alumni-container"
-    ) as HTMLElement;
+  const emptyData = { teamMembers: [], alumni: [] };
+  const { data } = useQuery("team.yml", () => {
+    if (!currentUser) {
+      return emptyData;
+    }
 
-    fetchGitHubFile({
+    return fetchGitHubFile({
       token: currentUser.token,
       repo: "18f/identity-private",
       path: "team/team.yml",
     }).then((file) => {
       if (Array.isArray(file)) {
-        return;
+        return emptyData;
       }
       const { team_members: teamMembers, alumni } = loadYAML(
         atob(file.content)
       ) as TeamRoster;
 
-      render(<TeamMemberRoster members={teamMembers} />, teamContainer);
-      render(<AlumRoster members={alumni} />, alumniContainer);
+      return { teamMembers, alumni };
     });
-  } else {
-    const errorContainer = document.getElementById(
-      "error-container"
-    ) as HTMLElement;
+  });
 
-    render(
-      <Alert heading="Error loading team roster">
-        Team roster requires <PrivateLoginLink />
-      </Alert>,
-      errorContainer
-    );
+  return (
+    <>
+      <h3>
+        Current Team Members <AnchorLink slug="current-team-members" />
+      </h3>
+      {data?.teamMembers?.length && (
+        <TeamMemberRoster members={data.teamMembers} />
+      )}
+      <h3>
+        Alumni <AnchorLink slug="alumni" />
+      </h3>
+      {data?.alumni?.length && <AlumRoster members={data.alumni} />}
+      {createPortal(
+        <SidenavWithWrapper navigation={["Current Team Members", "Alumni"]} />,
+        nav
+      )}
+    </>
+  );
+}
+
+function TeamPage() {
+  const [currentUser] = useCurrentUser();
+
+  if (currentUser) {
+    return <Rosters />;
   }
+  return (
+    <Alert heading="Error loading team roster">
+      Team roster requires <PrivateLoginLink />
+    </Alert>
+  );
+}
+
+export function loadTeam() {
+  const container = document.getElementById("team-container") as HTMLElement;
+  render(<TeamPage />, container);
 }
