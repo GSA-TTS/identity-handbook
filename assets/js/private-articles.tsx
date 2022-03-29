@@ -79,7 +79,10 @@ function PrivateArticle({ article }: { article: GitHubFileWithContent }) {
       }
     };
 
-    marked.setOptions({ gfm: true });
+    marked.setOptions({
+      gfm: true,
+      smartypants: true,
+    });
     marked.use({ walkTokens: headingCollector });
 
     const parsedContent = marked.parse(content);
