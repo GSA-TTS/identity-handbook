@@ -43,7 +43,9 @@ export function PrivateArticlesIndex() {
         {articles &&
           articles.map((article) => (
             <li key={article.path}>
-              <a href={`#!/${article.path}`} className="usa-link">{article.name}</a>
+              <a href={`#!/${article.path}`} className="usa-link">
+                {article.name}
+              </a>
             </li>
           ))}
       </ul>
