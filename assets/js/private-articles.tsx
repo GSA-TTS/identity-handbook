@@ -99,7 +99,9 @@ function buildNavigation(headings: Heading[]): Navigation {
   return navigation;
 }
 
-function buildHeader(Tag: any) {
+type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+function buildHeader(Tag: HeadingTag) {
   return ({ id, children }: { id: string; children: ComponentChildren }) => (
     <Tag id={id}>
       {children}
