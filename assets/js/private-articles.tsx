@@ -1,4 +1,4 @@
-import { h, render, Fragment, createContext } from "preact";
+import { h, render, Fragment, createContext, ComponentChildren } from "preact";
 import { useEffect, useMemo, useState, useContext } from "preact/hooks";
 import { load as loadYAML } from "js-yaml";
 import { marked } from "marked";
@@ -93,6 +93,22 @@ function buildNavigation(headings: Heading[]): Navigation {
   return navigation;
 }
 
+const MarkupOverrides = {
+  A: function Link({
+    href,
+    children,
+  }: {
+    href: string;
+    children: ComponentChildren;
+  }) {
+    return (
+      <a href={href} className="usa-link">
+        {children}
+      </a>
+    );
+  },
+};
+
 function PrivateArticle({ articlePath }: { articlePath: string }) {
   const [currentUser] = useCurrentUser();
   const { ref } = useContext(GitHubContext);
@@ -150,7 +166,7 @@ function PrivateArticle({ articlePath }: { articlePath: string }) {
       {title && parsed && navigation ? (
         <>
           <h1>{title}</h1>
-          <Markup markup={parsed} trim={false} />
+          <Markup markup={parsed} trim={false} components={MarkupOverrides} />
           {createPortal(<SidenavWithWrapper navigation={navigation} />, nav)}
         </>
       ) : undefined}
