@@ -19,3 +19,5 @@ layout: article
 
   setUpPrivatePage();
 </script>
+
+<span data-anchor="example data anchor to trigger anchor.js"></span>

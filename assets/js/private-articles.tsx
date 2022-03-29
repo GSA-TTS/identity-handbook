@@ -1,5 +1,5 @@
 import { h, render, Fragment, createContext, ComponentChildren } from "preact";
-import { useEffect, useMemo, useState, useContext } from "preact/hooks";
+import { useEffect, useMemo, useContext } from "preact/hooks";
 import { load as loadYAML } from "js-yaml";
 import { marked } from "marked";
 import Markup from "preact-markup";
@@ -9,6 +9,7 @@ import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
 import { fetchGitHubFile } from "./github";
 import { Navigation, SidenavWithWrapper } from "./components/sidenav";
+import { AnchorLink } from "./components/anchor-link";
 
 const GitHubContext = createContext({
   ref: undefined,
@@ -98,6 +99,15 @@ function buildNavigation(headings: Heading[]): Navigation {
   return navigation;
 }
 
+function buildHeader(Tag: any) {
+  return ({ id, children }: { id: string; children: ComponentChildren }) => (
+    <Tag id={id}>
+      {children}
+      <AnchorLink slug={id} />
+    </Tag>
+  );
+}
+
 const MarkupOverrides = {
   A: function Link({
     href,
@@ -112,6 +122,12 @@ const MarkupOverrides = {
       </a>
     );
   },
+  H1: buildHeader("h1"),
+  H2: buildHeader("h2"),
+  H3: buildHeader("h3"),
+  H4: buildHeader("h4"),
+  H5: buildHeader("h5"),
+  H6: buildHeader("h6"),
 };
 
 function PrivateArticle({ articlePath }: { articlePath: string }) {

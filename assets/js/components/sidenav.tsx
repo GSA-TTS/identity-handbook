@@ -1,5 +1,5 @@
 import { h, Fragment } from "preact";
-import { urlify } from "../urlify";
+import { urlify } from "./anchor-link";
 
 type NavItem = string | string[];
 export type Navigation = NavItem[];
