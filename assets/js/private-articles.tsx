@@ -1,6 +1,7 @@
 import { h, render, Fragment } from "preact";
 import { load as loadYAML } from "js-yaml";
 import { marked } from "marked";
+import Markup from "preact-markup";
 import { useEffect, useMemo } from "preact/hooks";
 import { loggedInUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
@@ -97,8 +98,7 @@ function PrivateArticle({ article }: { article: GitHubFileWithContent }) {
   return (
     <>
       <h1>{frontMatter.title}</h1>
-      {/* eslint-disable-next-line react/no-danger */}
-      <div dangerouslySetInnerHTML={{ __html: parsed }} />
+      <Markup markup={parsed} trim={false} />
     </>
   );
 }
