@@ -48,14 +48,18 @@ function buildNavigation(headings: Heading[]): Navigation {
       navigation.push(text);
       stack.push(navigation);
     } else if (depth > lastDepth) {
+      const last = stack[stack.length - 1];
       const nested = [text];
-      navigation.push(nested);
+      last.push(nested);
       stack.push(nested);
-    } else if (depth < lastDepth) {
-      stack.pop();
+    } else if (depth === lastDepth) {
       const last = stack[stack.length - 1];
       last.push(text);
-    } else if (depth === lastDepth) {
+    } else {
+      while (depth < lastDepth) {
+        stack.pop();
+        lastDepth -= 1;
+      }
       const last = stack[stack.length - 1];
       last.push(text);
     }

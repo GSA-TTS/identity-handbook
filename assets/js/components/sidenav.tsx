@@ -4,10 +4,16 @@ import { urlify } from "../urlify";
 type NavItem = string | string[];
 export type Navigation = NavItem[];
 
-function SidebarNavItem({ name }: { name: string }) {
-  return (
+function SidebarNavItem({ item }: { item: NavItem }) {
+  return Array.isArray(item) ? (
+    <ul className="usa-sidenav__sublist">
+      {item.map((nestedItem) => (
+        <SidebarNavItem item={nestedItem} />
+      ))}
+    </ul>
+  ) : (
     <li className="usa-sidenav__item">
-      <a href={`#${urlify(name)}`}>{name}</a>
+      <a href={`#${urlify(item)}`}>{item}</a>
     </li>
   );
 }
@@ -15,17 +21,9 @@ function SidebarNavItem({ name }: { name: string }) {
 export function Sidenav({ navigation }: { navigation: Navigation }) {
   return (
     <>
-      {navigation.map((nav) =>
-        Array.isArray(nav) ? (
-          <ul className="usa-sidenav__sublist">
-            {nav.map((name) => (
-              <SidebarNavItem name={name} />
-            ))}
-          </ul>
-        ) : (
-          <SidebarNavItem name={nav} />
-        )
-      )}
+      {navigation.map((item) => (
+        <SidebarNavItem item={item} />
+      ))}
     </>
   );
 }
