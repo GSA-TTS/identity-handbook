@@ -13,6 +13,5 @@
     },
     "lib": ["ES2020"]
   },
-  "include": ["assets/js/*"],
-  "exclude": ["node_modules/"]
+  "include": ["assets/js/*"]
 }
