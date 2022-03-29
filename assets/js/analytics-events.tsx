@@ -1,7 +1,9 @@
 import { h, render, Fragment } from "preact";
-import Anchor from "anchor-js";
+import { createPortal } from "preact/compat";
 import { loggedInUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
+import { AnchorLink, urlify } from "./components/anchor-link";
+import { Sidenav } from "./components/sidenav";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -14,37 +16,6 @@ interface AnalyticsEvent {
   previous_event_names?: string[];
   description: string;
   attributes: AnalyticsEventAttribute[];
-}
-
-const anchor = new Anchor();
-const urlify = anchor.urlify.bind(anchor);
-
-function AnchorLink({
-  slug,
-  icon = String.fromCharCode(59851),
-}: {
-  slug: string;
-  icon?: string;
-}) {
-  const setRef = (node: HTMLElement | null) => {
-    if (node && document.location.hash.slice(1) === slug) {
-      setTimeout(() => node.scrollIntoView(), 0);
-    }
-  };
-
-  return (
-    // See: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/issues/423
-    // eslint-disable-next-line jsx-a11y/anchor-has-content
-    <a
-      ref={setRef}
-      className="anchorjs-link"
-      aria-label="Anchor"
-      data-anchorjs-icon={icon}
-      id={slug}
-      href={`#${slug}`}
-      style={{ font: "1em / 1 anchorjs-icons", paddingLeft: "0.375em" }}
-    />
-  );
 }
 
 function Example({
@@ -121,12 +92,14 @@ function Attribute({ name, types, description }: AnalyticsEventAttribute) {
   );
 }
 
-function Event({
-  event_name: eventName,
-  previous_event_names: previousEventNames,
-  description,
-  attributes = [],
-}: AnalyticsEvent) {
+function Event({ event }: { event: AnalyticsEvent }) {
+  const {
+    event_name: eventName,
+    previous_event_names: previousEventNames,
+    description,
+    attributes = [],
+  } = event;
+
   return (
     <div>
       <h3>
@@ -177,20 +150,18 @@ function Event({
 }
 
 function Events({ events }: { events: AnalyticsEvent[] }) {
+  const sidenav = document.querySelector(
+    "#sidenav .usa-sidenav__sublist:last-child"
+  ) as HTMLElement;
+  const navigation = events.map(({ event_name: name }) => name);
+
   return (
     <>
       {events.map((event) => (
-        <Event {...event} />
+        <Event event={event} />
       ))}
+      {createPortal(<Sidenav navigation={navigation} />, sidenav)}
     </>
-  );
-}
-
-function SidebarNavItem({ name }: { name: string }) {
-  return (
-    <li className="usa-sidenav__item">
-      <a href={`#${urlify(name)}`}>{name}</a>
-    </li>
   );
 }
 
@@ -206,34 +177,18 @@ function ErrorPage({ error, url }: { error: Error; url: string }) {
   );
 }
 
-function Sidenav({ events }: { events: AnalyticsEvent[] }) {
-  return (
-    <>
-      {events.map(({ event_name: name }) => (
-        <SidebarNavItem name={name} />
-      ))}
-    </>
-  );
-}
-
 export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container") as HTMLElement;
-  const jekyllBaseUrl = document.body.dataset.baseUrl as string;
 
   if (loggedInUser()) {
     const { idpBaseUrl } = container.dataset;
     const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
-    const sidenav = document.querySelector(
-      "#sidenav .usa-sidenav__sublist:last-child"
-    ) as HTMLElement;
-
     window
       .fetch(eventsUrl)
       .then((response) => response.json())
-      .then(({ events }) => {
+      .then(({ events }: { events: AnalyticsEvent[] }) => {
         render(<Events events={events} />, container);
-        render(<Sidenav events={events} />, sidenav);
 
         const headerToReplace = document.querySelector(
           "#event-list"
@@ -248,7 +203,7 @@ export function loadAnalyticsEvents() {
   } else {
     render(
       <Alert heading="Error loading event definitions">
-        Event definitions require <PrivateLoginLink baseUrl={jekyllBaseUrl} />
+        Event definitions require <PrivateLoginLink />
       </Alert>,
       container
     );

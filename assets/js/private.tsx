@@ -1,5 +1,6 @@
 import { h, render, VNode } from "preact";
 import { useState } from "preact/hooks";
+import { useJekyllBaseUrl } from "./hooks/jekyll";
 
 interface NetlifyUser {
   avatar_url: string;
@@ -28,7 +29,7 @@ function removeLoggedInUser() {
   localStorage.removeItem(NETLIFY_USER_KEY);
 }
 
-function useCurrentUser(): [NetlifyUser | undefined, () => void] {
+export function useCurrentUser(): [NetlifyUser | undefined, () => void] {
   const [currentUser, setCurrentUser] = useState(loggedInUser());
 
   const logOut = () => {
@@ -39,11 +40,12 @@ function useCurrentUser(): [NetlifyUser | undefined, () => void] {
   return [currentUser, logOut];
 }
 
-export function PrivateLoginLink({ baseUrl }: { baseUrl: string }): VNode {
+export function PrivateLoginLink(): VNode {
+  const baseUrl = useJekyllBaseUrl();
   return <a href={`${baseUrl}/admin`}>Private Login</a>;
 }
 
-function PrivateLoginLinkOrAvatar({ baseUrl }: { baseUrl: string }) {
+function PrivateLoginLinkOrAvatar() {
   const [currentUser, logOut] = useCurrentUser();
 
   if (currentUser) {
@@ -66,15 +68,13 @@ function PrivateLoginLinkOrAvatar({ baseUrl }: { baseUrl: string }) {
       </div>
     );
   }
-  return <PrivateLoginLink baseUrl={baseUrl} />;
+  return <PrivateLoginLink />;
 }
 
-export function setUpPrivate() {
+export function setUpPrivateLogin() {
   const buttonContainer = document.getElementById(
     "private-login-button-container"
   ) as HTMLElement;
 
-  const baseUrl = document.body.dataset.baseUrl as string;
-
-  render(<PrivateLoginLinkOrAvatar baseUrl={baseUrl} />, buttonContainer);
+  render(<PrivateLoginLinkOrAvatar />, buttonContainer);
 }

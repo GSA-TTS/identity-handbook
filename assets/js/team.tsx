@@ -2,11 +2,7 @@ import { h, render, Fragment } from "preact";
 import { load as loadYAML } from "js-yaml";
 import { Alert } from "./components/alert";
 import { loggedInUser, PrivateLoginLink } from "./private";
-
-interface GithubFile {
-  content: string;
-  encoding: "base64" | string;
-}
+import { fetchGitHubFile } from "./github";
 
 interface TeamMember {
   name: string;
@@ -72,7 +68,6 @@ function AlumRoster({ members }: { members: Alum[] }) {
 }
 
 export function loadTeam() {
-  const jekyllBaseUrl = document.body.dataset.baseUrl as string;
   const currentUser = loggedInUser();
 
   if (currentUser) {
@@ -83,20 +78,21 @@ export function loadTeam() {
       "alumni-container"
     ) as HTMLElement;
 
-    window
-      .fetch(
-        "https://api.github.com/repos/18f/identity-private/contents/team/team.yml",
-        { headers: { Authorization: `token ${currentUser.token}` } }
-      )
-      .then((response) => response.json())
-      .then((json: GithubFile) => {
-        const { team_members: teamMembers, alumni } = loadYAML(
-          atob(json.content)
-        ) as TeamRoster;
+    fetchGitHubFile({
+      token: currentUser.token,
+      repo: "18f/identity-private",
+      path: "team/team.yml",
+    }).then((file) => {
+      if (Array.isArray(file)) {
+        return;
+      }
+      const { team_members: teamMembers, alumni } = loadYAML(
+        atob(file.content)
+      ) as TeamRoster;
 
-        render(<TeamMemberRoster members={teamMembers} />, teamContainer);
-        render(<AlumRoster members={alumni} />, alumniContainer);
-      });
+      render(<TeamMemberRoster members={teamMembers} />, teamContainer);
+      render(<AlumRoster members={alumni} />, alumniContainer);
+    });
   } else {
     const errorContainer = document.getElementById(
       "error-container"
@@ -104,7 +100,7 @@ export function loadTeam() {
 
     render(
       <Alert heading="Error loading team roster">
-        Team roster requires <PrivateLoginLink baseUrl={jekyllBaseUrl} />
+        Team roster requires <PrivateLoginLink />
       </Alert>,
       errorContainer
     );
