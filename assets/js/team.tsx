@@ -102,7 +102,7 @@ function Rosters() {
       <h3>
         Current Team Members <AnchorLink slug="current-team-members" />
       </h3>
-      {data?.teamMembers?.length && (
+      {!!data?.teamMembers?.length && (
         <TeamMemberRoster members={data.teamMembers} />
       )}
       <h3>
