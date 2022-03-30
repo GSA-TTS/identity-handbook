@@ -1,6 +1,8 @@
 import { h, render, Fragment } from "preact";
+import { useEffect } from "preact/hooks";
 import { createPortal } from "preact/compat";
-import { loggedInUser, PrivateLoginLink } from "./private";
+import { useQuery } from "preact-fetching";
+import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
 import { AnchorLink, urlify } from "./components/anchor-link";
 import { Sidenav } from "./components/sidenav";
@@ -180,38 +182,57 @@ function ErrorPage({ error, url }: { error: Error; url: string }) {
   );
 }
 
+function AnalyticsEvents({
+  eventsUrl,
+  sidenav,
+  headerToReplace,
+}: {
+  eventsUrl: string;
+  sidenav: HTMLElement;
+  headerToReplace: HTMLElement;
+}) {
+  const [currentUser] = useCurrentUser();
+
+  const queryResult = useQuery(`analyticsEvents:${eventsUrl}`, () =>
+    window
+      .fetch(eventsUrl)
+      .then((response) => response.json())
+      .then((events: AnalyticsEvent[]) => events)
+  );
+
+  useEffect(() => {
+    headerToReplace.hidden = true;
+  });
+
+  if (currentUser) {
+    if (queryResult.isError) {
+      return <ErrorPage url={eventsUrl} error={queryResult.error} />;
+    }
+    return <Events events={queryResult.data || []} sidenav={sidenav} />;
+  }
+  return (
+    <Alert heading="Error loading event definitions">
+      Event definitions require <PrivateLoginLink />
+    </Alert>
+  );
+}
+
 export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container") as HTMLElement;
   const sidenav = document.querySelector(
     "#sidenav .usa-sidenav__sublist:last-child"
   ) as HTMLElement;
 
-  if (loggedInUser()) {
-    const { idpBaseUrl } = container.dataset;
-    const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
+  const headerToReplace = document.querySelector("#event-list") as HTMLElement;
+  const { idpBaseUrl } = container.dataset;
+  const eventsUrl = `${idpBaseUrl}/api/analytics-events`;
 
-    window
-      .fetch(eventsUrl)
-      .then((response) => response.json())
-      .then(({ events }: { events: AnalyticsEvent[] }) => {
-        render(<Events events={events} sidenav={sidenav} />, container);
-
-        const headerToReplace = document.querySelector(
-          "#event-list"
-        ) as HTMLElement;
-        if (headerToReplace) {
-          headerToReplace.hidden = true;
-        }
-      })
-      .catch((error) =>
-        render(<ErrorPage url={eventsUrl} error={error} />, container)
-      );
-  } else {
-    render(
-      <Alert heading="Error loading event definitions">
-        Event definitions require <PrivateLoginLink />
-      </Alert>,
-      container
-    );
-  }
+  render(
+    <AnalyticsEvents
+      eventsUrl={eventsUrl}
+      headerToReplace={headerToReplace}
+      sidenav={sidenav}
+    />,
+    container
+  );
 }
