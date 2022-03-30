@@ -10,6 +10,18 @@ export type GitHubFileWithContent = GitHubFile & {
 
 export type GitHubDirectory = GitHubFile[];
 
+export function isGithubDirectory(
+  obj: GitHubFileWithContent | GitHubDirectory
+): obj is GitHubDirectory {
+  return Array.isArray(obj);
+}
+
+export function isGithubFile(
+  obj: GitHubFileWithContent | GitHubDirectory
+): obj is GitHubFileWithContent {
+  return !isGithubDirectory(obj);
+}
+
 export function fetchGitHubFile({
   token,
   repo,

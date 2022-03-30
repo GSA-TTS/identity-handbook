@@ -7,7 +7,7 @@ import { createPortal } from "preact/compat";
 import { useQuery } from "preact-fetching";
 import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
-import { fetchGitHubFile } from "./github";
+import { fetchGitHubFile, isGithubDirectory, isGithubFile } from "./github";
 import { Navigation, SidenavWithWrapper } from "./components/sidenav";
 import { AnchorLink } from "./components/anchor-link";
 
@@ -15,8 +15,7 @@ const GitHubContext = createContext({
   ref: undefined,
 } as { ref?: string });
 
-export function PrivateArticlesIndex() {
-  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
+export function PrivateArticlesIndex({ nav }: { nav: HTMLElement }) {
   const [currentUser] = useCurrentUser();
   const { ref } = useContext(GitHubContext);
 
@@ -30,7 +29,7 @@ export function PrivateArticlesIndex() {
       path: "_articles",
       ref,
     }).then((dir) => {
-      if (!Array.isArray(dir)) {
+      if (!isGithubDirectory(dir)) {
         return [];
       }
 
@@ -132,10 +131,15 @@ const MarkupOverrides = {
   H6: buildHeader("h6"),
 };
 
-function PrivateArticle({ articlePath }: { articlePath: string }) {
+function PrivateArticle({
+  articlePath,
+  nav,
+}: {
+  articlePath: string;
+  nav: HTMLElement;
+}) {
   const [currentUser] = useCurrentUser();
   const { ref } = useContext(GitHubContext);
-  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
 
   const { data: article } = useQuery(`article:${articlePath}`, () => {
     if (!currentUser) {
@@ -147,7 +151,7 @@ function PrivateArticle({ articlePath }: { articlePath: string }) {
       path: articlePath,
       ref,
     }).then((file) => {
-      if (Array.isArray(file)) {
+      if (!isGithubFile(file)) {
         return undefined;
       }
 
@@ -202,6 +206,7 @@ function PrivatePage() {
     "article"
   );
   const [currentUser] = useCurrentUser();
+  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
 
   useEffect(() => {
     const firstH1 = document.querySelector("h1");
@@ -212,9 +217,9 @@ function PrivatePage() {
 
   if (currentUser) {
     if (articlePath) {
-      return <PrivateArticle articlePath={articlePath} />;
+      return <PrivateArticle articlePath={articlePath} nav={nav} />;
     }
-    return <PrivateArticlesIndex />;
+    return <PrivateArticlesIndex nav={nav} />;
   }
   return (
     <Alert heading="Error loading private articles">
