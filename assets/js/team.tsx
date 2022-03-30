@@ -108,7 +108,7 @@ function Rosters() {
       <h3>
         Alumni <AnchorLink slug="alumni" />
       </h3>
-      {data?.alumni?.length && <AlumRoster members={data.alumni} />}
+      {!!data?.alumni?.length && <AlumRoster members={data.alumni} />}
       {createPortal(
         <SidenavWithWrapper navigation={["Current Team Members", "Alumni"]} />,
         nav
