@@ -71,14 +71,15 @@ function AlumRoster({ members }: { members: Alum[] }) {
   );
 }
 
+const EMPTY_DATA = { teamMembers: [], alumni: [] };
+
 function Rosters() {
   const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
   const [currentUser] = useCurrentUser();
 
-  const emptyData = { teamMembers: [], alumni: [] };
   const { data } = useQuery("team.yml", () => {
     if (!currentUser) {
-      return emptyData;
+      return EMPTY_DATA;
     }
 
     return fetchGitHubFile({
@@ -87,7 +88,7 @@ function Rosters() {
       path: "team/team.yml",
     }).then((file) => {
       if (!isGithubFile(file)) {
-        return emptyData;
+        return EMPTY_DATA;
       }
       const { team_members: teamMembers, alumni } = loadYAML(
         atob(file.content)
