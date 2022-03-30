@@ -7,7 +7,7 @@ import { createPortal } from "preact/compat";
 import { useQuery } from "preact-fetching";
 import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
-import { fetchGitHubFile } from "./github";
+import { fetchGitHubFile, isGithubDirectory, isGithubFile } from "./github";
 import { Navigation, SidenavWithWrapper } from "./components/sidenav";
 import { AnchorLink } from "./components/anchor-link";
 
@@ -30,7 +30,7 @@ export function PrivateArticlesIndex() {
       path: "_articles",
       ref,
     }).then((dir) => {
-      if (!Array.isArray(dir)) {
+      if (!isGithubDirectory(dir)) {
         return [];
       }
 
@@ -147,7 +147,7 @@ function PrivateArticle({ articlePath }: { articlePath: string }) {
       path: articlePath,
       ref,
     }).then((file) => {
-      if (Array.isArray(file)) {
+      if (!isGithubFile(file)) {
         return undefined;
       }
 

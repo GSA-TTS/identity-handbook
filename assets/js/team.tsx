@@ -4,7 +4,7 @@ import { createPortal } from "preact/compat";
 import { useQuery } from "preact-fetching";
 import { Alert } from "./components/alert";
 import { PrivateLoginLink, useCurrentUser } from "./private";
-import { fetchGitHubFile } from "./github";
+import { fetchGitHubFile, isGithubFile } from "./github";
 import { AnchorLink } from "./components/anchor-link";
 import { SidenavWithWrapper } from "./components/sidenav";
 
@@ -86,7 +86,7 @@ function Rosters() {
       repo: "18f/identity-private",
       path: "team/team.yml",
     }).then((file) => {
-      if (Array.isArray(file)) {
+      if (!isGithubFile(file)) {
         return emptyData;
       }
       const { team_members: teamMembers, alumni } = loadYAML(
