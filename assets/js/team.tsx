@@ -73,8 +73,7 @@ function AlumRoster({ members }: { members: Alum[] }) {
 
 const EMPTY_DATA = { teamMembers: [], alumni: [] };
 
-function Rosters() {
-  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
+function Rosters({ nav }: { nav: HTMLElement }) {
   const [currentUser] = useCurrentUser();
 
   const { data } = useQuery("team.yml", () => {
@@ -118,11 +117,11 @@ function Rosters() {
   );
 }
 
-function TeamPage() {
+function TeamPage({ nav }: { nav: HTMLElement }) {
   const [currentUser] = useCurrentUser();
 
   if (currentUser) {
-    return <Rosters />;
+    return <Rosters nav={nav} />;
   }
   return (
     <Alert heading="Error loading team roster">
@@ -133,5 +132,7 @@ function TeamPage() {
 
 export function loadTeam() {
   const container = document.getElementById("team-container") as HTMLElement;
-  render(<TeamPage />, container);
+  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
+
+  render(<TeamPage nav={nav} />, container);
 }

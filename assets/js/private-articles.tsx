@@ -15,8 +15,7 @@ const GitHubContext = createContext({
   ref: undefined,
 } as { ref?: string });
 
-export function PrivateArticlesIndex() {
-  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
+export function PrivateArticlesIndex({ nav }: { nav: HTMLElement }) {
   const [currentUser] = useCurrentUser();
   const { ref } = useContext(GitHubContext);
 
@@ -132,10 +131,15 @@ const MarkupOverrides = {
   H6: buildHeader("h6"),
 };
 
-function PrivateArticle({ articlePath }: { articlePath: string }) {
+function PrivateArticle({
+  articlePath,
+  nav,
+}: {
+  articlePath: string;
+  nav: HTMLElement;
+}) {
   const [currentUser] = useCurrentUser();
   const { ref } = useContext(GitHubContext);
-  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
 
   const { data: article } = useQuery(`article:${articlePath}`, () => {
     if (!currentUser) {
@@ -202,6 +206,7 @@ function PrivatePage() {
     "article"
   );
   const [currentUser] = useCurrentUser();
+  const nav = document.getElementById("sidenav-wrapper") as HTMLElement;
 
   useEffect(() => {
     const firstH1 = document.querySelector("h1");
@@ -212,9 +217,9 @@ function PrivatePage() {
 
   if (currentUser) {
     if (articlePath) {
-      return <PrivateArticle articlePath={articlePath} />;
+      return <PrivateArticle articlePath={articlePath} nav={nav} />;
     }
-    return <PrivateArticlesIndex />;
+    return <PrivateArticlesIndex nav={nav} />;
   }
   return (
     <Alert heading="Error loading private articles">

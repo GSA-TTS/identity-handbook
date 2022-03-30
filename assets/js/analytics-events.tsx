@@ -149,10 +149,13 @@ function Event({ event }: { event: AnalyticsEvent }) {
   );
 }
 
-function Events({ events }: { events: AnalyticsEvent[] }) {
-  const sidenav = document.querySelector(
-    "#sidenav .usa-sidenav__sublist:last-child"
-  ) as HTMLElement;
+function Events({
+  events,
+  sidenav,
+}: {
+  events: AnalyticsEvent[];
+  sidenav: HTMLElement;
+}) {
   const navigation = events.map(({ event_name: name }) => name);
 
   return (
@@ -179,6 +182,9 @@ function ErrorPage({ error, url }: { error: Error; url: string }) {
 
 export function loadAnalyticsEvents() {
   const container = document.querySelector("#events-container") as HTMLElement;
+  const sidenav = document.querySelector(
+    "#sidenav .usa-sidenav__sublist:last-child"
+  ) as HTMLElement;
 
   if (loggedInUser()) {
     const { idpBaseUrl } = container.dataset;
@@ -188,7 +194,7 @@ export function loadAnalyticsEvents() {
       .fetch(eventsUrl)
       .then((response) => response.json())
       .then(({ events }: { events: AnalyticsEvent[] }) => {
-        render(<Events events={events} />, container);
+        render(<Events events={events} sidenav={sidenav} />, container);
 
         const headerToReplace = document.querySelector(
           "#event-list"
