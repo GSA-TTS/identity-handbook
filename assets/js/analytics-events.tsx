@@ -193,11 +193,13 @@ function AnalyticsEvents({
 }) {
   const [currentUser] = useCurrentUser();
 
-  const { data, isError, error } = useQuery(`analyticsEvents:${eventsUrl}`, () =>
-    window
-      .fetch(eventsUrl)
-      .then((response) => response.json())
-      .then(({ events }: { events: AnalyticsEvent[] }) => events)
+  const { data, isError, error } = useQuery(
+    `analyticsEvents:${eventsUrl}`,
+    () =>
+      window
+        .fetch(eventsUrl)
+        .then((response) => response.json())
+        .then(({ events }: { events: AnalyticsEvent[] }) => events)
   );
 
   useEffect(() => {
