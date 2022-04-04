@@ -193,11 +193,11 @@ function AnalyticsEvents({
 }) {
   const [currentUser] = useCurrentUser();
 
-  const queryResult = useQuery(`analyticsEvents:${eventsUrl}`, () =>
+  const { data, isError, error } = useQuery(`analyticsEvents:${eventsUrl}`, () =>
     window
       .fetch(eventsUrl)
       .then((response) => response.json())
-      .then((events: AnalyticsEvent[]) => events)
+      .then(({ events }: { events: AnalyticsEvent[] }) => events)
   );
 
   useEffect(() => {
@@ -205,10 +205,10 @@ function AnalyticsEvents({
   });
 
   if (currentUser) {
-    if (queryResult.isError) {
-      return <ErrorPage url={eventsUrl} error={queryResult.error} />;
+    if (isError) {
+      return <ErrorPage url={eventsUrl} error={error} />;
     }
-    return <Events events={queryResult.data || []} sidenav={sidenav} />;
+    return <Events events={data || []} sidenav={sidenav} />;
   }
   return (
     <Alert heading="Error loading event definitions">
