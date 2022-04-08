@@ -29,7 +29,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
     * Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Roles assigned and duties started:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
-  * **Scribe (SC)**: Notes activities in war room (hangout) to #login-situation to produce timeline / share with others not in room
+  * **Scribe (SC)**: Notes significant events observed in the war room (hangout) to #login-situation to produce timeline / share with others not in room (Just notes - Not a transcript!)
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
     * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks)
     * Ensures execution of relevant runbook steps, subdelegating as needed
@@ -70,8 +70,8 @@ Loop through per-role items until remediation is complete.
   * Regular updates to interested parties provided
   * StatusPage updated as status changes
 * Scribe (SC)
-  * Ensure a full record is being maintained in Slack
-
+  * Ensure a timeline of significant events is recorder in the #login-situation Slack channel
+  * Relay information to help someone NOT in the war room who wants to understand the incident
 
 Upon remediation:
 * Signaled end of incident in #login-situation once remediated
