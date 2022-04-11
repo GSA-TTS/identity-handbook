@@ -80,8 +80,9 @@ Roles proceed as follows:
   * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) and initiates use
   * Ensures screen sharing and other methods are used
 * **Scribe (SC)**:
-  * Records all activities in #login-situation channel to create a timeline
+  * Records significant activities in #login-situation channel to create a timeline
   * Asks for links to resources/extra information to record as needed
+  * Relays information to help someone NOT in the war room who wants to understand the incident
 * **Comms Lead (CL)**:
   * Creates the official tracking issue for the incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
   * Creates the Incident Review document by copying [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and shares a link in #login-situation
@@ -378,7 +379,7 @@ Anyone with access to production, including:
   * If unfilled or someone needs to rotate out, volunteers to serve in one of the defined roles:
     * Technical lead (TL): Leads technical investigation and mitigation
     * Comms lead (CL): Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
-    * Scribe (S): Relays information discussed in war room (hangout) to #login-situation and aids SL in recording incident
+    * Scribe (S): Relays information discussed in war room (hangout) to #login-situation and aids SL in recording incident (Just notes, not a transcript)
   * If assigned a specific role or task, sees it through until it is complete OR handed off to another participant and confirmed by the SL
   * Be ready to answer SL/others when questions arise
   * Scribe your activities and artifacts in #login-situation
