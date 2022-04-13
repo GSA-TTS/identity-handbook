@@ -31,6 +31,14 @@ and navy officer
 
 [katherine]: https://en.wikipedia.org/wiki/Katherine_Johnson
 
+## Kimberly
+
+* **Namesake**: [Kimberly Bryant][kimberly], an electrical engineer who founded
+  [Black Girls Code](https://www.blackgirlscode.com/).
+* **Focus area**: Partnerships Account Managers and Account Management Coordinators
+
+[kimberly]: https://en.wikipedia.org/wiki/Kimberly_Bryant_(technologist)
+
 ## IDVA
 
 * **Focus area**: Equity Study & API
@@ -40,7 +48,7 @@ and navy officer
 * **Namesake**: [Mary Poppendieck][mary], a computer scientist and
   visionary in the application of lean manufacturing principles to the world
   of software development
-* **Focus area**: _Developer Experience_ - A new software factory and minimal platform to
+* **Focus area**: _Developer Experience_: A new software factory and minimal platform to
   speed our secure development processes
 
 [mary]: http://www.poppendieck.com/people.htm
@@ -48,7 +56,7 @@ and navy officer
 ## Radia
 
 * **Namesake**: [Radia Perlman][radia], the inventor of the spanning-tree protocol
-* **Focus area**: _Cloud Infrastructure_ - The cloud architectures and resources that make
+* **Focus area**: _Cloud Infrastructure_: The cloud architectures and resources that make
   up our minimal platform
 
 [radia]: https://en.wikipedia.org/wiki/Radia_Perlman
