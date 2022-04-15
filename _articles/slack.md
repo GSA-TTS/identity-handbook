@@ -38,6 +38,7 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 - `@login-appdev-team` Group for application development teams
 - `@login_leads` login team leads
 - `@login-feds` Group for Login.gov federal FTE employees
+- `@login-ada` To tag Team Ada, one of the AppDev teams that works on the IdP
 - `@login-grace` To tag Team Grace, one of the AppDev teams that works on the IdP
 - `@login-katherine` To tag Team Katherine, one of the AppDev teams that works on the IdP and the brochure site
 - `@github-admins-login` members of this group can edit [`identity-core`](https://github.com/orgs/18F/teams/identity-core) GitHub team membership
