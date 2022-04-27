@@ -2,7 +2,7 @@
 title: "GitLab"
 description: "GitLab Setup"
 layout: article
-category: Infrastructure
+category: Platform
 ---
 
 ## Authentication

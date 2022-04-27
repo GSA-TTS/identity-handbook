@@ -25,7 +25,7 @@ Do *not* add any information to the handbook if it contains:
 - Google Group email addresses
 
 It's OK to include SSH instructions in runbooks, because those don't necessarily
-disclose what's going on inside our infrastructure.
+disclose sensitive details of our systems.
 
 ### Alternatives
 

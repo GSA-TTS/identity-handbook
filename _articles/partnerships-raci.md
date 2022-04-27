@@ -35,7 +35,7 @@ Documenting our matrix is an on-going process. The partnerships team continually
 ### Informed
 
 1. Login Product
-2. Login Infrastructure
+2. Login Platform
 3. TTS Leadership
 
 ## Agreements - Establishing/Adjusting Terms
@@ -97,7 +97,7 @@ Documenting our matrix is an on-going process. The partnerships team continually
 ### Informed
 
 1. Login Product
-2. Login Infrastructure
+2. Login Platform
 3. TTS Agreements
 
 ## Product
@@ -115,7 +115,7 @@ Documenting our matrix is an on-going process. The partnerships team continually
 
 1. Login Leadership
 2. Login Finance
-3. Login Infrastructure
+3. Login Platform
 
 ### Informed
 
@@ -154,7 +154,7 @@ Documenting our matrix is an on-going process. The partnerships team continually
 
 ### Consulted
 
-1. Login Infrastructure
+1. Login Platform
 
 ### Informed
 
@@ -173,7 +173,7 @@ Documenting our matrix is an on-going process. The partnerships team continually
 
 ### Consulted
 
-1. Login Infrastructure
+1. Login Platform
 2. Login Finance
 3. Login Product
 4. Login UX

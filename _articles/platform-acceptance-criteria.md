@@ -3,7 +3,7 @@ title: "Acceptance Criteria for Infrastructure PRs/Issues"
 description: "Detailed guide on how to file Issues and Pull Requests for the Login.gov Infrastructure Team."
 layout: article
 redirect_from:
-category: Infrastructure
+category: Platform
 ---
 
 ## Overview
