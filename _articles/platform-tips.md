@@ -1,8 +1,8 @@
 ---
-title: "Infrastructure Tips and Tricks"
-description: Helpful tips for AWS, Terraform, and other infrastructure related tech
+title: "Platform Tips and Tricks"
+description: Helpful tips for AWS, Terraform, and other platform related tech
 layout: article
-category: Infrastructure
+category: Platform
 ---
 
 

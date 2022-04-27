@@ -118,10 +118,10 @@ Here are some common Slack Channels for the Login.gov team
 
 - [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49):
   {% include tag.html name='devops' color='bg-green' %}
-  Infrastructure and devops channel
+  Platform and tools channel
 
 - [`#login-new-env-setup`](https://gsa-tts.slack.com/archives/CMW9H0RFX):
-  Infrastructure channel specifically for helping people set up their environments (AWS, Terraform, etc.)
+  Platform channel specifically for helping people set up their environments (AWS, Terraform, etc.)
 
 - [`#login-containers`](https://gsa-tts.slack.com/archives/CUBGZS3SB):
   Channel for workflows on containerization in Docker

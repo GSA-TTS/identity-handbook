@@ -2,7 +2,7 @@
 title: "Email Routing"
 description: "Inbound and outbound SMTP information"
 layout: article
-category: Infrastructure
+category: Platform
 ---
 
 ## Overview

@@ -354,7 +354,7 @@ Anyone with access to production, including:
 * Incidents are always highest priority!  If you are asked to join, please check in
 * Development, planning, and meeting activities should be paused during participation in an incident
 * When the Situation Lead acknowledges you are not needed for incident response activities you can resume normal work
-* Engineering and Infrastructure leads are happy to answer questions about prioritization and your need to drop everything and participate
+* Engineering and Platform leads are happy to answer questions about prioritization and your need to drop everything and participate
 
 ### When should I report into the situation room?
 
