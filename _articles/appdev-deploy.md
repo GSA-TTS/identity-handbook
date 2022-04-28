@@ -241,6 +241,8 @@ Scheduled for every Thursday
         1. Enter the latest git tag corresponding to the code you just deployed
         1. Copy in the cleaned up release notes and publish them in GitHub
 
+1. If everything looks good, the deploy is complete!
+
 #### Rolling Back
 
 It's safer to roll back the IDP to a known good state than leave it up in a possibly bad one.
