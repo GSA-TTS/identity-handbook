@@ -37,14 +37,12 @@ t('doc_auth.buttons.start_over')
 
 ### Front-end
 
-Login.gov uses a custom JavaScript implementation providing basic support for a Rails-like `t` translation function.
+Login.gov uses a [custom JavaScript implementation](https://github.com/18F/identity-idp/tree/main/app/javascript/packages/i18n) which provides basic support for a Rails-like `t` translation function.
 
-For strings to be available to translate in the front end, you must first add the key to the array of keys found in [`config/js_locale_strings.yml`](https://github.com/18F/identity-idp/blob/main/config/js_locale_strings.yml).
-
-The translated result of the key can be retrieved using the `window.LoginGov.I18n.t` method:
+The translated result of the key can be retrieved using the exported `t` function of the package:
 
 ```js
-const { t } = window.LoginGov.I18n;
+import { t } from '@18f/identity-i18n';
 
 console.log(t('doc_auth.buttons.start_over'));
 ```
