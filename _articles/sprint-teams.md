@@ -43,6 +43,13 @@ and navy officer
 
 * **Focus area**: Equity Study & API
 
+## Judy
+
+* **Namesake**: [Judy Parsons][judy], As a code breaker working with a secret unit in the US Navy, Parsons was instrumental in deciphering the enemy’s secret codes, but her work went unacknowledged for decades after the war.
+* **Focus area**: Cybersecurity and Anti-Fraud work stream
+
+[judy]: https://blog.theveteranssite.greatergood.com/wwii-navy-codebreaker/
+
 ## Mary
 
 * **Namesake**: [Mary Poppendieck][mary], a computer scientist and
