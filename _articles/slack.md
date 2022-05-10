@@ -89,6 +89,14 @@ Here are some common Slack Channels for the Login.gov team
 - [`#login-public-site`](https://gsa-tts.slack.com/archives/CNZCW01PX)
   Discussion around the Login.gov marketing/brochure/public site
 
+- [`#login-design-system`](https://gsa-tts.slack.com/archives/C01JVKYE4KD)
+  {% include tag.html name='design' color='bg-green' %}
+  Discussion around the Login.gov design system
+
+- [`#login-accessibility-wg`](https://gsa-tts.slack.com/archives/C01C89LM6UF)
+  {% include tag.html name='design' color='bg-green' %}
+  Accessibility working group
+
 #### Engineering/AppDev
 
 - [`#login-appdev`](https://gsa-tts.slack.com/archives/C0NGESUN5):
