@@ -23,6 +23,10 @@ and navy officer
 
 [grace]: https://en.wikipedia.org/wiki/Grace_Hopper
 
+## IDVA
+
+* **Focus area**: Equity Study & API
+
 ## Joy
 
 * **Namesake**: [Dr. Joy Buolamwini][joy], a computer scientist, artist, and
@@ -30,6 +34,13 @@ and navy officer
 * **Focus area**: In Person Proofing
 
 [joy]: https://en.wikipedia.org/wiki/Joy_Buolamwini
+
+## Judy
+
+* **Namesake**: [Judy Parsons][judy], As a code breaker working with a secret unit in the US Navy, Parsons was instrumental in deciphering the enemy’s secret codes, but her work went unacknowledged for decades after the war.
+* **Focus area**: Cybersecurity and Anti-Fraud work stream
+
+[judy]: https://blog.theveteranssite.greatergood.com/wwii-navy-codebreaker/
 
 ## Katherine
 
@@ -46,17 +57,6 @@ and navy officer
 * **Focus area**: Partnerships Account Managers and Account Management Coordinators
 
 [kimberly]: https://en.wikipedia.org/wiki/Kimberly_Bryant_(technologist)
-
-## IDVA
-
-* **Focus area**: Equity Study & API
-
-## Judy
-
-* **Namesake**: [Judy Parsons][judy], As a code breaker working with a secret unit in the US Navy, Parsons was instrumental in deciphering the enemy’s secret codes, but her work went unacknowledged for decades after the war.
-* **Focus area**: Cybersecurity and Anti-Fraud work stream
-
-[judy]: https://blog.theveteranssite.greatergood.com/wwii-navy-codebreaker/
 
 ## Mary
 
