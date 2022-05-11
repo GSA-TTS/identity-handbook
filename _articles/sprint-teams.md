@@ -23,6 +23,14 @@ and navy officer
 
 [grace]: https://en.wikipedia.org/wiki/Grace_Hopper
 
+## Joy
+
+* **Namesake**: [Dr. Joy Buolamwini][joy], a computer scientist, artist, and
+  activist who has published foundational work on algorithmic discrimination.
+* **Focus area**: In Person Proofing
+
+[joy]: https://en.wikipedia.org/wiki/Joy_Buolamwini
+
 ## Katherine
 
 * **Namesake**: [Katherine Johnson][katherine], a mathematician
