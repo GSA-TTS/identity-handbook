@@ -69,7 +69,8 @@ Evidence attesting to one’s right to credit or authority.
 
 Source: [FIPS 201](http://csrc.nist.gov/publications/fips/fips201-1/FIPS-201-1-chng1.pdf)
 
-Evidence or testimonials that support a claim of identity or assertion of an attribute and usually are intended to be used more than once.
+Evidence or testimonials that support a claim of identity or assertion of an attribute and 
+are intended to be used more than once.
 
 Source: [CNSSI-4009](http://www.ncsc.gov/nittf/docs/CNSSI-4009_National_Information_Assurance.pdf), [Searchable Source](http://www.fismapedia.org/index.php/Category:CNSSI_4009_Terms)
 
@@ -92,8 +93,8 @@ Soruce: [Entities and Entitlement](http://blog.opengroup.org/2012/08/07/entities
 ### Factor
 A factor is a type of evidence that users can provide to prove they own an identity record or an account. There are three types of factors:
 - **Something you know** (like a password)
-- **Something you carry** (like a telephone or PIV card) _Usually referred to as **something you have**
-- **Something your body has** (like a fingerprint) _Usually referred to as **something you are**
+- **Something you carry** (like a telephone or PIV card) _Usually referred to as **something you have**_
+- **Something your body has** (like a fingerprint) _Usually referred to as **something you are**_
 
 Multi-factor authentication is a process that requires users to present valid examples of multiple factors. NB: We have rewritten the names of the factors for greater clarity and precision. _See also **Authentication**, **[Two-Factor Authentication](#2fa)** and **[Multi-Factor Authentication](#mfa)**_ definitions.
 
