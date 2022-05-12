@@ -35,6 +35,7 @@ export const loadPrivateEye = () => {
       "tock.18f.gov",
       "figma.com",
       "dashboard.fr.cloud.gov",
+      "trello.com/b",
     ],
   });
 };
