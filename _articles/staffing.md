@@ -9,7 +9,7 @@ category: Team
 
 Follow these steps to re-staff a Login.gov employee internally.
 
-1. Reassignment is requested by a Login.gov employee or supervisor.
+1. Reassignment is requested by Login.gov staff, product owner and/or supervisor.
 1. Create a [Leads Trello Card](https://trello.com/b/C3fvwWz0/login-leadership-master) for the staffing change to hold notes including feedback summaries, effective dates, etc.
 1. Gather feedback about the change
     1. A supervisor or lead has a conversation with the human that is potentially changing teams to get their feedback.
