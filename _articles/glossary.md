@@ -87,7 +87,7 @@ Documents that indicate that the holder is eligible for a service or benefit, su
 
 A set of rules, defined by the IT resource owner, for managing access to a resource (asset, service, or entity) and for what purpose.  A User's level of access is conditioned not only by your identity but is also likely to be constrained by a number of further security considerations.
 
-Soruce: [Entities and Entitlement](http://blog.opengroup.org/2012/08/07/entities-and-entitlement-the-bigger-picture-of-identity-management/)
+Source: [Entities and Entitlement](http://blog.opengroup.org/2012/08/07/entities-and-entitlement-the-bigger-picture-of-identity-management/)
 
 ### Factor
 A factor is a type of evidence that users can provide to prove they own an identity record or an account. There are three types of factors:
