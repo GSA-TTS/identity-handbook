@@ -29,7 +29,7 @@ How certain we are the owner of an account logged in to that account. Based on [
 
 Login.gov supports
 - AAL 2: multifactor authentication
-- AAL 3: unphishable credential, requires WebAuthn or a PIV/CAC
+- AAL 3: phishing resistant authenticator with verifier impersonation resistance, requires WebAuthn or a PIV/CAC
 
 
 ### AAMVA
