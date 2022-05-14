@@ -59,22 +59,28 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 - [**18f/identity-saml-rails**](https://github.com/18F/identity-saml-rails) Example service provider that uses SAML and Rails.
 
-### Infrastructure
+### Platform and Infrastructure
 
 - [**18f/identity-devops**](https://github.com/18f/identity-devops)
-  Chef and terraform
+  Platform CLI tools, Terraform for infrastructure as code (IaC), Chef for instance (server) provisioning, and so much more!  (Too much more?)
 
 - [**18f/identity-devops-private**](https://github.com/18f/identity-devops-private)
-  Additional terraform configurations
+  Per-application environment additional Terraform and Chef configurations
 
 - [**18f/identity-terraform**](https://github.com/18f/identity-terraform)
-  Additional terraform modules
+  Publicly shared Terraform modules
+
+- [**18f/identity-cookbooks**](https://github.com/18f/identity-cookbooks)
+  Publicly shared Chef cookbooks
+
+- [**18f/identity-base-image**](https://github.com/18f/identity-base-image)
+  AWS EC2 Image (AMI) definitions and build pipelines to match
 
 - [**18f/identity-monitor**](https://github.com/18f/identity-monitor)
   Smoke tests and NewRelic scripts that test the site
 
 - [**18f/identity-lambda-functions**](https://github.com/18f/identity-lambda-functions)
-  AWS Lambda functions and the code to deploy them
+  AWS Lambda functions and the code to deploy them - Only used for KMS matching code at this time
 
 ### Design
 
