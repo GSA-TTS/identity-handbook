@@ -64,9 +64,11 @@ Throughout the week, check for automated vulnerability pull requests and try to 
 
 ###  Inspector General (IG) Requests
 
-* Check the [Guide for responding to IG requests](https://github.com/18F/identity-security-private/wiki/Responding-to-IG-Data-Requests)
+* Check the [Guide for responding to IG requests][ig-requests]
 * Requests will be forwarded via email.
 * It is expected that the AppDev who receives the request will be the one to complete it, even if it extends beyond the on-call week.
+
+[ig-requests]: https://github.com/18F/identity-security-private/wiki/Responding-to-Inspector-General-(IG)-Data-Requests
 
 ### Expiring PKI Certs
 
