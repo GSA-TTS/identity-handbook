@@ -1,7 +1,8 @@
 import PrivateEye from "@18f/private-eye";
 
 export const loadPrivateEye = () => {
-  PrivateEye({
+  // eslint-disable-next-line no-new
+  new PrivateEye({
     defaultMessage: "This link is private to TTS.",
     ignoreUrls: [
       "18f.slack.com",
