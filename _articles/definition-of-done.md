@@ -24,9 +24,9 @@ Expect this DoD to change over time.
 - If multiple database migrations are necessary, the database migrations have been performed
 - If removing a previously populated billing or accounting related item from the database (changing `sp_costs`):
   - Ensure there is a Jira ticket to link the change to and reference it in the PR
-  - Drop a line in #login-ops noting the proposed change and ensure the data is not needed for billing/reporting
+  - Drop a line in the [`#login-ops`](https://gsa-tts.slack.com/archives/GAYUZ4PV5) channel noting the proposed change and ensure the data is not needed for billing/reporting
   - Add a note on the discussion to the PR
-  - Add a member of #login-ops as an approver and get their sign-off before proceeding
+  - Add a member of the [`#login-ops`](https://gsa-tts.slack.com/archives/GAYUZ4PV5) channel as an approver and get their sign-off before proceeding
 - The story is deployed to Dev and/or INT environments
 - Appropriate refactoring has been done as part of developing the story
   - Dead code has been pruned
