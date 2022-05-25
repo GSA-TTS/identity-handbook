@@ -228,9 +228,12 @@ An entity that relies upon the Subscriber's token and credentials or a Verifier'
 **Registration Authority**
 A trusted entity that establishes and vouches for the identity or attributes of a Subscriber to a CSP. The RA may be an integral part of a CSP, or it may be independent of a CSP, but it has a relationship to the CSP(s).
 
-
 ### SAML
 **Security Assertion Markup Language**
+
+### SCR
+**Significant Change Request**
+A change to the system that's big enough to require review and approval from the CISO's office. Often a new network connection or vendor or service is one of these.
 
 ### SP
 **Service Provider**
