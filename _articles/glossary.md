@@ -232,6 +232,12 @@ A trusted entity that establishes and vouches for the identity or attributes of 
 ### SAML
 **Security Assertion Markup Language**
 
+### SCR
+
+**Significant Change Request**
+
+A change to our system that triggers additional review processes.
+
 ### SP
 **Service Provider**
 
