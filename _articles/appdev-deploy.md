@@ -80,7 +80,8 @@ The release branch should be cut from code tested in staging and it should be th
 
 ```bash
 cd identity-$REPO
-git fetch && git checkout $(curl --silent https://idp.staging.login.gov/api/deploy.json | jq -r .git_sha)
+git checkout main
+git pull
 git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
 git push -u origin HEAD
 ```
@@ -115,6 +116,11 @@ The last step may need a force push (add `-f`). Force-pushing to an RC branch is
 #### Prepare release notes
 
    1. The audience for the release notes are partner agencies and their developers. Notes should be written in [plain language](https://plainlanguage.gov/) and clearly demonstrate the impact on the end user or agency.
+       - Generate the changelog using the IdP's changelog script:
+         ```
+         scripts/changelog_check.rb -b origin/stages/prod
+         ```
+       - *Review* the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
    1. Release manager writes a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
        - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
        - Release title: `RC #{NUMBER}`
@@ -122,52 +128,6 @@ The last step may need a force push (add `-f`). Force-pushing to an RC branch is
    1. Release manager shares the draft release on #login-appdev with `@login-ux-team` to review content for plain language.
    1. Release manager shares the draft release on #login-appdev with `@login-product-team` to ensure that no changes in the release are missing.
    1. Once approved, the release manager ensures all updates are saved in the release notes on GitHub.
-
-#### Release notes templates
-
-Below are a set of templates that Release Managers can use when writing various types of release notes for the [Login.gov Identity Provider (IdP) code base](https://github.com/18F/identity-idp).
-
-##### Template: Official release candidate notes
-
-``` markdown
-# RC [Number]
-
-## Improvements/Changes
-- [Category]: [Change] and [end user impact]. [Pull request #___ ]
-<!-- Example
-- Phishing prevention: A new banner on Login lets users know they are on a legitimate government website (now on secure.login.gov and login.gov). We help users better identify phishing sites when we teach them how to spot legitimate government sites. (Lg 2939) (#3751)
--->
-
-## Accessibility
-- [Category]: [Change] and [end user impact]. [Pull request #___ ]
-<!-- Example
-- Images: Decorative images are hidden from screen readers to prevent confusion and redundancy for users. This is an accessibility best practice we're excited to incorporate. (#3824)
--->
-
-## Bug Fixes Users Might Notice
-- [Category]: [Change] and [end user impact]. [Pull request #___ ]
-<!-- Example
-- Unconfirmed email addresses: Users who don't confirm an email address, can re-add the email at a later time. ( #3821)
--->
-
-## Behind the scenes bug fixes users probably won't notice
-- [Category]: [Change] . [Pull request #___ ]
-<!-- Example
-- Multi-region KMS: Support for multi-region KMS, allows us to keep login.gov up and working with encrypted data if one Amazon Web Services region goes down (#3812, #3816)
--->
-
-```
-##### Template: Patch release notes
-
-``` markdown
-# RC [Number].[x]
-- [Category]: [Change] and [end user impact, if there is one]. [Pull request #___ ]
-
-<!-- Example
-Adding Emails: Patch release to include #3821, fixes a bug with adding emails to accounts after the links have expired
--->
-
-```
 
 ### Staging
 
