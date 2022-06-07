@@ -80,7 +80,8 @@ The release branch should be cut from code tested in staging and it should be th
 
 ```bash
 cd identity-$REPO
-git fetch && git checkout $(curl --silent https://idp.staging.login.gov/api/deploy.json | jq -r .git_sha)
+git checkout main
+git pull
 git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
 git push -u origin HEAD
 ```
