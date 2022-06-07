@@ -116,7 +116,10 @@ The last step may need a force push (add `-f`). Force-pushing to an RC branch is
 #### Prepare release notes
 
    1. The audience for the release notes are partner agencies and their developers. Notes should be written in [plain language](https://plainlanguage.gov/) and clearly demonstrate the impact on the end user or agency.
-       - Generate the changelog using the IdP's changelog script: `scripts/changelog_check.rb -b stages/prod -s $(git branch --show-current)`
+       - Generate the changelog using the IdP's changelog script:
+         ```
+         scripts/changelog_check.rb -b stages/prod -s $(git branch --show-current)
+         ```
        - *Review* the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
    1. Release manager writes a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
        - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
