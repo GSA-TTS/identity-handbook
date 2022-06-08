@@ -54,7 +54,7 @@ The lifecycle of a job:
     - Update the jobs table to mark the job as done, and
     - Store the result (which may contain PII) in Redis, symmetrically encrypted and
       with a 60 second expiration.
-    - PII in the payload may include data from reading the driver's licese
+    - PII in the payload may include data from reading the driver's license
         - First name
         - Last name
         - Date of Birth

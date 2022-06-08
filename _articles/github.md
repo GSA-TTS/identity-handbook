@@ -23,7 +23,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**18f/identity-dashboard**](https://github.com/18f/identity-dashboard)
   Partner Dashboard for viewing and editing service provider configurations (only in the INT environment).
 
-- [**18f/identity-charts**](https://github.com/18f/identity-charts) <br />
+- [**18f/identity-charts**](https://github.com/18f/identity-charts){: .deprecated-link} (Archived) <br />
   [login-charts-server.app.cloud.gov](https://login-charts-server.app.cloud.gov/)<br />
   Metrics dashboard for Login.gov
 
@@ -103,8 +103,8 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
   A site to disambiguate the Login.gov's predecessor `connect.gov` from Connecticut's ConnectCT `connect.ct.gov`
 
-- [**18f/identity-partners-site**](https://github.com/18F/identity-partners-site/pull/1)<br />
-  Eventually <https://partners.login.gov> but temporarily preview at <https://cg-23777731-2d5f-44ad-8cd2-5dc27ca6af07.app.cloud.gov/preview/18f/identity-partners-site/initial-content/> <br />
+- [**18f/identity-partners-site**](https://github.com/18F/identity-partners-site)<br />
+  [https://partners.login.gov](partners.login.gov) <br />
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
   A site to present information for partners
 
