@@ -7,7 +7,7 @@ category: "Architecture"
 
 ## Overview
 
-Our implementation of [RISC Security Event Token](https://developers.login.gov/security-events/) uses HTTP Push (basically webhooks) to delivery notifications to partners
+Our implementation of [RISC Security Event Token](https://developers.login.gov/security-events/) uses HTTP Push (basically webhooks) to deliver notifications to partners
 
 To minimize the impact of external HTTP requests on our application performance, we moved those calls to background jobs.
 
@@ -24,7 +24,7 @@ The lifecycle of a job:
     - The JWT payload is constructed and signed in the foreground, and the entire payload body is persisted temporarily as a job argument
     - See [data](#data) for payload contents
 3. Worker host picks up the job and sends it
-   - If the request to the parnter fails, the request will be retried about 5x
+   - If the request to the partner fails, the request will be retried about 5x
 
 ## Data
 
