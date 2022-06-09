@@ -155,9 +155,9 @@ Scheduled for every Thursday
    ```
    On the remote box
    ```bash
-   sudo tail -f /var/log/cloud-init-output.log
+   tail -f /var/log/cloud-init-output.log
    # OR
-   sudo tail -f /var/log/syslog
+   tail -f /var/log/syslog
    ```
    Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
 
