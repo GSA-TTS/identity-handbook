@@ -104,7 +104,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
   A site to disambiguate the Login.gov's predecessor `connect.gov` from Connecticut's ConnectCT `connect.ct.gov`
 
 - [**18f/identity-partners-site**](https://github.com/18F/identity-partners-site)<br />
-  [https://partners.login.gov](partners.login.gov) <br />
+  [partners.login.gov](https://partners.login.gov) <br />
   Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
   A site to present information for partners
 
