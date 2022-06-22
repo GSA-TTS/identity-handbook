@@ -191,7 +191,7 @@ require postgres or other services like other CI jobs do.
 But just in case, here is how.
 
 New services can be added to the env_runner by editing
-https://github.com/18F/identity-devops/blob/main/kitchen/cookbooks/identity-gitlab/recipes/runner.rb.
+<https://github.com/18F/identity-devops/blob/main/kitchen/cookbooks/identity-gitlab/recipes/runner.rb>.
 
 Look for where `node.run_state['allowed_services']` is set.  An empty
 list (`[]`) means allow all services.  A list with an empty string
