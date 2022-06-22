@@ -11,7 +11,7 @@ Login.gov needs automation.  We finally have acquired Gitlab and are
 able to use it for deploying idp environments!  This document will tell
 you how the environment deploy process works, how to set up your
 environment so that it is deployed by gitlab (skip ahead to
-"Adding new application sandbox environments" if you are impatient
+["Adding new application sandbox environments"](#adding-new-sandbox-environments) if you are impatient
 and just want to get it going), and give some
 operational tips on how to debug issues.
 
