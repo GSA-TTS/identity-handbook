@@ -127,7 +127,7 @@ of the particular step in a web UI.
 The terraform binary is configured in `identity-devops/dockerfiles/env_deploy.Dockerfile`.
 
 Edit `TF_VERSION` and `TF_SHA256` to change what version it is.  You can find the versions
-and SHA256es of these binaries by browsing around under https://releases.hashicorp.com/terraform/.
+and SHA256es of these binaries by browsing around under <https://releases.hashicorp.com/terraform/>.
 
 #### Updating env_deploy or env_test images
 
