@@ -299,7 +299,7 @@ stuff should work as well, like `go get -u` and so on.
 #### Pausing Pipelines
 
 You can turn off all pipelines in a repo with this:
-https://docs.gitlab.com/ee/ci/enable_or_disable_ci.html
+<https://docs.gitlab.com/ee/ci/enable_or_disable_ci.html>
 
 You can turn off the pipeline for a branch by checking in a
 `.gitlab-ci.yml` file in that branch which has `when: manual`
