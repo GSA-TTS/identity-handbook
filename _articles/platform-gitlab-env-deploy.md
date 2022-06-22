@@ -207,7 +207,7 @@ To enable your sandbox:
 1. Edit `identity-devops/kitchen/environments/<env>.json` and add `gitlab_url`
    and `gitlab_config_s3_bucket` to `login_dot_gov`.  It should look 
    something like this:
-   ~~~
+   ~~~json
    {
      "name": "myenv",
      "description": "",
