@@ -1,14 +1,14 @@
 ---
-title: "Team Radia On-Call Guide"
-description: Runbook/guide for processes/responsibilities for the weekly oncall engineers.
+title: "Platform On-Call Guide"
+description: Runbook/guide for processes/responsibilities for the on-call platform engineers.
 layout: article
 category: Platform
 ---
 
 ## Quick Reference
 
-* [DevOps Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) contains
-private links and contact information useful for oncall platform engineers at Login.gov.
+* [DevOps Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) -
+emergency contact list and other private information
 * [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arrises
 * [Troubleshooting Quick Reference]({{site.baseurl}}/articles/troubleshooting-quick-reference.html) - when you are troubleshooting and not sure where to start 
 
@@ -54,6 +54,10 @@ private links and contact information useful for oncall platform engineers at Lo
 * **Offer material and psychological support to primary** - Empathize! Proactively reach out if they have experienced high stress situations or worked over 8 hours
 
 ## Procedure
+
+### On-Call Boundary
+
+The normal schedule rotates at 1300 (1PM) Eastern Time every Tuesday.
 
 ### Entering On-Call
 
