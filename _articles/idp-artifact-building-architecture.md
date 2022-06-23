@@ -36,6 +36,6 @@ Artifacts are only used by `migration` and `idp` instances. They will attempt to
 3. Unzip artifact file into directory
 4. Run IDP deploy build in local-dependency mode, which explicitly disallows contacting RubyGems and NPM
 
-### Interaction with [CloudFront Static Assets]({% link _articles/appdev-static-assets-cdn.md %})
+### Interaction with [CloudFront Static Assets]({% link _articles/appdev-cdn.md %})
 
 Artifact generation is compatible with environments where regardless of whether CloudFront is used to serve static assets.
