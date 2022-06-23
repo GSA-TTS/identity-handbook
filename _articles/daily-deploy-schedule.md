@@ -17,17 +17,16 @@ These apps are deployed on weekdays:
 
 In these environments
 
-- dm
 - int
+- pt
 - staging
+- dm
 
-The daily deploys are scheduled for **weekdays at 12am and 5pm UTC**. See
+The daily deploys are scheduled for **weekdays at 5pm UTC**. See
 the [daily business schedule in identity-devops][identity-devops-schedule].
 
 | UTC  | Daylight Savings               | Eastern | Central | Mountain | Pacific |
 |------|--------------------------------------|------|------|------|------|------|
-| 12am | Daylight savings time<br />(March-November) | 8pm  | 7pm  | 6pm  | 5pm  |
-|      | Standard time                               | 7pm  | 6pm  | 5pm  | 4pm  |
 | 5pm  | Daylight savings time<br />(March-November) | 1pm  | 12pm | 11am | 10am |
 |      | Standard time                               | 12pm | 11am | 10am | 9am  |
 
