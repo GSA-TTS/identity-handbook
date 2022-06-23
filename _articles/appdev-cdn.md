@@ -3,6 +3,7 @@ title: "IdP CDN"
 description: "Overview of use of CloudFront CDN to serve Login.gov"
 layout: article
 category: "Architecture"
+redirect_from: /articles/appdev-static-assets-cdn.html
 ---
 
 ## Overview
