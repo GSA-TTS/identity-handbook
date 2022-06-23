@@ -17,9 +17,10 @@ These apps are deployed on weekdays:
 
 In these environments
 
-- dm
 - int
+- pt
 - staging
+- dm
 
 The daily deploys are scheduled for **weekdays at 12am and 5pm UTC**. See
 the [daily business schedule in identity-devops][identity-devops-schedule].
@@ -28,8 +29,6 @@ the [daily business schedule in identity-devops][identity-devops-schedule].
 |------|--------------------------------------|------|------|------|------|------|
 | 12am | Daylight savings time<br />(March-November) | 8pm  | 7pm  | 6pm  | 5pm  |
 |      | Standard time                               | 7pm  | 6pm  | 5pm  | 4pm  |
-| 5pm  | Daylight savings time<br />(March-November) | 1pm  | 12pm | 11am | 10am |
-|      | Standard time                               | 12pm | 11am | 10am | 9am  |
 
 [identity-devops-schedule]: https://github.com/18F/identity-terraform/blob/3a37047cfae6949dab1150025c528ccc5332f837/asg_recycle/main.tf#L44-L78
 
