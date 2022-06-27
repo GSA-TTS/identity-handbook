@@ -136,18 +136,35 @@ to the Dockerfile(s) and `env_deploy.sh` scripts and so on in that branch, then 
 branch to the `only:` section for the `build_env_deploy` section in your `.github-ci.yml`
 on your branch.  Once you check it in, your branch will build the image for your branch.
 
-You can then test the image out in your environment by copying
-`s3://login-gov.secrets.<account>-us-west-2/common/gitlab_env_runner_allowed_images` to
-either add or replace the image in that file with your new one.  You can get the proper
-digest from either looking at the image build log at the end, or by looking at the ECR
-console for the image that just got built.  Once you have the new image in there, copy
-that file up to `s3://login-gov.secrets.<account>-us-west-2/<env>/gitlab_env_runner_allowed_images`,
-where `<env>` is your environment.  Then, go to your environment and recycle the
-env_runner.  It should come up ready to let your new image run.
+There are two ways to test this out in your environment:
+1.  The quick-n-dirty way.  Log into your env_runner instance in your env and edit
+    `/etc/gitlab-runner/config.toml`.  Comment out the `allowed_images` line.
+    restart gitlab runner with `systemctl restart gitlab-runner`.  Your runner will
+    now allow all images to run on it, which is not secure, but it'll increase your
+    iteration speed because you don't need to recycle your env_runner for every new
+    image you create.  
 
-After that, change your branch that your env deploys from so that it uses the new
-image in your `.gitlab-ci.yml` to get it to run a deploy and test the new
-functionality out.
+    After that, change your branch that your env deploys from so that it uses the new
+    image in your `.gitlab-ci.yml` to get it to run a deploy and test the new
+    functionality out.
+
+    You should recycle your env_runner when you are done with this, so that it gets
+    locked down again.
+
+1.  The end-to-end way (slow).  This is the normal
+    way that systems get set up, so you should probably do this before you do your final
+    PR that has your image in it to make sure that it works end-to-end.  Copy
+    `s3://login-gov.secrets.<account>-us-west-2/common/gitlab_env_runner_allowed_images` to
+    either add or replace the image in that file with your new one.  You can get the proper
+    digest from either looking at the image build log at the end, or by looking at the ECR
+    console for the image that just got built.  Once you have the new image in there, copy
+    that file up to `s3://login-gov.secrets.<account>-us-west-2/<env>/gitlab_env_runner_allowed_images`,
+    where `<env>` is your environment.  Then, go to your environment and recycle the
+    env_runner.  It should come up ready to let your new image run.
+
+    After that, change your branch that your env deploys from so that it uses the new
+    image in your `.gitlab-ci.yml` to get it to run a deploy and test the new
+    functionality out.
 
 Once you've verified it works, you should add the new image to the 
 `s3://login-gov.secrets.<account>-us-west-2/common/gitlab_env_runner_allowed_images`
