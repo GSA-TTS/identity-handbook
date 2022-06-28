@@ -34,7 +34,6 @@ The following onboarding tasks are applicable to all employees.
     - Go to https://calendar.google.com/calendar/render?cid=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com
     - Click "Add" when prompted to add the calendar
     - You should see "Login.gov shared calendar" under "My Calendars"
-- Add yourself to the [`team.yml`](https://github.com/18F/identity-private/blob/main/team/team.yml) file
 - Add a signature to your GSA email account like this:
   > **Human Person**<br>
   > Login.gov Chief of Kittens<br>
@@ -63,7 +62,6 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Full Slack access for Contractors is at the discretion of Login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
 - Add to appropriate [Login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the Login.gov project.
-- Approve their PR to update [`team.yml`](https://github.com/18F/identity-private/blob/main/team/team.yml) with their info
 - Verify their membership in all appropriate Google Groups. This will grant them permission to see the Login.gov Team Drive and other Google Docs
   - Add everyone to `login-all@`
   - Add feds to `login-team@`, and contractors to `login-team-contractors@`
