@@ -33,7 +33,6 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
   - Remove the user as admins from any dashboards
     - [Login.gov dashboard](https://dashboard.int.identitysandbox.gov)
     - [search.gov dashboard](https://search.gov)
-- Update [team.yml](https://github.com/18F/identity-private/blob/main/team/team.yml)
 - Update the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
 
 ## Partial Offboarding
