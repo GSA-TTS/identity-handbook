@@ -121,13 +121,12 @@ The last step may need a force push (add `-f`). Force-pushing to an RC branch is
          scripts/changelog_check.rb -b origin/stages/prod
          ```
        - *Review* the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
-   1. Release manager writes a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
+   1. Write a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
        - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
        - Release title: `RC #{NUMBER}`
        - *Save* the draft, do not publish as a pre-release
-   1. Release manager shares the draft release on #login-appdev with `@login-ux-team` to review content for plain language.
-   1. Release manager shares the draft release on #login-appdev with `@login-product-team` to ensure that no changes in the release are missing.
-   1. Once approved, the release manager ensures all updates are saved in the release notes on GitHub.
+   1. Share the draft release notes in #login-appdev and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
+   1. Apply any requested updates to the release notes on GitHub.
 
 ### Staging
 
