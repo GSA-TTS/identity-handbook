@@ -125,7 +125,7 @@ The last step may need a force push (add `-f`). Force-pushing to an RC branch is
        - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
        - Release title: `RC #{NUMBER}`
        - *Save* the draft, do not publish as a pre-release
-   1. Share the draft release notes in #login-appdev and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
+   1. Share the draft release notes in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
    1. Apply any requested updates to the release notes on GitHub.
 
 ### Staging
