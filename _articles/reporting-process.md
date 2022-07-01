@@ -9,7 +9,7 @@ category: "Reporting"
 
 If you have a data question about login.gov data, post it in [`#login-reporting`](https://gsa-tts.slack.com/archives/C5E7EJWF7). Make sure to include key information such as:
 
-- What is the data you are requestion? What question are you trying to answer?
+- What is the data you are requesting? What question are you trying to answer?
 - When do you need this information by?
 
 Once that happens, someone from the data team will acknowledge and file your question as a JIRA ticket,
