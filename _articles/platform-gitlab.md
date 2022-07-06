@@ -28,7 +28,7 @@ platform engineer you can Slack a question in `#login-devops` and `@login-devtoo
 For general GitLab support you can also directly use GitLab support.
 See [GitLab Licensing and Support](https://github.com/18F/identity-devops/wiki/GitLab-Ultimate-Licensing-and-Support)
 
-## Geting an Account
+## Getting an Account
 
 Accounts are provisioned in code by the Login.gov Platform Team.  In general
 this will be done as part of on-boarding.
@@ -40,17 +40,18 @@ GitLab ask for help in the `#login-devops` channel and `@login-devtools-oncall`
 
 Prerequisites:
 * You MUST use secure.login.gov with your official duty GSA email address to sign in
-* If you don't yet have an account on secure.login.gov, go ahead and make one!
+* If you don't yet have an account on secure.login.gov, go ahead and make one (or be
+  ready to create it when you first login to GitLab)
 * You must use a phishing resistant multi-factor option for MFA which is one of:
+  * PIV or CAC
   * Security Key (WebAuthN with a hardware key)
   * Face or Touch Unlock (Platform Authenticator)
-  * PIV or CAC
 
 To log in:
 * Go to https://gitlab.login.gov
 * Click "Log in Using Login.gov"
 * Sign in with your official duty email address
-* Multi-factor authenticate with a security key, face/touch unlock, PIV, or CAC
+* Multi-factor authenticate with a security key, face/touch unlock, or PIV
 
 Note - If `secure.login.gov` is not available, existing Personal Access Tokens
 continue to function.  We also have break-glass procedures if needed.
