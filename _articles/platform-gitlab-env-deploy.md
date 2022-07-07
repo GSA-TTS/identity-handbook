@@ -1,13 +1,13 @@
 ---
-title: "Gitlab Environment Deploys"
-description: How to use Gitlab to deploy your sandbox idp environments
+title: "GitLab Environment Deploys"
+description: How to use GitLab to deploy your sandbox IdP environments
 layout: article
 category: Platform
 ---
 
 ## Overview
 
-Login.gov needs automation.  We finally have acquired Gitlab and are
+Login.gov needs automation.  We finally have acquired GitLab and are
 able to use it for deploying idp environments!  This document will tell
 you how the environment deploy process works, how to set up your
 environment so that it is deployed by gitlab (skip ahead to
@@ -24,7 +24,7 @@ the image.  This image will be available for us to hardcode into our
 environments for deploys/tests.
 
 As you check
-in code to your `stages/<environment>` branch, Gitlab will notice and
+in code to your `stages/<environment>` branch, GitLab will notice and
 kick off a pipeline.  It will run a deploy job that is tagged for
 `<environment>-env-runner`.  The `env_deploy` image contains all of
 the terraform binaries/providers/etc that it needs to do a self-contained
