@@ -1,0 +1,71 @@
+- name: Ada
+  namesake_markdown: "[Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace), one of the world's first computer programmers"
+  focus_area: Unsupervised remote proofing
+  slack_channel_name: login-team-ada
+  slack_channel_url: https://gsa-tts.slack.com/archives/CNCGEHG1G
+  slack_group_names:
+  - login-ada
+
+- name: Agnes
+  namesake_markdown: "[Agnes Meyer Driscoll](https://www.nsa.gov/History/Cryptologic-History/Historical-Figures/Historical-Figures-View/Article/1623020/agnes-meyer-driscoll/), a navy cryptanalyst, known as the '[first lady of naval cryptology](https://www.hmdb.org/m.asp?m=106127)'"
+  focus_area: Attempts API
+  slack_channel_name: login-team-loggerhead
+  slack_channel_url: https://gsa-tts.slack.com/archives/C03N6KQBAKS
+
+- name: Grace
+  namesake_markdown: "[Admiral Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), a computer scientist and navy officer"
+  focus_area: KYC/Non-biometric verification
+  slack_channel_name: login-team-grace
+  slack_channel_url: https://gsa-tts.slack.com/archives/C0184P9SCJ0
+  slack_group_names:
+  - login-grace
+
+- name: IDVA
+  focus_area: "Equity Study & API"
+  slack_channel_name: identity-idva
+  slack_channel_url: https://gsa-tts.slack.com/archives/C017KUF5DL4
+
+- name: Joy
+  namesake_markdown: "[Dr. Joy Buolamwini](https://en.wikipedia.org/wiki/Joy_Buolamwini), a computer scientist, artist, and activist who has published foundational work on algorithmic discrimination."
+  focus_area: In Person Proofing
+  slack_channel_name: login-team-joy
+  slack_channel_url: https://gsa-tts.slack.com/archives/C03FA4VBN76
+  slack_group_names:
+  - login-joy-engineers
+  - login-joy-designers
+
+- name: Judy
+  namesake_markdown: "[Judy Parsons](https://blog.theveteranssite.greatergood.com/wwii-navy-codebreaker/), As a code breaker working with a secret unit in the US Navy, Parsons was instrumental in deciphering the enemy’s secret codes, but her work went unacknowledged for decades after the war."
+  focus_area: Cybersecurity and Anti-Fraud work stream
+  slack_channel_url: https://gsa-tts.slack.com/archives/C03A12WPCLW
+  slack_channel_name: login-team-judy
+
+- name: Kimberly
+  namesake_markdown: "[Kimberly Bryant](https://en.wikipedia.org/wiki/Kimberly_Bryant_(technologist), an electrical engineer who founded [Black Girls Code](https://www.blackgirlscode.com/)."
+  focus_area: Partnerships Account Managers and Account Management Coordinators
+  slack_channel_url: https://gsa-tts.slack.com/archives/C03B3AQQH0C
+  slack_channel_name: login-team-kimberly
+
+- name: Katherine
+  namesake_markdown: "[Katherine Johnson](https://en.wikipedia.org/wiki/Katherine_Johnson), a mathematician who was a key part of early NASA spaceflights"
+  focus_area: Authentication
+  slack_channel_url: https://gsa-tts.slack.com/archives/C01710KMYUB
+  slack_channel_name: login-team-katherine
+
+- name: Mary
+  namesake_markdown: "[Mary Poppendieck](http://www.poppendieck.com/people.htm), a computer scientist and visionary in the application of lean manufacturing principles to the world   of software development"
+  focus_area: "_Developer Experience_: A new software factory and minimal platform to speed our secure development processes"
+  slack_channel_url: https://gsa-tts.slack.com/archives/C023LB27CCQ
+  slack_channel_name: login-team-mary
+
+- name: Radia
+  namesake_markdown: "[Radia Perlman](https://en.wikipedia.org/wiki/Radia_Perlman), the inventor of the spanning-tree protocol"
+  focus_area: "_Cloud Infrastructure_: The cloud architectures and resources that make up our minimal platform"
+  slack_channel_url: https://gsa-tts.slack.com/archives/C01DBBNTL68
+  slack_channel_name: login-team-radia
+
+- name: Ursula
+  namesake_markdown: "[Ursula Burns](https://en.wikipedia.org/wiki/Ursula_Burns), who has been CEO of technology companies like Xerox"
+  focus_area: Partnership website and partner console
+  slack_channel_url: https://gsa-tts.slack.com/archives/C01SU3NB9T3
+  slack_channel_name: login-team-ursula
