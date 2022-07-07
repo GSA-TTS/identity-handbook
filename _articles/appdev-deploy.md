@@ -150,6 +150,15 @@ Scheduled for every Thursday
    1. Follow the progress of the migrations, ensure that they are working properly <a id="follow-the-process" />
    ```bash
    # may need to wait a few seconds after the recycle
+   aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --newest asg-prod-migration
+   ```
+
+   <details markdown="1">
+     <summary>
+      View multi-step manual instructions to tail logs
+     </summary>
+
+   ```bash
    aws-vault exec prod-power -- ./bin/ssm-instance --newest asg-prod-migration
    ```
    On the remote box
@@ -158,6 +167,8 @@ Scheduled for every Thursday
    # OR
    tail -f /var/log/syslog
    ```
+   </details>
+
    Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
 
    1. Follow the progress of the IDP hosts spinning up
@@ -174,9 +185,9 @@ Scheduled for every Thursday
 
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
     ```bash
-    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
-    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
-    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod worker
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idpxtra
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod worker
     ```
 
 1. Set a timer for one hour, then check NewRelic again for errors.
@@ -221,9 +232,9 @@ the bug in staging, where it won't affect end users.
 To quickly remove new servers and leave old servers up:
 
 ```bash
-aws-vault exec prod-power -- ./bin/scale-in-new-instances prod idp
-aws-vault exec prod-power -- ./bin/scale-in-new-instances prod idpxtra
-aws-vault exec prod-power -- ./bin/scale-in-new-instances prod worker
+aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod idp
+aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod idpxtra
+aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
 ```
 
 ##### Steps to roll back
@@ -259,6 +270,6 @@ new configurations (config from S3, or service provides from `identity-idp-confi
 1. In production, it's important to remember to still scale out old IDP and IDPxtra instances.
 
     ```bash
-    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idp
-    aws-vault exec prod-power -- ./bin/scale-in-old-instances prod idpxtra
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idpxtra
     ```
