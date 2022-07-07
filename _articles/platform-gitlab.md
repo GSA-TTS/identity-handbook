@@ -49,7 +49,7 @@ Prerequisites:
   * Face or Touch Unlock (Platform Authenticator)
 
 To log in:
-* Go to https://gitlab.login.gov
+* Go to <https://gitlab.login.gov>
 * Click "Log in Using Login.gov"
 * Sign in with your official duty email address
 * Multi-factor authenticate with a security key, face/touch unlock, or PIV
