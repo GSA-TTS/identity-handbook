@@ -3,6 +3,7 @@ title: "GitLab"
 description: "GitLab Setup"
 layout: article
 category: Platform
+redirect_from: /articles/gitlab.html
 ---
 
 # Introduction
