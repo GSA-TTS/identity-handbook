@@ -15,6 +15,13 @@ Here are the Login.gov sprint teams, most of them are named after famous women i
 
 [ada]: https://en.wikipedia.org/wiki/Ada_Lovelace
 
+## Agnes
+
+* **Namesake**: [Agnes Meyer Driscoll][agnes], a navy cryptanalyst, known as the '[first lady of naval cryptology](https://www.hmdb.org/m.asp?m=106127)'
+* **Focus area**: Attempts API
+
+[agnes]: https://www.nsa.gov/History/Cryptologic-History/Historical-Figures/Historical-Figures-View/Article/1623020/agnes-meyer-driscoll/
+
 ## Grace
 
 * **Namesake**: [Admiral Grace Hopper][grace], a computer scientist
