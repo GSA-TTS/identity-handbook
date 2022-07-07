@@ -100,7 +100,7 @@ For a full list of documented events, see [Analytics Events]({% link _articles/a
 
 #### Saved Queries
 
-On the right side of the page, we have a few saved queries useful for common triage tasks under "user".
+On the right side of the page, we have a few saved queries useful for common triage tasks under "user" under "prod".
 
 ![saved user queries in Cloudwatch Insights]({{ site.baseurl }}/images/cloudwatch-saved-queries-users.png)
 
