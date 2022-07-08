@@ -41,7 +41,7 @@
   slack_channel_name: login-team-judy
 
 - name: Kimberly
-  namesake_markdown: "[Kimberly Bryant](https://en.wikipedia.org/wiki/Kimberly_Bryant_(technologist), an electrical engineer who founded [Black Girls Code](https://www.blackgirlscode.com/)."
+  namesake_markdown: "[Kimberly Bryant](https://en.wikipedia.org/wiki/Kimberly_Bryant_(technologist)), an electrical engineer who founded [Black Girls Code](https://www.blackgirlscode.com/)."
   focus_area: Partnerships Account Managers and Account Management Coordinators
   slack_channel_url: https://gsa-tts.slack.com/archives/C03B3AQQH0C
   slack_channel_name: login-team-kimberly
