@@ -39,10 +39,20 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 - `@login-appdev-team` Group for application development teams
 - `@login_leads` login team leads
 - `@login-feds` Group for Login.gov federal FTE employees
-- `@login-ada` To tag members of [Team Ada]({% link _articles/sprint-teams.md %}#ada)
-- `@login-grace` To tag members of [Team Grace]({% link _articles/sprint-teams.md %}#grace)
-- `@login-katherine` To tag members of [Team Katherine]({% link _articles/sprint-teams.md %}#katherine)
 - `@github-admins-login` members of this group can edit [`identity-core`](https://github.com/orgs/18F/teams/identity-core) GitHub team membership
+
+### Sprint Team Handles
+
+{% comment %}
+see data/sprint_teams.yml for the data
+{% endcomment %}
+
+{% assign sprint_team_handles = site.data.sprint_teams | sort: "name" %}
+
+{% for sprint_team in sprint_team_handles %}{% if sprint_team.slack_group_name %}
+- `@{{ sprint_team.slack_group_name }}` To tag members of [{{ sprint_team.name }}]({% link _articles/sprint-teams.md %}#{{ sprint_team.name | slugify }})
+{%- endif %}{%- endfor %}
+
 
 ## Channels
 
@@ -104,22 +114,6 @@ Here are some common Slack Channels for the Login.gov team
   {% include tag.html name='appdev' color='bg-blue' %}
   General IDP and Appdev matters
 
-- [`#login-ada`](https://gsa-tts.slack.com/archives/CNCGEHG1G):
-  {% include tag.html name='appdev' color='bg-blue' %}
-  Team Ada channel
-
-- [`#login-grace`](https://gsa-tts.slack.com/archives/C0184P9SCJ0):
-  {% include tag.html name='appdev' color='bg-blue' %}
-  Team Grace channel
-
-- [`#login-katherine`](https://gsa-tts.slack.com/archives/C01710KMYUB):
-  {% include tag.html name='appdev' color='bg-blue' %}
-  Team Katherine channel
-
-- [`#login-ursula`](https://gsa-tts.slack.com/archives/C01SU3NB9T3):
-  {% include tag.html name='appdev' color='bg-blue' %}
-  Team Ursula channel
-
 - [`#login-reporting`](https://gsa-tts.slack.com/archives/C5E7EJWF7):
   Analytics and reporting channel
 
@@ -162,6 +156,21 @@ Here are some common Slack Channels for the Login.gov team
 
 - [`#login-product-strategy`](https://gsa-tts.slack.com/archives/CR2SSAFRQ):
   Cross-team product strategy
+
+#### Sprint Teams
+
+{% comment %}
+see data/sprint_teams.yml for the data
+{% endcomment %}
+
+{% assign sprint_team_channels = site.data.sprint_teams | sort: "name" %}
+
+{% for sprint_team in sprint_team_channels %}
+{% if sprint_team.slack_channel_name and sprint_team.slack_channel_url %}
+- [`#{{ sprint_team.slack_channel_name }}`]({{ sprint_team.slack_channel_url }})
+  Team {{ sprint_team.name }} channel
+{% endif %}
+{% endfor %}
 
 ### Other Channels
 
