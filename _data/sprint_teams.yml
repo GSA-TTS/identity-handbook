@@ -8,7 +8,7 @@
 - name: Agnes
   namesake_markdown: "[Agnes Meyer Driscoll](https://www.nsa.gov/History/Cryptologic-History/Historical-Figures/Historical-Figures-View/Article/1623020/agnes-meyer-driscoll/), a navy cryptanalyst, known as the '[first lady of naval cryptology](https://www.hmdb.org/m.asp?m=106127)'"
   focus_area: Attempts API
-  slack_channel_name: login-team-loggerhead
+  slack_channel_name: login-team-agnes
   slack_channel_url: https://gsa-tts.slack.com/archives/C03N6KQBAKS
 
 - name: Grace
