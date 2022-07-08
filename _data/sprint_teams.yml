@@ -3,8 +3,7 @@
   focus_area: Unsupervised remote proofing
   slack_channel_name: login-team-ada
   slack_channel_url: https://gsa-tts.slack.com/archives/CNCGEHG1G
-  slack_group_names:
-  - login-ada
+  slack_group_name: login-ada
 
 - name: Agnes
   namesake_markdown: "[Agnes Meyer Driscoll](https://www.nsa.gov/History/Cryptologic-History/Historical-Figures/Historical-Figures-View/Article/1623020/agnes-meyer-driscoll/), a navy cryptanalyst, known as the '[first lady of naval cryptology](https://www.hmdb.org/m.asp?m=106127)'"
@@ -17,8 +16,7 @@
   focus_area: KYC/Non-biometric verification
   slack_channel_name: login-team-grace
   slack_channel_url: https://gsa-tts.slack.com/archives/C0184P9SCJ0
-  slack_group_names:
-  - login-grace
+  slack_group_name: login-grace
 
 - name: IDVA
   focus_area: "Equity Study & API"
@@ -30,9 +28,7 @@
   focus_area: In Person Proofing
   slack_channel_name: login-team-joy
   slack_channel_url: https://gsa-tts.slack.com/archives/C03FA4VBN76
-  slack_group_names:
-  - login-joy-engineers
-  - login-joy-designers
+  slack_group_name: login-joy
 
 - name: Judy
   namesake_markdown: "[Judy Parsons](https://blog.theveteranssite.greatergood.com/wwii-navy-codebreaker/), As a code breaker working with a secret unit in the US Navy, Parsons was instrumental in deciphering the enemy’s secret codes, but her work went unacknowledged for decades after the war."

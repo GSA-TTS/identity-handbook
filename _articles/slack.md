@@ -41,7 +41,7 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 - `@login-feds` Group for Login.gov federal FTE employees
 - `@github-admins-login` members of this group can edit [`identity-core`](https://github.com/orgs/18F/teams/identity-core) GitHub team membership
 
-#### Sprint Teams
+### Sprint Team Handles
 
 {% comment %}
 see data/sprint_teams.yml for the data
@@ -49,11 +49,9 @@ see data/sprint_teams.yml for the data
 
 {% assign sprint_team_handles = site.data.sprint_teams | sort: "name" %}
 
-{% for sprint_team in sprint_team_handles %}
-{% for slack_group_name in sprint_team.slack_group_names %}
-- `@{{ slack_group_name }}` To tag members of [{{ sprint_team.name }}]({% link _articles/sprint-teams.md %}#{{ sprint_team.name | slugify }})
-{%- endfor -%}
-{%- endfor %}
+{% for sprint_team in sprint_team_handles %}{% if sprint_team.slack_group_name %}
+- `@{{ sprint_team.slack_group_name }}` To tag members of [{{ sprint_team.name }}]({% link _articles/sprint-teams.md %}#{{ sprint_team.name | slugify }})
+{%- endif %}{%- endfor %}
 
 
 ## Channels
