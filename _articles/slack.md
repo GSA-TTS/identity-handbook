@@ -117,20 +117,6 @@ Here are some common Slack Channels for the Login.gov team
 - [`#login-reporting`](https://gsa-tts.slack.com/archives/C5E7EJWF7):
   Analytics and reporting channel
 
-{% comment %}
-see data/sprint_teams.yml for the data
-{% endcomment %}
-
-{% assign sprint_team_channels = site.data.sprint_teams | sort: "name" %}
-
-{% for sprint_team in sprint_team_channels %}
-{% if sprint_team.slack_channel_name and sprint_team.slack_channel_url %}
-- [`#{{ sprint_team.slack_channel_name }}`]({{ sprint_team.slack_channel_url }})
-  {% include tag.html name='appdev' color='bg-blue' %}
-  Team {{ sprint_team.name }} channel
-{% endif %}
-{% endfor %}
-
 #### Engineering/DevOps
 
 - [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49):
@@ -170,6 +156,21 @@ see data/sprint_teams.yml for the data
 
 - [`#login-product-strategy`](https://gsa-tts.slack.com/archives/CR2SSAFRQ):
   Cross-team product strategy
+
+#### Sprint Teams
+
+{% comment %}
+see data/sprint_teams.yml for the data
+{% endcomment %}
+
+{% assign sprint_team_channels = site.data.sprint_teams | sort: "name" %}
+
+{% for sprint_team in sprint_team_channels %}
+{% if sprint_team.slack_channel_name and sprint_team.slack_channel_url %}
+- [`#{{ sprint_team.slack_channel_name }}`]({{ sprint_team.slack_channel_url }})
+  Team {{ sprint_team.name }} channel
+{% endif %}
+{% endfor %}
 
 ### Other Channels
 
