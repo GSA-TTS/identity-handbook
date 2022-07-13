@@ -61,7 +61,7 @@
   slack_channel_name: login-team-radia
 
 - name: Ross
-  namesake_markdown: "[Mary G Ross](https://en.wikipedia.org/wiki/Mary_Golda_Ross), the first known Native American female engineer, she worked on the preliminary design concepts for interplanetary space travel, manned space flight, ballistic missiles, and satillites in orbit above the earth"
+  namesake_markdown: "[Mary G Ross](https://en.wikipedia.org/wiki/Mary_Golda_Ross), the first known Native American female engineer, she worked on the preliminary design concepts for interplanetary space travel, manned space flight, ballistic missiles, and satellites in orbit above the earth"
   focus_area: Inherited Proofing
   slack_channel_url: https://gsa-tts.slack.com/archives/C03JDA5HNUV
   slack_channel_name: login-team-ross
