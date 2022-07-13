@@ -22,7 +22,7 @@ critical in supporting our partners.
 ## Ticket tracking
 
 We currently track all of our partner support tickets in
-[Smartsheet](https://app.smartsheetgov.com/sheets/PJxWvcg693hwJPRW5c2vmPcWr5m2695pJ8Rv96H1?view=card&cardLevel=0&cardViewByColumnId=4354653098928004).
+[ZenDesk](https://logingov.zendesk.com/agent/dashboard).
 This allows us to maintain a single view of all of the support activities being
 handled by the Partnerships Engineering team as well as evaluate our workload
 and throughput. For more information on how the sheet is structured see the
