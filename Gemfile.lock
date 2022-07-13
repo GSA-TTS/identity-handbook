@@ -116,14 +116,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
-  html-proofer
+  activesupport (~> 7.0.3)
+  html-proofer (~> 4.0.1)
   jekyll (~> 4)
   jekyll-environment-variables
   jekyll-last-modified-at
   jekyll-redirect-from
   kramdown (>= 2.3.0)
-  nokogiri
+  nokogiri (~> 1.13.7)
   rspec (~> 3.9.0)
 
 RUBY VERSION

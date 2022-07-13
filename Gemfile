@@ -12,8 +12,8 @@ group :jekyll_plugins do
 end
 
 group :test do
-  gem 'activesupport'
-  gem 'html-proofer'
-  gem 'nokogiri'
+  gem 'activesupport', '~> 7.0.3'
+  gem 'html-proofer', '~> 4.0.1'
+  gem 'nokogiri', '~> 1.13.7'
   gem 'rspec', '~> 3.9.0'
 end
