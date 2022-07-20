@@ -9,9 +9,9 @@ Here is a list of items that need to be completed to deploy the configuration fo
 
 1. Ensure that the IAA is signed and includes the application explicitly in the Description of Service or Statement of Work.
 
-2. Ensure that the **Contact Center Fact Sheet** was sent from Smartsheet. This is done by setting the **Integration Ticket Status** of the Smartsheet ticket to anything after **IAA Review**.
+2. Ensure that the **Contact Center Fact Sheet** was sent from ZenDesk. This is done by setting the **Integration Ticket Status** of the ZenDesk ticket to anything after **IAA Review**.
 
-3. Ensure that the production configuration has been provided by the partner (e.g. valid Dashboard URL in the Smartsheet ticket) and includes the following:
+3. Ensure that the production configuration has been provided by the partner (e.g. valid Dashboard URL in the ZenDesk ticket) and includes the following:
   * All production urls should have `.gov`, `.mil` or a dedicated `.com` address and point to an ATO-ed environment. It should not be a local IP or have things like "dev", "qa",  or "mikes-macbook" in the urls.
   * If the app does not have a logo, then the partner will need to upload one before it can be deployed. You can find the [logo guidelines here](https://developers.login.gov/design-guidelines/#agency-logo-guidelines).
 
