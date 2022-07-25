@@ -1,11 +1,11 @@
 ---
-title: "Provisioning Test IAL2 Users for Partners"
+title: "Provisioning Test IDV Users for Partners"
 layout: article
-description: "The steps necessary to set up a collection of test users with IAL2 profiles for a partner in the sandbox."
+description: "The steps necessary to set up a collection of test users with IDV profiles for a partner in the sandbox."
 category: Partnerships
 ---
 
-On rare occasions, a partner may ask us to provision a collection of users with specific attributes on their behalf to facilitate testing. We may agree to do so **only in our sandbox environment** if the number of users needed is large enough where manually provisioning them would be cost prohibitive from a timing perspective (e.g. greater than 30). These users will be set up with dummy emails and backup codes for MFA, which will be shared with the partner after provisioning along with the secret key for resetting a user's password without deactivating their IAL2 profile.
+On rare occasions, a partner may ask us to provision a collection of users with specific attributes on their behalf to facilitate testing. We may agree to do so **only in our sandbox environment** if the number of users needed is large enough where manually provisioning them would be cost prohibitive from a timing perspective (e.g. greater than 30). These users will be set up with dummy emails and backup codes for MFA, which will be shared with the partner after provisioning along with the secret key for resetting a user's password without deactivating their IDV profile.
 
 ## Requirements
 
