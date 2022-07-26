@@ -221,32 +221,6 @@ To enable your sandbox:
 
 1. Create a new branch from main.  The convention is `stages/<env>`, even though
    it technically could be anything.
-1. Edit `identity-devops/kitchen/environments/<env>.json` and add `gitlab_url`
-   and `gitlab_config_s3_bucket` to `login_dot_gov`.  It should look 
-   something like this:
-   ~~~json
-   {
-     "name": "myenv",
-     "description": "",
-     "json_class": "Chef::Environment",
-     "chef_type": "environment",
-     "default_attributes": {
-       "login_dot_gov": {
-         "idp_run_migrations": true,
-         "allow_unsafe_migrations": true,
-         "idp_sync_static": true,
-         "gitlab_url": "gitlab.login.gov",
-         "gitlab_config_s3_bucket": "login-gov-production-gitlabconfig-<accountid>-<region>"
-       }
-     },
-     "override_attributes": {
-     
-     }
-   }
-   ~~~
-   This will tell chef how to configure the runner.  Truthfully, this could probably
-   be done with the nifty tagging stuff that is being used, but I didn't think about
-   that when writing it.  A fun thing to do in the future.
 1. Edit  `identity-devops-private/vars/<env>.tfvars` to add in these variables:
    ~~~
    gitlab_servicename    = "com.amazonaws.vpce.us-west-2.vpce-svc-<something>"
