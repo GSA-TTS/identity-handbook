@@ -37,7 +37,7 @@ prefix in the dashboard name.
 A terraformed dashboard will have a prefix which is an environment name.
 For example, a terraformed dashboard may be named `prod-sample-dashboard`.
 Conversly, an experimental dashboard will use a name that identifies the author.
-For example, `jonhooper-sample-dashboard`.
+For example, `my-example-dashboard`.
 
 Once an experimental dashboard reaches the desired state it should be converted
 into a terraformed dashboard.
