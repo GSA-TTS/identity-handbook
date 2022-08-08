@@ -47,9 +47,9 @@ date = Date.new(2021, 1, 1)
 RegistrationLog.where('registered_at <= ?', date).count
 ```
 
-## IAL2 Users
+## IDV Users
 
-Returns the number of users with IAL2 credentials.
+Returns the number of users with identity-verified credentials.
 
 ```ruby
 Profile.where(active: true).count
