@@ -44,11 +44,11 @@ into a terraformed dashboard.
 The `identity-devops` repo has tooling for converting dashboards to terraformed
 dashboards.
 
-Given an expriemental dashboard named `jonhooper-sample-dashboard`, run the
+Given an expriemental dashboard named `my-sample-dashboard`, run the
 following in the `identity-devops` repo:
 
 ```bash
-aws-vault exec prod-power -- bin/copy-cloudwatch-dashboard -i jonhooper-sample-dashboard
+aws-vault exec prod-power -- bin/copy-cloudwatch-dashboard -i my-sample-dashboard
 ```
 
 This will create a terraform file file in the devops repo for the dashboard.
