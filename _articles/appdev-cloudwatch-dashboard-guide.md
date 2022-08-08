@@ -13,7 +13,7 @@ Clouwatch Insights is the tool that makes it possible to query logs.
 Information on how to build Cloudwatch Insights queries can be found in the
 [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
 
-]Login.gov's Clouwatch Dashboards](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards:)
+[Login.gov's Clouwatch Dashboards](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards:)
 can be found by navigating to the Cloudwatch service in the AWS Console and
 selecting "Dashboards" in the left pane.
 From here you will see a list of available dashboards and there is functionality
