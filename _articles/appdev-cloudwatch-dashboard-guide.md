@@ -9,7 +9,7 @@ category: "AppDev"
 
 Amazon Cloudwatch makes it possible to search Login.gov logs and AWS metrics to
 create visualizations or display statistics.
-Clouwatch Insights is the tool that makes it possible to query logs.
+Cloudwatch Insights is the tool that makes it possible to query logs.
 Information on how to build Cloudwatch Insights queries can be found in the
 [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
 
