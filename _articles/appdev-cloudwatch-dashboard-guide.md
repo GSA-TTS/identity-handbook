@@ -21,7 +21,7 @@ for searching dashboards.
 
 ## Experimental vs Terraformed Dashbords
 
-The source for Cloudwatch Dashboards should be maintained in terraform code
+The source for CloudWatch Dashboards should be maintained in Terraform code
 under version control in the
 [identity-devops repo](https://github.com/18f/identity-devops).
 
