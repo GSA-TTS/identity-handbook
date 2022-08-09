@@ -19,7 +19,7 @@ selecting "Dashboards" in the left pane.
 From here you will see a list of available dashboards and there is functionality
 for searching dashboards.
 
-## Experimental vs Terraformed Dashbords
+## Experimental vs Terraformed Dashboards
 
 The source for CloudWatch Dashboards should be maintained in Terraform code
 under version control in the
