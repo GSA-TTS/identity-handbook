@@ -12,9 +12,7 @@ TTS Talent has [their own onboarding checklist in Google Drive](https://docs.goo
 
 Each Login.gov team has their own personalized [GDoc/Onboarding Template / Checklist](https://drive.google.com/drive/folders/1Zq00M0H4QzXTLvFK3IMN-vhMcsKkx0f3?usp=sharing), you'll get one of these documents when you start at Login.gov.
 
-The following onboarding tasks are applicable to all employees.
-
-## For new Login.gov team members to complete themselves
+## For all new Login.gov team members to complete themselves
 
 - Familiarize yourself with the [Login.gov Handbook]({{site.baseurl}})
 - Watch a [Login.gov authentication overview](https://drive.google.com/file/d/1UFq0OAHgbLdPUXXj6FAIgSxtLyAfYxSa/view)
@@ -39,8 +37,12 @@ The following onboarding tasks are applicable to all employees.
   > Login.gov Chief of Kittens<br>
   > Technology Transformation Services<br>
   > U.S. General Services Administration
-- [Request Admin rights on your TTS Macbook](https://handbook.tts.gsa.gov/equipment/#admin-rights) if you require it, e.g. if you are a developer.
+
+### Additional Steps for Engineers and Technical Staff
+
+- [Request Admin rights on your TTS Macbook](https://handbook.tts.gsa.gov/equipment/#admin-rights) to allow installation of the tools you will need.
 - (Optional) [Add your gpg key to github](https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/)
+- Complete
 
 ## For the on-boarding buddy to complete
 
@@ -52,7 +54,10 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 - Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on Slack. Cc `@github-admins-slack` on your request.
   - *For members needing **push commit** access*: Also add to the [identity-core](https://github.com/orgs/18F/teams/identity-core/members) team (contact [team maintainers](https://github.com/orgs/18F/teams/identity-core/members?utf8=%E2%9C%93&query=%20role%3Amaintainer) for this)
   - *For members NOT needing **push** access*: Also add to the [identity-team-yml](https://github.com/orgs/18F/teams/identity-team-yml/members) team, which grants read-only access. (contact [team maintainers](https://github.com/orgs/18F/teams/identity-team-yml/members?utf8=%E2%9C%93&query=+role%3Amaintainer) for this)
-- [Create a new issue in the `identity-devops` Github repository using the onboarding template](https://github.com/18F/identity-devops/issues/new?labels=administration&template=onboarding-devops.md&title=Onboarding+for+%5Binsert+new+team+member%27s+name%5D) and ping `@login-devops-oncall` in Slack to alert them to the new onboarding issue.
+- For anyone requiring AWS access:
+  - [Create a new issue in the `identity-devops` Github repository using the onboarding template](https://github.com/18F/identity-devops/issues/new?labels=administration&template=onboarding-devops.md&title=Onboarding+for+%5Binsert+new+team+member%27s+name%5D) and follow the notes.
+    Make sure to assign it to the [LG Platform - Interrupts](https://github.com/orgs/18F/projects/34) project so it does not get lost.
+  - Click "and ping `@login-devops-oncall` in Slack to alert them to the new onboarding issue.
 - Schedule a daily pairing session in GCal for an hour or two. Use the time to walk through project details, cooperate on environment setup, work on a ticket, etc. Taper off in a way that makes sense to you and your buddy.
 - Give intro to weekly ceremonies and team workflow
 - [Request Slack access with ServiceNow](https://gsa.servicenowservices.com/sp?id=sc_category&sys_id=f9874e76db5003400dc9ff621f96190d&catalog_id=e0d08b13c3330100c8b837659bba8fb4)
