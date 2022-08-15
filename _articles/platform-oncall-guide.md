@@ -9,7 +9,7 @@ category: Platform
 
 * [DevOps Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) -
 emergency contact list and other private information
-* [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arrises
+* [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arises
 * [Troubleshooting Quick Reference]({{site.baseurl}}/articles/troubleshooting-quick-reference.html) - when you are troubleshooting and not sure where to start 
 
 ## Responsibilities
@@ -37,7 +37,7 @@ emergency contact list and other private information
 * **Ensure clean handoff of ongoing issues**
 * **Discuss prior week's issues in Tuesday 1300ET handoff thread in #login-devops**
 * **Maintain the @login-devops-oncall group**
-* **Take care of your wellbeing** - You are but one human, and the team is here for you!  Your health and relationships must take priority over on-call.  If on-call is causing harm, let the team know immediately.
+* **Take care of your well being** - You are but one human, and the team is here for you!  Your health and relationships must take priority over on-call.  If on-call is causing harm, let the team know immediately.
 
 ### Secondary Responsibilities
 
@@ -69,8 +69,6 @@ Do these at least ONE time while on call:
 ### Daily Duties
 
 * **Review APM data for IdP prod** - Look for errors or latency spikes
-* **Release infrastructure code** - As noted in [Primary Responsibilities](#primary-responsibilities)
-* **Assist AppDev release manager on staging and production IdP release days** - As noted in [Primary Responsibilities](#primary-responsibilities)
 * **PR and AC review**
 * **Toil... toil... toil...**
 
@@ -85,6 +83,7 @@ As you exit your on-call period:
   * Make issues for toil clearly requiring "coding away"
   * Asses the stress level you experienced
   * Suggest improvements to on call process, docs, etc
+* **Share in the weekly DevOps rotation thread in #login-devops**
 
 ### Schedule Override
 
@@ -106,7 +105,7 @@ Before going on-call for Identity DevOps ensure the following:
 * Reviewed [past postmortems](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui)
 * Joined [#identity-situation](https://gsa-tts.slack.com/messages/login-situation/) channel
 * Participated in bi-weekly Contingency Plan Training Wargames
-* Particpated in "Klaxon" (if sessions are running)
+* Participated in "Klaxon" (if sessions are running)
 * Joined [identity-devops Hangout](https://chat.google.com/room/AAAAJIpl9Oo) group (* In case of Slack outage)
 * Able to SSM into production instances
 * OpsGenie app installed on phone and signed in
