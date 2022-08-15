@@ -25,22 +25,17 @@ emergency contact list and other private information
   * **Medium Severity** - During business hours as a top priority
   * **Low Severity** - During business hours and yielding for release and other duties
 * **Initiate Incident Response (IR) Process** - Act as Situation Lead/Incident Commander following the [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
-* **Handle interrupts**
+* **Handle interrupts** using the [LG Platform - Interrupts board](https://github.com/orgs/18F/projects/34)
   * Administrative tasks (onboard/offboard/change access)
-  * Urgent product, app, or ops team requests
-  * Work issues tagged "int" (for "interrupt") on Login.gov platform board
-  * Bug bounty findings for HackerOne reported issues
+  * Urgent product, app, or ops team requests to @login-devops-oncall
 * **Handle maintenance tasks**
+  * @ folks in #login-events who have expiring AWS passwords or access keys
   * Certificate rotation
   * Regular cleanup
 * **Monitor Channels** - Keep an eye on #login-events and #login-secops-plan for items that may impact DevOps
-* **Update AMI images and references** - Monday of week 1 - See [Baking New AWS AMI Images](https://github.com/18F/identity-devops/wiki/Baking-New-AWS-AMI-Images)
-* **Release DevOps code** - Follow release schedule and steps in [Deploying Infrastructure Code](https://github.com/18F/identity-devops/wiki/Deploying-Infrastructure-Code)
-* **Coordinate with AppDev release manager** - For IdP staging (Tuesday) and production (Thursday) release days monitor release progress
-* **Review any open PRs**
+* **Review any open PRs that have been sitting over 48 hours in identity-devops, identity-terraform, identity-base-image, or identity-cookbooks**
 * **Ensure clean handoff of ongoing issues**
-* **Discuss prior week's issues in standup**
-* **Maintain the #login-devops channel topic**
+* **Discuss prior week's issues in Tuesday 1300ET handoff thread in #login-devops**
 * **Maintain the @login-devops-oncall group**
 * **Take care of your wellbeing** - You are but one human, and the team is here for you!  Your health and relationships must take priority over on-call.  If on-call is causing harm, let the team know immediately.
 
@@ -102,9 +97,7 @@ To temporarily take on-call:
 
 Before going on-call for Identity DevOps ensure the following:
 
-* On-boarding ticket completed
 * Access [AWS accounts]({{site.baseurl}}/articles/platform-aws-accounts-and-roles.html)
-* Laptop with AWS credentials to access same accounts from CLI
 * Comfortable with sandbox tasks (Terraform plan and apply, navigating instances)
 * Comfortable navigating APM and Infrastructure areas in NewRelic
 * Comfortable reviewing logs in AWS CloudWatch and/or with cw CLI tool
@@ -112,8 +105,10 @@ Before going on-call for Identity DevOps ensure the following:
 * Reviewed [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
 * Reviewed [past postmortems](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui)
 * Joined [#identity-situation](https://gsa-tts.slack.com/messages/login-situation/) channel
+* Participated in bi-weekly Contingency Plan Training Wargames
+* Particpated in "Klaxon" (if sessions are running)
 * Joined [identity-devops Hangout](https://chat.google.com/room/AAAAJIpl9Oo) group (* In case of Slack outage)
-* Able to SSH into production instances
+* Able to SSM into production instances
 * OpsGenie app installed on phone and signed in
 * [OpsGenie profile and notifications](https://login-gov.app.opsgenie.com/settings/user/profile) configured
   * Suggested notification for New Alert:
