@@ -20,5 +20,8 @@ see data/sprint_teams.yml for the data
 * **Namesake**: {{ sprint_team.namesake_markdown }}
 {%- endif %}
 * **Focus area**: {{ sprint_team.focus_area }}
+{% if sprint_team.slack_channel_url -%}
+* **Slack**: [#{{ sprint_team.slack_channel_name }}]({{ sprint_team.slack_channel_url }})
+{%- endif %}
 
 {% endfor %}
