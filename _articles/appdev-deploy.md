@@ -269,4 +269,5 @@ new configurations (config from S3, or service provides from `identity-idp-confi
 
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp
+    aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
     ```
