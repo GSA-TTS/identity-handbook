@@ -13,6 +13,8 @@ to [avoid contributing sensitive information][sensitive-information].
 
 ## Categories
 
+<div class="margin-bottom-4"></div>
+
 <ul class="usa-card-group">
   {% for category in site.categories %}
     <li class="usa-card tablet:grid-col-6">
