@@ -2,6 +2,7 @@
 title: "SAML: Development"
 layout: article
 category: AppDev
+subcategory: "Development"
 description: "High-level overview of the flow of SAML in the IDP code"
 ---
 

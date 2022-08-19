@@ -6,14 +6,36 @@ includes:
 - category: category object (page)
 {% endcomment %}
 
-{% assign sorted_articles = site.articles | sort: "title" %}
 
-{% for article in sorted_articles %}
-{%   if article.category == include.category.title %}
+{% assign subcategory_articles = site.articles | where: "category", include.category.title | group_by: "subcategory" | sort: "name" %}
+
+{% for subcategory_article_tuple in subcategory_articles %}
+{%   assign subcategory = subcategory_article_tuple.name %}
+{%   assign articles = subcategory_article_tuple.items | sort: "title" %}
+{%   if subcategory != "" %}
+
+#### {{ subcategory }}
+
+{%     for article in articles %}
+ - [{{article.title}}]({% include article_url.txt article=article %})
+     {%- if article.deprecated -%}
+       {: .deprecated-link} (deprecated)
+     {%- endif -%}
+     {% if article.description %}<br/>{{ article.description }}{% endif %}
+{%     endfor %}
+{%   endif %}
+{% endfor %}
+
+{% assign articles_no_subcategory = site.articles | where: "category", include.category.title | sort: "title" %}
+
+#### Other Articles
+
+{% for article in articles_no_subcategory %}
+{% unless article.subcategory %}
  - [{{article.title}}]({% include article_url.txt article=article %})
    {%- if article.deprecated -%}
-     {: .deprecated-link} (deprecated)
+    {: .deprecated-link} (deprecated)
    {%- endif -%}
    {% if article.description %}<br/>{{ article.description }}{% endif %}
-{%   endif %}
+{% endunless %}
 {% endfor %}

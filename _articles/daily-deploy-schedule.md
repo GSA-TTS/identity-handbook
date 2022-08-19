@@ -3,6 +3,7 @@ title: "Deploy Schedule for Automated Deploys"
 description: "The daily deploy schedule for IDP, PKI and Dashboard in lower environments"
 layout: article
 category: "AppDev"
+subcategory: "Deploying"
 ---
 
 ### Apps

@@ -3,6 +3,7 @@ title: "Secrets and Configuration"
 description: "How to update IDP and Rails app configuration (feature flags) and secrets application.yml"
 layout: article
 category: "AppDev"
+subcategory: Development
 ---
 
 ## Overview

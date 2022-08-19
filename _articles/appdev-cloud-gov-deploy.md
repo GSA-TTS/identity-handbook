@@ -3,6 +3,7 @@ title: "Deploying the Sample Apps"
 description: "How to deploy oidc-sinatra and saml-sinatra to cloud.gov"
 layout: article
 category: "AppDev"
+subcategory: "Deploying"
 envs:
 - dev
 - int

@@ -3,6 +3,7 @@ title: "Translation process"
 layout: article
 description: "Process and guidelines for localization and string translation (i18n)"
 category: AppDev
+subcategory: Tasks
 ---
 
 Login.gov is currently available in English, Spanish, and French. This guide covers the tools available to translate the application, and the processes around introducing and translating new strings.

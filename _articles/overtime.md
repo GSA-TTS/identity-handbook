@@ -1,7 +1,7 @@
 ---
 title: Overtime
 layout: article
-category: Product
+category: Team
 ---
 
 For contractors, Login.gov has a default 45 hour cap on hours worked per week.
@@ -21,5 +21,5 @@ The [TTS Handbook has a page](https://handbook.tts.gsa.gov/overtime-and-comp-tim
 #### Contractors
 
 If a contractor feels they will be working over 45hour cap due to an incident, application launch or overloaded sprint, they should email the Login.gov FinOps lead, team Supervisor, and team Product Owner for approval prior to going over the weekly hour cap.
- 
+
 Notification exceptions: if an incident occurs on a Friday or weekend, email requests can be sent by EOD the following Monday.

@@ -3,6 +3,7 @@ title: Bug Bounty Triage
 description: How to handle bug bounty reports
 layout: article
 category: AppDev
+subcategory: Oncall
 ---
 
 The AppDev on-call person is response for looking at and triaging bug bounty reports on a daily basis.
