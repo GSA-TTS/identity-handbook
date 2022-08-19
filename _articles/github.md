@@ -173,3 +173,7 @@ are some strategies for helping manage these notifications:
    | Key Repositories       | Other Repositories |
    | -----------------------|--------------------|
    | ![All Activity]({{site.baseurl}}/images/github-all-activity.png) | ![Participating]({{site.baseurl}}/images/github-participating.png) |
+
+## Code Reviews
+
+See [Pull Request Review]({% link _articles/pull-request-review.md %})
