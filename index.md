@@ -23,7 +23,7 @@ to [avoid contributing sensitive information][sensitive-information].
               {% include uswds-icon.html icon=category.icon %}
             {% endif %}
             <strong>
-              <a href="{{ category.url }}">{{ category.title }}</a>
+              <a href="{{ category.url | prepend: site.baseurl }}">{{ category.title }}</a>
             </strong>
           </span>
         </div>
@@ -39,7 +39,7 @@ to [avoid contributing sensitive information][sensitive-information].
 
 {% for category in site.categories %}
 
-### [{{ category.title }}]({{ category.url }})
+### [{{ category.title }}]({{ category.url | prepend: site.baseurl }})
 
 {{ category.description}}
 
