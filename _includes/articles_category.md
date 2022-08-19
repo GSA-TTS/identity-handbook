@@ -28,7 +28,9 @@ includes:
 
 {% assign articles_no_subcategory = site.articles | where: "category", include.category.title | sort: "title" %}
 
+{% if subcategory_articles.size > 1 %}
 #### Other Articles
+{% endif %}
 
 {% for article in articles_no_subcategory %}
 {% unless article.subcategory %}
