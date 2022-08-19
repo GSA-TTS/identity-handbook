@@ -41,7 +41,3 @@ to [avoid contributing sensitive information][sensitive-information].
 {% include articles_category.md category=category %}
 
 {% endfor %}
-
-### Private
-
-- [Private Articles]({% link private.md %})
