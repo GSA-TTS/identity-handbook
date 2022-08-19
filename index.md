@@ -11,25 +11,30 @@ to [avoid contributing sensitive information][sensitive-information].
 
 [sensitive-information]: {{ site.baseurl }}/articles/contributing.html#sensitive-information
 
-{% assign all_categories = site.articles | map: "category" | uniq | sort %}
-{% assign highlight_categories = site.data.highlight_categories %}
-{% assign highlight_categories_titles = site.data.highlight_categories | map: "title" %}
+## All Articles
 
-{% for category in highlight_categories %}
-{%   include articles_category.md
-             category=category.title
-             articles=site.articles
-             description=category.description
-             custom_order=category.custom_order %}
-{% endfor %}
-{% for category in all_categories %}
-{%   unless highlight_categories_titles contains category %}
-{%     include articles_category.md
-               category=category
-               articles=site.articles %}
-{%   endunless %}
-{% endfor %}
+See the [index of all articles]({% link all.md %})
 
-### Private
+## Categories
 
-- [Private Articles]({% link private.md %})
+<ul class="usa-card-group">
+
+  {% for category in site.categories %}
+
+    <li class="usa-card tablet:grid-col-4">
+      <div class="usa-card__container">
+
+<div class="usa-card__header" markdown="1">
+### [{{ category.title }}]({{ category.url }})
+{:class="usa-card__heading"}
+</div>
+
+        <div class="usa-card__body">
+          <p>{{ category.description }}</p>
+        </div>
+      </div>
+    </li>
+
+  {% endfor %}
+</ul>
+
