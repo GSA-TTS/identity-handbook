@@ -18,9 +18,14 @@ to [avoid contributing sensitive information][sensitive-information].
     <li class="usa-card tablet:grid-col-4">
       <div class="usa-card__container">
         <div class="usa-card__header">
-          <strong class="usa-card__heading">
-            <a href="{{ category.url }}">{{ category.title }}</a>
-          </strong>
+          <span class="usa-card__heading">
+            {% if category.icon %}
+              {% include uswds-icon.html icon=category.icon %}
+            {% endif %}
+            <strong>
+              <a href="{{ category.url }}">{{ category.title }}</a>
+            </strong>
+          </span>
         </div>
         <div class="usa-card__body">
           <p>{{ category.description }}</p>
