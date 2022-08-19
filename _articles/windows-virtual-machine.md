@@ -3,6 +3,7 @@ title: "Windows Virtual Machine Setup"
 description: Setting up a Windows VM on your Mac so you can test Internet Explorer
 layout: article
 category: "AppDev"
+subcategory: "Setup"
 ---
 
 ## Set up the Virtual Machine in VirtualBox

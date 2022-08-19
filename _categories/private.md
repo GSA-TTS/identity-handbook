@@ -2,6 +2,7 @@
 title: Private Articles
 permalink: /private/
 layout: article
+icon: lock
 ---
 {% if site.env.BRANCH == 'main' %}
   {% assign private_handbook_branch = site.env.PRIVATE_HANDBOOK_BRANCH %}

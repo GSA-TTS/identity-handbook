@@ -11,25 +11,40 @@ to [avoid contributing sensitive information][sensitive-information].
 
 [sensitive-information]: {{ site.baseurl }}/articles/contributing.html#sensitive-information
 
-{% assign all_categories = site.articles | map: "category" | uniq | sort %}
-{% assign highlight_categories = site.data.highlight_categories %}
-{% assign highlight_categories_titles = site.data.highlight_categories | map: "title" %}
+## Categories
 
-{% for category in highlight_categories %}
-{%   include articles_category.md
-             category=category.title
-             articles=site.articles
-             description=category.description
-             custom_order=category.custom_order %}
+<div class="margin-bottom-4"></div>
+
+<ul class="usa-card-group">
+  {% for category in site.categories %}
+    <li class="usa-card tablet:grid-col-6">
+      <div class="usa-card__container">
+        <div class="usa-card__header">
+          <span class="usa-card__heading">
+            {% if category.icon %}
+              {% include uswds-icon.html icon=category.icon %}
+            {% endif %}
+            <strong>
+              <a href="{{ category.url | prepend: site.baseurl }}" class="usa-link">{{ category.title }}</a>
+            </strong>
+          </span>
+        </div>
+        <div class="usa-card__body">
+          <p>{{ category.description }}</p>
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+## All Articles
+
+{% for category in site.categories %}
+
+### [{{ category.title }}]({{ category.url | prepend: site.baseurl }})
+
+{{ category.description}}
+
+{% include articles_category.md category=category %}
+
 {% endfor %}
-{% for category in all_categories %}
-{%   unless highlight_categories_titles contains category %}
-{%     include articles_category.md
-               category=category
-               articles=site.articles %}
-{%   endunless %}
-{% endfor %}
-
-### Private
-
-- [Private Articles]({% link private.md %})

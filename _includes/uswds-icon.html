@@ -1,0 +1,9 @@
+{% comment %}
+Component for USDWDS icon
+See https://designsystem.digital.gov/components/icon/
+Includes
+- icon (string) slug name from USWDS icons
+{% endcomment %}
+<svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+  <use xlink:href="{{ site.baseurl }}/assets/img/sprite.svg#{{ include.icon }}"></use>
+</svg>

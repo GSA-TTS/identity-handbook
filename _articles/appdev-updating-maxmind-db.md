@@ -3,7 +3,7 @@ title: "Updating MaxMind GeoIP database"
 description: "Instructions for updating our IP address geolocation database"
 layout: article
 category: "AppDev"
-
+subcategory: "Tasks"
 appendix_url: https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUzDmIxKn11DPJzk/edit#heading=h.2dv73pe5frx0
 ---
 

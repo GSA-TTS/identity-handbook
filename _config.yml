@@ -8,7 +8,9 @@ github_repo_url: https://github.com/18F/identity-handbook # enables "edit this p
 markdown: kramdown
 
 collections:
-  articles:
+  categories: # categories are groups/sections of articles
+    output: true
+  articles: # individual articles
     output: true
 
 copy_to_destination:

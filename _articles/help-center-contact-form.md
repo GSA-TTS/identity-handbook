@@ -3,6 +3,7 @@ title: "Contact Form Updating Instructions"
 description: "Procedure for updating fields in the Help Center's Contact Form"
 layout: article
 category: "AppDev"
+subcategory: "Tasks"
 ---
 
 ## Background

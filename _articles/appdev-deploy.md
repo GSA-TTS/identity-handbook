@@ -3,6 +3,7 @@ title: "Deploying new IDP and PKI code"
 layout: article
 description: "Release Manager's Guide for Production"
 category: AppDev
+subcategory: "Deploying"
 toc_h_max: 4
 ---
 

@@ -3,6 +3,7 @@ title: "SAML: Annual Certificate Rotation"
 description: How to perform annual certificate rotation
 layout: article
 category: "AppDev"
+subcategory: "Tasks"
 ---
 
 The Login.gov SAML certificate is valid for just over one year. Every spring, Login.gov adds new SAML endpoints with the current year that use a new signing certificate. (So  `/api/saml/metadata2021`  becomes  `/api/saml/metadata2022`.)
