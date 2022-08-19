@@ -7,7 +7,7 @@ category: "Development"
 
 ## General Code Review Guidelines
 
-See the overall [TTS Engineering Code Review](https://engineering.18f.gov/code-review/) for
+See the overall [TTS Engineering Code Review guidelines](https://engineering.18f.gov/code-review/) for
 generally applicable advice about creating a positive environment for code reviews.
 
 ## Reviewing and Merging
@@ -48,6 +48,6 @@ The *Request Changes* option will block merges until that specific reviewer appr
 Pull Request, or until that review is dismissed.
 
 Since *Request Changes* is essentially blocking, as a Login.gov convention, we try to
-minimizing usages of it to absolutely critical changes needed.
+minimize usages of it to absolutely critical changes needed.
 
 
