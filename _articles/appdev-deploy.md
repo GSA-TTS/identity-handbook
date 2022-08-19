@@ -187,7 +187,6 @@ Scheduled for every Thursday
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp
-    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idpxtra
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod worker
     ```
 
@@ -234,7 +233,6 @@ To quickly remove new servers and leave old servers up:
 
 ```bash
 aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod idp
-aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod idpxtra
 aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
 ```
 
@@ -268,9 +266,9 @@ new configurations (config from S3, or service provides from `identity-idp-confi
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
    ```
 
-1. In production, it's important to remember to still scale out old IDP and IDPxtra instances.
+1. In production, it's important to remember to still scale out old IDP instances.
 
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp
-    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idpxtra
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod worker
     ```
