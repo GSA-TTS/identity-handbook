@@ -15,7 +15,7 @@ to [avoid contributing sensitive information][sensitive-information].
 
 <ul class="usa-card-group">
   {% for category in site.categories %}
-    <li class="usa-card tablet:grid-col-4">
+    <li class="usa-card tablet:grid-col-6">
       <div class="usa-card__container">
         <div class="usa-card__header">
           <span class="usa-card__heading">
