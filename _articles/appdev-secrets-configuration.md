@@ -8,26 +8,27 @@ subcategory: Development
 
 ## Overview
 
-The IDP, Dashboard and PIVCAC apps download their `application.yml`
-when we activate/deploy an instance (see [`deploy/activate`][deploy-activate]
-and the [`activate.rb`][download-from-s3]). Since apps only download new values
-during instance activation **a recycle is necessary before apps can use
-updated configs**.
+Our applications use configuration values stored in a local YAML file. The defaults for these values
+are defined in `config/application.yml.default`. Configuration and secrets can be tailored per
+environment by merging default values with an environment-specific YAML file.
 
+* In local development, this file lives at `config/application.yml` and is created during setup.
+* In deployed environments, this file is downloaded from S3 when activating or deploying an instance
+  (see [`deploy/activate`][deploy-activate] and the [`activate.rb`][download-from-s3]).
 
-We store these `application.yml` files in S3, and each environment (`int`, `dev`)
-has its own separate file, so secrets and configs need to be explicitly copied
-across environments, they are not implicitly shared.
+**Changing configuration for a deployed application [requires a recycle][recycle-config]**, since
+this merge step only happens at activation.
 
 The S3 buckets that contain secrets are versioned, so we can recover old versions
 if needed.
 
-[deploy-activate]: https://github.com/18F/identity-idp/blob/main/deploy/activate
-[download-from-s3]: https://github.com/18F/identity-idp/blob/a95fd33d24c6761818993cfbc334a28986783034/lib/deploy/activate.rb#L93-L97
-
 At the end of the day, since these are just files in S3, you can use whatever workflow
 you want to download, edit, and write them. Make sure you clean up files on your local
 machine when done.
+
+[deploy-activate]: https://github.com/18F/identity-idp/blob/main/deploy/activate
+[download-from-s3]: https://github.com/18F/identity-idp/blob/a95fd33d24c6761818993cfbc334a28986783034/lib/deploy/activate.rb#L93-L97
+[recycle-config]: {% link _articles/appdev-deploy.md %}#config-recycle
 
 ## Using `app-s3-secret`
 
