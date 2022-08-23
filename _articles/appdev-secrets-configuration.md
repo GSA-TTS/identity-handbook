@@ -28,7 +28,7 @@ machine when done.
 
 [deploy-activate]: https://github.com/18F/identity-idp/blob/main/deploy/activate
 [download-from-s3]: https://github.com/18F/identity-idp/blob/a95fd33d24c6761818993cfbc334a28986783034/lib/deploy/activate.rb#L93-L97
-[recycle-config]: ./appdev-deploy.html#config-recycle
+[recycle-config]: {% link _articles/appdev-deploy.md %}#config-recycle
 
 ## Using `app-s3-secret`
 
