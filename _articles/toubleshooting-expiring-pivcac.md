@@ -106,3 +106,11 @@ Finally, read in the certificates from the bundle and look for a replacement:
 ```shell
 openssl pkcs7 -inform DER -in tmp/bundle.p7c -print_certs -text
 ```
+
+## Using CloudWatch to find issuers and service providers
+
+CloudWatch may be used to find certificate-related errors by issuer and service provider.
+
+Navigate to
+[CloudWatch Logs Insights](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights)
+and select one of the saved queries from the **Queries->Saved Queries->$env->pivcac** menu.
