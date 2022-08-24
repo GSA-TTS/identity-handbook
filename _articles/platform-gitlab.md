@@ -81,6 +81,18 @@ GitLab infrastructure.  Non-public details are omitted.
 
 See [GitLab Licensing and Support](https://github.com/18F/identity-devops/wiki/GitLab-Ultimate-Licensing-and-Support)
 
+## Gitlab Staging Environment
+
+We have a staging environment which is used to test out deploys destined for production.  It
+can be found at <https://gitlab.gitstaging.gitlab.login.gov/>.  Right now, whenever the `stages/gitstaging` branch
+changes, the gitlab prod environment will deploy it to gitstaging and run tests against it.
+
+The root of the module that deploys it that
+has it's config parameters set is in <https://github.com/18F/identity-devops/tree/main/terraform/gitlab/gitstaging>.
+
+You can find it's deployment status in <https://gitlab.login.gov/lg/identity-devops/-/environments/4>.
+
+
 ## Authentication Setup
 
 GitLab leverages OmniAuth to allow users to sign in using a variety of sersvices, including Login.gov (via SAML). To configure this:
