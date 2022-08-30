@@ -2,6 +2,7 @@
 title: "Troubleshooting OpenSSL Command Line Recipes"
 description: "Commands for common certificate tasks, useful for PIV/CAC or AAMVA credentials"
 layout: article
+subcategory: "X509 and PIV/CAC Certificates"
 category: "AppDev"
 ---
 

@@ -2,6 +2,7 @@
 title: "Infrastructure auto-terraform Runbook"
 description: How to use/manage/understand auto-terraform
 layout: article
+subcategory: How To
 category: Platform
 ---
 

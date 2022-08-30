@@ -3,6 +3,7 @@ title: "Staffing"
 description: ""
 layout: article
 category: Team
+subcategory: People Ops
 ---
 
 ## Login.gov staffing change process

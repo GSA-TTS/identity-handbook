@@ -3,6 +3,7 @@ title: "Sprint Team Roles"
 description: "List of our sprint team roles and responsibilities"
 layout: article
 category: "Team"
+subcategory: Team Organization
 ---
 
 Here are the current Login.gov sprint team roles and responsibilities.
