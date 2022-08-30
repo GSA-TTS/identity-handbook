@@ -3,7 +3,7 @@ title: "Services and Accounts"
 description: "List of external services and logins to manage"
 layout: article
 category: "Team"
-category: People Ops
+subcategory: People Ops
 ---
 
 Per our [onboarding][onboarding] and [offboarding][offboarding] instructions, please add people when
