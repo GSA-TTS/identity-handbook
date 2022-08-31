@@ -18,9 +18,6 @@ before we can deploy changes on our side.
 {%- endcapture -%}
 {% include alert.html content=alert_content alert_class="usa-alert--error" %}
 
-The **agency** field allows freeform responses, so it does not need to go through this
-manual approval process anymore.
-
 ## Configuration
 
 To streamline working with the Salesforce team and their QA/validation process,
