@@ -6,7 +6,7 @@ import { setUpPrivateLogin } from "./private";
 
 export const loadAnchors = () => {
   new Anchor().add(
-    "#main-content h2, #main-content h3, #main-content [data-anchor]"
+    "#main-content h2, #main-content h3, #main-content h4, #main-content [data-anchor]"
   );
 };
 
