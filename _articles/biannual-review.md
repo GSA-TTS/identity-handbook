@@ -3,6 +3,7 @@ title: "Reviews"
 description: "Mid-Year and End-of-Year Self Review and Peer Feedback"
 layout: article
 category: Team
+subcategory: People Ops
 ---
 
 A process to request, gather, and deliver peer feedback and self review on a bi-annual basis. We will use required review cycles not just to check boxes for GSA, but also to help people thrive, grow, and succeed.

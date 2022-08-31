@@ -2,6 +2,7 @@
 title: "Platform On-Call Guide"
 description: Runbook/guide for processes/responsibilities for the on-call platform engineers.
 layout: article
+subcategory: How To
 category: Platform
 ---
 

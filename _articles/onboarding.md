@@ -2,6 +2,7 @@
 title: Onboarding
 layout: article
 category: Team
+subcategory: People Ops
 ---
 
 ## TTS Onboarding

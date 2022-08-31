@@ -2,6 +2,7 @@
 title: "Offboarding"
 layout: article
 category: Team
+subcategory: People Ops
 ---
 
 ## Full Offboarding

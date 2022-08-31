@@ -3,6 +3,7 @@ title: "Incident Response Checklist"
 description: "Quick reference checklist for incident response"
 layout: article
 category: "Team"
+subcategory: Guides
 ---
 
 This is a quick checklist for any incident (security, privacy, outage, degraded service, etc.) to ensure the team can focus on time critical mitigation/remediation while still communicating appropriately.

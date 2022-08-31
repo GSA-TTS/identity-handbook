@@ -2,6 +2,7 @@
 title: "Troubleshooting PIV/CAC logins and Managing Certificates"
 description: "If somebody has trouble using their PIV/CAC with Login.gov, and also how to download new certificates from Certificate Authorities"
 layout: article
+subcategory: "X509 and PIV/CAC Certificates"
 category: "AppDev"
 ---
 

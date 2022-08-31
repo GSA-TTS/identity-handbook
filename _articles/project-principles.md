@@ -4,6 +4,7 @@ layout: article
 description: |
   Our mission and project principles
 category: Team
+subcategory: Program Information
 ---
 
 ## Our vision

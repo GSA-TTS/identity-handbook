@@ -3,6 +3,7 @@ title: "Sprint Teams"
 description: "List of our sprint teams and the explanations behind their names"
 layout: article
 category: "Team"
+subcategory: Team Organization
 ---
 
 Here are the Login.gov sprint teams, most of them are named after famous women in STEM fields.

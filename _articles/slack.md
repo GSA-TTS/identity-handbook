@@ -3,6 +3,7 @@ title: Slack
 description: Groups and Channels
 layout: article
 category: Team
+subcategory: Team Organization
 toc_h_max: 4
 ---
 
