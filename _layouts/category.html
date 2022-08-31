@@ -20,7 +20,7 @@ layout: default
 <div class="grid-row grid-gap">
   <aside class="tablet:grid-col-3">
     <nav id="sidenav-wrapper">
-      {% assign h_max = page.toc_h_max | default: 3 %}
+      {% assign h_max = page.toc_h_max | default: 4 %}
       {% include toc.html
                  html=content_html
                  sanitize=true
