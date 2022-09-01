@@ -255,7 +255,9 @@ aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
 ### Config Recycle
 
 A config recycle is an abbreviated "deploy" that deploys the same code, but lets boxes pick up
-new configurations (config from S3, or service provides from `identity-idp-config`).
+new configurations (config from S3).
+
+**Note:** `identity-idp-config` changes likey likely need a migration.
 
 1. Make the config changes
 
