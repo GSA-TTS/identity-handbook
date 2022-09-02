@@ -9,20 +9,16 @@ Here is a list of items that need to be completed to deploy the configuration fo
 
 1. Ensure that the IAA is signed and includes the application explicitly in the Description of Service or Statement of Work.
 
-2. Ensure that the **Contact Center Fact Sheet** was sent from ZenDesk. This is done by setting the **Integration Ticket Status** of the ZenDesk ticket to anything after **IAA Review**.
+2. Ensure that the **Integration IAA or MOU Confirmed** is checked on the lefthand column of ZenDesk, along with **Integration Details Confirmed**.
 
 3. Ensure that the production configuration has been provided by the partner (e.g. valid Dashboard URL in the ZenDesk ticket) and includes the following:
-  * All production urls should have `.gov`, `.mil` or a dedicated `.com` address and point to an ATO-ed environment. It should not be a local IP or have things like "dev", "qa",  or "mikes-macbook" in the urls.
   * If the app does not have a logo, then the partner will need to upload one before it can be deployed. You can find the [logo guidelines here](https://developers.login.gov/design-guidelines/#agency-logo-guidelines).
 
-4. Create a PR in the [identity-idp-config](https://github.com/18f/identity-idp-config) repo that consists of:
-  * App configuration added to [`service_providers.yml`](https://github.com/18F/identity-idp-config/blob/main/service_providers.yml)
-  * A logo image in [`/public/assets/images/sp-logos`](https://github.com/18F/identity-idp-config/tree/main/public/assets/images/sp-logos)
-  * A certificate file in [`/certs/sp`](https://github.com/18F/identity-idp-config/tree/main/certs/sp)
-  * Integration parameters added to [`integrations.yml`](https://github.com/18F/identity-idp-config/blob/main/integrations.yml)
-  * The integration's `issuer` added to the `integrations` attribute of the associated IAA Order in [`iaa_orders.yml`](https://github.com/18F/identity-idp-config/blob/main/iaa_orders.yml)
+4. Create a PR in the [identity-idp-config](https://github.com/18f/identity-idp-config) repo that follows the instructions outlined in [Partner Success Engineer Workflow](https://docs.google.com/document/d/1WnTCdR8fwt46Eca1EHGQzyjnxfqhGfPe4uFti3PhVbg/edit#heading=h.pawq0m2tiuo3).
 
-5. The PR should be reviewed by another integration engineer and merged into `main`.
+5. The PR should be reviewed by another Integration Engineer or Partner Success Engineer and merged into `main`.
+
+6. Let the partner know via ZenDesk that their application has now been deployed and in the bottom right-hand corner click the arrow and select **Submit as Solved**. 
 
 6. Generally speaking, we rely on the [weekly IdP deployment process]({% link _articles/appdev-deploy.md %}) to pull in configuration changes, especially new integration launches. If a manual deployment is required, follow the directions below:
   * **If no new logo files are being added in this PR,** you can simply spin up a migration instance in the appropriate environment (replace `prod` with `staging` if deploying integration to staging):

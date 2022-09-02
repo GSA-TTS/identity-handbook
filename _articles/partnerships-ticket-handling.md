@@ -24,9 +24,7 @@ We currently track all of our partner support tickets in
 [ZenDesk](https://logingov.zendesk.com/agent/dashboard).
 This allows us to maintain a single view of all of the support activities being
 handled by the Partnerships Engineering team as well as evaluate our workload
-and throughput. For more information on the process of tracking tickets see the
-[Cheat
-Sheet](https://docs.google.com/document/d/1kQs7sShRNRWcoH0O-AaMYdyDiuNcLUEc7PgKRnLiSRM/edit#).
+and throughput.
 
 ## Entering tickets
 
@@ -39,8 +37,7 @@ tickets that have not been created, below are some Slack channels that would be 
 * `#login-partner-support`
 
 If you see or are made aware of a request from a partner that **does not**
-originate from ZenDesk, please create a corresponding ticket in
-ZenDesk. Make sure to include as much information as possible, and if the request
+originate from ZenDesk, please create a corresponding ticket. Make sure to include as much information as possible, and if the request
 originates through a channel that can be linked to (e.g. Slack)
 make sure to include a link to the thread in the "Public Reply" field.
 
