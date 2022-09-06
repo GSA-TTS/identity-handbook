@@ -38,3 +38,15 @@
 .deprecated-link {
   color: gray;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  &:target {
+    background-color: #fcf197; // TODO: use color('warning-light');
+  }
+}
