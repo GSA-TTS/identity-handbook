@@ -84,6 +84,13 @@ aws-vault exec sandbox-power -- \
   ./bin/asg-recycle dev idp
 ```
 
+Once the recycle is complete, scale out old IDP instances
+
+```
+ aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp
+ aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod worker
+```
+
 ## Configuration in Rails Apps
 
 To use a value in the `application.yml` in our Rails apps, follow these steps. The IDP, PKI,
