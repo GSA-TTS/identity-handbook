@@ -84,6 +84,7 @@ aws-vault exec sandbox-power -- \
   ./bin/asg-recycle dev idp
 ```
 
+Once the recycle is complete, it is important to [scale out old IDP instances]({% link _articles/appdev-deploy.md %}#config-recycle)
 ## Configuration in Rails Apps
 
 To use a value in the `application.yml` in our Rails apps, follow these steps. The IDP, PKI,
