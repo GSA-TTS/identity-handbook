@@ -4,7 +4,9 @@
 @charset 'utf-8';
 
 // Imports
-@import 'styles.css';
+@import "styles.css";
+@import "identity-style-guide/dist/assets/scss/packages/required";
+@import "identity-style-guide/dist/assets/scss/packages/utilities";
 
 // Hello! These styles are specific styles for
 // the Login.gov Handbook. Please refer to design.login.login-gov
@@ -12,7 +14,6 @@
 
 // Search
 #search-results {
-
   background-color: #ebf3fa;
   position: absolute;
   top: 20px;
@@ -47,6 +48,6 @@ h5,
 h6,
 p {
   &:target {
-    background-color: #fcf197; // TODO: use color('warning-light');
+    background-color: color("warning-light");
   }
 }

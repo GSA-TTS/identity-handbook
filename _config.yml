@@ -13,6 +13,10 @@ collections:
   articles: # individual articles
     output: true
 
+sass:
+  load_paths:
+    - node_modules
+
 copy_to_destination:
   - node_modules/identity-style-guide/dist/assets
 
