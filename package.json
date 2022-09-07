@@ -3,7 +3,7 @@
     "@18f/private-eye": "^2.1.0",
     "anchor-js": "^4.2.2",
     "htm": "^3.1.0",
-    "identity-style-guide": "^6.3.0",
+    "identity-style-guide": "^6.5.0",
     "js-yaml": "^4.1.0",
     "marked": "^4.0.12",
     "preact": "^10.6.6",
