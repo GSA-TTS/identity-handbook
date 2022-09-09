@@ -17,10 +17,12 @@ includes:
 #### {{ subcategory }}
 
 {%     for article in articles %}
- - [{{article.title}}]({% include article_url.txt article=article %})
+ - <span markdown="1" {% if article.redirect_to %}data-anchor{% endif %}>
+   [{{article.title}}]({% include article_url.txt article=article %})
      {%- if article.deprecated -%}
        {: .deprecated-link} (deprecated)
      {%- endif -%}
+    </span>
      {% if article.description %}<br/>{{ article.description }}{% endif %}
 {%     endfor %}
 {%   endif %}
@@ -34,10 +36,12 @@ includes:
 
 {% for article in articles_no_subcategory %}
 {% unless article.subcategory %}
- - [{{article.title}}]({% include article_url.txt article=article %})
+ - <span markdown="1" {% if article.redirect_to %}data-anchor{% endif %}>
+   [{{article.title}}]({% include article_url.txt article=article %})
    {%- if article.deprecated -%}
     {: .deprecated-link} (deprecated)
    {%- endif -%}
+   </span>
    {% if article.description %}<br/>{{ article.description }}{% endif %}
 {% endunless %}
 {% endfor %}
