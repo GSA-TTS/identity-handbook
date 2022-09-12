@@ -19,8 +19,8 @@ A few notes on our deploy process.
 **When _not_ to deploy:** ❌
 - We try to avoid deploying on Fridays, to minimize the chances of introducing a
   bug and having to scramble to fix it before the weekend
-- During New Years/winter break, or any other time when many team members are
-  on vacation
+- When the deploy falls on a holiday, or any other time when many team members are on vacation, such
+  as New Years / end of year.
 
 ### Types of Deploys
 
