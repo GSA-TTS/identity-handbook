@@ -24,5 +24,8 @@ see data/sprint_teams.yml for the data
 {% if sprint_team.slack_channel_url -%}
 * **Slack**: [#{{ sprint_team.slack_channel_name }}]({{ sprint_team.slack_channel_url }})
 {%- endif %}
+{% if sprint_team.readme -%}
+* **Readme**: [View Team {{sprint_team.name}} Readme]({{ sprint_team.readme }})
+{%- endif %}
 
 {% endfor %}
