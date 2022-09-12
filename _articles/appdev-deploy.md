@@ -178,6 +178,10 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
     1. Manual Inspection
       - Check [NewRelic (prod.login.gov)](https://one.newrelic.com/nr1-core/errors-ui/overview/MTM3NjM3MHxBUE18QVBQTElDQVRJT058NTIxMzY4NTg) for errors
+      - Optionally, use the deploy monitoring script to compare error rates and success rates for critical flows
+        ```bash
+        aws-vault exec prod-power -- ./bin/monitor-deploy prod idp
+        ```
       - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
 1. **PRODUCTION ONLY**: This step is required in production
