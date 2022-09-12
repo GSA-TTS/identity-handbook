@@ -14,7 +14,7 @@ A few notes on our deploy process.
 ### Cadence
 
 **When to deploy:** ✅
-- Typically we do a full deploy every week on Thursday.
+- Typically we do a full deploy twice weekly, on Mondays and Thursdays.
 
 **When _not_ to deploy:** ❌
 - We try to avoid deploying on Fridays, to minimize the chances of introducing a
@@ -63,7 +63,6 @@ This guide assumes that:
 Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of goood improvements all the time!
 
 ### Pre-deploy
-Scheduled for every **Tuesday**
 
 #### Test the proofing flow in staging
 
@@ -134,7 +133,6 @@ The last step may need a force push (add `-f`). Force-pushing to an RC branch is
 Staging used to be deployed by this process, but this was changed to deploy the `main` branch to the staging environment every day. See [daily deploy schedule]({% link _articles/daily-deploy-schedule.md %}) for more details.
 
 ### Production
-Scheduled for every Thursday
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
 1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
