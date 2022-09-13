@@ -1,5 +1,5 @@
 ---
-title: "AM Onboarding Document"
+title: "Account Manager (AM) Onboarding Document"
 layout: article
 description: "Document containing links to everything a new AM will need"
 category: Partnerships
