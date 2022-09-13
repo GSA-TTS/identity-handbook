@@ -146,6 +146,12 @@ A property of a Digital Subject that may have zero or more values. Generally kno
 
 See [IdV](#idv).
 
+Identity Proofing is the _process_ in which users identities are verified.
+
+The process by which a [CSP](#csp) and a [RA](#ra) collect and verify information about a person for the purpose of issuing credentials to that person. We follow the [NIST 800-63-3][nist-800-63-3] guidelines for enrollment and identity proofing.
+
+[nist-800-63-3]: https://pages.nist.gov/800-63-3/
+
 ### IdP
 **Identity Provider**
 
@@ -157,13 +163,20 @@ An Identity Provider can be described as a Service Provider for storing identity
 The ability to distinguish a person from all others within the context of the total population of persons of interest.
 
 ### IdV
-**Identity Verification** or **Identity Proofing**
+**Identity Verification**
 
-The process by which a [CSP](#csp) and a [RA](#ra) collect and verify information about a person for the purpose of issuing credentials to that person.
+See [Identity Proofing](#identity-proofing).
 
-This is the process we go through to verify user's identities. We use the terms proofing and identity verification interchangeably. We follow the [NIST 800-63-3][nist-800-63-3] guidelines for enrollment and identity proofing.
+Identity Verification is the _completion_ of the [identity proofing](#identity-proofing) process.
 
-[nist-800-63-3]: https://pages.nist.gov/800-63-3/
+**Identity Verification vs Identity Proofing**
+
+The two terms are also sometimes used interchangeable, which can be confusing to folks.
+We lean towards only using identity verification for consistency, but may use identity proofing where it makes sense to do so.
+
+To differentiate, we could say:
+
+> The user proofed their identity to complete identity verification.
 
 ### LOA
 **Level of Assurance**
