@@ -1,7 +1,7 @@
 ---
 title: "Account Manager (AM) Onboarding Document"
 layout: article
-description: "Document containing links to everything a new AM will need"
+description: "Document containing links to everything a new Account Manager will need"
 category: Partnerships
 redirect_to: https://docs.google.com/document/d/1x087xnGpwB8NY_UWad0mXkUGkgjKD58esuq85W1FlV0/edit
 ---
