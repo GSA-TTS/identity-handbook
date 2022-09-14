@@ -149,7 +149,6 @@ See [IdV](#idv).
 Identity Proofing is the _process_ in which users identities are verified.
 
 
-
 ### IdP
 **Identity Provider**
 
