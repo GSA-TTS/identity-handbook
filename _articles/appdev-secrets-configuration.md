@@ -1,6 +1,8 @@
 ---
 title: "Secrets and Configuration"
-description: "How to update IDP and Rails app configuration (feature flags) and secrets application.yml"
+description: >
+  How to update IDP and Rails app configuration (feature flags) and secrets application.yml, and
+  how to use the `app-s3-secret` script
 layout: article
 category: "AppDev"
 subcategory: Development
@@ -32,14 +34,13 @@ machine when done.
 
 ## Using `app-s3-secret`
 
-The easiest way to edit secrets is the `app-s3-secret` command in the `identity-devops` repo.
+The easiest way to interact with secrets is the `app-s3-secret` command in the `identity-devops` repo.
 
 These examples are for the IDP app in the `sandbox` AWS account and the `dev` environment:
 
 ### Viewing Secrets
 
 ```bash
-cd identity-devops
 aws-vault exec sandbox-power -- \
   ./bin/app-s3-secret --app idp --env dev
 ```
@@ -47,7 +48,6 @@ aws-vault exec sandbox-power -- \
 **Recommended**: `grep` for the keys you want to check
 
 ```bash
-cd identity-devops
 aws-vault exec sandbox-power -- \
   ./bin/app-s3-secret --app idp --env dev | grep foo
 some_foo_key: 'true'
@@ -62,7 +62,6 @@ The adding `--edit` will
 - Clean up the tempfile after
 
 ```bash
-cd identity-devops
 aws-vault exec sandbox-power -- \
   ./bin/app-s3-secret --app idp --env dev --edit
 #
@@ -75,16 +74,58 @@ app-s3-secret: Upload changes to S3? (y/n)
 y
 ```
 
-After updating, recycle the app so it creates new instances that will download
+After updating, [recycle the app][config-recycle] so it creates new instances that will download
 this updated config.
 
+[config-recycle]: {% link _articles/appdev-deploy.md %}#config-recycle
+
+### Looking at Changes to Secrets
+
+The `--last` flags lets us look at the last N changes:
+
 ```bash
-cd identity-devops
 aws-vault exec sandbox-power -- \
-  ./bin/asg-recycle dev idp
+  ./bin/app-s3-secret --app idp --env dev --last 1
+Comparing: 2022-09-14 03:59:18 UTC (DtE0w1CVOkRrhxCSUcmFJhPFPsoJI9So)
+       to: 2022-09-01 21:01:10 UTC (CRuDO2Ii4UIu14HCSgYj5g85fNUsLAHX)
+(no diff)
 ```
 
-Once the recycle is complete, it is important to [scale out old IDP instances]({% link _articles/appdev-deploy.md %}#config-recycle)
+The `--log` flag lets us look at all changes like `git log`
+
+```bash
+aws-vault exec sandbox-power -- \
+  ./bin/app-s3-secret --app idp --env dev --log
+Comparing: 2022-09-01 21:01:10 UTC (snK3BVbsNWMW-WhTLO-_RM_M53oI3DMB)
+       to: 2022-08-30 20:06:14 UTC (FedolxH-3uevGB_WBcdliPBNx90a1tOK)
+59c59
+<   foo_bar: '["a","b","c"]'
+---
+>   foo_bar: '[]'
+Comparing: 2022-08-30 20:06:14 UTC (FedolxH-3uevGB_WBcdliPBNx90a1tOK)
+       to: 2022-08-30 14:56:21 UTC (6VuhS9TAH0EXtlfr0Ueo3P4QcIPhLAAF.F9Lyz)
+75a76
+>   abc: "123"
+Comparing: 2022-08-30 14:56:21 UTC (6VuhS9TAH0EXtlfr0Ueo3P4QcIPhLAAF.F9Lyz)
+       to: 2022-08-26 14:08:49 UTC (2fXwjhRjy9pyzlbKijgNbZlqoEyOLBRn)
+59a60
+>   def: "456"
+```
+
+### Comparing Secrets Across Environments
+
+The `--diff` flag lets us compare values across environments (only within the same AWS account)
+
+```bash
+aws-vault exec sandbox-power -- \
+  ./bin/app-s3-secret --app idp --diff dev,int
++-----------------------+-----------+-----------+
+| key                   | dev       | int       |
++-----------------------+-----------+-----------+
+| foo_bar_baz           | (null)    | 50        |
+
+```
+
 ## Configuration in Rails Apps
 
 To use a value in the `application.yml` in our Rails apps, follow these steps. The IDP, PKI,
