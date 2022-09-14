@@ -14,13 +14,13 @@ A few notes on our deploy process.
 ### Cadence
 
 **When to deploy:** ✅
-- Typically we do a full deploy every week on Thursday.
+- Typically we do a full deploy twice weekly, on Mondays and Thursdays.
 
 **When _not_ to deploy:** ❌
 - We try to avoid deploying on Fridays, to minimize the chances of introducing a
   bug and having to scramble to fix it before the weekend
-- During New Years/winter break, or any other time when many team members are
-  on vacation
+- When the deploy falls on a holiday, or any other time when many team members are on vacation, such
+  as New Years / end of year.
 
 ### Types of Deploys
 
@@ -29,7 +29,7 @@ the `stages/prod` branch.
 
 | Type | What | When | Who |
 | ---- | ---- | ---- | --- |
-| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Every week | [@login-deployer][deployer-rotation] |
+| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Twice a week | [@login-deployer][deployer-rotation] |
 | **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [@login-deployer][deployer-rotation], or engineer handling the urgent issue |
 | **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
 | **Config Recyle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
@@ -63,7 +63,6 @@ This guide assumes that:
 Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of goood improvements all the time!
 
 ### Pre-deploy
-Scheduled for every **Tuesday**
 
 #### Test the proofing flow in staging
 
@@ -134,7 +133,6 @@ The last step may need a force push (add `-f`). Force-pushing to an RC branch is
 Staging used to be deployed by this process, but this was changed to deploy the `main` branch to the staging environment every day. See [daily deploy schedule]({% link _articles/daily-deploy-schedule.md %}) for more details.
 
 ### Production
-Scheduled for every Thursday
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
 1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
@@ -180,6 +178,10 @@ Scheduled for every Thursday
 
     1. Manual Inspection
       - Check [NewRelic (prod.login.gov)](https://one.newrelic.com/nr1-core/errors-ui/overview/MTM3NjM3MHxBUE18QVBQTElDQVRJT058NTIxMzY4NTg) for errors
+      - Optionally, use the deploy monitoring script to compare error rates and success rates for critical flows
+        ```bash
+        aws-vault exec prod-power -- ./bin/monitor-deploy prod idp
+        ```
       - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
 1. **PRODUCTION ONLY**: This step is required in production
