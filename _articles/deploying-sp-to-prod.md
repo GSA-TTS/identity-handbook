@@ -18,9 +18,9 @@ Here is a list of items that need to be completed to deploy the configuration fo
 
 5. The PR should be reviewed by another Integration Engineer or Partner Success Engineer and merged into `main`.
 
-6. Let the partner know via ZenDesk that their application has now been deployed and in the bottom right-hand corner click the arrow and select **Submit as Solved**. 
+6. Let the partner know via ZenDesk that their application has now been deployed and in the bottom right-hand corner click the arrow and select **Submit as Solved**.
 
-6. Generally speaking, we rely on the [weekly IdP deployment process]({% link _articles/appdev-deploy.md %}) to pull in configuration changes, especially new integration launches. If a manual deployment is required, follow the directions below:
+6. Generally speaking, we rely on the [recurring IdP deployment process]({% link _articles/appdev-deploy.md %}) to pull in configuration changes, especially new integration launches. If a manual deployment is required, follow the directions below:
   * **If no new logo files are being added in this PR,** you can simply spin up a migration instance in the appropriate environment (replace `prod` with `staging` if deploying integration to staging):
     ```sh
     bin/awsv prod bin/asg-recycle prod migration

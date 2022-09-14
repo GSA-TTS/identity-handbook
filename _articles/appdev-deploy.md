@@ -29,7 +29,7 @@ the `stages/prod` branch.
 
 | Type | What | When | Who |
 | ---- | ---- | ---- | --- |
-| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Every week | [@login-deployer][deployer-rotation] |
+| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Twice a week | [@login-deployer][deployer-rotation] |
 | **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [@login-deployer][deployer-rotation], or engineer handling the urgent issue |
 | **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
 | **Config Recyle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
