@@ -148,9 +148,7 @@ See [IdV](#idv).
 
 Identity Proofing is the _process_ in which users identities are verified.
 
-The process by which a [CSP](#csp) and a [RA](#ra) collect and verify information about a person for the purpose of issuing credentials to that person. We follow the [NIST 800-63-3][nist-800-63-3] guidelines for enrollment and identity proofing.
 
-[nist-800-63-3]: https://pages.nist.gov/800-63-3/
 
 ### IdP
 **Identity Provider**
