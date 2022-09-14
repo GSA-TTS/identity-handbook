@@ -147,8 +147,6 @@ A property of a Digital Subject that may have zero or more values. Generally kno
 See [IdV](#idv).
 
 Identity Proofing is the _process_ in which users identities are verified.
-
-
 ### IdP
 **Identity Provider**
 
