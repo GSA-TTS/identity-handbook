@@ -105,7 +105,7 @@ A pull request should be created from that latest branch to production: **`stage
          scripts/changelog_check.rb -b origin/stages/prod
          ```
        - *Review* the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
-   1. Write a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
+   1. [Save a draft release](https://github.com/18F/identity-idp/releases/new) on GitHub.
        - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
        - Release title: `RC #{NUMBER}`
        - *Save* the draft, do not publish as a pre-release
