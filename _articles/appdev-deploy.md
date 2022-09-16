@@ -97,6 +97,21 @@ A pull request should be created from that latest branch to production: **`stage
 - Add the label **`status - promotion`** to the pull request that will be included in the release.
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
+#### Prepare release notes
+
+   1. The audience for the release notes are partner agencies and their developers. Notes should be written in [plain language](https://plainlanguage.gov/) and clearly demonstrate the impact on the end user or agency.
+       - Generate the changelog using the IdP's changelog script:
+         ```
+         scripts/changelog_check.rb -b origin/stages/prod
+         ```
+       - *Review* the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
+   1. [Save a draft release](https://github.com/18F/identity-idp/releases/new) on GitHub.
+       - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
+       - Release title: `RC #{NUMBER}`
+       - *Save* the draft, do not publish as a pre-release
+   1. Share the draft release notes in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
+   1. Apply any requested updates to the release notes on GitHub.
+
 #### Resolving merge conflicts
 
 A full release after a patch release often results in merge conflicts. To resolve these automatically, we
@@ -112,21 +127,6 @@ git push -u origin HEAD
 ```
 
 The last step may need a force push (add `-f`). Force-pushing to an RC branch is safe.
-
-#### Prepare release notes
-
-   1. The audience for the release notes are partner agencies and their developers. Notes should be written in [plain language](https://plainlanguage.gov/) and clearly demonstrate the impact on the end user or agency.
-       - Generate the changelog using the IdP's changelog script:
-         ```
-         scripts/changelog_check.rb -b origin/stages/prod
-         ```
-       - *Review* the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
-   1. Write a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
-       - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
-       - Release title: `RC #{NUMBER}`
-       - *Save* the draft, do not publish as a pre-release
-   1. Share the draft release notes in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
-   1. Apply any requested updates to the release notes on GitHub.
 
 ### Staging
 
