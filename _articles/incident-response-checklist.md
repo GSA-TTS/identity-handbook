@@ -20,7 +20,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
 
 ## Initiate
 
-* Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN)
+* Incident declared in [#login-situation](https://gsa-tts.slack.com/archives/C5QUGUANN) by typing `/declare` and launching the `Declare Incident` workflow
 * Situation Lead and team assemble in War Room (See the Topic in #login-situation channel for the link)
 * Situation Lead asks for more participants if needed:
   * During business hours:
