@@ -102,18 +102,23 @@ function Event({ event }: { event: AnalyticsEvent }) {
     attributes = [],
   } = event;
 
+  const slug = urlify(eventName);
+  const previousEventSlug = urlify(`${eventName} Previous`);
+  const attributesSlug = urlify(`${eventName} Attributes`);
+  const exampleSlug = urlify(`${eventName} Example`);
+
   return (
     <div>
-      <h3>
+      <h3 id={slug}>
         {eventName}
-        <AnchorLink slug={urlify(eventName)} />
+        <AnchorLink slug={slug} />
       </h3>
       <p>{description}</p>
       {previousEventNames?.length ? (
         <>
-          <h4>
+          <h4 id={previousEventSlug}>
             Previous Event Names
-            <AnchorLink slug={urlify(`${eventName} Previous`)} />
+            <AnchorLink slug={previousEventSlug} />
           </h4>
           <ul>
             {previousEventNames.map((name) => (
@@ -124,9 +129,9 @@ function Event({ event }: { event: AnalyticsEvent }) {
       ) : undefined}
       {attributes?.length ? (
         <>
-          <h4>
+          <h4 id={attributesSlug}>
             Attributes
-            <AnchorLink slug={urlify(`${eventName} Attributes`)} />
+            <AnchorLink slug={attributesSlug} />
           </h4>
           <details>
             <summary>Show attribute details</summary>
@@ -138,9 +143,9 @@ function Event({ event }: { event: AnalyticsEvent }) {
           </details>
         </>
       ) : undefined}
-      <h4>
+      <h4 id={exampleSlug}>
         Example
-        <AnchorLink slug={urlify(`${eventName} Example`)} />
+        <AnchorLink slug={exampleSlug} />
       </h4>
       <Example
         event_name={eventName}
