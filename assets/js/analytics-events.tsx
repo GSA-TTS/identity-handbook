@@ -201,6 +201,7 @@ function AnalyticsEvents({
   const { data, isError, error } = useQuery(
     `analyticsEvents:${eventsUrl}`,
     () =>
+      currentUser &&
       window
         .fetch(eventsUrl)
         .then((response) => response.json())
