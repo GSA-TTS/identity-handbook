@@ -4,8 +4,9 @@ import { createPortal } from "preact/compat";
 import { useQuery } from "preact-fetching";
 import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
-import { AnchorLink, urlify } from "./components/anchor-link";
+import { urlify } from "./components/anchor-link";
 import { Sidenav } from "./components/sidenav";
+import { Heading } from "./components/heading";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -102,24 +103,15 @@ function Event({ event }: { event: AnalyticsEvent }) {
     attributes = [],
   } = event;
 
-  const slug = urlify(eventName);
-  const previousEventSlug = urlify(`${eventName} Previous`);
-  const attributesSlug = urlify(`${eventName} Attributes`);
-  const exampleSlug = urlify(`${eventName} Example`);
-
   return (
     <div>
-      <h3 id={slug}>
-        {eventName}
-        <AnchorLink slug={slug} />
-      </h3>
+      <Heading level="h3">{eventName}</Heading>
       <p>{description}</p>
       {previousEventNames?.length ? (
         <>
-          <h4 id={previousEventSlug}>
+          <Heading level="h4" id={urlify(`${eventName} Previous`)}>
             Previous Event Names
-            <AnchorLink slug={previousEventSlug} />
-          </h4>
+          </Heading>
           <ul>
             {previousEventNames.map((name) => (
               <li>{name}</li>
@@ -129,10 +121,9 @@ function Event({ event }: { event: AnalyticsEvent }) {
       ) : undefined}
       {attributes?.length ? (
         <>
-          <h4 id={attributesSlug}>
+          <Heading level="h4" id={urlify(`${eventName} Attributes`)}>
             Attributes
-            <AnchorLink slug={attributesSlug} />
-          </h4>
+          </Heading>
           <details>
             <summary>Show attribute details</summary>
             <ul>
@@ -143,10 +134,9 @@ function Event({ event }: { event: AnalyticsEvent }) {
           </details>
         </>
       ) : undefined}
-      <h4 id={exampleSlug}>
+      <Heading level="h4" id={urlify(`${eventName} Example`)}>
         Example
-        <AnchorLink slug={exampleSlug} />
-      </h4>
+      </Heading>
       <Example
         event_name={eventName}
         previous_event_names={previousEventNames}
