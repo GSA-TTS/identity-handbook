@@ -6,6 +6,17 @@ subcategory: How To
 category: Platform
 ---
 
+## Rotations
+
+To spread the toil accross the Platform teams we have the following rotations:
+
+| Rotation / Paging Schedule Name | Slack Handle | Slack Main Channel(s) | Coverage | Notes |
+| ------------------------------- | ------------ | --------------------- | -------- | ----- |
+| [Platform OnCall - Primary](#primary-on-call) | @login-devops-oncall | #login-devops / #login-events | 24/7 | Top responder for Platform issues |
+| [Platform OnCall - Secondary](#secondary-on-call) | @login-devops-oncall | #login-devops / #login-events | 24/7 | 5 minute delay backup for primary |
+| [Interrupts](#interrupts) | @login-platform-help | #login-platform-help | Business Hours | Developer support and toil |
+| [Deployment](#deployment) | @login-platform-deployer | #login-devops | Business Hours | Release manager for identity-devops code |
+
 ## Quick Reference
 
 * [DevOps Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) -
@@ -15,32 +26,21 @@ emergency contact list and other private information
 
 ## Responsibilities
 
-### Primary Responsibilities
+### Primary On-Call
 
 * **Acknowledge pages** - Ack OpsGenie pages within 5 minutes if possible to ensure timely response and avoid rollover to secondary
 * **Appropriately respond to alert** - Assess impact to end users and service providers and judge severity, acting as Incident Response reporter if appropriate
 * **Check Production** - Review systems and logs for indicators of issues which are not yet monitored, or unexpected behaviors
 * **Alert `@login-appdev-oncall` if production may be impacted** - Make sure they are aware anytime things are going poorly in production
-* **Initiate Incident Response (IR)** - Based on [Incident Severities]({% link _articles/secops-incident-response-guide.md %}#incident-severities)
-  * **High Severity** - Act immediately 24/7 and see through to remediation or confirmed handoff to other team members
-  * **Medium Severity** - During business hours as a top priority
-  * **Low Severity** - During business hours and yielding for release and other duties
 * **Initiate Incident Response (IR) Process** - Act as Situation Lead/Incident Commander following the [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
-* **Handle interrupts** using the [LG Platform - Interrupts board](https://github.com/orgs/18F/projects/34)
-  * Administrative tasks (onboard/offboard/change access)
-  * Urgent product, app, or ops team requests to @login-devops-oncall
-* **Handle maintenance tasks**
-  * @ folks in #login-events who have expiring AWS passwords or access keys
-  * Certificate rotation
-  * Regular cleanup
-* **Monitor Channels** - Keep an eye on #login-events and #login-secops-plan for items that may impact DevOps
+* **Monitor Channels** - Keep an eye on #login-events for problems requiring respone or investigation
 * **Review any open PRs that have been sitting over 48 hours in identity-devops, identity-terraform, identity-base-image, or identity-cookbooks**
 * **Ensure clean handoff of ongoing issues**
 * **Discuss prior week's issues in Tuesday 1300ET handoff thread in #login-devops**
 * **Maintain the @login-devops-oncall group**
 * **Take care of your well being** - You are but one human, and the team is here for you!  Your health and relationships must take priority over on-call.  If on-call is causing harm, let the team know immediately.
 
-### Secondary Responsibilities
+### Secondary On-Call
 
 * **Acknowledge escalated pages**
 * **Work escalated page** - Act as primary if/until issue can be handed off to primary
@@ -49,11 +49,24 @@ emergency contact list and other private information
 * **Help out with excess toil**
 * **Offer material and psychological support to primary** - Empathize! Proactively reach out if they have experienced high stress situations or worked over 8 hours
 
-## Procedure
+### Interrupts
 
-### On-Call Boundary
+* **Watch #login-platform-help and assist users with Platform questions, automation, tools, and application sandboxes**
+* **Manage the [LG Platform: Interrupts board](https://github.com/orgs/18F/projects/34)**
+* **Provision new users and remove offboarded users**
+* **Lead AWS onboarding sessions with new users**
+* **Refine automation/tools make things easier, safer, and requiring less context**
+* **Do NOT do project work!  Go mining in our docs for things to fix if you are bored**
 
-The normal schedule rotates at 1300 (1PM) Eastern Time every Tuesday.
+### Deployment
+
+* **Prepare weekly identity-devops release and deploy it** following [Release Prep Steps](https://github.com/18F/identity-devops/wiki/Runbook:-Weekly-Platform-Deployments-via-Ter
+
+## On-Call Procedure
+
+### Boundary
+
+All schedules rotate at 1300 (1PM) Eastern Time every Tuesday and are signaled by an automated message in #login-devops
 
 ### Entering On-Call
 
@@ -95,7 +108,7 @@ To temporarily take on-call:
 
 ## Are You Ready?
 
-Before going on-call for Identity DevOps ensure the following:
+Before going on-call for Platform ensure the following:
 
 * Access [AWS accounts]({{site.baseurl}}/articles/platform-aws-accounts-and-roles.html)
 * Comfortable with sandbox tasks (Terraform plan and apply, navigating instances)
