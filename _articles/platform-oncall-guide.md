@@ -24,23 +24,59 @@ emergency contact list and other private information
 * [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arises
 * [Troubleshooting Quick Reference]({{site.baseurl}}/articles/troubleshooting-quick-reference.html) - when you are troubleshooting and not sure where to start 
 
-## Responsibilities
+## Handoff Boundary
+
+All schedules rotate at 1300 (1PM) Eastern Time every Tuesday and are signaled by an automated message in #login-devops
+
+## Roles
 
 ### Primary On-Call
+
+Mission: Take care of production!
+
+#### Responsibilities
 
 * **Acknowledge pages** - Ack OpsGenie pages within 5 minutes if possible to ensure timely response and avoid rollover to secondary
 * **Appropriately respond to alert** - Assess impact to end users and service providers and judge severity, acting as Incident Response reporter if appropriate
 * **Check Production** - Review systems and logs for indicators of issues which are not yet monitored, or unexpected behaviors
 * **Alert `@login-appdev-oncall` if production may be impacted** - Make sure they are aware anytime things are going poorly in production
 * **Initiate Incident Response (IR) Process** - Act as Situation Lead/Incident Commander following the [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
-* **Monitor Channels** - Keep an eye on #login-events for problems requiring respone or investigation
+* **Monitor Channels** - Keep an eye on #login-events for problems requiring response or investigation
 * **Review any open PRs that have been sitting over 48 hours in identity-devops, identity-terraform, identity-base-image, or identity-cookbooks**
 * **Ensure clean handoff of ongoing issues**
 * **Discuss prior week's issues in Tuesday 1300ET handoff thread in #login-devops**
 * **Maintain the @login-devops-oncall group**
 * **Take care of your well being** - You are but one human, and the team is here for you!  Your health and relationships must take priority over on-call.  If on-call is causing harm, let the team know immediately.
 
+#### Procedures
+
+##### Entering
+
+Do these as you enter on-call:
+* **Update the @login-devops-oncall Slack group** - In #login-devops, click on the @login-devops-oncall link in the topic then edit the list of users to match the new primary and secondary engineers
+* **Discuss recent issues with previous on-call engineer**
+
+##### Daily
+
+* **Review `prod-idp-workload` CloudWatch dashboard**
+  * Look for errors or latency spikes
+  * Look for unusual activity...
+  * Improve your feeling on what "unusual" and "usual" look like by zooming out
+
+##### Exiting
+
+As you exit your on-call period:
+* **Discuss recent issues with engineer going on-call**
+* **Reflect on on-call period**:
+  * Asses the stress level you experienced
+  * Suggest improvements to on call process, docs, etc
+* **Share in the weekly Platform rotation thread in #login-devops**
+
 ### Secondary On-Call
+
+Mission: Support Primary!
+
+#### Responsibilities
 
 * **Acknowledge escalated pages**
 * **Work escalated page** - Act as primary if/until issue can be handed off to primary
@@ -49,64 +85,72 @@ emergency contact list and other private information
 * **Help out with excess toil**
 * **Offer material and psychological support to primary** - Empathize! Proactively reach out if they have experienced high stress situations or worked over 8 hours
 
+#### Procedures
+
+##### Daily
+
+* **If any incident has occurred in the last 24 hours, check in with Primary OnCall**
+  * How are they feeling?
+  * Do they need to pass off Primary for a bit?
+
 ### Interrupts
 
-* **Watch #login-platform-help and assist users with Platform questions, automation, tools, and application sandboxes**
+Mission: Support the Platform's customers!
+
+#### Responsibilities
+
+* **Watch #login-platform-help** and assist users with Platform questions, automation, tools, and application sandboxes
 * **Manage the [LG Platform: Interrupts board](https://github.com/orgs/18F/projects/34)**
 * **Provision new users and remove offboarded users**
 * **Lead AWS onboarding sessions with new users**
-* **Refine automation/tools make things easier, safer, and requiring less context**
-* **Do NOT do project work!  Go mining in our docs for things to fix if you are bored**
+* **Refine automation/tools** to make things easier, safer, and requiring less context
+* **Do NOT do project work!**  Go mining in our docs for things to fix if you are bored
+
+#### Procedures
+
+##### Entering
+
+Do these as you enter Interrupts:
+
+* **Update the @login-platform-help Slack handle**
+* **Check in on the [LG Platform: Interrupts board](https://github.com/orgs/18F/projects/34)**
+* **Check with outgoing Interrupts engineer** for any handoff items
+* **Make sure any unprovisioned new users are invited to a future AWS onboarding session** - This should be during your rotation!
+
+##### Daily
+
+* **Check if anyone needs help in #login-platform-help**
+* **Immediately disable anyone who has left the program but is still provisioned**
+* **Work the [LG Platform: Interrupts board](https://github.com/orgs/18F/projects/34)**
+
+##### Weekly
+
+* **Schedule and hold at least one AWS onboarding session if anyone needs to onboard** - Issues on the Interrupts board should help you identify new and not yet initialized users
+
+##### Exiting
+
+* **Make sure [LG Platform: Interrupts board](https://github.com/orgs/18F/projects/34) is up to date**
+* **Communicate in-flight work with incoming Interrupts engineer**
+* **Reflect on your Interrupts experience**
+  * Identify major sources of toil
+  * Think about investments that could reduce/eliminate toil
 
 ### Deployment
 
+Mission: Ship!
+
+#### Responsibilities
+
 * **Prepare weekly identity-devops release and deploy it** following [Release Prep Steps](https://github.com/18F/identity-devops/wiki/Runbook:-Weekly-Platform-Deployments-via-Ter
 
-## On-Call Procedure
+### Schedule Overrides
 
-### Boundary
-
-All schedules rotate at 1300 (1PM) Eastern Time every Tuesday and are signaled by an automated message in #login-devops
-
-### Entering On-Call
-
-Do these as you enter on-call:
-* **Update the @login-devops-oncall Slack group** - In #login-devops, click on the @login-devops-oncall link in the topic then edit the list of users to match the new primary and secondary engineers
-* **Discuss recent issues with previous on-call engineer**
-
-### One-Time Duties
-
-Do these at least ONE time while on call:
-* **Review this document - FIX ANY ERRORS!**
-* **Revise or delete at least one existing document**
-
-### Daily Duties
-
-* **Review APM data for IdP prod** - Look for errors or latency spikes
-* **PR and AC review**
-* **Toil... toil... toil...**
-
-### Exiting On-Call
-
-As you exit your on-call period:
-* **Discuss recent issues with engineer going on-call**
-* **Reflect on on-call period**:
-  * Estimate % of time spent on toil
-  * Identify major sources of toil
-  * Think about investments that could reduce/eliminate toil
-  * Make issues for toil clearly requiring "coding away"
-  * Asses the stress level you experienced
-  * Suggest improvements to on call process, docs, etc
-* **Share in the weekly DevOps rotation thread in #login-devops**
-
-### Schedule Override
-
-To temporarily take on-call:
+To temporarily take Primary On-Call:
 * Open the [DevOps On-Call Schedule](https://login-gov.app.opsgenie.com/teams/dashboard/2fbef770-e306-488e-bbe2-76e2c860a2c7/main)
 * Scroll down to the Devops Primary Schedule or Devops Secondary Schedule
 * Click "Add Override" and enter the team member and time range to override
 
-## Are You Ready?
+## Are You Ready To Be On-Call?
 
 Before going on-call for Platform ensure the following:
 
