@@ -12,10 +12,11 @@ To spread the toil accross the Platform teams we have the following rotations:
 
 | Rotation / Paging Schedule Name | Slack Handle | Slack Main Channel(s) | Coverage | Notes |
 | ------------------------------- | ------------ | --------------------- | -------- | ----- |
-| [Platform OnCall - Primary](#primary-on-call) | @login-devops-oncall | #login-devops / #login-events | 24/7 | Top responder for Platform issues |
-| [Platform OnCall - Secondary](#secondary-on-call) | @login-devops-oncall | #login-devops / #login-events | 24/7 | 5 minute delay backup for primary |
+| [Platform OnCall - Primary](#primary-on-call) | @login-platform-oncall | #login-devops / #login-events | 24/7 | Top responder for Platform issues |
+| [Platform OnCall - Secondary](#secondary-on-call) | @login-platform-oncall | #login-devops / #login-events | 24/7 | 5 minute delay backup for primary |
 | [Interrupts](#interrupts) | @login-platform-help | #login-platform-help | Business Hours | Developer support and toil |
 | [Deployment](#deployment) | @login-platform-deployer | #login-devops | Business Hours | Release manager for identity-devops code |
+| [DevTools](#devtools) | @login-devtools-oncall | #login-devops | Business Hours | GitLab and automation specific support |
 
 ## Quick Reference
 
@@ -142,6 +143,24 @@ Mission: Ship!
 #### Responsibilities
 
 * **Prepare weekly identity-devops release and deploy it** following [Release Prep Steps](https://github.com/18F/identity-devops/wiki/Runbook:-Weekly-Platform-Deployments-via-Ter
+
+#### Procedures
+
+See the Responsibilities above for a link to the full release and deployment process including daily tasks.
+
+##### Entering
+
+* **Update the @login-platform-deployer Slack handle**
+
+### DevTools
+
+Mission: Support GitLab and related automation
+
+__Note - This is not currently a rotation.  We will reassess our approach to GitLab and automation support in the coming months.__
+
+#### Responisibilities
+
+* **Respond to problems with GitLab CI/CD**
 
 ### Schedule Overrides
 
