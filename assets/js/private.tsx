@@ -1,4 +1,4 @@
-import { h, render, VNode } from "preact";
+import { render, VNode } from "preact";
 import { useState } from "preact/hooks";
 import { useJekyllBaseUrl } from "./hooks/jekyll";
 

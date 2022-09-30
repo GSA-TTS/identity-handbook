@@ -1,4 +1,3 @@
-import { h } from "preact";
 import Anchor from "anchor-js";
 
 const anchor = new Anchor();

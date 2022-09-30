@@ -1,4 +1,4 @@
-import { h, ComponentChildren } from "preact";
+import { ComponentChildren } from "preact";
 
 export function Alert({
   heading,
