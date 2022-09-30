@@ -64,6 +64,12 @@ Do these as you enter on-call:
   * Look for unusual activity...
   * Improve your feeling on what "unusual" and "usual" look like by zooming out
 
+##### Weekly
+
+* **File PRs or issues to adjust problematic alerts or fill critical observability gaps**
+  * Alert fatigue is real, so let's fight it!
+  * Not being able to understand what is happening in the system is stressful, so let's improve observability!
+
 ##### Exiting
 
 As you exit your on-call period:
@@ -168,6 +174,22 @@ To temporarily take Primary On-Call:
 * Open the [DevOps On-Call Schedule](https://login-gov.app.opsgenie.com/teams/dashboard/2fbef770-e306-488e-bbe2-76e2c860a2c7/main)
 * Scroll down to the Devops Primary Schedule or Devops Secondary Schedule
 * Click "Add Override" and enter the team member and time range to override
+
+## Participating in Rotations
+
+Engineers on the Platform teams at Login.gov are expected to participate in at
+least one of the rotation types every 8 weeks starting after their first 60
+days on the program.  Suggested rotations:
+
+* Interrupts - A great first rotation type for new team members and a great way
+  to contribute if you are not part of On-Call rotations.
+* Deployer - Another good new team member rotation or option of you are not part
+  of the On-Call rotations.
+* DevTools - Ideal for members of Team Mary.  Currently just a group but this may
+  become a rotation.
+* On-Call Primary/Secondary - After time in other rotations, and after preparing as
+  described in [Are You Ready To Be On-Call?](#are-you-ready-to-be-on-call), those
+  who can are urged to join this rotation.
 
 ## Are You Ready To Be On-Call?
 
