@@ -9,7 +9,8 @@ import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
 import { fetchGitHubFile, isGithubDirectory, isGithubFile } from "./github";
 import { Navigation, SidenavWithWrapper } from "./components/sidenav";
-import { AnchorLink } from "./components/anchor-link";
+import { Heading } from "./components/heading";
+import type { HeadingLevel } from "./components/heading";
 
 const GitHubContext = createContext({
   ref: undefined,
@@ -63,12 +64,12 @@ interface Frontmatter {
   category: string;
 }
 
-interface Heading {
+interface HeadingEntry {
   text: string;
   depth: number;
 }
 
-function buildNavigation(headings: Heading[]): Navigation {
+function buildNavigation(headings: HeadingEntry[]): Navigation {
   const navigation: Navigation = [];
   let lastDepth = 0;
   const stack: Navigation[] = [];
@@ -97,15 +98,11 @@ function buildNavigation(headings: Heading[]): Navigation {
   });
   return navigation;
 }
-
-type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-
-function buildHeader(Tag: HeadingTag) {
-  return ({ id, children }: { id: string; children: ComponentChildren }) => (
-    <Tag id={id}>
+function buildHeader(level: HeadingLevel) {
+  return ({ id, children }: { id: string; children: string }) => (
+    <Heading level={level} id={id}>
       {children}
-      <AnchorLink slug={id} />
-    </Tag>
+    </Heading>
   );
 }
 
@@ -167,7 +164,7 @@ function PrivateArticle({
     const [, frontMatterString, content] = atob(article.content).split("---");
     const frontMatter = loadYAML(frontMatterString) as Frontmatter;
 
-    const headings: Heading[] = [];
+    const headings: HeadingEntry[] = [];
     const headingCollector = (token: marked.Token) => {
       if (token.type === "heading") {
         headings.push({

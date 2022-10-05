@@ -4,8 +4,9 @@ import { createPortal } from "preact/compat";
 import { useQuery } from "preact-fetching";
 import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
-import { AnchorLink, urlify } from "./components/anchor-link";
+import { urlify } from "./components/anchor-link";
 import { Sidenav } from "./components/sidenav";
+import { Heading } from "./components/heading";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -104,17 +105,13 @@ function Event({ event }: { event: AnalyticsEvent }) {
 
   return (
     <div>
-      <h3>
-        {eventName}
-        <AnchorLink slug={urlify(eventName)} />
-      </h3>
+      <Heading level="h3">{eventName}</Heading>
       <p>{description}</p>
       {previousEventNames?.length ? (
         <>
-          <h4>
+          <Heading level="h4" id={urlify(`${eventName} Previous`)}>
             Previous Event Names
-            <AnchorLink slug={urlify(`${eventName} Previous`)} />
-          </h4>
+          </Heading>
           <ul>
             {previousEventNames.map((name) => (
               <li>{name}</li>
@@ -124,10 +121,9 @@ function Event({ event }: { event: AnalyticsEvent }) {
       ) : undefined}
       {attributes?.length ? (
         <>
-          <h4>
+          <Heading level="h4" id={urlify(`${eventName} Attributes`)}>
             Attributes
-            <AnchorLink slug={urlify(`${eventName} Attributes`)} />
-          </h4>
+          </Heading>
           <details>
             <summary>Show attribute details</summary>
             <ul>
@@ -138,10 +134,9 @@ function Event({ event }: { event: AnalyticsEvent }) {
           </details>
         </>
       ) : undefined}
-      <h4>
+      <Heading level="h4" id={urlify(`${eventName} Example`)}>
         Example
-        <AnchorLink slug={urlify(`${eventName} Example`)} />
-      </h4>
+      </Heading>
       <Example
         event_name={eventName}
         previous_event_names={previousEventNames}
@@ -196,6 +191,7 @@ function AnalyticsEvents({
   const { data, isError, error } = useQuery(
     `analyticsEvents:${eventsUrl}`,
     () =>
+      currentUser &&
       window
         .fetch(eventsUrl)
         .then((response) => response.json())
