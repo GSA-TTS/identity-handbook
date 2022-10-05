@@ -21,7 +21,7 @@ before we can deploy changes on our side.
 ## Configuration
 
 To streamline working with the Salesforce team and their QA/validation process,
-we've set up our Federalist preview site to
+we've set up our Cloud.gov Pages preview site to
 
 - disable captchas
 - point at the sandbox instance
