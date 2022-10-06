@@ -1,4 +1,4 @@
-import { h, render, Fragment } from "preact";
+import { render, Fragment } from "preact";
 import { useEffect } from "preact/hooks";
 import { createPortal } from "preact/compat";
 import { useQuery } from "preact-fetching";

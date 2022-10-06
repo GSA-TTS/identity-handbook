@@ -1,4 +1,4 @@
-import { h, render, Fragment, createContext, ComponentChildren } from "preact";
+import { render, Fragment, createContext, ComponentChildren } from "preact";
 import { useEffect, useMemo, useContext } from "preact/hooks";
 import { load as loadYAML } from "js-yaml";
 import { marked } from "marked";
