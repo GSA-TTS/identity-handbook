@@ -20,7 +20,7 @@ Here is a list of items that need to be completed to deploy the configuration fo
 
 6. Let the partner know via ZenDesk that their application has now been deployed and in the bottom right-hand corner click the arrow and select **Submit as Solved**.
 
-6. Generally speaking, we rely on the [recurring IdP deployment process]({% link _articles/appdev-deploy.md %}) to pull in configuration changes, especially new integration launches. If a manual deployment is required, follow the steps below:
+7. Generally speaking, we rely on the [recurring IdP deployment process]({% link _articles/appdev-deploy.md %}) to pull in configuration changes, especially new integration launches. If a manual deployment is required, follow the steps below:
   
   **Prerequisites:**
   Make sure you have prod-power access to run commands for aws-vault. You will have to go through steps listed in [identity-devops](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault) repo for setting up your production access.
@@ -52,13 +52,13 @@ Here is a list of items that need to be completed to deploy the configuration fo
   
   **Step 7:**
   Confirm config was updated/added by running rails console
-Run 
-`./bin/ssm-instance --newest asg-prod-idp`
-`id-rails-console`
-`sp = ServiceProvider.find_by(issuer: 'ISSUER-URN-HERE')`
-`sp.attributes`
-You will need to specify the reason you are running the console (checking config was updated).
-The last line will output the service provider attributes. 
+  Run 
+  `./bin/ssm-instance --newest asg-prod-idp`
+  `id-rails-console`
+  `sp = ServiceProvider.find_by(issuer: 'ISSUER-URN-HERE')`
+  `sp.attributes`
+  You will need to specify the reason you are running the console (checking config was updated).
+  The last line will output the service provider attributes. 
 
   **Step 8:**
   If config is updated as expected, you can run step 2 again to see the new instances as they come online. Once they have been online for 15 minutes, move to Step 9.
