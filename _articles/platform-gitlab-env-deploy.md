@@ -363,12 +363,14 @@ Thus, they deserve some special discussion.
 
 ##### How to detect that your env_runner is not working
 
-* Do a deploy to your environment using gitlab.  If the job is waiting forever
-  and cannot run, the env_runner is probably not working.
+* Do a deploy to your environment using gitlab.  If the `deploy_<env>` or
+  the `test_<env>` job hangs and times out eventually, your change did
+  not allow the env_runner to come up.
 * Take a look at the list of runners under the admin menu.  If there is no
   `<env>-env-runner` runner alive, then it did not come up after recycling.
 * Look at the ASG in the AWS console.  If it keeps failing to launch, it's
-  sad.
+  sad.  Be aware that the mere existence of runners launching doesn't mean
+  that it's working.  They have to fully launch without errors.
 
 ##### How to debug env_runner issues
 
