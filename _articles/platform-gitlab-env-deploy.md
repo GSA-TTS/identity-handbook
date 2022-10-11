@@ -309,7 +309,7 @@ Or you might want to only recycle one type of host instead of everything.
 We can do that!
 
 There are two variables you can set to change the behavior of gitlab
-deploys in the `.gitlab-ci.yml` file:
+deploys in the deploy job for your env in the `.gitlab-ci.yml` file:
 * `DEPLOY_TERRAFORM_ONLY`:  If you set this to anything, it will only terraform
   your env, and not recycle anything.  Tests and so on will still run.  Here
   is an example of how you would use it:
@@ -352,5 +352,90 @@ deploys in the `.gitlab-ci.yml` file:
 When you are done doing your targeted testing, it is recommended that
 you delete the entire variables section so that if the variables in the
 template are updated, you get the benefits of the templated variables.
+
+#### Debugging env_runner issues
+
+Environment runners are funny in that they are sort of not a part of gitlab,
+but kinda are too because they need to register and talk with gitlab.  They
+are also a bit of a (previously documented above) pain to use because they are
+locked down with their own proxy and only allowing certain images to run.
+Thus, they deserve some special discussion.
+
+##### How to detect that your env_runner is not working
+
+* Do a deploy to your environment using gitlab.  If the job is waiting forever
+  and cannot run, the env_runner is probably not working.
+* Take a look at the list of runners under the admin menu.  If there is no
+  `<env>-env-runner` runner alive, then it did not come up after recycling.
+* Look at the ASG in the AWS console.  If it keeps failing to launch, it's
+  sad.
+
+##### How to debug env_runner issues
+
+The env runner has to be able to complete these tasks to come up properly:
+* *Get the runner registration token from the `gitlab-config` s3 bucket.*  This
+  requires the `gitlab_config_s3_bucket` tag on the instance to be properly
+  set to the proper gitlab config bucket, network access to the
+  s3 endpoint, and permissions to read objects from it.
+* *Be able to talk to the proxy.*  It needs network access to the the proxy
+  on the `http://obproxy-env-runner.login.gov.internal:3128` url.
+* *Be able to query the gitlab endpoint through the proxy.*  The proxy must
+  allow it in the `/etc/squid/domain-allowlist.conf` file, the endpoint needs
+  to be set up and connected, and it needs network access to that endpoint.
+  The gitlab endpoint is `login-gitlab-<env>`, which is _usually_ accessed
+  over the https://gitlab.login.gov/ URL, if you haven't configured your
+  cluster to go to bravo or one of the other envs.
+
+So here's what you can do to debug those things:
+* Look at the logs as it is booting.  The fastest way to do this is to ssm into
+  the host and tail the `/var/log/cloud-init-output.log` file.  I use a command
+  like this to get in so that I'm there early in the boot process before it fails:
+  ```
+  until aws-vault exec sandbox-admin -- bin/ssm-instance --newest asg-tspencer-gitlab-env-runner ; do sleep 2 ; done ; stty sane
+  ```
+  You can also probably get these logs through cloudwatch, but it takes a long time
+  for them to show up there, so I never do that.
+* If it hangs before chef gets going, then it's having problems getting to the proxy
+  or maybe general network issues.
+  Look at the network connectivity (security groups, routing, etc.)
+  between the env_runner and the proxy.
+* If it hangs near the start of the identity-devops chef run, then it's probably trying to get
+  the runner token from s3, and it probably is timing out trying to get to the
+  s3 endpoint.  Look at the network config or the s3 endpoint config.
+  You can use `aws s3 ls` and other commands to diagnose this a bit.
+* If it hangs when trying to register the runner, then it's probably having problems
+  with network connectivity, either between the env_runner and the proxy.
+* If it fails while registering, `^C` quickly and run
+  ```
+  cat /etc/gitlab-runner/runner-register.sh ; /etc/gitlab-runner/runner-register.sh`
+  ```
+  Look at the runner token in the registration command and make sure it's actually a real
+  string, not empty.  If it is empty, then there's something wrong with the s3 bucket,
+  like the env_runner doesn't have permissions to read the runner token, or maybe
+  the file somehow got zeroed out.
+
+  Also look at the gitlab url that it's trying to register to and make sure it's
+  proper.
+
+  *Be aware that the host will register it's failure shortly and thus the
+    ASG will nuke the instance, leaving your ssm session hanging.  That's why you
+    do the `^C` fast.  :-)*
+* If the token is not empty, then look at what is going on when you run the registration script.
+  If it's hanging or timing out, then look at the network config between the proxy and
+  the gitlab VPC endpoint.  If it's giving back a 503, then look at the proxy and
+  make sure it has the gitlab url allowed, and that it can connect to it from the
+  proxy.
+* If everything is set up properly, make sure that the VPC endpoint is working and
+  wired up to the proper gitlab.  The easiest way to do that is through the AWS
+  VPC console.  It should plug a magic hostname that redirects it to their VPC endpoint
+  in the private dns zone for the cluster.  It should auto-register everything,
+  but maybe there can be some problems?
+* Or maybe the gitlab server is messed up!  Check it out and make sure it's happy.
+  You can look at the logs in /var/log/gitlab and look for the register API call,
+  and they might give you some indication of the problem, like using the wrong token
+  or I am out of disk space or help I am reading Vogon poetry or whatever.
+  The admin UI might be useful?
+  I don't know because I've not had problems like this, but it could certainly happen.
+
 
 Have fun!
