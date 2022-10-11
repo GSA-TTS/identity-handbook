@@ -149,7 +149,7 @@ There are two ways to test this out in your environment:
     functionality out.
 
     When your new image works and a build completes, your env_runner will be recycled,
-    so it will return to it's locked-down state.  You can keep it around by commenting
+    so it will return to its locked-down state.  You can keep it around by commenting
     out the `post_deploy_<env>` job in `.gitlab-ci.yml` and keep cycling if you need to,
     but BE SURE TO REVERT THIS WHEN DONE.
 
@@ -174,7 +174,7 @@ file and maybe remove some old ones, but not if they are being used by any of th
 environments.  This will let other environments know that it is an approved image
 once they relaunch their env_runners.  You might also want to remove your
 `s3://login-gov.secrets.<account>-us-west-2/<env>/gitlab_env_runner_allowed_images`
-file, so your env_runner gets it's stuff from the common secret again.
+file, so your env_runner gets its stuff from the common secret again.
 
 I know, this is a PITA, but this would be SO much easier if we
 didn't have to lock down our
