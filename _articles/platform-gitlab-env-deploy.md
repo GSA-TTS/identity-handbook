@@ -148,8 +148,10 @@ There are two ways to test this out in your environment:
     image in your `.gitlab-ci.yml` to get it to run a deploy and test the new
     functionality out.
 
-    You should recycle your env_runner when you are done with this, so that it gets
-    locked down again.
+    When your new image works and a build completes, your env_runner will be recycled,
+    so it will return to it's locked-down state.  You can keep it around by commenting
+    out the `post_deploy_<env>` job in `.gitlab-ci.yml` and keep cycling if you need to,
+    but BE SURE TO REVERT THIS WHEN DONE.
 
 1.  The end-to-end way (slow).  This is the normal
     way that systems get set up, so you should probably do this before you do your final
@@ -221,21 +223,21 @@ To enable your sandbox:
 
 1. Create a new branch from main.  The convention is `stages/<env>`, even though
    it technically could be anything.
-1. Edit  `identity-devops-private/vars/<env>.tfvars` to add in these variables:
+1. Make sure that `identity-devops-private/vars/<env>.tfvars` has these variables:
    ~~~
-   gitlab_servicename    = "com.amazonaws.vpce.us-west-2.vpce-svc-<something>"
-   gitlab_hostname       = "gitlab.login.gov"
-   gitlab_configbucket   = "login-gov-production-gitlabconfig-<env>-<region>"
    gitlab_enabled        = true
    gitlab_runner_enabled = true
    ~~~
-   You can probably just copy these from `tspencer.tfvars`.
+   Make sure they are set to `true`.  You should have them by default, but if
+   not, copy them from `vars/tspencer.tfvars`
 1. Terraform your environment.  It should set all the privatelink stuff up and
    launch the env_runner.
 1. Edit `identity-devops/.gitlab-ci.yml` and copy one of the sets of deploy
-   jobs that are out there.  `deploy_tspencer` and `test_tspencer` are probably
-   good candidates.  Please be sure to rename them and edit all the fields
-   that have env-specific stuff in them to your env.
+   jobs that are out there.  You will need _at least_ the deploy and the test
+   jobs (`deploy_tspencer` and `test_tspencer`, for example), but there are
+   others too.  You should copy them all.  Please be sure to rename them and
+   edit all the fields that have env-specific stuff in them to your env, like
+   change all `tspencer`s to `<yourenv>`.
 1. Push changes to your branch to trigger gitlab to run your deploy pipeline
    to your env!
 
@@ -291,6 +293,7 @@ stuff should work as well, like `go get -u` and so on.
 
 You can turn off all pipelines in a repo with this:
 <https://docs.gitlab.com/ee/ci/enable_or_disable_ci.html>
+We probably don't want to do that.
 
 You can turn off the pipeline for a branch by checking in a
 `.gitlab-ci.yml` file in that branch which has `when: manual`
@@ -298,5 +301,56 @@ in it for the jobs defined that would normally run in it or
 some other change to make it not match when gitlab looks for
 stuff that should run, like commenting it out or whatever.
 
+#### Fine-tuning your deploys
+
+If you are working on terraform-only changes, you might want to only
+deploy the terraform half of the changes, and not recycle the environment.
+Or you might want to only recycle one type of host instead of everything.
+We can do that!
+
+There are two variables you can set to change the behavior of gitlab
+deploys in the `.gitlab-ci.yml` file:
+* `DEPLOY_TERRAFORM_ONLY`:  If you set this to anything, it will only terraform
+  your env, and not recycle anything.  Tests and so on will still run.  Here
+  is an example of how you would use it:
+  ```
+  deploy_tspencer:
+    <<: *deploy_template
+    variables:
+      GIT_SUBMODULE_STRATEGY: normal
+      DEPLOY_TERRAFORM_ONLY: "true"
+    environment:
+      name: tspencer
+      on_stop: stop_tspencer
+      url: https://idp.tspencer.identitysandbox.gov/
+    resource_group: tspencer
+    tags:
+      - tspencer-env-runner
+    only:
+      - stages/tspencer
+  ```
+* `RECYCLE_ONLY_THESE_ASGS`:  This should be set to a space-separated list
+  of the ASGs that you want to recycle after doing a terraform run.
+  For example:
+  ```
+  deploy_tspencer:
+    <<: *deploy_template
+    variables:
+      GIT_SUBMODULE_STRATEGY: normal
+      RECYCLE_ONLY_THESE_ASGS: "tspencer-idp tspencer-worker"
+    environment:
+      name: tspencer
+      on_stop: stop_tspencer
+      url: https://idp.tspencer.identitysandbox.gov/
+    resource_group: tspencer
+    tags:
+      - tspencer-env-runner
+    only:
+      - stages/tspencer
+  ```
+
+When you are done doing your targeted testing, it is recommended that
+you delete the entire variables section so that if the variables in the
+template are updated, you get the benefits of the templated variables.
 
 Have fun!
