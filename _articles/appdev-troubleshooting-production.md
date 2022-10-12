@@ -19,11 +19,11 @@ on the script and the documents.
 
 ## Inside a Rails Console
 
-Inside a Rails console (see [`rails-c`](#rails-c)) here are some other things you can do to quickly get a sense of how a user's account is set up
+Inside a Rails console (see [`rails-c`]({% link _articles/devops-scripts.md %}#rails-c)) here are some other things you can do to quickly get a sense of how a user's account is set up
 
 ### Find a user
 
-This is what [`uuid-lookup`](#uuid-lookup) does under the hood basically
+This is what [`uuid-lookup`]({% link _articles/devops-scripts.md %}#uuid-lookup) does under the hood basically
 
 ```ruby
 user = User.find_with_email('address@example.com')
@@ -54,7 +54,7 @@ user.identities
 
 ## Cloudwatch Logs
 
-Once you have a user's UUID (from [`uuid-lookup`](#uuid-lookup)), you can look in Cloudwatch logs for
+Once you have a user's UUID (from [`uuid-lookup`]({% link _articles/devops-scripts.md %}#uuid-lookup)), you can look in Cloudwatch logs for
 events.log events for that user.
 
 For a full list of documented events, see [Analytics Events]({% link _articles/analytics-events.md %})
