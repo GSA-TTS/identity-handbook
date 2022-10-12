@@ -14,39 +14,8 @@ Before you can access any systems, you will need to [set up AWS-vault](https://g
 
 ## SSM Documents
 
-We used AWS SSM, which is kind of like SSH. Our main script, `ssm-instance` is set up for a few documents aimed at common tasks
-
-### `uuid-lookup`
-
-Looks up the UUID for a user by their email address.
-
-```bash
-aws-vault exec prod-power -- ./bin/ssm-instance --document uuid-lookup --any asg-prod-idp
-````
-
-### `rails-c`
-
-Opens a Rails console (in read-only mode)
-
-```bash
-aws-vault exec prod-power -- ./bin/ssm-instance --document rails-c --any asg-prod-idp
-````
-
-### `rails-w`
-
-Opens a Rails console (in read-write mode). **Be careful please**.
-
-```bash
-aws-vault exec prod-power -- ./bin/ssm-instance --document rails-w --any asg-prod-idp
-````
-
-### `tail-cw`
-
-Tails and streams cloudwatch logs, specifically `/var/log/cloud-init-output.log`. Useful for checking that a box spins up correctly, such as [during a deploy]({% link _articles/appdev-deploy.md %}#follow-the-process).
-
-```bash
-aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --any asg-prod-idp
-````
+We used AWS SSM, which is kind of like SSH. Our main script, `ssm-instance` is set up for a few documents aimed at common tasks. See the [guide to `ssm-instance`]({% link _articles/devops-scripts.md %}#ssm-instance) for more information
+on the script and the documents.
 
 ## Inside a Rails Console
 
@@ -107,13 +76,9 @@ On the right side of the page, we have a few saved queries useful for common tri
 ### Via the command line
 
 Cloudwatch queries are limited to 15 minutes and 10,000 rows. To get around these limitations,
-we have a script that runs the same query over adjacent slices in time. This
-
-```
-aws-vault exec prod-power -- ./bin/query-cloudwatch \
-  --app idp --env prod --log events.log \
-  --from 10d --slice 1d --query "$QUERY"
-```
+we have a script that runs the same query over adjacent slices in time, see the
+[guide to `query-cloudwatch`]({% link _articles/devops-scripts.md %}#query-cloudwatch) for more
+information.
 
 ### Sample Queries
 
