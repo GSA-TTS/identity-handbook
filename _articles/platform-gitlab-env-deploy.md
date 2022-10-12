@@ -120,16 +120,16 @@ The easiest way to see what is going on is to click into the pipeline you are in
 in and then click into the particular stage.  You should be able to see the logs
 of the particular step in a web UI.
 
-### Common Tasks
+## Common Tasks
 
-#### Updating terraform binary
+### Updating terraform binary
 
 The terraform binary is configured in `identity-devops/dockerfiles/env_deploy.Dockerfile`.
 
 Edit `TF_VERSION` and `TF_SHA256` to change what version it is.  You can find the versions
 and SHA256es of these binaries by browsing around under <https://releases.hashicorp.com/terraform/>.
 
-#### Updating env_deploy or env_test images
+### Updating env_deploy or env_test images
 
 You will probably want to test your stuff out first, so make a branch and make your changes
 to the Dockerfile(s) and `env_deploy.sh` scripts and so on in that branch, then add your
@@ -181,7 +181,7 @@ didn't have to lock down our
 gitlab runners.  They have a crazy amount of power, so we have to make sure that
 arbitrary jobs/code cannot be run on them.
 
-#### Updating allowed images on env_runner
+### Updating allowed images on env_runner
 
 If you want to add more images to be allowed to run by the
 env_runner, you can edit the file in:
@@ -202,7 +202,7 @@ sha256 digest from the build process or from looking at ECR.
 You should probably remove old images over time too, but be careful when
 editing the common list, because some branches may be using old images.
 
-#### Updating allowed images or services on env_runner
+### Updating allowed images or services on env_runner
 
 Note:  You probably don't want to do this, as env_runners should
 basically only be doing deploys and terratests.  They shouldn't
@@ -217,7 +217,7 @@ list (`[]`) means allow all services.  A list with an empty string
 means allow nothing (`[""]`), which is what it ought to be set as.
 You can add more images to that list.
 
-#### Adding new sandbox environments
+### Adding new sandbox environments
 
 To enable your sandbox:
 
@@ -241,7 +241,7 @@ To enable your sandbox:
 1. Push changes to your branch to trigger gitlab to run your deploy pipeline
    to your env!
 
-#### Migrating your sandbox to gitlab
+### Migrating your sandbox to gitlab
 
 Follow the steps in the "Adding new sandbox environments" section above, but
 also create a PR off of master that removes your sandbox from auto-tf,
@@ -249,7 +249,7 @@ probably in `identity-devops/terraform/tooling/tooling/app_sandboxes.yml`.
 Once that PR is merged to main, auto-tf should auto-tf itself and remove
 your auto-tf pipeline.
 
-#### Tests!
+### Tests!
 
 Tests are awesome!  Terratest is cool!  Let's use Terratest to test stuff!
 
@@ -262,7 +262,7 @@ probably mostly just be used to set up environment variables and give different
 arguments to the main testing software, which is [Terratest](https://terratest.gruntwork.io/)
 
 
-##### Running tests locally
+#### Running tests locally
 
 You can run tests locally with 
 ```
@@ -272,7 +272,7 @@ while you are in `identity-devops/tests`.
 
 If your tests rely on AWS creds, you can use aws-vault to run the tests.
 
-##### Updating dependencies
+#### Updating dependencies
 
 We want our tests to be fully contained and not require external resources
 to build and run.  To that end, we are vendoring the golang dependencies
@@ -282,14 +282,14 @@ To update that, just say `go mod vendor`, and it should update the
 stuff in vendor and let you check it in.  All of the normal go module
 stuff should work as well, like `go get -u` and so on.
 
-##### Terratest Resources
+#### Terratest Resources
 
 - <https://terratest.gruntwork.io/docs/>
 
 - <https://pkg.go.dev/github.com/gruntwork-io/terratest>
 
 
-#### Pausing Pipelines
+### Pausing Pipelines
 
 You can turn off all pipelines in a repo with this:
 <https://docs.gitlab.com/ee/ci/enable_or_disable_ci.html>
@@ -301,7 +301,7 @@ in it for the jobs defined that would normally run in it or
 some other change to make it not match when gitlab looks for
 stuff that should run, like commenting it out or whatever.
 
-#### Fine-tuning your deploys
+### Fine-tuning your deploys
 
 If you are working on terraform-only changes, you might want to only
 deploy the terraform half of the changes, and not recycle the environment.
@@ -353,7 +353,7 @@ When you are done doing your targeted testing, it is recommended that
 you delete the entire variables section so that if the variables in the
 template are updated, you get the benefits of the templated variables.
 
-#### Debugging env_runner issues
+### Debugging env_runner issues
 
 Environment runners are funny in that they are sort of not a part of gitlab,
 but kinda are too because they need to register and talk with gitlab.  They
@@ -361,7 +361,7 @@ are also a bit of a (previously documented above) pain to use because they are
 locked down with their own proxy and only allowing certain images to run.
 Thus, they deserve some special discussion.
 
-##### How to detect that your env_runner is not working
+#### How to detect that your env_runner is not working
 
 * Do a deploy to your environment using gitlab.  If the `deploy_<env>` or
   the `test_<env>` job hangs and times out eventually, your change did
@@ -372,7 +372,7 @@ Thus, they deserve some special discussion.
   sad.  Be aware that the mere existence of runners launching doesn't mean
   that it's working.  They have to fully launch without errors.
 
-##### How to debug env_runner issues
+#### How to debug env_runner issues
 
 The env runner has to be able to complete these tasks to come up properly:
 * *Get the runner registration token from the `gitlab-config` s3 bucket.*  This
