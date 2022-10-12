@@ -29,23 +29,23 @@ Here is a list of items that need to be completed to deploy the configuration fo
   Make sure you are in the root directory of the identity-devops repository.
   Do a `git pull` to make sure you have the latest in identity-devops.
   Run ```aws-vault exec prod-power -- /bin/zsh -l```.
-  This command will login you into aws-vault and make it so you can run each subsequent command without having to keep authorizing. You will need your yubikey.
+  This command spawns a new shell configured with your prod-power-aws-vault credentials. You will need your yubikey.
   
   * **Step 2:**
   Run `./bin/ls-servers -e prod`.
-  This lists the productions servers, including workers. If everything looks normal, proceed. Check that the number of instances running are what you would   expect (15 for idp, 4 for workers).
+  This lists the production servers, including workers. If everything looks normal, proceed. Check that the number of instances running are what you would expect (numbers should match what is in the config - [asg_idp_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L88) and asg_worker_desired(https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L96)).
 
   * **Step 3:**
   Notify in *#login-devops* and *#login-appdev* slack channels that you are going to begin recycling production. [Link to example message](https://gsa-tts.slack.com/archives/C0NGESUN5/p1664914296671609). 
   
   * **Step 4:** 
-  Run  `./bin/asg-recycle prod` idp. This will kick off recycling.
+  Run  `./bin/asg-recycle prod idp`. This will kick off recycling.
 
   * **Step 5:**
   Tail the logs so you can follow the recycle process by shelling into an instance. 
   Run `./bin/ssm-instance --newest asg-prod-migration`
   Then `tail -f /var/log/cloud-init-output.log` OR `tail -f /var/log/syslog`
-  There might be a delay in being able to ssm into the migration because it takes a minute to kick off the script. Instance needs at least a minute, maybe  more before command works
+  There might be a delay in being able to ssm into the migration because it takes a minute to kick off the script.  Migration instance needs at least a minute, maybe  more before command works
   
   * **Step 6:**
   Look for “complete/finished/success” language in the logs, it appears slightly above the end when the recycle finishes (might have to scroll up) 
@@ -70,5 +70,7 @@ Here is a list of items that need to be completed to deploy the configuration fo
 
   * **Step 10:**
   Confirm instances are scaling out by running step 2 again and you should see that old instances say “shutting down” under status 
+
+  *Note to team: check the official deploy guide periodically to make sure these steps stay up to date. Steps last updated 10/12/2022*  
 
 8. Notify the person who requested the launch / change that the configuration should be live in production and that they should test that everything looks good.
