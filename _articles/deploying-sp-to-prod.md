@@ -29,7 +29,7 @@ Here is a list of items that need to be completed to deploy the configuration fo
   Make sure you are in the root directory of the identity-devops repository.
   Do a `git pull` to make sure you have the latest in identity-devops.
   Run ```aws-vault exec prod-power -- /bin/zsh -l```.
-  This command spawns a new shell configured with your prod-power-aws-vault credentials. You will need your yubikey.
+  This command spawns a new shell configured with your prod-power aws-vault credentials. You will need your yubikey.
   
   * **Step 2:**
   Run `./bin/ls-servers -e prod`.
@@ -45,20 +45,14 @@ Here is a list of items that need to be completed to deploy the configuration fo
   Tail the logs so you can follow the recycle process by shelling into an instance. 
   Run `./bin/ssm-instance --newest asg-prod-migration`
   Then `tail -f /var/log/cloud-init-output.log` OR `tail -f /var/log/syslog`
-  There might be a delay in being able to ssm into the migration because it takes a minute to kick off the script.  Migration instance needs at least a minute, maybe  more before command works
+  There might be a delay in being able to ssm into the migration because it takes a minute to kick off the script.  Migration instance needs at least a minute, maybe  more before command works.
   
   * **Step 6:**
-  Look for “complete/finished/success” language in the logs, it appears slightly above the end when the recycle finishes (might have to scroll up) 
+  Look for “complete/finished/success” language in the logs, it appears slightly above the end when the recycle finishes (might have to scroll up).
   
   * **Step 7:**
-  Confirm config was updated/added by running rails console
-  Run 
-  `./bin/ssm-instance --newest asg-prod-idp`
-  `id-rails-console`
-  `sp = ServiceProvider.find_by(issuer: 'ISSUER-URN-HERE')`
-  `sp.attributes`
-  You will need to specify the reason you are running the console (checking config was updated).
-  The last line will output the service provider attributes. 
+  This step is optional, but you can confirm the config was updated/added by running rails console. 
+  You will need to specify the reason you are running the console.
 
   * **Step 8:**
   If config is updated as expected, you can run step 2 again to see the new instances as they come online. Once they have been online for 15 minutes, move to Step 9.
@@ -69,7 +63,7 @@ Here is a list of items that need to be completed to deploy the configuration fo
 `./bin/scale-remove-old-instances prod worker`
 
   * **Step 10:**
-  Confirm instances are scaling out by running step 2 again and you should see that old instances say “shutting down” under status 
+  Confirm instances are scaling out by running step 2 again and you should see that old instances say “shutting down” under status.
 
   *Note to team: check the official deploy guide periodically to make sure these steps stay up to date. Steps last updated 10/12/2022*  
 
