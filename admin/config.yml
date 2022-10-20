@@ -10,6 +10,7 @@ backend:
   use_graphql: true
 
 media_folder: images
+publish_mode: editorial_workflow
 
 collections:
   - label: Articles
