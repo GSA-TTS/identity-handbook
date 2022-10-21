@@ -1,7 +1,7 @@
 ---
 layout: article
-title: Final test for bug
-description: bug testing 123
+title: Example Netlify page
+description: Page for demo
 category: Netlify Sandbox
 ---
-I﻿'m a little teapot 418
+Hello! I have example content that needs to be edited. Let's do that here!
