@@ -67,7 +67,7 @@ GEM
     mercenary (0.4.0)
     mini_portile2 (2.8.0)
     minitest (5.16.2)
-    nokogiri (1.13.7)
+    nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     nokogumbo (2.0.5)
@@ -120,7 +120,7 @@ DEPENDENCIES
   jekyll-last-modified-at
   jekyll-redirect-from
   kramdown (>= 2.3.0)
-  nokogiri (~> 1.13.7)
+  nokogiri (~> 1.13.9)
   rspec (~> 3.9.0)
 
 RUBY VERSION
