@@ -18,7 +18,6 @@ collections:
     name: help
     folder: _articles
     create: true
-    path: '{{category}}/{{slug}}'
     summary: '{{category}}: {{title}}'
     sortable_fields: ['category', 'title', 'commit_date', 'commit_author']
     fields:
