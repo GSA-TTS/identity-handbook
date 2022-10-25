@@ -60,19 +60,3 @@ Pull Request, or until that review is dismissed.
 
 Since *Request Changes* is essentially blocking, as a Login.gov convention, we try to
 minimize usages of it to absolutely critical changes needed.
-
-## Giving General Design Feedback on Pull Requests
-
-**Note: this section is intended for people who may not have a lot of familiarity with GitHub**
-
-Engineers implement ticket requirements by making code changes which are submitted for review in pull requests (PRs) on GitHub. These PRs can be reviewed by various disciplines, most commonly by engineers and designers. When a PR makes changes to the look or feel of the application it is typical to ask for review by one or more designers.
-
-It’s best to leave feedback on PRs as comment threads rather than comments on the overall PR. Comment threads allow for a more focused conversation, reduce the amount of email notifications, and can be marked as resolved when concerns/questions have been addressed.
-
-<img/>
-
-For general design comments please begin a comment thread on the first line of the first changed file, and note that you’re starting a thread there with general design feedback. You do this by opening the PR link, going to the ‘Files changed’ tab, and starting a thread on the top line of the first file.
-
-<img/>
-
-Alternatively if you know which specific line(s) of code the design feedback applies to (eg a specific change to a content string) feel free to start a comment thread on that line.
