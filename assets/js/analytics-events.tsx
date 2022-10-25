@@ -153,6 +153,7 @@ function Event({ event }: { event: AnalyticsEvent }) {
               repo: "18f/identity-idp",
               extension: "rb",
               type: "code",
+              path: "app",
             })}
           >
             source usages
