@@ -7,7 +7,7 @@ import { createPortal } from "preact/compat";
 import { useQuery } from "preact-fetching";
 import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
-import { fetchGitHubFile, isGithubDirectory, isGithubFile } from "./github";
+import { fetchGitHubFile, isGithubDirectory, isGithubFile } from "./github-api";
 import { Navigation, SidenavWithWrapper } from "./components/sidenav";
 import { Heading } from "./components/heading";
 import type { HeadingLevel } from "./components/heading";

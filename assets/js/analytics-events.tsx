@@ -7,6 +7,7 @@ import { Alert } from "./components/alert";
 import { urlify } from "./components/anchor-link";
 import { Sidenav } from "./components/sidenav";
 import { Heading } from "./components/heading";
+import { permalink, searchURL } from "./github-urls";
 
 interface AnalyticsEventAttribute {
   name: string;
@@ -15,10 +16,29 @@ interface AnalyticsEventAttribute {
 }
 
 interface AnalyticsEvent {
+  /**
+   * String name for the event (the one that gets logged to events.log)
+   */
   event_name: string;
   previous_event_names?: string[];
   description: string;
   attributes: AnalyticsEventAttribute[];
+  /**
+   * Ruby analytics method name
+   */
+  method_name?: string;
+  /**
+   * Source file that this documentation comes from
+   */
+  source_file?: string;
+  /**
+   * Line in source file where documentation comes from
+   */
+  source_line?: number;
+  /**
+   * SHA that documentation was generated from
+   */
+  source_sha?: string;
 }
 
 function Example({
@@ -101,11 +121,45 @@ function Event({ event }: { event: AnalyticsEvent }) {
     previous_event_names: previousEventNames,
     description,
     attributes = [],
+    method_name: methodName,
+    source_file: sourceFile,
+    source_line: sourceLine,
+    source_sha: sourceSHA,
   } = event;
 
   return (
     <div>
-      <Heading level="h3">{eventName}</Heading>
+      <Heading level="h3" className="margin-bottom-0">
+        {eventName}
+      </Heading>
+      {methodName && sourceFile && sourceLine && (
+        <small>
+          <a
+            className="usa-link"
+            href={permalink({
+              repo: "18f/identity-idp",
+              ref: sourceSHA,
+              file: sourceFile,
+              line: sourceLine,
+            })}
+          >
+            Source definition
+          </a>
+          ,{" "}
+          <a
+            className="usa-link"
+            href={searchURL({
+              needle: methodName,
+              repo: "18f/identity-idp",
+              extension: "rb",
+              type: "code",
+              path: "app",
+            })}
+          >
+            source usages
+          </a>
+        </small>
+      )}
       <p>{description}</p>
       {previousEventNames?.length ? (
         <>

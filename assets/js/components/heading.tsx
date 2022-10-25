@@ -7,6 +7,7 @@ interface HeadingProps {
   level: HeadingLevel;
 
   id?: string;
+  className?: string;
 
   children: string;
 }
@@ -15,11 +16,12 @@ export function Heading({
   level,
   children,
   id = urlify(children),
+  className,
 }: HeadingProps) {
   const TagName = level;
 
   return (
-    <TagName id={id}>
+    <TagName id={id} className={className}>
       {children}
       <AnchorLink slug={id} />
     </TagName>
