@@ -62,16 +62,20 @@ export const loadSimpleJekyllSearch = () => {
 };
 
 export const setUpTimezoneHooks = () => {
-  Array.from(document.querySelectorAll<HTMLElement>('[data-local-tzname]')).forEach((elem) => {
+  Array.from(
+    document.querySelectorAll<HTMLElement>("[data-local-tzname]")
+  ).forEach((elem) => {
     elem.innerText = localTimezoneName();
-  })
-
-  Array.from(document.querySelectorAll<HTMLElement>('[data-utc-time]')).forEach((elem) => {
-    const utcTime = elem.dataset.utcTime;
-    if (utcTime) {
-      elem.innerText = convertToLocal(utcTime);
-    }
   });
-}
+
+  Array.from(document.querySelectorAll<HTMLElement>("[data-utc-time]")).forEach(
+    (elem) => {
+      const { utcTime } = elem.dataset;
+      if (utcTime) {
+        elem.innerText = convertToLocal(utcTime);
+      }
+    }
+  );
+};
 
 export { setUpPrivateLogin };

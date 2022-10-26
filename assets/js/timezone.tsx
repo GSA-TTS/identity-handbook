@@ -13,14 +13,14 @@ export function convertToLocal(utcTime: string) {
     return "N/A";
   }
 
-  const [_all, hourStr, _optional, minuteStr, ampm] = match;
+  const [, hourStr, , minuteStr, ampm] = match;
 
   const ampmOffset = ampm.toLowerCase().startsWith("p") ? 12 : 0;
 
   const localDate = new Date(Date.now());
-  localDate.setUTCHours(parseInt(hourStr) + ampmOffset);
+  localDate.setUTCHours(parseInt(hourStr, 10) + ampmOffset);
   if (minuteStr) {
-    localDate.setUTCMinutes(parseInt(minuteStr));
+    localDate.setUTCMinutes(parseInt(minuteStr, 10));
   } else {
     localDate.setUTCMinutes(0);
   }
@@ -30,7 +30,7 @@ export function convertToLocal(utcTime: string) {
 
   return [
     String(localHours === 0 ? 12 : localHours % 12),
-    localMinutes > 0 ? ":" + String(localMinutes).padStart(2, "0") : "",
+    localMinutes > 0 ? `:${String(localMinutes).padStart(2, "0")}` : "",
     localHours > 12 ? "pm" : "am",
   ].join("");
 }
