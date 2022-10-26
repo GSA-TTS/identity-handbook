@@ -3,6 +3,7 @@ import PrivateEye from "@18f/private-eye";
 import "simple-jekyll-search";
 import type { SimpleJekyllSearchGlobals } from "simple-jekyll-search-types";
 import { setUpPrivateLogin } from "./private";
+import { convertToLocal, localTimezoneName } from "./timezone";
 
 export const loadAnchors = () => {
   new Anchor().add(
@@ -59,5 +60,18 @@ export const loadSimpleJekyllSearch = () => {
     noResultsText: '<li class="no-results">No results were found.</li>',
   });
 };
+
+export const setUpTimezoneHooks = () => {
+  Array.from(document.querySelectorAll<HTMLElement>('[data-local-tzname]')).forEach((elem) => {
+    elem.innerText = localTimezoneName();
+  })
+
+  Array.from(document.querySelectorAll<HTMLElement>('[data-utc-time]')).forEach((elem) => {
+    const utcTime = elem.dataset.utcTime;
+    if (utcTime) {
+      elem.innerText = convertToLocal(utcTime);
+    }
+  });
+}
 
 export { setUpPrivateLogin };
