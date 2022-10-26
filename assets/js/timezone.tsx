@@ -6,7 +6,7 @@ export function localTimezoneName() {
  * @param utcTime string of time in UTC such as "5pm", "6am", "6:30am"
  * @return converted to local time such as "8pm", "2:30pm"
  */
-export function convertToLocal(utcTime: string, offsetMinutes?: number) {
+export function convertToLocal(utcTime: string) {
   const match = utcTime.match(/(\d+)(:(\d+))?\s*([ap].?m)/i);
 
   if (!match) {
