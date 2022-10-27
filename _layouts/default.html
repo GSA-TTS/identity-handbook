@@ -87,7 +87,7 @@
         loadPrivateEye,
         loadSimpleJekyllSearch,
         setUpPrivateLogin,
-        setUpTimezoneHooks
+        installCustomTimeElements
       } from '{{ "/assets/build/setup.js" | prepend: site.baseurl }}';
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -95,7 +95,7 @@
         loadPrivateEye();
         loadSimpleJekyllSearch();
         setUpPrivateLogin();
-        setUpTimezoneHooks();
+        installCustomTimeElements();
       }, false);
     </script>
   </body>

@@ -3,7 +3,7 @@ import PrivateEye from "@18f/private-eye";
 import "simple-jekyll-search";
 import type { SimpleJekyllSearchGlobals } from "simple-jekyll-search-types";
 import { setUpPrivateLogin } from "./private";
-import { convertToLocal, localTimezoneName } from "./timezone";
+import { installCustomTimeElements } from "./timezone";
 
 export const loadAnchors = () => {
   new Anchor().add(
@@ -61,21 +61,4 @@ export const loadSimpleJekyllSearch = () => {
   });
 };
 
-export const setUpTimezoneHooks = () => {
-  Array.from(
-    document.querySelectorAll<HTMLElement>("[data-local-tzname]")
-  ).forEach((elem) => {
-    elem.innerText = localTimezoneName();
-  });
-
-  Array.from(document.querySelectorAll<HTMLElement>("[data-utc-time]")).forEach(
-    (elem) => {
-      const { utcTime } = elem.dataset;
-      if (utcTime) {
-        elem.innerText = convertToLocal(utcTime);
-      }
-    }
-  );
-};
-
-export { setUpPrivateLogin };
+export { setUpPrivateLogin, installCustomTimeElements };

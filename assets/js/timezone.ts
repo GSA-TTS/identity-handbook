@@ -25,12 +25,33 @@ export function convertToLocal(utcTime: string) {
     localDate.setUTCMinutes(0);
   }
 
-  const localHours = localDate.getHours();
-  const localMinutes = localDate.getMinutes();
+  // Comes back like "7:01 PM"
+  const formatted = new Intl.DateTimeFormat(undefined, {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  }).format(localDate);
 
-  return [
-    String(localHours === 0 ? 12 : localHours % 12),
-    localMinutes > 0 ? `:${String(localMinutes).padStart(2, "0")}` : "",
-    localHours > 12 ? "pm" : "am",
-  ].join("");
+  return formatted.toLowerCase().replace(" ", "").replace(":00", "");
 }
+
+class LocalZoneName extends HTMLElement {
+  connectedCallback() {
+    this.textContent = localTimezoneName();
+  }
+}
+
+class LocalTime extends HTMLElement {
+  connectedCallback() {
+    const utcTime = this.getAttribute("utc");
+    if (utcTime) {
+      this.textContent = convertToLocal(utcTime);
+    }
+  }
+}
+
+export function installCustomTimeElements() {
+  customElements.define("lg-local-zone-name", LocalZoneName);
+  customElements.define("lg-local-time", LocalTime);
+}
+
