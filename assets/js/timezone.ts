@@ -26,10 +26,9 @@ export function convertToLocal(utcTime: string) {
   }
 
   // Comes back like "7:01 PM"
-  const formatted = new Intl.DateTimeFormat(undefined, {
+  const formatted = new Intl.DateTimeFormat("en-US", {
     hour: "numeric",
     minute: "2-digit",
-    hour12: true,
   }).format(localDate);
 
   return formatted.toLowerCase().replace(" ", "").replace(":00", "");
