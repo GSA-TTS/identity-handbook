@@ -53,4 +53,3 @@ export function installCustomTimeElements() {
   customElements.define("lg-local-zone-name", LocalZoneNameElement);
   customElements.define("lg-local-time", LocalTimeElement);
 }
-
