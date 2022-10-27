@@ -35,13 +35,13 @@ export function convertToLocal(utcTime: string) {
   return formatted.toLowerCase().replace(" ", "").replace(":00", "");
 }
 
-class LocalZoneName extends HTMLElement {
+class LocalZoneNameElement extends HTMLElement {
   connectedCallback() {
     this.textContent = localTimezoneName();
   }
 }
 
-class LocalTime extends HTMLElement {
+class LocalTimeElement extends HTMLElement {
   connectedCallback() {
     const utcTime = this.getAttribute("utc");
     if (utcTime) {
@@ -51,7 +51,7 @@ class LocalTime extends HTMLElement {
 }
 
 export function installCustomTimeElements() {
-  customElements.define("lg-local-zone-name", LocalZoneName);
-  customElements.define("lg-local-time", LocalTime);
+  customElements.define("lg-local-zone-name", LocalZoneNameElement);
+  customElements.define("lg-local-time", LocalTimeElement);
 }
 
