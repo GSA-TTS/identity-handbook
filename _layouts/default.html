@@ -86,7 +86,8 @@
         loadAnchors,
         loadPrivateEye,
         loadSimpleJekyllSearch,
-        setUpPrivateLogin
+        setUpPrivateLogin,
+        installCustomTimeElements
       } from '{{ "/assets/build/setup.js" | prepend: site.baseurl }}';
 
       document.addEventListener('DOMContentLoaded', () => {
@@ -94,6 +95,7 @@
         loadPrivateEye();
         loadSimpleJekyllSearch();
         setUpPrivateLogin();
+        installCustomTimeElements();
       }, false);
     </script>
   </body>
