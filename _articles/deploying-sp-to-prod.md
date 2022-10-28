@@ -20,9 +20,17 @@ Here is a list of items that need to be completed to deploy the configuration fo
 
 6. Let the partner know via ZenDesk that their application has now been deployed and in the bottom right-hand corner click the arrow and select **Submit as Solved**.
 
-7. Generally speaking, we rely on the [recurring IdP deployment process]({% link _articles/appdev-deploy.md %}) to pull in configuration changes, especially new integration launches. If a manual deployment is required, follow the steps below:
+7. Generally speaking, we rely on the [recurring IdP deployment process]({% link _articles/appdev-deploy.md %}) to pull in configuration changes, especially new integration launches. If a manual deployment is required, follow the [manual configuration deployment instructions](#manual-configuration-deployment-instructions).
   
-  * **Prerequisites:**
+ 
+8. Notify the person who requested the launch / change that the configuration should be live in production and that they should test that everything looks good.
+
+
+# Manual Configuration Deployment Instructions
+
+  *Note to team: check the official deploy guide periodically to make sure these steps stay up to date. Steps last updated 10/28/2022*  
+
+ * **Prerequisites:**
   Make sure you have prod-power access to run commands for aws-vault. You will have to go through steps listed in [identity-devops](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault) repo for setting up your production access.
   
   * **Step 1:**
@@ -65,6 +73,4 @@ Here is a list of items that need to be completed to deploy the configuration fo
   * **Step 10:**
   Confirm instances are scaling out by running step 2 again and you should see that old instances say “shutting down” under status.
 
-  *Note to team: check the official deploy guide periodically to make sure these steps stay up to date. Steps last updated 10/12/2022*  
 
-8. Notify the person who requested the launch / change that the configuration should be live in production and that they should test that everything looks good.
