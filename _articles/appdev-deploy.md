@@ -80,8 +80,8 @@ The release branch should be cut from code tested in staging and it should be th
 
 ```bash
 cd identity-$REPO
-git checkout main
-git pull
+git fetch
+git checkout $(curl --silent https://idp.staging.login.gov/api/deploy.json | jq -r .git_sha)
 git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
 git push -u origin HEAD
 ```
@@ -120,8 +120,7 @@ create a git commit with an explicit merge strategy to "true-up" with the `main`
 
 ```bash
 cd identity-$REPO
-git checkout main && git fetch && git pull
-git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
+git checkout stages/rc-2020-06-17 # CHANGE THIS DATE
 git merge -s ours origin/stages/prod # custom merge strategy
 git push -u origin HEAD
 ```
