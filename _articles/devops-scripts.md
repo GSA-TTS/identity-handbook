@@ -3,6 +3,7 @@ title: "Scripts"
 description: "Overview of scripts used for interacting with deployed boxes"
 layout: article
 category: "Development"
+subcategory: "References"
 ---
 
 These area scripts we use to interact with our deployed boxes,

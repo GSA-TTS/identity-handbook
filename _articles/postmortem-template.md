@@ -3,6 +3,7 @@ title: "Postmortem Template"
 description:
 layout: article
 category: "Development"
+subcategory: Documentation
 ---
 
 After incidents, we hold postmortems or retrospectives. Our postmortem template is:
