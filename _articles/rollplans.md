@@ -9,9 +9,10 @@ subcategory: "Documentation"
 ## Useful links
 
 - [Rollplans folder in Google Drive][gdrive-folder]
-- [Rollplan template copyable link][copy-link]
+- [Rollplan template][rollplan-template] ([copyable link][copy-link])
 
 [gdrive-folder]: https://drive.google.com/drive/folders/1Dh_1djujFno8T8XkrwTV5UkVAO3NxWC0
+[rollplan-template]: https://docs.google.com/document/d/1Mh7FdSFZiFNxf87aqpO77eTAL1LcVg1yFajKtTQcQLs/view
 [copy-link]: https://docs.google.com/document/d/1Mh7FdSFZiFNxf87aqpO77eTAL1LcVg1yFajKtTQcQLs/copy
 
 ## What is a rollplan?
