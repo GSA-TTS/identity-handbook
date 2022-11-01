@@ -3,6 +3,7 @@ title: GitHub
 description: Team code repos, permissions, notification strategies
 layout: article
 category: Development
+subcategory: Code
 ---
 
 ## Repositories
