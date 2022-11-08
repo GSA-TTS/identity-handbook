@@ -147,6 +147,19 @@ aws-vault exec prod-power --
 
 ## `ssm-instance`
 
+`ssm-instance` opens an interactive session with a server (EC2 instance)
+over HTTPS using the SSM Session service.  No SSH needed!
+
+### `-h` - Listing Documents
+
+Shows usage plus a list of the available SSM session documents for the
+application environment.
+
+```bash
+aws-vault exec prod-power --
+    ./bin/ssm-instance -h
+```
+
 ### `uuid-lookup`
 
 Looks up the UUID for a user by their email address.
@@ -182,3 +195,52 @@ Tails and streams cloudwatch logs, specifically `/var/log/cloud-init-output.log`
 aws-vault exec prod-power --
     ./bin/ssm-instance --document tail-cw --any asg-prod-idp
 ````
+
+## `ssm-command`
+
+`ssm-command` issues a set of commands (as defined in a "command document") on
+one or more servers (EC2 instances) using the SSM Command service.
+
+***HAZARD WARNING***
+
+Running commands on a fleet of servers is inherently risky.  It will cut you.
+There are mild guardrails in `ssm-command`:
+
+* By default it runs against 25% of servers at a time (adjustable with the `-p` or `-c` flag)
+* It stops when things fail (exit with a non-zero status)
+
+`ssm-command` has a hard time dealing with new instances coming online/dropping
+off.
+
+### `-h` - Listing Documents
+
+Shows usage plus a list of the available SSM command documents for the
+application environment.
+
+```bash
+aws-vault exec prod-power --
+    ./bin/ssm-command -h
+```
+
+### `passenger-restart`
+
+"Safely" restart the NGINX/Passenger service which reloads `application.yml` from
+S3.
+
+```bash
+aws-vault exec prod-power --
+    ./bin/ssm-command -d passenger-restart -r idp -e prod
+````
+
+If this fails it is recommended that you perform a recycle of production to ensure
+all instances are running from the same configuration.
+
+### `worker-restart`
+
+Safely restart GoodJob (idp-workers) service.
+
+```bash
+aws-vault exec prod-power --
+    ./bin/ssm-command -d worker-restart -r worker -e prod
+````
+
