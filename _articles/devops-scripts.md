@@ -112,9 +112,9 @@ aws-vault exec sandbox-power -- \
 Lists servers in an environment as a table
 
 ```bash
-aws-vault exec prod-power --
-    ./bin/ls-servers -e prod
-````
+aws-vault exec sandbox-power --
+    ./bin/ls-servers -e dev
+```
 
 ## `query-cloudwatch`
 
@@ -127,9 +127,9 @@ multiple slices of time and help combine the results, use the `--slice` to
 specify different slice durations.
 
 ```bash
-aws-vault exec prod-power --
+aws-vault exec sandbox-power --
     ./bin/query-cloudwatch \
-  --app idp --env prod --log events.log \
+  --app idp --env dev --log events.log \
   --from 10d --slice 1d --query "$QUERY"
 ```
 
@@ -141,9 +141,9 @@ Imitates `scp` by copying a file in and out of S3. Use the instance ID to refer 
 (see [`ls-servers`](#ls-servers) to find them). **You must be on the VPN for this script to work**
 
 ```bash
-aws-vault exec prod-power --
+aws-vault exec sandbox-power --
     ./bin/scp-s3 i-abcdef1234:/tmp/file.txt ./file.txt
-````
+```
 
 ## `ssm-instance`
 
@@ -156,7 +156,7 @@ Shows usage plus a list of the available SSM session documents for the
 application environment.
 
 ```bash
-aws-vault exec prod-power --
+aws-vault exec sandbox-power --
     ./bin/ssm-instance -h
 ```
 
@@ -165,36 +165,36 @@ aws-vault exec prod-power --
 Looks up the UUID for a user by their email address.
 
 ```bash
-aws-vault exec prod-power --
-    ./bin/ssm-instance --document uuid-lookup --any asg-prod-idp
-````
+aws-vault exec sandbox-power --
+    ./bin/ssm-instance --document uuid-lookup --any asg-dev-idp
+```
 
 ### `rails-c`
 
 Opens a Rails console (in read-only mode)
 
 ```bash
-aws-vault exec prod-power --
-    ./bin/ssm-instance --document rails-c --any asg-prod-idp
-````
+aws-vault exec sandbox-power --
+    ./bin/ssm-instance --document rails-c --any asg-dev-idp
+```
 
 ### `rails-w`
 
 Opens a Rails console (in read-write mode). **Be careful please**.
 
 ```bash
-aws-vault exec prod-power --
-    ./bin/ssm-instance --document rails-w --any asg-prod-idp
-````
+aws-vault exec sandbox-power --
+    ./bin/ssm-instance --document rails-w --any asg-dev-idp
+```
 
 ### `tail-cw`
 
 Tails and streams cloudwatch logs, specifically `/var/log/cloud-init-output.log`. Useful for checking that a box spins up correctly, such as [during a deploy]({% link _articles/appdev-deploy.md %}#follow-the-process).
 
 ```bash
-aws-vault exec prod-power --
-    ./bin/ssm-instance --document tail-cw --any asg-prod-idp
-````
+aws-vault exec sandbox-power --
+    ./bin/ssm-instance --document tail-cw --any asg-dev-idp
+```
 
 ## `ssm-command`
 
@@ -207,10 +207,8 @@ Running commands on a fleet of servers is inherently risky.  It will cut you.
 There are mild guardrails in `ssm-command`:
 
 * By default it runs against 25% of servers at a time (adjustable with the `-p` or `-c` flag)
-* It stops when things fail (exit with a non-zero status)
-
-`ssm-command` has a hard time dealing with new instances coming online/dropping
-off.
+* It stops when any single command fails (exits with a non-zero status)
+* `ssm-command` has a hard time dealing with new instances coming online or shutting down in an autoscaling group
 
 ### `-h` - Listing Documents
 
@@ -218,7 +216,7 @@ Shows usage plus a list of the available SSM command documents for the
 application environment.
 
 ```bash
-aws-vault exec prod-power --
+aws-vault exec sandbox-power --
     ./bin/ssm-command -h
 ```
 
@@ -228,11 +226,11 @@ aws-vault exec prod-power --
 S3.
 
 ```bash
-aws-vault exec prod-power --
-    ./bin/ssm-command -d passenger-restart -r idp -e prod
-````
+aws-vault exec sandbox-power --
+    ./bin/ssm-command -d passenger-restart -r idp -e dev
+```
 
-If this fails it is recommended that you perform a recycle of production to ensure
+If this fails it is recommended that you perform a recycle to ensure
 all instances are running from the same configuration.
 
 ### `worker-restart`
@@ -240,7 +238,7 @@ all instances are running from the same configuration.
 Safely restart GoodJob (idp-workers) service.
 
 ```bash
-aws-vault exec prod-power --
-    ./bin/ssm-command -d worker-restart -r worker -e prod
-````
+aws-vault exec sandbox-power --
+    ./bin/ssm-command -d worker-restart -r worker -e dev
+```
 
