@@ -206,13 +206,15 @@ Multi-factor authentication describes two-factor and higher levels of authentica
 An identity record present in the database that is missing one or more of the attributes included in an analysis that causes a search error and renders that record invalid for the purpose of the analysis.
 
 ### OTP
-**One Time Password**
-Token valid for one use. See https://en.wikipedia.org/wiki/One-time_password
+**One-time password**
+Token valid for one use. This token can be alphanumeric (using letters and numbers) or numeric (using only numbers). See https://en.wikipedia.org/wiki/One-time_password
+* Never use **one-time password**, **OTP**, or **TOTP** in the interface. Instead, **use "one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership.
+
 
 ### Passcode
-A **passcode** works like a password but uses only numbers. In previous iterations, Login.gov used **one-time passcode** to refer to the six-digit code sent during phone confirmation. However, usability tests suggested that the one-two sequence of **two-factor authentication** and **one-time passcode** might be misleading to non-experts.
-* In technical documentation, use **one-time passcode** on first reference, OTP on second. Don’t use **one-time password** or **TOTP** unless it is clearly explained as an alternate term. 
-* Never use these alternatives in the interface. Instead, **use "security code"** to refer to any OTP sent to confirm device ownership.
+A **passcode** works like a password but uses only numbers. In previous iterations, Login.gov used **one-time passcode** to refer to the six-digit code sent during phone confirmation. However, usability tests suggested that the one-two sequence of **two-factor authentication** and **one-time passcode** might be misleading to non-experts. 
+* In technical documentation, use **one-time passcode** on first reference to numeric codes, OTP on second. Don’t use **one-time password** or **TOTP** unless it is clearly explained as an alternate term. 
+* Never use these alternatives in the interface. Instead, **use "one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership.
 
 ### Password
 A collection of random characters (words and numerals) or short words used to access an account. It has no spaces. A **passphrase** is a password with spaces in it. **For interface copy, we will use "password" over "passphrase,"** which might be more technically accurate but is likely less recognizable to the intended enduser.
