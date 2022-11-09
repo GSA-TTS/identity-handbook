@@ -43,7 +43,7 @@ Deploys are scheduled every 6 hours at **5am, 11am, 5pm, 11pm UTC**.
 
 | UTC  | Local (<lg-local-zone-name />) |
 |------|--------------------------------|
-| 5am  | <lg-local-time utc="5pm" />    |
+| 5am  | <lg-local-time utc="5am" />    |
 | 11am | <lg-local-time utc="11am" />   |
 | 5pm  | <lg-local-time utc="5pm" />    |
 | 11pm | <lg-local-time utc="11pm" />   |
