@@ -208,7 +208,7 @@ An identity record present in the database that is missing one or more of the at
 ### OTP
 **One-time password**
 Token valid for one use. This token can be alphanumeric (using letters and numbers) or numeric (using only numbers). See https://en.wikipedia.org/wiki/One-time_password
-* Never use **one-time password**, **OTP**, or **TOTP** in the interface. Instead, **use "one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership.
+* Use **"one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership. Never use *one-time password*, *OTP*, or *TOTP* in the interface. 
 
 
 ### Passcode
