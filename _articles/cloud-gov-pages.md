@@ -11,8 +11,8 @@ subcategory: Code
 Login.gov uses [Cloud.gov Pages][cloud-gov-pages] as its hosting provider for our [static sites][static-sites]. By becoming a user of the Login.gov organization in Cloud.gov Pages, you'll have access to build logs and settings configuration for each of our sites. Organization access also allows you to log in on sites which use Netlify CMS ([including this handbook!][handbook-admin]).
 
 [cloud-gov-pages]: https://cloud.gov/pages/
-[static-sites]: https://handbook.login.gov/articles/github.html#static-sites
-[handbook-admin]: https://handbook.login.gov/admin/
+[static-sites]: {% link _articles/github.md %}#static-sites
+[handbook-admin]: {{ site.baseurl }}/admin/
 
 ## Requesting Access to Cloud.gov Pages
 
