@@ -258,15 +258,12 @@ aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
 A config recycle is an abbreviated "deploy" that deploys the same code, but lets boxes pick up
 new configurations (config from S3).
 
-**Note:** currently, all `identity-idp-config` changes require a migration.
-
 1. Make the config changes
 
-1. Recyle the boxes. It's OK to skip migration instances if we **know for certain** there are
-   no migrations, which there shouldn't be if there is no new code merges to `stages/prod`:
+1. Recycle the boxes
 
    ```bash
-   aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
+   aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
 
 1. In production, it's important to remember to still scale out old IDP instances.
