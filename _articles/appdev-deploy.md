@@ -147,7 +147,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
    1. Follow the progress of the migrations, ensure that they are working properly <a id="follow-the-process" />
    ```bash
-   # may need to wait a few seconds after the recycle
+   # may need to wait ~5 minutes after the recycle
    aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --newest asg-prod-migration
    ```
 
