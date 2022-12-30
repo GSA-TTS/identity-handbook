@@ -30,6 +30,8 @@ date = Date.new(2021, 1, 1)
 User.where('created_at <= ?', date).count
 ```
 
+
+
 ## Fully Registered Users
 
 Returns the number of fully registered users.
@@ -46,6 +48,18 @@ To approximate the count at a past point in time, substitute `date` below:
 date = Date.new(2021, 1, 1)
 RegistrationLog.where('registered_at <= ?', date).count
 ```
+
+## Total Linked Users for a Service Provider
+
+Returns the total number of registered users linked to a service provider or service providers.
+
+```ruby
+
+User.includes( :service_providers ).where({ :service_providers => {:issuer => ['urn:gov:gsa:openidconnect:test', 'urn:gov:gsa:openidconnect:test_prompt_login_banned' ]}}).count
+```
+
+**Note**: a `.joins` clause would be a good option here instead of a `.includes` 
+
 
 ## IDV Users
 
