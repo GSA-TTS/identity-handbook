@@ -30,8 +30,6 @@ date = Date.new(2021, 1, 1)
 User.where('created_at <= ?', date).count
 ```
 
-
-
 ## Fully Registered Users
 
 Returns the number of fully registered users.
