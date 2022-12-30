@@ -52,12 +52,12 @@ RegistrationLog.where('registered_at <= ?', date).count
 Returns the total number of registered users linked to a service provider or service providers.
 
 ```ruby
-
-User.includes( :service_providers ).where({ :service_providers => {:issuer => ['urn:gov:gsa:openidconnect:test', 'urn:gov:gsa:openidconnect:test_prompt_login_banned' ]}}).count
+User.joins(:service_providers ).where(
+  service_providers: {
+    issuer: ['issuer:a', 'issuer:b']
+  }
+).count
 ```
-
-**Note**: a `.joins` clause would be a good option here instead of a `.includes` 
-
 
 ## IDV Users
 
