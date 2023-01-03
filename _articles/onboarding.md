@@ -66,7 +66,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Contractors who are working on TTS projects most or full-time can be added as full Slack members.
   - Other collaborators should be added as multi-channel guests.
   - Full Slack access for Contractors is at the discretion of Login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
-- Add to appropriate [Login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
+- Add to appropriate [Login.gov Slack groups]({% link _articles/slack.md %}).
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the Login.gov project.
 - Verify their membership in all appropriate Google Groups. This will grant them permission to see the Login.gov Team Drive and other Google Docs
   - Add everyone to `login-all@`
