@@ -47,3 +47,7 @@ Deploys are scheduled every 6 hours at **5am, 11am, 5pm, 11pm UTC**.
 | 11am | <lg-local-time utc="11am" />   |
 | 5pm  | <lg-local-time utc="5pm" />    |
 | 11pm | <lg-local-time utc="11pm" />   |
+
+### Deployment status
+
+[The partner dashboard][https://dashboard.int.identitysandbox.gov/env] lists the current deployment status and timestamp for all environments
