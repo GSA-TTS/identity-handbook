@@ -50,4 +50,4 @@ Deploys are scheduled every 6 hours at **5am, 11am, 5pm, 11pm UTC**.
 
 ### Environment status
 
-You can view the [Envrionment status](https://dashboard.int.identitysandbox.gov/env) which includes the SHA and the date of last deploy.
+You can view the [Environment status](https://dashboard.int.identitysandbox.gov/env) which includes the SHA and the date of last deploy.
