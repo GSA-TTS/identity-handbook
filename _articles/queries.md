@@ -47,6 +47,18 @@ date = Date.new(2021, 1, 1)
 RegistrationLog.where('registered_at <= ?', date).count
 ```
 
+## Total Linked Users for a Service Provider
+
+Returns the total number of registered users linked to a service provider or service providers.
+
+```ruby
+User.joins(:service_providers ).where(
+  service_providers: {
+    issuer: ['issuer:a', 'issuer:b']
+  }
+).count
+```
+
 ## IDV Users
 
 Returns the number of users with identity-verified credentials.
