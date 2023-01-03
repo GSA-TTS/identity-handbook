@@ -52,7 +52,9 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
 
 - Add a new JIRA Issue to the [People-Ops board](https://cm-jira.usa.gov/secure/RapidBoard.jspa?projectKey=LPO&rapidView=2861) to track completion of onboarding tasks.
   - `Create Bulk Sub Tasks` on the new issue and use the `Login.gov Onboarding Buddy Tasks` template.
-- Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on Slack. Cc `@github-admins-slack` on your request.
+- Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on 
+
+. Cc `@github-admins-slack` on your request.
   - *For members needing **push commit** access*: Also add to the [identity-core](https://github.com/orgs/18F/teams/identity-core/members) team (contact [team maintainers](https://github.com/orgs/18F/teams/identity-core/members?utf8=%E2%9C%93&query=%20role%3Amaintainer) for this)
   - *For members NOT needing **push** access*: Also add to the [identity-team-yml](https://github.com/orgs/18F/teams/identity-team-yml/members) team, which grants read-only access. (contact [team maintainers](https://github.com/orgs/18F/teams/identity-team-yml/members?utf8=%E2%9C%93&query=+role%3Amaintainer) for this)
 - For anyone requiring AWS access:
@@ -66,7 +68,7 @@ Look at this work as a power multiplier, you are helping someone gain a firm fou
   - Contractors who are working on TTS projects most or full-time can be added as full Slack members.
   - Other collaborators should be added as multi-channel guests.
   - Full Slack access for Contractors is at the discretion of Login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
-- Add to appropriate [Login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
+- Add to appropriate [Login.gov Slack groups]({% link _articles/slack.md %}).
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the Login.gov project.
 - Verify their membership in all appropriate Google Groups. This will grant them permission to see the Login.gov Team Drive and other Google Docs
   - Add everyone to `login-all@`
