@@ -47,3 +47,7 @@ Deploys are scheduled every 6 hours at **5am, 11am, 5pm, 11pm UTC**.
 | 11am | <lg-local-time utc="11am" />   |
 | 5pm  | <lg-local-time utc="5pm" />    |
 | 11pm | <lg-local-time utc="11pm" />   |
+
+### Environment status
+
+You can view the [Environment status](https://dashboard.int.identitysandbox.gov/env) which includes the SHA and the date of last deploy.
