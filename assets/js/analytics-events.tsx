@@ -11,7 +11,7 @@ import { permalink, searchURL } from "./github-urls";
 
 interface AnalyticsEventAttribute {
   name: string;
-  types: string[];
+  types?: string[];
   description: string;
 }
 
@@ -61,7 +61,9 @@ function Example({
 
   const attributeExamples = attributes.flatMap(
     ({ name, types, description }) => {
-      const value = types.flatMap((type) => typeExample(type)).join(" | ");
+      const value = (types || [])
+        .flatMap((type) => typeExample(type))
+        .join(" | ");
 
       const example = [`${name}: ${value},`];
 
@@ -104,7 +106,7 @@ function Attribute({ name, types, description }: AnalyticsEventAttribute) {
   return (
     <li>
       <kbd>{name}</kbd>
-      {types?.length > 0 && (
+      {types && types?.length > 0 && (
         <>
           {" "}
           <span>({types.join(", ")})</span>
