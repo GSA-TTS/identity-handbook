@@ -222,6 +222,14 @@ aws-vault exec sandbox-power --
 
 ### `passenger-restart`
 
+{%- capture alert_content -%}
+2022-01-04: This script is **not safe** to use at this time, it drops live requests instead
+of rotating smoothly. See [identity-devops#/5651](https://github.com/18F/identity-devops/issues/5651)
+for more information.
+{%- endcapture -%}
+
+{% include alert.html content=alert_content alert_class="usa-alert--error" %}
+
 "Safely" restart the NGINX/Passenger service which reloads `application.yml` from
 S3.
 
