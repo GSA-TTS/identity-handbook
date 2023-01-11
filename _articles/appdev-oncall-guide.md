@@ -73,7 +73,7 @@ Throughout the week, check for automated vulnerability pull requests and try to 
 
 ### Resetting User Passwords
 
-On rare occasions partners will ask us to reset passwords for accounts. In a Rails console, run:
+On rare occasions partners will ask us to reset passwords for accounts. In a Rails console (with write access), run:
 
 ```ruby
 emails = %w[email1@example.com email2@example.com]
