@@ -169,6 +169,25 @@ aws-vault exec sandbox-power --
     ./bin/ssm-instance --document uuid-lookup --any asg-dev-idp
 ```
 
+### `review-pass`
+
+Activates a user that has a profile deactivated due to a pending ThreatMetrix review status. 
+Requires the user UUID from the `uuid-lookup` task.
+
+```bash
+aws-vault exec sandbox-power --
+    ./bin/ssm-instance --document review-pass --any asg-dev-idp
+```
+
+### `review-reject`
+Deactivates a user that has a pending ThreatMetrix review status with the reason "ThreatMetrix review rejected". 
+Requires the user UUID from the `uuid-lookup` task.
+
+```bash
+aws-vault exec sandbox-power --
+    ./bin/ssm-instance --document review-reject --any asg-dev-idp
+```
+
 ### `rails-c`
 
 Opens a Rails console (in read-only mode)
