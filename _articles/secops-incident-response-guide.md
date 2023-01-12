@@ -17,7 +17,7 @@ In a situation? Check the [Incident Response Checklist]({% link _articles/incide
 
 {% include alert.html content=alert_content %}
 
-The formal version from the FedRAMP Agency ATO package can be found here [Login.gov Incident Response Plan](https://drive.google.com/open?id=1Em3F3oZF_SRuuRLqwr6-pwlE4iNmT2ix)
+The formal version from the FedRAMP Agency ATO package can be found here [Login.gov Incident Response Plan](https://drive.google.com/file/d/1SVz5keBYiDSXvzBdkLFOqdnAplZWqL9D/)
 
 Login.gov incident response operates under the GSA Incident Response framework.  See [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf) for detailed GSA IR guidance.
 
