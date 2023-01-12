@@ -71,6 +71,23 @@ Throughout the week, check for automated vulnerability pull requests and try to 
 
 [ig-requests]: https://github.com/18F/identity-security-private/wiki/Responding-to-Inspector-General-(IG)-Data-Requests
 
+### Resetting User Passwords
+
+On rare occasions partners will ask us to reset passwords for accounts. In a Rails console (with write access), run:
+
+```ruby
+emails = %w[email1@example.com email2@example.com]
+
+emails.each do |email|
+  user = User.find_with_email(email)
+  if user
+    ResetUserPassword.new(user: user).call
+  else
+    puts "no user for #{email}"
+  end
+end
+```
+
 ### Expiring PKI Certs
 
 ![Screenshot of expiring PKI Slack alert]({{ site.baseurl }}/images/slack-pki-cert-alert.jpg)
