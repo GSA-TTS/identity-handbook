@@ -40,6 +40,8 @@ automatically deploy gitlab.  Here is the process:
 * The test at the end of the pipeline should indicate that everything went out OK, but
   it's never bad to check it out yourself and make sure that jobs are working and the UI
   is happy, etc.
+* Notify people that the deploy is complete in `#login-team-mary`, `#login-team-radia`,
+  `#login-devops`, and `#login-appdev`.
 
 ## Deploy by hand
 
@@ -59,6 +61,8 @@ here it is just in case.
 * The test.sh should indicate that everything went out OK, but
   it's never bad to check it out yourself and make sure that jobs are working and the UI
   is happy, etc.
+* Notify people that the deploy is complete in `#login-team-mary`, `#login-team-radia`,
+  `#login-devops`, and `#login-appdev`.
 
 ## Gitlab Automatic Deployments
 
