@@ -22,6 +22,11 @@ An "industry" glossary worth scanning: <https://solutionsreview.com/identity-man
 
 Also called 2FA and two-factor authentication, two-step authentication is a way of logging into a website that increases security by requiring a password plus something else such as a physical trait, a PIN, or location or time of a login attempt. Two-factor authentication makes users' accounts more secure by requiring a mobile device (a phone or a tablet) as well as a password to sign in, reducing the threat of attackers being able to hack their way into accounts.
 
+### 3PAO
+**Third Party Assessment Organizations**
+
+Independent third parties that evaluate our services. We are required to have 3PAO assessments as part of [FedRAMP](#fedramp).
+
 ### AAL
 **Authentication Assurance Level**
 
@@ -98,6 +103,11 @@ A factor is a type of evidence that users can provide to prove they own an ident
 
 Multi-factor authentication is a process that requires users to present valid examples of multiple factors. NB: We have rewritten the names of the factors for greater clarity and precision. _See also **Authentication**, **[Two-Factor Authentication](#2fa)** and **[Multi-Factor Authentication](#mfa)**_ definitions.
 
+
+### FedRAMP
+The **Federal Risk and Authorization Management Program**
+
+See [fedramp.gov](https://www.fedramp.gov/). FedRAMP is a program that standardizes security authorizations. Login.gov is a FedRAMP moderate system.
 
 ### FYSA
 **For Your Situational Awareness**
