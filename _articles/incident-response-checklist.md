@@ -33,7 +33,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
   * **Scribe (SC)**: Notes significant events observed in the war room (hangout) to #login-situation to produce timeline / share with others not in room (Just notes - Not a transcript!)
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
     * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks)
-    * Ensures execution of relevant runbook steps, subdelegating as needed
+    * Ensures execution of relevant runbook steps, delegating as needed
   * **Comms Lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
     * Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
     * Incident Review document created from [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and moved to the year's subfolder under the [Incident Reviews Folder](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?usp=sharing)
@@ -63,7 +63,7 @@ Loop through per-role items until remediation is complete.
 
 **By Role**
 * Situation Lead (SL)
-  * Wellbeing of group monitored, including self (Tired and stressed humans make poor decisions)
+  * Well-being of group monitored, including self (Tired and stressed humans make poor decisions)
   * Keeps situation room clean - Non-responders need to move elsewhere
   * Rotations of all roles planned and performed to prevent any responder spending more than 3 hours in role
 * Technical Lead (TL)
