@@ -33,11 +33,12 @@ For detailed information see the [Security Incident Response Guide]({% link _art
   * **Scribe (SC)**: Notes significant events observed in the war room (hangout) to #login-situation to produce timeline / share with others not in room (Just notes - Not a transcript!)
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
     * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks)
-    * Ensures execution of relevant runbook steps, subdelegating as needed
+    * Ensures execution of relevant runbook steps, delegating as needed
   * **Comms Lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
     * Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
     * Incident Review document created from [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and moved to the year's subfolder under the [Incident Reviews Folder](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?usp=sharing)
     * Used [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov>, IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called), and our [GSA ISSO and ISSM](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/#emergency-contacts) **within 1 hour** of start of incident
+    * **Every 30 minutes** ensures StatusPage and external stakeholders are updated
 
 ## Assess
 
@@ -50,7 +51,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
   - **High**: Confirmed PII breach, confirmed security penetration, complete outage
   - **Medium**: Suspected PII breach, suspected security penetration, partial outage
   - **Low**: Suspected attack, outage of non-prod persistent system (`int`)
-* If user or partner impacting, [StatusPage updated](https://manage.statuspage.io/login)
+* If user or partner impacting, [StatusPage updated](https://manage.statuspage.io/login) notice posted using one of the pre-made `Outage` templates if applicable
 * Checked [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) for relevant runbooks to execute
 * If secure shared notepad is needed, Google Doc opened and shared <https://drive.google.com/drive/folders/1TWTMp_w55niNuqC7vTPDEe5vkxaiP4P0>  (Contents should be copied to official issue)
 
@@ -62,20 +63,22 @@ Loop through per-role items until remediation is complete.
 
 **By Role**
 * Situation Lead (SL)
-  * Wellbeing of group monitored, including self (Tired and stressed humans make poor decisions)
+  * Well-being of group monitored, including self (Tired and stressed humans make poor decisions)
+  * Keeps situation room clean - Non-responders need to move elsewhere
   * Rotations of all roles planned and performed to prevent any responder spending more than 3 hours in role
 * Technical Lead (TL)
   * Lead technical response till issue is remediated
   * **OR** role is handed off
 * Comms Lead (CL)
-  * Regular updates to interested parties provided
-  * StatusPage updated as status changes
+  * **Every 30 minutes or when status changes** - Regular updates to interested parties provided
+  * **Every 30 minutes or when status changes** - StatusPage updated
 * Scribe (SC)
   * Ensure a timeline of significant events is recorder in the #login-situation Slack channel
-  * Relay information to help someone NOT in the war room who wants to understand the incident
+  * Relay technical information to help someone NOT in the war room who wants to understand the incident
 
 Upon remediation:
 * Signaled end of incident in #login-situation once remediated
+* Statuspage updated once confident that issue is remediated
 
 ## Retrospect
 
