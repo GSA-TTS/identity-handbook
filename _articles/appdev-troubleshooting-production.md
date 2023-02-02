@@ -21,7 +21,7 @@ on the script and the documents.
 
 Inside a Rails console (see [`rails-c`]({% link _articles/devops-scripts.md %}#rails-c)) here are some other things you can do to quickly get a sense of how a user's account is set up
 
-### Find a user
+### Find a user by email
 
 This is what [`uuid-lookup`]({% link _articles/devops-scripts.md %}#uuid-lookup) does under the hood basically
 
@@ -96,3 +96,33 @@ fields
 | sort @timestamp desc
 | limit 10000
 ```
+
+## Workflows
+
+### Find a user by phone number
+
+We don't have indexed lookups by phone number so we need to combine a few approaches to get a user's phone number
+
+1. Normalize and fingerprint the phone
+
+    In a Prod Rails console (to use the correct hash salts)
+
+    ```ruby
+    parsed_phone = Phonelib.parse("+1 (888) 867-5309")
+    fingerprints = [
+      Pii::Fingerprinter.fingerprint(parsed_phone.e164),
+      *Pii::Fingerprinter.previous_fingerprints(parsed_phone.e164)
+    ]
+    # => ["aaa", "bbb", "ccc"]
+    ```
+
+2. In Cloudwatch, look up OTP requests to those fingerprints. It helps to have an approximate date
+   this user was active to help narrow down the Cloudwatch search timeframe.
+
+   ```cloudwatch
+   fields
+     properties.user_id,
+     @timestamp
+   | filter name = 'Telephoy: OTP sent'
+   | filter properties.event_properties.phone_fingerprint in ["aaa", "bbb", "ccc"] # CHANGE THIS
+   ```
