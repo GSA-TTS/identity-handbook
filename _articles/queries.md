@@ -17,7 +17,7 @@ ActiveRecord::Base.connection.execute 'SET statement_timeout = 200000'
 
 ## Total Registered
 
-Returns the number of users that created accounts (this includes users who may not have fully registered, see [Fully Registered Users](#fully-registered-users) for that query)
+Returns the number of users that created accounts (this includes users who may not have fully registered, see [Fully Registered Users](#fully-registered-users) for that query), it does not count users who have already deleted their accounts.
 
 ```ruby
 User.count
@@ -30,9 +30,26 @@ date = Date.new(2021, 1, 1)
 User.where('created_at <= ?', date).count
 ```
 
+## Total Registered, Including Deletes
+
+Returns the number of users who have ever created an account, including ones who may have later deleted their accounts.
+
+```ruby
+User.count + DeletedUser.count
+```
+
+
+To approximate the count at a past point in time, substitute `date` below:
+
+```ruby
+date = Date.new(2021, 1, 1)
+
+User.where('created_at <= ?', date).count + DeletedUser.where('user_created_at <= ?', date).count
+```
+
 ## Fully Registered Users
 
-Returns the number of fully registered users.
+Returns the number of fully registered users. If a user has later deleted their account, they will not be counted.
 
 **Note**: This table has been backfilled as far back as 2017, so it is good for all time.
 
