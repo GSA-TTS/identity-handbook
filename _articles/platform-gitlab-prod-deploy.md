@@ -42,6 +42,8 @@ we will have a manual deploy approval step so that we can control when they roll
   the `deploy_production` job.  It will say it needs approval, so go click on the link for
   that and approve it in the environments page under the `production` environment.
 * The jobs should run to deploy the system and then the `test_production` job should run.
+  Not sure why, but you may need to click on the play buttons for these post-deploy jobs,
+  even though they aren't marked as manual jobs.
 * The test job should indicate that everything went out OK, but
   it's never bad to check it out yourself and make sure that jobs are working and the UI
   is happy, etc.
