@@ -17,7 +17,7 @@ ActiveRecord::Base.connection.execute 'SET statement_timeout = 200000'
 
 ## Total Registered
 
-Returns the number of users that created accounts (this includes users who may not have fully registered, see [Fully Registered Users](#fully-registered-users) for that query), it does not count users who have already deleted their accounts.
+Returns the number of users that created accounts (this includes users who may not have fully registered, see [Fully Registered Users](#fully-registered-users) for that query). The count does not include users who have already deleted their accounts.
 
 ```ruby
 User.count
