@@ -22,9 +22,11 @@ If you want to stump your peers and learn a lot in the process, read on...
 ## Resources
 
 * [Contingency Plan - Wargames running doc](https://docs.google.com/document/d/1uUN62hKNptCui59DD-ApCS2_mJpLR5G68j69ieh007o/edit) - Should have notes for each session including action items for improvement
+* [DM Signup Sheet](https://docs.google.com/spreadsheets/d/1GY8IWTWcNhCulWdparz-ABA_N3U_aK7Tu_DBle5b6AY/edit) - Sign up to volunteer as DM for a session
 * [Contingency Plan Training Folder](https://drive.google.com/drive/folders/1XsMEgsz9iTOOaLoJOCkIJxTIWnmHU8fQ) - More contingency plan training resources
 * [Wargame Scenario Grab Bag](https://docs.google.com/spreadsheets/d/1Kd6pkKsU2wVluit2VQj9VYG5XFQ5Mn4x95S-XcrCQ9U/edit) - Some ideas for scenarios (No peeking, players!)
 * [Login.gov Incidents Folder](https://drive.google.com/drive/folders/1TWTMp_w55niNuqC7vTPDEe5vkxaiP4P0) - Some of the best ideas come from the past things that hurt us
+* `#login-wargames-coordination` Slack channel - Invite only for folks who wish to DM;  Ask a current DM for access
 
 ## Categories of Scenario
 
@@ -53,7 +55,7 @@ guidance.)
 
 ## Types of Sessions
 
-### Classic Wargames
+### Classic Wargame
 
 Our classic game involves the DM intentionally breaking a test environment
 in a diabolical way.  Bugs, simulated failure of a process, and attack
