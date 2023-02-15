@@ -26,7 +26,7 @@ If you want to stump your peers and learn a lot in the process, read on...
 * [Contingency Plan Training Folder](https://drive.google.com/drive/folders/1XsMEgsz9iTOOaLoJOCkIJxTIWnmHU8fQ) - More contingency plan training resources
 * [Wargame Scenario Grab Bag](https://docs.google.com/spreadsheets/d/1Kd6pkKsU2wVluit2VQj9VYG5XFQ5Mn4x95S-XcrCQ9U/edit) - Some ideas for scenarios (No peeking, players!)
 * [Login.gov Incidents Folder](https://drive.google.com/drive/folders/1TWTMp_w55niNuqC7vTPDEe5vkxaiP4P0) - Some of the best ideas come from the past things that hurt us
-* `#login-wargames-coordination` Slack channel - Invite only for folks who wish to DM;  Ask a current DM for access
+* `#login-wargames-coordination` Slack channel - Invite only for folks who wish to DM;  Ask a recent DM for access
 
 ## Categories of Scenario
 
