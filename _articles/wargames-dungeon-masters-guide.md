@@ -71,6 +71,24 @@ Steps for a Classic Wargame:
 * Urge use of screen sharing, a particularly helpful way to get less experienced players engaged
 * Once complete discuss potential improvements and record in the running notes
 
+### Mindgame
+
+For scenarios that are hard to simulate, you may need to revert to a more
+table-top-like scenario.  For a "mindgame" think about a situation and what
+the various dashboards, logs, etc might look like.  For example, if you wanted
+to have the team try to figure out a problem where there was a major Internet
+connectivity problem, you might say "you can get to X but you can not get to Y
+from your workstation".  If players are looking at the WAF logs, they may see
+little or no traffic.  Etc.
+
+Mindgames should be hands on to exercise troubleshooting skills.  They are more
+demanding of the DM at the time of scenario because the DM has to actively
+tell the story and explain what the players **would** see.  For these reasons
+try to avoid use of the "mindgame".
+
+The mechanics of the scenario are identical to the [Classic Wargame](#classic-wargame)
+except for the [Prior to session] component of breaking something.
+
 ### Runbook
 
 A runbook scenario is one that focuses on executing a fixed runbook to verify
@@ -130,6 +148,12 @@ The lazy DM can crowd source and answer with a "What Was That?" session.
 
 ### What Would You Do?
 
+Sometimes it is good to zoom out and focus on decision making.  "What would you do?" (WWYD)
+sessions are conducted using a simple slide deck and multiple choices.  The value
+is not in finding the "right" answer but in the team discussing and deliberating.
+[Kobayashi Maru](https://en.wikipedia.org/wiki/Kobayashi_Maru) situations are welcome.
+
+For a sample of prior sessions see [this WWYD deck](https://docs.google.com/presentation/d/1lKkTWW2jyke3SZbUDMOSMNMxLg1nSntVG5J0wKu1Bfs/edit#slide=id.gf525bea144_0_1)
 
 ## Managing Larger Groups
 
