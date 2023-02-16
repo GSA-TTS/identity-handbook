@@ -34,11 +34,12 @@ For detailed information see the [Security Incident Response Guide]({% link _art
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
     * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks)
     * Ensures execution of relevant runbook steps, delegating as needed
-  * **Comms Lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
+  * **Messenger (M)**: Shares information outside of #login-situation including: StatusPage (the public), LG Customer Support, LG Partnerships, LG Communications, and GSA IR
     * Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
     * Incident Review document created from [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and moved to the year's subfolder under the [Incident Reviews Folder](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?usp=sharing)
     * Used [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov>, IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called), and our [GSA ISSO and ISSM](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/#emergency-contacts) **within 1 hour** of start of incident
     * **Every 30 minutes** ensures StatusPage and external stakeholders are updated
+    * **Every 30 minutes** notifies Login.gov comms if the incident reaches 50% of the "Length of time" limit for the type of incident in the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1)
 
 ## Assess
 
@@ -69,9 +70,10 @@ Loop through per-role items until remediation is complete.
 * Technical Lead (TL)
   * Lead technical response till issue is remediated
   * **OR** role is handed off
-* Comms Lead (CL)
+* Messenger (M)
   * **Every 30 minutes or when status changes** - Regular updates to interested parties provided
   * **Every 30 minutes or when status changes** - StatusPage updated
+  * **Every 30 minutes** notifies Login.gov comms if the incident reaches 50% of the "Length of time" limit for the type of incident in the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1)
 * Scribe (SC)
   * Ensure a timeline of significant events is recorder in the #login-situation Slack channel
   * Relay technical information to help someone NOT in the war room who wants to understand the incident
