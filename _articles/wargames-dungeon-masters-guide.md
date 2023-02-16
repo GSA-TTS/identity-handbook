@@ -12,7 +12,7 @@ Login.gov's "Contingency Plan Training Wargames" are a regular event that use a
 mix of process practice, chaos engineering, and group troubleshooting to hone
 skills and improve the rediness of our socio-technical system.
 
-The fuel for our Wargames are spine tingling scenarios created by our "Dungeon Masters".
+The fuel for our Wargames are spine-tingling scenarios created by our "Dungeon Masters".
 
 You don't need to be a seasoned veteran of Login.gov to create a good scenario,
 and many of the best scenarios take relatively little time to prepare.
