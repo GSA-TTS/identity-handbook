@@ -1,6 +1,6 @@
 ---
 title: "Contingency Plan Training Wargames - Dungeon Master's Guide"
-description: "How to create an exciting scenario"
+description: "How to create an exciting scenario as a Wargames DM"
 layout: article
 category: "Team"
 subcategory: Guides
@@ -9,10 +9,10 @@ subcategory: Guides
 ## Overview
 
 Login.gov's "Contingency Plan Training Wargames" are a regular event that use a
-mix of process practice, chaos engineering, and group troubleshooting to hon
+mix of process practice, chaos engineering, and group troubleshooting to hone
 skills and improve the rediness of our socio-technical system.
 
-The fuel for our Wargames are spine chilling scenarios created by our "Dungeon Masters".
+The fuel for our Wargames are spine tingling scenarios created by our "Dungeon Masters".
 
 You don't need to be a seasoned veteran of Login.gov to create a good scenario,
 and many of the best scenarios take relatively little time to prepare.
@@ -132,9 +132,9 @@ types of fault, you may conduct the scenario the same as a [Classic Wargame](#cl
 ### What Was That?
 
 Looking at logs or metrics of production systems will often result in finding
-mysteries.  "Why did that line go up?"  "Is that and error or just noise?"
+mysteries.  "Why did that line go up?" or "Is that an error or is it just noise?"
 
-The lazy DM can crowd source and answer with a "What Was That?" session.
+A clever/lazy DM can crowd source an answer using a "What Was That?" session.
 
 * [Prior to session] Find your conundrum and capture it in a screenshot,
   snippet, or specific steps to reproduce
@@ -174,4 +174,21 @@ Suggested flow:
   it back
 * Complete the session with a full group discussion
 
+## Maintaining an Effective Environment
 
+* You may need to assign roles or ask for specific players to help if you do
+  not get volunteers
+* Remind players to share screens and talk through what they are doing and why
+  they are doing it
+* Try to expand the active players and avoid a silent room watching one person
+  type
+* Consider breaking into small rooms if you feel there are too many people to
+  maintain comfort
+* The DM can influence the atmosphere in the room - Try to keep it positive,
+  action oriented, and generative
+* Sometimes groups are in a quiet mood or not "feeling it", which should not
+  be seen as a failing by the DM
+* [Psychological safety](https://risk-engineering.org/concept/psychological-safety) 
+  is a prerequisite for effective incident response and learning so take immediate action
+  if you see signs of a room where players feel unable to openly share, question,
+  and risk being wrong
