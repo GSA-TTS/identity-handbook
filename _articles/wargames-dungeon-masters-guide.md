@@ -189,6 +189,6 @@ Suggested flow:
 * Sometimes groups are in a quiet mood or not "feeling it", which should not
   be seen as a failing by the DM
 * [Psychological safety](https://risk-engineering.org/concept/psychological-safety) 
-  is a prerequisite for effective incident response and learning so take immediate action
+  is a prerequisite for effective incident response and learning to take place, so be sure to take immediate action
   if you see signs of a room where players feel unable to openly share, question,
   and risk being wrong
