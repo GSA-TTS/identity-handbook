@@ -176,7 +176,7 @@ Suggested flow:
 
 ## Maintaining an Effective Environment
 
-* You may need to assign roles or ask for specific players to help if you do
+* You may need to assign roles or ask specific players to help if you do
   not get volunteers
 * Remind players to share screens and talk through what they are doing and why
   they are doing it
