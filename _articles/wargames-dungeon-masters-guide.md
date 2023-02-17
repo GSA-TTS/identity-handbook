@@ -1,6 +1,6 @@
 ---
 title: "Contingency Plan Training Wargames - Dungeon Master's Guide"
-description: "How to create an exciting scenario as a Wargames DM"
+description: "How to create an exciting Wargames DM scenario"
 layout: article
 category: "Team"
 subcategory: Guides
