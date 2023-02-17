@@ -134,7 +134,7 @@ types of fault, you may conduct the scenario the same as a [Classic Wargame](#cl
 Looking at logs or metrics of production systems will often result in finding
 mysteries.  "Why did that line go up?" or "Is that an error or is it just noise?"
 
-A clever/lazy DM can crowdsource an answer using a "What Was That?" session.
+A clever/lazy DM can crowdsource an answer using a "What was that?" session.
 
 * [Prior to session] Find your conundrum and capture it in a screenshot,
   snippet, or specific steps to reproduce
@@ -178,8 +178,8 @@ Suggested flow:
 
 * You may need to assign roles or ask specific players to help if you do
   not get volunteers
-* Remind players to share screens and talk through what they are doing and why
-  they are doing it
+* Remind players to share screens, explain what they are doing, and share their
+  thought process
 * Try to expand the active players and avoid a silent room watching one person
   type
 * Consider breaking into small rooms if you feel there are too many people to
