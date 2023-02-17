@@ -20,6 +20,7 @@
   slack_channel_url: https://gsa-tts.slack.com/archives/C0184P9SCJ0
   slack_group_name: login-grace
   readme: https://docs.google.com/document/d/1x_IPoYc_kavE6Rw58leIckp85Js7fKPy_NebpqC3iN0/edit
+  archived: true
 
 - name: IDVA
   focus_area: "Equity Study & API"
@@ -73,6 +74,7 @@
   focus_area: Inherited Proofing
   slack_channel_url: https://gsa-tts.slack.com/archives/C03JDA5HNUV
   slack_channel_name: login-team-ross
+  archived: true
 
 - name: Ursula
   namesake_markdown: "[Ursula Burns](https://en.wikipedia.org/wiki/Ursula_Burns), who has been CEO of technology companies like Xerox"
