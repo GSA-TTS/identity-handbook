@@ -23,6 +23,6 @@ The default value is `operational`, set in `config/application.yml.default`
 
 To do the configuration change, edit the configuration (per the [guidance here]({% link _articles/appdev-secrets-configuration.md %}).
 
-Once the recycle completes, users in affected flows will be presented with an error message explaining the outage, or redirected to an error page if they are unable to continue.
+Once the restart completes, users in affected flows will be presented with an error message explaining the outage, or redirected to an error page if they are unable to continue.
 
 Once we have received word that the vendor is back up and running, simply re-edit the configuration to delete the vendor status, or explicitly set it to `operational`.

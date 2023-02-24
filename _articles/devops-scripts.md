@@ -55,10 +55,10 @@ app-s3-secret: Upload changes to S3? (y/n)
 y
 ```
 
-After updating, [recycle the app][config-recycle] so it creates new instances that will download
-this updated config.
+After updating, [restart_passenger][passenger-restart] so that passenger is restarted and will download
+this updated config without needing to stand up new instances.
 
-[config-recycle]: {% link _articles/appdev-deploy.md %}#config-recycle
+[passenger-restart]: {% link _articles/appdev-deploy.md %}#passenger-restart
 
 ### Looking at Changes to Secrets
 
@@ -243,14 +243,6 @@ aws-vault exec sandbox-power --
 ```
 
 ### `passenger-restart`
-
-{%- capture alert_content -%}
-2022-01-04: This script is **not safe** to use at this time, it drops live requests instead
-of rotating smoothly. See [identity-devops#/5651](https://github.com/18F/identity-devops/issues/5651)
-for more information.
-{%- endcapture -%}
-
-{% include alert.html content=alert_content alert_class="usa-alert--error" %}
 
 "Safely" restart the NGINX/Passenger service which reloads `application.yml` from
 S3.
