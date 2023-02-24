@@ -32,7 +32,8 @@ the `stages/prod` branch.
 | **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Twice a week | [@login-deployer][deployer-rotation] |
 | **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [@login-deployer][deployer-rotation], or engineer handling the urgent issue |
 | **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
-| **Config Recyle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
+| **Passenger Restart** | A "deploy" that just updates configurations without the need to scale up/down instances like the config recycle below, does not deploy any new code, see [passenger_restart](#passenger-restart) | As needed | The engineer that needs the changes deployed |
+| **Config Recycle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
 
 [deployer-rotation]: {% link _articles/appdev-deploy-rotation.md %}
 
@@ -252,6 +253,20 @@ aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
    ahold of [somebody with admin merge permissions](https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUzDmIxKn11DPJzk/edit#heading=h.dm83ewdwp8o) who can override waiting for CI to finish
 
 1. Recycle the app to get the new code out there (follow the [Production Deploy steps](#production))
+
+### Passenger restart
+A passenger restart is a quicker way to pick up changes to configuration in S3 without the need
+to scale up new instances.
+
+1. Make the config changes
+
+1. Run the passenger restart command for the environment from the identity-devops repository
+   ```bash
+   # Restart passenger on the IDP instances
+   aws-vault exec prod-power -- bin/ssm-command -d passenger-restart -o -r idp -e prod
+   ```
+
+1. Check out [passenger-restart](https://github.com/18F/identity-devops/wiki/Troubleshooting-Quick-Reference#passenger-restart) for more information on what the command can do
 
 ### Config Recycle
 
