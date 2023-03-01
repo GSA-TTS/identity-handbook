@@ -1,6 +1,8 @@
 ---
 title: "Secrets and Configuration"
-description: "How to update IDP and Rails app configuration (feature flags) and secrets application.yml"
+description: >
+  How to update IDP and Rails app configuration (feature flags) and secrets application.yml, and
+  how to use the `app-s3-secret` script
 layout: article
 category: "AppDev"
 subcategory: Development
@@ -16,7 +18,7 @@ environment by merging default values with an environment-specific YAML file.
 * In deployed environments, this file is downloaded from S3 when activating or deploying an instance
   (see [`deploy/activate`][deploy-activate] and the [`activate.rb`][download-from-s3]).
 
-**Changing configuration for a deployed application [requires a recycle][recycle-config]**, since
+**Changing configuration for a deployed application [requires a passenger restart][passenger-restart]**, since
 this merge step only happens at activation.
 
 The S3 buckets that contain secrets are versioned, so we can recover old versions
@@ -28,61 +30,12 @@ machine when done.
 
 [deploy-activate]: https://github.com/18F/identity-idp/blob/main/deploy/activate
 [download-from-s3]: https://github.com/18F/identity-idp/blob/a95fd33d24c6761818993cfbc334a28986783034/lib/deploy/activate.rb#L93-L97
-[recycle-config]: {% link _articles/appdev-deploy.md %}#config-recycle
+[passenger-restart]: {% link _articles/appdev-deploy.md %}#passenger-restart
 
 ## Using `app-s3-secret`
 
-The easiest way to edit secrets is the `app-s3-secret` command in the `identity-devops` repo.
-
-These examples are for the IDP app in the `sandbox` AWS account and the `dev` environment:
-
-### Viewing Secrets
-
-```bash
-cd identity-devops
-aws-vault exec sandbox-power -- \
-  ./bin/app-s3-secret --app idp --env dev
-```
-
-**Recommended**: `grep` for the keys you want to check
-
-```bash
-cd identity-devops
-aws-vault exec sandbox-power -- \
-  ./bin/app-s3-secret --app idp --env dev | grep foo
-some_foo_key: 'true'
-```
-
-### Editing Secrets
-
-The adding `--edit` will
-- Download the secrets to a tempfile
-- Open your `$EDITOR` (defaults to vim) to edit that copy
-- Show you a diff of the preview before uploading
-- Clean up the tempfile after
-
-```bash
-cd identity-devops
-aws-vault exec sandbox-power -- \
-  ./bin/app-s3-secret --app idp --env dev --edit
-#
-# opens vim
-#
-app-s3-secret: Here's a preview of your changes:
-2a3
->   foobar: 'true'
-app-s3-secret: Upload changes to S3? (y/n)
-y
-```
-
-After updating, recycle the app so it creates new instances that will download
-this updated config.
-
-```bash
-cd identity-devops
-aws-vault exec sandbox-power -- \
-  ./bin/asg-recycle dev idp
-```
+The easiest way to interact with secrets is the `app-s3-secret` command in the `identity-devops` repo.
+See [guide to app-s3-secret]({% link _articles/devops-scripts.md %}#app-s3-secret) for more information.
 
 ## Configuration in Rails Apps
 

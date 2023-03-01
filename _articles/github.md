@@ -3,6 +3,7 @@ title: GitHub
 description: Team code repos, permissions, notification strategies
 layout: article
 category: Development
+subcategory: Code
 ---
 
 ## Repositories
@@ -91,37 +92,37 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 - [**18f/identity-site**](https://github.com/18f/identity-site)<br />
   [login.gov](https://login.gov)<br />
-  Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
+  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   Public marketing page.
 
 - [**18f/identity-style-guide**](https://github.com/18f/identity-style-guide)<br />
   [design.login.gov](https://design.login.gov)<br />
-  Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
+  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   Walkthrough of Login.gov common styles. The respository also hosts the `identity-style-guide` npm package that contains the actual styles.
 
 - [**18f/identity-dev-docs**](https://github.com/18f/identity-dev-docs)<br />
   [developers.login.gov](https://developers.login.gov)<br />
-  Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
+  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   Developer documentation and integration guides for OpenID Connect and SAML.
 
 - [**18f/connect.gov**](https://github.com/18F/connect.gov)<br />
   [connect.gov](https://connect.gov/)<br />
-  Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
+  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   A site to disambiguate the Login.gov's predecessor `connect.gov` from Connecticut's ConnectCT `connect.ct.gov`
 
 - [**18f/identity-partners-site**](https://github.com/18F/identity-partners-site)<br />
   [partners.login.gov](https://partners.login.gov) <br />
-  Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
+  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   A site to present information for partners
 
 - [**18f/identity-reporting**](https://github.com/18f/identity-reporting)<br />
   [data.login.gov](https://data.login.gov)<br />
-  Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
+  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   Public reporting dashboard.
 
 - [**18f/identity-handbook**](https://github.com/18f/identity-handbook)<br />
   [handbook.login.gov](https://handbook.login.gov/)<br />
-  Hosted on: [Federalist](https://federalistapp.18f.gov/)<br />
+  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   This handbook!
 
 - [**18f/identity-handbook-private**](https://github.com/18f/identity-handbook-private) <br />

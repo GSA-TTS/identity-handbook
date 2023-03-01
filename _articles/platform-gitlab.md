@@ -66,7 +66,7 @@ See [Runbook: GitLab Access Contingency Plan](https://github.com/18F/identity-de
 
 ## Working With Jobs
 
-## Learning More About Gitlab
+## Learning More About GitLab
 
 GitLab has robust documentation, all available at [docs.gitlab.com](https://docs.gitlab.com/)
 
@@ -76,6 +76,25 @@ Login.gov will be providing opportunities for in depth GitLab training.
 
 This section is for Platform Engineers and others supporting the underlying
 GitLab infrastructure.  Non-public details are omitted.
+
+## Troubleshooting GitLab
+
+Login.gov currently uses the GitLab Omnibus installation which is comprised of
+a multitude of installed packages.  Here are some troubleshooting resources:
+
+* [Omnibus Maintenance Commands](https://docs.gitlab.com/omnibus/maintenance/#maintenance-commands) includes notes on tools like:
+  * `gitlab-ctl` - GitLab server control tool.  Check service status with `sudo gitlab-ctl status` or restart all services with `sudo gitlab-ctl restart`
+  * `gitlab-psql` - Superuser SQL access
+* [Omnibus Troubleshooting](https://docs.gitlab.com/omnibus/troubleshooting.html) - Common Omnibus issues
+* [Starting a Rails Console](https://docs.gitlab.com/ee/administration/operations/rails_console.html#starting-a-rails-console-session) - Remember that GitLab is but a humble Rails app.  Use `sudo gitlab-rails console` to open a console.
+* [GitLab Rails Console Cheat Sheet](https://comp.umsl.edu/gitlab/help/administration/troubleshooting/gitlab_rails_cheat_sheet.md) - More tricks from the GitLab support team
+* [GitLab Runner Troubleshooting](https://docs.gitlab.com/runner/faq/#troubleshooting-gitlab-runner) - Some basic help, particularly for runners that are unable to register.
+
+### Login.gov GitLab Runbooks
+
+* [GitLab Access when Login.gov Is Down](https://github.com/18F/identity-devops/wiki/Runbook:-Gitlab-Access-When-IDP-is-Down)
+* [GitLab CI Troubleshooting](https://github.com/18F/identity-devops/wiki/Runbook:-Gitlab-CI-Troubleshooting)
+* [GitLab Backup and Disaster Recovery](https://github.com/18F/identity-devops/wiki/Disaster-Recovery:-Gitlab-Backup-and-Restore)
 
 ## Getting Support from GitLab
 
@@ -91,7 +110,6 @@ The root of the module that deploys it that
 has it's config parameters set is in <https://github.com/18F/identity-devops/tree/main/terraform/gitlab/gitstaging>.
 
 You can find it's deployment status in <https://gitlab.login.gov/lg/identity-devops/-/environments/4>.
-
 
 ## Authentication Setup
 

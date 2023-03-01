@@ -3,10 +3,11 @@ import PrivateEye from "@18f/private-eye";
 import "simple-jekyll-search";
 import type { SimpleJekyllSearchGlobals } from "simple-jekyll-search-types";
 import { setUpPrivateLogin } from "./private";
+import { installCustomTimeElements } from "./timezone";
 
 export const loadAnchors = () => {
   new Anchor().add(
-    "#main-content h2, #main-content h3, #main-content [data-anchor]"
+    "#main-content h2, #main-content h3, #main-content h4, #main-content [data-anchor]"
   );
 };
 
@@ -60,4 +61,4 @@ export const loadSimpleJekyllSearch = () => {
   });
 };
 
-export { setUpPrivateLogin };
+export { setUpPrivateLogin, installCustomTimeElements };

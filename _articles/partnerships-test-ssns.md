@@ -31,10 +31,10 @@ This should open the `application.yml` file for the sandbox IdP in your text edi
   test_ssn_allowed_list: '111223333,444556666,777889999'
 ```
 
-Save and quit your text editor and confirm that the diff looks correct to save the file. The changes will take effect when the sandbox environment recycles, which happens automatically most weekdays. If the change needs to take effect immediately, you can recycle the sandbox manually:
+Save and quit your text editor and confirm that the diff looks correct to save the file. The changes will take effect when the sandbox environment recycles, which happens automatically most weekdays. If the change needs to take effect immediately, you can restart passenger in the sandbox manually:
 
 ```sh
-bin/awsv sandbox bin/asg-recycle int idp
+bin/awsv sandbox bin/ssm-command -d passenger-restart -o -r idp -e int
 ```
 
 [^1]: See our [dev docs](https://developers.login.gov/testing/#personal-information-verification) for more information on this restriction.

@@ -3,7 +3,7 @@
     "@18f/private-eye": "^2.1.0",
     "anchor-js": "^4.2.2",
     "htm": "^3.1.0",
-    "identity-style-guide": "^6.3.0",
+    "identity-style-guide": "^6.5.0",
     "js-yaml": "^4.1.0",
     "marked": "^4.0.12",
     "preact": "^10.6.6",
@@ -17,7 +17,7 @@
     "@types/marked": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
-    "esbuild": "^0.14.27",
+    "esbuild": "^0.15.10",
     "eslint": "^8.11.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -38,6 +38,6 @@
     "start": "npm run build:dev -- --watch",
     "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc",
-    "federalist": "npm run build"
+    "pages": "npm run build"
   }
 }

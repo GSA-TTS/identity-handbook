@@ -6,6 +6,8 @@ description: "An example article that you can copy"
 layout: article
 # Category for the article (required)
 category: "Handbook"
+# Subcategory for the article (strongly recommended)
+# subcategory: "Example"
 ---
 
 This is a template article! Copy it!

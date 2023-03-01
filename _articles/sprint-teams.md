@@ -3,6 +3,7 @@ title: "Sprint Teams"
 description: "List of our sprint teams and the explanations behind their names"
 layout: article
 category: "Team"
+subcategory: Team Organization
 ---
 
 Here are the Login.gov sprint teams, most of them are named after famous women in STEM fields.
@@ -14,7 +15,12 @@ see data/sprint_teams.yml for the data
 {% assign sprint_teams = site.data.sprint_teams | sort: "name" %}
 
 {% for sprint_team in sprint_teams %}
+<div markdown="1" class="{% if sprint_team.archived %}sprint-team--archived{% endif %}">
 ## {{ sprint_team.name }}
+
+{% if sprint_team.archived %}
+This sprint team is not currently active
+{% endif %}
 
 {% if sprint_team.namesake_markdown -%}
 * **Namesake**: {{ sprint_team.namesake_markdown }}
@@ -23,5 +29,8 @@ see data/sprint_teams.yml for the data
 {% if sprint_team.slack_channel_url -%}
 * **Slack**: [#{{ sprint_team.slack_channel_name }}]({{ sprint_team.slack_channel_url }})
 {%- endif %}
-
+{% if sprint_team.readme -%}
+* **Readme**: [View Team {{sprint_team.name}} Readme]({{ sprint_team.readme }})
+{%- endif %}
+</div>
 {% endfor %}

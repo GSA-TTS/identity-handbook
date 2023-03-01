@@ -1,15 +1,16 @@
 backend:
   name: github
   repo: 18f/identity-handbook
-  base_url: https://federalistapp.18f.gov
+  base_url: https://pages.cloud.gov
   auth_endpoint: external/auth/github
-  preview_context: federalist/build
+  preview_context: pages/build
   branch: main
 
   # optional
   use_graphql: true
 
 media_folder: images
+publish_mode: editorial_workflow
 
 collections:
   - label: Articles
@@ -33,6 +34,7 @@ collections:
           - Development
           - Handbook
           - Infrastructure
+          - Netlify Sandbox
           - Partnerships
           - Product
           - Reporting

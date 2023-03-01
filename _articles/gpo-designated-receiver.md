@@ -15,7 +15,7 @@ It's difficult to automate testing of the United States Postal Service and the U
 
 ## What should I expect and how do I do it?
 
-It takes 5-7 business days for letters to arrive. It is common to not receive any for a few days, and then receive multiple in one day. When you receive a letter, the things to record are:
+It takes 3-7 business days for letters to arrive. It is common to not receive any for a few days, and then receive multiple in one day. When you receive a letter, the things to record are:
 
 * The date it was delivered
 * The date it was printed

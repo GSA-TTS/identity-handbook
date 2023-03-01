@@ -14,13 +14,13 @@ A few notes on our deploy process.
 ### Cadence
 
 **When to deploy:** ✅
-- Typically we do a full deploy every week on Thursday.
+- Typically we do a full deploy twice weekly, on Mondays and Thursdays.
 
 **When _not_ to deploy:** ❌
 - We try to avoid deploying on Fridays, to minimize the chances of introducing a
   bug and having to scramble to fix it before the weekend
-- During New Years/winter break, or any other time when many team members are
-  on vacation
+- When the deploy falls on a holiday, or any other time when many team members are on vacation, such
+  as New Years / end of year.
 
 ### Types of Deploys
 
@@ -29,10 +29,11 @@ the `stages/prod` branch.
 
 | Type | What | When | Who |
 | ---- | ---- | ---- | --- |
-| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Every week | [@login-deployer][deployer-rotation] |
+| **Full Deploy** |  The normal deploy, releases all changes on the `main`  branch to production. | Twice a week | [@login-deployer][deployer-rotation] |
 | **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | [@login-deployer][deployer-rotation], or engineer handling the urgent issue |
 | **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
-| **Config Recyle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
+| **Passenger Restart** | A "deploy" that just updates configurations without the need to scale up/down instances like the config recycle below, does not deploy any new code, see [passenger restart](#passenger-restart) | As needed | The engineer that needs the changes deployed |
+| **Config Recycle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
 
 [deployer-rotation]: {% link _articles/appdev-deploy-rotation.md %}
 
@@ -63,7 +64,6 @@ This guide assumes that:
 Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of goood improvements all the time!
 
 ### Pre-deploy
-Scheduled for every **Tuesday**
 
 #### Test the proofing flow in staging
 
@@ -81,8 +81,8 @@ The release branch should be cut from code tested in staging and it should be th
 
 ```bash
 cd identity-$REPO
-git checkout main
-git pull
+git fetch
+git checkout $(curl --silent https://idp.staging.login.gov/api/deploy.json | jq -r .git_sha)
 git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
 git push -u origin HEAD
 ```
@@ -98,22 +98,6 @@ A pull request should be created from that latest branch to production: **`stage
 - Add the label **`status - promotion`** to the pull request that will be included in the release.
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
-#### Resolving merge conflicts
-
-A full release after a patch release often results in merge conflicts. To resolve these automatically, we
-create a git commit with an explicit merge strategy to "true-up" with the `main` branch (replace all changes on
-`stages/prod` with whatever is on `main`)
-
-```bash
-cd identity-$REPO
-git checkout main && git fetch && git pull
-git checkout -b stages/rc-2020-06-17 # CHANGE THIS DATE
-git merge -s ours origin/stages/prod # custom merge strategy
-git push -u origin HEAD
-```
-
-The last step may need a force push (add `-f`). Force-pushing to an RC branch is safe.
-
 #### Prepare release notes
 
    1. The audience for the release notes are partner agencies and their developers. Notes should be written in [plain language](https://plainlanguage.gov/) and clearly demonstrate the impact on the end user or agency.
@@ -122,19 +106,33 @@ The last step may need a force push (add `-f`). Force-pushing to an RC branch is
          scripts/changelog_check.rb -b origin/stages/prod
          ```
        - *Review* the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
-   1. Write a [draft release](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository#creating-a-release) on GitHub.
+   1. [Save a draft release](https://github.com/18F/identity-idp/releases/new) on GitHub.
        - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
        - Release title: `RC #{NUMBER}`
        - *Save* the draft, do not publish as a pre-release
    1. Share the draft release notes in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
    1. Apply any requested updates to the release notes on GitHub.
 
+#### Resolving merge conflicts
+
+A full release after a patch release often results in merge conflicts. To resolve these automatically, we
+create a git commit with an explicit merge strategy to "true-up" with the `main` branch (replace all changes on
+`stages/prod` with whatever is on `main`)
+
+```bash
+cd identity-$REPO
+git checkout stages/rc-2020-06-17 # CHANGE THIS DATE
+git merge -s ours origin/stages/prod # custom merge strategy
+git push -u origin HEAD
+```
+
+The last step may need a force push (add `-f`). Force-pushing to an RC branch is safe.
+
 ### Staging
 
 Staging used to be deployed by this process, but this was changed to deploy the `main` branch to the staging environment every day. See [daily deploy schedule]({% link _articles/daily-deploy-schedule.md %}) for more details.
 
 ### Production
-Scheduled for every Thursday
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
 1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
@@ -150,7 +148,7 @@ Scheduled for every Thursday
 
    1. Follow the progress of the migrations, ensure that they are working properly <a id="follow-the-process" />
    ```bash
-   # may need to wait a few seconds after the recycle
+   # may need to wait a few minutes after the recycle
    aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --newest asg-prod-migration
    ```
 
@@ -180,6 +178,10 @@ Scheduled for every Thursday
 
     1. Manual Inspection
       - Check [NewRelic (prod.login.gov)](https://one.newrelic.com/nr1-core/errors-ui/overview/MTM3NjM3MHxBUE18QVBQTElDQVRJT058NTIxMzY4NTg) for errors
+      - Optionally, use the deploy monitoring script to compare error rates and success rates for critical flows
+        ```bash
+        aws-vault exec prod-power -- ./bin/monitor-deploy prod idp
+        ```
       - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
 1. **PRODUCTION ONLY**: This step is required in production
@@ -252,18 +254,30 @@ aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
 
 1. Recycle the app to get the new code out there (follow the [Production Deploy steps](#production))
 
-### Config Recycle
-
-A config recycle is an abbreviated "deploy" that deploys the same code, but lets boxes pick up
-new configurations (config from S3, or service provides from `identity-idp-config`).
+### Passenger restart
+A passenger restart is a quicker way to pick up changes to configuration in S3 without the need
+to scale up new instances. Check out [passenger-restart](https://github.com/18F/identity-devops/wiki/Troubleshooting-Quick-Reference#passenger-restart) for more information on what the command can do
 
 1. Make the config changes
 
-1. Recyle the boxes. It's OK to skip migration instances if we **know for certain** there are
-   no migrations, which there shouldn't be if there is no new code merges to `stages/prod`:
+1. Run the passenger restart command for the environment from the identity-devops repository
+   ```bash
+   # Restart passenger on the IDP instances
+   aws-vault exec prod-power -- bin/ssm-command -d passenger-restart -o -r idp -e prod
+   ```
+
+
+### Config Recycle
+
+A config recycle is an abbreviated "deploy" that deploys the same code, but lets boxes pick up
+new configurations (config from S3).
+
+1. Make the config changes
+
+1. Recycle the boxes
 
    ```bash
-   aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
+   aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
 
 1. In production, it's important to remember to still scale out old IDP instances.

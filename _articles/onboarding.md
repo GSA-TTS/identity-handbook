@@ -2,6 +2,7 @@
 title: Onboarding
 layout: article
 category: Team
+subcategory: People Ops
 ---
 
 ## TTS Onboarding
@@ -44,41 +45,6 @@ Each Login.gov team has their own personalized [GDoc/Onboarding Template / Check
 - (Optional) [Add your gpg key to github](https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/)
 - Complete
 
-## For the on-boarding buddy to complete
-
-As an on-boarding buddy you'll be a new employee's main point of contact and Login.gov guide for a couple weeks.
-Look at this work as a power multiplier, you are helping someone gain a firm foundation to work upon, you are starting up a new engine.
-
-- Add a new JIRA Issue to the [People-Ops board](https://cm-jira.usa.gov/secure/RapidBoard.jspa?projectKey=LPO&rapidView=2861) to track completion of onboarding tasks.
-  - `Create Bulk Sub Tasks` on the new issue and use the `Login.gov Onboarding Buddy Tasks` template.
-- Request that the new user to be invited to [the 18F org on GitHub](https://github.com/orgs/18F) in #admins-github on Slack. Cc `@github-admins-slack` on your request.
-  - *For members needing **push commit** access*: Also add to the [identity-core](https://github.com/orgs/18F/teams/identity-core/members) team (contact [team maintainers](https://github.com/orgs/18F/teams/identity-core/members?utf8=%E2%9C%93&query=%20role%3Amaintainer) for this)
-  - *For members NOT needing **push** access*: Also add to the [identity-team-yml](https://github.com/orgs/18F/teams/identity-team-yml/members) team, which grants read-only access. (contact [team maintainers](https://github.com/orgs/18F/teams/identity-team-yml/members?utf8=%E2%9C%93&query=+role%3Amaintainer) for this)
-- For anyone requiring AWS access:
-  - [Create a new issue in the `identity-devops` Github repository using the onboarding template](https://github.com/18F/identity-devops/issues/new?labels=administration&template=onboarding-devops.md&title=Onboarding+for+%5Binsert+new+team+member%27s+name%5D) and follow the notes.
-    Make sure to assign it to the [LG Platform - Interrupts](https://github.com/orgs/18F/projects/34) project so it does not get lost.
-  - Click "and ping `@login-devops-oncall` in Slack to alert them to the new onboarding issue.
-- Schedule a daily pairing session in GCal for an hour or two. Use the time to walk through project details, cooperate on environment setup, work on a ticket, etc. Taper off in a way that makes sense to you and your buddy.
-- Give intro to weekly ceremonies and team workflow
-- [Request Slack access with ServiceNow](https://gsa.servicenowservices.com/sp?id=sc_category&sys_id=f9874e76db5003400dc9ff621f96190d&catalog_id=e0d08b13c3330100c8b837659bba8fb4)
-  - Federal employees are added as full Slack members by default.
-  - Contractors who are working on TTS projects most or full-time can be added as full Slack members.
-  - Other collaborators should be added as multi-channel guests.
-  - Full Slack access for Contractors is at the discretion of Login.gov's Contracting Officer. Please see [TTS Handbook guidance](https://handbook.tts.gsa.gov/slack-admin/) for more info.
-- Add to appropriate [Login.gov Slack groups]({% link _articles/slack.md %}) like `login-feds` or `login-appdev-team`.
-- [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request a new JIRA account. Under `Access Details` ask that they be added to the Login.gov project.
-- Verify their membership in all appropriate Google Groups. This will grant them permission to see the Login.gov Team Drive and other Google Docs
-  - Add everyone to `login-all@`
-  - Add feds to `login-team@`, and contractors to `login-team-contractors@`
-- Update the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
-- Verify they have been added to all team events like
-  - Sprint ceremonies
-  - All-hands / Demo-day
-  - Retros / IRLs
-- [Add user to Figma](https://www.figma.com/files/team/893580939040886405/Login.gov/members) if appropriate (e.g. on UX team or implementing interfaces)
-- For Federal employees only: Help your buddy double check that they have a Performance Plan in HRLinks
-- Ensure that your buddy has working VPN access. For contractors the request originates with our CO.
-- Ensure that your buddy's lead has 30, 60, and 90 day check-ins scheduled with the new employee. Any concerns during these reviews should be raised to the Contracting Officers Representative or the employee's supervisor.
 
 ## For non-GSA employees
 

@@ -17,7 +17,7 @@ In a situation? Check the [Incident Response Checklist]({% link _articles/incide
 
 {% include alert.html content=alert_content %}
 
-The formal version from the FedRAMP Agency ATO package can be found here [Login.gov Incident Response Plan](https://drive.google.com/open?id=1Em3F3oZF_SRuuRLqwr6-pwlE4iNmT2ix)
+The formal version from the FedRAMP Agency ATO package can be found here [Login.gov Incident Response Plan](https://drive.google.com/file/d/1SVz5keBYiDSXvzBdkLFOqdnAplZWqL9D/)
 
 Login.gov incident response operates under the GSA Incident Response framework.  See [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf) for detailed GSA IR guidance.
 
@@ -67,7 +67,7 @@ Initial steps:
 * Roles are assigned when possible as responders join the incident:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
-  * **Comms Lead (CL)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
+  * **Messenger (M)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
   * **Scribe (SC)**: Relays information discussed in war room (hangout) to #login-situation and aids Situation Lead in recording incident
 
 Roles proceed as follows:
@@ -83,11 +83,13 @@ Roles proceed as follows:
   * Records significant activities in #login-situation channel to create a timeline
   * Asks for links to resources/extra information to record as needed
   * Relays information to help someone NOT in the war room who wants to understand the incident
-* **Comms Lead (CL)**:
+* **Messenger (M)**:
   * Creates the official tracking issue for the incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
   * Creates the Incident Review document by copying [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and shares a link in #login-situation
   * Uses [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov>, IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called), and our [GSA ISSO and ISSM](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/#emergency-contacts) **within 1 hour** of start of incident
   * If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
+  * Checks the incident against the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1) and notify Login.gov comms before the incident reaches 50% of its length of time limit
+
 
 #### Assess
 
@@ -135,7 +137,7 @@ The first participant becomes the initial SL and carries out the next steps in t
 
 The SL makes sure that the Login.gov incident response process is followed, including supporting the reporter if the reporter already started it, or starting it if nobody has started it yet.
 
-#### Comms at the Initiate phase
+#### Messaging at the Initiate phase
 
 Note that at this point the issue’s status is “investigating” — we haven’t confirmed that it’s really an issue yet. So, we should actually refer to this as just an “event” at this point; it doesn’t become an “incident” until we’ve confirmed it.
 
@@ -150,6 +152,7 @@ At this phase, communications should follow these steps (and any additional step
 * Create an issue in the [identity-security-private](https://github.com/18F/identity-security-private/issues/new?template=incidents.md) GitHub repository.
 * Create a google docs
 * If incident is an outage SL updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
+* Check the incident against the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1) and notify Login.gov comms before the incident reaches 50% of its length of time limit
 * Login.gov Agency Partners: send out an incident summary to LOGIN-PARTNERS@listserv.gsa.gov. Partner list: https://drive.google.com/drive/u/0/folders/0B4yIa0Upv1JJSkJOSmdsLWVOVmM)
 
 The SL is responsible for keeping this issue up-to-date as investigation and remediation progresses. Everyone involved in the issue (responders) should leave notes as comments on the issue.
@@ -378,7 +381,7 @@ Anyone with access to production, including:
   * Provide clear updates to the team
   * If unfilled or someone needs to rotate out, volunteers to serve in one of the defined roles:
     * Technical lead (TL): Leads technical investigation and mitigation
-    * Comms lead (CL): Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
+    * Messenger (M): Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
     * Scribe (S): Relays information discussed in war room (hangout) to #login-situation and aids SL in recording incident (Just notes, not a transcript)
   * If assigned a specific role or task, sees it through until it is complete OR handed off to another participant and confirmed by the SL
   * Be ready to answer SL/others when questions arise

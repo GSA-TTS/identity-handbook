@@ -3,6 +3,7 @@ title: "PII Guidance"
 description: "Guidance on safe handling of Personally Identifiable Information"
 layout: article
 category: "Team"
+subcategory: Guides
 ---
 
 ## Overview

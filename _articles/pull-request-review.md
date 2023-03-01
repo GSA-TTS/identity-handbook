@@ -3,6 +3,7 @@ title: "Pull Request Process"
 description: "How we do code reviews in pull requests"
 layout: article
 category: "Development"
+subcategory: "Code"
 ---
 
 ## General Code Review Guidelines
@@ -29,7 +30,7 @@ changes from outside.
   - However, in some repositories with default reviewer groups
     (such as [identity-dashboard](https://github.com/18f/identity-dashboard) or
     [identity-dev-docs](https://github.com/18f/identity-dev-docs) with clear
-    owners) it is preferred to wait for a revewer from thsoe groups before
+    owners) it is preferred to wait for a reviewer from those groups before
     merging.
 
 [github-permissions]: {% link _articles/github.md %}#permissions

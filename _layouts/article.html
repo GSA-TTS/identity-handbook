@@ -21,9 +21,6 @@ layout: default
   <div class="tablet:grid-col-8">
     <div class="usa-prose" role="main">
       <h1>
-        {% if page.icon %}
-          {% include uswds-icon.html icon=page.icon %}
-        {% endif %}
         {{ page.title }}
         {% if page.deprecated %}
           <small>(Deprecated)</small>

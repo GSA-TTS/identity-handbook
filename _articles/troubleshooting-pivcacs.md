@@ -2,6 +2,7 @@
 title: "Troubleshooting PIV/CAC logins and Managing Certificates"
 description: "If somebody has trouble using their PIV/CAC with Login.gov, and also how to download new certificates from Certificate Authorities"
 layout: article
+subcategory: "X509 and PIV/CAC Certificates"
 category: "AppDev"
 ---
 
@@ -93,7 +94,7 @@ and how to add it.
     # => [Certificate .... ]
     ```
 
-1. If you want to add the missing certificates to our repo, run `rake certs:find_missing[path/to/cert.pem]`
+1. If you want to add the missing certificates to our repo, run `rake certs:find_missing_intermediate_certs[path/to/cert.pem]`
 
     The script will prompt you to add missing certificates to the `config/certs` folder:
 
@@ -116,12 +117,12 @@ and how to add it.
         CertificateStore.instance[key_id]
         => #<Certificate:0x00007fd564fa89a8 ...>
         ```
-    1. Test that the end-user certificate is now valid
-
-        ```ruby
-        cert = Certificate.new(OpenSSL::X509::Certificate.new(File.read("path/to/cert")))
-        cert.validate_cert
-        # => "valid"
+    1. Test that the end-user certificate is now valid by running `rake certs:validate_client_cert[path/to/cert.pem]`
+        
+        The script will print whether the certificate is now valid.
+        
+        ```shell
+        Certificate is valid!
         ```
 
     1. Commit the new `.pem` file(s) to source control and make a pull request

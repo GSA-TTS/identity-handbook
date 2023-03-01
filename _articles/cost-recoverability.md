@@ -1,9 +1,9 @@
 ---
 title: Funding and Cost Recoverability
 layout: article
-description: |
-  How Login.gov is funded and what it means
+description: How Login.gov is funded and what it means
 category: Team
+subcategory: Program Information
 ---
 
 ## Overview

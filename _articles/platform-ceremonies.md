@@ -3,6 +3,7 @@ title: "Team Radia Sprint Ceremonies"
 description: "How Sprints and Standups operate"
 layout: article
 category: Platform
+subcategory: Team
 ---
 
 We currently use the **Login.gov Infrastructure** board <https://github.com/orgs/18F/projects/5> to track our current sprint, as well as the issues in our backlog.
@@ -62,11 +63,7 @@ These occur once per sprint (except for the Omnibus, which is the first meeting 
 
 ### Weekly Omnibus
 
-Used for the weekly handoff between the current and previous On-Call team members. Information is added to the above doc by specific team members and a designated scribe for the meeting:
-- Previous On-Call(s): fill out "What ops stuff happened last week?" section of doc
-- Current On-Call(s): fill out "What ops stuff is happening this week?" section of doc
-
-Start the meeting with those sections of the doc, following the [On-Call review and handoff procedures]({% link _articles/platform-oncall-guide.md %}#procedure) when doing so. Follow the On-Call review with either [Sprint Planning](#sprint-planning) or [Backlog Refinement](#backlog-refinement) depending upon the week.
+This acts as a planning and sync point for the team to talk about priorities for the next 2 weeks.
 
 ### Sprint Retro
 (Part of [Weekly Omnibus](#weekly-omnibus); done at the start of a new sprint)

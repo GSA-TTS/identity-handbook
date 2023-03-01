@@ -2,6 +2,7 @@
 title: "Troubleshooting expiring PIV/CAC certs"
 description: "Guide on finding new certs if a cert is expiring"
 layout: article
+subcategory: "X509 and PIV/CAC Certificates"
 category: "AppDev"
 ---
 

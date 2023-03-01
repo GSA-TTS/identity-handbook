@@ -4,6 +4,7 @@ description: "Detailed guide on how to file Issues and Pull Requests for the Log
 layout: article
 redirect_from:
 category: Platform
+subcategory: Team
 ---
 
 ## Overview

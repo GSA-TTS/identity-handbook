@@ -1,23 +1,44 @@
-import { h, render, Fragment } from "preact";
+import { render, Fragment } from "preact";
 import { useEffect } from "preact/hooks";
 import { createPortal } from "preact/compat";
 import { useQuery } from "preact-fetching";
 import { useCurrentUser, PrivateLoginLink } from "./private";
 import { Alert } from "./components/alert";
-import { AnchorLink, urlify } from "./components/anchor-link";
+import { urlify } from "./components/anchor-link";
 import { Sidenav } from "./components/sidenav";
+import { Heading } from "./components/heading";
+import { permalink, searchURL } from "./github-urls";
 
 interface AnalyticsEventAttribute {
   name: string;
-  types: string[];
+  types?: string[];
   description: string;
 }
 
 interface AnalyticsEvent {
+  /**
+   * String name for the event (the one that gets logged to events.log)
+   */
   event_name: string;
   previous_event_names?: string[];
   description: string;
   attributes: AnalyticsEventAttribute[];
+  /**
+   * Ruby analytics method name
+   */
+  method_name?: string;
+  /**
+   * Source file that this documentation comes from
+   */
+  source_file?: string;
+  /**
+   * Line in source file where documentation comes from
+   */
+  source_line?: number;
+  /**
+   * SHA that documentation was generated from
+   */
+  source_sha?: string;
 }
 
 function Example({
@@ -40,7 +61,9 @@ function Example({
 
   const attributeExamples = attributes.flatMap(
     ({ name, types, description }) => {
-      const value = types.flatMap((type) => typeExample(type)).join(" | ");
+      const value = (types || [])
+        .flatMap((type) => typeExample(type))
+        .join(" | ");
 
       const example = [`${name}: ${value},`];
 
@@ -83,7 +106,7 @@ function Attribute({ name, types, description }: AnalyticsEventAttribute) {
   return (
     <li>
       <kbd>{name}</kbd>
-      {types?.length > 0 && (
+      {types && types?.length > 0 && (
         <>
           {" "}
           <span>({types.join(", ")})</span>
@@ -100,21 +123,51 @@ function Event({ event }: { event: AnalyticsEvent }) {
     previous_event_names: previousEventNames,
     description,
     attributes = [],
+    method_name: methodName,
+    source_file: sourceFile,
+    source_line: sourceLine,
+    source_sha: sourceSHA,
   } = event;
 
   return (
     <div>
-      <h3>
+      <Heading level="h3" className="margin-bottom-0">
         {eventName}
-        <AnchorLink slug={urlify(eventName)} />
-      </h3>
+      </Heading>
+      {methodName && sourceFile && sourceLine && (
+        <small>
+          <a
+            className="usa-link"
+            href={permalink({
+              repo: "18f/identity-idp",
+              ref: sourceSHA,
+              file: sourceFile,
+              line: sourceLine,
+            })}
+          >
+            Source definition
+          </a>
+          ,{" "}
+          <a
+            className="usa-link"
+            href={searchURL({
+              needle: methodName,
+              repo: "18f/identity-idp",
+              extension: "rb",
+              type: "code",
+              path: "app",
+            })}
+          >
+            source usages
+          </a>
+        </small>
+      )}
       <p>{description}</p>
       {previousEventNames?.length ? (
         <>
-          <h4>
+          <Heading level="h4" id={urlify(`${eventName} Previous`)}>
             Previous Event Names
-            <AnchorLink slug={urlify(`${eventName} Previous`)} />
-          </h4>
+          </Heading>
           <ul>
             {previousEventNames.map((name) => (
               <li>{name}</li>
@@ -124,10 +177,9 @@ function Event({ event }: { event: AnalyticsEvent }) {
       ) : undefined}
       {attributes?.length ? (
         <>
-          <h4>
+          <Heading level="h4" id={urlify(`${eventName} Attributes`)}>
             Attributes
-            <AnchorLink slug={urlify(`${eventName} Attributes`)} />
-          </h4>
+          </Heading>
           <details>
             <summary>Show attribute details</summary>
             <ul>
@@ -138,10 +190,9 @@ function Event({ event }: { event: AnalyticsEvent }) {
           </details>
         </>
       ) : undefined}
-      <h4>
+      <Heading level="h4" id={urlify(`${eventName} Example`)}>
         Example
-        <AnchorLink slug={urlify(`${eventName} Example`)} />
-      </h4>
+      </Heading>
       <Example
         event_name={eventName}
         previous_event_names={previousEventNames}
@@ -196,6 +247,7 @@ function AnalyticsEvents({
   const { data, isError, error } = useQuery(
     `analyticsEvents:${eventsUrl}`,
     () =>
+      currentUser &&
       window
         .fetch(eventsUrl)
         .then((response) => response.json())

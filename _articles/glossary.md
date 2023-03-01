@@ -22,6 +22,11 @@ An "industry" glossary worth scanning: <https://solutionsreview.com/identity-man
 
 Also called 2FA and two-factor authentication, two-step authentication is a way of logging into a website that increases security by requiring a password plus something else such as a physical trait, a PIN, or location or time of a login attempt. Two-factor authentication makes users' accounts more secure by requiring a mobile device (a phone or a tablet) as well as a password to sign in, reducing the threat of attackers being able to hack their way into accounts.
 
+### 3PAO
+**Third Party Assessment Organizations**
+
+Independent third parties that evaluate our services. We are required to have 3PAO assessments as part of [FedRAMP](#fedramp).
+
 ### AAL
 **Authentication Assurance Level**
 
@@ -99,6 +104,11 @@ A factor is a type of evidence that users can provide to prove they own an ident
 Multi-factor authentication is a process that requires users to present valid examples of multiple factors. NB: We have rewritten the names of the factors for greater clarity and precision. _See also **Authentication**, **[Two-Factor Authentication](#2fa)** and **[Multi-Factor Authentication](#mfa)**_ definitions.
 
 
+### FedRAMP
+The **Federal Risk and Authorization Management Program**
+
+See [fedramp.gov](https://www.fedramp.gov/). FedRAMP is a program that standardizes security authorizations. Login.gov is a FedRAMP moderate system.
+
 ### FYSA
 **For Your Situational Awareness**
 Similar to FYI (For Your Information). In government context, FYI can mean for one individual only, or information that should not be shared, but FYSA can be used to indicate the information can be shared.
@@ -146,6 +156,8 @@ A property of a Digital Subject that may have zero or more values. Generally kno
 
 See [IdV](#idv).
 
+Identity Proofing is the _process_ in which users identities are verified.
+
 ### IdP
 **Identity Provider**
 
@@ -157,13 +169,20 @@ An Identity Provider can be described as a Service Provider for storing identity
 The ability to distinguish a person from all others within the context of the total population of persons of interest.
 
 ### IdV
-**Identity Verification** or **Identity Proofing**
+**Identity Verification**
 
-The process by which a [CSP](#csp) and a [RA](#ra) collect and verify information about a person for the purpose of issuing credentials to that person.
+See [Identity Proofing](#identity-proofing).
 
-This is the process we go through to verify user's identities. We use the terms proofing and identity verification interchangeably. We follow the [NIST 800-63-3][nist-800-63-3] guidelines for enrollment and identity proofing.
+Identity Verification is the _completion_ of the [identity proofing](#identity-proofing) process.
 
-[nist-800-63-3]: https://pages.nist.gov/800-63-3/
+**Identity Verification vs Identity Proofing**
+
+The two terms are also sometimes used interchangeable, which can be confusing to folks.
+We lean towards only using identity verification for consistency, but may use identity proofing where it makes sense to do so.
+
+To differentiate, we could say:
+
+> The user proofed their identity to complete identity verification.
 
 ### LOA
 **Level of Assurance**
@@ -197,13 +216,15 @@ Multi-factor authentication describes two-factor and higher levels of authentica
 An identity record present in the database that is missing one or more of the attributes included in an analysis that causes a search error and renders that record invalid for the purpose of the analysis.
 
 ### OTP
-**One Time Password**
-Token valid for one use. See https://en.wikipedia.org/wiki/One-time_password
+**One-time password**
+Token valid for one use. This token can be alphanumeric (using letters and numbers) or numeric (using only numbers). See https://en.wikipedia.org/wiki/One-time_password
+* Use **"one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership. Never use *one-time password*, *OTP*, or *TOTP* in the interface. 
+
 
 ### Passcode
 A **passcode** works like a password but uses only numbers. In previous iterations, Login.gov used **one-time passcode** to refer to the six-digit code sent during phone confirmation. However, usability tests suggested that the one-two sequence of **two-factor authentication** and **one-time passcode** might be misleading to non-experts.
-* In technical documentation, use **one-time passcode** on first reference, OTP on second. Don’t use **one-time password** or **TOTP** unless it is clearly explained as an alternate term. 
-* Never use these alternatives in the interface. Instead, **use "security code"** to refer to any OTP sent to confirm device ownership.
+* In technical documentation, use **one-time passcode** on first reference to numeric codes, OTP on second. Don’t use **one-time password** or **TOTP** unless it is clearly explained as an alternate term. 
+* In the interface or user-facing content, **use "one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership. Never use any other alternatives.
 
 ### Password
 A collection of random characters (words and numerals) or short words used to access an account. It has no spaces. A **passphrase** is a password with spaces in it. **For interface copy, we will use "password" over "passphrase,"** which might be more technically accurate but is likely less recognizable to the intended enduser.

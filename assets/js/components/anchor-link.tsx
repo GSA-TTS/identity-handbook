@@ -1,4 +1,3 @@
-import { h } from "preact";
 import Anchor from "anchor-js";
 
 const anchor = new Anchor();
@@ -26,7 +25,6 @@ export function AnchorLink({
       className="anchorjs-link"
       aria-label="Anchor"
       data-anchorjs-icon={icon}
-      id={slug}
       href={`#${slug}`}
       style={{ font: "1em / 1 anchorjs-icons", paddingLeft: "0.375em" }}
     />

@@ -2,6 +2,7 @@
 title: Leave Guidance
 layout: article
 category: Team
+subcategory: People Ops
 ---
 
 ## Login.gov Leave Guidance

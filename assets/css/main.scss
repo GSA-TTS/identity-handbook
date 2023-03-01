@@ -4,7 +4,8 @@
 @charset 'utf-8';
 
 // Imports
-@import 'styles.css';
+@import "styles.css";
+@import "identity-style-guide/dist/assets/scss/packages/required";
 
 // Hello! These styles are specific styles for
 // the Login.gov Handbook. Please refer to design.login.login-gov
@@ -12,7 +13,6 @@
 
 // Search
 #search-results {
-
   background-color: #ebf3fa;
   position: absolute;
   top: 20px;
@@ -37,4 +37,22 @@
 
 .deprecated-link {
   color: gray;
+}
+
+.sprint-team--archived {
+  color: gray;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  &:target {
+    background-color: color("warning-light");
+  }
 }
