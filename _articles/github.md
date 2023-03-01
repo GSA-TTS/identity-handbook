@@ -175,6 +175,26 @@ are some strategies for helping manage these notifications:
    | -----------------------|--------------------|
    | ![All Activity]({{site.baseurl}}/images/github-all-activity.png) | ![Participating]({{site.baseurl}}/images/github-participating.png) |
 
+## Running CI Outside of a Pull Request
+
+Engineers may want to run CI before submitting their code for review. For example, this can be a helpful way to check that all tests pass. To run CI on a branch without creating a pull request:
+
+1. Push the up to date branch to github
+2. Navigate to https://gitlab.login.gov/lg/identity-idp/-/pipelines/new
+3. In the drop-down below `Run for branch name or tag`, select the branch for which you'd like to run CI
+
+## Sharing Work With Other Engineers
+
+Engineers might want to share work with other engineers, such as before starting a pairing session. To share work without creating a PR, consider using github's "compare" feature.
+
+1. Push the up to date branch to github
+2. From the repo's home page, select the branch
+3. Click "Contribute" and select the left button, "Compare"
+   ![ExampleUseOfCompare]({{site.baseurl}}/images/example-use-of-compare.png)
+4. Share the resulting url, eg https://github.com/18F/identity-idp/compare/branch-name-goes-here, with your fellow engineer.
+
+Additionally, here is [a script called `git-cmp`](https://github.com/zachmargolis/margs-dev/blob/master/scripts/git-cmp) that allows you to generate github compare urls from local branches.
+
 ## Code Reviews
 
 See [Pull Request Review]({% link _articles/pull-request-review.md %})
