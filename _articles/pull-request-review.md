@@ -51,4 +51,5 @@ Pull Request, or until that review is dismissed.
 Since *Request Changes* is essentially blocking, as a Login.gov convention, we try to
 minimize usages of it to absolutely critical changes needed.
 
-
+## Using Github Functionality Without Submitting a PR
+The handbook's github article includes information about other github features, such as [running CI outside of a PR]({% link _articles/github.md %}#running-ci-outside-of-a-pull-request) or [sharing work with other engineers]({% link _articles/github.md %}#sharing-work-with-other-engineers).

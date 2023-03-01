@@ -193,6 +193,8 @@ Engineers might want to share work with other engineers, such as before starting
    ![ExampleUseOfCompare]({{site.baseurl}}/images/example-use-of-compare.png)
 4. Share the resulting url, eg https://github.com/18F/identity-idp/compare/branch-name-goes-here, with your fellow engineer.
 
+Additionally, here is [a script called `git-cmp`](https://github.com/zachmargolis/margs-dev/blob/master/scripts/git-cmp) that allows you to generate github compare urls from local branches.
+
 ## Code Reviews
 
 See [Pull Request Review]({% link _articles/pull-request-review.md %})
