@@ -4,6 +4,7 @@ description: "GitLab Setup"
 layout: article
 category: Platform
 redirect_from: /articles/gitlab.html
+cSpell: ignore omniauth
 ---
 
 # Introduction
@@ -113,7 +114,7 @@ You can find it's deployment status in <https://gitlab.login.gov/lg/identity-dev
 
 ## Authentication Setup
 
-GitLab leverages OmniAuth to allow users to sign in using a variety of sersvices, including Login.gov (via SAML). To configure this:
+GitLab leverages Omniauth to allow users to sign in using a variety of services, including Login.gov (via SAML). To configure this:
 
 1. Generate a cert and private key by following the instructions at <https://developers.login.gov/testing/#creating-a-public-certificate>:
 ```
@@ -135,7 +136,7 @@ curl -s https://idp.int.identitysandbox.gov/api/saml/metadata2021 \
 | sed -E 's/.*=//'
 ```
 
-1. Copy the IDP cert fingerprint, generated certificate, and generated private key to the per-enviroment S3 secrets bucket. Name them `saml_idp_cert_fingerprint`, `saml_certificate` and `saml_private_key`, respectively:
+1. Copy the IDP cert fingerprint, generated certificate, and generated private key to the per-environment S3 secrets bucket. Name them `saml_idp_cert_fingerprint`, `saml_certificate` and `saml_private_key`, respectively:
 ```
 aws s3 cp - "s3://${SECRET_BUCKET}/alpha/saml_private_key" --no-guess-mime-type --content-type="text/plain" --metadata-directive="REPLACE"
     [...]

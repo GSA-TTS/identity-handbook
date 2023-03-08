@@ -3,6 +3,7 @@ title: "GitLab Environment Deploys"
 description: How to use GitLab to deploy your sandbox IdP environments
 layout: article
 category: Platform
+cSpell: ignore Vogon
 ---
 
 ## Overview
@@ -230,7 +231,7 @@ To enable your sandbox:
    ~~~
    Make sure they are set to `true`.  You should have them by default, but if
    not, copy them from `vars/tspencer.tfvars`
-1. Terraform your environment.  It should set all the privatelink stuff up and
+1. Terraform your environment.  It should set all the `privatelink` stuff up and
    launch the env_runner.
 1. Edit `identity-devops/.gitlab-ci.yml` and copy one of the sets of deploy
    jobs that are out there.  You will need _at least_ the deploy and the test
@@ -270,7 +271,7 @@ go test -v
 ```
 while you are in `identity-devops/tests`.
 
-If your tests rely on AWS creds, you can use aws-vault to run the tests.
+If your tests rely on AWS credentials, you can use aws-vault to run the tests.
 
 #### Updating dependencies
 

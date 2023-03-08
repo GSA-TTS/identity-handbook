@@ -3,6 +3,7 @@ title: "macOS PIV to SSH key extraction"
 layout: article
 category: Development
 subcategory: References
+cSpell: ignore smartcard
 ---
 
 ## Use PIV certs for SSH using native macOS smartcard drivers

@@ -90,7 +90,7 @@ Here are some common Slack Channels for the Login.gov team
   {% include tag.html name='important' %}
   Channel for the whole team, team-wide announcements and so on
 
-### Sub-Team Channnels
+### Sub-Team Channels
 
 #### Design/UX
 

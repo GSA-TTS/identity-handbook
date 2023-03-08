@@ -3,6 +3,7 @@ title: "Incident Response Guide"
 description: "Security Incident Response Guide"
 layout: article
 category: "Security"
+cSpell: ignore sitrep sitreps
 ---
 
 ## Introduction

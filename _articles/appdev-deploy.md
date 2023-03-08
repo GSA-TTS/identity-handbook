@@ -61,7 +61,7 @@ This guide assumes that:
 - You have a [GPG key set up with GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account) (for signing commits)
 - You have [set up `aws-vault`]({% link _articles/platform-setting-up-aws-vault.md %}), and have can SSH (via `ssm-instance`) in to our production environment
 
-Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of goood improvements all the time!
+Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of good improvements all the time!
 
 ### Pre-deploy
 

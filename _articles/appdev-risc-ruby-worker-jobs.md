@@ -47,7 +47,7 @@ instances.
 
 1. Do the steps in [Ruby Proofing Workers]({% link _articles/appdev-proofing-ruby-worker-jobs.md %}) for job host configuration
 
-2. Additionally update the env's [`application.yml`]({% link _articles/appdev-secrets-configuration.md %})
+2. Additionally update the environment's [`application.yml`]({% link _articles/appdev-secrets-configuration.md %})
 
     - set **push_notifications_enabled**: `'true'` (this enables sending SET tokens)
     - Set **risc_notifications_active_job_enabled** `'true'` (this enables sending SET token via Ruby workers)

@@ -47,7 +47,7 @@ As you're working on tickets, please make use of ZenDesk's "Internal Note" featu
 updates as to your progress (as needed). For simple requests (e.g.
 questions that can be answered directly) this is not required but for longer
 lived tickets (e.g. a new integration launch) it is helpful to have a history
-for the request. The "Interal Note" section is also a great place to put a link to the Github Pull Request, as
+for the request. The "Internal Note" section is also a great place to put a link to the Github Pull Request, as
 this helps anyone else viewing the ticket what progress has been made.
 
 ## Questions? Comments? Suggestions?

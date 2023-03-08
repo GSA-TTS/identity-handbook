@@ -44,6 +44,9 @@ jobs:
       - run:
           name: Run test
           command: make test
+      - run:
+          name: Run spellchecks
+          command: make spellcheck
       - run: find _site -type f
 workflows:
   version: 2

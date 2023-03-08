@@ -1,0 +1,121 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "AAMVA",
+    "appdev",
+    "CISO",
+    "comms",
+    "crowdsource",
+    "exfiltrated",
+    "exfiltration",
+    "FIPS",
+    "FISMA",
+    "gitstaging",
+    "Hubspot",
+    "incentivized",
+    "offboarded",
+    "offboarding",
+    "OIDC",
+    "oncall",
+    "overcommunicate",
+    "overcommunication",
+    "passcode",
+    "passcodes",
+    "PIVCAC",
+    "roadmap",
+    "runbook",
+    "runbooks",
+    "Snyk",
+    "standup",
+    "standups",
+    "Statuspage",
+    "templating",
+    "templatized",
+    "terratest",
+    "terratests",
+    "touchpoints",
+    "triaging",
+    "wargame",
+    "wargames",
+    "yubikey"
+  ],
+  "patterns": [
+    {
+      "name": "Markdown links",
+      "pattern": "\\((.*)\\)",
+      "description": ""
+    },
+    {
+      "name": "Markdown code blocks",
+      "pattern": "/^(\\s*`{3,}).*[\\s\\S]*?^\\1/gmx",
+      "description": "Taken from the cSpell example at https://cspell.org/configuration/patterns/#verbose-regular-expressions"
+    },
+    {
+      "name": "Inline code blocks",
+      "pattern": "\\`([^\\`\\r\\n]+?)\\`",
+      "description": "https://stackoverflow.com/questions/41274241/how-to-capture-inline-markdown-code-but-not-a-markdown-code-fence-with-regex"
+    },
+    {
+      "name": "Link contents",
+      "pattern": "\\<a(.*)\\>",
+      "description": ""
+    },
+    {
+      "name": "Snippet references",
+      "pattern": "-- snippet:(.*)",
+      "description": ""
+    },
+    {
+      "name": "Snippet references 2",
+      "pattern": "\\<\\[sample:(.*)",
+      "description": "another kind of snippet reference"
+    },
+    {
+      "name": "Multi-line code blocks",
+      "pattern": "/^\\s*```[\\s\\S]*?^\\s*```/gm"
+    },
+    {
+      "name": "Multi-line code blocks with squigglies",
+      "pattern": "/^\\s*~~~[\\s\\S]*?^\\s*~~~/gm"
+    },
+    {
+      "name": "HTML Tags",
+      "pattern": "<[^>]*>",
+      "description": "Reference: https://stackoverflow.com/questions/11229831/regular-expression-to-remove-html-tags-from-a-string"
+    },
+    {
+      "name": "Liquid Syntax",
+      "pattern": "\\{[%] (.*) [%]\\}"
+    },
+    {
+      "name": "Liquid Syntax 2",
+      "pattern": "\\{\\{ (.*) \\}\\}"
+    },
+    {
+      "name": "Frontmatter",
+      "pattern": "/^(-{3}|[+]{3})$[\\s\\S]*?^\\1$/gm",
+      "description": "Reference: https://github.com/streetsidesoftware/cspell/discussions/3456"
+    },
+    {
+      "name": "Liquid Syntax With Dashes",
+      "pattern": "\\{[%]-? (.*) -?[%]\\}",
+      "description": "Some of the GitHub docs have this syntax"
+    }
+  ],
+  "ignoreRegExpList": [
+    "Markdown links",
+    "Markdown code blocks",
+    "Inline code blocks",
+    "Link contents",
+    "Snippet references",
+    "Snippet references 2",
+    "Multi-line code blocks",
+    "Multi-line code blocks with squigglies",
+    "HTML Tags",
+    "Liquid Syntax",
+    "Frontmatter",
+    "Liquid Syntax With Dashes",
+    "Liquid Syntax 2"
+  ]
+}

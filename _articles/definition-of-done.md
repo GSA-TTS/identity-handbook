@@ -31,7 +31,7 @@ Expect this DoD to change over time.
 - Appropriate refactoring has been done as part of developing the story
   - Dead code has been pruned
   - The Login.gov design system is used in views
-- New code must be free of medium and highlevel static and dynamic security vulnerabilities as reported by Snyk
+- New code must be free of medium- and high-level static and dynamic security vulnerabilities as reported by Snyk
 - If the story will not be ready to be released to users or there is a serious possibility of failure then the changes are behind a feature flag
 - Analytics logging has been updated and new events have been added if needed
 
@@ -59,7 +59,7 @@ Expect this DoD to change over time.
 - The help content on the static site has been updated and new FAQ content has been created if necessary
 - User journey/interface are connected to user personas and listed in the login handbook.
 
-## Comms
+## Communications
 
 - A description of the change has been written for the release notes to be communicated to partners
 - A description of the change has been communicated to the contact center
@@ -91,7 +91,7 @@ Key items as part of an acceptance thread:
   - Provide a brief description for context since JIRA numbers are not memorable
 - In the thread:
   - Includes steps so that anyone can replicate and review.
-  - Specify which environment changes were deployed to, and provide a link to that environmment
+  - Specify which environment changes were deployed to, and provide a link to that environment
   - Provide screenshots if possible
   - Sometimes, for tickets that don't have UI changes, includes a description of what changed and links
      to a Pull Request

@@ -114,7 +114,7 @@ Aside from the command-line outputs as detailed below, all PRs ***must*** indica
 3. Steps detailing, if they are necessary, any ***additional operations*** required in order to fully implement the change(s). These primarily will include changes to resources within the Terraform `state`, such as `state rm`/`mv`, `import`, etc. which must be performed *manually* before/after the plan is applied.
 4. Similarly -- if necessary -- steps detailing any ***mitigation steps***, which fall *outside* of normal mitigation steps, that will need to be taken/recognized in case the plan needs to be rolled back. These will almost always need to be listed if there are any breaking changes, as defined in #2 above.
 
-### Protip: Organizing Large Output with `<details>` Dropdown Blocks
+### Pro tip: Organizing Large Output with `<details>` Dropdown Blocks
 
 If the command-line output demonstrating the PR's changes is particularly large in size (i.e. 30+ lines), it can be wrapped within a `<details>` HTML block, which will output a clickable, dropdown text link when the description is submitted:
 

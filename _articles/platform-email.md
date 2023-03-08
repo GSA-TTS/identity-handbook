@@ -3,6 +3,7 @@ title: "Email Routing"
 description: "Inbound and outbound SMTP information"
 layout: article
 category: Platform
+cSpell: ignore DMARC DNSSEC nameserver
 ---
 
 ## Overview
