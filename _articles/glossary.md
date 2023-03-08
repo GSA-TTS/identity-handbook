@@ -298,3 +298,5 @@ An entity which is or represents the entity requiring an authenticated
 identity. A verifier includes the functions necessary for engaging in
 authentication exchanges.
 Source: FIPS 196
+
+[nist-800-63-3]: https://pages.nist.gov/800-63-3/
