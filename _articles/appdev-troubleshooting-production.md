@@ -117,7 +117,7 @@ We don't have indexed lookups by phone number so we need to combine a few approa
     ```
 
 2. In Cloudwatch, look up OTP requests to those fingerprints. It helps to have an approximate date
-   this user was active to help narrow down the Cloudwatch search timeframe.
+   this user was active to help narrow down the Cloudwatch search time frame.
 
    ```cloudwatch
    fields

@@ -16,19 +16,19 @@ encourage creating new accounts to re-test the proofing flow using [this Gmail t
 Add `+` and some extra bits after your username to create a new email address that routes to your
 same inbox. For example, if your GSA email is:
 
-> firstname.lastname@gsa.gov
+> first.last@gsa.gov
 
 You can make extra accounts like:
 
-> firstname.lastname**+1**@gsa.gov
+> first.last**+1**@gsa.gov
 >
-> firstname.lastname**+2**@gsa.gov
+> first.last**+2**@gsa.gov
 >
-> firstname.lastname**+abcdef**@gsa.gov
+> first.last**+abcdef**@gsa.gov
 
-And as an easy way to keep track of the emails, consider datestamping them:
+And as an easy way to keep track of the emails, consider date-stamping them:
 
-> firstname.lastname**+20210704**@gsa.gov
+> first.last**+20210704**@gsa.gov
 
 [gmail-trick]: https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html
 

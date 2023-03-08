@@ -4,13 +4,14 @@ description: "How to create an exciting Wargames DM scenario"
 layout: article
 category: "Team"
 subcategory: Guides
+cSpell: ignore mindgame mindgames socio Kobayashi Maru WWYD
 ---
 
 ## Overview
 
 Login.gov's "Contingency Plan Training Wargames" are a regular event that use a
 mix of process practice, chaos engineering, and group troubleshooting to hone
-skills and improve the rediness of our socio-technical system.
+skills and improve the readiness of our socio-technical system.
 
 The fuel for our Wargames are spine-tingling scenarios created by our "Dungeon Masters".
 
@@ -22,7 +23,7 @@ If you want to stump your peers and learn a lot in the process, read on...
 ## Resources
 
 * [Contingency Plan - Wargames running doc](https://docs.google.com/document/d/1uUN62hKNptCui59DD-ApCS2_mJpLR5G68j69ieh007o/edit) - Should have notes for each session including action items for improvement
-* [DM Signup Sheet](https://docs.google.com/spreadsheets/d/1GY8IWTWcNhCulWdparz-ABA_N3U_aK7Tu_DBle5b6AY/edit) - Sign up to volunteer as DM for a session
+* [DM Sign-up Sheet](https://docs.google.com/spreadsheets/d/1GY8IWTWcNhCulWdparz-ABA_N3U_aK7Tu_DBle5b6AY/edit) - Sign up to volunteer as DM for a session
 * [Contingency Plan Training Folder](https://drive.google.com/drive/folders/1XsMEgsz9iTOOaLoJOCkIJxTIWnmHU8fQ) - More contingency plan training resources
 * [Wargame Scenario Grab Bag](https://docs.google.com/spreadsheets/d/1Kd6pkKsU2wVluit2VQj9VYG5XFQ5Mn4x95S-XcrCQ9U/edit) - Some ideas for scenarios (No peeking, players!)
 * [Login.gov Incidents Folder](https://drive.google.com/drive/folders/1TWTMp_w55niNuqC7vTPDEe5vkxaiP4P0) - Some of the best ideas come from the past things that hurt us
@@ -107,7 +108,7 @@ Steps for a Runbook scenario:
 * The players should follow our standard IR process and work in the #login-situation-practice channel
 * You may direct players to the applicable runbook - This is a named scenario,
   so initial troubleshooting should be minimized
-* Once complete, note and assing runbook refinements
+* Once complete, note and assessing runbook refinements
 
 ### Fault Injection / Chaos Engineering Tools
 

@@ -4,6 +4,7 @@ description: "How Sprints and Standups operate"
 layout: article
 category: Platform
 subcategory: Team
+cSpell: ignore WOPR
 ---
 
 We currently use the **Login.gov Infrastructure** board <https://github.com/orgs/18F/projects/5> to track our current sprint, as well as the issues in our backlog.

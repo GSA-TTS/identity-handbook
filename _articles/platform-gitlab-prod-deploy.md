@@ -3,6 +3,7 @@ title: "GitLab Production Deploys"
 description: How to deploy changes to the production Gitlab system
 layout: article
 category: Platform
+cSpell: ignore SAST
 ---
 
 ## Overview

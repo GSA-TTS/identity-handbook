@@ -3,11 +3,12 @@ title: "Glossary"
 description: "Explanation of common terms, acronyms, and abbreviations"
 layout: article
 category: "Team"
+cSpell: ignore Authy CNSSI FedRAMP FYSA MBUN NISTIR TOTP requestees
 ---
 
 ## Overview
 
-This glossary is for possibly-confusing terms and abbrevations that come up working on, or talking about, Login.gov.
+This glossary is for possibly-confusing terms and abbreviations that come up working on, or talking about, Login.gov.
 
 Many of them are related to Identity Management ecosystem, our goal is to
 provide common terms to communicate about Identity without confusion. We will
@@ -33,7 +34,7 @@ Independent third parties that evaluate our services. We are required to have 3P
 How certain we are the owner of an account logged in to that account. Based on [NIST 800-63-3][nist-800-63-3].
 
 Login.gov supports
-- AAL 2: multifactor authentication
+- AAL 2: multi-factor authentication
 - AAL 3: phishing resistant authenticator with verifier impersonation resistance, requires WebAuthn or a PIV/CAC
 
 
@@ -227,7 +228,7 @@ A **passcode** works like a password but uses only numbers. In previous iteratio
 * In the interface or user-facing content, **use "one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership. Never use any other alternatives.
 
 ### Password
-A collection of random characters (words and numerals) or short words used to access an account. It has no spaces. A **passphrase** is a password with spaces in it. **For interface copy, we will use "password" over "passphrase,"** which might be more technically accurate but is likely less recognizable to the intended enduser.
+A collection of random characters (words and numerals) or short words used to access an account. It has no spaces. A **passphrase** is a password with spaces in it. **For interface copy, we will use "password" over "passphrase,"** which might be more technically accurate but is likely less recognizable to the intended end user.
 
 ### PII
 **Personally Identifiable Information**
@@ -262,7 +263,7 @@ A change to our system that triggers additional review processes.
 ### SP
 **Service Provider**
 
-An application (or applications) within an ecosystem that provides a service to users; examples of SPs that relate to Login.gov include vets.gov, myssa, and ELIS.
+An application (or applications) within an ecosystem that provides a service to users; examples of SPs that relate to Login.gov include vets.gov, mySSA, and ELIS.
 
 ### SLO
 **Single LogOut**

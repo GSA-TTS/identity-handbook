@@ -3,6 +3,7 @@ title: Onboarding
 layout: article
 category: Team
 subcategory: People Ops
+cSpell: ignore macbook
 ---
 
 ## TTS Onboarding

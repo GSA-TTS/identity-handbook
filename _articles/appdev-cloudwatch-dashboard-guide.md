@@ -32,11 +32,11 @@ As a result, Login.gov supports experimental dashboards.
 These are ephemeral dashboards which can be used to create source for long-lived
 dashboards.
 
-Terraformed dashboards are distinguisehd from experiemental dashboards by the
+Terraformed dashboards are distinguished from experimental dashboards by the
 prefix in the dashboard name.
 A terraformed dashboard will have a prefix which is an environment name.
 For example, a terraformed dashboard may be named `prod-sample-dashboard`.
-Conversly, an experimental dashboard will use a name that identifies the author.
+Conversely, an experimental dashboard will use a name that identifies the author.
 For example, `my-example-dashboard`.
 
 Once an experimental dashboard reaches the desired state it should be converted
@@ -44,13 +44,13 @@ into a terraformed dashboard.
 The `identity-devops` repo has tooling for converting dashboards to terraformed
 dashboards.
 
-Given an expriemental dashboard named `my-sample-dashboard`, run the
+Given an experimental dashboard named `my-sample-dashboard`, run the
 following in the `identity-devops` repo:
 
 ```bash
 aws-vault exec prod-power -- bin/copy-cloudwatch-dashboard -i my-sample-dashboard
 ```
 
-This will create a terraform file file in the devops repo for the dashboard.
+This will create a terraform file in the devops repo for the dashboard.
 When this file is checked in and applied by terraform a dashboard matching
 the experimental one will be created for all environments.

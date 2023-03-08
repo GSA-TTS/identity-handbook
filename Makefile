@@ -25,6 +25,9 @@ lint:
 typecheck:
 	npm run typecheck
 
+spellcheck:
+	npm run cspell
+
 test: build
 	bundle exec rspec spec
 	bundle exec htmlproofer --disable-external --allow-hash-href `pwd`/_site

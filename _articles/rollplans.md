@@ -4,6 +4,7 @@ description: "When to create a rollplan, where to find existing ones"
 layout: article
 category: "Development"
 subcategory: "Documentation"
+cSpell: ignore rollplan rollplans
 ---
 
 ## Useful links

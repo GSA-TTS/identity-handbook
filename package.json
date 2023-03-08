@@ -17,6 +17,7 @@
     "@types/marked": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
+    "cspell": "^6.28.0",
     "esbuild": "^0.15.10",
     "eslint": "^8.11.0",
     "eslint-plugin-import": "^2.25.4",
@@ -29,6 +30,7 @@
   },
   "scripts": {
     "clean": "rm -rf assets/build",
+    "cspell": "cspell --config cspell.json '**/*.md' --no-progress",
     "prebuild:common": "npm run clean",
     "build:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/build --bundle --format=esm --splitting",
     "build:dev": "npm run build:common -- --sourcemap=inline",

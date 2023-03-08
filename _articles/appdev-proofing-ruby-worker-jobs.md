@@ -4,6 +4,7 @@ description: "Overview and architecture of our proofing background jobs"
 layout: article
 category: "Architecture"
 redirect_from: /articles/appdev-ruby-worker-jobs.html
+cSpell: ignore PSQL
 ---
 
 ## Overview
@@ -95,7 +96,7 @@ instances.
 
 To enable ruby workers in an environment:
 
-1. Update the env's [`application.yml`]({% link _articles/appdev-secrets-configuration.md %})
+1. Update the environment's [`application.yml`]({% link _articles/appdev-secrets-configuration.md %})
   - Set **ruby_workers_idv_enabled**: `'true'` (this enables async for resolution, address jobs)
   - Set **doc_auth_enable_presigned_s3_urls**: `'true'` (this enables async for document proofig job)
 2. Set terraform variables:

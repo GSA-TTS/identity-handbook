@@ -31,7 +31,7 @@ For both Mid-year and End-of-year reviews, the leadership team will
 
 1. Publish a Google Form for nominating peers for feedback
 2. Schedule short 15-30 minute meetings to ask peer feedback questions and take notes
-3. Anonymize and snythesize peer feedback
+3. Anonymize and synthesize peer feedback
 4. Include peer feedback in delivered written reviews
 
 Some people prefer to write their feedback, so it is encouraged to provide that option as well.

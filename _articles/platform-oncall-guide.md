@@ -8,7 +8,7 @@ category: Platform
 
 ## Rotations
 
-To help balance the different workloads across the Login.gov Platform teams, we have multiple 'oncall'/help roles with weekly Rotation schedules. This allows us to provide our customers (primarily the AppDev engineers) with timely and comprehensive assistance, and to help strengthen our teams' knowledge base and comfortability with the various tasks and responsibilities involved in the Platform teams' work.
+To help balance the different workloads across the Login.gov Platform teams, we have multiple 'oncall'/help roles with weekly Rotation schedules. This allows us to provide our customers (primarily the AppDev engineers) with timely and comprehensive assistance, and to help strengthen our teams' knowledge base and comfort with the various tasks and responsibilities involved in the Platform teams' work.
 
 ### Schedules
 
@@ -136,7 +136,7 @@ Do these as you enter Interrupts:
 * **Update the `@login-platform-help` Slack group handle**
 * **Check in on the [LG Platform: Interrupts board](https://github.com/orgs/18F/projects/34)**
 * **Check with outgoing Interrupts engineer** - Review any notable handoff items
-* **Make sure any unprovisioned new users are invited to a future AWS Onboarding Time session** - This should be done during your rotation!
+* **Make sure any un-provisioned new users are invited to a future AWS Onboarding Time session** - This should be done during your rotation!
 
 ##### Daily
 
@@ -189,7 +189,7 @@ Mission: Support GitLab and related automation tools and infrastructure!
 
 __Note - This is not currently a rotation.  We will reassess our approach to GitLab and automation support in the coming months.__
 
-#### Responisibilities
+#### Responsibilities
 
 * **Respond to problems with GitLab CI/CD**
 

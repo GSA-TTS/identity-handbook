@@ -112,7 +112,7 @@ of the particular step in a web UI.
 
 Logs are also being streamed to CloudWatch under various `auto-terraform/*` log groups.
 Each of the pipeline steps for each target stream to a different log group.
-There are also logs for the networkfw that you can use for forensic purposes
+There are also logs for the network firewall that you can use for forensic purposes
 under `auto-terraform/networkfw*` log groups.
 
 ### Common Tasks
@@ -216,7 +216,7 @@ You can run tests locally with
 go test -v
 ```
 
-If your tests rely on AWS creds, you can use aws-vault to run the tests.
+If your tests rely on AWS credentials, you can use aws-vault to run the tests.
 
 
 ##### Running tests in codepipeline
@@ -249,7 +249,7 @@ stuff should work as well, like `go get -u` and so on.
 
 #### Updating Terraform Bundle
 
-We will undoubtably need to update the version of terraform and the
+We will undoubtedly need to update the version of terraform and the
 various plugins that it uses in the future.
 
 You can update this bundle by editing `bin/terraform-bundle.sh` to update versions of plugins and tf
@@ -273,7 +273,7 @@ steps.
 
 ##### CLI
 
-You can disable and enable autoterraform using `bin/disable-autotf` and `bin/enable-autotf` respectively.
+You can disable and enable auto terraform using `bin/disable-autotf` and `bin/enable-autotf` respectively.
 Usage instruction can be found with `-h` flag.
  
 ```

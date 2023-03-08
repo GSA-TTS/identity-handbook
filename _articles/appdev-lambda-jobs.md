@@ -65,7 +65,7 @@ The lifecycle of a lambda:
       is different per job (3 different jobs means there are 3 different authentication tokens)
     - The IDP stores the result (which may contain PII) in Redis, symmetrically encrypted and
       with a 60 second expiration.
-    - PII in the payload may include data from reading the driver's licese
+    - PII in the payload may include data from reading the driver's license
         - First name
         - Last name
         - Date of Birth
@@ -146,6 +146,6 @@ Here's the step-by-step to enable the lambda background jobs workflow in the IDP
         - Click "Edit", scroll down and put the value in the "Value" field
         - Click "Save Changes"
 
-3. Recyle the IDP so the changes take effect
+3. Recycle the IDP so the changes take effect
 
 [secrets-config]: {% link _articles/appdev-secrets-configuration.md %}

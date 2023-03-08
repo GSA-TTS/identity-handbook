@@ -9,7 +9,7 @@ Here is a list of items that need to be completed to deploy the configuration fo
 
 1. Ensure that the IAA is signed and includes the application explicitly in the Description of Service or Statement of Work.
 
-2. Ensure that the **Integration IAA or MOU Confirmed** is checked on the lefthand column of ZenDesk, along with **Integration Details Confirmed**.
+2. Ensure that the **Integration IAA or MOU Confirmed** is checked on the left-hand column of ZenDesk, along with **Integration Details Confirmed**.
 
 3. Ensure that the production configuration has been provided by the partner (e.g. valid Dashboard URL in the ZenDesk ticket) and includes the following:
   * If the app does not have a logo, then the partner will need to upload one before it can be deployed. You can find the [logo guidelines here](https://developers.login.gov/design-guidelines/#agency-logo-guidelines).
