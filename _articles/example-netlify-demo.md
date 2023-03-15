@@ -1,7 +1,9 @@
 ---
 layout: article
 title: Example Netlify demo
-description: Page for editing
+description: does not need this field here. explain during demo
 category: Netlify Sandbox
 ---
-F﻿or our demo today, here is a page that needs to be edited. Go ahead and edit this page.
+In today's demo, we are adding new text *hello hello*
+
+E﻿diting this in rich text
