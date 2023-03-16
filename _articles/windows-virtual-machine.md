@@ -46,12 +46,3 @@ subcategory: "Setup"
 In a Windows virtual machine, the host machine can be resolved at the IP address `10.0.2.2` with VirtualBox's default network settings. Many applications will bind only to `localhost`. Refer to the project's documentation for more information about how to bind to other addresses. Typically, this can be done by passing the host as an environment variable (e.g. `HOST=10.0.2.2 make run`).
 
 For the IDP, see: ["Testing on a mobile device or in a virtual machine"](https://github.com/18F/identity-idp#testing-on-a-mobile-device-or-in-a-virtual-machine)
-
-## Set up JAWS Screen Reader
-
-For windows 10, I (Aaron) needed to make the following adjustments
-1. Increase system base memory to 6GB
-2. Use "Intel HD Audio" controller
-3. I installed this version: <br />
-   <http://jaws2019.vfo.digital/2019.1909.28.400/26B7F1A4-93A1-49A6-8F7D-8D030F3E3900/J2019.1909.28-any.exe>
-

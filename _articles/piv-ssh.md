@@ -42,7 +42,7 @@ If you plug your PIV into your mac and see a dialog that looks like this, *do no
 This will not affect devops things, however it will bind your MacOS local user identity with the smart card credential, so when the PIV is in the reader, you will have to enter the PIN to complete authentication.
 
 ## References
-- <http://security.stackexchange.com/questions/104293/use-hspd-12-piv-keys-for-ssh>
+- <https://security.stackexchange.com/questions/104293/use-hspd-12-piv-keys-for-ssh>
 - <https://developers.yubico.com/yubico-piv-tool/SSH_with_PIV_and_PKCS11.html>
 - <https://ludovicrousseau.blogspot.com/2014/03/level-1-smart-card-support-on-mac-os-x.html>
 - <https://resources.jamf.com/documents/technical-papers/macos-smart-card-overview.pdf>

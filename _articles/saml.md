@@ -54,7 +54,7 @@ This is usually caused by a mismatch between the IdP certificate used to sign th
 To fix this, grab the certificate from the response, e.g.,
 
 ```
-<KeyInfo 
+<KeyInfo
     xmlns="http://www.w3.org/2000/09/xmldsig#">
     <ds:X509Data>
         <ds:X509Certificate>
@@ -63,7 +63,7 @@ To fix this, grab the certificate from the response, e.g.,
     </ds:X509Data>
 </KeyInfo>
 ```
-edit it to look like a normal certificate (or find the orig), e.g., 
+edit it to look like a normal certificate (or find the orig), e.g.,
 ```
 -----BEGIN CERTIFICATE-----
 MII/KeepCopyingButBreakItUpInto64CharacterLinesWhenYouSaveItHere

@@ -118,9 +118,9 @@ and how to add it.
         => #<Certificate:0x00007fd564fa89a8 ...>
         ```
     1. Test that the end-user certificate is now valid by running `rake certs:validate_client_cert[path/to/cert.pem]`
-        
+
         The script will print whether the certificate is now valid.
-        
+
         ```shell
         Certificate is valid!
         ```

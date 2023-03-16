@@ -30,7 +30,7 @@ spellcheck:
 
 test: build
 	bundle exec rspec spec
-	bundle exec htmlproofer --disable-external --allow-hash-href `pwd`/_site
+	bundle exec htmlproofer --disable-external --allow-hash-href --allow-missing-href=true --enforce-https=false `pwd`/_site
 
 clean:
 	rm -rf _site

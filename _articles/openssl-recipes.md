@@ -78,12 +78,12 @@ Certificate:
         X509v3 extensions:
             X509v3 Basic Constraints: critical
                 CA:TRUE
-            Authority Information Access: 
+            Authority Information Access:
                 CA Issuers - URI:http://http.fpki.gov/fcpca/caCertsIssuedTofcpca.p7c
 
-            X509v3 Policy Mappings: 
+            X509v3 Policy Mappings:
                 2.16.840.1.101.3.2.1.3.6:2.16.840.1.101.3.2.1.3.3, 2.16.840.1.101.3.2.1.3.7:2.16.840.1.101.3.2.1.3.12, 2.16.840.1.101.3.2.1.3.16:2.16.840.1.101.3.2.1.3.4, 2.16.840.1.101.3.2.1.3.8:2.16.840.1.101.3.2.1.3.37, 2.16.840.1.101.3.2.1.3.36:2.16.840.1.101.3.2.1.3.38
-            X509v3 Certificate Policies: 
+            X509v3 Certificate Policies:
                 Policy: 2.16.840.1.101.3.2.1.3.6
                 Policy: 2.16.840.1.101.3.2.1.3.7
                 Policy: 2.16.840.1.101.3.2.1.3.8
@@ -102,7 +102,7 @@ Certificate:
                 Policy: 2.16.840.1.101.3.2.1.3.40
                 Policy: 2.16.840.1.101.3.2.1.3.41
 
-            Subject Information Access: 
+            Subject Information Access:
                 CA Repository - URI:http://repo.fpki.gov/bridge/caCertsIssuedByfbcag4.p7c
 
             X509v3 Policy Constraints: critical
@@ -111,15 +111,15 @@ Certificate:
                 0
             X509v3 Key Usage: critical
                 Certificate Sign, CRL Sign
-            X509v3 Authority Key Identifier: 
+            X509v3 Authority Key Identifier:
                 keyid:AD:0C:7A:75:5C:E5:F3:98:C4:79:98:0E:AC:28:FD:97:F4:E7:02:FC
 
-            X509v3 CRL Distribution Points: 
+            X509v3 CRL Distribution Points:
 
                 Full Name:
                   URI:http://http.fpki.gov/fcpca/fcpca.crl
 
-            X509v3 Subject Key Identifier: 
+            X509v3 Subject Key Identifier:
                 79:F0:00:49:EB:7F:77:C2:5D:41:02:65:34:8A:90:23:9B:1E:07:6F
     Signature Algorithm: sha256WithRSAEncryption
          1b:bf:d1:54:a9:14:90:78:96:c4:73:63:79:ea:4b:95:75:87:
