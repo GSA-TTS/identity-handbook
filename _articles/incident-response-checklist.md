@@ -38,6 +38,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
     * Issue created as official record for incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
     * Incident Review document created from [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and moved to the year's subfolder under the [Incident Reviews Folder](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?usp=sharing)
     * Used [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov>, IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called), and our [GSA ISSO and ISSM](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/#emergency-contacts) **within 1 hour** of start of incident
+    * Posts initial incident notice on StatusPage following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
     * **Every 30 minutes** ensures StatusPage and external stakeholders are updated
     * **Every 30 minutes** notifies Login.gov comms if the incident reaches 50% of the "Length of time" limit for the type of incident in the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1)
 
@@ -52,7 +53,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
   - **High**: Confirmed PII breach, confirmed security penetration, complete outage
   - **Medium**: Suspected PII breach, suspected security penetration, partial outage
   - **Low**: Suspected attack, outage of non-prod persistent system (`int`)
-* If user or partner impacting, [StatusPage updated](https://manage.statuspage.io/login) notice posted using one of the pre-made `Outage` templates if applicable
+* If user or partner impacting, [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage) followed to publish notice
 * Checked [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) for relevant runbooks to execute
 * If secure shared notepad is needed, Google Doc opened and shared <https://drive.google.com/drive/folders/1TWTMp_w55niNuqC7vTPDEe5vkxaiP4P0>  (Contents should be copied to official issue)
 
