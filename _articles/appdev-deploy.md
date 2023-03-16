@@ -14,7 +14,7 @@ A few notes on our deploy process.
 ### Cadence
 
 **When to deploy:** ✅
-- Typically we do a full deploy twice weekly, on Mondays and Thursdays.
+- Typically we do a full deploy twice weekly, on Tuesdays and Thursdays.
 
 **When _not_ to deploy:** ❌
 - We try to avoid deploying on Fridays, to minimize the chances of introducing a
