@@ -27,12 +27,12 @@ and partners.
 
 ## StatusPage Admins
 
-A link to the StatusPage management site and the list of StatusPage Admins is
+The list of StatusPage Admins is
 available in the [Handbook Appendix](https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUzDmIxKn11DPJzk/edit#heading=h.1c3ohc5eqn5r)
 
 You can ask for help from a StatusPage admin by using the Slack group `@login-statuspagers`.
 
-The remaining content is for StatusPage admins.
+The remaining content is for StatusPage admins using the [StatusPage Manager][statuspage-manager].
 
 ## What to Share and What Not to Share
 
@@ -53,11 +53,11 @@ Do Not:
 
 ## Managing an Outage
 
-### Start
+### Start Outage Incident
 
-_(All work perfomed in the StatusPage management interface in the Login.gov "page".)_
-
-* In **Incidents** click **Create incident**
+Login to the [StatusPage Manager][statuspage-manager] then:
+* Ensure the **Login.gov** page is selected
+* Under **Incidents** click **Create incident**
 * Use the **Apply template** dropdown on the top right and select an appropriate
   template from the **OUTAGE** list
 * Refine the **Incident name** as needed
@@ -113,7 +113,7 @@ non-disruptive to a full complete outage window.
 
 ### Scheduling Maintenance
 
-Whenever possible 14 calendar days of advanced notice should be provided
+14 calendar days of advanced notice should be provided
 prior to maintenance.  Work with the Partnerships team to ensure additional
 partner communication if maintenance must be performed with less than 14 days
 notice.
@@ -124,7 +124,7 @@ for the suggested time window.  It is recommended that you reach out to the
 Partnerships team before scheduling maintenance in production, and that you
 do the same for our `sandbox` (integration testing) environment.
 
-Once the window has been selected, enter the StatusPage management interface and:
+Once the window has been selected, login to the [StatusPage Manager][statuspage-manager] and:
 * Click "Incidents" on the left menu and then select the "Maintenances" tab in the center top list
 * Click "Schedule maintenance"
 * Click the "Apply template" pull down and look for an applicable maintenance type
@@ -170,7 +170,8 @@ and send notifications at the start of the maintenance window.
 Note that StatusPage will auto-close the incident
 once the window has ran its defined duration.
 
-If maintenance is not going to plan and you need to exceed the window:
+If maintenance is not going to plan and you need to exceed the window,
+login to the [StatusPage Manager][statuspage-manager] and:
 * Under **Incidents** click on the open maintenance incident
 * Select the **Schedule & Automation** tab
 * Uncheck **Set status to completed** under **At the end of time for this maintenance**
@@ -185,6 +186,7 @@ Once work is complete and service has been fully restored you can close
 the maintenance incident before the end of the window.  This is always
 recommended to ensure the public knows they can resume using Login.gov.
 
+Login to the [StatusPage Manager][statuspage-manager] and:
 * Under **Incidents** click on the open maintenance incident
 * Change the status to **Completed**
 * In **Message** enter **Maintenance has been completed and all systems are functioning normally.**
@@ -207,8 +209,8 @@ information automatically.  At times the NewRelic Synthetics monitor used to
 determine uptime of `secure.login.gov` and `login.gov` may produce a false
 positive alarm and mark us as down.
 
-In the case of a false positive we can update StatusPage to reflect uptime
-accurately:
+In the case of a false positive we can update StatusPage to reflect accurate
+uptime.
 
 * Verify that traffic levels and availability were normal during the time in
   question
@@ -218,3 +220,4 @@ accurately:
 
 Always err on the side of caution with any availability publishing adjustment.
 
+[statuspage-manager]: https://manage.statuspage.io

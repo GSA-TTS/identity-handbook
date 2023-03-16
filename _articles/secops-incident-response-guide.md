@@ -88,7 +88,7 @@ Roles proceed as follows:
   * Creates the official tracking issue for the incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
   * Creates the Incident Review document by copying [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and shares a link in #login-situation
   * Uses [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov>, IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called), and our [GSA ISSO and ISSM](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/#emergency-contacts) **within 1 hour** of start of incident
-  * If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
+  * If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov StatusPage](https://logingov.statuspage.io/) following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
   * Checks the incident against the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1) and notify Login.gov comms before the incident reaches 50% of its length of time limit
 
 
@@ -152,7 +152,7 @@ At this phase, communications should follow these steps (and any additional step
 * Real-time chat should happen in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/).
 * Create an issue in the [identity-security-private](https://github.com/18F/identity-security-private/issues/new?template=incidents.md) GitHub repository.
 * Create a google docs
-* If incident is an outage SL updates the [Login.gov Statuspage](https://logingov.statuspage.io/) via the [Statuspage Admin Interface](https://manage.statuspage.io/login) ([View Sample Message]({{site.baseurl}}/images/statuspage-sample-message.png){:target="_blank"})
+* If incident is an outage SL updates the [Login.gov StatusPage](https://logingov.statuspage.io/) following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
 * Check the incident against the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1) and notify Login.gov comms before the incident reaches 50% of its length of time limit
 * Login.gov Agency Partners: send out an incident summary to LOGIN-PARTNERS@listserv.gsa.gov. Partner list: https://drive.google.com/drive/u/0/folders/0B4yIa0Upv1JJSkJOSmdsLWVOVmM)
 
@@ -199,7 +199,7 @@ This sitrep should be:
 
 #### Comms at the Assess phase
 
-Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts, and update to open Statuspage incident if applicable).
+Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts, and update to open StatusPage incident if applicable).
 
 ### Remediate Phase
 
@@ -239,7 +239,7 @@ Comms at the Remediate phase
 
 * The SL should continue to post updated sitreps on a regular cadence (the section on severities, below, suggests cadences for each level). These sitreps should be sent to Slack, to GSA-IT and US-CERT via email, and to any other stakeholders identified throughout the process (e.g. clients).
 
-* For user impacting incidents, users must be kept up to date via the [Login.gov Statuspage](https://logingov.statuspage.io/)  ([Statuspage Admin Interface](https://manage.statuspage.io/login))
+* For user impacting incidents, users must be kept up to date via the [Login.gov StatusPage](https://logingov.statuspage.io/) following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
 
 ### Retrospective Phase
 
