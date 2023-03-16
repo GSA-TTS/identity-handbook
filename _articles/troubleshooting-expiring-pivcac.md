@@ -4,6 +4,7 @@ description: "Guide on finding new certs if a cert is expiring"
 layout: article
 subcategory: "X509 and PIV/CAC Certificates"
 category: "AppDev"
+redirect_from: /articles/toubleshooting-expiring-pivcac.html
 ---
 
 Whenever a certificate is due to expire, we should verify that a replacement is
