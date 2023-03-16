@@ -124,7 +124,7 @@ openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out pub
 1. Grab the IDP sandbox signing certificate from <https://developers.login.gov/saml/> and get its fingerprint:
 ```
 curl -s https://idp.int.identitysandbox.gov/api/saml/metadata2021 \
-| xml sel -N x="https://www.w3.org/2000/09/xmldsig#" -t -v '(//x:X509Certificate)[1]' \
+| xml sel -N x="http://www.w3.org/2000/09/xmldsig#" -t -v '(//x:X509Certificate)[1]' \
 | sed '1i\
 -----BEGIN CERTIFICATE-----
 ' \

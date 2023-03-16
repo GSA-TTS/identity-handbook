@@ -73,8 +73,8 @@ and how to add it.
     key_id: 8C:D6:D4:69:A9:E4:85:41:3A:6A:A6:5E:DA:51:1A:17:8D:92:8B:6C
     signing_key_id: CC:00:68:61:A6:A5:03:93:10:0A:1B:61:B7:87:18:C1:45:56:DA:82
     ca_issuer_dn: /DC=sbu/DC=state/CN=Configuration/CN=Services/CN=Public Key Services/CN=AIA/CN=U.S. Department of State AD Root CA
-    ca_issuer_url: https://crls.pki.state.gov/AIA/CertsIssuedToDoSADRootCA.p7c
-    fetching: https://crls.pki.state.gov/AIA/CertsIssuedToDoSADRootCA.p7c
+    ca_issuer_url: http://crls.pki.state.gov/AIA/CertsIssuedToDoSADRootCA.p7c
+    fetching: http://crls.pki.state.gov/AIA/CertsIssuedToDoSADRootCA.p7c
     ///////////////////////////////////////
 
    ```

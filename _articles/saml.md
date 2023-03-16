@@ -55,7 +55,7 @@ To fix this, grab the certificate from the response, e.g.,
 
 ```
 <KeyInfo
-    xmlns="https://www.w3.org/2000/09/xmldsig#">
+    xmlns="http://www.w3.org/2000/09/xmldsig#">
     <ds:X509Data>
         <ds:X509Certificate>
         MII/KeepCopyingButBreakItUpInto64CharacterLinesWhenYouSaveItHere...TheLastLineMayNotBeExactly64CharactersAndThatsOK=

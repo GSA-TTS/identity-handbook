@@ -79,7 +79,7 @@ Certificate:
             X509v3 Basic Constraints: critical
                 CA:TRUE
             Authority Information Access:
-                CA Issuers - URI:https://http.fpki.gov/fcpca/caCertsIssuedTofcpca.p7c
+                CA Issuers - URI:http://http.fpki.gov/fcpca/caCertsIssuedTofcpca.p7c
 
             X509v3 Policy Mappings:
                 2.16.840.1.101.3.2.1.3.6:2.16.840.1.101.3.2.1.3.3, 2.16.840.1.101.3.2.1.3.7:2.16.840.1.101.3.2.1.3.12, 2.16.840.1.101.3.2.1.3.16:2.16.840.1.101.3.2.1.3.4, 2.16.840.1.101.3.2.1.3.8:2.16.840.1.101.3.2.1.3.37, 2.16.840.1.101.3.2.1.3.36:2.16.840.1.101.3.2.1.3.38
@@ -103,7 +103,7 @@ Certificate:
                 Policy: 2.16.840.1.101.3.2.1.3.41
 
             Subject Information Access:
-                CA Repository - URI:https://repo.fpki.gov/bridge/caCertsIssuedByfbcag4.p7c
+                CA Repository - URI:http://repo.fpki.gov/bridge/caCertsIssuedByfbcag4.p7c
 
             X509v3 Policy Constraints: critical
                 Require Explicit Policy:0, Inhibit Policy Mapping:2
@@ -117,7 +117,7 @@ Certificate:
             X509v3 CRL Distribution Points:
 
                 Full Name:
-                  URI:https://http.fpki.gov/fcpca/fcpca.crl
+                  URI:http://http.fpki.gov/fcpca/fcpca.crl
 
             X509v3 Subject Key Identifier:
                 79:F0:00:49:EB:7F:77:C2:5D:41:02:65:34:8A:90:23:9B:1E:07:6F
