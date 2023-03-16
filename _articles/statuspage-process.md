@@ -135,7 +135,7 @@ Once the window has been selected, login to the [StatusPage Manager][statuspage-
 * Select the duration of the window using the **for** hours and minutes input
 * Update the message section:
   * Include a "Maintenance Window" section that has the correct start and end dates listed for common timezones - You can use one of these templates:
-~~~
+```
 # Standard Time template
 Maintenance Window:
 UTC: YYYY-MM-DD 06:00 to 09:30
@@ -151,7 +151,7 @@ Eastern:  YYYY-MM-DD 1:00AM to 04:30AM
 Central:  YYYY-MM-DD 12:00AM to 03:30AM
 Mountain:  YYYY-MM-DD-1 11:00PM to  YYYY-MM-DD 02:30AM
 Pacific: YYYY-MM-DD-1 10:00PM to YYYY-MM-DD 01:30AM
-~~~
+```
 * Ensure only the Component affected is selected: "Login (secure.login.gov)" for our main IdP
 * Leave notification check boxes as is
 * **BEFORE CLICKING SCHEDULE NOW**:
