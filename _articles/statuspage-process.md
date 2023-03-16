@@ -43,7 +43,7 @@ to create language under duress.
 Do:
 * Use plain language
 * Explain how our users (the public) and our agency partners are impacted
-* Highlight what works and what does
+* Highlight what works and what does not
 * Focus on functionality and availability
 
 Do Not:
