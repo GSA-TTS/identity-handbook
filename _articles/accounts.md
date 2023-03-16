@@ -29,6 +29,7 @@ This page lists various services that Login.gov team uses to do work.
 - NPM Package registry
 - OpsGenie
 - search.gov dashboard
+- StatusPage
 
 [onboarding]: {% link _articles/onboarding.md %}
 [offboarding]: {% link _articles/offboarding.md %}
