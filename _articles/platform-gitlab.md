@@ -124,7 +124,7 @@ openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out pub
 1. Grab the IDP sandbox signing certificate from <https://developers.login.gov/saml/> and get its fingerprint:
 ```
 curl -s https://idp.int.identitysandbox.gov/api/saml/metadata2021 \
-| xml sel -N x="http://www.w3.org/2000/09/xmldsig#" -t -v '(//x:X509Certificate)[1]' \
+| xml sel -N x="https://www.w3.org/2000/09/xmldsig#" -t -v '(//x:X509Certificate)[1]' \
 | sed '1i\
 -----BEGIN CERTIFICATE-----
 ' \
@@ -142,7 +142,7 @@ aws s3 cp - "s3://${SECRET_BUCKET}/alpha/saml_private_key" --no-guess-mime-type 
     [...]
 ```
 
-1. With the public cert generated above, and replacing `$ENVIRONMENT`, configure a test integration at http://dashboard.int.identitysandbox.gov with the following parameters:
+1. With the public cert generated above, and replacing `$ENVIRONMENT`, configure a test integration at https://dashboard.int.identitysandbox.gov with the following parameters:
   - Issuer: `urn:gov:gsa:openidconnect.profiles:sp:sso:login_gov:gitlab_$ENVIRONMENT`
   - Return to App URL: `'https://gitlab.$ENVIRONMENT.gitlab.identitysandbox.gov'`
   - Level of Service:  `Authentication Only` (*Formerly labeled `IAL1`)

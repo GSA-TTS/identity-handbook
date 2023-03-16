@@ -128,7 +128,7 @@ For full details, read on.
 
 ### Initiate Phase
 
-An incident begins when someone becomes aware of a potential incident. We define “incident” broadly, following [NIST SP 800-61](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Login.gov.
+An incident begins when someone becomes aware of a potential incident. We define “incident” broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Login.gov.
 
 When a person outside the Login.gov team (the reporter) notices a Login.gov-related incident, they should begin reporting it by using the 18F incident response process (need link here), and then post about it in #login-situation. If they don’t get acknowledgment from the Login.gov team right away, they should escalate by contacting the Login.gov leads directly until they receive acknowledgment of their report.
 
@@ -247,7 +247,7 @@ The final step in handling a security incident is figuring out what we learned. 
 
 Conducting retrospectives is out of the scope of this document, but as a crash course, here’s an [introduction to blameless postmortems](https://codeascraft.com/2012/05/22/blameless-postmortems/). We follow the basic steps listed at [login-gov-postmortems](https://drive.google.com/open?id=1A9y94VgHPOcaCCTdGRh0aWINOrBjUwo2ZepzBlTM--8).
 
-The report should contain a timeline of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools such as [Infinite Hows](http://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) and [Five Whys](https://en.wikipedia.org/wiki/5_Whys) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
+The report should contain a timeline of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools such as [Infinite Hows](https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) and [Five Whys](https://en.wikipedia.org/wiki/5_Whys) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
 
 The report should also contain some basic response metrics:
 * Discovery method (how did we become aware of the issue?)
@@ -399,8 +399,8 @@ Anyone with access to production, including:
 
 ### Why do I need to participate in contingency planning exercises (wargames) and IR Fire Drills?
 
-* **Resources** - It takes a full team to respond, and every participant is important! 
+* **Resources** - It takes a full team to respond, and every participant is important!
 * **Readiness** - Only through practice will we be and remain ready to meet the challenges Login.gov faces
 * **Refinement** - Only through participating fully can we refine our processes to improve response and efficiency
 * **Required** - GSA authorizes Login.gov to operate, in part on the understanding that we will adhere to [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
-* **Regulation (Law)** - Per FISMA we must follow [NIST 800-61r2](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) - Computer Security Incident Handling Guide
+* **Regulation (Law)** - Per FISMA we must follow [NIST 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) - Computer Security Incident Handling Guide

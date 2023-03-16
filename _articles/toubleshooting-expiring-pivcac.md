@@ -93,13 +93,13 @@ Look for the following in the output:
 
 ```
 Subject Information Access:
-    CA Repository - URI:http://pki.treasury.gov/root_sia.p7c
+    CA Repository - URI:https://pki.treasury.gov/root_sia.p7c
 ```
 
 Next, download the p7c bundle for the repository:
 
 ```shell
-curl http://pki.treasury.gov/root_sia.p7c -o tmp/bundle.p7c
+curl https://pki.treasury.gov/root_sia.p7c -o tmp/bundle.p7c
 ```
 
 Finally, read in the certificates from the bundle and look for a replacement:

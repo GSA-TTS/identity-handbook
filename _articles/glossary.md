@@ -60,7 +60,7 @@ A privacy architecture that allows the [IdP](#idp) and [RP](#rp) to collaborate 
 ### (Triple) Blind Privacy
 A privacy architecture that includes the [Double Blind Privacy](#double-blind-privacy) model, with the addition of the [Hub](#hub) having zero disclosure  to User’s [PII](#pii).
 
-Source: [Privacy By Design](https://www.ipc.on.ca/images/Resources/operationalizing-pbd-guide.pdf), [SecureKey](http://securekey.com/wp-content/uploads/2015/09/SK-UN117-Trust-Framework-SecureKey-Concierge-Canada.pdf)
+Source: [Privacy By Design](https://www.ipc.on.ca/images/Resources/operationalizing-pbd-guide.pdf), [SecureKey](https://securekey.com/wp-content/uploads/2015/09/SK-UN117-Trust-Framework-SecureKey-Concierge-Canada.pdf)
 
 ### CCN
 
@@ -69,23 +69,23 @@ Source: [Privacy By Design](https://www.ipc.on.ca/images/Resources/operationaliz
 ### Credential
 An object or data structure that authoritatively binds an identity (and optionally, additional attributes) to a token possessed and controlled by a Subscriber.
 
-Source: [SP 800-63](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-2.pdf)
+Source: [SP 800-63](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-2.pdf)
 
 Evidence attesting to one’s right to credit or authority.
 
-Source: [FIPS 201](http://csrc.nist.gov/publications/fips/fips201-1/FIPS-201-1-chng1.pdf)
+Source: [FIPS 201](https://csrc.nist.gov/publications/fips/fips201-1/FIPS-201-1-chng1.pdf)
 
-Evidence or testimonials that support a claim of identity or assertion of an attribute and 
+Evidence or testimonials that support a claim of identity or assertion of an attribute and
 are intended to be used more than once.
 
-Source: [CNSSI-4009](http://www.ncsc.gov/nittf/docs/CNSSI-4009_National_Information_Assurance.pdf), [Searchable Source](http://www.fismapedia.org/index.php/Category:CNSSI_4009_Terms)
+Source: [CNSSI-4009](https://www.ncsc.gov/nittf/docs/CNSSI-4009_National_Information_Assurance.pdf), [Searchable Source](http://www.fismapedia.org/index.php/Category:CNSSI_4009_Terms)
 
 ### CSP
 **Credential Service Provider**
 
 A trusted entity that issues or registers Subscriber tokens and issues electronic credentials to Subscribers. The CSP may encompass [Registration Authorities (RAs)](#ra) and [Verifiers](#verifier) that it operates. A CSP may be an independent third party, or may issue credentials for its own use.
 
-Source: [SP 800-63](http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-2.pdf)
+Source: [SP 800-63](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-2.pdf)
 
 A CSP is often also an [IdP](#idp).
 
@@ -94,7 +94,7 @@ Documents that indicate that the holder is eligible for a service or benefit, su
 
 A set of rules, defined by the IT resource owner, for managing access to a resource (asset, service, or entity) and for what purpose.  A User's level of access is conditioned not only by your identity but is also likely to be constrained by a number of further security considerations.
 
-Source: [Entities and Entitlement](http://blog.opengroup.org/2012/08/07/entities-and-entitlement-the-bigger-picture-of-identity-management/)
+Source: [Entities and Entitlement](https://blog.opengroup.org/2012/08/07/entities-and-entitlement-the-bigger-picture-of-identity-management/)
 
 ### Factor
 A factor is a type of evidence that users can provide to prove they own an identity record or an account. There are three types of factors:
@@ -205,7 +205,7 @@ Level of Assurance describes the degree of confidence in the vetting processes r
 - Three Party Model: User, Identity Provider and Service Provider
 - Four Party model: User, Identity Provider, Attribute Provider and Service Provider
 
-Source: [NISTIR 7817](http://nvlpubs.nist.gov/nistpubs/ir/2012/NIST.IR.7817.pdf)
+Source: [NISTIR 7817](https://nvlpubs.nist.gov/nistpubs/ir/2012/NIST.IR.7817.pdf)
 
 ### MFA
 **Multi-factor Authentication**
@@ -219,7 +219,7 @@ An identity record present in the database that is missing one or more of the at
 ### OTP
 **One-time password**
 Token valid for one use. This token can be alphanumeric (using letters and numbers) or numeric (using only numbers). See https://en.wikipedia.org/wiki/One-time_password
-* Use **"one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership. Never use *one-time password*, *OTP*, or *TOTP* in the interface. 
+* Use **"one-time code"** to refer to any (numeric or alphanumeric) OTP sent to confirm device ownership. Never use *one-time password*, *OTP*, or *TOTP* in the interface.
 
 
 ### Passcode
@@ -242,7 +242,7 @@ We prefer Service Provider to Relying Party when describing client applications.
 
 An entity that relies upon the subscriber’s credentials, typically to process a transaction or grant access to information or a system.
 
-Source: [CNSSI-4009](http://www.ncsc.gov/nittf/docs/CNSSI-4009_National_Information_Assurance.pdf), [Searchable Source](http://www.fismapedia.org/index.php/Category:CNSSI_4009_Terms)
+Source: [CNSSI-4009](https://www.ncsc.gov/nittf/docs/CNSSI-4009_National_Information_Assurance.pdf), [Searchable Source](http://www.fismapedia.org/index.php/Category:CNSSI_4009_Terms)
 
 An entity that relies upon the Subscriber's token and credentials or a Verifier's assertion of a Claimant’s identity, typically to process a transaction or grant access to information or a system. Source: SP 800-63
 
