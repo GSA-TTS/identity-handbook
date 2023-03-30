@@ -118,13 +118,18 @@ aws-vault exec sandbox-power --
 
 ## `query-cloudwatch`
 
+**Note**: This script lives in the [identity-idp](https://github.com/18f/identity-idp)
+repository now.
+
 In the web UI, cloudwatch results are limited to:
 - 15 minutes of time
 - 10,000 results
 
 So to get around that, we have a script that can help split up the query into
 multiple slices of time and help combine the results, use the `--slice` to
-specify different slice durations.
+specify different slice durations. Use the `--complete` flag to automatically
+split up slices that have 10k responses (the limit) to ensure a complete
+listing of results.
 
 ```bash
 aws-vault exec sandbox-power --
