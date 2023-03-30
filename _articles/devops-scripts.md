@@ -118,13 +118,18 @@ aws-vault exec sandbox-power --
 
 ## `query-cloudwatch`
 
+**Note**: This script lives in the [identity-idp](https://github.com/18f/identity-idp)
+repository now.
+
 In the web UI, cloudwatch results are limited to:
 - 15 minutes of time
 - 10,000 results
 
 So to get around that, we have a script that can help split up the query into
 multiple slices of time and help combine the results, use the `--slice` to
-specify different slice durations.
+specify different slice durations. Use the `--complete` flag to automatically
+split up slices that have 10k responses (the limit) to ensure a complete
+listing of results.
 
 ```bash
 aws-vault exec sandbox-power --
@@ -140,12 +145,9 @@ The script can output as new-line delimited JSON (`--json`) or as a CSV (`--csv`
 Imitates `scp` by copying a file in and out of S3. Use the instance ID to refer to remote hosts
 (see [`ls-servers`](#ls-servers) to find them). **You must be on the VPN for this script to work.**
 
-**Also note that currently you must prepend the script with `bundle exec` in
-order for it to work due to a [known bug](https://github.com/18F/identity-devops/pull/5789).**
-
 ```bash
 aws-vault exec sandbox-power --
-    bundle exec ./bin/scp-s3 i-abcdef1234:/tmp/file.txt ./file.txt
+    ./bin/scp-s3 i-abcdef1234:/tmp/file.txt ./file.txt
 ```
 
 ## `ssm-instance`
