@@ -254,11 +254,11 @@ aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
 
 1. Recycle the app to get the new code out there (follow the [Production Deploy steps](#production))
 
-1. Schedule a [postmortem](#postmortem)
+1. Schedule a [retrospective](#retrospective)
 
-##### Postmortem
+##### Retrospective
 
-If you do end up rolling back a deploy, schedule a blameless postmortem afterwards. These help
+If you do end up rolling back a deploy, schedule a blameless retrospective afterwards. These help
 us think about new checks, guardrails, or monitoring to help ensure smoother deploys in the future.
 
 ### Passenger restart
