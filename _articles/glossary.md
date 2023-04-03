@@ -254,6 +254,11 @@ A trusted entity that establishes and vouches for the identity or attributes of 
 ### SAML
 **Security Assertion Markup Language**
 
+### SBAR
+**Situation, Background, Assessment, Recommendation**
+
+An [SBAR](https://en.wikipedia.org/wiki/SBAR) is a document format for making recommendations. We have our own [SBAR template]({% link _articles/sbar-template.md %}).
+
 ### SCR
 
 **Significant Change Request**
