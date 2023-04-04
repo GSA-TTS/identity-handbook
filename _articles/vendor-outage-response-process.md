@@ -54,6 +54,13 @@ individually. Each is controlled by a configuration flag:
 
 
 The possible values for each flag:
+Currently, this is available for the following vendors:
+- `vendor_status_acuant`
+- `vendor_status_lexisnexis_instantverify`
+- `vendor_status_lexisnexis_phone_finder` (ToDo: remove or update)
+- `vendor_status_lexisnexis_trueid`
+- `vendor_status_sms`
+- `vendor_status_voice`
 
 - `operational`
 - `full_outage`
@@ -83,3 +90,12 @@ off. Changes which would be visible are:
     - New phone numbers for SMS 2FA will not be verified.
 - Voice
     - New phone numbers for voice 2FA will not be verified
+
+Once we have received word that the vendor is back up and running, simply re-edit the configuration to delete the vendor status, or explicitly set it to `operational`.
+
+The user-facing implications of setting each of the vendors to `full_outage` are:
+
+*** Acuant
+*** Lexis Nexis Instant Verify
+*** Lexis Nexis Phone Finder
+*** Lexis Nexis TrueId
