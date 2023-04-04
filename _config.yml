@@ -22,6 +22,7 @@ copy_to_destination:
 
 keep_files:
   - assets/js
+  - assets/css
 
 plugins:
   - jekyll-redirect-from
