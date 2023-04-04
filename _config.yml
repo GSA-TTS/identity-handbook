@@ -20,6 +20,9 @@ sass:
 copy_to_destination:
   - node_modules/identity-style-guide/dist/assets
 
+keep_files:
+  - assets/js
+
 plugins:
   - jekyll-redirect-from
   - jekyll-last-modified-at

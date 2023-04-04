@@ -80,7 +80,7 @@ For additional events see the [legacy Analytics Event documentation][legacy-docu
 </div>
 
 <script type="module">
-import { loadAnalyticsEvents } from '{{ "/assets/build/analytics-events.js" | prepend: site.baseurl }}';
+import { loadAnalyticsEvents } from '{{ "/assets/js/analytics-events.js" | prepend: site.baseurl }}';
 
 loadAnalyticsEvents();
 </script>
