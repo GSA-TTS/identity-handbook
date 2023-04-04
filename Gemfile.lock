@@ -100,7 +100,7 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-support (3.9.4)
     safe_yaml (1.0.5)
-    sass-embedded (1.60.0)
+    sass-embedded (1.57.1)
       google-protobuf (~> 3.21)
       rake (>= 10.0.0)
     terminal-table (3.0.2)
