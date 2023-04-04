@@ -16,7 +16,7 @@ icon: lock
 <script type="module">
   import {
     setUpPrivatePage
-  } from '{{ "/assets/build/private-articles.js" | prepend: site.baseurl }}';
+  } from '{{ "/assets/js/private-articles.js" | prepend: site.baseurl }}';
 
   setUpPrivatePage();
 </script>

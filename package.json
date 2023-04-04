@@ -29,10 +29,10 @@
     "typescript": "^4.6.2"
   },
   "scripts": {
-    "clean": "rm -rf assets/build",
+    "clean": "rm -rf _site/assets/js",
     "cspell": "cspell --config cspell.json --no-progress '**/*.md' --exclude 'vendor/**' --exclude 'node_modules/**'",
     "prebuild:common": "npm run clean",
-    "build:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=assets/build --bundle --format=esm --splitting",
+    "build:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=_site/assets/js --bundle --format=esm --splitting",
     "build:dev": "npm run build:common -- --sourcemap=inline",
     "build:prod": "npm run build:common -- --minify",
     "build": "npm run build:prod",
