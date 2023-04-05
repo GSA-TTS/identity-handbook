@@ -25,3 +25,16 @@ To do the configuration change, edit the configuration (per the [guidance here](
 Once the restart completes, users in affected flows will be presented with an error message explaining the outage, or redirected to an error page if they are unable to continue.
 
 Once we have received word that the vendor is back up and running, simply re-edit the configuration to delete the vendor status, or explicitly set it to `operational`.
+
+### Disabling identity verification (IdV)
+
+Remote unsupervised identity verification depends on certain vendors being available to process requests. If one of the required vendors marked as `full_outage`, IdV will be unavailable and users will be shown an error message.
+
+Alternately, operators can explicitly disable IdV using the `idv_available` configuration key:
+
+```yaml
+# Setting idv_available to false will disable
+# remove unsupervised identity verification. 
+# Users will be shown an error message instead.
+idv_available: false
+```
