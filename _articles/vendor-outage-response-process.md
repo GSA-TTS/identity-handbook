@@ -16,7 +16,6 @@ Currently, this is available for the following vendors:
 
 The possible values are:
 - `operational`
-- `partial_outage` (not yet implemented)
 - `full_outage`
 
 The default value is `operational`, set in `config/application.yml.default`
