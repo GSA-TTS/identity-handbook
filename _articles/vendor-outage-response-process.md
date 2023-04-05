@@ -9,8 +9,8 @@ If an outage in a 3rd party vendor is identified, we can manually update the con
 
 Currently, this is available for the following vendors:
 - `vendor_status_acuant`
-- `vendor_status_lexisnexis_instant_verify` (not used?)
-- `vendor_status_lexisnexis_phone_finder` (ToDo: remove or update)
+- `vendor_status_lexisnexis_instant_verify`
+- `vendor_status_lexisnexis_phone_finder`
 - `vendor_status_lexisnexis_trueid`
 - `vendor_status_sms`
 - `vendor_status_voice`
