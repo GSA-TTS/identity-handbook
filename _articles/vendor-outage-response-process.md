@@ -9,7 +9,7 @@ If an outage in a 3rd party vendor is identified, we can manually update the con
 
 Currently, this is available for the following vendors:
 - `vendor_status_acuant`
-- `vendor_status_lexisnexis_instantverify`
+- `vendor_status_lexisnexis_instant_verify` (not used?)
 - `vendor_status_lexisnexis_phone_finder` (ToDo: remove or update)
 - `vendor_status_lexisnexis_trueid`
 - `vendor_status_sms`
@@ -27,9 +27,22 @@ Once the restart completes, users in affected flows will be presented with an er
 
 Once we have received word that the vendor is back up and running, simply re-edit the configuration to delete the vendor status, or explicitly set it to `operational`.
 
-The user-facing implications of setting each of the vendors to `full_outage` are:
+For any vendor outage:
+- If a new user attempts to sign up, they will be redirected to an outage page.
+- If an existing user attempts to enter or re-enter the document
+  authentication flow, they will be redirected to a vendor outage
+  page. The system retains sufficient information for them to continue
+  after the vendor outage is over.
 
-*** Acuant
-*** Lexis Nexis Instant Verify
-*** Lexis Nexis Phone Finder
-*** Lexis Nexis TrueId
+The additional user-facing implications of setting each of the vendors
+to `full_outage` are:
+
+    - Acuant - none
+    - Lexis Nexis Instant Verify - none
+    - Lexis Nexis Phone Finder - none
+    - Lexis Nexis TrueId - none
+    - SMS
+      - The `SMS` checkbox on the IDV dialogs will be disabled
+      - New phone numbers for SMS 2FA will not be verified.
+    - Voice -
+      - New phone numbers for voice 2FA will not be verified
