@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "@18f/identity-build-sass": "^1.1.0",
     "@18f/private-eye": "^2.1.0",
     "anchor-js": "^4.2.2",
+    "concurrently": "^8.0.1",
     "htm": "^3.1.0",
     "identity-style-guide": "^6.5.0",
     "js-yaml": "^4.1.0",
@@ -29,15 +31,20 @@
     "typescript": "^4.6.2"
   },
   "scripts": {
-    "clean": "rm -rf _site/assets/js",
+    "clean:js": "rm -rf _site/assets/js",
     "cspell": "cspell --config cspell.json --no-progress '**/*.md' --exclude 'vendor/**' --exclude 'node_modules/**'",
-    "prebuild:common": "npm run clean",
-    "build:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=_site/assets/js --bundle --format=esm --splitting",
-    "build:dev": "npm run build:common -- --sourcemap=inline",
-    "build:prod": "npm run build:common -- --minify",
-    "build": "npm run build:prod",
-    "prestart": "npm run clean",
-    "start": "npm run build:dev -- --watch",
+    "prebuild:js:common": "npm run clean:js",
+    "build:js:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=_site/assets/js --bundle --format=esm --splitting",
+    "build:js:dev": "npm run build:js:common -- --sourcemap=inline",
+    "build:js:prod": "npm run build:js:common -- --minify",
+    "prebuild:css": "mkdir -p _site/assets/css",
+    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css",
+    "build": "concurrently npm:build:js:prod npm:build:css",
+    "watch:js:dev": "npm run build:js:dev -- --watch",
+    "watch:css": "npm run build:css -- --watch",
+    "watch": "concurrently npm:watch:*",
+    "prestart": "npm run clean:js",
+    "start": "npm run watch",
     "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx",
     "typecheck": "tsc",
     "pages": "npm run build"
