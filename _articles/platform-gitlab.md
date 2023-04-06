@@ -123,7 +123,8 @@ openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out pub
 
 1. Grab the IDP sandbox signing certificate from <https://developers.login.gov/saml/> and get its fingerprint (use secure.login.gov instead of idp.int.identitysandbox.gov if you are doing this for gitlab prod/staging):
 ```
-curl -s https://idp.int.identitysandbox.gov/api/saml/metadata2023 \
+curl -s https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.time | date: '%Y' }}
+ \
 | xml sel -N x="http://www.w3.org/2000/09/xmldsig#" -t -v '(//x:X509Certificate)[1]' \
 | sed '1i\
 -----BEGIN CERTIFICATE-----
