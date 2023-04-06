@@ -1,5 +1,5 @@
 ---
-title: "GitLab"
+title: "GitLab Image Signing"
 description: "GitLab Image Signing"
 layout: article
 category: Platform
