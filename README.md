@@ -21,6 +21,17 @@ make run
 make test
 ```
 
+## Linting
+
+To check formatting:
+```
+npm run lint
+```
+To check spelling:
+```
+npm run cspell
+```
+
 ### NetlifyCMS
 
 The site is configured to use [NetlifyCMS](https://www.netlifycms.org/), so you can make changes via UI only by going to <https://handbook.login.gov/admin>.
