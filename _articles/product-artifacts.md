@@ -6,7 +6,7 @@ description: "Documentation Templates including SBARs, 1-Pagers, RFCs"
 redirect_from:
 - /articles/sbar-template.html
 - /articles/rfc-template.html
-toc_h_max: 2
+cSpell: ignore rollplans
 ---
 
 Here are a few product artifact (documentation) templates that we use in the
