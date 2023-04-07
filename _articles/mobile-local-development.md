@@ -6,9 +6,9 @@ category: "AppDev"
 subcategory: "Setup"
 ---
 
-These instructions will configure your local copy of the identity-idp app to serve web pages over your local computer network &mdash; the wifi in your home or office.
+These instructions will configure your local copy of the identity-idp app to serve web pages over your local computer network &mdash; the wifi in your home or office. You can broadcast the app to a mobile phone or tablet. Both your mobile device and your development computer (your laptop) must be connected to the same wifi network.
 
-Both your mobile device and your development computer must be connected to the same wifi network. You will also need a USB cable.
+The instructions also include steps to view your Android phone's screen on your development computer. For this you will need a USB cable.
 
 ## Android
 
@@ -46,3 +46,12 @@ HOST=0.0.0.0 make run-https
 ![Screenshot of inspecting an Android Chrome tab]({{ site.baseurl }}/images/inspect-android-chrome-tab.png)
 
 After you complete these steps, pages from the app are served from your development machine to your Android phone. Your phone's screen is visible on your desktop, giving you access to the browser developer tools and the ability to screen share the phone interface.
+
+## iPhone
+
+The procedure on an iPhone is similar to the Android technique, above. You may use the Safari browser. However:
+- You will not be able to view your phone's screen from your development computer's screen
+
+- You will not find a Safari tab within `chrome://inspect`
+
+- You may not need a USB cable nor to activate USB debugging
