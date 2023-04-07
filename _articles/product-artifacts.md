@@ -28,6 +28,8 @@ Brief explanatory documents. Not actually restricted to one page.
 
 - Providing background information on a topic
 - Documenting a problem or an issue that users experience
+- Building alignment around a problem that we might want to solve or communicating potential work 
+- Ideally used when building consensus
 
 
 
@@ -72,7 +74,7 @@ Brief explanatory documents. Not actually restricted to one page.
 
 - Collecting feedback from leadership on proposed changes
 - Weighing multiple choices to solve a problem
-- Proposals that affect more than one team
+- Ideally used when you have high urgency, or something which requires a timely decision (eg. production user impact, upcoming deadline, etc)
 
 
 
