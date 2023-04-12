@@ -25,11 +25,11 @@ make test
 
 To check formatting:
 ```
-npm run lint
+make lint
 ```
 To check spelling:
 ```
-npm run cspell
+make spellcheck
 ```
 
 ### NetlifyCMS
