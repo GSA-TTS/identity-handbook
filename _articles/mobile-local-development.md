@@ -38,7 +38,7 @@ After you complete these steps, pages from the app are served from your developm
 
 ## Debugging with desktop browser
 
-After you have completed the **Use the app from a mobile device** instrctions above, you may further want to view your phone's browser screen on your development computer's browser. This will allow you to use the desktop browser DevTools tools, and to screen-share your development process.
+After you have completed the **Use the app from a mobile device** instructions above, you may further want to view your phone's browser screen on your development computer's browser. This will allow you to use the desktop browser DevTools tools, and to screen-share your development process.
 
 ### Android / Chrome
 
@@ -56,4 +56,4 @@ After you have completed the **Use the app from a mobile device** instrctions ab
 
 ### iPhone / Safari
 
-TKTK
+This section in progress
