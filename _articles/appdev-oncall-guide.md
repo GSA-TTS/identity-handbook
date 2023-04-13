@@ -11,14 +11,14 @@ subcategory: Oncall
 Any engineer should be able to be oncall and we encourage all engineers to join the rotation to help
 distribute the load. Before being added to the oncall rotation, an engineer must have these prerequisites:
 
-1. Access to OpsGenie
+1. Access to Splunk On-Call
 2. Deploy access to production
 3. SSM access to production
 4. Join #identity-situation channel and #login-partnerships
 
-## OpsGenie Team & Rotations
+## Splunk On-Call Team & Rotations
 
-For OpsGenie access, ask Mo and the devops team.
+(See 
 
 Team: [End User](https://login-gov.app.opsgenie.com/teams/dashboard/22edb9cb-3110-4494-9f02-db0243780189/members)
 
