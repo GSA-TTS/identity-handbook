@@ -59,7 +59,10 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 - [**`18f/identity-oidc-sinatra`**](https://github.com/18F/identity-oidc-sinatra) Example service provider that uses OpenID connect and Sinatra.
 
-- [**`18f/identity-saml-rails`**](https://github.com/18F/identity-saml-rails) Example service provider that uses SAML and Rails.
+- [**`18f/identity-saml-sinatra`**](https://github.com/18F/identity-saml-sinatra) Example service provider that uses SAML and Sinatra.
+
+- [**`18f/identity-saml-rails`**](https://github.com/18F/identity-saml-rails){: .deprecated-link} (Archived)
+  Example service provider that uses SAML and Rails.
 
 ### Platform and Infrastructure
 
