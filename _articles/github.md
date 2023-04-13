@@ -84,7 +84,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**`18f/identity-base-image`**](https://github.com/18f/identity-base-image)
   AWS EC2 Image (AMI) definitions and build pipelines to match
 
-- [**`18f/identity-monitor`**](https://github.com/18f/identity-monitor)
+- [**`18f/identity-monitor`**](https://github.com/18f/identity-monitor){: .deprecated-link} (Archived)
   Smoke tests and NewRelic scripts that test the site
 
 - [**`18f/identity-lambda-functions`**](https://github.com/18f/identity-lambda-functions)
