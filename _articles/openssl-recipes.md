@@ -14,7 +14,7 @@ cert_path="config/certs/C=US, O=U.S. Government, OU=FPKI, CN=Federal Bridge CA G
 
 ## Get SHA-1 Fingerprint
 
-One use of the SHA-1 fingerprint is clients like the [identity-saml-sinatra][idenitity-saml-sinatra-fingerprint]
+One use of the SHA-1 fingerprint is clients like the [identity-saml-sinatra][identity-saml-sinatra-fingerprint]
 that verify the IDP's certificate.
 
 Key arguments: `-fingerprint -sha1` (`-sha1` is the default)
