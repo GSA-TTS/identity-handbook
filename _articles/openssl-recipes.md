@@ -24,7 +24,7 @@ openssl x509 -fingerprint -sha1 -noout -in "$cert_path"
 SHA1 Fingerprint=85:1C:1A:F4:FC:F3:68:48:BC:6F:94:8E:B7:AC:F8:62:E0:BE:1E:1A
 ```
 
-[identity-saml-sinatra-fingerprint](https://github.com/18F/identity-saml-sinatra/blob/fcfa223d76eae74b37077b94c1dfe6820e2eec50/.env.example#L6)
+[identity-saml-sinatra-fingerprint]: https://github.com/18F/identity-saml-sinatra/blob/fcfa223d76eae74b37077b94c1dfe6820e2eec50/.env.example#L6
 
 ## Get SHA256 Fingerprint
 
