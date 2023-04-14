@@ -83,4 +83,4 @@ Brief explanatory documents. Not actually restricted to one page.
 ## Other Documentation Templates
 
 - [Rollplans]({% link _articles/rollplans.md %}), for live changes to production
-- [Engineering Design Docs]({% link _articles/eng-design-doc.md %}){: .deprecated-link} (deprecated), superceded by [RFCs](#rfcs)
+- [Engineering Design Docs]({% link _articles/eng-design-doc.md %}){: #eng-design-doc .deprecated-link} (deprecated), superceded by [RFCs](#rfcs)
