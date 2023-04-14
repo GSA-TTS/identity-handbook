@@ -39,7 +39,7 @@ use SSO:
 * Scroll to "Contact methods" and ensure your phone is listed.  If not, use Add Contact Method to add it.
 * Scroll further down to "Paging Policies" and edit your "Primary Paging Policy".
   Most engineers use a policy like:
-  * Step 1 Immeidately...
+  * Step 1 Immediately...
     * Send a push notification to -> all my devices
     * Execute the next step if I have not responded within 1 minute
   * Step 2 Then... (Use "Add a Step")
