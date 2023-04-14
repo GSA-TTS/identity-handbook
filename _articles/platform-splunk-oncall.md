@@ -17,7 +17,7 @@ notification system.
 ### Getting an Account and Logging In
 
 Access can be provided for any team member with an on-call or emergency notification
-need.  Ask in #login-platform-support and tag @login-platform-help if you need
+need.  Ask in `#login-platform-support` and tag `@login-platform-help` if you need
 access.  One of the Splunk On-Call administrators, as noted in [Services and Accounts]({% link _articles/accounts.md %})
 will review your request and send you an invitation via email.
 
@@ -31,7 +31,7 @@ use SSO:
 * Enter `gsa_login` as the organizational slug value
 * Log in with enterprise credentials
 
-### Primary Paging Policy
+### Paging Policy
 
 **Note: If you do not setup your paging policies, the default notification method is SMS.**
 
@@ -53,11 +53,11 @@ use SSO:
     * Send a push notification to -> all my devices
 * Save the updated paging policy.
 
-If you choose not to use the [iOS Mobile App](#ios-mobile-app) it is suggested
+If you choose not to use the [iOS App](#ios-app) it is suggested
 that you use SMS first, then voice, then a repeated SMS notification for the final
 step.
 
-### iOS Mobile App
+### iOS App
 
 It is recommended that you use the Splunk On-Call mobile app on your GFE iPhone.  Download
 the app from the AppStore, open, and log in using the "Sign in with Enterprise SSO..."
@@ -72,7 +72,7 @@ To enable in-application notifications:
   "Background App Refresh", and "Cellular Data" are enabled.
   * Under the "Notifications" item ensure "Allow Notifications", "Critical Alerts", and "Sounds" are enabled.
   * See [iOS App Permission Settings](https://help.victorops.com/knowledge-base/ios-application/#ios-app-permission-settings) for details.
-* **Make sure you have set up your [Primary Paging Policy](#primary-paging-policy)!**
+* **Make sure you have set up your [Paging Policy](#paging-policy)!**
 
 As a backup you should also enable SMS notifications and if you don't mind some
 tedium, you can add the list of Splunk On-Call numbers under a contact then

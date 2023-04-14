@@ -18,14 +18,14 @@ distribute the load. Before being added to the oncall rotation, an engineer must
 
 ## Splunk On-Call Team & Rotations
 
-(See 
+Team: [AppDev](https://portal.victorops.com/dash/gsa_login#/team/team-0Ua2JuOlypN0Jssx/users)
 
-Team: [End User](https://login-gov.app.opsgenie.com/teams/dashboard/22edb9cb-3110-4494-9f02-db0243780189/members)
+[Rotations](https://portal.victorops.com/dash/gsa_login#/team/team-0Ua2JuOlypN0Jssx/rotations):
 
-Rotations:
+1. appdev-primary
+2. appdev-secondary
 
-1. [Primary Oncall ("End-User Primary")](https://login-gov.app.opsgenie.com/settings/schedule/detail/142b8527-8ef6-4d9d-b81e-24b45d0499ba)
-2. [Secondary Oncall ("End-User Secondary")](https://login-gov.app.opsgenie.com/settings/schedule/detail/1271f41d-aa0c-4a3e-86aa-23162ab5fc9d)
+See [Splunk On-Call]({% link _articles/platform-splunk-oncall.md %}) for more on our paging system.
 
 ## Emergency Contacts
 
