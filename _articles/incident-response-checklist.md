@@ -27,7 +27,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
     * Call in on-call members using the @login-appdev-oncall and @login-devops-oncall handles in Slack
     * Use @here in #login-situation if still understaffed
   * After hours:
-    * Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
+    * Slack or Splunk On-Call used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Roles assigned and duties started:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
   * **Scribe (SC)**: Notes significant events observed in the war room (hangout) to #login-situation to produce timeline / share with others not in room (Just notes - Not a transcript!)

@@ -24,7 +24,7 @@ To help balance the different workloads across the Login.gov Platform teams, we 
 
 All schedules rotate at 1300 (1PM) Eastern Time every Tuesday, and are signaled by an automated message in the [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49)** Slack channel, e.g.:
 
-![Screenshot of weekly Slack message for DevOps rotation handoffs]({{ site.baseurl }}/images/oncall-rotation-slack-weekly.png)
+![Screenshot of weekly Slack message for Platform rotation handoffs]({{ site.baseurl }}/images/oncall-rotation-slack-weekly.png)
 
 ## Roles
 
@@ -34,15 +34,15 @@ Mission: Take care of production!
 
 #### Quick Reference
 
-* [DevOps Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) -
+* [Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) -
 emergency contact list and other private information
 * [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arises
 * [Troubleshooting Quick Reference]({{site.baseurl}}/articles/troubleshooting-quick-reference.html) - when you are troubleshooting and not sure where to start 
-* [OpsGenie DevOps Team On-Call Dashboard](https://login-gov.app.opsgenie.com/teams/dashboard/2fbef770-e306-488e-bbe2-76e2c860a2c7/main) - to check the schedule and personnel status of Primary and Secondary On-Call rotations
+* [Platform Rotations in Splunk On-Call](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/rotations) - to check who is on call
 
 #### Responsibilities
 
-* **Acknowledge pages** - ACK OpsGenie pages within 5 minutes (if possible) to ensure a timely response and to avoid rollover to the Secondary On-Call
+* **Acknowledge pages** - ACK Splunk On-Call pages within 5 minutes (if possible) to ensure a timely response and to avoid rollover to the Secondary On-Call
 * **Appropriately respond to alerts** - Assess an alert's impact to end users and service providers and judge severity, acting as Incident Response reporter/Situation Lead if appropriate
 * **Check production (`prod`) environment** - Review systems and logs for indicators of issues which are not yet monitored, or unexpected behaviors
 * **Alert `@login-appdev-oncall` if production may be impacted** - Make sure they are aware anytime things are going poorly in production
@@ -59,7 +59,7 @@ emergency contact list and other private information
 ##### Entering
 
 Do these as you enter the Primary On-Call rotation:
-1. **Update the `@login-devops-oncall` Slack group handle** - In [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49), click on `@login-devops-oncall` in the channel topic, and then edit the list of users to match the new Primary and Seconday On-Call engineers, as per [the schedule in OpsGenie](https://login-gov.app.opsgenie.com/teams/dashboard/2fbef770-e306-488e-bbe2-76e2c860a2c7/main)
+1. **Update the `@login-devops-oncall` Slack group handle** - In [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49), click on `@login-devops-oncall` in the channel topic, and then edit the list of users to match the new Primary and Seconday On-Call engineers, as per [the schedule in Splunk On-Call](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/rotations)
 2. **Discuss recent issues with previous Primary On-Call engineer**, if any
 
 ##### Daily
@@ -90,7 +90,7 @@ Mission: Support the Primary On-Call engineer!
 #### Responsibilities
 
 * **Acknowledge and work on escalated pages** - ACK pages that Primary On-Call is unable to reach in initial 5-minute period
-* **[Override OpsGenie schedule](https://login-gov.app.opsgenie.com/teams/dashboard/2fbef770-e306-488e-bbe2-76e2c860a2c7/main) to act as Primary On-Call if scheduled Primary is unavailable**
+* **[Override Splunk On-Call schedule](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/scheduled-overrides) to act as Primary On-Call if scheduled Primary is unavailable**
 * **Assist with active incidents** - Provide additional technical support or offer to take Situation Lead duties
 * **Help out with excess toil** - Assist the Interrupts engineer if necessary
 * **Offer material and psychological support to Primary** - Empathize! Proactively reach out if they have experienced high stress situations or worked over 8 hours without any breaks
@@ -197,9 +197,11 @@ __Note - This is not currently a rotation.  We will reassess our approach to Git
 
 To temporarily take over the Primary or Secondary On-Call schedule:
 
-1. Open the [DevOps On-Call dashboard in OpsGenie](https://login-gov.app.opsgenie.com/teams/dashboard/2fbef770-e306-488e-bbe2-76e2c860a2c7/main)
-2. Scroll down to the **On-call schedules** section and expand the appropriate Devops Schedule (Primary or Secondary)
-3. Under the **Overrides** schedule, click _Add Override_ and enter the team member and time range to override with
+1. Open [Platform Team Overrides](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/scheduled-overrides)
+1. Click "Create Override"
+1. In "Override for" select which team member should get alerts during the override period
+1. Select the start and end time of the override
+1. Click "Create" to set the override
 
 ## Participating in Rotations
 
@@ -227,20 +229,8 @@ Before joining the Primary/Secondary On-Call rotation schedules for the Platform
 * Participated in at least one "Klaxon" session (if sessions are running)
 * Joined [`identity-devops` Google Hangout group](https://chat.google.com/room/AAAAJIpl9Oo) (in case of Slack outage)
 * Able to SSM into `prod` EC2 instances
-* OpsGenie app installed on phone and signed in
-* [OpsGenie profile and notifications](https://login-gov.app.opsgenie.com/settings/user/profile) configured
-  * Suggested notification for New Alert:
-    * Mobile App - Immediately
-    * Email - Immediately
-    * SMS - After 3 minutes
-    * Call - After 4 minutes
-  * Set call notification for "Schedule Start/End" (_this will also give you active voice for the month so you don't lose your phone_)
-* Connect your OpsGenie and Slack accounts:
-  * In Slack, enter `/genie connect`
-  * Click the link
-  * Confirm
-  * Use `/genie help` to get started or see the [OpsGenie - Slack Integration Docs](https://docs.opsgenie.com/docs/slack-app-integration)
-* Created test alarm in OpsGenie to verify notification works (_please ACK before 5 minutes to avoid notifying Secondary On-Call_)
+* [Splunk On-Call - Paging Policy]({% link _articles/platform-splunk-oncall.md %}#paging-policy) configured
+* [Splunk On-Call - iOS App]({% link _articles/platform-splunk-oncall.md %}#ios-app) installed and configured
 * Created and tested GSA email IdP account with SMS and PIV enabled in:
   * `int`
   * `staging`

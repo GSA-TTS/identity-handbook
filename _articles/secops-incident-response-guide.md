@@ -64,7 +64,7 @@ Initial steps:
     * Call in on-call members using the @login-appdev-oncall and @login-devops-oncall handles in Slack
     * Use @here in #login-situation if still understaffed
   * After hours:
-    * Slack or OpsGenie used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
+    * Slack or Splunk On-Call used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Roles are assigned when possible as responders join the incident:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
   * **Technical Lead (TL)**: Leads technical investigation and mitigation
@@ -364,9 +364,9 @@ Anyone with access to production, including:
 
 * Business hours:
   * The current AppDev Primary and Secondary on-call
-  * The current DevOps Primary and Secondary on-call
+  * The current Platform Primary and Secondary on-call
   * Additional Responders as needed - The Situation Lead can call in anyone defined in [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to)
-* After hours - DevOps On Call and Application On Call - Additional resources will be brought in via OpsGenie notification
+* After hours - Platform On Call and Application On Call - Additional resources will be brought in via Splunk On-Call notification
 
 ### What is expected when participating?
 
