@@ -34,6 +34,9 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**`18f/identity-hostdata`**](https://github.com/18f/identity-hostdata)
   Gem that provides functionality for our Ruby applications on our EC2 infrastructure to download secrets and read configs.
 
+- [**`18f/identity-loging`**](https://github.com/18f/identity-loging)
+  Gem that sets up common log formatting and configuration for Rails applications
+
 - [**`18F/omniauth_login_dot_gov`**](https://github.com/18F/omniauth_login_dot_gov)
   Provides an Omniauth strategy for Login.gov that helps other projects integrate with Login.gov more easily. Some use cases include the [identity-dashboard](https://github.com/18f/identity-dashboard) as well as Touchpoints, USMC and search.gov
 
@@ -59,7 +62,10 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 - [**`18f/identity-oidc-sinatra`**](https://github.com/18F/identity-oidc-sinatra) Example service provider that uses OpenID connect and Sinatra.
 
-- [**`18f/identity-saml-rails`**](https://github.com/18F/identity-saml-rails) Example service provider that uses SAML and Rails.
+- [**`18f/identity-saml-sinatra`**](https://github.com/18F/identity-saml-sinatra) Example service provider that uses SAML and Sinatra.
+
+- [**`18f/identity-saml-rails`**](https://github.com/18F/identity-saml-rails){: .deprecated-link} (Archived)
+  Example service provider that uses SAML and Rails.
 
 ### Platform and Infrastructure
 
@@ -78,7 +84,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**`18f/identity-base-image`**](https://github.com/18f/identity-base-image)
   AWS EC2 Image (AMI) definitions and build pipelines to match
 
-- [**`18f/identity-monitor`**](https://github.com/18f/identity-monitor)
+- [**`18f/identity-monitor`**](https://github.com/18f/identity-monitor){: .deprecated-link} (Archived)
   Smoke tests and NewRelic scripts that test the site
 
 - [**`18f/identity-lambda-functions`**](https://github.com/18f/identity-lambda-functions)

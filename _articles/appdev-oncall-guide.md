@@ -11,21 +11,21 @@ subcategory: Oncall
 Any engineer should be able to be oncall and we encourage all engineers to join the rotation to help
 distribute the load. Before being added to the oncall rotation, an engineer must have these prerequisites:
 
-1. Access to OpsGenie
+1. Access to Splunk On-Call
 2. Deploy access to production
 3. SSM access to production
 4. Join #identity-situation channel and #login-partnerships
 
-## OpsGenie Team & Rotations
+## Splunk On-Call Team & Rotations
 
-For OpsGenie access, ask Mo and the devops team.
+Team: [AppDev](https://portal.victorops.com/dash/gsa_login#/team/team-0Ua2JuOlypN0Jssx/users)
 
-Team: [End User](https://login-gov.app.opsgenie.com/teams/dashboard/22edb9cb-3110-4494-9f02-db0243780189/members)
+[Rotations](https://portal.victorops.com/dash/gsa_login#/team/team-0Ua2JuOlypN0Jssx/rotations):
 
-Rotations:
+1. appdev-primary
+2. appdev-secondary
 
-1. [Primary Oncall ("End-User Primary")](https://login-gov.app.opsgenie.com/settings/schedule/detail/142b8527-8ef6-4d9d-b81e-24b45d0499ba)
-2. [Secondary Oncall ("End-User Secondary")](https://login-gov.app.opsgenie.com/settings/schedule/detail/1271f41d-aa0c-4a3e-86aa-23162ab5fc9d)
+See [Splunk On-Call]({% link _articles/platform-splunk-oncall.md %}) for more on our paging system.
 
 ## Emergency Contacts
 

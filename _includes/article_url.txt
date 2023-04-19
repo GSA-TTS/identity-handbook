@@ -1,5 +1,9 @@
 {%- if include.article.redirect_to -%}
-  {{ article.redirect_to }}
+  {%- if include.redirect_to contains '://' -%}
+    {{ article.redirect_to }}
+  {%- else -%}
+    {{ article.redirect_to | prepend: site.baseurl }}
+  {%- endif -%}
 {%- else -%}
   {{ article.url | prepend: site.baseurl }}
 {%- endif -%}

@@ -43,7 +43,7 @@ Each Login.gov team has their own personalized [GDoc/Onboarding Template / Check
 ### Additional Steps for Engineers and Technical Staff
 
 - [Request Admin rights on your TTS Macbook](https://handbook.tts.gsa.gov/equipment/#admin-rights) to allow installation of the tools you will need.
-- (Optional) [Add your gpg key to github](https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/)
+- (Optional) [Add your gpg key to github](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account)
 - Complete
 
 

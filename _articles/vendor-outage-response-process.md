@@ -46,3 +46,16 @@ to `full_outage` are:
       - New phone numbers for SMS 2FA will not be verified.
     - Voice -
       - New phone numbers for voice 2FA will not be verified
+
+### Disabling identity verification (IdV)
+
+Remote unsupervised identity verification depends on certain vendors being available to process requests. If one of the required vendors marked as `full_outage`, IdV will be unavailable and users will be shown an error message.
+
+Alternately, operators can explicitly disable IdV using the `idv_available` configuration key:
+
+```yaml
+# Setting idv_available to false will disable
+# remove unsupervised identity verification. 
+# Users will be shown an error message instead.
+idv_available: false
+```

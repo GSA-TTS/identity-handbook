@@ -235,6 +235,15 @@ A collection of random characters (words and numerals) or short words used to ac
 
 See [PII Guidance]({% link _articles/pii-guidance.md %}) for more on safe handling of PII.
 
+### RA
+**Registration Authority**
+A trusted entity that establishes and vouches for the identity or attributes of a Subscriber to a CSP. The RA may be an integral part of a CSP, or it may be independent of a CSP, but it has a relationship to the CSP(s).
+
+### RFC
+**Request for Comments**
+An [RFC](https://en.wikipedia.org/wiki/Request_for_Comments) is a document format format publishing a plan and requesting feedback. We have our own [RFC template]({% link _articles/product-artifacts.md %}#rfcs).
+
+
 ### RP
 **Relying Party**
 
@@ -246,18 +255,13 @@ Source: [CNSSI-4009](https://www.ncsc.gov/nittf/docs/CNSSI-4009_National_Informa
 
 An entity that relies upon the Subscriber's token and credentials or a Verifier's assertion of a Claimant’s identity, typically to process a transaction or grant access to information or a system. Source: SP 800-63
 
-### RA
-**Registration Authority**
-A trusted entity that establishes and vouches for the identity or attributes of a Subscriber to a CSP. The RA may be an integral part of a CSP, or it may be independent of a CSP, but it has a relationship to the CSP(s).
-
-
 ### SAML
 **Security Assertion Markup Language**
 
 ### SBAR
 **Situation, Background, Assessment, Recommendation**
 
-An [SBAR](https://en.wikipedia.org/wiki/SBAR) is a document format for making recommendations. We have our own [SBAR template]({% link _articles/sbar-template.md %}).
+An [SBAR](https://en.wikipedia.org/wiki/SBAR) is a document format for making recommendations. We have our own [SBAR template]({% link _articles/product-artifacts.md %}#sbars).
 
 ### SCR
 

@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting OpenSSL Command Line Recipes"
+title: "OpenSSL Command Line Recipes"
 description: "Commands for common certificate tasks, useful for PIV/CAC or AAMVA credentials"
 layout: article
 subcategory: "X509 and PIV/CAC Certificates"
@@ -11,6 +11,20 @@ For all these commands, we use `$cert_path`, here's an example cert:
 ```bash
 cert_path="config/certs/C=US, O=U.S. Government, OU=FPKI, CN=Federal Bridge CA G4.pem"
 ```
+
+## Get SHA-1 Fingerprint
+
+One use of the SHA-1 fingerprint is clients like the [identity-saml-sinatra][identity-saml-sinatra-fingerprint]
+that verify the IDP's certificate.
+
+Key arguments: `-fingerprint -sha1` (`-sha1` is the default)
+
+```bash
+openssl x509 -fingerprint -sha1 -noout -in "$cert_path"
+SHA1 Fingerprint=85:1C:1A:F4:FC:F3:68:48:BC:6F:94:8E:B7:AC:F8:62:E0:BE:1E:1A
+```
+
+[identity-saml-sinatra-fingerprint]: https://github.com/18F/identity-saml-sinatra/blob/fcfa223d76eae74b37077b94c1dfe6820e2eec50/.env.example#L6
 
 ## Get SHA256 Fingerprint
 
