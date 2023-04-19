@@ -126,9 +126,9 @@ The possible values for each flag:
 - `operational`
 - `full_outage`
 
-Each flag can be set in the file [`config/application.yml`]. The default for each is `operational`.
+Each flag can be set in the file `config/application.yml`. The default for each is `operational`.
 
-To do the configuration change, edit the configuration (per the [guidance here]({% link _articles/appdev-secrets-configuration.md %}). The final step is to restart server instances. Once the restart completes, users in affected flows will be presented with an error message explaining the outage, or redirected to an error page if they are unable to continue.
+To edit this file, use the [guidance here]({% link _articles/appdev-secrets-configuration.md %}). The final step in the guidance is to restart server instances. Once the restart completes, users in affected flows will be presented with an error message explaining the outage, or redirected to an error page if they are unable to continue.
 
 Once we have received word that the vendor is back up and running, simply re-edit the configuration to delete the vendor status, or explicitly set it to `operational`.
 
