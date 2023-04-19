@@ -97,7 +97,7 @@ For any vendor outage:
 * [Completely disabling identity verification](#completely-disabling-identity-verification)
 * [Turning off individual vendors](#turning-off-individual-vendors)
 
-These two are functionally equivelent at present; they both turn off identity verification (IdV). If one of the required vendors is marked as `full_outage`, IdV will be unavailable and users will be shown an error message.
+These two are functionally equivalent at present; they both turn off identity verification (IdV). If one of the required vendors is marked as `full_outage`, IdV will be unavailable and users will be shown an error message.
 
 ## Completely disabling identity verification
 
