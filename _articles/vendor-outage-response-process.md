@@ -11,7 +11,7 @@ There are two ways to turn off flows:
 * [Completely disabling identity verification](#completely-disabling-identity-verification)
 * [Turning off individual vendors](#turning-off-individual-vendors)
 
-These two are functionally equivelent at present; they both turn off identity verification (IdV). If one of the required vendors is marked as `full_outage`, IdV will be unavailable and users will be shown an error message.
+These two are functionally equivalent at present; they both turn off identity verification (IdV). If one of the required vendors is marked as `full_outage`, IdV will be unavailable and users will be shown an error message.
 
 ## Completely disabling identity verification
 
@@ -19,7 +19,7 @@ Operators can explicitly disable IdV using the `idv_available` configuration key
 
 ```yaml
 # Setting idv_available to false will disable
-# remove unsupervised identity verification. 
+# remove unsupervised identity verification.
 # Users will be shown an error message instead.
 idv_available: false
 ```
@@ -40,7 +40,7 @@ The possible values for each flag:
 - `operational`
 - `full_outage`
 
-Each flag can be set in the file [`config/application.yml`]. The default for each is `operational`. 
+Each flag can be set in the file [`config/application.yml`]. The default for each is `operational`.
 
 To do the configuration change, edit the configuration (per the [guidance here]({% link _articles/appdev-secrets-configuration.md %}). The final step is to restart server instances. Once the restart completes, users in affected flows will be presented with an error message explaining the outage, or redirected to an error page if they are unable to continue.
 
