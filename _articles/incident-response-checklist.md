@@ -112,7 +112,7 @@ procedures.
 * **(Every 30 Minutes)** [Update StatusPage]({% link _articles/statuspage-process.md %}#update) (if an incident is posted)
 
 *Resolve and Retrospect*
-* [StatusPage incdient end process completed]({% link _articles/statuspage-process.md %}#end)
+* [StatusPage incident end process completed]({% link _articles/statuspage-process.md %}#end)
 
 ### Responder
 
