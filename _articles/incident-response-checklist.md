@@ -21,7 +21,7 @@ For detailed information see the [Security Incident Response Guide]({% link _art
 There is one checklist per-role starting with the Situation Lead.
 
 * [Situation Lead](#situation-lead) - Declares incident and facilitates incident response
-* [Tech Lead](#tech-lead) - Focuses on hands on technical response
+* [Tech Lead](#technical-lead) - Focuses on hands on technical response
 * [Messenger](#messenger) - Passes information out of the situation room to stakeholders
 * [Scribe](#scribe) - Keeps running notes in Slack on what is happening in the situation room
 * [Responder](#responder) - Everyone else in the situation room without an assigned role
@@ -43,18 +43,18 @@ procedures.
 ### Situation Lead
 
 *Initiate and Assess*
-* In [situation room]({% link _articles/secops-incident-response-guide.md %}#situation-room)
+* In situation room
 * Initial [severity level assessed]({% link _articles/secops-incident-response-guide.md %}#incident-severities)
 * Initial roles assigned if possible - Continue with unfilled roles if needed
-* Incident declared using [Declare Incident Workflow]({% link _articles/secops-incident-response-guide.md %}#declare-incident-workflow)
-* Additional responders called in using [emergency contact process]({% link _articles/secops-incident-response-guide.md %}#emergency-contact-process) if needed
-* [Tech Lead](#tech-lead) role assigned and focused on technical response
-* [Scribe](#scribe) role assigned and taking notes in [situation thread]({% link _articles/secops-incident-response-guide.md %}#situation-thread)
+* Incident declared using the Slack "Declare Incident Workflow"
+* Additional responders called in using Splunk On-Call, Slack, or voice
+* [Tech Lead](#technical-lead) role assigned and focused on technical response
+* [Scribe](#scribe) role assigned and taking notes in situation thread
 * [Messenger](#messenger) roles assigned
 
 *Mitigate*
 (Continuous)
-* [Situation room is well controlled]({% link _articles/secops-incident-response-guide.md %}#situation-room-control) (On topic and generative environment)
+* Situation room is well controlled
 * GSA-IR briefed when asked
 * [Severity level is appropriate]({% link _articles/secops-incident-response-guide.md %}#incident-severities) or incident is cancelled if false-positive
 * Roles being effectively executed - Adjust/reassign as needed
@@ -71,7 +71,7 @@ procedures.
 ### Technical Lead
 
 *Initiate and Assess*
-* In [situation room]({% link _articles/secops-incident-response-guide.md %}#situation-room)
+* In situation room
 * Evidence of incident confirmed and shared with responders
 
 *Mitigate* (Continous)
@@ -85,14 +85,14 @@ procedures.
 ### Scribe
 
 *Initiate and Assess*
-* In [situation room]({% link _articles/secops-incident-response-guide.md %}#situation-room)
-* [Impact assessment]({% link _articles/secops-incident-response-guide.md %}#impact-assessment) and [incident severity]({% link _articles/secops-incident-response-guide.md %}#incident-severities)notes recorded in [situation thread]({% link _articles/secops-incident-response-guide.md %}#situation-thread)
+* In situation room
+* Impact assessment notes recorded in situation thread
 * Incident Review document created using [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and moved to the year's subfolder under the [Incident Reviews Folder](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?usp=sharing)
-* Link to Incident Review shared in [situation thread]({% link _articles/secops-incident-response-guide.md %}#situation-thread)
+* Link to Incident Review shared in situation thread
 
 *Mitigate* (Continuous)
 * **(Every 30 Minutes)** Time check verbally called out
-* Any finding or significant event noted in [situation thread]({% link _articles/secops-incident-response-guide.md %}#situation-thread)
+* Any finding or significant event noted in situation thread
 * Responders asked to share artifacts (non-sensitive screenshots, command snippets, etc) in situation thread
 
 *Resolve and Retrospect*
@@ -102,7 +102,7 @@ procedures.
 ### Messenger
 
 *Initiate and Assess*
-* In [situation room]({% link _articles/secops-incident-response-guide.md %}#situation-room)
+* In situation room
 * **If a public impacting (availability) incident**, posts initial incident notice following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)   
 * Situation Report (sitrep) ticket created in [identity-security-private repo](https://github.com/18F/identity-security-private/issues/new?assignees=&labels=task%3A+IR&template=incidents.md&title=security+incident+capture)
 * [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) used to create send notice to GSA-IR, ISSM, and ISSO
@@ -117,10 +117,10 @@ procedures.
 ### Responder
 
 *Initiate, Assess, and Mitigate* (Continuous)
-* In [situation room]({% link _articles/secops-incident-response-guide.md %}#situation-room)
+* In situation room
 * Volunteer to fill unfilled roles
 * Follow direction of [Situation Lead](#situation-lead)
-* Support [Tech Lead](#tech-lead) with parallel tasks as needed
+* Support [Tech Lead](#technical-lead) with parallel tasks as needed
 * If you have additional relevant evidence or suggestions, share when appropriate
 * Drop from the situation room when asked
 * Ask to leave if you have no actions to take
@@ -132,15 +132,15 @@ procedures.
 ### Comms Lead
 
 * Notified by the @login-comms-oncall Slack handle (Target: 30 minutes before crisis comms level reached)
-* Monitors the [situation thread]({% link _articles/secops-incident-response-guide.md %}#situation-thread)
-* If needed, briefly joins [situation room]({% link _articles/secops-incident-response-guide.md %}#situation-room) to gather context
+* Monitors the situation thread
+* If needed, briefly joins situation room to gather context
 * Follows the [Login.gov Incident Comms Playbook](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.330ecfi08z29)
 
 ### Envoy
 
 * Notified by partner email to Partner Down address
 * Check in with Situation Lead if incident is active
-* Use [emergency contact process]({% link _articles/secops-incident-response-guide.md %}#emergency-contact-process) to pull in responders if a situation has not been declared
+* Use Splunk On-Call or phone to pull in responders if a situation has not been declared
 * NOT acting as Login.gov Situation Lead
 * Partner situation room joined
 * Important status and context communicated between Login.gov and partner situation rooms
@@ -150,12 +150,12 @@ procedures.
 ### Executive On-Call
 
 * Notified by the @login-executive-oncall Slack handle
-* Monitors the [situation thread]({% link _articles/secops-incident-response-guide.md %}#situation-thread)
+* Monitors the situation thread
 * Ensure protection and support of incident responders
 
 ### GSA IR
 
-* Joins [situation room]({% link _articles/secops-incident-response-guide.md %}#situation-room) to be briefed by Situation Lead
+* Joins situation room to be briefed by Situation Lead
 * Initiates GSA-IR incident if warranted and shares case number
 * Pulls in additional GSA-IR and other GSA level responders as needed
 * Manages required notifications to CISA, CERT, and other parties
