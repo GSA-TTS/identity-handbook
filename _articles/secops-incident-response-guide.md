@@ -41,35 +41,10 @@ Login.gov incident response operates under the GSA Incident Response framework. 
   * [Low Severity](#low-severity)
 * [Frequently Asked Questions and Expectations](#frequently-asked-questions-and-expectations)
 
-MISSING 
-
-### Impact Assessment
-
-### Situation Room
-
-### Situation Room Control
-
-### Situation Thread
-
-### Sharing Technical Context
-
-### Normal System Operation
-
-### Declare Incident Workflow
-
-### Emergency Contact Process
-
-### Engaging Incident Comms
-
-See [Incident Comms Playbook - Phase 2: ASSESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c)
-for the incident level symptoms, impact, and duration.  It is the responsibility
-of the **Messenger** to provide 30 minutes advance notice to @login-comms-oncall.
-
 ## Overview
 
-The incident response process has four [phases](#phases):
-* [Initiate](#initiate-phase) - An incident is detected, [declared](#incident-declaration) by the [Situation Lead](#situation-lead), and responders assemble in the [situation room](#situation-room)
-* [Assess](#assess-phase) - The situation is assessed, initial [incident severity](#incident-severity) is confirmed, 
+At a high level, incident response follows this process:
+
 ### Phases
 
 #### Initiate
