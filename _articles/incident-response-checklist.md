@@ -28,7 +28,7 @@ There is one checklist per-role starting with the Situation Lead.
 Find and follow your appropriate role checklist.  Checklists are intentionally terse
 with links to supporting process and information where needed.
 
-These additional roles are external to and highly engaged with responders in the situation room:
+These additional roles are external to, and highly engaged with, responders in the situation room:
 
 * [Comms Lead](#comms-lead) - Login.gov communications lead overseeing crisis communications
 * [Envoy](#envoy) - Joins agency partner situation room in case of joint incident and ensures appropriate inter-team coordination
@@ -77,7 +77,7 @@ procedures.
 *Mitigate* (Continous)
 * [Technical context shared]({% link _articles/secops-incident-response-guide.md %}#sharing-technical-context) with responders in room
 * [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) used where appropriate and steps executed
-* Parallel lines of investigation and mitigation to delegate to [other responders](#responder)
+* Creates parallel lines of investigation and mitigation to delegate to [other responders](#responder)
 
 *Resolve and Retrospect*
 * [Normal system operation]({% link _articles/secops-incident-response-guide.md %}#normal-system-operation) confirmed
@@ -131,7 +131,7 @@ procedures.
 
 ### Comms Lead
 
-* Notified by the @login-comms-oncall Slack handle (Target: 30 minutes before crisis comms level reached)
+* Notified by the `@login-comms-oncall` Slack handle (Target: 30 minutes before crisis comms level reached)
 * Monitors the situation thread
 * If needed, briefly joins situation room to gather context
 * Follows the [Login.gov Incident Comms Playbook](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.330ecfi08z29)
@@ -142,14 +142,14 @@ procedures.
 * Check in with Situation Lead if incident is active
 * Use Splunk On-Call or phone to pull in responders if a situation has not been declared
 * NOT acting as Login.gov Situation Lead
-* Partner situation room joined
+* Joins partner situation room (or equivalent)
 * Important status and context communicated between Login.gov and partner situation rooms
 * Can ask for technical resource from Login.gov situation room to join partner room
 * Can not bring partner responders into Login.gov situation room
 
 ### Executive On-Call
 
-* Notified by the @login-executive-oncall Slack handle
+* Notified by the `@login-executive-oncall` Slack handle
 * Monitors the situation thread
 * Ensure protection and support of incident responders
 
