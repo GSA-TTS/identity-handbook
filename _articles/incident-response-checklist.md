@@ -75,12 +75,12 @@ procedures.
 * Evidence of incident confirmed and shared with responders
 
 *Mitigate* (Continous)
-* [Technical context shared]({% link _articles/secops-incident-response-guide.md %}#sharing-technical-context) with responders in room
+* Technical context shared with responders in the room
 * [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) used where appropriate and steps executed
 * Creates parallel lines of investigation and mitigation to delegate to [other responders](#responder)
 
 *Resolve and Retrospect*
-* [Normal system operation]({% link _articles/secops-incident-response-guide.md %}#normal-system-operation) confirmed
+* Normal system operation confirmed
 
 ### Scribe
 
