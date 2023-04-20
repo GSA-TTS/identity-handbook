@@ -97,15 +97,21 @@ For any vendor outage:
 * [Completely disabling identity verification](#completely-disabling-identity-verification)
 * [Turning off individual vendors](#turning-off-individual-vendors)
 
-These two are functionally equivalent at present; they both turn off identity verification (IdV). If one of the required vendors is marked as `full_outage`, IdV will be unavailable and users will be shown an error message.
+These two are functionally equivalent at present; they both turn off
+identity verification (IdV). If one of the required vendors is marked
+as `full_outage`, IdV will be unavailable and users will be shown an
+error message.
 
-Both methods involve changing configuration flags in the file`config/application.yml`.
-To edit this file, use the [guidance here]({% link _articles/appdev-secrets-configuration.md %}).
-The final step in the guidance is to restart server instances. Once the restart completes,
-users in affected flows will be presented with an error message explaining the outage, or
-redirected to an error page if they are unable to continue.
+Both methods involve changing configuration flags in the
+file`config/application.yml`. To edit this file, use the
+[guidance here]({% link _articles/appdev-secrets-configuration.md %}).
+The final step in the guidance is to restart server instances. Once the
+restart completes, users in affected flows will be presented with an
+error message explaining the outage, or redirected to an error page if
+they are unable to continue.
 
-Once we have received word that the vendor is back up and running, simply re-edit the configuration and delete the vendor status.
+Once we have received word that the vendor is back up and running,
+simply re-edit the configuration and delete the vendor status.
 
 ## Completely disabling identity verification
 
@@ -120,7 +126,8 @@ idv_available: false
 
 ## Turning off individual vendors
 
-Several vendors or third-party services can be turned off individually. Each is controlled by a configuration flag:
+Several vendors or third-party services can be turned off
+individually. Each is controlled by a configuration flag:
 
 | vendor | flag(s) |
 |---------|------|
@@ -137,7 +144,9 @@ The possible values for each flag:
 The default value for each of the flags is `operational`.
 
 When any flag is set to `full_outage` this is what happens:
-- If a new user attempts to sign up, they will be redirected to an outage page.
+
+- If a new user attempts to sign up, they will be redirected to an
+  outage page.
 - If an existing user attempts to enter or re-enter the document
   authentication flow, they will be redirected to a vendor outage
   page. The system retains sufficient information for them to continue
@@ -157,6 +166,11 @@ to `full_outage` are:
       - New phone numbers for voice 2FA will not be verified
 There are additional user-facing implications of setting some of the services to `full_outage`. At present, users will never see them because IDV is completely disabled when any service is turned off. Changes which would be visible are:
 There are additional user-facing implications of setting some of the services to `full_outage`. At present, users will never see them because IdV is completely disabled when any service is turned off. Changes which would be visible are:
+
+There are additional user-facing implications of setting some of the
+services to `full_outage`. At present, users will never see them
+because IdV is completely disabled when any service is turned
+off. Changes which would be visible are:
 
 - Acuant - none
 - Lexis Nexis Instant Verify - none
