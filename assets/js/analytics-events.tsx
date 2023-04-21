@@ -198,6 +198,7 @@ function Event({ event }: { event: AnalyticsEvent }) {
         previous_event_names={previousEventNames}
         attributes={attributes}
       />
+      <a href="#main-content">Back to top</a>
     </div>
   );
 }
