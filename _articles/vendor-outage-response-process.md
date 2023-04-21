@@ -21,6 +21,7 @@ error message.
 
 Both methods involve changing configuration flags in the
 file `config/application.yml`. To edit this file, use the
+
 [guidance here]({% link _articles/appdev-secrets-configuration.md %}).
 The final step in the guidance is to restart server instances. Once the
 restart completes, users in affected flows will be presented with an
@@ -104,6 +105,7 @@ error message.
 
 Both methods involve changing configuration flags in the
 file`config/application.yml`. To edit this file, use the
+
 [guidance here]({% link _articles/appdev-secrets-configuration.md %}).
 The final step in the guidance is to restart server instances. Once the
 restart completes, users in affected flows will be presented with an
@@ -179,5 +181,5 @@ off. Changes which would be visible are:
 - SMS
     - The `SMS` checkbox on the IdV dialogs will be disabled
     - New phone numbers for SMS 2FA will not be verified.
-- Voice -
+- Voice
     - New phone numbers for voice 2FA will not be verified
