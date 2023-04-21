@@ -47,7 +47,7 @@ Here is a list of items that need to be completed to deploy the configuration fo
   Notify in *#login-devops* and *#login-appdev* slack channels that you are going to begin recycling production. [Link to example message](https://gsa-tts.slack.com/archives/C0NGESUN5/p1664914296671609). 
   
   * **Step 4:** 
-  Run  `./bin/asg-recycle prod idp`. This will kick off recycling.
+  If uploading new logos, run  `./bin/asg-recycle prod idp`. If no new logos, run `./bin/asg-recycle prod migration`. The latter will kick off recycling *without* needing to scale out old instances. 
 
   * **Step 5:**
   Tail the logs so you can follow the recycle process by shelling into an instance. 
