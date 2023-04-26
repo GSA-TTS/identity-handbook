@@ -32,14 +32,7 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 ### Team Handles
 
 - `@login-devops-team` Group to tag the Login.gov devops team
-- `@login-finops` use this group to communicate with all login financial and acq operations team members
-- `@login-iaa-finance` Members of this group participate in IAA and finance activities
 - `@login-partnerships-team` Group to address Login.gov partnerships team members
-- `@login-product-team` Group to address Login.gov product managers
-- `@login-ux-team` Group for the design/UX team
-- `@login-appdev-team` Group for application development teams
-- `@login_leads` login team leads
-- `@login-feds` Group for Login.gov federal FTE employees
 - `@github-admins-login` members of this group can edit [`identity-core`](https://github.com/orgs/18F/teams/identity-core) GitHub team membership
 
 ### Sprint Team Handles
