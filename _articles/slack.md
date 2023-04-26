@@ -33,6 +33,9 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 
 - `@login-devops-team` Group to tag the Login.gov devops team
 - `@login-partnerships-team` Group to address Login.gov partnerships team members
+- `@login-ux-feds` Group to tag the Login.gov UX federal employees
+- `@login-ux-practice` Group to tag all of the Login.gov UX practitioners
+- `@login-ux-ops` Group to tag the Login.gov UX Operations team 
 - `@github-admins-login` members of this group can edit [`identity-core`](https://github.com/orgs/18F/teams/identity-core) GitHub team membership
 
 ### Sprint Team Handles
