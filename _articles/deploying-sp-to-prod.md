@@ -37,12 +37,9 @@ Make sure you have prod-power access to run commands for aws-vault. You will hav
 **Step 1:**
   - make sure you are in the root directory of the identity-devops repository.
   - run `git pull` to make sure you have the latest in identity-devops.
-  - run ```aws-vault exec prod-power -- /bin/zsh -l```.
-
-This command spawns a new shell configured with your prod-power aws-vault credentials. You will need your yubikey.
 
 **Step 2:**
-  - run `./bin/ls-servers -e prod`.
+  - run `aws-vault exec prod-power -- ./bin/ls-servers -e prod`.
 
 This lists the production servers, including workers. Check that the number of instances running are what you would expect (numbers should match what is in the config - [asg_idp_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L88) and [asg_worker_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L96)).
 
@@ -54,16 +51,15 @@ Notify in *#[login-devops](https://gsa-tts.slack.com/archives/C16RSBG49)* and *#
 **Step 4:**
 
 *If uploading new logos:*
-  - run `./bin/asg-recycle prod idp`.
+  - run `aws-vault exec prod-power -- ./bin/asg-recycle prod idp`.
 
 *If no new logos:*
-  - run `./bin/asg-recycle prod migration`. This will kick off recycling *without* needing to scale out old instances.
+  - run `aws-vault exec prod-power -- ./bin/asg-recycle prod migration`. This will kick off recycling *without* needing to scale out old instances.
 
 **Step 5:**
 
 Tail the logs so you can follow the recycle process by shelling into an instance.
-  - run `./bin/ssm-instance --newest asg-prod-migration`
-  - then `tail -f /var/log/cloud-init-output.log` OR `tail -f /var/log/syslog`
+  - run `aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --newest asg-prod-migration`
 
 Migration instance needs at least a minute, maybe more before this command works.
 Tailing the logs is just for visual confirmation that the recycle has finished.
@@ -83,10 +79,8 @@ Tailing the logs is just for visual confirmation that the recycle has finished.
 This step is optional, but you can confirm the config was updated/added by running rails console.
 You will need to specify the reason you are running the console.
 
-  - run `./bin/ssm-instance asg-prod-idp`
-  - select an instance from the dropdown (any will do)
+  - run `aws-vault exec prod-power -- ./bin/ssm-instance -d rails-c --any asg-prod-idp`
   - provide justification, such as `Confirming partner configuration deployed`
-  - run `id-rails-console` to get into the rails console
 
 **Step 8:**
 
@@ -97,8 +91,8 @@ If config is updated as expected, and you needed to do a full recycle for a new/
 **Step 9:**
 
 Scale out old instances of prod-worker and prod-idp
-  - run `./bin/scale-remove-old-instances prod idp`
-  - run`./bin/scale-remove-old-instances prod worker`
+  - run `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp`
+  - run `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod worker`
 
 **Step 10:**
   - confirm instances are scaling out by running step 2 again. You should see that old instances say “shutting down” under status.
