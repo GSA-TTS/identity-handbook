@@ -1,5 +1,5 @@
 // Imports
-@import "identity-style-guide/dist/assets/scss/packages/required";
+@use "uswds-core" as *;
 
 // Hello! These styles are specific styles for
 // the Login.gov Handbook. Please refer to design.login.login-gov

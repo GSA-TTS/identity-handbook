@@ -1,12 +1,12 @@
 {
   "dependencies": {
     "@18f/identity-build-sass": "^1.1.0",
+    "@18f/identity-design-system": "^7.0.1-beta.1",
     "@18f/private-eye": "^2.1.0",
     "anchor-js": "^4.2.2",
     "concurrently": "^8.0.1",
     "esbuild": "^0.17.15",
     "htm": "^3.1.0",
-    "identity-style-guide": "^6.5.0",
     "js-yaml": "^4.1.0",
     "marked": "^4.0.12",
     "preact": "^10.6.6",
@@ -38,7 +38,7 @@
     "build:js:dev": "npm run build:js:common -- --sourcemap=inline",
     "build:js:prod": "npm run build:js:common -- --minify",
     "prebuild:css": "mkdir -p _site/assets/css",
-    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css",
+    "build:css": "build-sass assets/scss/*.scss --out-dir=_site/assets/css --load-path=node_modules/@18f/identity-design-system/packages",
     "build": "concurrently npm:build:js:prod npm:build:css",
     "watch:js:dev": "npm run build:js:dev -- --watch",
     "watch:css": "npm run build:css -- --watch",
