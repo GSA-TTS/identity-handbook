@@ -1,11 +1,17 @@
 // Imports
 @use "uswds-core" as *;
 
-// Hello! These styles are specific styles for
-// the Login.gov Handbook. Please refer to design.login.login-gov
-// for the broader design system to follow. kthxbai.
+.usa-search [type="submit"] {
+  // Temporary: To be incorporated in LGDS 7.0.1
+  // See: https://github.com/18F/identity-design-system/pull/354
+  flex-shrink: 0;
+}
 
-// Search
+.usa-header--extended .usa-navbar {
+  // The header has a default overflow which prevents search results from showing outside.
+  overflow: visible;
+}
+
 #search-results {
   background-color: #ebf3fa;
   position: absolute;

@@ -53,11 +53,20 @@ export const loadPrivateEye = () => {
 };
 
 export const loadSimpleJekyllSearch = () => {
+  const searchResults = document.getElementById("search-results")!;
   (window as SimpleJekyllSearchGlobals).SimpleJekyllSearch({
     searchInput: document.getElementById("search-input") as HTMLElement,
-    resultsContainer: document.getElementById("search-results") as HTMLElement,
+    resultsContainer: searchResults,
     json: `${document.body.dataset.baseUrl}/search.json`,
     noResultsText: '<li class="no-results">No results were found.</li>',
+  });
+
+  const searchForm = document.querySelector<HTMLFormElement>(
+    '.usa-header [role="search"]'
+  )!;
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    searchResults.focus();
   });
 };
 
