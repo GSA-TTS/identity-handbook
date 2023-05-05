@@ -102,10 +102,8 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
   Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   Public marketing page.
 
-- [**`18f/identity-style-guide`**](https://github.com/18f/identity-style-guide)<br />
-  [design.login.gov](https://design.login.gov)<br />
-  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
-  Walkthrough of Login.gov common styles. The repository also hosts the `identity-style-guide` npm package that contains the actual styles.
+- [**`18f/identity-design-system`**](https://github.com/18f/identity-design-system)<br />
+  The Login.gov Design System, an extension of the U.S. Web Design System used on Login.gov sites to consistently identify the Login.gov brand.
 
 - [**`18f/identity-dev-docs`**](https://github.com/18f/identity-dev-docs)<br />
   [developers.login.gov](https://developers.login.gov)<br />
