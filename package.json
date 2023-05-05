@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@18f/identity-build-sass": "^1.1.0",
-    "@18f/identity-design-system": "^7.0.1-beta.1",
+    "@18f/identity-design-system": "^7.0.1",
     "@18f/private-eye": "^2.1.0",
     "anchor-js": "^4.2.2",
     "concurrently": "^8.0.1",
