@@ -1,6 +1,6 @@
 ---
-title: "Partnerships Kudos Document"
-redirect_to: https://docs.google.com/document/d/1fjnC29Ywux1Jw7ia9y9hhO5cWVYunLNuUcv99bO9HcU/edit
+title: "Partnerships Kudos and Feedback"
+redirect_to: https://docs.google.com/spreadsheets/d/1MgPds8KTTPjmmC6ow4G3-1veSlMOiF-OTzCmZYqqZ_M/edit?resourcekey#gid=1762172499
 description: "A history of kudos received from partners"
 category: Partnerships
 ---
