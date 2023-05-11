@@ -140,6 +140,26 @@ aws-vault exec sandbox-power --
 
 The script can output as new-line delimited JSON (`--json`) or as a CSV (`--csv`).
 
+## `salesforce-email-lookup`
+
+Takes in Salesforce case numbers (escalated from our user support team), and returns
+the emails associated with those cases
+
+- **Note**: Will pop open a browser to log in to SecureAuth, you'll need to have
+  Salesforce access.
+
+```bash
+> aws-vault exec prod-power -- \
+    ./bin/salesforce-email-lookup 01234567
++-------------+-------------------+
+| case_number | email             |
++-------------+-------------------+
+| 01234567    | email@example.com |
++-------------+-------------------+
+```
+
+The script can output as CSV with `--csv`.
+
 ## `scp-s3`
 
 Imitates `scp` by copying a file in and out of S3. Use the instance ID to refer to remote hosts
