@@ -198,6 +198,11 @@ function Event({ event }: { event: AnalyticsEvent }) {
         previous_event_names={previousEventNames}
         attributes={attributes}
       />
+      <small>
+        <a href="#main-content" className="usa-link">
+          Back to top
+        </a>
+      </small>
     </div>
   );
 }

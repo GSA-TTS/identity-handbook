@@ -1,11 +1,11 @@
 // Imports
-@import "identity-style-guide/dist/assets/scss/packages/required";
+@use "uswds-core" as *;
 
-// Hello! These styles are specific styles for
-// the Login.gov Handbook. Please refer to design.login.login-gov
-// for the broader design system to follow. kthxbai.
+.usa-header--extended .usa-navbar {
+  // The header has a default overflow which prevents search results from showing outside.
+  overflow: visible;
+}
 
-// Search
 #search-results {
   background-color: #ebf3fa;
   position: absolute;
