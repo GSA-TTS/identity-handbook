@@ -107,6 +107,59 @@ aws-vault exec sandbox-power -- \
 
 ```
 
+## `data-pull`
+
+This script helps streamline common lookup tasks from production, and supports looking up in batches.
+
+- It defaults to outputting a table, but can output as CSV (`--csv`) or JSON (`--json`) as well.
+- It defaults to showing `[NOT FOUND]` when values aren't found, this can be omitted with `--no-include-missing`
+
+It has multiple subtasks:
+
+### `uuid-lookup`
+
+Looks up the UUID associated with emails
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp uuid-lookup email1@example.com email2@example.com
++--------------------+--------------------------------------+
+| email              | uuid                                 |
++--------------------+--------------------------------------+
+| email1@example.com | [NOT FOUND]                          |
+| email2@example.com | 370e3f27-7376-4438-9be8-805eff343f35 |
++--------------------+--------------------------------------+
+```
+
+### `email-lookup`
+
+Looks up the emails associated with UUIDs and shows their confirmation time
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp email-lookup 370e3f27-7376-4438-9be8-805eff343f35
++--------------------------------------+-------------+-------------------------+
+| uuid                                 | email       | confirmed_at            |
++--------------------------------------+-------------+-------------------------+
+| 370e3f27-7376-4438-9be8-805eff343f35 | foo@bar.com | 2023-05-10 01:35:41 UTC |
++--------------------------------------+-------------+-------------------------+
+```
+
+### `uuid-convert`
+
+Looks up the internal Login.gov UUID from a partner agency UUID
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp uuid-convert aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb
++--------------------------------------+---------------+--------------------------------------+
+| partner_uuid                         | source        | internal_uuid                        |
++--------------------------------------+---------------+--------------------------------------+
+| aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa | partner app 1 | 11111111-1111-1111-1111-111111111111 |
+| bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb | other app     | 22222222-2222-2222-2222-222222222222 |
++--------------------------------------+---------------+--------------------------------------+
+```
+
 ## `ls-servers`
 
 Lists servers in an environment as a table
