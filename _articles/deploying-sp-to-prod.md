@@ -91,8 +91,7 @@ If config is updated as expected, and you needed to do a full recycle for a new/
 **Step 9:**
 
 Scale out old instances of prod-worker and prod-idp
-  - run `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp`
-  - run `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod worker`
+  - run `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL`
 
 **Step 10:**
   - confirm instances are scaling out by running step 2 again. You should see that old instances say “shutting down” under status.
