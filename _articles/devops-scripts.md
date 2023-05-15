@@ -214,7 +214,7 @@ for those uses
 
 - UUID loading can be a bit slower, this can be disabled with `--no-uuids`
 - It can output CSV with `--csv`
-- If sharing in Slack, consider using `--redact` to redact emails `--markdown` for Slack-compatible markdown formatting
+- If sharing in Slack, consider using `--slack` (which is a shorthand for `--redact` to redact emails `--markdown` for Slack-compatible markdown formatting)
 
 ## `scp-s3`
 
