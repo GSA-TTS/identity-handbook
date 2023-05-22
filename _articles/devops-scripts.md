@@ -160,6 +160,25 @@ aws-vault exec prod-power -- \
 +--------------------------------------+---------------+--------------------------------------+
 ```
 
+### `profile-summary`
+
+Looks up the profiles associated with UUIDs and shows their summary
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp profile-summary aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb cccccccc-cccc-cccc-cccc-cccccccccccc dddddddd-dddd-dddd-dddddddddddd wrong-uuid
++--------------------------------------+------------------+----------+-------------------------+--------------------------------+------------------------------------+--------------------------------+---------------------------+
+| uuid                                 | profile_id       | status   | activated_timestamp     | disabled_reason                | gpo_verification_pending_timestamp | fraud_review_pending_timestamp | fraud_rejection_timestamp |
++--------------------------------------+------------------+----------+-------------------------+--------------------------------+------------------------------------+--------------------------------+---------------------------+
+| aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa | 111              | active   | 2023-05-11 16:23:50 UTC |                                |                                    |                                |                           |
+| aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa | 222              | inactive |                         | in_person_verification_pending |                                    |                                |                           |
+| bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb | 333              | inactive |                         |                                | 2023-05-04 00:00:00 UTC            |                                |                           |
+| cccccccc-cccc-cccc-cccc-cccccccccccc | 444              | inactive |                         |                                |                                    |                                | 2023-05-05 00:00:00 UTC   |
+| dddddddd-dddd-dddd-dddd-dddddddddddd | [HAS NO PROFILE] |          |                         |                                |                                    |                                |                           |
+| wrong-uuid                           | [UUID NOT FOUND] |          |                         |                                |                                    |                                |                           |
++--------------------------------------+------------------+----------+-------------------------+--------------------------------+------------------------------------+--------------------------------+---------------------------+
+```
+
 ## `ls-servers`
 
 Lists servers in an environment as a table
