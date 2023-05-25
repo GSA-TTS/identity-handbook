@@ -31,8 +31,6 @@ This sprint team is not currently active
 {%- endif %}
 {% if sprint_team.readme -%}
 * **Readme**: [View Team {{sprint_team.name}} Readme]({{ sprint_team.readme }})
-{%- endif %}{% if sprint_team.charter -%}
-* **Charter**: [View Team {{sprint_team.name}} Charter]({{ sprint_team.charter }})
 {%- endif %}
 </div>
 {% endfor %}
