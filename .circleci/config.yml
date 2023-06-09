@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.7-node
+      - image: cimg/ruby:3.2-node
         environment:
           BUNDLER_VERSION: 2.1.4
     working_directory: ~/identity-handbook
@@ -22,7 +22,8 @@ jobs:
           keys:
             - npm-packages-v1-{{ checksum "package-lock.json" }}
             - npm-packages-v1-
-      - run: bundle install --path vendor/bundle
+      - run: bundle config set --local path 'vendor/bundle'
+      - run: bundle install
       - run: npm install
       - save_cache:
           key: gem-cache-v1-{{ arch }}-{{ checksum "Gemfile.lock" }}
