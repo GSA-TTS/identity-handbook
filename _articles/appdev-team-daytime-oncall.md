@@ -19,7 +19,7 @@ subcategory: Oncall
 * The oncall should fix the issue immediately if it is urgent, or otherwise create a ticket if there is a non-urgent bug to be fixed.
 * "Daytime" is defined as the working hours for the person(s) on the daytime oncall rotation, typically 9am to 5pm in the local time. If an issue is escalated outside working hours, it's expected and understood that the task will be handled the next business day during business hours.
 
-## Managing On-Call
+## Managing Oncall
 
 * It is up to the individual teams to decide how they want to manage their team's oncall. The only requirement is that someone is always reachable by the team oncall Slack handle.
   * Some example variations include:
