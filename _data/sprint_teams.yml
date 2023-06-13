@@ -1,6 +1,8 @@
 - name: Ada
   namesake_markdown: "[Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace), one of the world's first computer programmers"
   focus_area: Unsupervised remote proofing
+  appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/1bL2t84hXAfqTdLyMAtSvtN-0fLapMDgXX9carYPRIew/edit#gid=0
+  slack_appdev_oncall_handle: login-oncall-ada
   slack_channel_name: login-team-ada
   slack_channel_url: https://gsa-tts.slack.com/archives/CNCGEHG1G
   slack_group_name: login-ada
@@ -29,6 +31,8 @@
 
 - name: Joy
   namesake_markdown: "[Dr. Joy Buolamwini](https://en.wikipedia.org/wiki/Joy_Buolamwini), a computer scientist, artist, and activist who has published foundational work on algorithmic discrimination."
+  appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/17fdsVlfD06fpuq6F5-MdMwhpm0TV65wvyxDOkcRKDpA/edit#gid=0
+  slack_appdev_oncall_handle: login-joy-oncall
   focus_area: In Person Proofing
   slack_channel_name: login-team-joy
   slack_channel_url: https://gsa-tts.slack.com/archives/C03FA4VBN76
@@ -43,6 +47,8 @@
 
 - name: Katherine
   namesake_markdown: "[Katherine Johnson](https://en.wikipedia.org/wiki/Katherine_Johnson), a mathematician who was a key part of early NASA spaceflights"
+  appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/1tAEScH-1A1708a5elOuLDEHj7p_JzFdkpbNGB33gDJU/edit#gid=0
+  slack_appdev_oncall_handle: login-katherine-oncall
   focus_area: Authentication
   slack_channel_url: https://gsa-tts.slack.com/archives/C01710KMYUB
   slack_channel_name: login-team-katherine
