@@ -12,9 +12,14 @@ If you have a data question about login.gov data, post it in [`#login-reporting`
 - What is the data you are requesting? What question are you trying to answer?
 - When do you need this information by?
 
-Once that happens, someone from the data team will acknowledge and file your question as a JIRA ticket,
+Once that happens, someone from one of the data teams below will acknowledge and file your question as a JIRA ticket,
 which will be assigned to a sprint. Once the data has been collected, a summary will be posted to
 that Slack thread.
+
+### Teams
+
+- **Team Ursula**: handles questions or reports from partner requests
+- **Team Agnes**: handles all other requests (including billing, fraud, etc).
 
 ## Examples
 
