@@ -35,15 +35,43 @@ Login.gov incident response operates under the GSA Incident Response framework. 
   * [Assess Phase](#assess-phase)
   * [Remediate Phase](#remediate-phase)
   * [Retrospective Phase](#retrospective-phase)
-* [Incident Severities](#incident-severities)
+* [Impact Assessment](#impact-assessment)
   * [High Severity](#high-severity)
   * [Medium Severity](#medium-severity)
   * [Low Severity](#low-severity)
+* [Resources](#resources)
+  * [Impact Assessment](#impact-assessment)
+  * [Situation Room](#situation-room)
 * [Frequently Asked Questions and Expectations](#frequently-asked-questions-and-expectations)
+
+MISSING 
+
+### Situation Room
+
+
+### Situation Thread
+
+### Sharing Technical Context
+
+### Normal System Operation
+
+### Declare Incident Workflow
+
+### Emergency Contact Process
+
+### Engaging Incident Comms
+
+See [Incident Comms Playbook - Phase 2: ASSESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c)
+for the incident level symptoms, impact, and duration.  It is the responsibility
+of the **Messenger** to provide 30 minutes advance notice to @login-comms-oncall.
 
 ## Overview
 
-At a high level, incident response follows this process:
+The incident response process has four [phases](#phases):
+* [Initiate](#initiate-phase) - An incident is detected, [declared](#incident-declaration) by the [Situation Lead](#situation-lead), and responders assemble in the [situation room](#situation-room)
+* [Assess](#assess-phase) - The situation is assessed, initial [impact assessment](#impact-assessment) is conducted.
+* [Remediate](#remediate-phase) - The team continuously works to mitigate the situation and ultimate return to normal operation.
+* [Retrospect](#retrospective-phase) - The team learns from the incident and identifies specific and actionable improvements.
 
 ### Phases
 
@@ -258,7 +286,7 @@ The report should also contain some basic response metrics:
 
 This report should be posted as a final comment on the GitHub issue, which can then be closed. If appropriate, this should also be posted at [postmortems](https://drive.google.com/drive/u/0/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?lfhs=2) (omitting any sensitive information).
 
-## Incident Severities
+## Impact Assessment
 
 Severity ratings drive the actions of the response team. Below are the severities ratings we use, some examples of incidents that might fall into that bucket, and some guidelines for SLs and response teams about how to treat each class of incident.
 
