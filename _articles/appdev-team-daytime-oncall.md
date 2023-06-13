@@ -33,7 +33,7 @@ subcategory: Oncall
 
 {% for sprint_team in sprint_teams %}
 * **Team {{ sprint_team.name }}**
-  * Slack handle: @{{ sprint_team.slack_appdev_oncall_handle }}
+  * Slack handle: `@{{ sprint_team.slack_appdev_oncall_handle }}`
   {% if sprint_team.appdev_oncall_rotation -%}
   * [Team {{ sprint_team.name }} AppDev Oncall Rotation]({{ sprint_team.appdev_oncall_rotation }})
   {% endif %}
