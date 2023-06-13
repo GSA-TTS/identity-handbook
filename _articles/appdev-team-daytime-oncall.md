@@ -26,3 +26,15 @@ subcategory: Oncall
     * Rotations every week, or every sprint
     * Single oncall, or primary and back-up oncall
 * Consider using a spreadsheet to manage the list of engineers in the rotation and the timeline of the rotation (see [Sprint Teams]({% link _articles/sprint-teams.md %}) "AppDev OnCall Rotation" for examples)
+
+## Team Oncall Details
+
+{% assign sprint_teams = site.data.sprint_teams | where_exp: "item", "item.slack_appdev_oncall_handle" | sort: "name" %}
+
+{% for sprint_team in sprint_teams %}
+* **Team {{ sprint_team.name }}**
+  * Slack handle: @{{ sprint_team.slack_appdev_oncall_handle }}
+  {% if sprint_team.appdev_oncall_rotation -%}
+  * [Team {{ sprint_team.name }} AppDev Oncall Rotation]({{ sprint_team.appdev_oncall_rotation }})
+  {% endif %}
+{% endfor %}
