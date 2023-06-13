@@ -32,5 +32,11 @@ This sprint team is not currently active
 {% if sprint_team.readme -%}
 * **Readme**: [View Team {{sprint_team.name}} Readme]({{ sprint_team.readme }})
 {%- endif %}
+{% if sprint_team.slack_appdev_oncall_handle -%}
+* **AppDev oncall Slack handle**: @{{ sprint_team.slack_appdev_oncall_handle }}
+{%- endif %}
+{% if sprint_team.appdev_oncall_rotation -%}
+* **AppDev oncall rotation**: [Team {{ sprint_team.name }} AppDev Oncall Rotation]({{ sprint_team.appdev_oncall_rotation }})
+{%- endif %}
 </div>
 {% endfor %}
