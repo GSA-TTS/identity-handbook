@@ -25,4 +25,4 @@ subcategory: Oncall
   * Some example variations include:
     * Rotations every week, or every sprint
     * Single oncall, or primary and back-up oncall
-* Consider using a spreadsheet to manage the list of engineers in the rotation and the timeline of the rotation ([example spreadsheet](https://docs.google.com/spreadsheets/d/1tAEScH-1A1708a5elOuLDEHj7p_JzFdkpbNGB33gDJU/edit#gid=0))
+* Consider using a spreadsheet to manage the list of engineers in the rotation and the timeline of the rotation (see [Sprint Teams]({% link _articles/sprint-teams.md %}) "AppDev OnCall Rotation" for examples)
