@@ -19,7 +19,7 @@ that Slack thread.
 ### Teams
 
 - **Team Ursula**: handles questions or reports from partner requests
-- **Team Agnes**: handles all other requests (including billing, fraud, etc).
+- **Team Agnes**: handles all other requests (including billing, fraud, etc)
 
 ## Examples
 
