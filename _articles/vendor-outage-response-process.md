@@ -145,14 +145,10 @@ The possible values for each flag:
 
 The default value for each of the flags is `operational`.
 
-When any flag is set to `full_outage` this is what happens:
+When one or more of the flags are set to `full_outage`, some parts of
+account creation and identity verification will be disabled.
 
-- If a new user attempts to sign up, they will be redirected to an
-  outage page.
-- If an existing user attempts to enter or re-enter the document
-  authentication flow, they will be redirected to a vendor outage
-  page. The system retains sufficient information for them to continue
-  after the vendor outage is over.
+As an overview:
 
 The additional user-facing implications of setting each of the vendors
 to `full_outage` are:
@@ -174,12 +170,63 @@ services to `full_outage`. At present, users will never see them
 because IdV is completely disabled when any service is turned
 off. Changes which would be visible are:
 
-- Acuant - none
-- Lexis Nexis Instant Verify - none
-- Lexis Nexis Phone Finder - none
-- Lexis Nexis TrueId - none
-- SMS
-    - The `SMS` checkbox on the IdV dialogs will be disabled
-    - New phone numbers for SMS 2FA will not be verified.
-- Voice
-    - New phone numbers for voice 2FA will not be verified
+- Setting `full_outage` for `accuant`, `lexisnexis_instant_verify`, or
+  `lexisnexis_trueid` turns off pretty much everything.
+
+- Setting `full_outage`for `lexisnexis_phone_finder` disables instant
+  verificaton, but verification by mail is still available.
+
+- Setting `full_outage` for `sms` or `voice` diables instant
+  verification, but verification by mail is still available. ID image
+  uploads from the user's phone are also disabled.
+
+The precise effects, broken out by flag, are:
+
+#### Acuant
+  - New users will not be able to create an account
+
+  - Users will not be able to enter or re-enter the identity
+    verification flow.
+
+  - A user who has reset their password and does not have their
+    personal key will not be able to reactivate their profile
+
+#### Lexis Nexis Instant Verify
+  - New users will not be able to create an account
+
+  - Users will not be able to enter or re-enter the identity
+    verification flow.
+
+  - A user who has reset their password and does not have their
+    personal key will not be able to reactivate their profile
+
+#### Lexis Nexis Phone Finder
+  - Users will only be able to verify their identity by mail.
+
+  - Any user entering the verification flow will be presented with an
+    outage screen telling them that their options are to verify by
+    mail or wait until our vendor outage is resolved.
+
+  - Users will still be able to use their phone to upload images of
+    their IDs.
+
+#### Lexis Nexis TrueId
+  - New users will not be able to create an account
+
+  - Users will not be able to enter or re-enter the identity
+    verification flow.
+
+  - A user who has reset their password and does not have their
+    personal key will not be able to reactivate their profile
+
+#### SMS
+  - Users will only be able to verify their identity by mail.
+
+  - Users will only be able to upload their IDs from their computer;
+    phone upload will be disabled.
+
+#### Voice
+  - Users will only be able to verify their identity by mail.
+
+  - Users will only be able to upload their IDs from their computer;
+    phone upload will be disabled.
