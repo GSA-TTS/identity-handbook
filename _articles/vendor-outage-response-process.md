@@ -69,15 +69,15 @@ As an overview:
   `lexisnexis_trueid` turns off pretty much everything.
 
 - Setting `full_outage`for `lexisnexis_phone_finder` disables instant
-  verificaton, but verification by mail is still available.
+  verification, but verification by mail is still available.
 
-- Setting `full_outage` for `sms` or `voice` diables instant
+- Setting `full_outage` for `sms` or `voice` disables instant
   verification, but verification by mail is still available. ID image
   uploads from the user's phone are also disabled.
 
-The precise effects, broken out by flag, are:
+The precise effects of each flag are:
 
-#### Acuant
+#### `vendor_status_acuant`
   - New users will not be able to create an account
 
   - Users will not be able to enter or re-enter the identity
@@ -86,7 +86,7 @@ The precise effects, broken out by flag, are:
   - A user who has reset their password and does not have their
     personal key will not be able to reactivate their profile
 
-#### Lexis Nexis Instant Verify
+#### `vendor_status_lexisnexis_instant_verify`
   - New users will not be able to create an account
 
   - Users will not be able to enter or re-enter the identity
@@ -95,7 +95,7 @@ The precise effects, broken out by flag, are:
   - A user who has reset their password and does not have their
     personal key will not be able to reactivate their profile
 
-#### Lexis Nexis Phone Finder
+#### `vendor_status_lexisnexis_phone_finder`
   - Users will only be able to verify their identity by mail.
 
   - Any user entering the verification flow will be presented with an
@@ -105,7 +105,7 @@ The precise effects, broken out by flag, are:
   - Users will still be able to use their phone to upload images of
     their IDs.
 
-#### Lexis Nexis TrueId
+#### Lexis Nexis TrueId `vendor_status_lexisnexis_trueid`
   - New users will not be able to create an account
 
   - Users will not be able to enter or re-enter the identity
