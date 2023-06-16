@@ -6,7 +6,7 @@ category: "AppDev"
 subcategory: "Deploying"
 ---
 
-### Apps
+## Apps
 
 These apps are deployed on weekdays:
 
@@ -14,9 +14,9 @@ These apps are deployed on weekdays:
 - PKI
 - Dashboard
 
-### Daily Business Schedule Deploys
+## Daily Business Schedule Deploys
 
-#### Staging and INT
+### Staging and INT
 
 In staging, daily deploys are scheduled for **weekdays at 5pm UTC**.
 
@@ -34,7 +34,7 @@ See the [int schedule][int-specific-timing] for the time it's set to deploy. Def
 [int-specific-timing]: https://github.com/18F/identity-terraform/blob/main/asg_recycle/schedule.tf#L15-L20
 [int-specific-time-zone]: https://github.com/18F/identity-devops-private/blob/main/vars/int.tfvars#L4-L5
 
-### Every 6 Hours Deploy Schedule
+## Every 6 Hours Deploy Schedule
 
 In these environments
 
@@ -50,16 +50,16 @@ Deploys are scheduled every 6 hours at **5am, 11am, 5pm, 11pm UTC**.
 | 5pm  | <lg-local-time utc="5pm" />    |
 | 11pm | <lg-local-time utc="11pm" />   |
 
-### Not being deployed automatically
+## Not being deployed automatically
 
-#### DM
+### DM
 
 See the [dm schedule][dm-specific-timing] for the time it's set to deploy (currently, `nozero_norecycle`), and [the dm variables][dm-specific-time-zone] for the time zone.
 
 [dm-specific-timing]: https://github.com/18F/identity-terraform/blob/main/asg_recycle/schedule.tf#L3-L7
 [dm-specific-time-zone]: https://github.com/18F/identity-devops-private/blob/main/vars/dm.tfvars#L4-L5
 
-#### PT
+### PT
 
 See the [pt settings][pt-settings] for further info.
 
