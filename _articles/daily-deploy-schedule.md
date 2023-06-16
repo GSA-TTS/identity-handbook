@@ -16,24 +16,20 @@ These apps are deployed on weekdays:
 
 ### Daily Business Schedule Deploys
 
-#### Staging
+#### Staging and INT
 
-| Eastern  |
-|----------|
-| 5pm      |
-
-In staging, daily deploys are scheduled for **weekdays at 5pm Eastern**. See the [staging schedule][staging-specific-timing] for the time it's set to deploy, and [the staging variables][staging-specific-time-zone] for the time zone.
-
-[staging-specific-timing]: https://github.com/18F/identity-terraform/blob/main/asg_recycle/schedule.tf#L15-L20
-[staging-specific-time-zone]: https://github.com/18F/identity-devops-private/blob/main/vars/staging.tfvars#L4-L5
-
-#### INT
+In staging, daily deploys are scheduled for **weekdays at 5pm UTC**.
 
 | UTC  | Local (<lg-local-zone-name />) |
 |------|--------------------------------|
 | 5pm  | <lg-local-time utc="5pm" />    |
 
+See the [staging schedule][staging-specific-timing] for the time it's set to deploy. Default is UTC, and staging has the [overwrite timezone setting][staging-specific-time-zone] commented out.
+
 See the [int schedule][int-specific-timing] for the time it's set to deploy. Default is UTC, and int has the [overwrite timezone setting][int-specific-time-zone] commented out.
+
+[staging-specific-timing]: https://github.com/18F/identity-terraform/blob/main/asg_recycle/schedule.tf#L15-L20
+[staging-specific-time-zone]: https://github.com/18F/identity-devops-private/blob/main/vars/staging.tfvars#L4-L5
 
 [int-specific-timing]: https://github.com/18F/identity-terraform/blob/main/asg_recycle/schedule.tf#L15-L20
 [int-specific-time-zone]: https://github.com/18F/identity-devops-private/blob/main/vars/int.tfvars#L4-L5
