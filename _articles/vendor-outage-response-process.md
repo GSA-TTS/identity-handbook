@@ -178,8 +178,12 @@ off. Changes which would be visible are:
   verification, but verification by mail is still available.
 
 - Setting `full_outage` for `sms` or `voice` disables instant
-  verification, but verification by mail is still available. ID image
-  uploads from the user's phone are also disabled.
+  verification, but verification by mail is still available.
+
+  ID image uploads from the user's phone are also disabled; instead of
+  being given the option to use their phone or their computer for ID
+  image upload, users will be routed directly to the upload screen for
+  their computer.
 
 The precise effects of each flag are:
 
