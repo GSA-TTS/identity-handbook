@@ -61,7 +61,7 @@ The possible values for each flag:
 The default value for each of the flags is `operational`.
 
 When one or more of the flags are set to `full_outage`, some parts of
-account creation and identity verification will be disabled.
+identity verification will be disabled.
 
 As an overview:
 
@@ -83,8 +83,6 @@ As an overview:
 The precise effects of each flag are:
 
 #### `vendor_status_acuant`
-  - New users will not be able to create an account
-
   - Users will not be able to enter or re-enter the identity
     verification flow.
 
@@ -92,8 +90,6 @@ The precise effects of each flag are:
     personal key will not be able to reactivate their profile
 
 #### `vendor_status_lexisnexis_instant_verify`
-  - New users will not be able to create an account
-
   - Users will not be able to enter or re-enter the identity
     verification flow.
 
@@ -111,8 +107,6 @@ The precise effects of each flag are:
     their IDs.
 
 #### Lexis Nexis TrueId `vendor_status_lexisnexis_trueid`
-  - New users will not be able to create an account
-
   - Users will not be able to enter or re-enter the identity
     verification flow.
 
