@@ -221,11 +221,19 @@ The precise effects of each flag are:
 #### SMS
   - Users will only be able to verify their identity by mail.
 
+  - Any user entering the verification flow will be presented with an
+    outage screen telling them that their options are to verify by
+    mail or wait until our vendor outage is resolved.
+
   - Users will only be able to upload their IDs from their computer;
     phone upload will be disabled.
 
 #### Voice
   - Users will only be able to verify their identity by mail.
+
+  - Any user entering the verification flow will be presented with an
+    outage screen telling them that their options are to verify by
+    mail or wait until our vendor outage is resolved.
 
   - Users will only be able to upload their IDs from their computer;
     phone upload will be disabled.
