@@ -66,7 +66,8 @@ account creation and identity verification will be disabled.
 As an overview:
 
 - Setting `full_outage` for `accuant`, `lexisnexis_instant_verify`, or
-  `lexisnexis_trueid` turns off pretty much everything.
+  `lexisnexis_trueid` turns off pretty much everything. Identity verification
+  is completely unavailable.
 
 - Setting `full_outage`for `lexisnexis_phone_finder` disables instant
   verification, but verification by mail is still available.
