@@ -179,6 +179,81 @@ aws-vault exec prod-power -- \
 +--------------------------------------+------------------+----------+-------------------------+--------------------------------+------------------------------------+--------------------------------+---------------------------+
 ```
 
+## `action-account`
+
+This script helps streamline common account action tasks from production.
+
+- It defaults to outputting a table, but can output as CSV (`--csv`) or JSON (`--json`) as well.
+- It defaults to showing `Error: Could not find user with that UUID` when values aren't found, this can be omitted with `--no-include-missing`
+
+It has multiple subtasks:
+
+### `suspend-user`
+
+Suspend User.
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp suspend-user 5e4a60e0-356c-4c6c-9ae5-6ff282da29af 63509e59-3306-4027-8e9b-2b43f3af9d2a wrong-uuid
++--------------------------------------+-------------------------------------------+
+| uuid                                 | status                                    |
++--------------------------------------+-------------------------------------------+
+| 5e4a60e0-356c-4c6c-9ae5-6ff282da29af | User has already been suspended           |
+| 63509e59-3306-4027-8e9b-2b43f3af9d2a | User has been suspended                   |
+| wrong-uuid                           | Error: Could not find user with that UUID |
++--------------------------------------+-------------------------------------------+
+```
+
+### `reinstate-user`
+
+Reinstate User.
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp reinstate-user 5e4a60e0-356c-4c6c-9ae5-6ff282da29af 63509e59-3306-4027-8e9b-2b43f3af9d2a wrong-uuid
++--------------------------------------+-------------------------------------------+
+| uuid                                 | status                                    |
++--------------------------------------+-------------------------------------------+
+| 5e4a60e0-356c-4c6c-9ae5-6ff282da29af | User has been reinstated                  |
+| 63509e59-3306-4027-8e9b-2b43f3af9d2a | User is not suspended                     |
+| wrong-uuid                           | Error: Could not find user with that UUID |
++--------------------------------------+-------------------------------------------+
+```
+### `review-pass`
+
+Activates a user that has a profile deactivated due to a pending ThreatMetrix review status. 
+Requires the user UUID from the `uuid-lookup` task.
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp review-pass uuid-1 uuid-2 uuid-3 wrong-uuid
++----------------+------------------------------------------------------------------+
+| uuid           | status                                                           |
++----------------+------------------------------------------------------------------+
+| uuid-1         | There was an error activating the user profile. Please try again.|
+| uuid-2         | User profile has been activated and the user has been emailed.   |
+| uuid-3         | User is past the 30 day review eligibility.                      |
+| wrong-uuid     | Error: Could not find user with that UUID                        |
++--------------------------------------+-------------------------------------------+
+```
+
+### `review-reject`
+Deactivates a user that has a pending ThreatMetrix review status with the reason "ThreatMetrix review rejected". 
+Requires the user UUID from the `uuid-lookup` task.
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp review-reject uuid-1 uuid-2 uuid-3 wrong-uuid
++----------------+------------------------------------------------------------------+
+| uuid           | status                                                           |
++----------------+------------------------------------------------------------------+
+| uuid-1         | Error: User does not have a pending fraud review                 |
+| uuid-2         | User profile has been deactivated due to fraud rejection.        |
+| uuid-3         | User is past the 30 day review eligibility.                      |
+| wrong-uuid     | Error: Could not find user with that UUID                        |
++--------------------------------------+-------------------------------------------+
+```
+
 ## `ls-servers`
 
 Lists servers in an environment as a table
@@ -267,25 +342,6 @@ Looks up the UUID for a user by their email address.
 ```bash
 aws-vault exec sandbox-power --
     ./bin/ssm-instance --document uuid-lookup --any asg-dev-idp
-```
-
-### `review-pass`
-
-Activates a user that has a profile deactivated due to a pending ThreatMetrix review status. 
-Requires the user UUID from the `uuid-lookup` task.
-
-```bash
-aws-vault exec sandbox-power --
-    ./bin/ssm-instance --document review-pass --any asg-dev-idp
-```
-
-### `review-reject`
-Deactivates a user that has a pending ThreatMetrix review status with the reason "ThreatMetrix review rejected". 
-Requires the user UUID from the `uuid-lookup` task.
-
-```bash
-aws-vault exec sandbox-power --
-    ./bin/ssm-instance --document review-reject --any asg-dev-idp
 ```
 
 ### `rails-c`
