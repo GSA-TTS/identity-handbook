@@ -107,6 +107,153 @@ aws-vault exec sandbox-power -- \
 
 ```
 
+## `data-pull`
+
+This script helps streamline common lookup tasks from production, and supports looking up in batches.
+
+- It defaults to outputting a table, but can output as CSV (`--csv`) or JSON (`--json`) as well.
+- It defaults to showing `[NOT FOUND]` when values aren't found, this can be omitted with `--no-include-missing`
+
+It has multiple subtasks:
+
+### `uuid-lookup`
+
+Looks up the UUID associated with emails
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp uuid-lookup email1@example.com email2@example.com
++--------------------+--------------------------------------+
+| email              | uuid                                 |
++--------------------+--------------------------------------+
+| email1@example.com | [NOT FOUND]                          |
+| email2@example.com | 370e3f27-7376-4438-9be8-805eff343f35 |
++--------------------+--------------------------------------+
+```
+
+### `email-lookup`
+
+Looks up the emails associated with UUIDs and shows their confirmation time
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp email-lookup 370e3f27-7376-4438-9be8-805eff343f35
++--------------------------------------+-------------+-------------------------+
+| uuid                                 | email       | confirmed_at            |
++--------------------------------------+-------------+-------------------------+
+| 370e3f27-7376-4438-9be8-805eff343f35 | foo@bar.com | 2023-05-10 01:35:41 UTC |
++--------------------------------------+-------------+-------------------------+
+```
+
+### `uuid-convert`
+
+Looks up the internal Login.gov UUID from a partner agency UUID
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp uuid-convert aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb
++--------------------------------------+---------------+--------------------------------------+
+| partner_uuid                         | source        | internal_uuid                        |
++--------------------------------------+---------------+--------------------------------------+
+| aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa | partner app 1 | 11111111-1111-1111-1111-111111111111 |
+| bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb | other app     | 22222222-2222-2222-2222-222222222222 |
++--------------------------------------+---------------+--------------------------------------+
+```
+
+### `profile-summary`
+
+Looks up the profiles associated with UUIDs and shows their summary
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp profile-summary aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb cccccccc-cccc-cccc-cccc-cccccccccccc dddddddd-dddd-dddd-dddddddddddd wrong-uuid
++--------------------------------------+------------------+----------+-------------------------+--------------------------------+------------------------------------+--------------------------------+---------------------------+
+| uuid                                 | profile_id       | status   | activated_timestamp     | disabled_reason                | gpo_verification_pending_timestamp | fraud_review_pending_timestamp | fraud_rejection_timestamp |
++--------------------------------------+------------------+----------+-------------------------+--------------------------------+------------------------------------+--------------------------------+---------------------------+
+| aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa | 111              | active   | 2023-05-11 16:23:50 UTC |                                |                                    |                                |                           |
+| aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa | 222              | inactive |                         | in_person_verification_pending |                                    |                                |                           |
+| bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb | 333              | inactive |                         |                                | 2023-05-04 00:00:00 UTC            |                                |                           |
+| cccccccc-cccc-cccc-cccc-cccccccccccc | 444              | inactive |                         |                                |                                    |                                | 2023-05-05 00:00:00 UTC   |
+| dddddddd-dddd-dddd-dddd-dddddddddddd | [HAS NO PROFILE] |          |                         |                                |                                    |                                |                           |
+| wrong-uuid                           | [UUID NOT FOUND] |          |                         |                                |                                    |                                |                           |
++--------------------------------------+------------------+----------+-------------------------+--------------------------------+------------------------------------+--------------------------------+---------------------------+
+```
+
+## `action-account`
+
+This script helps streamline common account action tasks from production.
+
+- It defaults to outputting a table, but can output as CSV (`--csv`) or JSON (`--json`) as well.
+- It defaults to showing `Error: Could not find user with that UUID` when values aren't found, this can be omitted with `--no-include-missing`
+
+It has multiple subtasks:
+
+### `suspend-user`
+
+Suspend User.
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp suspend-user 5e4a60e0-356c-4c6c-9ae5-6ff282da29af 63509e59-3306-4027-8e9b-2b43f3af9d2a wrong-uuid
++--------------------------------------+-------------------------------------------+
+| uuid                                 | status                                    |
++--------------------------------------+-------------------------------------------+
+| 5e4a60e0-356c-4c6c-9ae5-6ff282da29af | User has already been suspended           |
+| 63509e59-3306-4027-8e9b-2b43f3af9d2a | User has been suspended                   |
+| wrong-uuid                           | Error: Could not find user with that UUID |
++--------------------------------------+-------------------------------------------+
+```
+
+### `reinstate-user`
+
+Reinstate User.
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp reinstate-user 5e4a60e0-356c-4c6c-9ae5-6ff282da29af 63509e59-3306-4027-8e9b-2b43f3af9d2a wrong-uuid
++--------------------------------------+-------------------------------------------+
+| uuid                                 | status                                    |
++--------------------------------------+-------------------------------------------+
+| 5e4a60e0-356c-4c6c-9ae5-6ff282da29af | User has been reinstated                  |
+| 63509e59-3306-4027-8e9b-2b43f3af9d2a | User is not suspended                     |
+| wrong-uuid                           | Error: Could not find user with that UUID |
++--------------------------------------+-------------------------------------------+
+```
+### `review-pass`
+
+Activates a user that has a profile deactivated due to a pending ThreatMetrix review status. 
+Requires the user UUID from the `uuid-lookup` task.
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp review-pass uuid-1 uuid-2 uuid-3 wrong-uuid
++----------------+------------------------------------------------------------------+
+| uuid           | status                                                           |
++----------------+------------------------------------------------------------------+
+| uuid-1         | There was an error activating the user profile. Please try again.|
+| uuid-2         | User profile has been activated and the user has been emailed.   |
+| uuid-3         | User is past the 30 day review eligibility.                      |
+| wrong-uuid     | Error: Could not find user with that UUID                        |
++--------------------------------------+-------------------------------------------+
+```
+
+### `review-reject`
+Deactivates a user that has a pending ThreatMetrix review status with the reason "ThreatMetrix review rejected". 
+Requires the user UUID from the `uuid-lookup` task.
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp review-reject uuid-1 uuid-2 uuid-3 wrong-uuid
++----------------+------------------------------------------------------------------+
+| uuid           | status                                                           |
++----------------+------------------------------------------------------------------+
+| uuid-1         | Error: User does not have a pending fraud review                 |
+| uuid-2         | User profile has been deactivated due to fraud rejection.        |
+| uuid-3         | User is past the 30 day review eligibility.                      |
+| wrong-uuid     | Error: Could not find user with that UUID                        |
++--------------------------------------+-------------------------------------------+
+```
+
 ## `ls-servers`
 
 Lists servers in an environment as a table
@@ -140,6 +287,29 @@ aws-vault exec sandbox-power --
 
 The script can output as new-line delimited JSON (`--json`) or as a CSV (`--csv`).
 
+## `salesforce-email-lookup`
+
+Takes in Salesforce case numbers (escalated from our user support team), and returns
+the emails associated with those cases. It will also pull the associated user UUIDs
+for those uses
+
+- **Note**: Will pop open a browser to log in to SecureAuth, you'll need to have
+  Salesforce access.
+
+```bash
+> aws-vault exec prod-power -- \
+    ./bin/salesforce-email-lookup 01234567
++-------------+-------------------+--------------------------------------+
+| case_number | email             | uuid                                 |
++-------------+-------------------+--------------------------------------+
+| 01234567    | email@example.com | aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa |
++-------------+-------------------+--------------------------------------+
+```
+
+- UUID loading can be a bit slower, this can be disabled with `--no-uuids`
+- It can output CSV with `--csv`
+- If sharing in Slack, consider using `--slack` (which is a shorthand for `--redact` to redact emails `--markdown` for Slack-compatible markdown formatting)
+
 ## `scp-s3`
 
 Imitates `scp` by copying a file in and out of S3. Use the instance ID to refer to remote hosts
@@ -172,25 +342,6 @@ Looks up the UUID for a user by their email address.
 ```bash
 aws-vault exec sandbox-power --
     ./bin/ssm-instance --document uuid-lookup --any asg-dev-idp
-```
-
-### `review-pass`
-
-Activates a user that has a profile deactivated due to a pending ThreatMetrix review status. 
-Requires the user UUID from the `uuid-lookup` task.
-
-```bash
-aws-vault exec sandbox-power --
-    ./bin/ssm-instance --document review-pass --any asg-dev-idp
-```
-
-### `review-reject`
-Deactivates a user that has a pending ThreatMetrix review status with the reason "ThreatMetrix review rejected". 
-Requires the user UUID from the `uuid-lookup` task.
-
-```bash
-aws-vault exec sandbox-power --
-    ./bin/ssm-instance --document review-reject --any asg-dev-idp
 ```
 
 ### `rails-c`
@@ -246,6 +397,12 @@ aws-vault exec sandbox-power --
 
 ### `passenger-restart`
 
+{%- capture alert_content -%}
+**2022-03-15**: This script is **not safe for prod use** at this time, it drops live requests instead of rotating smoothly. See [identity-devops#5651](https://github.com/18F/identity-devops/issues/5651) for more information. Only use it in emergency cases, or in a lower environment where live traffic does not matter.
+{%- endcapture -%}
+
+{% include alert.html content=alert_content alert_class="usa-alert--error" %}
+
 "Safely" restart the NGINX/Passenger service which reloads `application.yml` from
 S3.
 
@@ -256,6 +413,8 @@ aws-vault exec sandbox-power --
 
 If this fails it is recommended that you perform a recycle to ensure
 all instances are running from the same configuration.
+
+Check out [passenger-restart](https://github.com/18F/identity-devops/wiki/Troubleshooting-Quick-Reference#passenger-restart) for more information on what the command can do
 
 ### `worker-restart`
 

@@ -43,6 +43,15 @@ Login.gov supports
 
 An association of DMVs from many states, AAMVA provides an API we use to validate driver's license data.
 
+### ATO
+**Authority to Operate**
+
+The approval for a government system to be run in production, and the compliance process for getting there.
+
+At Login.gov, only our production and staging environments have an authority to operate permitting them to accept [personally-identifiable information (PII)](#pii).
+
+Source: [TTS Handbook _Lifecycle of a Launch_](https://handbook.tts.gsa.gov/launching-software/lifecycle/#atos), [OpenControl's Introduction to ATOs](https://atos.open-control.org/)
+
 ### Authentication
 **AuthN**
 
@@ -185,6 +194,11 @@ To differentiate, we could say:
 
 > The user proofed their identity to complete identity verification.
 
+### IVS
+**Identity Verification Services**
+
+This refers to part of the Identity and Access Management portfolio of the U.S. Postal Service.
+
 ### LOA
 **Level of Assurance**
 
@@ -254,6 +268,11 @@ An entity that relies upon the subscriber’s credentials, typically to process 
 Source: [CNSSI-4009](https://www.ncsc.gov/nittf/docs/CNSSI-4009_National_Information_Assurance.pdf), [Searchable Source](http://www.fismapedia.org/index.php/Category:CNSSI_4009_Terms)
 
 An entity that relies upon the Subscriber's token and credentials or a Verifier's assertion of a Claimant’s identity, typically to process a transaction or grant access to information or a system. Source: SP 800-63
+
+### RSS
+**Retail Systems Software**
+
+This is point of service software used by the U.S. Postal Service.
 
 ### SAML
 **Security Assertion Markup Language**

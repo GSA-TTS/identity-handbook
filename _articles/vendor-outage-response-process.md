@@ -123,6 +123,10 @@ The precise effects of each flag are:
 #### SMS
   - Users will only be able to verify their identity by mail.
 
+ - The `SMS` checkbox on the IdV dialogs will be disabled.
+ 
+ - New phone numbers for SMS 2FA will not be verified.
+
   - Any user entering the verification flow will be presented with an
     outage screen telling them that their options are to verify by
     mail or wait until our vendor outage is resolved.
@@ -132,7 +136,9 @@ The precise effects of each flag are:
 
 #### Voice
   - Users will only be able to verify their identity by mail.
-
+  
+  - New phone numbers for voice 2FA will not be verified
+ 
   - Any user entering the verification flow will be presented with an
     outage screen telling them that their options are to verify by
     mail or wait until our vendor outage is resolved.

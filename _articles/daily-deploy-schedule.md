@@ -6,7 +6,7 @@ category: "AppDev"
 subcategory: "Deploying"
 ---
 
-### Apps
+## Apps
 
 These apps are deployed on weekdays:
 
@@ -14,25 +14,27 @@ These apps are deployed on weekdays:
 - PKI
 - Dashboard
 
-### Daily Business Schedule Deploys
+## Daily Business Schedule Deploys
 
-In these environments
+### Staging and INT
 
-- int
-- pt
-- staging
-- dm
-
-The daily deploys are scheduled for **weekdays at 5pm UTC**. See
-the [daily business schedule in identity-devops][identity-devops-schedule].
+In staging, daily deploys are scheduled for **weekdays at 5pm UTC**.
 
 | UTC  | Local (<lg-local-zone-name />) |
 |------|--------------------------------|
 | 5pm  | <lg-local-time utc="5pm" />    |
 
-[identity-devops-schedule]: https://github.com/18F/identity-terraform/blob/3a37047cfae6949dab1150025c528ccc5332f837/asg_recycle/main.tf#L44-L78
+See the [staging schedule][staging-specific-timing] for the time it's set to deploy. Default is UTC, and staging has the [overwrite timezone setting][staging-specific-time-zone] commented out.
 
-### Every 6 Hours Deploy Schedule
+See the [int schedule][int-specific-timing] for the time it's set to deploy. Default is UTC, and int has the [overwrite timezone setting][int-specific-time-zone] commented out.
+
+[staging-specific-timing]: https://github.com/18F/identity-terraform/blob/main/asg_recycle/schedule.tf#L15-L20
+[staging-specific-time-zone]: https://github.com/18F/identity-devops-private/blob/main/vars/staging.tfvars#L4-L5
+
+[int-specific-timing]: https://github.com/18F/identity-terraform/blob/main/asg_recycle/schedule.tf#L15-L20
+[int-specific-time-zone]: https://github.com/18F/identity-devops-private/blob/main/vars/int.tfvars#L4-L5
+
+## Every 6 Hours Deploy Schedule
 
 In these environments
 
@@ -47,6 +49,21 @@ Deploys are scheduled every 6 hours at **5am, 11am, 5pm, 11pm UTC**.
 | 11am | <lg-local-time utc="11am" />   |
 | 5pm  | <lg-local-time utc="5pm" />    |
 | 11pm | <lg-local-time utc="11pm" />   |
+
+## Not being deployed automatically
+
+### DM
+
+See the [dm schedule][dm-specific-timing] for the time it's set to deploy (currently, `nozero_norecycle`), and [the dm variables][dm-specific-time-zone] for the time zone.
+
+[dm-specific-timing]: https://github.com/18F/identity-terraform/blob/main/asg_recycle/schedule.tf#L3-L7
+[dm-specific-time-zone]: https://github.com/18F/identity-devops-private/blob/main/vars/dm.tfvars#L4-L5
+
+### PT
+
+See the [pt settings][pt-settings] for further info.
+
+[pt-settings]: https://github.com/18F/identity-devops-private/blob/main/vars/pt.tfvars#L6
 
 ### Environment status
 

@@ -1,6 +1,8 @@
 - name: Ada
   namesake_markdown: "[Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace), one of the world's first computer programmers"
   focus_area: Unsupervised remote proofing
+  appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/1bL2t84hXAfqTdLyMAtSvtN-0fLapMDgXX9carYPRIew/edit#gid=0
+  slack_appdev_oncall_handle: login-oncall-ada
   slack_channel_name: login-team-ada
   slack_channel_url: https://gsa-tts.slack.com/archives/CNCGEHG1G
   slack_group_name: login-ada
@@ -8,10 +10,10 @@
 
 - name: Agnes
   namesake_markdown: "[Agnes Meyer Driscoll](https://www.nsa.gov/History/Cryptologic-History/Historical-Figures/Historical-Figures-View/Article/1623020/agnes-meyer-driscoll/), a navy cryptanalyst, known as the '[first lady of naval cryptology](https://www.hmdb.org/m.asp?m=106127)'"
-  focus_area: Attempts API
+  focus_area: Fraud Data Products
   slack_channel_name: login-team-agnes
   slack_channel_url: https://gsa-tts.slack.com/archives/C03N6KQBAKS
-  readme: https://docs.google.com/document/d/1NQluZ_oo58ER4T49XzCvowdmXEYbOpZf-xS6MoT2Yng/edit
+  readme: https://docs.google.com/document/d/1RC18EqpgR2y7owfjojMhGO9pqXR0cAONkx7l8MZfonY/edit
 
 - name: Grace
   namesake_markdown: "[Admiral Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), a computer scientist and navy officer"
@@ -29,6 +31,8 @@
 
 - name: Joy
   namesake_markdown: "[Dr. Joy Buolamwini](https://en.wikipedia.org/wiki/Joy_Buolamwini), a computer scientist, artist, and activist who has published foundational work on algorithmic discrimination."
+  appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/17fdsVlfD06fpuq6F5-MdMwhpm0TV65wvyxDOkcRKDpA/edit#gid=0
+  slack_appdev_oncall_handle: login-joy-oncall
   focus_area: In Person Proofing
   slack_channel_name: login-team-joy
   slack_channel_url: https://gsa-tts.slack.com/archives/C03FA4VBN76
@@ -43,6 +47,8 @@
 
 - name: Katherine
   namesake_markdown: "[Katherine Johnson](https://en.wikipedia.org/wiki/Katherine_Johnson), a mathematician who was a key part of early NASA spaceflights"
+  appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/1tAEScH-1A1708a5elOuLDEHj7p_JzFdkpbNGB33gDJU/edit#gid=0
+  slack_appdev_oncall_handle: login-katherine-oncall
   focus_area: Authentication
   slack_channel_url: https://gsa-tts.slack.com/archives/C01710KMYUB
   slack_channel_name: login-team-katherine
@@ -75,6 +81,13 @@
   slack_channel_url: https://gsa-tts.slack.com/archives/C03JDA5HNUV
   slack_channel_name: login-team-ross
   archived: true
+
+- name: Timnit
+  namesake_markdown: "[Timnit Gebru](https://en.wikipedia.org/wiki/Timnit_Gebru), a computer scientist who has published work exposing biases in AI and algorithms."
+  focus_area: Document Capture & Authentication
+  slack_channel_url: https://gsa-tts.slack.com/archives/C056RD1NEHW
+  slack_channel_name: login-team-timnit
+  readme: https://docs.google.com/document/d/1ZBnTX1-XqNo6L7dG1m8CQqiFlb9qX_oonrp_t9XwvFk/edit?usp=sharing
 
 - name: Ursula
   namesake_markdown: "[Ursula Burns](https://en.wikipedia.org/wiki/Ursula_Burns), who has been CEO of technology companies like Xerox"

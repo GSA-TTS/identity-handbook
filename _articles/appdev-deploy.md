@@ -197,8 +197,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
     ```bash
-    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp
-    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod worker
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
     ```
 
 1. Set a timer for one hour, then check NewRelic again for errors.
@@ -243,8 +242,7 @@ the bug in staging, where it won't affect end users.
 To quickly remove new servers and leave old servers up:
 
 ```bash
-aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod idp
-aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod worker
+aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod ALL
 ```
 
 ##### Steps to roll back
@@ -271,8 +269,15 @@ If you do end up rolling back a deploy, schedule a blameless retrospective after
 us think about new checks, guardrails, or monitoring to help ensure smoother deploys in the future.
 
 ### Passenger restart
+
+{%- capture alert_content -%}
+**2022-03-15**: This script is **not safe for prod use** at this time, it drops live requests instead of rotating smoothly. See [identity-devops#5651](https://github.com/18F/identity-devops/issues/5651) for more information. Only use it in emergency cases, or in a lower environment where live traffic does not matter.
+{%- endcapture -%}
+
+{% include alert.html content=alert_content alert_class="usa-alert--error" %}
+
 A passenger restart is a quicker way to pick up changes to configuration in S3 without the need
-to scale up new instances. Check out [passenger-restart](https://github.com/18F/identity-devops/wiki/Troubleshooting-Quick-Reference#passenger-restart) for more information on what the command can do
+to scale up new instances. See [`passenger-restart` docs]({% link _articles/devops-scripts.md %}#passenger-restart).
 
 1. Make the config changes
 
@@ -299,6 +304,5 @@ new configurations (config from S3).
 1. In production, it's important to remember to still scale out old IDP instances.
 
     ```bash
-    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod idp
-    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod worker
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
     ```

@@ -36,8 +36,6 @@ For both Mid-year and End-of-year reviews, the leadership team will
 
 Some people prefer to write their feedback, so it is encouraged to provide that option as well.
 
-It is also encouraged to provide the same peer feedback opportunities to Login.gov contractors. Please remember that we cannot assign ratings and this has no impact on official evaluations.
-
 ### Self reviews
 
 For End-of-year reviews, the leadership team will
