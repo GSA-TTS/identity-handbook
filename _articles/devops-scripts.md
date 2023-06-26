@@ -320,6 +320,23 @@ aws-vault exec sandbox-power --
     ./bin/scp-s3 i-abcdef1234:/tmp/file.txt ./file.txt
 ```
 
+## `sms-me`
+
+`sms-me` sends a test SMS message from each production region to a test phone
+number. It allows for quick testing in case of a full or partial SMS outage.
+(Production access is required to use this tool.)
+
+Replace `YOUR_PHONE_NUMBER` with the number you would like to send to.
+Enter a 10 digit phone number. The script automatically adds the `+1` country
+code.
+
+```bash
+aws-vault exec sms-prod-power -- ./bin/sms-me YOUR_PHONE_NUMBER
+```
+
+The script returns message IDs that can be checked against the SMS
+delivery logs.
+
 ## `ssm-instance`
 
 `ssm-instance` opens an interactive session with a server (EC2 instance)
