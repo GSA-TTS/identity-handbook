@@ -326,10 +326,11 @@ aws-vault exec sandbox-power --
 number. It allows for quick testing in case of a full or partial SMS outage.
 (Production access is required to use this tool.)
 
-Replace `YOUR_PHONE_NUMBER` with the number you would like to send to.
+Replace `PHONE_NUMBER` with the number you would like to send to.
+(Make sure this number is your own or somebody's that you have permission to use.)
 
 ```bash
-aws-vault exec sms-prod-power -- ./bin/sms-me YOUR_PHONE_NUMBER
+aws-vault exec sms-prod-power -- ./bin/sms-me PHONE_NUMBER
 ```
 
 The script returns message IDs that can be checked against the SMS
