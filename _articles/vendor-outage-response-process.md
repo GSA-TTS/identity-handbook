@@ -66,7 +66,7 @@ As an overview:
 
 ![total-outage](https://github.com/18F/identity-handbook/assets/101212334/710b6e6f-e111-4acb-b568-b234efa03c74)
 
-- Setting `full_outage`for `lexisnexis_phone_finder` disables instant
+- Setting `full_outage` for `lexisnexis_phone_finder` disables instant
   verification, but verification by mail is still available.
 
 ![mail-only](https://github.com/18F/identity-handbook/assets/101212334/3785cf49-a813-4774-ab50-2afe36549c11)
@@ -76,12 +76,11 @@ As an overview:
 
 ![mail-only](https://github.com/18F/identity-handbook/assets/101212334/767b1145-0f98-4c05-9fba-b410caf548b7)
 
-  ID image uploads from the user's phone are also disabled; instead of
-  being given the option to use their phone or their computer for ID
-  image upload, users will be routed directly to the upload screen for
-  their computer.
+  ID image uploads must be done on the device with which the user
+  began verification. Normally, desktop computer users are able to
+  use their phone to upload pictures of their ID. Desktop users will
+  not be offered this choice.
 
-  (There is no notification of the user for this condition; they simply aren't offered the choice).
 The precise effects of each flag are:
 
 #### `vendor_status_acuant`
@@ -122,8 +121,10 @@ The precise effects of each flag are:
     outage screen telling them that their options are to verify by
     mail or wait until our vendor outage is resolved.
 
-  - Users will only be able to upload their IDs from their computer;
-    phone upload will be disabled.
+  - ID image uploads must be done on the device with which the user
+    began verification. Normally, desktop computer users are able to
+    use their phone to upload pictures of their ID. Desktop users will
+    not be offered this choice when this flag is set to `full_outage`.
 
 #### Voice
   - Users will only be able to verify their identity by mail.
@@ -132,5 +133,7 @@ The precise effects of each flag are:
     outage screen telling them that their options are to verify by
     mail or wait until our vendor outage is resolved.
 
-  - Users will only be able to upload their IDs from their computer;
-    phone upload will be disabled.
+  - ID image uploads must be done on the device with which the user
+    began verification. Normally, desktop computer users are able to
+    use their phone to upload pictures of their ID. Desktop users will
+    not be offered this choice when this flag is set to `full_outage`.
