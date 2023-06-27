@@ -47,7 +47,7 @@ Brief explanatory documents. Not actually restricted to one page.
 
 [rfc-template]: https://docs.google.com/document/d/1-M5Iy_z2M0gfZJTd_JJfHaToa8HRc8E40fJpgCFRSjc/edit
 [rfc-copy]: https://docs.google.com/document/d/1-M5Iy_z2M0gfZJTd_JJfHaToa8HRc8E40fJpgCFRSjc/copy
-[rfc-folder]: https://drive.google.com/drive/folders/19gDt7iCpiKIcxRrGabFHvKOfLUTg6zdv?ths=true
+[rfc-folder]: https://drive.google.com/drive/folders/1Oo_Y2oIvRwIEzPPmki1g0cHcheBWGlUS
 
 #### When to Use
 
