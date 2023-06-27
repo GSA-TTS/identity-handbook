@@ -51,9 +51,9 @@ The incident response process has four:
 
 An incident begins when someone becomes aware of a potential incident. We define “incident” broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Login.gov.
 
-When a person outside the Login.gov team (the reporter) notices a Login.gov-related incident, they should begin reporting it by using the 18F incident response process (need link here), and then post about it in #login-situation. If they don’t get acknowledgment from the Login.gov team right away, they should escalate by contacting the Login.gov leads directly until they receive acknowledgment of their report.
+When a person outside the Login.gov team (the reporter) notices a Login.gov-related incident, they should begin reporting it by using the 18F incident response process (need link here), and then post about it in [#login-situation][login-situation]. If they don’t get acknowledgment from the Login.gov team right away, they should escalate by contacting the Login.gov leads directly until they receive acknowledgment of their report.
 
-The first person to notice an incident, they should begin reporting it by using the this incident response process and posting about it in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) (including notifying the Login.gov leads).
+The first person to notice an incident, they should begin reporting it by using the this incident response process and posting about it in [#login-situation][login-situation] (including notifying the Login.gov leads).
 
 The first participant becomes the initial SL and carries out the next steps in the response. The SL’s responsibility is coordination, not necessarily investigation. The SL’s primary role is to guide the process. The first responder may remain SL throughout the process, or they may hand off SL duties later in the process.
 
@@ -65,12 +65,12 @@ Note that at this point the issue’s status is “investigating” — we haven
 
 At this phase, communication should follow these steps (and any additional steps listed at :
 
-* SL notifies [#login](https://gsa-tts.slack.com/messages/login/) channel that an incident is underway in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/), brief summary
+* SL notifies [#login](https://gsa-tts.slack.com/messages/login/) channel that an incident is underway in [#login-situation][login-situation], brief summary
 * The SL should inform GSA of the investigation by emailing itservicedesk@gsa.gov, gsa-ir@gsa.gov with a description of the incident, via a single email to all three addresses WITHIN one (1) hour of the finding.
 * GSA-IR team responds:
     - Does not yet meet threshold for reportable incident
     - Continue investigating and keep us in the loop
-* Real-time chat should happen in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/).
+* Real-time chat should happen in [#login-situation][login-situation].
 * Create an issue in the [identity-security-private](https://github.com/18F/identity-security-private/issues/new?template=incidents.md) GitHub repository.
 * Create a google docs
 * If incident is an outage SL updates the [Login.gov StatusPage](https://logingov.statuspage.io/) following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
@@ -114,7 +114,7 @@ At this point, the SL should write an initial **situation report** (“sitrep”
 > have tunneled into the run. Dave is working to fix the fence, Spot is tracking the fox.
 
 This sitrep should be:
-* Posted in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/)
+* Posted in [#login-situation][login-situation]
 * Emailed to GSA IR (gsa-ir@gsa.gov)
 * Send (email or Slack) to external stakeholders, if applicable and relevant
 
@@ -255,21 +255,21 @@ Guidelines for addressing Low-sev issues:
 ### Incident Declaration
 
 In most cases the `Declare Incident` Slack workflow should be used to initiate
-and incident. To use, enter the `#login-situation` channel, type `/declare` and
+and incident. To use, enter the [#login-situation][login-situation] channel, type `/declare` and
 hit enter to be prompted with a form to enter basic information.
 
 Once posted the team should use a thread under the incident declaration in the
 channel. This allows for additional threads to be established and multiple
-sub-incidents to be split off while remaining in the `#login-situation` channel.
+sub-incidents to be split off while remaining in the [#login-situation][login-situation] channel.
 
 ### Situation Room
 
-This is generally a Google Meet. The link is present at the top of the `#login-situation`
+This is generally a Google Meet. The link is present at the top of the [#login-situation][login-situation]
 channel. It is also included in the `Declare Incident` Slack workflow output.
 
 If Google Meet is not available the team may use Zoom or another GSA approved
 video communication service to coordinate. The relevant link/invite must be
-shared in the `#login-situation` channel.
+shared in the [#login-situation][login-situation] channel.
 
 ### Emergency Contacts
 
@@ -347,11 +347,11 @@ Anyone with access to production, including:
   * Provide clear updates to the team
   * If unfilled or someone needs to rotate out, volunteers to serve in one of the defined roles:
     * Technical lead (TL): Leads technical investigation and mitigation
-    * Messenger (M): Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
-    * Scribe (S): Relays information discussed in war room (hangout) to #login-situation and aids SL in recording incident (Just notes, not a transcript)
+    * Messenger (M): Coordinates communication outside of [#login-situation][#login-situation], within GSA, and if needed, with partners and the public
+    * Scribe (S): Relays information discussed in war room (hangout) to [#login-situation][login-situation] and aids SL in recording incident (Just notes, not a transcript)
   * If assigned a specific role or task, sees it through until it is complete OR handed off to another participant and confirmed by the SL
   * Be ready to answer SL/others when questions arise
-  * Scribe your activities and artifacts in #login-situation
+  * Scribe your activities and artifacts in [#login-situation][login-situation]
 
 ### What if I can't participate?
 
@@ -369,3 +369,5 @@ Anyone with access to production, including:
 * **Refinement** - Only through participating fully can we refine our processes to improve response and efficiency
 * **Required** - GSA authorizes Login.gov to operate, in part on the understanding that we will adhere to [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
 * **Regulation (Law)** - Per FISMA we must follow [NIST 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) - Computer Security Incident Handling Guide
+
+[login-situation]: https://gsa-tts.slack.com/messages/login-situation/
