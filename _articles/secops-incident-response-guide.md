@@ -260,7 +260,7 @@ hit enter to be prompted with a form to enter basic information.
 
 Once posted the team should use a thread under the incident declaration in the
 channel. This allows for additional threads to be established and multiple
-sub-incedents to be split off while remaining in the `#login-situation` channel.
+sub-incidents to be split off while remaining in the `#login-situation` channel.
 
 ### Situation Room
 
