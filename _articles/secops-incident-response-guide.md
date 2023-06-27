@@ -47,7 +47,7 @@ The incident response process has four:
 * [Remediate](#remediate-phase) - The team continuously works to mitigate the situation and ultimate return to normal operation.
 * [Retrospect](#retrospective-phase) - The team learns from the incident and identifies specific and actionable improvements.
 
-### Initiate Phas
+### Initiate Phase
 
 An incident begins when someone becomes aware of a potential incident. We define “incident” broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Login.gov.
 
