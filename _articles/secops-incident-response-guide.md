@@ -30,23 +30,24 @@ Login.gov incident response operates under the GSA Incident Response framework. 
   * [Remediate Phase](#remediate-phase)
   * [Retrospective Phase](#retrospective-phase)
 * [Impact Assessment](#impact-assessment)
-  * [High Severity](#high-severity)
-  * [Medium Severity](#medium-severity)
-  * [Low Severity](#low-severity)
-* [Additional Resources](#resources)
+  * [Incident Severities](#incident-severities)
+    * [High Severity](#high-severity)
+    * [Medium Severity](#medium-severity)
+    * [Low Severity](#low-severity)
+* [Resources](#resources)
   * [Emergency Contacts](#emergency-contacts)
   * [Crisis Comms](#crisis-comms)
 * [Frequently Asked Questions and Expectations](#frequently-asked-questions-and-expectations)
 
 ## Response Process
 
-The incident response process has four [phases](#phases):
-* [Initiate](#initiate-phase) - An incident is detected, [declared](#incident-declaration) by the [Situation Lead](#situation-lead), and responders assemble in the [situation room](#situation-room)
+The incident response process has four:
+* [Initiate](#initiate-phase) - An incident is detected, [declared by the Situation Lead](#incident-declaration), and responders assemble in the [situation room](#situation-room)
 * [Assess](#assess-phase) - The situation is assessed, initial [impact assessment](#impact-assessment) is conducted.
 * [Remediate](#remediate-phase) - The team continuously works to mitigate the situation and ultimate return to normal operation.
 * [Retrospect](#retrospective-phase) - The team learns from the incident and identifies specific and actionable improvements.
 
-### Initiate Phase
+### Initiate Phas
 
 An incident begins when someone becomes aware of a potential incident. We define “incident” broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Login.gov.
 
@@ -180,11 +181,19 @@ This report should be posted as a final comment on the GitHub issue, which can t
 
 ## Impact Assessment
 
-Severity ratings drive the actions of the response team. Below are the severities ratings we use, some examples of incidents that might fall into that bucket, and some guidelines for SLs and response teams about how to treat each class of incident.
+Impact assessment is an ongoing activity. When an incident is first declared
+the impact may be unclear. The responders should make a best guess at impact
+and move forward quickly.
 
+Severity ratings drive the actions of the response team. Below are the severities ratings we use, some examples of incidents that might fall into that bucket, and some guidelines for SLs and response teams about how to treat each class of incident.
 Note the severities may (and often will) change during the lifecycle of the incident. That’s normal.
 
-### High Severity
+### Incident Severities
+
+For incident response Login.gov uses a simple high/medium/low severity categorization.
+These levels are distinct from the [Comms team's levels](#crisis-comms).
+
+#### High Severity
 
 High-sev incidents successfully compromise the confidentiality/integrity of Personally Identifiable Information (PII), impact the availability of services for a large number of customers, or have significant financial impact. Examples include:
 
@@ -204,7 +213,7 @@ Guidelines for addressing High-sev issues:
 
 * Sitreps should be sent every hour, or more.
 
-### Medium Severity
+#### Medium Severity
 
 Medium-sev incidents represent attempts (possibly un- or not-yet-successful) at breaching PII, or those with limited availability/financial impact. Examples include:
 
@@ -224,7 +233,7 @@ Guidelines for addressing Medium-sev issues:
 
 * Sitreps should be sent approximately twice a day.
 
-### Low Severity
+#### Low Severity
 
 Low-sev incidents don’t affect PII, and have no availability or financial impact. Examples include:
 * Attempted compromise of non-important systems (staging/dm/qa/demo, etc.)
@@ -241,7 +250,26 @@ Guidelines for addressing Low-sev issues:
 
 * Sitreps should be sent approximately daily.
 
-## Additional Resources
+## Resources
+
+### Incident Declaration
+
+In most cases the `Declare Incident` Slack workflow should be used to initiate
+and incident. To use, enter the `#login-situation` channel, type `/declare` and
+hit enter to be prompted with a form to enter basic information.
+
+Once posted the team should use a thread under the incident declaration in the
+channel. This allows for additional threads to be established and multiple
+sub-incedents to be split off while remaining in the `#login-situation` channel.
+
+### Situation Room
+
+This is generally a Google Meet. The link is present at the top of the `#login-situation`
+channel. It is also included in the `Declare Incident` Slack workflow output.
+
+If Google Meet is not available the team may use Zoom or another GSA approved
+video communication service to coordinate. The relevant link/invite must be
+shared in the `#login-situation` channel.
 
 ### Emergency Contacts
 
@@ -249,6 +277,9 @@ The [Emergency Contact List](https://github.com/18F/identity-devops/wiki/On-Call
 contact and escalation information for Login.gov, GSA, and vendors.
 
 ### Crisis Comms
+
+Login.gov Communications maintains a distinct process for assessing the need
+to initiate crisis communications with GSA, partner, and other stakeholders.
 
 See [Incident Comms Playbook - Phase 2: ASSESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c)
 for the incident level symptoms, impact, and duration.  It is the responsibility
