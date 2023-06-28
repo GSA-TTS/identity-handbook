@@ -370,4 +370,4 @@ Anyone with access to production, including:
 * **Required** - GSA authorizes Login.gov to operate, in part on the understanding that we will adhere to [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
 * **Regulation (Law)** - Per FISMA we must follow [NIST 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) - Computer Security Incident Handling Guide
 
-[login-situation]: https://gsa-tts.slack.com/messages/login-situation/
+[login-situation]: https://gsa-tts.slack.com/archives/C5QUGUANN
