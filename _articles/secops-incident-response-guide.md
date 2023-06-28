@@ -41,7 +41,7 @@ Login.gov incident response operates under the GSA Incident Response framework. 
 
 ## Response Process
 
-The incident response process has four:
+The incident response process has four phases:
 * [Initiate](#initiate-phase) - An incident is detected, [declared by the Situation Lead](#incident-declaration), and responders assemble in the [situation room](#situation-room)
 * [Assess](#assess-phase) - The situation is assessed, initial [impact assessment](#impact-assessment) is conducted.
 * [Remediate](#remediate-phase) - The team continuously works to mitigate the situation and ultimate return to normal operation.
