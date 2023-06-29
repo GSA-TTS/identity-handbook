@@ -24,64 +24,69 @@ Login.gov incident response operates under the GSA Incident Response framework. 
 
 ## Contents
 
-* [Overview](#overview)
-  * [Phases](#phases)
-    * [Initiate](#initiate)
-    * [Assess](#assess)
-    * [Remediate](#remediate)
-    * [Retrospective](#retrospective)
 * [Response process](#response-process)
   * [Initiate Phase](#initiate-phase)
   * [Assess Phase](#assess-phase)
   * [Remediate Phase](#remediate-phase)
   * [Retrospective Phase](#retrospective-phase)
-* [Incident Severities](#incident-severities)
-  * [High Severity](#high-severity)
-  * [Medium Severity](#medium-severity)
-  * [Low Severity](#low-severity)
+* [Impact Assessment](#impact-assessment)
+  * [Incident Severities](#incident-severities)
+    * [High Severity](#high-severity)
+    * [Medium Severity](#medium-severity)
+    * [Low Severity](#low-severity)
+* [Resources](#resources)
+  * [Incident Declaration](#incident-declaration)
+  * [Situation Room](#situation-room)
+  * [Emergency Contacts](#emergency-contacts)
+  * [Crisis Comms](#crisis-comms)
+  * [Situation Report](#situation-report)
 * [Frequently Asked Questions and Expectations](#frequently-asked-questions-and-expectations)
 
-## Overview
+## Response Process
 
-At a high level, incident response follows this process:
+The incident response process has four phases:
+* [Initiate](#initiate-phase) - An incident is detected, [declared by the Situation Lead](#incident-declaration), and responders assemble in the [situation room](#situation-room)
+* [Assess](#assess-phase) - The situation is assessed, initial [impact assessment](#impact-assessment) is conducted.
+* [Remediate](#remediate-phase) - The team continuously works to mitigate the situation and ultimate return to normal operation.
+* [Retrospect](#retrospective-phase) - The team learns from the incident and identifies specific and actionable improvements.
 
-### Phases
+### Initiate Phase
 
-#### Initiate
+Response begins when an TTS staff member inside or outside the Login.gov team (the reporter) notices and reports a Login.gov-related incident, using the TTS incident response process and notifying the Login.gov team in the [#login-situation][login-situation] Slack channel.
 
-An TTS staff member inside or outside the Login.gov team (the reporter) notices and reports a Login.gov-related incident, using the TTS incident response process and notifying the Login.gov team in the #login-situation Slack channel.
+We define “incident” broadly, following [NIST SP 802-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Login.gov.
 
-- The first responder on the Login.gov team (which could be the reporter if the reporter is on the team) becomes the initial Situation Lead (SL).
-
+The first responder on the Login.gov team (which could be the reporter if the reporter is on the team) becomes the initial Situation Lead (SL).
 The SL follows this Login.gov IR Plan and may additionally reference [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/)
 
 Initial steps:
 
-* The SL notifies [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) that an incident has been declared
-* Responders assemble in the War Room ((See the Topic in #login-situation channel for the link)
+* The SL performs an initial [incident declaration](#incident-declaration)
+* Responders assemble in the [situation room](#situation-room)
 * SL requests more responders if needed:
   * During business hours:
     * Call in on-call members using the @login-appdev-oncall and @login-devops-oncall handles in Slack
-    * Use @here in #login-situation if still understaffed
+    * Use @here in [#login-situation][login-situation] if still understaffed
   * After hours:
     * Slack or Splunk On-Call used to alert additional responders (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) if needed)
 * Roles are assigned when possible as responders join the incident:
-  * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed
-  * **Technical Lead (TL)**: Leads technical investigation and mitigation
-  * **Messenger (M)**: Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
-  * **Scribe (SC)**: Relays information discussed in war room (hangout) to #login-situation and aids Situation Lead in recording incident
+  * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed. [Situation Lead Checklist]({% link _articles/incident-response-checklist.md %}#situation-lead)
+  * **Technical Lead (TL)**: Leads technical investigation and mitigation. [Technical Lead Checklist]({% link _articles/incident-response-checklist.md %}#technical-lead)
+  * **Messenger (M)**: Coordinates communication outside of #login-situation, within GSA, and if needed, initiates contact with Login.gov Communications to start [crisis comms](#crisis-comms) process. [Messenger Checklist]({% link _articles/incident-response-checklist.md %}#messenger)
+  * **Scribe (SC)**: Relays information discussed in [situation room](#situation-room) to [#login-situation][login-situation] channel and aids the Situation Lead in recording incident. [Scribe Checklist]({% link _articles/incident-response-checklist.md %}#scribe)
 
 Roles proceed as follows:
 * **Situation Lead (SL)**:
   * Requests additional responders as needed, including a new SL if they need to cycle off
   * Ensures roles and team are coordinated and have what they need
   * Shares context on what is happening and asks clarifying questions
+  * Adjusts the severity of the incident based on [impact assessment](#impact-assessment) as needed
 * **Tech Lead (TL)**:
   * Leads technical response, delegating technical tasks as needed
   * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) and initiates use
   * Ensures screen sharing and other methods are used
 * **Scribe (SC)**:
-  * Records significant activities in #login-situation channel to create a timeline
+  * Records significant activities in [#login-situation][login-situation] channel to create a timeline
   * Asks for links to resources/extra information to record as needed
   * Relays information to help someone NOT in the war room who wants to understand the incident
 * **Messenger (M)**:
@@ -91,119 +96,29 @@ Roles proceed as follows:
   * If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov StatusPage](https://logingov.statuspage.io/) following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
   * Checks the incident against the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1) and notify Login.gov comms before the incident reaches 50% of its length of time limit
 
-
-#### Assess
-
-- The SL forms a team (responders) to determine if the event is actually a confirmed incident, and if so assesses the severity (investigating).
-- The SL sends out an initial situation report (sitrep), or a false-alarm notification.
-- If the cause of the incident is determined to be an outage in a 3rd party vendor, turn on the vendor outage page in the idp via the [Vendor Outage Response Process]({% link _articles/vendor-outage-response-process.md %})
-
-#### Remediate
-
-- The SL coordinates, communicates, and tracks the investigation and remediation.
-
-The responders work to contain and remediate the issue; timelines vary based on the assessed severity.
-- Initial stopgap fix
-- Longer-term solution
-- Impact Discovery
-- Send GSA IR (gsa-ir@gsa.gov) and partner notifications/updates if relevant
-- If breach and theft is determined involve GSA IR for forensics
-- Other remediation
-- Discuss closing out urgent response
-
-  - Two phases to close out: finished urgent response, and fully closed
-     - For an incident to remain in the active emergency phase, it must need all hands on deck no matter the time of day/night. If the initial remediation is complete, then urgent response can conclude, which ends the discussion in #login-situation and clears the topic in that channel.
-     - This doesn’t mean response is finished. There may still be more follow up tasks required during business hours for the team to fully close out the incident ticket.
-
-#### Retrospective
-The responding team holds a retrospective to analyze the incident, capture follow-up action items and lessons-learned, and write a formal report.
-
-Real-time communication happens in Slack.
-- If needed, the team can use a Google Hangout and/or Google Docs to share information that’s not appropriate for Slack or GitHub (PII, etc.).
-- About a month after the retrospective, review the action items to see which ones are complete and if any merit further action.
-
-For full details, read on.
-
-## Response process
-
-### Initiate Phase
-
-An incident begins when someone becomes aware of a potential incident. We define “incident” broadly, following [NIST SP 800-61](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf), as “a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practices” (6). This is a deliberately broad definition, designed to encompass any scenario that might threaten the security of Login.gov.
-
-When a person outside the Login.gov team (the reporter) notices a Login.gov-related incident, they should begin reporting it by using the 18F incident response process (need link here), and then post about it in #login-situation. If they don’t get acknowledgment from the Login.gov team right away, they should escalate by contacting the Login.gov leads directly until they receive acknowledgment of their report.
-
-The first person to notice an incident, they should begin reporting it by using the this incident response process and posting about it in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/) (including notifying the Login.gov leads).
-
-The first participant becomes the initial SL and carries out the next steps in the response. The SL’s responsibility is coordination, not necessarily investigation. The SL’s primary role is to guide the process. The first responder may remain SL throughout the process, or they may hand off SL duties later in the process.
-
-The SL makes sure that the Login.gov incident response process is followed, including supporting the reporter if the reporter already started it, or starting it if nobody has started it yet.
-
-#### Messaging at the Initiate phase
-
-Note that at this point the issue’s status is “investigating” — we haven’t confirmed that it’s really an issue yet. So, we should actually refer to this as just an “event” at this point; it doesn’t become an “incident” until we’ve confirmed it.
-
-At this phase, communications should follow these steps (and any additional steps listed at :
-
-* SL notifies [#login](https://gsa-tts.slack.com/messages/login/) channel that an incident is underway in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/), brief summary
-* The SL should inform GSA of the investigation by emailing itservicedesk@gsa.gov, gsa-ir@gsa.gov with a description of the incident, via a single email to all three addresses WITHIN one (1) hour of the finding.
-* GSA-IR team responds:
-    - Does not yet meet threshold for reportable incident
-    - Continue investigating and keep us in the loop
-* Real-time chat should happen in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/).
-* Create an issue in the [identity-security-private](https://github.com/18F/identity-security-private/issues/new?template=incidents.md) GitHub repository.
-* Create a google docs
-* If incident is an outage SL updates the [Login.gov StatusPage](https://logingov.statuspage.io/) following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
-* Check the incident against the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1) and notify Login.gov comms before the incident reaches 50% of its length of time limit
-* Login.gov Agency Partners: send out an incident summary to LOGIN-PARTNERS@listserv.gsa.gov. Partner list: https://drive.google.com/drive/u/0/folders/0B4yIa0Upv1JJSkJOSmdsLWVOVmM)
-
-The SL is responsible for keeping this issue up-to-date as investigation and remediation progresses. Everyone involved in the issue (responders) should leave notes as comments on the issue.
-
-* The SL may start a Google Hangout and/or create Google Docs so that responders can share sensitive information not suitable for sharing in GitHub or Slack.
-
-
 ### Assess Phase
 
-The next step is to assess the issue. We need to answer two questions:
-* Is this an incident (i.e., did the thing we suspect happen actually happen?)
+The next step is to fully assess the issue. We need to answer these questions:
+* Is this really an incident?
 * If so, how severe is it? (This will determine how our response proceeds.)
+* Is this outage due to a 3rd party, warranting use of the [Vendor Outage Response Process]({% link _articles/vendor-outage-response-process.md %})?
+* Is this user impacting, and if so, what information should be shared?
 
-To answer these questions, the SL should form a response team by Direct Messaging (DM) people in Slack. The response team should work to confirm the issue and assess its impact.
+To answer these questions the assembled incident response team should work
+together and draw in additional resources if needed.
 
-If the issue turns out to be a false alarm, the SL should update the ticket, setting the status to “false alarm”, and closing the issue.
+If the issue turns out to be a false alarm the SL should declare the incident closed
+in Slack. The messenger should update the ticket, setting the status to “false alarm”, and closing the issue.
 
-If the issue is valid, the team should assess its impact and determine an initial severity following the incident severity guide below. (Note that the severity can change over the lifespan of the incident, so it’s OK to determine the initial severity fairly quickly.)
-
-Once this is done, the SL should update the ticket, noting:
-
-> - ` ** Status: “confirmed” `
-> - ` ** Severity: High/Med/Low `
-> - ` ** Any new/changed responders `
-
-At this point, the SL should write an initial **situation report** (“sitrep”) confirming the incident, summarizing what’s going on, identifying the SL, and linking to the issue. Here’s an example sitrep:
-
-> Subject: [sitrep] The chickens have escaped
->
-> https://github.com/18F/identity-security-private/issues/12345
->
-> - ` ** Severity: high `
-> - ` ** SL: Farmer Jane `
-> - ` ** Responders: Spot the Dog, Farmer Dave `
->
-> We've confirmed reports of escaped chickens. Looks like a fox may
-> have tunneled into the run. Dave is working to fix the fence, Spot is tracking the fox.
-
-This sitrep should be:
-* Posted in [#login-situation](https://gsa-tts.slack.com/messages/login-situation/)
-* Emailed to GSA IR (gsa-ir@gsa.gov)
-* Send (email or Slack) to external stakeholders, if applicable and relevant
-
-#### Comms at the Assess phase
-
-Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts, and update to open StatusPage incident if applicable).
+If the issue is valid, a more complete [impact assessment](#impact-assessment)
+should be performed and the impact should be revised accordingly.
 
 ### Remediate Phase
 
-At this point, we’re trying to fix the issue! Remediation will be very situation-specific, so specific steps are hard to suggest. However, a few **guidelines** to follow during this process:
+At this point, we’re trying to fix the issue! The majority of time spent in an
+incident where participation is active is during the remediation phase.
+
+Remediation will be very situation-specific, so specific steps are hard to suggest. However, a few **guidelines** to follow during this process:
 
 * The SL’s responsibility is coordination, communication, and information-collection. The remediation team will be focused on resolving the issue, so it’s up to the SL to make sure that we properly track what happened, how we’re fixing it, who’s doing what, etc. Ideally, the notes kept by the SL should be sufficient for an outside investigator to independently follow the work of the response team and validate the team’s work.
 
@@ -219,6 +134,8 @@ At this point, we’re trying to fix the issue! Remediation will be very situati
 
   * For Low-severity issues, the team should notify as above, and not take action until a mutually-agreed-on course of action has been determined.
 
+* Longer incidents may also require posting a regular (hourly) [situation report](#situation-report). These are to augment but not replace all the other communication from the incident response team and the communications team.
+
 * Remediation can sometimes take a long time. If the issue progresses for more than 3 hours without being resolved, the SL should plan for a long remediation.
 
 This means:
@@ -231,40 +148,46 @@ This means:
 Once the incident is no longer active — i.e. the breach has been contained, the issue has been fixed, etc. — the SL should spin down the incident. There may still be longer-term remediation needed, and possibly more investigation, but as long as the incident is no longer active these activities can proceed at the regular pace of business. To close out an incident, the SL should:
 
 * Set the status of the incident to “resolved."
-* Send a final sitrep to stakeholders.
+* Post a final notice Slack to clearly demarcate the end of the active response.
+* If appropriate, post a final [situation report](#situation-report) in Slack and share via email.
 * Thank everyone involved for their service!
 
 Comms at the Remediate phase
 * Updates and real-time chat should continue as above (updates on the GitHub issue, chat in Slack or Google Hangouts).
 
-* The SL should continue to post updated sitreps on a regular cadence (the section on severities, below, suggests cadences for each level). These sitreps should be sent to Slack, to GSA-IT and US-CERT via email, and to any other stakeholders identified throughout the process (e.g. clients).
-
 * For user impacting incidents, users must be kept up to date via the [Login.gov StatusPage](https://logingov.statuspage.io/) following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
 
 ### Retrospective Phase
 
-The final step in handling a security incident is figuring out what we learned. The SL (or one of the SLs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report.
+The final step in handling an incident is learning. The SL (or one of the SLs if there were multiple, or a designated other party) should lead a retrospective and develop an incident report (a.k.a. - postmortem).
 
-Conducting retrospectives is out of the scope of this document, but as a crash course, here’s an [introduction to blameless postmortems](https://codeascraft.com/2012/05/22/blameless-postmortems/). We follow the basic steps listed at [login-gov-postmortems](https://drive.google.com/open?id=1A9y94VgHPOcaCCTdGRh0aWINOrBjUwo2ZepzBlTM--8).
+Conducting incident reviews is out of the scope of this document, but as a crash course, here’s an [introduction to blameless postmortems](https://codeascraft.com/2012/05/22/blameless-postmortems/) by John Allspaw, one of the originators of the [Learning from Incidents](https://www.learningfromincidents.io/) community.
 
-The report should contain a timeline of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. A cause analysis is an important part of this report; the team should use tools such as [Infinite Hows](https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) and [Five Whys](https://en.wikipedia.org/wiki/5_Whys) to try to dig into causes, how future incidents could be prevented, how responses could be better in the future, etc.
+The report should contain a timeline of the incident, details about how the incident progressed, and information about the vulnerabilities that led to the incident. The purpose of an incident review is learning.
 
-The report should also contain some basic response metrics:
-* Discovery method (how did we become aware of the issue?)
+* The team learns from the overall system (people and technology).
+* The technical system (software) "learns" through improvements the team makes to it.
+* The organization learns through improved processes and the analysis of the incident.
 
-* Time to discovery (how long did it take from when the incident started until we became aware of it?)
-* Time to containment (how long did it take from when we became aware until the issue was contained?)
-* Threat actions (which specific actions – e.g. phishing, password attacks, etc) – were taken by the actor)?
+The team may use tools such as [Infinite Hows](https://www.kitchensoap.com/2014/11/14/the-infinite-hows-or-the-dangers-of-the-five-whys/) to drive the analysis.
 
-This report should be posted as a final comment on the GitHub issue, which can then be closed. If appropriate, this should also be posted at [postmortems](https://drive.google.com/drive/u/0/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?lfhs=2) (omitting any sensitive information).
+All incident reviews must also stored in the [incident reviews folder](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?usp=drive_link) under the current year.
 
-## Incident Severities
+## Impact Assessment
+
+Impact assessment is an ongoing activity. When an incident is first declared
+the impact may be unclear. The responders should make a best guess at impact
+and move forward quickly.
 
 Severity ratings drive the actions of the response team. Below are the severities ratings we use, some examples of incidents that might fall into that bucket, and some guidelines for SLs and response teams about how to treat each class of incident.
-
 Note the severities may (and often will) change during the lifecycle of the incident. That’s normal.
 
-### High Severity
+### Incident Severities
+
+For incident response Login.gov uses a simple high/medium/low severity categorization.
+These levels are distinct from the [Comms team's levels](#crisis-comms).
+
+#### High Severity
 
 High-sev incidents successfully compromise the confidentiality/integrity of Personally Identifiable Information (PII), impact the availability of services for a large number of customers, or have significant financial impact. Examples include:
 
@@ -284,7 +207,7 @@ Guidelines for addressing High-sev issues:
 
 * Sitreps should be sent every hour, or more.
 
-### Medium Severity
+#### Medium Severity
 
 Medium-sev incidents represent attempts (possibly un- or not-yet-successful) at breaching PII, or those with limited availability/financial impact. Examples include:
 
@@ -304,7 +227,7 @@ Guidelines for addressing Medium-sev issues:
 
 * Sitreps should be sent approximately twice a day.
 
-### Low Severity
+#### Low Severity
 
 Low-sev incidents don’t affect PII, and have no availability or financial impact. Examples include:
 * Attempted compromise of non-important systems (staging/dm/qa/demo, etc.)
@@ -321,18 +244,104 @@ Guidelines for addressing Low-sev issues:
 
 * Sitreps should be sent approximately daily.
 
+## Resources
+
+### Incident Declaration
+
+In most cases the `Declare Incident` Slack workflow should be used to initiate
+and incident. To use, enter the [#login-situation][login-situation] channel, type `/declare` and
+hit enter to be prompted with a form to enter basic information.
+
+Early in the response is may be hard to assess impact. The Situation Lead should
+perform a quick [impact assessment](#impact-assessment) to set the initial impact,
+and it can be revised as needed later.
+
+The full list of roles may not be known at the time of posting. Leave unassigned
+roles blank and ensure they are documented in the response Slack thread as
+they are assigned.
+
+Once posted the team should use a thread under the incident declaration in the
+channel. This allows for additional threads to be established and multiple
+sub-incidents to be split off while remaining in the [#login-situation][login-situation] channel.
+
+### Situation Room
+
+This is generally a Google Meet. The link is present at the top of the [#login-situation][login-situation]
+channel. It is also included in the `Declare Incident` Slack workflow output.
+
+If Google Meet is not available the team may use Zoom or another GSA approved
+video communication service to coordinate. The relevant link/invite must be
+shared in the [#login-situation][login-situation] channel.
+
+### Emergency Contacts
+
+The [Emergency Contact List](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) includes
+contact and escalation information for Login.gov, GSA, and vendors.
+
+### Crisis Comms
+
+Login.gov Communications maintains a distinct process for assessing the need
+to initiate crisis communications with GSA, partner, and other stakeholders.
+
+See [Incident Comms Playbook - Phase 2: ASSESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c)
+for the incident level symptoms, impact, and duration.  It is the responsibility
+of the **Messenger** to provide 30 minutes advance notice (if possible) to @login-comms-oncall
+when a crisis communications event is imminent.
+
+### Situation Report
+
+In prior versions of this guide "situation reports" (or "sitreps") were referenced
+with the suggestion to share in multiple communication channels. The current process
+captures the needs of most incidents without this additional item. Notably:
+* The going thread in [#login-situation][login-situation] should provide the latest
+  detailed context.
+* The [crisis comms](#crisis-comms) process covers external stakeholder communications.
+* For availability incidents, [StatusPage](https://status.login.gov) provides
+  a high level overview sharable with the public.
+* For security incidents, GSA-IR engagement will provide the overarching regular
+  updates needed.
+
+There will be times, particularly in a prolonged outage, where sharing a point in
+time situation report will be needed. Here is a suggested format with the expectation
+that it would be posted in Slack and shared with leadership.
+
+~~~
+Subject: YYYY-MM-DD HH:MM Situation Report for ongoing incident INCIDENT_NAME
+
+* Incident Review Thread: SLACK_THREAD_LINK
+* Phase: Initiate|Assess|Remediate|Retrospect
+* Severity: High|Med|Low
+* Current responders:
+  * Situation Lead: NAME
+  * Technical Lead: NAME
+  * Messenger: NAME
+  * Scribe: NAME
+* Incident Communications triggered: yes|no
+
+UPDATE NARRATIVE
+~~~
+
+The `UPDATE NARRATIVE` is targeted toward leadership. Here are some suggested
+items to address (with the leader's view in parenthesis):
+
+* What is the current state of the incident? (Where are we?)
+* What progress has been made since the last update? (Are we moving?)
+* What is being done now and what might be done next? (Where are we going?)
+* Does the team need support to continue to respond? (What do you need from me?)
+* Is there an estimate of when service might be restored? (ETA?)
+
+The last question is often unanswerable. That is OK! You can always say:
+"We don't know right now and we will
+tell you when we have more information."
+
 ## Frequently Asked Questions and Expectations
 
 ### Who does the Incident Response Guide apply to?
 
 Anyone with access to production, including:
 * All SREs
-* All SecOps
-* All developers
-* All partnerships technical resources
-* Representatives from the following teams:
-  * UX
-  * User Support
+* All SecOps Engineers
+* All developers with production access
 
 ### What is an incident?
 
@@ -363,8 +372,8 @@ Anyone with access to production, including:
 ### When should I report into the situation room?
 
 * Business hours:
-  * The current AppDev Primary and Secondary on-call
-  * The current Platform Primary and Secondary on-call
+  * The current Application (AppDev) Primary and Secondary on-call
+  * The current Platform (DevOps) Primary and Secondary on-call
   * Additional Responders as needed - The Situation Lead can call in anyone defined in [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to)
 * After hours - Platform On Call and Application On Call - Additional resources will be brought in via Splunk On-Call notification
 
@@ -372,7 +381,7 @@ Anyone with access to production, including:
 
 * Situation Lead (SL) - Once declared, leads the process until the incident is resolved OR Situation Lead role is handed off
   * Ensures process is followed
-  * Stays in situation room
+  * Stays in the [situation room](#situation-room)
   * Delegates activities - Does NOT act as Technical Lead
   * Ensures communication and mitigation are being addressed by others
   * Makes sure everything that needs doing is being done
@@ -382,11 +391,11 @@ Anyone with access to production, including:
   * Provide clear updates to the team
   * If unfilled or someone needs to rotate out, volunteers to serve in one of the defined roles:
     * Technical lead (TL): Leads technical investigation and mitigation
-    * Messenger (M): Coordinates communication outside of #login-situation, within GSA, and if needed, with partners and the public
-    * Scribe (S): Relays information discussed in war room (hangout) to #login-situation and aids SL in recording incident (Just notes, not a transcript)
+    * Messenger (M): Coordinates communication outside of [#login-situation][#login-situation], within GSA, and if needed, with partners and the public
+    * Scribe (S): Relays information discussed in war room (hangout) to [#login-situation][login-situation] and aids SL in recording incident (Just notes, not a transcript)
   * If assigned a specific role or task, sees it through until it is complete OR handed off to another participant and confirmed by the SL
   * Be ready to answer SL/others when questions arise
-  * Scribe your activities and artifacts in #login-situation
+  * Scribe your activities and artifacts in [#login-situation][login-situation]
 
 ### What if I can't participate?
 
@@ -404,3 +413,5 @@ Anyone with access to production, including:
 * **Refinement** - Only through participating fully can we refine our processes to improve response and efficiency
 * **Required** - GSA authorizes Login.gov to operate, in part on the understanding that we will adhere to [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
 * **Regulation (Law)** - Per FISMA we must follow [NIST 800-61r2](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf) - Computer Security Incident Handling Guide
+
+[login-situation]: https://gsa-tts.slack.com/archives/C5QUGUANN
