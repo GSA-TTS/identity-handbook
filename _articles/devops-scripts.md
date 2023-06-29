@@ -263,10 +263,39 @@ aws-vault exec sandbox-power --
     ./bin/ls-servers -e dev
 ```
 
+## `oncall/email-deliveries`
+
+{%- capture alert_content -%}
+**Note**: This script lives in the [identity-idp](https://github.com/18f/identity-idp)
+repository.
+{%- endcapture %}
+{% include alert.html content=alert_content alert_class="usa-alert--info" %}
+
+This script checks for email deliveries (and bounces) for emails by user UUID.
+It queries within the last week.
+
+```bash
+> aws-vault exec prod-power -- ./bin/oncall/email-deliveries dd23dd99-4903-4ae0-99ff-70f909d6bf98 2128afdb-8d75-40cc-95ec-6cb062353448 362b7d1c-fff0-450a-8f28-face28bcf0c0
+[ Querying logs ] -=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=---=-- Time: 00:01:03
++--------------------------------------+-------------------------+--------------------------------------------------------------+----------------+
+| user_id                              | timestamp               | message_id                                                   | events         |
++--------------------------------------+-------------------------+--------------------------------------------------------------+----------------+
+| 362b7d1c-fff0-450a-8f28-face28bcf0c0 | 2023-06-28 22:47:54.381 | 01010189043119b5-4f4880b9-7cc7-48bd-929c-88d490621f1e-000000 | Send, Bounce   |
+| 362b7d1c-fff0-450a-8f28-face28bcf0c0 | 2023-06-28 22:47:22.215 | 0101018904309cd1-52e87ec8-60a7-45ad-acf2-f50ed606dc65-000000 | Send, Bounce   |
+| 362b7d1c-fff0-450a-8f28-face28bcf0c0 | 2023-06-28 22:46:48.396 | 0101018904301817-b56e94db-149e-4b14-aab6-a6b94000d21e-000000 | Send, Bounce   |
+| dd23dd99-4903-4ae0-99ff-70f909d6bf98 | 2023-06-28 17:00:43.217 | 0101018902f33e15-4ea51412-a7ad-4ab8-aaff-9b9db9ebb1ae-000000 | Send, Delivery |
+| dd23dd99-4903-4ae0-99ff-70f909d6bf98 | 2023-06-28 16:42:56.906 | 0101018902e2f8af-c7768a8b-20a8-43b7-a0ee-bea9ac61207c-000000 | Send, Delivery |
+| 2128afdb-8d75-40cc-95ec-6cb062353448 | 2023-06-28 16:42:12.436 | 0101018902e24b07-c39bb395-1f0a-48de-8cea-a0ebd056c64c-000000 | Send, Delivery |
++--------------------------------------+-------------------------+--------------------------------------------------------------+----------------+
+```
+
 ## `query-cloudwatch`
 
-**Note**: This script lives in the [identity-idp](https://github.com/18f/identity-idp)
-repository now.
+{%- capture alert_content -%}
+**Note**: This script has moved to the [identity-idp](https://github.com/18f/identity-idp)
+repository.
+{%- endcapture %}
+{% include alert.html content=alert_content alert_class="usa-alert--warning" %}
 
 In the web UI, cloudwatch results are limited to:
 - 15 minutes of time
