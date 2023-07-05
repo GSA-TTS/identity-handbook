@@ -55,10 +55,10 @@ app-s3-secret: Upload changes to S3? (y/n)
 y
 ```
 
-After updating, [restart_passenger][passenger-restart] so that passenger is restarted and will download
-this updated config without needing to stand up new instances.
+After updating, [recycle the configuration][config-recycle] so that
+this updated config is picked up.
 
-[passenger-restart]: {% link _articles/appdev-deploy.md %}#passenger-restart
+[config-recycle]: {% link _articles/appdev-deploy.md %}#config-recycle
 
 ### Looking at Changes to Secrets
 
