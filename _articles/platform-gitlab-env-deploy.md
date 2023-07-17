@@ -209,7 +209,8 @@ Add your new block of images on the end after a `date_separator` line with
 the date at the end of the line.  Remove the topmost block.  Unfortunately,
 we can't just have one set of images, because some clusters may not be updated
 with the latest and greatest, so we need to keep some of the older ones around.
-Also:  Be aware that the ugly `date_seperator` line will go away in the future,
+
+*Also:*  Be aware that the ugly `date_seperator` line will go away in the future,
 replaced with a comment line that will probably have the date in it, as well
 as possibly other info.  We just need the code to get pushed out to all the
 environments to support this before we can switch over.
