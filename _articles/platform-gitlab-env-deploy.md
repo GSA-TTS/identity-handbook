@@ -191,19 +191,41 @@ env_runner, you can edit the file in:
 * `s3://login-gov.secrets.<account>-us-west-2/common/gitlab_env_runner_allowed_images`
   for what everybody who does not have an env-specific file is allowed.
 
-Then, recycle the env_runners that you want to pick the change up.
-They should now only allow the images in the file to run on it, and
-error out for anything else.
+Be sure to push this updated file to both the tooling-prod and tooling-sandbox
+common secrets buckets once it is ready for general usage.
+
+There is a particular format that the file should be in.  It looks something like this:
+```
+000000000000.dkr.ecr.us-west-2.amazonaws.com/cd/XXXXXdate_separatorXXXXX@sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff061023
+<tooling-prod-account>.dkr.ecr.us-west-2.amazonaws.com/cd/env_deploy@sha256:feedface1234...
+<tooling-prod-account>.dkr.ecr.us-west-2.amazonaws.com/cd/env_test@sha256:feedface1234...
+<tooling-prod-account>.dkr.ecr.us-west-2.amazonaws.com/cd/etc@sha256:feedface1234...
+000000000000.dkr.ecr.us-west-2.amazonaws.com/cd/XXXXXdate_separatorXXXXX@sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff071023
+<tooling-prod-account>.dkr.ecr.us-west-2.amazonaws.com/cd/env_deploy@sha256:feedface1234...
+<tooling-prod-account>.dkr.ecr.us-west-2.amazonaws.com/cd/env_test@sha256:feedface1234...
+<tooling-prod-account>.dkr.ecr.us-west-2.amazonaws.com/cd/etc@sha256:feedface1234...
+```
+Add your new block of images on the end after a `date_separator` line with
+the date at the end of the line.  Remove the topmost block.  Unfortunately,
+we can't just have one set of images, because some clusters may not be updated
+with the latest and greatest, so we need to keep some of the older ones around.
+Also:  Be aware that the ugly `date_seperator` line will go away in the future,
+replaced with a comment line that will probably have the date in it, as well
+as possibly other info.  We just need the code to get pushed out to all the
+environments to support this before we can switch over.
 
 You can add plain `repo/name:tag` image names, but we strongly recommend
 against that, since these might be subverted.  It would be much better to
 use a specific image, like `repo/name@sha256:feedface42...`.  You can get the
 sha256 digest from the build process or from looking at ECR.
 
-You should probably remove old images over time too, but be careful when
-editing the common list, because some branches may be using old images.
+Then, recycle the env_runners that you want to pick the change up.
+They should now only allow the images in the file to run on it, and
+error out for anything else.  You will probably also want to update
+the various hashes in the `.gitlab-ci.yml` too so that they get used.
 
-### Updating allowed images or services on env_runner
+
+### Updating allowed services on env_runner
 
 Note:  You probably don't want to do this, as env_runners should
 basically only be doing deploys and terratests.  They shouldn't
