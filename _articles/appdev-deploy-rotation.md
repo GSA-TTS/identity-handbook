@@ -37,7 +37,7 @@ The new person should appear in future deployer slots.
 #### Remove from the rotation
 
 To remove someone from the rotation, first change the value of the cell for the person in the slot right
-before their next occurence.
+before their next occurrence.
 Do this by replacing the deployer's name with the function in the cell value.
 This will minimize disruptions for future assignments.
 
