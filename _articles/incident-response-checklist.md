@@ -131,7 +131,7 @@ procedures.
 
 ### Comms Lead
 
-* Notified by the `@login-comms-oncall` Slack handle (Target: 30 minutes before crisis comms level reached)
+* Notified by the `@login-comms-oncall` Slack handle; Manually notified via Splunk On-Call [comms-primary rotation](https://portal.victorops.com/dash/gsa_login/#/team/team-uDT03dJxKxWOvUTx/rotations) after-hours (Target: 30 minutes before crisis comms level reached)
 * Monitors the situation thread
 * If needed, briefly joins situation room to gather context
 * Follows the [Login.gov Incident Comms Playbook](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.330ecfi08z29)
