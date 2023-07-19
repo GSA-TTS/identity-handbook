@@ -6,7 +6,7 @@ subcategory: "Oncall"
 description: "Spreadsheet to track the AppDev Deployer"
 ---
 
-The App-Dev team maintains a rotation for engineers who deploy the app.
+The AppDev team maintains a rotation for engineers who deploy the app.
 Each week a new engineer is assigned from the rotation.
 
 The rotation spreadsheet can be found [here](https://docs.google.com/spreadsheets/d/1nLxhwVh4EfxdmqsvdFByxTk0bNSTyWGGBEXLODjlk6U/edit#gid=0).
@@ -27,7 +27,9 @@ Make sure to post in `#login-add-dev` and alert the next deployer if that slot h
 
 #### Adding to the rotation
 
-To add someone, first change the value of the cell for the current deployer to include the deployer's name instead of the Sheets function.
+To add someone, first change the values of the previous deployers to include the deployers' names instead of the Sheets function.
+Include
+Copy cells for past deployers with cmd-C or ctrl-C, then right click, Paste Special, Values Only (cmd-shift-V or ctrl-shift-V).
 This will minimize disruptions for future assignments.
 
 Next, add the new person to the roster before the current deployer.
@@ -36,9 +38,9 @@ The new person should appear in future deployer slots.
 
 #### Remove from the rotation
 
-To remove someone from the rotation, first change the value of the cell for the person in the slot right
-before their next occurrence.
-Do this by replacing the deployer's name with the function in the cell value.
+To remove someone from the rotation, first change the values of the cells for past and future deployers
+up until the next time the person is question is on the schedule.
+Copy cells for deployers with cmd-C or ctrl-C, then right click, Paste Special, Values Only (cmd-shift-V or ctrl-shift-V).
 This will minimize disruptions for future assignments.
 
 Next, remove the person from the roster.
