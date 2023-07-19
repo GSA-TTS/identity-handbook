@@ -9,7 +9,7 @@ description: "Spreadsheet to track the AppDev Deployer"
 The App-Dev team maintains a rotation for engineers who deploy the app.
 Each week a new engineer is assigned from the rotation.
 
-The rotation spreadsheet can be found [here](https://docs.google.com/spreadsheets/d/1nLxhwVh4EfxdmqsvdFByxTk0bNSTyWGGBEXLODjlk6U/edit#gid=0).
+See the [rotation spreadsheet](https://docs.google.com/spreadsheets/d/1nLxhwVh4EfxdmqsvdFByxTk0bNSTyWGGBEXLODjlk6U/edit#gid=0).
 
 ## Overriding the deployer for a given week
 
