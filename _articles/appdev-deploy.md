@@ -200,15 +200,16 @@ Staging used to be deployed by this process, but this was changed to deploy the 
     - Test proofing (identity verification) on the new account
 
 1. **PRODUCTION ONLY**: This step is required in production
-    1. In the `identity-idp` repo, use your GPG key to tag the release.
+    1. In the application repository, use your GPG key to tag the release.
         ```bash
-        cd identity-idp
         git checkout stages/prod && git pull
         export GPG_TTY=$(tty)
         bin/tag-release
         ```
     1. Add release notes in GitHub:
-        1. Visit <https://github.com/18F/identity-idp/releases/new>
+        1. Create a new release:
+           - IdP: <https://github.com/18F/identity-idp/releases/new>
+           - PKI: <https://github.com/18F/identity-pki/releases/new>
         1. Release title: `RC #{NUMBER}`
         1. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
         1. Copy the release notes Markdown from the promotion pull request
