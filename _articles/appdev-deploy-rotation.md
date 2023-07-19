@@ -23,7 +23,7 @@ Once someone is identified, add a note to the rotation saying who the overrides 
 The roster is intended to be updated as people roll-on or roll-off of Login.gov.
 
 When a new person is added to the roster the future assignments will be shifted.
-Make sure to post in `#login-add-dev` and alert the next deployer if that slot has changed.
+Make sure to post in `#login-appdev` and alert the next deployer if that slot has changed.
 
 #### Adding to the rotation
 
