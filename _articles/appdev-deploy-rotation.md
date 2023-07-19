@@ -21,6 +21,7 @@ Once someone is identified, add a note to the rotation saying who the overrides 
 ## Updating the roster
 
 The roster is intended to be updated as people roll-on or roll-off of Login.gov.
+If a person is going to be out on extended leave for long enough to miss more than 1 full rotation cycle they should also be removed.
 
 When a new person is added to the roster the future assignments will be shifted.
 Make sure to post in `#login-add-dev` and alert the next deployer if that slot has changed.
