@@ -31,7 +31,7 @@ Make sure to post in `#login-appdev` and alert the next deployer if that slot ha
 To add someone, first change the values of the previous deployers to include the deployers' names instead of the Sheets function.
 Include
 Copy cells for past deployers with cmd-C or ctrl-C, then right click, Paste Special, Values Only (cmd-shift-V or ctrl-shift-V).
-This will minimize disruptions for future assignments.
+This will minimize disruptions for future assignments by preventing changes up to the point where the Sheets function starts populating values.
 
 Next, add the new person to the roster before the current deployer.
 
@@ -42,7 +42,7 @@ The new person should appear in future deployer slots.
 To remove someone from the rotation, first change the values of the cells for past and future deployers
 up until the next time the person is question is on the schedule.
 Copy cells for deployers with cmd-C or ctrl-C, then right click, Paste Special, Values Only (cmd-shift-V or ctrl-shift-V).
-This will minimize disruptions for future assignments.
+This will minimize disruptions for future assignments by preventing changes up to the point where the Sheets function starts populating values.
 
 Next, remove the person from the roster.
 
