@@ -14,11 +14,6 @@ There are two ways to turn off flows:
 * [Completely disabling identity verification](#completely-disabling-identity-verification)
 * [Turning off individual vendors](#turning-off-individual-vendors)
 
-These two are functionally equivalent at present; they both turn off
-identity verification (IdV). If one of the required vendors is marked
-as `full_outage`, IdV will be unavailable and users will be shown an
-error message.
-
 Both methods involve changing configuration flags in the
 file `config/application.yml`. To edit this file, use the
 [guidance here]({% link _articles/appdev-secrets-configuration.md %}).
@@ -60,26 +55,85 @@ The possible values for each flag:
 
 The default value for each of the flags is `operational`.
 
-When any flag is set to `full_outage` this is what happens:
+When one or more of the flags are set to `full_outage`, some parts of
+identity verification will be disabled.
 
-- If a new user attempts to sign up, they will be redirected to an
-  outage page.
-- If an existing user attempts to enter or re-enter the document
-  authentication flow, they will be redirected to a vendor outage
-  page. The system retains sufficient information for them to continue
-  after the vendor outage is over.
+As an overview:
 
-There are additional user-facing implications of setting some of the
-services to `full_outage`. At present, users will never see them
-because IdV is completely disabled when any service is turned
-off. Changes which would be visible are:
+- Setting `full_outage` for `accuant`, `lexisnexis_instant_verify`, or
+  `lexisnexis_trueid` turns off pretty much everything. Identity verification
+  is completely unavailable.
 
-- Acuant - none
-- Lexis Nexis Instant Verify - none
-- Lexis Nexis Phone Finder - none
-- Lexis Nexis TrueId - none
-- SMS
-    - The `SMS` checkbox on the IdV dialogs will be disabled
-    - New phone numbers for SMS 2FA will not be verified.
-- Voice
-    - New phone numbers for voice 2FA will not be verified
+![total-outage](https://github.com/18F/identity-handbook/assets/101212334/710b6e6f-e111-4acb-b568-b234efa03c74)
+
+- Setting `full_outage` for `lexisnexis_phone_finder` disables instant
+  verification, but verification by mail is still available.
+
+![mail-only](https://github.com/18F/identity-handbook/assets/101212334/3785cf49-a813-4774-ab50-2afe36549c11)
+
+- Setting `full_outage` for `sms` or `voice` disables instant
+  verification, but verification by mail is still available.
+
+![mail-only](https://github.com/18F/identity-handbook/assets/101212334/767b1145-0f98-4c05-9fba-b410caf548b7)
+
+  ID image uploads must be done on the device with which the user
+  began verification. Normally, desktop computer users are able to
+  use their phone to upload pictures of their ID. Desktop users will
+  not be offered this choice.
+
+The precise effects of each flag are:
+
+#### `vendor_status_acuant`
+  - Users will not be able to enter or re-enter the identity
+    verification flow.
+
+  - A user who has reset their password and does not have their
+    personal key will not be able to reactivate their profile
+
+#### `vendor_status_lexisnexis_instant_verify`
+  - Users will not be able to enter or re-enter the identity
+    verification flow.
+
+  - A user who has reset their password and does not have their
+    personal key will not be able to reactivate their profile
+
+#### `vendor_status_lexisnexis_phone_finder`
+  - Users will only be able to verify their identity by mail.
+
+  - Any user entering the verification flow will be presented with an
+    outage screen telling them that their options are to verify by
+    mail or wait until our vendor outage is resolved.
+
+  - Users will still be able to use their phone to upload images of
+    their IDs.
+
+#### Lexis Nexis TrueId `vendor_status_lexisnexis_trueid`
+  - Users will not be able to enter or re-enter the identity
+    verification flow.
+
+  - A user who has reset their password and does not have their
+    personal key will not be able to reactivate their profile
+
+#### SMS
+  - Users will only be able to verify their identity by mail.
+
+  - Any user entering the verification flow will be presented with an
+    outage screen telling them that their options are to verify by
+    mail or wait until our vendor outage is resolved.
+
+  - ID image uploads must be done on the device with which the user
+    began verification. Normally, desktop computer users are able to
+    use their phone to upload pictures of their ID. Desktop users will
+    not be offered this choice when this flag is set to `full_outage`.
+
+#### Voice
+  - Users will only be able to verify their identity by mail.
+
+  - Any user entering the verification flow will be presented with an
+    outage screen telling them that their options are to verify by
+    mail or wait until our vendor outage is resolved.
+
+  - ID image uploads must be done on the device with which the user
+    began verification. Normally, desktop computer users are able to
+    use their phone to upload pictures of their ID. Desktop users will
+    not be offered this choice when this flag is set to `full_outage`.
