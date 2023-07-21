@@ -105,22 +105,14 @@ A pull request should be created from that latest branch to production: **`stage
    - If it's a patch release, increment the fractional part, ex **"Deploy RC 112.1 to Prod"**
    - Unsure what the last release was? Check the [releases page](https://github.com/18F/identity-idp/releases/)
 - Add the label **`status - promotion`** to the pull request that will be included in the release.
+- Replace pull request template content with the release notes generated using the changelog script:
+   - ```
+     scripts/changelog_check.rb -b origin/stages/prod
+     ```
+   - Review the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
-#### Prepare release notes
-
-   1. The audience for the release notes are partner agencies and their developers. Notes should be written in [plain language](https://plainlanguage.gov/) and clearly demonstrate the impact on the end user or agency.
-       - Generate the changelog using the IdP's changelog script:
-         ```
-         scripts/changelog_check.rb -b origin/stages/prod
-         ```
-       - *Review* the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
-   1. [Save a draft release](https://github.com/18F/identity-idp/releases/new) on GitHub.
-       - Tag version: leave blank for now -- will fill in with the final tag on `stages/prod` from the last step
-       - Release title: `RC #{NUMBER}`
-       - *Save* the draft, do not publish as a pre-release
-   1. Share the draft release notes in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
-   1. Apply any requested updates to the release notes on GitHub.
+Share the pull request in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
 
 #### Resolving merge conflicts
 
@@ -208,18 +200,20 @@ Staging used to be deployed by this process, but this was changed to deploy the 
     - Test proofing (identity verification) on the new account
 
 1. **PRODUCTION ONLY**: This step is required in production
-    1. In the `identity-idp` repo, use your GPG key to tag the release.
+    1. In the application repository, use your GPG key to tag the release.
         ```bash
-        cd identity-idp
         git checkout stages/prod && git pull
         export GPG_TTY=$(tty)
         bin/tag-release
         ```
     1. Add release notes in GitHub:
-        1. Visit <https://github.com/18f/identity-idp/releases>
-        1. Edit the Draft Release Notes started at the beginning of this process
-        1. Enter the latest git tag corresponding to the code you just deployed
-        1. Copy in the cleaned up release notes and publish them in GitHub
+        1. Create a new release:
+           - IdP: <https://github.com/18F/identity-idp/releases/new>
+           - PKI: <https://github.com/18F/identity-pki/releases/new>
+        1. Release title: `RC #{NUMBER}`
+        1. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
+        1. Copy the release notes Markdown from the promotion pull request
+        1. Click "Publish release"
 
 1. If everything looks good, the deploy is complete!
 
