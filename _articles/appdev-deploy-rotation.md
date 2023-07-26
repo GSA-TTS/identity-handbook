@@ -13,11 +13,11 @@ See the [rotation spreadsheet](https://docs.google.com/spreadsheets/d/1nLxhwVh4E
 
 ## Responsibilities of the deployer
 
-The deployer is responsible for the [twice-weekly deployments](deploy-guide) for IdP and PKI application revisions.
+The deployer is responsible for the [twice-weekly deployments][deploy-guide] for IdP and PKI application revisions.
 
 A deployer should coordinate with the rest of the AppDev team as part of the release cycle:
 
-- Compiling and sharing release notes, as outlined in the [deploy guide](deploy-guide)
+- Compiling and sharing release notes, as outlined in the [deploy guide][deploy-guide]
 - Making requested revisions to release notes
 - Accommodating reasonable requests for late or patch revisions to a release candidate branch
 - Sharing progress updates during the deploy itself
