@@ -11,6 +11,19 @@ Each week a new engineer is assigned from the rotation.
 
 See the [rotation spreadsheet](https://docs.google.com/spreadsheets/d/1nLxhwVh4EfxdmqsvdFByxTk0bNSTyWGGBEXLODjlk6U/edit#gid=0).
 
+## Responsibilities of the deployer
+
+The deployer is responsible for the [twice-weekly deployments][deploy-guide] for IdP and PKI application revisions.
+
+A deployer should coordinate with the rest of the AppDev team and the [AppDev oncall]({% link _articles/appdev-oncall-guide.md %}) as part of the release cycle:
+
+- Compiling and sharing release notes, as outlined in the [deploy guide][deploy-guide]
+- Making requested revisions to release notes
+- Accommodating reasonable requests for late or patch revisions to a release candidate branch
+- Sharing progress updates during the deploy itself
+
+[deploy-guide]: {% link _articles/appdev-deploy.md %}
+
 ## Overriding the deployer for a given week
 
 Occasionally a deployer will need to trade weeks with another deployer to provide coverage.
