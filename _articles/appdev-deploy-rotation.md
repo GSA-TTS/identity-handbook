@@ -15,7 +15,7 @@ See the [rotation spreadsheet](https://docs.google.com/spreadsheets/d/1nLxhwVh4E
 
 The deployer is responsible for the [twice-weekly deployments][deploy-guide] for IdP and PKI application revisions.
 
-A deployer should coordinate with the rest of the AppDev team as part of the release cycle:
+A deployer should coordinate with the rest of the AppDev team and the [AppDev oncall]({% link _articles/appdev-oncall-guide.md %}) as part of the release cycle:
 
 - Compiling and sharing release notes, as outlined in the [deploy guide][deploy-guide]
 - Making requested revisions to release notes
