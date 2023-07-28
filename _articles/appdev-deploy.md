@@ -142,7 +142,11 @@ Staging used to be deployed by this process, but this was changed to deploy the 
    ```bash
    cd identity-devops
    ```
-1. Recycle the IDP instances to get the new code, it automatically creates a new migration instance first.
+1. Check current server status, and confirm that there aren't extra servers running. If there are, scale in old instances before deploying.
+   ```bash
+   aws-vault exec prod-power -- ./bin/ls-servers -e prod
+   ```
+1. Recycle the IDP instances to get the new code. It automatically creates a new migration instance first.
    ```bash
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
