@@ -112,7 +112,7 @@ A pull request should be created from that latest branch to production: **`stage
    - Review the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
-Share the pull request in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-product-strategy` channels for awareness.
+Share the pull request in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-delivery` channels for awareness.
 
 #### Resolving merge conflicts
 
