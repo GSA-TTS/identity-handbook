@@ -179,6 +179,25 @@ aws-vault exec prod-power -- \
 +--------------------------------------+------------------+----------+-------------------------+--------------------------------+------------------------------------+--------------------------------+---------------------------+
 ```
 
+### `uuid-export`
+
+Looking up a login UUID and returning a partner UUID
+
+- It defaults to all users and return their partner UUIDs for all apps
+- With `--requesting-issuer=ISSUER` returns their partner UUIDs for just the provided app
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp uuid-export 1720c17c-1f71-4c53-bbe9-b04e0a310502  87e4630e-7c4a-444d-92ac-8bb13572f809
++--------------------------------------+-------------+----------------------------+---------------+
+| login_uuid                           | agency      | issuer                     | external_uuid |
++--------------------------------------+-------------+----------------------------+---------------+
+| 1720c17c-1f71-4c53-bbe9-b04e0a310502 | ABC         | urn:gov:gsa:sp:sinatra     | 12343         |
+| 1720c17c-1f71-4c53-bbe9-b04e0a310502 | CDE         | urn:gov:gsa:sp:secondapp   | 56789         |
+| 87e4630e-7c4a-444d-92ac-8bb13572f809 | [NOT FOUND] | [NOT FOUND]                | [NOT FOUND]   |
++--------------------------------------+-------------+----------------------------+---------------+
+```
+
 ## `action-account`
 
 This script helps streamline common account action tasks from production.
