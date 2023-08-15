@@ -33,7 +33,8 @@ the `stages/prod` branch.
 | **Patch Deploy** | A deploy that cherry-picks particular changes to be deployed | For urgent bug fixes | The engineer handling the urgent issue |
 | **Off-Cycle/Mid-Cycle Deploy** | Releases all changes on the `main` branch, sometime during the middle of a sprint | As needed, or if there are too many changes needed to cleanly cherry-pick as a patch | The engineer that needs the changes deployed |
 | **Passenger Restart** | A "deploy" that just updates configurations without the need to scale up/down instances like the config recycle below, does not deploy any new code, see [passenger restart](#passenger-restart) | As needed | The engineer that needs the changes deployed |
-| **Config Recycle** | A "deploy" that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
+| **Config Recycle** | A deploy that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
+| **No-Migration Recycle** | A deploy that skips migrations, see [no-migration recycle](#no-migration-recycle) | As needed | The engineer that needs the changes deployed |
 
 [deployer-rotation]: {% link _articles/appdev-deploy-rotation.md %}
 
@@ -305,3 +306,15 @@ new configurations (config from S3).
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
     ```
+
+### No-Migration Recycle
+When responding to a production incident with a config change, or otherwise in a hurry, you might want to recycle without waiting for a migration instance. Note that if a migration has been introduced on main (for environments other than prod), new instances will fail to start until migrations are run.
+1. Recycle the boxes without a migration instance
+```bash
+aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
+```
+
+1. In production, remove old IDP instances afterward
+```bash
+aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
+```

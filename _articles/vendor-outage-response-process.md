@@ -37,14 +37,7 @@ Operators can explicitly disable IdV using the `idv_available` configuration key
 # Users will be shown an error message instead.
 idv_available: false
 ```
-For faster results, recycle without a migration instance.
-```bash
-   aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
-```
-and then
-```bash
-  aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
-```
+For faster results, [recycle without a migration instance](appdev-deploy.md#no-migration-recycle).
 
 ## Turning off individual vendors
 
