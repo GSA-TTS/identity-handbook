@@ -37,7 +37,7 @@ Operators can explicitly disable IdV using the `idv_available` configuration key
 # Users will be shown an error message instead.
 idv_available: false
 ```
-For faster results, [recycle without a migration instance](appdev-deploy.md#no-migration-recycle).
+For faster results, [recycle without a migration instance]({% link _articles/appdev-deploy.md %}#no-migration-recycle).
 
 ## Turning off individual vendors
 
