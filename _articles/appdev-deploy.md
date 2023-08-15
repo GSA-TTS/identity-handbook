@@ -137,7 +137,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
 1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
-    - e.g. `:recycle:  Starting idp RC <RELEASE_NUMBER> deploy to Production`
+    - e.g. `/Announce a recycle` with the number of the release candidate for the IdP and PKI (if necessary). This will automatically send a notification in both `#login-appdev` and `#login-devops`
 1. In the `identity-devops` repo:
    ```bash
    cd identity-devops
