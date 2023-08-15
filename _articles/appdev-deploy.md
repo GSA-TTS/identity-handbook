@@ -308,7 +308,7 @@ new configurations (config from S3).
     ```
 
 ### No-Migration Recycle
-When responding to a production incident with a config change, or otherwise in a hurry, you might want to recycle without waiting for a migration instance. Note that if a migration has been introduced on main (for environments other than prod), new instances will fail to start until migrations are run.
+When responding to a production incident with a config change, or otherwise in a hurry, you might want to recycle without waiting for a migration instance. For environments other than prod, note that if a migration has been introduced on `main`, new instances will fail to start until migrations are run.
 1. Recycle the boxes without a migration instance
 ```bash
 aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
