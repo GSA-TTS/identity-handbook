@@ -27,6 +27,8 @@ simply re-edit the configuration and delete the vendor status.
 
 ## Completely disabling identity verification
 
+For a full AAMVA outage, disable identity verification.
+
 Operators can explicitly disable IdV using the `idv_available` configuration key:
 
 ```yaml
@@ -35,6 +37,7 @@ Operators can explicitly disable IdV using the `idv_available` configuration key
 # Users will be shown an error message instead.
 idv_available: false
 ```
+For faster results, [recycle without a migration instance]({% link _articles/appdev-deploy.md %}#no-migration-recycle).
 
 ## Turning off individual vendors
 
@@ -47,6 +50,7 @@ individually. Each is controlled by a configuration flag:
 | LexisNexis| `vendor_status_lexisnexis_instant_verify` <br> `vendor_status_lexisnexis_phone_finder` <br> `vendor_status_lexisnexis_trueid` |
 | Pinpoint | `vendor_status_sms` <br> `vendor_status_voice` |
 
+For a full AAMVA outage, see above to completely disable identity verification
 
 The possible values for each flag:
 
