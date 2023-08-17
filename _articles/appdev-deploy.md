@@ -137,18 +137,20 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 ### Production
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
-1. Notify in Slack (`#login-appdev` and `#login-devops` channels)
-    - e.g. `:recycle:  Starting idp RC <RELEASE_NUMBER> deploy to Production`
-1. In the `identity-devops` repo:
+2. Use the `/Announce a recycle` workflow in `#identity-idp` to announce the start of the deployment
+    - Enter the RC number that will be deployed
+    - When necessary, create a separate announcement for `identity-pki`
+    - The workflow will send a notification to the `#login-appdev` and `#login-devops` channels
+3. In the `identity-devops` repo:
    ```bash
    cd identity-devops
    ```
-1. Check current server status, and confirm that there aren't extra servers running. If there are, scale in old instances before deploying.
+4. Check current server status, and confirm that there aren't extra servers running. If there are, scale in old instances before deploying.
    ```bash
    aws-vault exec prod-power -- ./bin/ls-servers -e prod
    aws-vault exec prod-power -- ./bin/asg-size prod idp
    ```
-1. Recycle the IDP instances to get the new code. It automatically creates a new migration instance first.
+5. Recycle the IDP instances to get the new code. It automatically creates a new migration instance first.
    ```bash
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
@@ -177,13 +179,13 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
    Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
 
-   1. Follow the progress of the IDP hosts spinning up
+   2. Follow the progress of the IDP hosts spinning up
 
       ```bash
       aws-vault exec prod-power -- ./bin/ls-servers -e prod -r idp # check the load balance pool health
       ```
 
-    1. Manual Inspection
+    3. Manual Inspection
       - Check [NewRelic (prod.login.gov)](https://one.newrelic.com/nr1-core/errors-ui/overview/MTM3NjM3MHxBUE18QVBQTElDQVRJT058NTIxMzY4NTg) for errors
       - Optionally, use the deploy monitoring script to compare error rates and success rates for critical flows
         ```bash
@@ -191,37 +193,37 @@ Staging used to be deployed by this process, but this was changed to deploy the 
         ```
       - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
-1. **PRODUCTION ONLY**: This step is required in production
+6. **PRODUCTION ONLY**: This step is required in production
 
     Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
     ```
 
-1. Set a timer for one hour, then check NewRelic again for errors.
+7. Set a timer for one hour, then check NewRelic again for errors.
 
-1. Manually test the app in production:
+8. Manually test the app in production:
     - Sign in to an account
     - Sign up for an account
     - Test proofing (identity verification) on the new account
 
-1. **PRODUCTION ONLY**: This step is required in production
+9. **PRODUCTION ONLY**: This step is required in production
     1. In the application repository, use your GPG key to tag the release.
         ```bash
         git checkout stages/prod && git pull
         export GPG_TTY=$(tty)
         bin/tag-release
         ```
-    1. Add release notes in GitHub:
+    2. Add release notes in GitHub:
         1. Create a new release:
            - IdP: <https://github.com/18F/identity-idp/releases/new>
            - PKI: <https://github.com/18F/identity-pki/releases/new>
-        1. Release title: `RC #{NUMBER}`
-        1. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
-        1. Copy the release notes Markdown from the promotion pull request
-        1. Click "Publish release"
+        2. Release title: `RC #{NUMBER}`
+        3. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
+        4. Copy the release notes Markdown from the promotion pull request
+        5. Click "Publish release"
 
-1. If everything looks good, the deploy is complete!
+10. If everything looks good, the deploy is complete!
 
 #### Rolling Back
 
