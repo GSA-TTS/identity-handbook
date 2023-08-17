@@ -136,7 +136,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 ### Production
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
-2. Notify when starting a deployment using the `Announce a recycle` workflow
+2. Use the `Announce a recycle` workflow to announce the start of a deployment
     - In the workflow, enter the RC number that will be deployed
     - When necessary, create a separate announcement for `identity-pki`
     - The workflow sends a notification in both the `#login-appdev` and `#login-devops` channels
