@@ -103,9 +103,10 @@ procedures.
 
 *Initiate and Assess*
 * In situation room
-* **If a public impacting (availability) incident**, posts initial incident notice following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)   
+* **If a public impacting (availability) incident**, posts initial incident notice following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
 * Situation Report (sitrep) ticket created in [identity-security-private repo](https://github.com/18F/identity-security-private/issues/new?assignees=&labels=task%3A+IR&template=incidents.md&title=security+incident+capture)
 * [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) used to create send notice to GSA-IR, ISSM, and ISSO
+* Once the situation is assessed, ping `@login-comms-oncall`
 
 *Mitigate* (Continous)
 * **(Every 30 Minutes)** Check the [Incident Comms Playbook - ACCESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c) section 
