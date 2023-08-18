@@ -20,33 +20,12 @@ If a user writes in that they can't log in to Login.gov with their PIV and get e
 then we are probably missing an issuing certificate for their PIV. These steps outline how to find out what that certificate is,
 and how to add it.
 
-1. Get the user's email, and use it to get their UUID:
+1. Get a user UUID, usually via [`uuid-lookup`]({% link _articles/devops-scripts.md %}#uuid-lookup) or
+   [`salesforce-email-lookup`]({% link _articles/devops-scripts.md %}#salesforce-email-lookup)
 
-    ```ruby
-    # in a production console
-    User.find_with_email('user@example.gov').uuid
-    ```
 
-1. Look up their key ID in our logs in Cloudwatch Insights logs
+1. Download the user's public key (we log this to S3) using [`oncall/download-piv-certs`]({% link _articles/devops-scripts.md %}#oncalldownload-piv-certs)
 
-    ```
-    # prod_/srv/idp/shared/log/events.log
-    fields @timestamp, properties.user_id, properties.event_properties.success, properties.event_properties.errors.type, properties.event_properties.key_id, @message
-      | sort @timestamp desc
-      | filter properties.user_id IN ['UUID from step 2 here']
-      | filter properties.event_properties.success = 0
-    ```
-1. We log user's public certificates to an S3 bucket.
-   Download the certificates based on the `key_id` in the previous steps to inspect them locally.
-
-    <pre><code>export certificates_bucket=<a href="https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUzDmIxKn11DPJzk/edit#heading=h.lr6u13hz0psq">[see handbook appendix]</a></code></pre>
-
-   ```bash
-   # prefix search based on key ID
-   aws s3 ls "s3://${certificates_bucket}/${key_id}"
-   # prints out ${key_id}::{some_id}
-   aws s3 cp "s3://${certificates_bucket}/${key_id_with_suffix}" .
-   ```
 
 1. Use the rails console in [identity-pki](https://github.com/18f/identity-pki) to inspect the certificate that was downloaded from S3,
    by using the [CertificateChainService](https://github.com/18F/identity-pki/blob/main/app/services/certificate_chain_service.rb).
