@@ -7,6 +7,7 @@
   slack_channel_url: https://gsa-tts.slack.com/archives/CNCGEHG1G
   slack_group_name: login-ada
   readme: https://docs.google.com/document/d/1gAJPduXfsPSXYjlyh_8YxbCtZNONa-jBPYut9T8HKE0/edit
+  product: true
 
 - name: Agnes
   namesake_markdown: "[Agnes Meyer Driscoll](https://www.nsa.gov/History/Cryptologic-History/Historical-Figures/Historical-Figures-View/Article/1623020/agnes-meyer-driscoll/), a navy cryptanalyst, known as the '[first lady of naval cryptology](https://www.hmdb.org/m.asp?m=106127)'"
@@ -23,6 +24,7 @@
   slack_group_name: login-grace
   readme: https://docs.google.com/document/d/1x_IPoYc_kavE6Rw58leIckp85Js7fKPy_NebpqC3iN0/edit
   archived: true
+  product: true
 
 - name: IDVA
   focus_area: "Equity Study & API"
@@ -38,6 +40,7 @@
   slack_channel_url: https://gsa-tts.slack.com/archives/C03FA4VBN76
   slack_group_name: login-joy
   readme: https://docs.google.com/document/d/1WalgBrIBM4-nwKlSj49xdHazpK9dQoOxvuWgTUx2vK0/edit
+  product: true
 
 - name: Judy
   namesake_markdown: "[Judy Parsons](https://blog.theveteranssite.greatergood.com/wwii-navy-codebreaker/), As a code breaker working with a secret unit in the US Navy, Parsons was instrumental in deciphering the enemy’s secret codes, but her work went unacknowledged for decades after the war."
@@ -53,6 +56,7 @@
   slack_channel_url: https://gsa-tts.slack.com/archives/C01710KMYUB
   slack_channel_name: login-team-katherine
   readme: https://docs.google.com/document/d/1K4vlvY-KpMpZPpYsOo0BcUGDSxRVfsEHNTUiZvTDVAI/edit
+  product: true
 
 - name: Kimberly
   namesake_markdown: "[Kimberly Bryant](https://en.wikipedia.org/wiki/Kimberly_Bryant_(technologist)), an electrical engineer who founded [Black Girls Code](https://www.blackgirlscode.com/)."
@@ -81,6 +85,7 @@
   slack_channel_url: https://gsa-tts.slack.com/archives/C03JDA5HNUV
   slack_channel_name: login-team-ross
   archived: true
+  product: true
 
 - name: Timnit
   namesake_markdown: "[Timnit Gebru](https://en.wikipedia.org/wiki/Timnit_Gebru), a computer scientist who has published work exposing biases in AI and algorithms."
@@ -90,6 +95,7 @@
   slack_channel_url: https://gsa-tts.slack.com/archives/C056RD1NEHW
   slack_channel_name: login-team-timnit
   readme: https://docs.google.com/document/d/1ZBnTX1-XqNo6L7dG1m8CQqiFlb9qX_oonrp_t9XwvFk/edit?usp=sharing
+  product: true
 
 - name: Ursula
   namesake_markdown: "[Ursula Burns](https://en.wikipedia.org/wiki/Ursula_Burns), who has been CEO of technology companies like Xerox"
