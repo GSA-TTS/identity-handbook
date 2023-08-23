@@ -369,6 +369,18 @@ aws-vault exec sandbox-power --
 
 The script can output as new-line delimited JSON (`--json`) or as a CSV (`--csv`).
 
+##  `copy-cloudwatch-dashboard`
+
+Given an experimental dashboard named `my-sample-dashboard`, run the
+following in the `identity-devops` repo to create `prod-my-sample-dashboard`, `staging-my-sample-dashboard`, etc.:
+
+```bash
+aws-vault exec prod-power -- bin/copy-cloudwatch-dashboard -i my-sample-dashboard
+```
+Run it with `--help` for more information on arguments.
+
+See also [Cloudwatch Dashboards]({% link _articles/appdev-cloudwatch-dashboard-guide.md%})
+
 ## `salesforce-email-lookup`
 
 Takes in Salesforce case numbers (escalated from our user support team), and returns
