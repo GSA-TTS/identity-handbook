@@ -84,6 +84,8 @@
 
 - name: Timnit
   namesake_markdown: "[Timnit Gebru](https://en.wikipedia.org/wiki/Timnit_Gebru), a computer scientist who has published work exposing biases in AI and algorithms."
+  appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/1Drp-VnMTVwxYyBlTSlPa_cjprGW_rJzxeQHCVAZSKso/edit
+  slack_appdev_oncall_handle: login-oncall-timnit
   focus_area: Document Capture & Authentication
   slack_channel_url: https://gsa-tts.slack.com/archives/C056RD1NEHW
   slack_channel_name: login-team-timnit
