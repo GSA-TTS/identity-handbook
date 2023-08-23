@@ -45,7 +45,7 @@ The `identity-devops` repo has tooling for converting dashboards to terraformed
 dashboards.
 
 Given an experimental dashboard named `my-sample-dashboard`, run the
-following in the `identity-devops` repo:
+following in the `identity-devops` repo to create `prod-my-sample-dashboard`, `staging-my-sample-dashboard`, etc.:
 
 ```bash
 aws-vault exec prod-power -- bin/copy-cloudwatch-dashboard -i my-sample-dashboard
@@ -54,3 +54,5 @@ aws-vault exec prod-power -- bin/copy-cloudwatch-dashboard -i my-sample-dashboar
 This will create a terraform file in the devops repo for the dashboard.
 When this file is checked in and applied by terraform a dashboard matching
 the experimental one will be created for all environments.
+
+For technical information on creating dashboards and alerts, see [Monitoring and observability: CloudWatch queries, alarms and dashboards](https://github.com/18F/identity-devops/wiki/Monitoring-and-observability:-CloudWatch-queries,-alarms-and-dashboards).
