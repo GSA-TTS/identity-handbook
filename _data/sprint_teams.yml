@@ -34,7 +34,7 @@
 - name: Joy
   namesake_markdown: "[Dr. Joy Buolamwini](https://en.wikipedia.org/wiki/Joy_Buolamwini), a computer scientist, artist, and activist who has published foundational work on algorithmic discrimination."
   appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/17fdsVlfD06fpuq6F5-MdMwhpm0TV65wvyxDOkcRKDpA/edit#gid=0
-  slack_appdev_oncall_handle: login-joy-oncall
+  slack_appdev_oncall_handle: login-oncall-joy
   focus_area: In Person Proofing
   slack_channel_name: login-team-joy
   slack_channel_url: https://gsa-tts.slack.com/archives/C03FA4VBN76
