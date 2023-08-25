@@ -51,7 +51,7 @@
 - name: Katherine
   namesake_markdown: "[Katherine Johnson](https://en.wikipedia.org/wiki/Katherine_Johnson), a mathematician who was a key part of early NASA spaceflights"
   appdev_oncall_rotation: https://docs.google.com/spreadsheets/d/1tAEScH-1A1708a5elOuLDEHj7p_JzFdkpbNGB33gDJU/edit#gid=0
-  slack_appdev_oncall_handle: login-katherine-oncall
+  slack_appdev_oncall_handle: login-oncall-katherine
   focus_area: Authentication
   slack_channel_url: https://gsa-tts.slack.com/archives/C01710KMYUB
   slack_channel_name: login-team-katherine

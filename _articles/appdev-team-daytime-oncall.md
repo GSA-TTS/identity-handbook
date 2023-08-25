@@ -14,7 +14,7 @@ subcategory: Oncall
 
 ## Expectations
 
-* Each team's oncall should be reachable by a Slack group handle `@login-TEAM-oncall`.
+* Each team's oncall should be reachable by a Slack group handle `@login-oncall-TEAM`.
 * When issues are escalated to team oncall, the oncall should respond within 15 business minutes.
 * The oncall should fix the issue immediately if it is urgent, or otherwise create a ticket if there is a non-urgent bug to be fixed.
 * "Daytime" is defined as the working hours for the person(s) on the daytime oncall rotation, typically 9am to 5pm in the local time. If an issue is escalated outside working hours, it's expected and understood that the task will be handled the next business day during business hours.
