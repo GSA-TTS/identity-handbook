@@ -98,7 +98,7 @@ fields
 | sort @timestamp desc
 | limit 10000
 ```
-Note: some `visited` events repeat as we poll for background jobs to complete. It's not that the user was repeatedly visiting that screen.
+Note: Some `visited` events repeat as the page polls for background jobs to complete. It's not that the user was repeatedly visiting that page.
 
 ### Add fields
 
