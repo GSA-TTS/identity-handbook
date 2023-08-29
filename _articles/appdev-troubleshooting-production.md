@@ -139,8 +139,11 @@ We don't have indexed lookups by phone number so we need to combine a few approa
 
 ### Find the user id for a 500 error in production.log
 
-Click on the name of the error in NewRelic to get a more detailed view.
-At the top of that page, find the approximate time of the error. Note timezones for both NewRelic and AWS and convert if needed.
+Click on the name of the error in New Relic to get a more detailed view.
+
+We add user_id as a custom attribute in New Relic. Scroll down in Attributes on the New Relic error page to see if it is available. If not, look for the error in production.log as follows.
+
+At the top of the New Relic error page, find the approximate time of the error. Note timezones for both New Relic (usually local) and AWS (usually UTC) and convert if needed.
 
 Note the path, if it wasn't from a worker. Change the `filter` line below to match error status and path.
 
