@@ -59,6 +59,8 @@ events.log events for that user.
 
 For a full list of documented events, see [Analytics Events]({% link _articles/analytics-events.md %})
 
+See also [Troubleshooting Quick Reference - Cloudwatch Logs](https://github.com/18F/identity-devops/wiki/Troubleshooting-Quick-Reference#cloudwatch-logs)
+
 ### Cloudwatch Insights
 
 1. Open up AWS console (`aws-vault login prod-power`)
@@ -82,7 +84,7 @@ information.
 
 ### Sample Queries
 
-A sample triage query for a particular user might look like this:
+A sample triage query to track events for a particular user might look like this:
 
 ```cloudwatch
 fields
@@ -96,6 +98,14 @@ fields
 | sort @timestamp desc
 | limit 10000
 ```
+Note: Some `visited` events repeat as the page polls for background jobs to complete. It's not that the user was repeatedly visiting that page.
+
+### Add fields
+
+To scan through a property for a lot of events, add it to the field list.
+For example, adding fields for `properties.browser_mobile` and
+`properties.session_duration` make it easier to see when a user changes
+devices or starts a new session.
 
 ## Workflows
 
@@ -126,3 +136,30 @@ We don't have indexed lookups by phone number so we need to combine a few approa
    | filter name = 'Telephoy: OTP sent'
    | filter properties.event_properties.phone_fingerprint in ["aaa", "bbb", "ccc"] # CHANGE THIS
    ```
+
+### Find the user id for a 500 error in production.log
+
+Click on the name of the error in New Relic to get a more detailed view.
+
+We add user_id as a custom attribute in New Relic. Scroll down in Attributes on the New Relic error page to see if it is available. If not, look for the error in production.log as follows.
+
+At the top of the New Relic error page, find the approximate time of the error. Note timezones for both New Relic (usually local) and AWS (usually UTC) and convert if needed.
+
+Note the path, if it wasn't from a worker. Change the `filter` line below to match error status and path.
+
+1. Open up AWS console (`aws-vault login prod-power`)
+2. Navigate to "Cloudwatch", then find "Logs Insights"
+3. Select `prod_/srv/idp/shared/log/production.log` from "Log Groups"
+4. Select a time range that includes the error
+5. Enter this query. Edit the status and path to match the error.
+```cloudwatch
+fields @timestamp, user_id, @message, @logStream, @log
+| filter status = 500 and path like /verify/
+| sort @timestamp desc
+| limit 200
+```
+The field you want is `user_id`, not `uuid`.
+
+Then switch to `prod_/srv/idp/shared/log/events.log` and use the sample query
+[above](#sample-queries) to find events for that user_id. Add a wide time range around
+the error to see what led up to it. There may not be an events.log entry for the error itself.
