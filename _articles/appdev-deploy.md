@@ -141,6 +141,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
     - Enter the RC number that will be deployed
     - When necessary, create a separate announcement for `identity-pki`
     - The workflow will send a notification to the `#login-appdev` and `#login-devops` channels
+    ![Announce recycle workflow]({{ site.baseurl }}/images/announce-recycle-workflow.png)
 3. In the `identity-devops` repo:
    ```bash
    cd identity-devops
