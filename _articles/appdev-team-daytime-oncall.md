@@ -38,3 +38,7 @@ subcategory: Oncall
   * [Team {{ sprint_team.name }} AppDev Oncall Rotation]({{ sprint_team.appdev_oncall_rotation }})
   {% endif %}
 {% endfor %}
+
+## How-to
+
+See [Triage User Issues]({% link _articles/appdev-troubleshooting-production.md %}) for Cloudwatch tips.
