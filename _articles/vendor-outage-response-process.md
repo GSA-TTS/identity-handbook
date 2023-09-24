@@ -141,3 +141,18 @@ The precise effects of each flag are:
     began verification. Normally, desktop computer users are able to
     use their phone to upload pictures of their ID. Desktop users will
     not be offered this choice when this flag is set to `full_outage`.
+
+## Proofing Resolution Result Missing Alert
+On rare occasion, the third party proofing checks will timeout and the
+system will log an `IdV: proofing resolution result missing` event.
+This is a reasonably rare event, e.g., in the month of August, 2023,
+this event only fired 103 times. That said, on August 9, 2023, we had
+a third party outage that resulted in several events firing in a 15 minute
+window.
+
+We now trigger an alert to slack if we see 3 or more occurrences in a
+15 minute window. If this alert fires, we should be looking for problems
+with our third party vendors. Some places to start include the following
+dashboard:
+
+- [Verify Your Identity](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/prod-idv-verify-your-identity-overview)
