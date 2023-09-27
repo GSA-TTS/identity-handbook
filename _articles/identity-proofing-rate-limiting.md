@@ -80,7 +80,7 @@ After failing for the final time, the user will be redirected to a
 rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
-![Rate Limited]({{site.baseurl}}/images/idv-session-errors-rate-failure.png)
+![Rate Limited]({{site.baseurl}}/images/idv-doc-auth-limited.png)
 
 ## `:idv_send_link` - User phone submission of their ID documents (hybrid handoff) rate limiter
 ### Description
