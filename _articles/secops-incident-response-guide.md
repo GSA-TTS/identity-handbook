@@ -68,7 +68,7 @@ Initial steps:
     * Call in on-call members using the @login-appdev-oncall and @login-devops-oncall handles in Slack
     * Use @here in [#login-situation][login-situation] if still understaffed
   * After hours:
-    * Use Splunk On-Call page on-call engineers (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts)). Please err on the side of caution and page the on-call engineers.
+    * Use Splunk On-Call page on-call engineers (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts)). If you're unsure whether or not to page somebody, lean towards paging them as a way to get a fresh set of eyes.
 * Roles are assigned when possible as responders join the incident:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed. [Situation Lead Checklist]({% link _articles/incident-response-checklist.md %}#situation-lead)
   * **Technical Lead (TL)**: Leads technical investigation and mitigation. [Technical Lead Checklist]({% link _articles/incident-response-checklist.md %}#technical-lead)
