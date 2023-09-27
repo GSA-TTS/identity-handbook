@@ -1,4 +1,12 @@
-# Introduction
+---
+title: "IdV Rate Limiting"
+description: "An overview of the rate limits which apply to IdV"
+layout: article
+category: "Team"
+subcategory: People Ops
+cSpell: ignore Hubspot
+---
+
 This page lists the rate limits relating to IdV, and provides details
 about each of them. 
 
