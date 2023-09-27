@@ -80,7 +80,7 @@ After failing for the final time, the user will be redirected to a
 rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
-![Rate Limited]: ({{site.baseurl}}/images/idv-session-errors-rate-failure.png)
+![Rate Limited]({{site.baseurl}}/images/idv-session-errors-rate-failure.png)
 
 ## `:idv_send_link` - User phone submission of their ID documents (hybrid handoff) rate limiter
 ### Description
@@ -106,7 +106,7 @@ limited.
 The user will be presented with a flash error message every time they
 attempt to enter hybrid handoff.
 
-[Rate Limited Hybrid Handoff]:({{site.baseurl}}/images/hybrid-handoff-limited.png)
+[Rate Limited Hybrid Handoff]({{site.baseurl}}/images/hybrid-handoff-limited.png)
 
 ## `:proof_address` - Phone verification rate limiter
 ### Description
@@ -131,7 +131,7 @@ After failing for the final time, the user will logged out, and their
 account will be locked until the login.gov team takes manual action to
 re-enable it.
 
-[Rate limited by address]: ({{site.baseurl}}/images/idv-address-rate-limited.png)
+[Rate limited by address]({{site.baseurl}}/images/idv-address-rate-limited.png)
 
 ## `:proof_ssn` - Social Security Number verification rate limiter
 ### Description
@@ -155,7 +155,7 @@ After failing for the final time, the user will be redirected to the
 IdV rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
-[Rate Limited]: ({{site.baseurl}}/images/idv-ssn-rate-limited.png)
+[Rate Limited]({{site.baseurl}}/images/idv-ssn-rate-limited.png)
 ## `GpoMail` - GPO (USPS) letters rate limiter
 ### Description
 This is the rate limiter for a user's requests for GPO letters.  This
@@ -194,7 +194,7 @@ letter; you are now rate-limited.
 On the 'Welcome Back' screen, the user is not presented with the
 option to request another letter.
 
-[Rate limited]:({{site.baseurl}}/images/gpo_letter_request_rate_limited.png)
+[Rate limited]({{site.baseurl}}/images/gpo_letter_request_rate_limited.png)
 
 ## `User` OTP verfication rate limiter
 When the user is entering a one-time (SMS) password, rate limiting is
@@ -221,4 +221,4 @@ allowed to try again.
 On any attempt to access the site, the user will be redirected to a
 rate-limited page, until the rate limit expires.
 
-
+[Rate Limited]({{site.baseurl}}/images/otp-limited.png)
