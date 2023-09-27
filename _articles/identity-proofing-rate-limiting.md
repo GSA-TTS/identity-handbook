@@ -196,7 +196,7 @@ option to request another letter.
 
 [Rate limited]({{site.baseurl}}/images/gpo_letter_request_rate_limited.png)
 
-## `User` OTP verifcation rate limiter
+## `User` OTP verification rate limiter
 When the user is entering a one-time (SMS) password, rate limiting is
 handled by a custom set of code. The actual rate limits are stored on
 `User`. This is strictly for attempts to enter the one-time password.
