@@ -171,7 +171,7 @@ before a user is allowed to request another.
 
 By default, a user is allowed to request 4 GPO letters within 30 days,
 and must wait 24 hours after requesting a GPO letter before they are
-allowd to request another. (n.b. - in the test environment, users are
+allowed to request another. (n.b. - in the test environment, users are
 restricted to 2 GPO letters per 30 day window; the delay is still 24
 hours.)
 
@@ -196,7 +196,7 @@ option to request another letter.
 
 [Rate limited]({{site.baseurl}}/images/gpo_letter_request_rate_limited.png)
 
-## `User` OTP verfication rate limiter
+## `User` OTP verifcation rate limiter
 When the user is entering a one-time (SMS) password, rate limiting is
 handled by a custom set of code. The actual rate limits are stored on
 `User`. This is strictly for attempts to enter the one-time password.
