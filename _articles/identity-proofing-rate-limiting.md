@@ -221,4 +221,4 @@ allowed to try again.
 On any attempt to access the site, the user will be redirected to a
 rate-limited page, until the rate limit expires.
 
-[Rate Limited]: ({{site.baseurl}}/images/otp-limited.png)
+
