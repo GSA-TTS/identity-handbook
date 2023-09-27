@@ -41,12 +41,11 @@ the UI won't let you use the same file again if you just retry.
 
 ### UI effects
 
-After failing for the final time, the user will be redirected to the
-IdV rate limited screen. Any attempt to re-enter IdV will also
+After failing for the final time, the user will be redirected to a
+rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
-![Rate Limited by doc auth]({{site.baseurl}}/images/document-capture-limited.png)
-
+![Failed and Rate Limited]({{site.baseurl}}/images/idv-doc-auth-limited.png)
 
 ## `:idv_resolution` - Verify info rate limiter
 ### Description
@@ -63,22 +62,17 @@ specified window.
 - `idv_attempt_window_in_hours` - The length of time to consider when
  determining whether a user is rate-limited.
 
-
-
 ### How to trigger
 Repeatedly fail IdV. Use a mix of bogus SSNs and device failures, to
 avoid triggering the SSN rate limiter.
 
 ### UI effects
 
-After failing for the final time, the user will be redirected to the
-IdV rate limited screen. Any attempt to re-enter IdV will also
+After failing for the final time, the user will be redirected to a
+rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
-[image]: {{site.baseurl}}/images/idp-artifact-building-architecture.jpg
-
-
-[Rate Limited|]
+![Rate Limited]: ({{site.baseurl}}/images/idv-session-errors-rate-failure.png)
 
 ## `:idv_send_link` - User phone submission of their ID documents (hybrid handoff) rate limiter
 ### Description
@@ -104,8 +98,7 @@ limited.
 The user will be presented with a flash error message every time they
 attempt to enter hybrid handoff.
 
-[screenshot]
-[image]: {{site.baseurl}}/images/idp-artifact-building-architecture.jpg
+[Rate Limited Hybrid Handoff]:({{site.baseurl}}/images/hybrid-handoff-limited.png)
 
 ## `:proof_address` - Phone verification rate limiter
 ### Description
@@ -121,14 +114,17 @@ window.
 to consider when determining whether a user is rate-limited.
 
 ### How to trigger
-Enter IdV. Proceed to the phone confirmation step, and then click the
-'Send another code' button until you are rate limited.
-### UI effects
-After failing for the final time, the user will be redirected to the
-IdV rate limited screen. Any attempt to re-enter IdV will also
-redirect there.
 
-[image]: {{site.baseurl}}/images/idp-artifact-building-architecture.jpg
+Repeatedly fail IdV. Use a mix of bad information (bad SSN, wrong one
+time code, etc.), to avoid triggering the other rate limiters.
+
+### UI effects
+After failing for the final time, the user will logged out, and their
+account will be locked until the login.gov team takes manual action to
+re-enable it.
+
+[Rate limited by address]: ({{site.baseurl}}/images/idv-address-rate-limited.png)
+
 ## `:proof_ssn` - Social Security Number verification rate limiter
 ### Description
 This is the rate limiter for SSN verification. By default, the user is
@@ -151,7 +147,7 @@ After failing for the final time, the user will be redirected to the
 IdV rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
-[image]: {{site.baseurl}}/images/idp-artifact-building-architecture.jpg
+[Rate Limited]: ({{site.baseurl}}/images/idv-ssn-rate-limited.png)
 ## `GpoMail` - GPO (USPS) letters rate limiter
 ### Description
 This is the rate limiter for a user's requests for GPO letters.  This
@@ -183,19 +179,28 @@ recently.
 amount of time that a user must wait, after requesting a GPO letter,
 before requesting another letter.
 
-
 ### How to trigger
 Enter IdV and select GPO letter address verification. Request a GPO
 letter; you are now rate-limited.
 ### UI effects
 On the 'Welcome Back' screen, the user is not presented with the
 option to request another letter.
+
+[Rate limited]:({{site.baseurl}}/images/gpo_letter_request_rate_limited.png)
+
 ## `User` OTP verfication rate limiter
 When the user is entering a one-time (SMS) password, rate limiting is
 handled by a custom set of code. The actual rate limits are stored on
 `User`. This is strictly for attempts to enter the one-time password.
 
-(n.b. - This code is _also_ used for rate-limiting OTP entry during login.)
+If the user fails all of their attempts, they are logged out and must
+wait a while before we allow them to log in again.
+
+By default, the user is allowed 10 attempts. If they are locked out,
+they must wait 10 minutes before we allow them to log back in.
+
+(n.b. - This code is _also_ used for rate-limiting OTP entry during
+login.)
 ### Settings
 `:login_otp_confirmation_max_attempts` - The maximum number of OTP
 entry attempts that the user is allowed before their account is locked.
@@ -203,3 +208,9 @@ entry attempts that the user is allowed before their account is locked.
 `:lockout_period_in_minutes` - The length of time that a use must wait
 after being locked out for too many OTP failures before they are
 allowed to try again.
+
+### UI effects
+On any attempt to access the site, the user will be redirected to a
+rate-limited page, until the rate limit expires.
+
+[Rate Limited]: {{site.baseurl}}/images/otp-limited.jpg
