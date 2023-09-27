@@ -7,13 +7,10 @@ The following IdV related rate limits exist:
 - Document Capture (`:idv_doc_auth`)
 - Verify Info (`:idv_resolution`)
 - Hybrid Handoff (`:idv_send_link`)
-- Phone OTP (`:phone_otp`)
-- Phone Confirmation (`:phone_confirmation`)
-- Address Confirmation (`:proof_address`)
+- Phone Confirmation (`:proof_address`)
 - SSN (`:proof_ssn`)
-
-In addition, there is a rate limit on GPO letters (verify by
-mail).
+- GPO (verify by USPS mail) letters
+- One-time (SMS) password entry
 
 # Rate Limit Details
 ## `:idv_doc_auth` - Document capture rate limiter
@@ -49,7 +46,7 @@ IdV rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
 [Rate Limited|]
-[image]: {{site.baseurl}}/images/idp-artifact-building-architecture.jpg
+[image]: {{site.baseurl}}/images/document-capture-limited.png
 
 
 
@@ -85,7 +82,7 @@ redirect there.
 
 [Rate Limited|]
 
-## `:idv_send_link` - This is the rate limiter for user submission of their ID documents via their phone (hybrid handoff)
+## `:idv_send_link` - User phone submission of their ID documents (hybrid handoff) rate limiter
 ### Description
 This is the rate limiter for hybrid handoff, where we allow the user
 to upload their ID documents from their phone. By default, the user is
@@ -157,7 +154,7 @@ IdV rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
 [image]: {{site.baseurl}}/images/idp-artifact-building-architecture.jpg
-## `GpoMail` - This is the rate limiter for GPO (USPS) letters
+## `GpoMail` - GPO (USPS) letters rate limiter
 ### Description
 This is the rate limiter for a user's requests for GPO letters.  This
 is a completely independent set of rate limiting code, which
@@ -195,15 +192,13 @@ letter; you are now rate-limited.
 ### UI effects
 On the 'Welcome Back' screen, the user is not presented with the
 option to request another letter.
-## `User` OTP verfication rate limiting
+## `User` OTP verfication rate limiter
 When the user is entering a one-time (SMS) password, rate limiting is
-handled internally to the `PhoneConfirmationOtpVerificationForm`,
-`UserOtpMethods` and `PhoneOtpRateLimitable` classes; the actual
-rate-limiting counts are kept on `User`. This is strictly for attempts
-to enter the one-time password.
+handled by a custom set of code. The actual rate limits are stored on
+`User`. This is strictly for attempts to enter the one-time password.
 
-(n.b. - This code is _also_ used for rate OTP entry during login.)
-## Settings
+(n.b. - This code is _also_ used for rate-limiting OTP entry during login.)
+### Settings
 `:login_otp_confirmation_max_attempts` - The maximum number of OTP
 entry attempts that the user is allowed before their account is locked.
 
