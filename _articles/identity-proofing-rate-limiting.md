@@ -45,7 +45,7 @@ After failing for the final time, the user will be redirected to the
 IdV rate limited screen. Any attempt to re-enter IdV will also
 redirect there.
 
-![Rate Limited by doc auth] ({{site.baseurl}}/images/document-capture-limited.png)
+![Rate Limited by doc auth]({{site.baseurl}}/images/document-capture-limited.png)
 
 
 ## `:idv_resolution` - Verify info rate limiter
