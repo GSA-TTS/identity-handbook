@@ -156,3 +156,4 @@ with our third party vendors. Some places to start include the following
 dashboard:
 
 - [Verify Your Identity](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/prod-idv-verify-your-identity-overview)
+- [IdV Monitoring Dashboard](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/prod-idp-idv-vendors)
