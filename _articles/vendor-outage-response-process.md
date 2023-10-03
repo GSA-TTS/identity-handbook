@@ -143,7 +143,7 @@ The precise effects of each flag are:
     not be offered this choice when this flag is set to `full_outage`.
 
 ## Proofing Resolution Result Missing Alert
-On rare occasion, the third party proofing checks will timeout and the
+On rare occasions, the third party proofing checks will timeout and the
 system will log an `IdV: proofing resolution result missing` event.
 This is a reasonably rare event, e.g., in the month of August, 2023,
 this event only fired 103 times. That said, on August 9, 2023, we had
