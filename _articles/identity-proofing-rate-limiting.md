@@ -36,7 +36,19 @@ attempt to upload their documents within the specified time window.
 ### How to trigger
 Repeatedly fail doc auth (5 times). This can be done by using a
 suitable `.yml` file rather than an image file during image
-upload. A suitable file is:
+upload.
+
+Use the same file for front and back images, but you must alternate
+between two files on succesive attempts. The UI will not let you try
+twice in a row with the same file.
+
+A pair of suitable files is:
+
+```
+image_metrics:
+  back:
+    HorizontalResolution: 100
+```
 
 ```
 failed_alerts:
@@ -44,8 +56,8 @@ failed_alerts:
     result: Attention```
 ```
 
-You will need to cancel out of doc auth and then restart it each time;
-the UI won't let you use the same file again if you just retry.
+[More about Yaml files for testing and development](https://developers.login.gov/testing/#testing-identity-proofing)
+
 
 ### UI effects
 
