@@ -98,7 +98,7 @@ consider when determining whether a user is rate-limited.
 
 ### How to trigger
 Enter identity verification, and select hybrid handoff ('Use your
-phone to take photos'). Cancel out of the next screen and return to
+phone to take photos'). Click `Back` on the next screen and return to
 'How would you like to add your ID?'. Repeat until you become rate
 limited.
 
