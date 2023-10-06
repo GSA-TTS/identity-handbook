@@ -191,7 +191,7 @@ before requesting another letter.
 Enter IdV and select GPO letter address verification. Request a GPO
 letter; you are now rate-limited.
 ### UI effects
-On the 'Welcome Back' screen, the user is not presented with the
+On the screen to enter their verification code, the user is not presented with the
 option to request another letter.
 
 [Rate limited]({{site.baseurl}}/images/gpo_letter_request_rate_limited.png)
