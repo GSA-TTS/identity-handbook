@@ -26,6 +26,12 @@ The following Identity Verification related rate limits exist:
 This is the rate-limit for the user's attempts to upload their ID
 documents from either their computer or phone. By default, the user
 is allowed 5 attempts within 6 hours.
+
+Retrying with a different file after a failure and cancelling out of
+Identity Verification completely and then trying again both count
+against this rate limiter. The user gets 5 attempts to upload
+satisfactory images in 6 hours total, through any path.
+
 ### Config Settings
 - `doc_auth_max_attepts` - The maximum number of times the user can
 attempt to upload their documents within the specified time window.
