@@ -24,7 +24,7 @@ The following IdV related rate limits exist:
 ## `:idv_doc_auth` - Document capture rate limiter
 ### Description
 This is the rate-limit for the user's attempts to upload their ID
-documents (from either their computer or phone). By default, the user
+documents from either their computer or phone. By default, the user
 is allowed 5 attempts within 6 hours.
 ### Config Settings
 - `doc_auth_max_attepts` - The maximum number of times the user can
