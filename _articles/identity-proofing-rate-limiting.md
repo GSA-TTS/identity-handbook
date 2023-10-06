@@ -1,16 +1,16 @@
 ---
-title: "IdV Rate Limiting"
-description: "An overview of the rate limits which apply to IdV"
+title: "Identity Verification Rate Limiting"
+description: "An overview of the rate limits which apply to Identity Verification"
 layout: article
-category: "Team"
-subcategory: People Ops
+category: AppDev
+subcategory: Architecture
 cSpell: ignore Hubspot
 ---
 
-This page lists the rate limits relating to IdV, and provides details
+This page lists the rate limits relating to Identity Verification, and provides details
 about each of them. 
 
-The following IdV related rate limits exist:
+The following Identity Verification related rate limits exist:
 
 - Document Capture (`:idv_doc_auth`)
 - Verify Info (`:idv_resolution`)
@@ -50,14 +50,14 @@ the UI won't let you use the same file again if you just retry.
 ### UI effects
 
 After failing for the final time, the user will be redirected to a
-rate limited screen. Any attempt to re-enter IdV will also
+rate limited screen. Any attempt to re-enter Identity Verification will also
 redirect there.
 
 ![Failed and Rate Limited]({{site.baseurl}}/images/idv-doc-auth-limited.png)
 
 ## `:idv_resolution` - Verify info rate limiter
 ### Description
-This is the rate-limit for the final step in IdV: when the user
+This is the rate-limit for the final step in Identity Verification: when the user
 attempts to submit everything and verify their identity. By default,
 the user is allowed 5 attempts in 6 hours.
 
@@ -71,13 +71,13 @@ specified window.
  determining whether a user is rate-limited.
 
 ### How to trigger
-Repeatedly fail IdV. Use a mix of bogus SSNs and device failures, to
+Repeatedly fail Identity Verification. Use a mix of bogus SSNs and device failures, to
 avoid triggering the SSN rate limiter.
 
 ### UI effects
 
 After failing for the final time, the user will be redirected to a
-rate limited screen. Any attempt to re-enter IdV will also
+rate limited screen. Any attempt to re-enter Identity Verification will also
 redirect there.
 
 ![Rate Limited]({{site.baseurl}}/images/idv-doc-auth-limited.png)
@@ -123,7 +123,7 @@ to consider when determining whether a user is rate-limited.
 
 ### How to trigger
 
-Repeatedly fail IdV. Use a mix of bad information (bad SSN, wrong one
+Repeatedly fail Identity Verification. Use a mix of bad information (bad SSN, wrong one
 time code, etc.), to avoid triggering the other rate limiters.
 
 ### UI effects
@@ -147,12 +147,12 @@ specified window.
 to consider when determining whether a user is rate-limited.
 
 ### How to trigger
-Enter IdV. Proceed to the 'Enter your Social Security number'
+Enter Identity Verification. Proceed to the 'Enter your Social Security number'
 screen. Repeatedly enter a bad SSN and click Continue until you are
 rate limited.
 ### UI effects
 After failing for the final time, the user will be redirected to the
-IdV rate limited screen. Any attempt to re-enter IdV will also
+Identity Verification rate limited screen. Any attempt to re-enter Identity Verification will also
 redirect there.
 
 [Rate Limited]({{site.baseurl}}/images/idv-ssn-rate-limited.png)
@@ -188,7 +188,7 @@ amount of time that a user must wait, after requesting a GPO letter,
 before requesting another letter.
 
 ### How to trigger
-Enter IdV and select GPO letter address verification. Request a GPO
+Enter Identity Verification and select GPO letter address verification. Request a GPO
 letter; you are now rate-limited.
 ### UI effects
 On the screen to enter their verification code, the user is not presented with the
