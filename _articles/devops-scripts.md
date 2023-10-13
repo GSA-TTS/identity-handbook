@@ -445,15 +445,6 @@ aws-vault exec sandbox-power --
     ./bin/ssm-instance -h
 ```
 
-### `uuid-lookup`
-
-Looks up the UUID for a user by their email address.
-
-```bash
-aws-vault exec sandbox-power --
-    ./bin/ssm-instance --document uuid-lookup --any asg-dev-idp
-```
-
 ### `rails-c`
 
 Opens a Rails console (in read-only mode)
