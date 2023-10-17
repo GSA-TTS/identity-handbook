@@ -160,6 +160,26 @@ aws-vault exec prod-power -- \
 +--------------------------------------+---------------+--------------------------------------+
 ```
 
+### `events-summary`
+
+Summarizes events per user (count per day).
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp events-summary aaaa
+
++------+------------+--------------+
+| uuid | date       | events_count |
++------+------------+--------------+
+| aaaa | 2023-10-12 | 1            |
+| aaaa | 2023-09-28 | 2            |
+| aaaa | 2023-09-18 | 3            |
+| aaaa | 2023-09-12 | 1            |
+| aaaa | 2023-08-16 | 2            |
+| aaaa | 2023-08-07 | 1            |
++------+------------+--------------+
+```
+
 ### `profile-summary`
 
 Looks up the profiles associated with UUIDs and shows their summary
@@ -367,7 +387,10 @@ aws-vault exec sandbox-power --
   --from 10d --slice 1d --query "$QUERY"
 ```
 
-The script can output as new-line delimited JSON (`--json`) or as a CSV (`--csv`).
+There are many options! Run with `--help` to see them all.
+
+- The script can output as new-line delimited JSON (`--json`) or as a CSV (`--csv`).
+- The script can run a query on disjoint dates via the `--date` flag like `--date 2023-01-01,2023-02-02`
 
 ##  `copy-cloudwatch-dashboard`
 
