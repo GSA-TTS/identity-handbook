@@ -47,7 +47,7 @@ Prerequisites:
 * You must use a phishing resistant multi-factor option for MFA which is one of:
   * PIV or CAC
   * Security Key (WebAuthN with a hardware key)
-  * Face or Touch Unlock (Platform Authenticator)
+ 
 
 To log in:
 * Go to <https://gitlab.login.gov>
