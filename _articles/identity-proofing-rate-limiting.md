@@ -17,7 +17,7 @@ The following Identity Verification related rate limits exist:
 - Hybrid Handoff (`:idv_send_link`)
 - Phone Confirmation (`:proof_address`)
 - SSN (`:proof_ssn`)
-- GPO (verify by USPS mail) letters
+- Verify by Mail (verify by USPS mail) letters
 - One-time (SMS) password entry
 
 # Rate Limit Details
@@ -75,9 +75,9 @@ redirect there.
 
 ## `:idv_resolution` - Verify info rate limiter
 ### Description
-This is the rate-limit for the final step in Identity Verification: when the user
-attempts to submit everything and verify their identity. By default,
-the user is allowed 5 attempts in 6 hours.
+This is the rate-limit for the step after document upload: When we
+check the information from their documents against our external
+vendors. The user is allowed 5 attempts in 6 hours.
 
 ### Config Settings
 
@@ -174,39 +174,44 @@ Identity Verification rate limited screen. Any attempt to re-enter Identity Veri
 redirect there.
 
 [Rate Limited]({{site.baseurl}}/images/idv-ssn-rate-limited.png)
-## `GpoMail` - GPO (USPS) letters rate limiter
+## `GpoMail` - Verify by Mail (USPS) letters rate limiter
 ### Description
-This is the rate limiter for a user's requests for GPO letters.  This
-is a completely independent set of rate limiting code, which
-implements two rate limits.
+This is the rate limiter for a user's requests for verify by mail
+(also sometimes called GPO) letters.  This is a completely independent
+set of rate limiting code, which implements two rate limits.
 
-First, a user is not allowed more than a certain number of GPO letter
-requests within a time window (this is similar to the other rate
-limiters described here).
+- First, a user is not allowed more than a certain number of letter
+  requests within a time window (this is similar to the other rate
+  limiters described here).
 
-Second, there is a minimum wait period after requesting a GPO letter
-before a user is allowed to request another.
+- Second, there is a minimum wait period after requesting a letter
+  before a user is allowed to request another.
 
-By default, a user is allowed to request 4 GPO letters within 30 days,
-and must wait 24 hours after requesting a GPO letter before they are
-allowed to request another. (n.b. - in the test environment, users are
-restricted to 2 GPO letters per 30 day window; the delay is still 24
-hours.)
+  By default, a user is allowed to request 4 verify by mail letters
+  within 30 days, and must wait 24 hours after requesting a letter
+  before they are allowed to request another. 
+
+  (n.b. - there is an override for this in `application.yml` if the
+  RUBY_ENV variable is set to `test`. In that case, users are
+  restricted to 2 letters per 30 day window; the delay is still 24
+  hours. This setting is used by the automated test suite in CI and
+  also for local development. It makes the tests simpler to have a
+  lower rate-limiting threshold.)
 
 ### Settings
 `max_mail_events` - The maximum number of times that a user may
-request a GPO letter within the specified time window.
+request a Verify by Mail letter within the specified time window.
 
 `max_mail_events_window_in_days` - The length of time to consider when
-determining whether the user has requested too many GPO letters
+determining whether the user has requested too many Verify by Mail letters
 recently.
 
 `minimum_wait_before_another_usps_letter_in_hours` - The minimum
-amount of time that a user must wait, after requesting a GPO letter,
+amount of time that a user must wait, after requesting a Verify by Mail letter,
 before requesting another letter.
 
 ### How to trigger
-Enter Identity Verification and select GPO letter address verification. Request a GPO
+Enter Identity Verification and select Verify by Mail letter address verification. Request a Verify by Mail
 letter; you are now rate-limited.
 ### UI effects
 On the screen to enter their verification code, the user is not presented with the
@@ -217,7 +222,7 @@ option to request another letter.
 ## `User` OTP verification rate limiter
 When the user is entering a one-time (SMS) password, rate limiting is
 handled by a custom set of code. The actual rate limits are stored on
-`User`. This is strictly for attempts to enter the one-time password.
+`User`. This is strictly for attempts to enter the one-time password.--------
 
 If the user fails all of their attempts, they are logged out and must
 wait a while before we allow them to log in again.
