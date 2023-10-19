@@ -12,20 +12,22 @@ about each of them.
 
 The following identity verification related rate limits exist:
 
-- Document Capture (`:idv_doc_auth`)
-- Verify Info (`:idv_resolution`)
-- Hybrid Handoff (`:idv_send_link`)
-- Phone Confirmation (`:proof_address`)
-- SSN (`:proof_ssn`)
-- Verify by Mail (USPS) letters
-- One-time (SMS) password entry
+- [Document Capture](#document-capture-rate-limiter)
+- [Verify Info](#verify-info-rate-limiter)
+- [Hybrid Handoff](#hybrid-handoff-rate-limiter)
+- [Address Verification](#address-verification-rate-limiter)
+- [Social Security Number](#social-security-number-verification-rate-limiter)
+- [Verify by USPS mail](#verify-by-usps-mail-rate-limiter)
+- [One time password entry](#one-time-password-entry-rate-limiter)
 
 # Rate Limit Details
-## `:idv_doc_auth` - Document capture rate limiter
+## Document capture rate limiter
 ### Description
 This is the rate-limit for the user's attempts to upload their ID
-documents from either their computer or phone. By default, the user
-is allowed 5 attempts within 6 hours.
+documents from either their computer or phone. It is referred to in
+code via `:idv_doc_auth` and the `RateLimiter` class.
+
+By default, the user is allowed 5 attempts within 6 hours.
 
 Retrying with a different file after a failure and canceling out of
 identity verification completely and then trying again both count
@@ -75,32 +77,22 @@ redirect there.
 
 ![Failed and Rate Limited]({{site.baseurl}}/images/idv-doc-auth-limited.png)
 
-## `:idv_resolution` - Verify info rate limiter
+## Verify info rate limiter
 ### Description
 This is the rate-limit for verifying the user's information against
-our external vendors. The user is allowed 5 attempts in 6 hours.
+our external vendors. It is referred to in code via `:idv_resolution`
+and the `RateLimiter` class.
 
-### Config Settings
+By default, the user is allowed 5 attempts in 6 hours.
 
-- `idv_max_attempts` - The maximum number of times that a user can
-attempt to verify their identity documents within the
-specified window. Default: 5 attempts.
-
-- `idv_attempt_window_in_hours` - The length of time to consider when
- determining whether a user is rate-limited. Default: 6 hours.
-
-### How to trigger
-Enter a SSN that doesn't start with 666 or 900 on the SSN step. Click
-submit on the verify info step; it will fail with a "Try Again"
-button. Repeat until you are rate-limited.
-
-### UI effects
-
-## `:idv_send_link` - User phone submission of their ID documents (hybrid handoff) rate limiter
+## Hybrid handoff rate limiter
 ### Description
 This is the rate limiter for hybrid handoff, where we allow the user
-to upload their ID documents from their phone. By default, the user is
-allowed 5 attempts in 10 minutes.
+to upload their ID documents from their phone. It is referred to in code via
+`:idv_send_link` and the `RateLimiter` class.
+
+By default, the user is allowed 5 attempts in 10 minutes.
+
 ### Settings
 `idv_send_link_max_attempts` - The maximum number of times that a user
 can attempt to upload their ID documents from their phone within the
@@ -121,10 +113,13 @@ attempt to enter hybrid handoff.
 
 [Rate Limited Hybrid Handoff]({{site.baseurl}}/images/hybrid-handoff-limited.png)
 
-## `:proof_address` - Address verification rate limiter
+## Address verification rate limiter
+
 ### Description
-This is the rate limiter for the address verification step. By default, the
-user is allowed 5 attempts in 6 hours.
+This is the rate limiter for the address verification step. It is referred to in
+code via `:proof_address` and the `RateLimiter` class.
+
+By default, the user is allowed 5 attempts in 6 hours.
 
 ### Config Settings
 - `proof_address_max_attempts` - The maximum number of times that a
@@ -137,7 +132,10 @@ to consider when determining whether a user is rate-limited. Default:
 
 ### How to trigger
 
-Use phone number 703-555-5555.
+Enter identity verification. When you reach the phone number step, use
+phone number 703-555-5555. Identity verification will fail. Retry,
+using the same phone number, until you are rate-limited. (Ignore the
+nattering at you about using a different phone number.)
 
 ### UI effects
 
@@ -147,12 +145,14 @@ rate limit expires will also be directed to this screen.
 
 ![Proof Address Rate Limited]({{site.baseurl}}/images/idv-proof-address-rate-limited.png)
 
-
-## `:proof_ssn` - Social Security Number verification rate limiter
+## Social security number verification rate limiter
 ### Description
-This is the rate limiter for SSN verification. By default, an SSN is
-allowed 10 attempts in 60 minutes, across any number of users. The
-discriminator for this rate limiter is the SSN, not the user id.
+This is the rate limiter for SSN verification. It is referred to in
+code via `:proof_ssn` and the `RateLimiter` class.
+
+By default, an SSN is allowed 10 attempts in 60 minutes, across any
+number of users. The discriminator for this rate limiter is the SSN,
+not the user id.
 
 ### Settings
 - `proof_ssn_max_attempts` - The maximum number of times that a user
@@ -171,11 +171,13 @@ is set to double the resolution rate-limiter, so it takes three users
 Choose a bogus SSN (one that does not begin with 900 or 666).  Create
 a new user, and attempt identity verification with the user. The
 verify info step will fail with this SSN. Repeat until rate limited.
+(At this point, you are rate limited by the resolution rate limiter,
+not the SSN rate limiter.)
 
 Create a second user, and repeat the process with the same SSN.
 
 Create a third user, using the same SSN, and this time, you will see
-the SSN rate limit at the verify info step (verified.
+the SSN rate limit at the verify info step.
 
 The SSN rate limit error page can be distinguished from the resolution
 rate limit error page by the fact that the SSN timeout is 1 hour,
@@ -184,16 +186,19 @@ whereas the resolution limiter has a timeout of 6 hours.
 ### UI effects
 After attempting verify info, the third user will be redirected to the
 identity verification rate limited screen. Any further attempts to
-verify info will also redirect here. Unlike the other rate limiters,
-this one only takes effect when the SSN has been entered during a
-session.
+verify info with the offending SSN, for any user, will also redirect
+here.
+
+Unlike the other rate limiters, this one only takes effect when the
+SSN has been entered during a session.
 
 [Rate Limited]({{site.baseurl}}/images/idv-ssn-rate-limited.png)
-## `GpoMail` - Verify by Mail (USPS) letters rate limiter
+## Verify by USPS mail rate limiter
 ### Description
-This is the rate limiter for a user's requests for verify by mail
-(also sometimes called GPO) letters.  This is a completely independent
-set of rate limiting code, which implements two rate limits.
+This is the rate limiter for a user's requests for verify by USPS hard
+copy (also sometimes called GPO) letters.  This is a completely
+independent set of rate limiting code, in the `GpoMail` class, which
+implements two rate limits.
 
 - First, a user is not allowed more than a certain number of letter
   requests within a time window (this is similar to the other rate
@@ -234,27 +239,30 @@ option to request another letter.
 
 [Rate limited]({{site.baseurl}}/images/gpo_letter_request_rate_limited.png)
 
-## `User` OTP verification rate limiter
+## One time password entry rate limiter
+
 ### Description
 When the user is entering a one-time (SMS) password, rate limiting is
-handled by a custom set of code. The actual rate limits are stored on
-`User`. This is strictly for attempts to enter the one-time password,
-and applies to both OTP entry during identity verification _and_ user
-login.
+handled by a custom set of code. This is strictly for attempts to
+enter a one-time password, and applies to both OTP entry during
+identity verification _and_ during user login.
+
+The actual rate limits are stored on the `User` class. Most of the
+code is in the `UserOtpMethods` concern, with a small bit of it still
+in `User`.
+
+By default, the user is allowed 10 attempts.
 
 If the user fails all of their attempts, they are logged out and must
-wait a while before we allow them to log in again.
-
-By default, the user is allowed 10 attempts. If they are locked out,
-they must wait 10 minutes before we allow them to log back in.
+wait 10 minutes before we allow them to log back in.
 
 ### Settings
 `:login_otp_confirmation_max_attempts` - The maximum number of OTP
-entry attempts that the user is allowed before their account is locked.
+entry attempts that the user is allowed before their account is locked. Default: 10 tries.
 
 `:lockout_period_in_minutes` - The length of time that a use must wait
 after being locked out for too many OTP failures before they are
-allowed to try again.
+allowed to try again. Default: 10 minutes.
 
 ### UI effects
 On any attempt to access the site, the user will be redirected to a
