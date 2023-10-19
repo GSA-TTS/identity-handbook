@@ -134,8 +134,8 @@ to consider when determining whether a user is rate-limited. Default:
 
 Enter identity verification. When you reach the phone number step, use
 phone number 703-555-5555. Identity verification will fail. Retry,
-using the same phone number, until you are rate-limited. (Ignore the
-nattering at you about using a different phone number.)
+using the same phone number, until you are rate-limited. Ignore the
+message about using a different phone number.
 
 ### UI effects
 
@@ -242,27 +242,35 @@ option to request another letter.
 ## One time password entry rate limiter
 
 ### Description
-When the user is entering a one-time (SMS) password, rate limiting is
+When the user is entering a one-time password, rate limiting is
 handled by a custom set of code. This is strictly for attempts to
 enter a one-time password, and applies to both OTP entry during
 identity verification _and_ during user login.
 
-The actual rate limits are stored on the `User` class. Most of the
+The actual rate limit count is stored on the `User` class. Most of the
 code is in the `UserOtpMethods` concern, with a small bit of it still
 in `User`.
 
-By default, the user is allowed 10 attempts.
+By default, the user is allowed to request 10 one-time passwords
+within 10 minutes.
 
-If the user fails all of their attempts, they are logged out and must
-wait 10 minutes before we allow them to log back in.
+If the user requests more than 10, they are logged out and must wait
+10 minutes before we allow them to log back in.
 
 ### Settings
 `:login_otp_confirmation_max_attempts` - The maximum number of OTP
-entry attempts that the user is allowed before their account is locked. Default: 10 tries.
+requests entry attempts that the user is allowed before their account
+is temporarily locked. Default: 10 tries.
 
 `:lockout_period_in_minutes` - The length of time that a use must wait
-after being locked out for too many OTP failures before they are
+after being locked out for too many OTP requests before they are
 allowed to try again. Default: 10 minutes.
+
+### How to trigger
+Enter identity verification and proceed through the 'Verify your phone
+number' screen. After pressing the 'Send code' button, you will be on
+the 'Enter your one-time code' screen. Press the 'Send another code
+button' repeatedly, until you are rate limited.
 
 ### UI effects
 On any attempt to access the site, the user will be redirected to a
