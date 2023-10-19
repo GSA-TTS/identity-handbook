@@ -12,15 +12,43 @@ about each of them.
 
 The following identity verification related rate limits exist:
 
+- [Hybrid Handoff](#hybrid-handoff-rate-limiter)
 - [Document Capture](#document-capture-rate-limiter)
 - [Verify Info](#verify-info-rate-limiter)
-- [Hybrid Handoff](#hybrid-handoff-rate-limiter)
-- [Address Verification](#address-verification-rate-limiter)
 - [Social Security Number](#social-security-number-verification-rate-limiter)
-- [Verify by USPS mail](#verify-by-usps-mail-rate-limiter)
+- [Address Verification](#address-verification-rate-limiter)
 - [One time password entry](#one-time-password-entry-rate-limiter)
+- [Verify by USPS mail](#verify-by-usps-mail-rate-limiter)
 
 # Rate Limit Details
+## Hybrid handoff rate limiter
+### Description
+This is the rate limiter for hybrid handoff, where we allow the user
+to upload their ID documents from their phone. It is referred to in code via
+`:idv_send_link` and the `RateLimiter` class.
+
+By default, the user is allowed 5 attempts in 10 minutes.
+
+### Settings
+`idv_send_link_max_attempts` - The maximum number of times that a user
+can attempt to upload their ID documents from their phone within the
+specified time window. Default: 5 attempts
+
+`idv_send_link_attempt_window_in_minutes` - The length of time to
+consider when determining whether a user is rate-limited. Default: 10
+minutes
+
+### How to trigger
+Enter identity verification, and select hybrid handoff ('Use your
+phone to take photos'). Click `Back` on the next screen and return to
+'How would you like to add your ID?'. Repeat until you become rate
+limited.
+### UI effects
+The user will be presented with a flash error message every time they
+attempt to enter hybrid handoff.
+
+![Rate Limited Hybrid Handoff]({{site.baseurl}}/images/hybrid-handoff-limited.png)
+
 ## Document capture rate limiter
 ### Description
 This is the rate-limit for the user's attempts to upload their ID
@@ -85,65 +113,8 @@ and the `RateLimiter` class.
 
 By default, the user is allowed 5 attempts in 6 hours.
 
-## Hybrid handoff rate limiter
-### Description
-This is the rate limiter for hybrid handoff, where we allow the user
-to upload their ID documents from their phone. It is referred to in code via
-`:idv_send_link` and the `RateLimiter` class.
 
-By default, the user is allowed 5 attempts in 10 minutes.
 
-### Settings
-`idv_send_link_max_attempts` - The maximum number of times that a user
-can attempt to upload their ID documents from their phone within the
-specified time window. Default: 5 attempts
-
-`idv_send_link_attempt_window_in_minutes` - The length of time to
-consider when determining whether a user is rate-limited. Default: 10
-minutes
-
-### How to trigger
-Enter identity verification, and select hybrid handoff ('Use your
-phone to take photos'). Click `Back` on the next screen and return to
-'How would you like to add your ID?'. Repeat until you become rate
-limited.
-### UI effects
-The user will be presented with a flash error message every time they
-attempt to enter hybrid handoff.
-
-[Rate Limited Hybrid Handoff]({{site.baseurl}}/images/hybrid-handoff-limited.png)
-
-## Address verification rate limiter
-
-### Description
-This is the rate limiter for the address verification step. It is referred to in
-code via `:proof_address` and the `RateLimiter` class.
-
-By default, the user is allowed 5 attempts in 6 hours.
-
-### Config Settings
-- `proof_address_max_attempts` - The maximum number of times that a
-user can attempt to verify their address within the specified
-window. Default: 5 times
-
-- `proof_address_max_attempt_window_in_minutes` - The length of time
-to consider when determining whether a user is rate-limited. Default:
-6 hours
-
-### How to trigger
-
-Enter identity verification. When you reach the phone number step, use
-phone number 703-555-5555. Identity verification will fail. Retry,
-using the same phone number, until you are rate-limited. Ignore the
-message about using a different phone number.
-
-### UI effects
-
-The user will be redirected to a screen informing them that they are
-rate-limited. Any further attempt to proof their address before the
-rate limit expires will also be directed to this screen.
-
-![Proof Address Rate Limited]({{site.baseurl}}/images/idv-proof-address-rate-limited.png)
 
 ## Social security number verification rate limiter
 ### Description
@@ -192,13 +163,85 @@ here.
 Unlike the other rate limiters, this one only takes effect when the
 SSN has been entered during a session.
 
-[Rate Limited]({{site.baseurl}}/images/idv-ssn-rate-limited.png)
+![Rate Limited]({{site.baseurl}}/images/idv-ssn-rate-limited.png)
+## Address verification rate limiter
+### Description
+This is the rate limiter for the address verification step. It is referred to in
+code via `:proof_address` and the `RateLimiter` class.
+
+By default, the user is allowed 5 attempts in 6 hours.
+
+### Config Settings
+- `proof_address_max_attempts` - The maximum number of times that a
+user can attempt to verify their address within the specified
+window. Default: 5 times
+
+- `proof_address_max_attempt_window_in_minutes` - The length of time
+to consider when determining whether a user is rate-limited. Default:
+6 hours
+
+### How to trigger
+
+Enter identity verification. When you reach the phone number step, use
+phone number 703-555-5555. Identity verification will fail. Retry,
+using the same phone number, until you are rate-limited. Ignore the
+message about using a different phone number.
+
+### UI effects
+
+The user will be redirected to a screen informing them that they are
+rate-limited. Any further attempt to proof their address before the
+rate limit expires will also be directed to this screen.
+
+![Proof Address Rate Limited]({{site.baseurl}}/images/idv-proof-address-rate-limited.png)
+
+## One time password entry rate limiter
+
+### Description
+During the phone confirmation step, the user must enter a one-time
+code sent to their phone. This is the rate limiter for requesting
+one-time codes.
+
+When the user is entering a one-time code, rate limiting is
+handled by code which is common to both OTP entry during
+identity verification _and_ during user login.
+
+The actual rate limit count is stored on the `User` class. Most of the
+code is in the `UserOtpMethods` concern, with a small bit of it still
+in `User`.
+
+By default, the user is allowed to request 10 one-time passwords
+within 10 minutes.
+
+If the user requests more than 10, they are blocked from further
+access, and must wait 10 minutes before we allow them to continue.
+
+### Settings
+`:login_otp_confirmation_max_attempts` - The maximum number of OTP
+requests entry attempts that the user is allowed before their account
+is temporarily locked. Default: 10 tries.
+
+`:lockout_period_in_minutes` - The length of time that a use must wait
+after being locked out for too many OTP requests before they are
+allowed to try again. Default: 10 minutes.
+
+### How to trigger
+Enter identity verification and proceed through the 'Verify your phone
+number' screen. After pressing the 'Send code' button, you will be on
+the 'Enter your one-time code' screen. Press the 'Send another code
+button' repeatedly, until you are rate limited.
+
+### UI effects
+On any attempt to access the site, the user will be redirected to a
+rate-limited page, until the rate limit expires.
+
+[Rate Limited]({{site.baseurl}}/images/otp-limited.png)
 ## Verify by USPS mail rate limiter
 ### Description
-This is the rate limiter for a user's requests for verify by USPS hard
-copy (also sometimes called GPO) letters.  This is a completely
-independent set of rate limiting code, in the `GpoMail` class, which
-implements two rate limits.
+This is the rate limiter for a user's requests for USPS paper (also
+sometimes called GPO) letters.  This is a completely independent set
+of rate limiting code, in the `GpoMail` class, which implements two
+rate limits.
 
 - First, a user is not allowed more than a certain number of letter
   requests within a time window (this is similar to the other rate
@@ -239,41 +282,3 @@ option to request another letter.
 
 [Rate limited]({{site.baseurl}}/images/gpo_letter_request_rate_limited.png)
 
-## One time password entry rate limiter
-
-### Description
-When the user is entering a one-time password, rate limiting is
-handled by a custom set of code. This is strictly for attempts to
-enter a one-time password, and applies to both OTP entry during
-identity verification _and_ during user login.
-
-The actual rate limit count is stored on the `User` class. Most of the
-code is in the `UserOtpMethods` concern, with a small bit of it still
-in `User`.
-
-By default, the user is allowed to request 10 one-time passwords
-within 10 minutes.
-
-If the user requests more than 10, they are logged out and must wait
-10 minutes before we allow them to log back in.
-
-### Settings
-`:login_otp_confirmation_max_attempts` - The maximum number of OTP
-requests entry attempts that the user is allowed before their account
-is temporarily locked. Default: 10 tries.
-
-`:lockout_period_in_minutes` - The length of time that a use must wait
-after being locked out for too many OTP requests before they are
-allowed to try again. Default: 10 minutes.
-
-### How to trigger
-Enter identity verification and proceed through the 'Verify your phone
-number' screen. After pressing the 'Send code' button, you will be on
-the 'Enter your one-time code' screen. Press the 'Send another code
-button' repeatedly, until you are rate limited.
-
-### UI effects
-On any attempt to access the site, the user will be redirected to a
-rate-limited page, until the rate limit expires.
-
-[Rate Limited]({{site.baseurl}}/images/otp-limited.png)
