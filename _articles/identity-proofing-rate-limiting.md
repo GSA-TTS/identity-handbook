@@ -63,10 +63,9 @@ code via `:idv_doc_auth` and the `RateLimiter` class.
 
 By default, the user is allowed 5 attempts within 6 hours.
 
-Retrying with a different file after a failure and canceling out of
-identity verification completely and then trying again both count
-against this rate limiter. The user gets 5 attempts to upload
-satisfactory images in 6 hours total, through any path.
+All document submissions, whether successful or not, count against
+this rate limit. The user gets 5 attempts in 6 hours total, through
+any path.
 
 ### Config Settings
 - `doc_auth_max_attempts` - The maximum number of times the user can
@@ -78,15 +77,17 @@ satisfactory images in 6 hours total, through any path.
   hours.
 
 ### How to trigger
-Repeatedly fail document auth (5 times). This can be done by using a
-suitable `.yml` file rather than an image file during image
-upload.
+The quickest way to test this is to fail repeatedly (5 times).
+
+### How to make this step fail
+This can be done by using a suitable `.yml` file rather than an image
+file during image upload.
 
 Use the same file for front and back images, but you must alternate
 between two files on successive attempts. The UI will not let you try
 twice in a row with the same file.
 
-A pair of suitable files is:
+A pair of suitable files to fail doc auth is:
 
 ```
 image_metrics:
@@ -128,8 +129,11 @@ By default, the user is allowed 5 attempts in 6 hours.
   determining whether a user is rate limited. Default: 6 hours.
 
 ### How to trigger
+Repeatedly submit Verify Info (5 times).
+
+### How to make this step fail
 Attempt verification with an SSN that does not begin with 900 or 666;
-it will fail. Repeat until you are rate limited.
+it will fail.
 
 ### UI effects
 After failing for the final time, the user will be redirected to a
@@ -157,10 +161,13 @@ consider when determining whether a Social Security number is rate-limited. The 
 value for this is 60 minutes.
 
 ### How to trigger
+The quickest way to test this is to fail repeatedly.
+
 This rate limiter is checked at the verify info step. The limit for it
 is set to double the resolution rate limiter, so it takes three users
 (with a common SSN) to trigger the SSN rate limit.
 
+### How to make this step fail
 Choose an SSN that does not begin with 900 or 666.  Create
 a new user, and attempt identity verification with the user. The
 verify info step will fail with this SSN. Repeat until rate limited.
@@ -174,8 +181,7 @@ the SSN rate limit page after submitting the Verify Info step.
 
 The SSN rate limit error page can be distinguished from the resolution
 rate limit error page by the fact that the SSN timeout is 1 hour,
-whereas the resolution limiter has a timeout of 6 hours.
-
+    whereas the resolution limiter has a timeout of 6 hours
 ## Address verification rate limiter
 ### Description
 This is the rate limiter for the Phone step. It is referred to in
@@ -193,9 +199,10 @@ to consider when determining whether a user is rate limited. Default:
 6 hours
 
 ### How to trigger
+The quickest way to test this is to fail repeatedly.
 
-Enter identity verification. When you reach the phone number step, use
-phone number 703-555-5555. Identity verification will fail. Retry,
+### How to make this step fail
+Use phone number 703-555-5555. The phone step will fail. Retry,
 using the same phone number, until you are rate limited. Ignore the
 message about using a different phone number.
 
