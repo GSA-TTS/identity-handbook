@@ -147,7 +147,7 @@ part of a verification attempt within the
 specified window. The default value for this is 10.
 
 - `proof_ssn_max_attempt_window_in_minutes` - The length of time to
-consider when determining whether a user is rate-limited. The default
+consider when determining whether a Social Security number is rate-limited. The default
 value for this is 60 minutes.
 
 ### How to trigger
