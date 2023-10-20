@@ -23,7 +23,7 @@ The following identity verification related rate limits exist:
 # Rate Limit Details
 ## Hybrid handoff rate limiter
 ### Description
-This is the rate limiter for hybrid handoff, where we allow the user
+This is the rate limiter for sending a link from Hybrid Handoff to enter the hybrid mobile flow, where we allow the user, where we allow the user
 to upload their ID documents from their phone. It is referred to in code via
 `:idv_send_link` and the `RateLimiter` class.
 
