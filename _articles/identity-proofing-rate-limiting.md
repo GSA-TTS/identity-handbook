@@ -4,7 +4,6 @@ description: "An overview of the rate limits which apply to identity verificatio
 layout: article
 category: AppDev
 subcategory: Architecture
-cSpell: ignore Hubspot
 ---
 
 This page lists the rate limits relating to identity verification, and provides details
