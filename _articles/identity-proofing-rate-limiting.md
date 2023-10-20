@@ -16,21 +16,19 @@ The following identity verification related rate limits exist:
 - [Verify Info](#verify-info-rate-limiter)
 - [Social Security Number](#social-security-number-rate-limiter)
 - [Phone Verification](#phone-verification-rate-limiter)
-- [One time password entry](#one-time-password-entry-rate-limiter)
+- [One time code entry](#one-time-code-entry-rate-limiter)
 - [Verify by USPS mail](#verify-by-usps-mail-rate-limiter)
 
 In the past, only failed attempts at each step counted against
-rate limiting, but we are new counting successful attempts as well,
+rate limiting. We are now counting successful attempts as well,
 except for the OTP code, which still only counts failures.
-
-The items below document how to make each step fail, for future
-reference.
 
 # Rate Limit Details
 ## Hybrid Handoff rate limiter
 ### Description
-This is the rate limiter for sending a link from Hybrid Handoff to enter the hybrid mobile flow, where we allow the user, where we allow the user
-to upload their ID documents from their phone. It is referred to in code via
+This is the rate limiter for sending a link from Hybrid Handoff to
+enter the hybrid mobile flow, where we allow the user to upload their
+ID documents from their phone. It is referred to in code via
 `:idv_send_link` and the `RateLimiter` class.
 
 By default, the user is allowed 5 attempts in 10 minutes.
@@ -45,9 +43,9 @@ consider when determining whether a user is rate limited. Default: 10
 minutes
 
 ### How to trigger
-Enter identity verification, and select Hybrid Handoff ('Use your
-phone to take photos'). Click the `Back` link at the bottom of the next screen (Link Sent) and return to
-'How would you like to add your ID?'. Click 'Send Link' again. Repeat until you become rate
+On the Hybrid Handoff step, select `Send link`. Click the `Back` link
+at the bottom of the next screen (Link Sent) and return to the
+previous page. Click `Send link` again. Repeat until you become rate
 limited.
 ### UI effects
 The user will be presented with a flash error message every time they
@@ -60,8 +58,6 @@ attempt to enter Hybrid Handoff.
 This is the rate limit for the user's attempts to upload their ID
 documents from either their computer or phone. It is referred to in
 code via `:idv_doc_auth` and the `RateLimiter` class.
-
-By default, the user is allowed 5 attempts within 6 hours.
 
 All document submissions, whether successful or not, count against
 this rate limit. The user gets 5 attempts in 6 hours total, through
@@ -77,7 +73,7 @@ any path.
   hours.
 
 ### How to trigger
-The quickest way to test this is to fail repeatedly (5 times).
+The quickest way to test this is to fail repeatedly.
 
 ### How to make this step fail
 This can be done by using a suitable `.yml` file rather than an image
@@ -121,19 +117,18 @@ and the `RateLimiter` class.
 By default, the user is allowed 5 attempts in 6 hours.
 
 ### Config Settings
-- `idv_max_attempts` - The maximum number of times the user can
-  attempt to upload their documents within the specified time
-  window. Default: 5 tries
+- `idv_max_attempts` - The maximum number of times the user can verify
+  their information within the specified time window. Default: 5 tries
 
 - `idv_attempt_window_in_hours` - The length of time to consider when
   determining whether a user is rate limited. Default: 6 hours.
 
 ### How to trigger
-Repeatedly submit Verify Info (5 times).
+The quickest way to test this is to fail repeatedly.
 
 ### How to make this step fail
-Attempt verification with an SSN that does not begin with 900 or 666;
-it will fail.
+Submit Verify Info with an SSN that does not begin with 900 or 666;
+it will fail. On the warning screen, click `Try again`, and repeat.
 
 ### UI effects
 After failing for the final time, the user will be redirected to a
@@ -153,8 +148,8 @@ number of users. The discriminator for this rate limiter is the SSN,
 not the user id.
 
 ### Settings
-- `proof_ssn_max_attempts` - The maximum number of times that a Social Security number can be
-part of a verification attempt within the
+- `proof_ssn_max_attempts` - The maximum number of times that a Social
+Security number can be part of a verification attempt within the
 specified window. Default: 10 attempts.
 
 - `proof_ssn_max_attempt_window_in_minutes` - The length of time to
@@ -177,7 +172,7 @@ not the SSN rate limiter.
 
 Create a second user, and repeat the process with the same SSN.
 
-Create a third user, using the same SSN, and this time, you will see
+Create a third user. Repeat with the same SSN, and this time, you will see
 the SSN rate limit page after submitting the Verify Info step.
 
 The SSN rate limit error page can be distinguished from the resolution
@@ -187,7 +182,7 @@ whereas the resolution limiter has a timeout of 6 hours.
 ## Phone Verification rate limiter
 ### Description
 This is the rate limiter for the Phone verification step, which
-confirms that the user is reachable at some phone number or
+confirms that the user is reachable at a verified phone number or
 address. It is referred to in code via `:proof_address` and the
 `RateLimiter` class.
 
@@ -196,7 +191,7 @@ By default, the user is allowed 5 attempts in 6 hours.
 ### Config Settings
 - `proof_address_max_attempts` - The maximum number of times that a
 user can attempt to verify their address within the specified
-window. Default: 5 times
+window. Default: 5 attempts.
 
 - `proof_address_max_attempt_window_in_minutes` - The length of time
 to consider when determining whether a user is rate limited. Default:
@@ -213,12 +208,19 @@ message about using a different phone number.
 ### UI effects
 
 The user will be redirected to a screen informing them that they are
-rate-limited and give them the option of verifying by mail instead. If Verify by Mail is available to them, they will be able to re-start identity verification
-and will see this screen when they reach the Phone step. If Verify by Mail is unavailable or they are also rate-limited for sending letters, they will see this screen when starting Identity Verification.
+rate-limited and give them the option of verifying by mail instead.
+
+If Verify by Mail is available to them, they will be able to re-start
+identity verification and will see this screen when they reach the
+Phone step.
+
+If Verify by Mail is unavailable or they are also rate-limited for
+sending letters, they will see this screen when starting Identity
+Verification.
 
 ![Proof Address Rate Limited]({{site.baseurl}}/images/idv-proof-address-rate-limited.png)
 
-## One time password entry rate limiter
+## One time code entry rate limiter
 ### Description
 During the phone confirmation step, the user must enter a one-time
 code sent to their phone. This is the rate limiter for requesting
@@ -232,7 +234,7 @@ The actual rate limit count is stored on the `User` class. Most of the
 code is in the `UserOtpMethods` concern, with a small bit of it still
 in `User`.
 
-By default, the user is allowed to request 10 one-time passwords
+By default, the user is allowed to request 10 one-time codes
 within 10 minutes.
 
 If the user requests more than 10, they are blocked from further
@@ -240,8 +242,8 @@ access, and must wait 10 minutes before being allowed to continue.
 
 ### Settings
 `:login_otp_confirmation_max_attempts` - The maximum number of OTP
-requests entry attempts that the user is allowed before their account
-is temporarily locked. Default: 10 tries.
+ entry attempts that the user is allowed before their account is
+ temporarily locked. Default: 10 tries.
 
 `:lockout_period_in_minutes` - The length of time that a use must wait
 after being locked out for too many OTP requests before they are
@@ -263,7 +265,7 @@ but cannot log in after logging out.
 ### Description
 This is the rate limiter for a user's requests for USPS paper (also
 sometimes called GPO) letters.  This is a completely independent set
-of rate limiting code, in the `GpoMail` class, which implements two
+of rate limiting code in the `GpoMail` class, which implements two
 rate limits.
 
 - First, a user is not allowed more than a certain number of letter
@@ -286,19 +288,20 @@ rate limits.
 
 ### Settings
 `max_mail_events` - The maximum number of times that a user may
-request a Verify by Mail letter within the specified time window.
+request a Verify by Mail letter within the specified time window. Default: 4 requests.
 
 `max_mail_events_window_in_days` - The length of time to consider when
 determining whether the user has requested too many Verify by Mail letters
-recently.
+recently. Default: 30 days.
 
 `minimum_wait_before_another_usps_letter_in_hours` - The minimum
 amount of time that a user must wait, after requesting a Verify by Mail letter,
-before requesting another letter.
+before requesting another letter. Default: 24 hours.
 
 ### How to trigger
 Enter identity verification and select "Verify by Mail". Request a
 letter; you are now rate limited.
+
 ### UI effects
 On the screen to enter their verification code, the user is not
 presented with the option to request another letter, and they are
