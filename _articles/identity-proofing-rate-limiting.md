@@ -196,8 +196,8 @@ message about using a different phone number.
 ### UI effects
 
 The user will be redirected to a screen informing them that they are
-rate-limited. Any further attempt to proof their address before the
-rate limit expires will also be directed to this screen.
+rate-limited and give them the option of verifying by mail instead. If Verify by Mail is available to them, they will be able to re-start identity verification
+and will see this screen when they reach the Phone step. If Verify by Mail is unavailable or they are also rate-limited for sending letters, they will see this screen when starting Identity Verification.
 
 ![Proof Address Rate Limited]({{site.baseurl}}/images/idv-proof-address-rate-limited.png)
 
