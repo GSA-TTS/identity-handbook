@@ -237,8 +237,9 @@ the 'Enter your one-time code' screen. Press the 'Send another code
 button' repeatedly, until you are rate limited.
 
 ### UI effects
-On any attempt to access the site, the user will be redirected to a
-rate-limited page, until the rate limit expires.
+On any attempt to access Identity Verification, the user will be redirected to a
+rate-limited page, until the rate limit expires. They can access the account page, 
+but cannot log in after logging out.
 
 ![Rate Limited]({{site.baseurl}}/images/otp-limited.png)
 ## Verify by USPS mail rate limiter
