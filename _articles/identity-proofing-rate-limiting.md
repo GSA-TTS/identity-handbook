@@ -40,8 +40,8 @@ minutes
 
 ### How to trigger
 Enter identity verification, and select hybrid handoff ('Use your
-phone to take photos'). Click `Back` on the next screen and return to
-'How would you like to add your ID?'. Repeat until you become rate
+phone to take photos'). Click the `Back` link at the bottom of the next screen (Link Sent) and return to
+'How would you like to add your ID?'. Click 'Send Link' again. Repeat until you become rate
 limited.
 ### UI effects
 The user will be presented with a flash error message every time they
