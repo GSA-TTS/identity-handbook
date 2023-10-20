@@ -172,7 +172,7 @@ whereas the resolution limiter has a timeout of 6 hours.
 
 ## Address verification rate limiter
 ### Description
-This is the rate limiter for the address verification step. It is referred to in
+This is the rate limiter for the Phone step. It is referred to in
 code via `:proof_address` and the `RateLimiter` class.
 
 By default, the user is allowed 5 attempts in 6 hours.
