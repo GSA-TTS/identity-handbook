@@ -164,7 +164,7 @@ not the SSN rate limiter.)
 Create a second user, and repeat the process with the same SSN.
 
 Create a third user, using the same SSN, and this time, you will see
-the SSN rate limit at the verify info step.
+the SSN rate limit page after submitting the Verify Info step.
 
 The SSN rate limit error page can be distinguished from the resolution
 rate limit error page by the fact that the SSN timeout is 1 hour,
