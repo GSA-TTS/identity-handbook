@@ -14,8 +14,8 @@ The following identity verification related rate limits exist:
 - [Hybrid Handoff](#hybrid-handoff-rate-limiter)
 - [Document Capture](#document-capture-rate-limiter)
 - [Verify Info](#verify-info-rate-limiter)
-- [Social Security Number](#social-security-number-verification-rate-limiter)
-- [Address Verification](#address-verification-rate-limiter)
+- [Social Security Number](#social-security-number-rate-limiter)
+- [Phone Verification](#phone-verification-rate-limiter)
 - [One time password entry](#one-time-password-entry-rate-limiter)
 - [Verify by USPS mail](#verify-by-usps-mail-rate-limiter)
 
@@ -27,7 +27,7 @@ The items below document how to make each step fail, for future
 reference.
 
 # Rate Limit Details
-## Hybrid handoff rate limiter
+## Hybrid Handoff rate limiter
 ### Description
 This is the rate limiter for sending a link from Hybrid Handoff to enter the hybrid mobile flow, where we allow the user, where we allow the user
 to upload their ID documents from their phone. It is referred to in code via
@@ -45,17 +45,17 @@ consider when determining whether a user is rate limited. Default: 10
 minutes
 
 ### How to trigger
-Enter identity verification, and select hybrid handoff ('Use your
+Enter identity verification, and select Hybrid Handoff ('Use your
 phone to take photos'). Click the `Back` link at the bottom of the next screen (Link Sent) and return to
 'How would you like to add your ID?'. Click 'Send Link' again. Repeat until you become rate
 limited.
 ### UI effects
 The user will be presented with a flash error message every time they
-attempt to enter hybrid handoff.
+attempt to enter Hybrid Handoff.
 
 ![Rate Limited Hybrid Handoff]({{site.baseurl}}/images/hybrid-handoff-limited.png)
 
-## Document capture rate limiter
+## Document Capture rate limiter
 ### Description
 This is the rate limit for the user's attempts to upload their ID
 documents from either their computer or phone. It is referred to in
@@ -112,7 +112,7 @@ redirect there.
 
 ![Failed and Rate Limited]({{site.baseurl}}/images/idv-doc-auth-limited.png)
 
-## Verify info rate limiter
+## Verify Info rate limiter
 ### Description
 This is the rate limit for verifying the user's information against
 our external vendors. It is referred to in code via `:idv_resolution`
@@ -142,10 +142,11 @@ redirect there.
 
 ![Failed and Rate Limited]({{site.baseurl}}/images/verify-info-rate-limited.png)
 
-## Social security number verification rate limiter
+## Social Security number rate limiter
 ### Description
-This is the rate limiter for SSN verification. It is referred to in
-code via `:proof_ssn` and the `RateLimiter` class.
+This is a rate limiter specifically to prevent multiple users from
+using the same SSN. It is referred to in code via `:proof_ssn` and the
+`RateLimiter` class.
 
 By default, an SSN is allowed 10 attempts in 60 minutes, across any
 number of users. The discriminator for this rate limiter is the SSN,
@@ -154,23 +155,23 @@ not the user id.
 ### Settings
 - `proof_ssn_max_attempts` - The maximum number of times that a Social Security number can be
 part of a verification attempt within the
-specified window. The default value for this is 10.
+specified window. Default: 10 attempts.
 
 - `proof_ssn_max_attempt_window_in_minutes` - The length of time to
-consider when determining whether a Social Security number is rate-limited. The default
-value for this is 60 minutes.
+consider when determining whether a Social Security number is
+rate-limited. Default: 60 minutes.
 
 ### How to trigger
 The quickest way to test this is to fail repeatedly.
 
-This rate limiter is checked at the verify info step. The limit for it
+This rate limiter is checked at the Verify Info step. The limit for it
 is set to double the resolution rate limiter, so it takes three users
-(with a common SSN) to trigger the SSN rate limit.
+with a common SSN to trigger the SSN rate limit.
 
 ### How to make this step fail
 Choose an SSN that does not begin with 900 or 666.  Create
 a new user, and attempt identity verification with the user. The
-verify info step will fail with this SSN. Repeat until rate limited.
+Verify Info step will fail with this SSN. Repeat until rate limited.
 At this point, you are rate limited by the resolution rate limiter,
 not the SSN rate limiter.
 
@@ -181,11 +182,14 @@ the SSN rate limit page after submitting the Verify Info step.
 
 The SSN rate limit error page can be distinguished from the resolution
 rate limit error page by the fact that the SSN timeout is 1 hour,
-    whereas the resolution limiter has a timeout of 6 hours
-## Address verification rate limiter
+whereas the resolution limiter has a timeout of 6 hours.
+
+## Phone Verification rate limiter
 ### Description
-This is the rate limiter for the Phone step. It is referred to in
-code via `:proof_address` and the `RateLimiter` class.
+This is the rate limiter for the Phone verification step, which
+confirms that the user is reachable at some phone number or
+address. It is referred to in code via `:proof_address` and the
+`RateLimiter` class.
 
 By default, the user is allowed 5 attempts in 6 hours.
 
