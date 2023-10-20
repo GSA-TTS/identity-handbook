@@ -72,7 +72,7 @@ satisfactory images in 6 hours total, through any path.
   hours.
 
 ### How to trigger
-Repeatedly fail doc auth (5 times). This can be done by using a
+Repeatedly fail document auth (5 times). This can be done by using a
 suitable `.yml` file rather than an image file during image
 upload.
 
@@ -113,8 +113,24 @@ and the `RateLimiter` class.
 
 By default, the user is allowed 5 attempts in 6 hours.
 
+### Config Settings
+- `idv_max_attempts` - The maximum number of times the user can
+  attempt to upload their documents within the specified time
+  window. Default: 5 tries
 
+- `idv_attempt_window_in_hours` - The length of time to consider when
+  determining whether a user is rate-limited. Default: 6 hours.
 
+### How to trigger
+Attempt verification with an SSN that does not begin with 900 or 666;
+it will fail. Repeat until you are rate-limited.
+
+### UI effects
+After failing for the final time, the user will be redirected to a
+rate limited screen. Any attempt to re-enter identity verification will also
+redirect there.
+
+![Failed and Rate Limited]({{site.baseurl}}/images/verify-info-rate-limited.png)
 
 ## Social security number verification rate limiter
 ### Description
@@ -139,7 +155,7 @@ This rate limiter is checked at the verify info step. The limit for it
 is set to double the resolution rate-limiter, so it takes three users
 (with a common SSN) to trigger the SSN rate limit.
 
-Choose a bogus SSN (one that does not begin with 900 or 666).  Create
+Choose an SSN that does not begin with 900 or 666.  Create
 a new user, and attempt identity verification with the user. The
 verify info step will fail with this SSN. Repeat until rate limited.
 (At this point, you are rate limited by the resolution rate limiter,
@@ -154,16 +170,6 @@ The SSN rate limit error page can be distinguished from the resolution
 rate limit error page by the fact that the SSN timeout is 1 hour,
 whereas the resolution limiter has a timeout of 6 hours.
 
-### UI effects
-After attempting verify info, the third user will be redirected to the
-identity verification rate limited screen. Any further attempts to
-verify info with the offending SSN, for any user, will also redirect
-here.
-
-Unlike the other rate limiters, this one only takes effect when the
-SSN has been entered during a session.
-
-![Rate Limited]({{site.baseurl}}/images/idv-ssn-rate-limited.png)
 ## Address verification rate limiter
 ### Description
 This is the rate limiter for the address verification step. It is referred to in
@@ -196,7 +202,6 @@ rate limit expires will also be directed to this screen.
 ![Proof Address Rate Limited]({{site.baseurl}}/images/idv-proof-address-rate-limited.png)
 
 ## One time password entry rate limiter
-
 ### Description
 During the phone confirmation step, the user must enter a one-time
 code sent to their phone. This is the rate limiter for requesting
@@ -235,7 +240,7 @@ button' repeatedly, until you are rate limited.
 On any attempt to access the site, the user will be redirected to a
 rate-limited page, until the rate limit expires.
 
-[Rate Limited]({{site.baseurl}}/images/otp-limited.png)
+![Rate Limited]({{site.baseurl}}/images/otp-limited.png)
 ## Verify by USPS mail rate limiter
 ### Description
 This is the rate limiter for a user's requests for USPS paper (also
