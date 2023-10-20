@@ -1,6 +1,6 @@
 ---
 title: "Identity Verification Rate Limiting"
-description: "An overview of the rate limits which apply to identity verification"
+description: "Rate limits in identity verification"
 layout: article
 category: AppDev
 subcategory: Architecture
