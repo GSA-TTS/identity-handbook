@@ -142,8 +142,8 @@ number of users. The discriminator for this rate limiter is the SSN,
 not the user id.
 
 ### Settings
-- `proof_ssn_max_attempts` - The maximum number of times that a user
-can attempt to verify their social security number within the
+- `proof_ssn_max_attempts` - The maximum number of times that a Social Security number can be
+part of a verification attempt within the
 specified window. The default value for this is 10.
 
 - `proof_ssn_max_attempt_window_in_minutes` - The length of time to
