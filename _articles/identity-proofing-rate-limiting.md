@@ -219,7 +219,7 @@ By default, the user is allowed to request 10 one-time passwords
 within 10 minutes.
 
 If the user requests more than 10, they are blocked from further
-access, and must wait 10 minutes before we allow them to continue.
+access, and must wait 10 minutes before being allowed to continue.
 
 ### Settings
 `:login_otp_confirmation_max_attempts` - The maximum number of OTP
