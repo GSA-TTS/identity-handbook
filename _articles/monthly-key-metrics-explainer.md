@@ -22,6 +22,7 @@ Looks at the [total number of users created][query-total-registered]. This is no
 
 Counts currently-active at profile rows. Today, a user can only have one active profile.
 
-[agnes-slack]: https://gsa-tts.slack.com/archives/C03N6KQBAKS
+{% assign team_agnes = site.data.sprint_teams | find: "name", "Agnes" %}
+[agnes-slack]: {{ team_agnes.slack_channel_url }}
 [query-total-registered]: {% link _articles/queries.md %}#total-registered
 [query-fully-registered]: {% link _articles/queries.md %}#fully-registered-users
