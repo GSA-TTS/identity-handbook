@@ -41,7 +41,7 @@ Make sure you have prod-power access to run commands for aws-vault. You will hav
 **Step 2:**
   - run `aws-vault exec prod-power -- ./bin/ls-servers -e prod`.
 
-This lists the production servers, including workers. Check that the number of instances running are what you would expect (numbers should match what is in the config - [asg_idp_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L88) and [asg_worker_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L96)).
+This lists the production servers, including workers. Check that the number of instances running are what you would expect (numbers should match what is in the config - [asg_idp_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L88) and [asg_worker_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L96)). Also ensure that there aren't multiple sha values, this would indicate that there is another recycle still in progress.
 
 If everything looks normal, proceed.
 
