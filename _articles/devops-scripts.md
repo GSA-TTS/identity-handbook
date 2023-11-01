@@ -245,19 +245,36 @@ aws-vault exec prod-power -- \
 
 ### `reinstate-user`
 
-Reinstate User.
+Reinstate User and sends an email
 
 ```bash
 aws-vault exec prod-power -- \
   ./bin/action-account --any asg-prod-idp reinstate-user 5e4a60e0-356c-4c6c-9ae5-6ff282da29af 63509e59-3306-4027-8e9b-2b43f3af9d2a wrong-uuid
-+--------------------------------------+-------------------------------------------+
-| uuid                                 | status                                    |
-+--------------------------------------+-------------------------------------------+
-| 5e4a60e0-356c-4c6c-9ae5-6ff282da29af | User has been reinstated                  |
-| 63509e59-3306-4027-8e9b-2b43f3af9d2a | User is not suspended                     |
-| wrong-uuid                           | Error: Could not find user with that UUID |
-+--------------------------------------+-------------------------------------------+
++--------------------------------------+--------------------------------------------------------+
+| uuid                                 | status                                                 |
++--------------------------------------+--------------------------------------------------------+
+| 5e4a60e0-356c-4c6c-9ae5-6ff282da29af | User has been reinstated and the user has been emailed |
+| 63509e59-3306-4027-8e9b-2b43f3af9d2a | User is not suspended                                  |
+| wrong-uuid                           | Error: Could not find user with that UUID              |
++--------------------------------------+--------------------------------------------------------+
 ```
+
+### `confirm-suspend-user`
+
+Sends an email confirming the user was suspended
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp confirm-suspend-user aaa bbb ccc
++------+-------------------------------------------+
+| uuid | status                                    |
++------+-------------------------------------------+
+| aaa  | User has been emailed                     |
+| bbb  | User is not suspended                     |
+| ccc  | Error: Could not find user with that UUID |
++------+-------------------------------------------+
+```
+
 ### `review-pass`
 
 Activates a user that has a profile deactivated due to a pending ThreatMetrix review status. 
