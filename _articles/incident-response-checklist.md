@@ -20,20 +20,20 @@ For detailed information see the [Security Incident Response Guide]({% link _art
 
 There is one checklist per-role starting with the Situation Lead.
 
-* [Situation Lead](#situation-lead) - Declares incident and facilitates incident response
-* [Tech Lead](#technical-lead) - Focuses on hands on technical response
-* [Messenger](#messenger) - Passes information out of the situation room to stakeholders
-* [Scribe](#scribe) - Keeps running notes in Slack on what is happening in the situation room
-* [Responder](#responder) - Everyone else in the situation room without an assigned role
+* [Situation Lead](#situation-lead): Declares incident and facilitates incident response
+* [Tech Lead](#technical-lead): Focuses on hands on technical response
+* [Messenger](#messenger): Passes information out of the situation room to stakeholders
+* [Scribe](#scribe): Keeps running notes in Slack on what is happening in the situation room
+* [Responder](#responder): Everyone else in the situation room without an assigned role
 Find and follow your appropriate role checklist.  Checklists are intentionally terse
 with links to supporting process and information where needed.
 
 These additional roles are external to, and highly engaged with, responders in the situation room:
 
-* [Comms Lead](#comms-lead) - Login.gov communications lead overseeing crisis communications
-* [Envoy](#envoy) - Joins agency partner situation room in case of joint incident and ensures appropriate inter-team coordination
-* [Executive On-Call](#executive-on-call) - Designated Login.gov leadership member for escalation and support
-* [GSA IR](#gsa-ir) - GSA Incident Response - Official Incident Command for incidents
+* [Comms Lead](#comms-lead): Login.gov communications lead overseeing crisis communications
+* [Envoy](#envoy): Joins agency partner situation room in case of joint incident and ensures appropriate inter-team coordination
+* [Executive On-Call](#executive-on-call): Designated Login.gov leadership member for escalation and support
+* [GSA IR](#gsa-ir) (GSA Incident Response): Official Incident Command for incidents
 
 Sections for these roles are intentionally brief and these roles should follow their own
 procedures.
@@ -45,8 +45,9 @@ procedures.
 *Initiate and Assess*
 * In situation room
 * Initial [severity level assessed]({% link _articles/secops-incident-response-guide.md %}#incident-severities)
-* Initial roles assigned if possible - Continue with unfilled roles if needed
-* Incident declared using the Slack "Declare Incident Workflow"
+* Initial roles assigned if possible
+    * Continue with unfilled roles if needed
+* Incident declared in [#login-situation][login-situation] using the [Slack "Declare Incident Workflow"]({% link _articles/secops-incident-response-guide.md %}#incident-declaration)
 * Additional responders called in using Splunk On-Call, Slack, or voice
 * [Tech Lead](#technical-lead) role assigned and focused on technical response
 * [Scribe](#scribe) role assigned and taking notes in situation thread
@@ -57,14 +58,14 @@ procedures.
 * Situation room is well controlled
 * GSA-IR briefed when asked
 * [Severity level is appropriate]({% link _articles/secops-incident-response-guide.md %}#incident-severities) or incident is cancelled if false-positive
-* Roles being effectively executed - Adjust/reassign as needed
-* Too many responders?  Let people go
-* Too few responders?  Call people in
+* Roles being effectively executed. Adjust/reassign as needed:
+    * Too many responders?  Let people go
+    * Too few responders?  Call people in
 * Any responder needing to cycle out (including self) has role clearly transferred
 * Any responder in room more than 4 hours relieved of role and asked to take a break
 
 *Resolve and Retrospect*
-* Incident clearly declared **closed** in #login-situation
+* Incident clearly declared **closed** in [#login-situation][login-situation]
 * Incident review scheduled (within 1 week)
 * Lead incident review
 
@@ -170,3 +171,5 @@ procedures.
 * [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/)
 * [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)
 * [NIST 800-61r2 Computer Security Incident Response Guide](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r2.pdf)
+
+[login-situation]: https://gsa-tts.slack.com/archives/C5QUGUANN

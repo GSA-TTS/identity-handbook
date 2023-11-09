@@ -248,9 +248,18 @@ Guidelines for addressing Low-sev issues:
 
 ### Incident Declaration
 
-In most cases the `Declare Incident` Slack workflow should be used to initiate
-and incident. To use, enter the [#login-situation][login-situation] channel, type `/declare` and
-hit enter to be prompted with a form to enter basic information.
+In most cases the **`Declare Incident`** Slack workflow should be used to initiate
+and incident. To use:
+
+1. Enter the [#login-situation][login-situation] channel
+1. Either:
+    * Type `/declare` and hit enter to be prompted with a form to enter basic information.
+
+        ![Screenshot of /declare workflow]({{site.baseurl}}/images/declare-incident-slash-command.png){:height="125"}
+
+    * Select "Declare Incident" from the pinned "Workflows" folder up top
+
+        ![Screenshot of declare workflow in menus]({{site.baseurl}}/images/declare-incident-menu.png){:height="125"}
 
 Early in the response is may be hard to assess impact. The Situation Lead should
 perform a quick [impact assessment](#impact-assessment) to set the initial impact,
