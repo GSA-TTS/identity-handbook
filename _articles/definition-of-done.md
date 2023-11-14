@@ -95,6 +95,8 @@ Key items as part of an acceptance thread:
   - Provide screenshots if possible
   - Sometimes, for tickets that don't have UI changes, includes a description of what changed and links
      to a Pull Request
-  - Tag the relevant people for review, usually the Product Manager, Scrum Master, and
-    anybody tagged as a reviewer in the ticket. Include the ticket in the message to help provide
-    context in the notification.
+  - Tag the relevant people for review (including a reference to the ticket number in the notification), generally:
+    - Product Manager
+    - Scrum Master
+    - Anyone tagged as a reviewer in the ticket
+    - A UX team member (if designs were referenced in the ticket)
