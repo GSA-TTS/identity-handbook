@@ -19,13 +19,16 @@ For example:
 
 > As a user, I want to provide consent when an agency partner (sometimes referred to as a service provider or SP) asks how my  information is shared, so that I have full control of what information Login.gov is sharing about me.
 
-Often stories list out **AC**s, or **Acceptance Criteria**. Acceptance Criteria are a set of predefined requirements that must be met for the story to be complete, and describe the change that we will deliver to the user in more detail. For example:
+Stories should list out **AC**s, or **Acceptance Criteria**. Acceptance Criteria are a set of predefined requirements that must be met for the story to be complete, and describe the change that we will deliver to the user in more detail. For example:
 
-> - User is asked for consent when an SP asks for it for the first time only
+> 1. User is asked for consent when an SP asks for it for the first time only
   (either IAL1 or IAL2)
-> - Existing users who are already associated with an SP will be asked for consent
+> 2. Existing users who are already associated with an SP will be asked for consent
   for the freshness value
 
+If a story includes new copy or visual elements, it must include links to wireframes and translations.
+
+A story may also include additional context, including links to related Slack conversations or supporting documents.
 
 ## Bugs
 
@@ -42,7 +45,10 @@ Additional context is always useful, such as:
 - Clear steps to reproduce
 - Potential impact to users
 - Browser and operating system version
-- Links to more information (such as other Jira tickets, customer support inquiries, and/or links to Slack conversation)
+- Links to more information, such as:
+  - Other Jira tickets (including the original story if possible)
+  - Customer support inquiries
+  - Slack conversations
 
 ## Tasks
 
