@@ -55,7 +55,6 @@ Expect this DoD to change over time.
 - If there is a potential security impact someone has told `#login-security` about it
 - If we are affecting storage or transmission of PII somebody has told the privacy officer `@richard.speidel`
 - The release management guide has been updated for changes to the deploy process
-- The [Entity Relationship Diagrams](https://github.com/18F/identity-idp/blob/main/docs/ARCHITECTURE.md#entity-relationship-diagram) have been updated if the db schema has changed.
 - The help content on the static site has been updated and new FAQ content has been created if necessary
 - User journey/interface are connected to user personas and listed in the login handbook.
 
