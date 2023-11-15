@@ -5,36 +5,34 @@ layout: article
 category: Security
 ---
 
-If an outage in a 3rd party vendor is identified, we can manually
+If an outage in a third party vendor is identified, we can manually
 update the configuration of the IdP to provide error messaging to
 users in affected flows.
 
-In addition, if we know in advance that a 3rd party vendor will be
+In addition, if we know in advance that a third party vendor will be
 down (e.g. for scheduled maintenance), we can schedule a time window
 for IdV to be down without anyone having to turn it off and then on
 again manually.
 
-There are two ways to turn off flows manually:
+The options for disabling part or all of IdV are:
 
-* [Completely disabling identity verification](#completely-disabling-identity-verification)
-* [Turning off individual vendors](#turning-off-individual-vendors)
+* [Manually disable identity verification](#manually-disable-identity-verification)
+* [Manually turn off individual vendors](#manually-turn-off-individual-vendors)
+* [Schedule a maintenance window](#schedule-a-maintenance-window)
 
-The method for scheduling a maintenance window is:
-* [Scheduling a maintenance window](#scheduling-a-maintenance-window)
-
-All of these methods involve changing configuration flags in the
-file `config/application.yml`. To edit this file, use the
-[guidance here]({% link _articles/appdev-secrets-configuration.md %}).
-The final step in the guidance is to restart server instances. Once the
-restart completes, users in affected flows will be presented with an
-error message explaining the outage, or redirected to an error page if
-they are unable to continue.
+All of these methods involve changing configuration flags in the file
+`config/application.yml`. To edit this file, use the [guidance
+here]({% link _articles/appdev-secrets-configuration.md %}).  The
+final step in the guidance is to [restart server instances]({% link
+_articles/appdev-deploy.md %}#config-recycle). Once the restart completes, users in
+affected flows will be presented with an error message explaining the
+outage, or redirected to an error page if they are unable to continue.
 
 Once we have received word that the vendor is back up and running,
 simply re-edit the configuration and delete the vendor status or
 maintenance window.
 
-## Completely disabling identity verification
+## Manually disable identity verification
 
 For a full AAMVA outage, disable identity verification.
 
@@ -48,7 +46,7 @@ idv_available: false
 ```
 For faster results, [recycle without a migration instance]({% link _articles/appdev-deploy.md %}#no-migration-recycle).
 
-## Turning off individual vendors
+## Manually turn off individual vendors
 
 Several vendors or third-party services can be turned off
 individually. Each is controlled by a configuration flag:
@@ -151,26 +149,23 @@ The precise effects of each flag are:
     use their phone to upload pictures of their ID. Desktop users will
     not be offered this choice when this flag is set to `full_outage`.
 
-## Scheduling a Maintenance Window
+## Schedule a Maintenance Window
 
-The scheduled maintenance window is controlled by the config entries
+The scheduled maintenance window is controlled by the config flags
+
 * `vendor_status_idv_scheduled_maintenance_start`
 * `vendor_status_idv_scheduled_maintenance_finish`
 
-Which are the start and end times for the maintenance window. These
-are both string values, and specify the start and end time of the
-window.
-
-You should use ISO8601 date formats here. For example:
+These are string values that specify the start and end time of the
+window. Use ISO8601 date format. For example:
 
 * `2023-11-15T05:30Z` for a time in UTC
 * `2023-11-15T01:30-5:00` for a time in Eastern Standard Time (5 hours
   behind UTC)
 
 While the code will accept a wide variety of other formats for the
-date and time, it will also **fail silently, and not take IdV down for
-the maintenance window** if it can't figure out what format the times
-are in.
+date and time, it will **fail silently, and not take IdV down for the
+maintenance window** if it can't parse the values.
 
 ## Proofing Resolution Result Missing Alert
 On rare occasions, the third party proofing checks will time out and the
