@@ -32,8 +32,7 @@ A story may also include additional context, including links to related Slack co
 
 ## Bugs
 
-Bugs should clearly explain what is happening, and what should be happening
-instead.
+We use bugs to identify **high priority** issues in production, and they typically take priority over other types of issues. A bug should clearly explain what is happening, and what should be happening instead. A "low priority" bug should be filed as a Task.
 
 For example:
 
