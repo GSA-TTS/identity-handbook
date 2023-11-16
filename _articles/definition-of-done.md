@@ -94,7 +94,7 @@ Key items as part of an acceptance thread:
   - Include steps so that anyone can replicate and review.
   - Specify which environment changes were deployed to, and provide a link to that environment
     - Favor using [Review Apps](https://github.com/18F/identity-devops/wiki/How-to-find-your-review-app) to allow previewing changes before merging to `main`.
-  - Provide screenshots and/or screencast video if possible
+  - Provide screenshots and/or screen recording if possible
   - Sometimes, for tickets that don't have UI changes, includes a description of what changed and links
      to a Pull Request
   - Tag the relevant people for review (including a reference to the ticket number in the notification), generally:
