@@ -52,12 +52,13 @@ Expect this DoD to change over time.
 
 ## Documentation
 
-- If there is a potential security impact someone has told `@Mo` about it
+- If there is a potential security impact someone has told `#login-security` about it
 - If we are affecting storage or transmission of PII somebody has told the privacy officer `@richard.speidel`
 - The release management guide has been updated for changes to the deploy process
-- The [Entity Relationship Diagrams](https://github.com/18F/identity-idp/blob/main/docs/ARCHITECTURE.md#entity-relationship-diagram) have been updated if the db schema has changed.
 - The help content on the static site has been updated and new FAQ content has been created if necessary
 - User journey/interface are connected to user personas and listed in the login handbook.
+- Contact Center scripts and emails have been updated as needed.
+
 
 ## Communications
 
@@ -67,13 +68,13 @@ Expect this DoD to change over time.
 
 ## Acceptance
 
-- PO accepts that user story and acceptance criteria have been fulfilled
+- Product manager accepts that user story and acceptance criteria have been fulfilled
 - Design accepts feature for release to users if applicable
 - Team asserts that all other applicable aspects of the DoD have been met
 
 ### Acceptance Threads
 
-Only Product Owners and Scrum Masters have permission to mark JIRAs as completed. To help them review tickets, we create
+Only Product Owners, Product Managers, and Scrum Masters have permission to mark JIRAs as completed. To help them review tickets, we create
 Acceptance Threads in Slack.
 
 [![screenshot of example thread with labelled key points][image]][image]
@@ -90,11 +91,14 @@ Key items as part of an acceptance thread:
   - Link to the JIRA ticket
   - Provide a brief description for context since JIRA numbers are not memorable
 - In the thread:
-  - Includes steps so that anyone can replicate and review.
+  - Include steps so that anyone can replicate and review.
   - Specify which environment changes were deployed to, and provide a link to that environment
-  - Provide screenshots if possible
+    - Favor using [Review Apps](https://github.com/18F/identity-devops/wiki/How-to-find-your-review-app) to allow previewing changes before merging to `main`.
+  - Provide screenshots and/or screen recording if possible
   - Sometimes, for tickets that don't have UI changes, includes a description of what changed and links
      to a Pull Request
-  - Tag the relevant people for review, usually the Product Manager, Scrum Master, and
-    anybody tagged as a reviewer in the ticket. Include the ticket in the message to help provide
-    context in the notification.
+  - Tag the relevant people for review (including a reference to the ticket number in the notification), generally:
+    - Product Manager
+    - Scrum Master
+    - Anyone tagged as a reviewer in the ticket
+    - A UX team member (if designs were referenced in the ticket)
