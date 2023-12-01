@@ -142,8 +142,8 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 To request access to GitHub:
 
 1. Set up GitHub account per [TTS GitHub guidelines](https://handbook.tts.gsa.gov/tools/github/#1-complete-your-profile)
-1. Join the [#admins-github](https://gsa-tts.slack.com/archives/C02KXM98G) channel
-1. Tag `@github-admins-login` and request to add your GitHub username to the `18f/identity-core`
+1. Join the [#admins-github](https://gsa-tts.slack.com/archives/C02KXM98G) Slack channel
+1. Tag `@github-admins-login` and request to add your GitHub username to the `18f/identity-core` group
 
 ### Repository Permissions
 
