@@ -19,7 +19,7 @@ export const loadPrivateEye = () => {
       "18f.slack.com",
       "anywhere.gsa.gov",
       "bookit.gsa.gov",
-      "calendar.gsa.gov",
+      "calendar.google.com",
       "cm-jira.usa.gov",
       "connect.gsa.gov",
       "docs.google.com",
