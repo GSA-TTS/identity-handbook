@@ -31,7 +31,7 @@ Each Login.gov team has their own personalized [GDoc/Onboarding Template / Check
 - Request access to relevant [Google Groups](https://groups.google.com/).
 - Add the Login.gov Shared Calendar to your Google Calendar:
     - First make sure you are added to our core federal or contractor Google Group.
-    - Go to https://calendar.google.com/calendar/render?cid=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com
+    - Go to <https://calendar.google.com/calendar/render?cid=gsa.gov_6ovul6pcsmgd40o8pqn7qmge5g@group.calendar.google.com>
     - Click "Add" when prompted to add the calendar
     - You should see "Login.gov shared calendar" under "My Calendars"
 - Add a signature to your GSA email account like this:
