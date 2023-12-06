@@ -11,6 +11,7 @@ export const loadPrivateEye = () => {
       "calendar.gsa.gov",
       "cm-jira.usa.gov",
       "connect.gsa.gov",
+      "calendar.google.com",
       "docs.google.com",
       "drive.google.com",
       "ea.gsa.gov",
