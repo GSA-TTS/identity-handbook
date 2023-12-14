@@ -45,12 +45,12 @@ submitted to reach RequestLetter.
 * **preconditions** - a proc with arguments `(idv_session:, user:)` that returns true if a
 user is allowed to be on this step. For example, the AgreementController preconditions is set to `idv_session.welcome_visited`, to confirm that the user has completed the Welcome step.
 * **undo_step** - a proc with arguments `(idv_session:, user:)` that clears any fields set by
-this step. Called from `clear_future_steps!`. For example, the AgreementController undo_step sets `idv_session.idv_consent_given` to nil, since that is the attribue that is set when the Agreement step is submitted.
+this step. Called from `clear_future_steps!`. For example, the AgreementController undo_step sets `idv_session.idv_consent_given` to nil, since that is the attribute that is set when the Agreement step is submitted.
 * **action** - a symbol for the controller action to use if jumping to this step. Defaults to `:show`,
 so it is only needed for controllers that use `:new` or `:index`.
 
 ### Idv::Session state mural
-The implementations of preconditions and undo_step procs were guided by this [Mural of idv_session
+The implementations of `preconditions` and `undo_step` procs were guided by this [Mural of idv_session
 changes](https://app.mural.co/t/loginteamada4499/m/loginteamada4499/1694024611822/03ec0f4abe389ac5eb4eda772fe00de02439e00c?sender=u4b5c802b0baf08d2d7cf2223) during the Identity Verification flow.
 
 ## IdvStepConcern methods
@@ -74,7 +74,8 @@ of it afterward.
 ### `clear_future_steps!`
 
 `clear_future_steps!` looks at `step_info.next_steps` for the current step and calls
-`step_info.undo_step` for all future steps. It does not call `undo_step` for the current step,
+`step_info.undo_step` for all future steps, using tail recursion to traverse the tree of steps
+and then work back from the end. It does not call `undo_step` for the current step,
 because some steps allow editing of information that was already entered.
 
 If a controller starts a background job and then polls until the job is complete, mark the current
@@ -127,10 +128,10 @@ stub and then check the effect on `idv_session`.
 [Code for FlowPolicyHelper](https://github.com/18F/identity-idp/blob/main/spec/support/flow_policy_helper.rb)
 
 Because `url_for_latest_step` stops at the first step whose conditions are not met, controller
-specs now have to have `idv_session` fully set up for the step under test. Use the `stub_step`
+specs now have to have `idv_session` fully set up for the step under test. Use the `stub_up_to`
 helper in FlowPolicyHelper with the key of the previous step. For example, 
 `stub_up_to(:ssn, idv_session: idv_session)` prepares the session for testing in
-verify_info_controller_spec.
+verify_info_controller_spec, since Ssn is the previous step.
 
 ## Future Work
 
