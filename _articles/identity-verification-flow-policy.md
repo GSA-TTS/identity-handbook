@@ -21,10 +21,19 @@ This is how individual Identity Verification controllers implement the FlowPolic
 
 [FlowPolicy code](https://github.com/18F/identity-idp/blob/main/app/policies/idv/flow_policy.rb)
 
-The FlowPolicy contains a private hash of steps. The new controller's key and step_info need to
-be added to the hash.
+FlowPolicy contains a private hash of steps. The new controller's key and step_info need to
+be added to the hash. For example: `agreement: Idv::AgreementController.step_info,`
 
-For example: `agreement: Idv::AgreementController.step_info,`
+FlowPolicy has three public methods. They are called from helper methods in IdvStepConcern ([see below](#idvstepconcern-methods)) rather than being used directly.
+
+`controller_allowed?` uses the controller's `StepInfo.preconditions` to determine if the user is allowed to visit the given controller.
+
+`info_for_latest_step` returns the `StepInfo` object for the latest step the user is allowed to be on. The `StepInfo` object contains enough information to build a url to redirect the user.
+
+`undo_future_steps_from_controller!` uses the controller's `StepInfo.next_steps` to find all future steps and tail-recursively call `undo_step` on them.
+
+The FlowPolicy contains a private hash of steps. The new controller's key and step_info need to
+be added to the hash. For example: `agreement: Idv::AgreementController.step_info,`
 
 ## StepInfo
 
@@ -66,12 +75,12 @@ This general before action replaces specific before actions that check that the 
 deleted. Before actions that check if this step is needed would prevent the back button from 
 working, so they should be deleted.
 
+### `clear_future_steps!`
+
 The first line in `#update` (or `#create` for a few controllers) should call `clear_future_steps!`.
 When the user submits a step, their session is reset to invalidate all downstream steps. This is
 important for security to make sure someone cannot verify one set of data and then change parts
 of it afterward.
-
-### `clear_future_steps!`
 
 `clear_future_steps!` looks at `step_info.next_steps` for the current step and calls
 `step_info.undo_step` for all future steps, using tail recursion to traverse the tree of steps
@@ -82,15 +91,21 @@ If a controller starts a background job and then polls until the job is complete
 step as invalid at the beginning of `#update` or `#create` as well. This happens in
 VerifyInfoController and PhoneController.
 
-### Idv::Session status methods
+### `url_for_latest_step`
+
+This method is used to build a redirect for `confirm_step_allowed` when the current step is not allowed. It can also be used directly when a redirect is needed, for example when the user goes to
+`/verify`.
+
+## Idv::Session status methods
+
+[Idv::Session code](https://github.com/18F/identity-idp/blob/main/app/services/idv/session.rb)
 
 Idv::Session has methods to invalidate individual steps, mark them complete, or check if they are complete. For example, `invalidate_verify_info_step!`, `mark_verify_info_step_complete!`, and `verify_info_step_complete?`. Prefer using and adding to these rather than checking individual idv_session attributes in the code.
-
-[Code for Idv::Session](https://github.com/18F/identity-idp/blob/main/app/services/idv/session.rb)
 
 ## Controller specs
 
 Add the following controller specs for a new controller.
+
 A spec to confirm that this controller's StepInfo object is valid. Substitute the controller class
 for AgreementController.
 ```
@@ -123,12 +138,15 @@ stub and then check the effect on `idv_session`.
     end
 ```
 
-### FlowPolicyHelper: stubs for idv_session setup
+## FlowPolicyHelper
 
 [Code for FlowPolicyHelper](https://github.com/18F/identity-idp/blob/main/spec/support/flow_policy_helper.rb)
 
 Because `url_for_latest_step` stops at the first step whose conditions are not met, controller
-specs now have to have `idv_session` fully set up for the step under test. Use the `stub_up_to`
+specs now have to have `idv_session` fully set up for the step under test. FlowPolicyHelper provides
+stubs for idv_session setup.
+
+Use the `stub_up_to`
 helper in FlowPolicyHelper with the key of the previous step. For example, 
 `stub_up_to(:ssn, idv_session: idv_session)` prepares the session for testing in
 verify_info_controller_spec, since Ssn is the previous step.
@@ -137,4 +155,4 @@ verify_info_controller_spec, since Ssn is the previous step.
 
 We want to make it easier for developers to add and remove steps from the Identity Verification flow. Suggestions welcome!
 
-We want to improve `clear_future_steps!` to make fewer assumptions about having a linear flow.
+We want to improve `clear_future_steps!` to make fewer assumptions about having a linear flow of steps.
