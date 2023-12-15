@@ -59,11 +59,15 @@ and read by an old one, or vice versa.
 ## Jobs
 
 Job requests could be enqueued by a new instance and picked up by an old one, or vice versa. When an
-argument is added or removed, it causes 500 errors with ArgumentError.
+argument is added or removed to #perform, it causes 500 errors with ArgumentError if the argument
+is not optional.
 
 ### Add an argument to a job #perform method
-* Deploy 1: Add the argument with a default value (usually nil) and do not use it
-* Deploy 2: Use the argument, and gracefully handle the default value
+* Deploy 1: Add the argument with a default value (usually nil)
+* Either in Deploy 1 or 2: Use the argument within the #perform method and
+gracefully handle the default value. It is easier to test when calling #perform in the PR for
+Deploy 2.
+* Deploy 2: Use the argument when calling #perform
 * Deploy 3 (optional): Make the argument required
 
 ### Remove an argument from a job #perform method
@@ -71,6 +75,12 @@ argument is added or removed, it causes 500 errors with ArgumentError.
 * Deploy 2: Remove the argument in calls to the job (can be combined with the first deploy if there
 was already a default value)
 * Deploy 3: Remove the argument
+
+### Add a new job
+* Deploy 1: Add the new job
+* Recommended: Test the job in lower environments, and then log in and run it on a production
+instance
+* Deploy 2: Schedule the job to run, start enqueueing jobs
 
 ## Routes
 
