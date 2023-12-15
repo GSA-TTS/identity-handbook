@@ -75,12 +75,12 @@ recognize it.
 ### Delete a route
 * Deploy 1: Remove all links and redirects to the route
 * Deploy 2: Change the route to a redirect if possible to avoid user 404s from bookmarks.
-* Deploy 3: 2-4 weeks later, check logs and remove the deprecated route.
+* Deploy 3: 2-4 weeks later, check `production.log` request logs and remove the deprecated route.
 
 ### Rename a route
 * Deploy 1: Add the new route and controller action. Make the old route point to the new controller.
 * Deploy 2: Delete the old controller action.
-* Deploy 3: 2-4 weeks later, check logs and remove the deprecated route.
+* Deploy 3: 2-4 weeks later, check `production.log` request logs and remove the deprecated route.
 
 ## Feature flags
 
