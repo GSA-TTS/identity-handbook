@@ -14,8 +14,13 @@ During deploys, we add new instances before shutting down old ones, so both new 
 are serving requests for at least 15 minutes. This is called the 50/50 state and requires careful
 management when changing code that is used across instances.
 
-The cases below sound similar, but each situation has its own considerations. For more complex
-changes, you may want to [test in the 50/50 state](#test-in-the-5050-state).
+You can test the 50/50
+state locally by loading a page on your new branch, killing the server, checking out main, and then
+clicking on a link on the branch (new instance), which will load the next action on main (old
+instance). For more complex
+changes, you may want to [test in the 50/50 state](#test-in-the-5050-state) in a lower environment.
+
+The cases below sound similar, but each situation has its own considerations.
 
 ## Database changes
 
@@ -23,31 +28,37 @@ changes, you may want to [test in the 50/50 state](#test-in-the-5050-state).
 * Deploy 1: Add the migration, write to the new table/field. Optionally add a rake task to update
 existing data.
 * After deploy (optional): Run the rake task to update existing data.
-* Deploy 2: Read from the table/field.
+* Deploy 2: Read from the table/field
 
-## Persistent data structures
+### Remove a table or field
+* Deploy 1: Remove all reads in the code
+* Deploy 2: Remove all writes in the code
+* Deploy 3: Remove the table/field
+
+## Persistent data structures in redis
 
 When adding, removing, or renaming fields from a data structure that is persisted in redis, such as
 `user_session`, `idv_session`, or `document_capture_session`, it could be saved from a new instance
 and read by an old one, or vice versa.
 
 ### Add a field
-* Deploy 1: Write to the new field but do not use it
+* Deploy 1: Add the field and write to it
 * Deploy 2: Read from the field
 
 ### Remove a field
 * Deploy 1: Remove everywhere that reads the field
-* Deploy 2: Remove the field
+* Deploy 2: Remove all writes to the field
+* Deploy 3: Remove the field
 
 ### Rename a field
-* Deploy 1: Write to the new name everywhere the old name is written. Read from both fields with
+* Deploy 1: Add the new name. Write to the new name everywhere the old name is written. Read from both fields with
 `new_name || old_name`
 * Deploy 2: Remove references to the old name
 
 ## Jobs
 
 Job requests could be enqueued by a new instance and picked up by an old one, or vice versa. When an
-argument is added or removed, it causes 500 errors from ArgumentError.
+argument is added or removed, it causes 500 errors with ArgumentError.
 
 ### Add an argument to a job #perform method
 * Deploy 1: Add the argument with a default value (usually nil) and do not use it
@@ -66,7 +77,7 @@ When adding or changing a route, a new instance could serve a route to an old in
 not recognize it.
 
 When deleting a route, an old instance could request the route, and a new instance would not
-recognize it.
+recognize it. Additionally, users might have bookmarked the route.
 
 ### Add a route
 * Deploy 1: Add the fully functional route and controller action
@@ -74,11 +85,13 @@ recognize it.
 
 ### Delete a route
 * Deploy 1: Remove all links and redirects to the route
-* Deploy 2: Change the route to a redirect if possible to avoid user 404s from bookmarks.
+* Deploy 2: Change the route to a redirect if possible to avoid user 404s from browser history or
+bookmarks.
 * Deploy 3: 2-4 weeks later, check `production.log` request logs and remove the deprecated route.
 
 ### Rename a route
-* Deploy 1: Add the new route and controller action. Make the old route point to the new controller.
+* Deploy 1: Add the new route and controller action. Map the old route to the new controller
+and move to the deprecated section of `routes.rb`.
 * Deploy 2: Delete the old controller action.
 * Deploy 3: 2-4 weeks later, check `production.log` request logs and remove the deprecated route.
 
@@ -90,12 +103,20 @@ will have the old value during the deploy. Make sure that changing the value doe
 of the cases above.
 
 * Deploy 1: Change the flag value
-* Make any of the above changes that are needed in following deploys
+* Make any changes to routes, jobs, and persistent data in following deploys as described above.
 
 ## Test in the 50/50 state
 When making a large change such as adding a new page to the Identity Verification flow, it can be
 helpful to test in the 50/50 state. Large changes are developed behind a feature flag and then
 turned on.
+
+The steps below use the int environment, which is also used by partners to test their integrations.
+Only use int if you are reasonably confident in your new code. You can also use a team or personal
+sandbox. If you use staging, you will need to substitute prod-power for sandbox-power in all the
+commands.
+
+The dev environment is not a good choice because it recycles every time there is a merge to main,
+which would take it out of the 50/50 state.
 
 To create a long-running 50/50 state in int:
 1. Check servers before you start
@@ -107,32 +128,45 @@ Notify in #login-appdev about the recycle and 50/50 state testing
 ```
 aws-vault exec sandbox-power -- ./bin/asg-recycle int idp
 ```
-This will take 10-15 minutes. Just wait for 15 min.
-You will see old instances that will start to say draining
-You will know it is ready when you only have new workers and idp instances up- check the time- should be minutes
+This will take 10-15 minutes. You will know it is ready when you only have new workers and idp
+instances up.
 1. Set your feature flag to true
 ```
 aws-vault exec sandbox-power -- ./bin/app-s3-secret --env int --app idp --edit
 ```
-Add the flag in alphabetical order 
-ESC, :wq to exit vim
-Examine diff, y to save changes
-copy/paste diff to Slack thread about recycle in #login-appdev
+* This opens the config file in vim
+  * Add the flag in alphabetical order
+  * `ESC`, `:wq` to exit vim
+* Examine diff, y to save changes
+* copy/paste diff to Slack thread about recycle in #login-appdev
 1. Double the number of instances
 This gives you half new instances with the flag set to true, and
 half old instances with the flag set to false.
+* First, check how many app instances are desired. For int, the desired number of app instances is 6.
 ```
-aws-vault exec sandbox-power -- ./bin/asg-size int idp # (outputs current number of idp instances x)
-aws-vault exec sandbox-power -- ./bin/asg-size int idp 2x
-aws-vault exec sandbox-power -- ./bin/asg-size int worker # (outputs current number of worker instances y)
-aws-vault exec sandbox-power -- ./bin/asg-size int worker 2y
+aws-vault exec sandbox-power -- ./bin/asg-size int idp
 ```
-Check the servers to make sure they are all up 
+* Now double the number of app instances. For int, the new setting will be 12. Substitute your own
+calculations if using a different environment.
+```
+aws-vault exec sandbox-power -- ./bin/asg-size int idp 12
+```
+* Repeat the check for the workers. For int, the desired number of workers is 4.
+```
+aws-vault exec sandbox-power -- ./bin/asg-size int worker
+```
+* And finally, double the number of worker instances. For int, the new setting will be 8.
+```
+aws-vault exec sandbox-power -- ./bin/asg-size int worker 8
+```
+Wait for the new servers to fully come online. Check with ls-servers as described above.
 1. TEST!
-1. Restore settings
-Post in slack what you are putting them back to
-Set number of instances back to normal numbers with asg-size. This leaves the feature flag on because the old instances are removed.
+1. Restore the usual number of instances
+* Post in slack what you are putting them back to.
+* Set number of instances back to normal numbers with asg-size. This leaves the feature flag on
+because the old instances are removed. If not using int, substitute the usual desired numbers for
+the environment you are using.
 ```
-aws-vault exec sandbox-power -- ./bin/asg-size int idp x
-aws-vault exec sandbox-power -- ./bin/asg-size int worker y
+aws-vault exec sandbox-power -- ./bin/asg-size int idp 6
+aws-vault exec sandbox-power -- ./bin/asg-size int worker 4
 ```
