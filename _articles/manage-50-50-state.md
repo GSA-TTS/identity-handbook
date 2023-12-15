@@ -15,12 +15,13 @@ are serving requests for at least 15 minutes. This is called the 50/50 state and
 management when changing code that is used across instances.
 
 You can test the 50/50
-state locally by loading a page on your new branch, killing the server, checking out main, and then
-clicking on a link on the branch (new instance), which will load the next action on main (old
+state locally by loading a page on your new branch, killing the server, checking out main,
+restarting the server, and then
+clicking on a link on the page (new instance), which will load the next action on main (old
 instance). For more complex
 changes, you may want to [test in the 50/50 state](#test-in-the-5050-state) in a lower environment.
 
-The cases below sound similar, but each situation has its own considerations.
+The cases described below sound similar, but each situation has its own considerations.
 
 ## Database changes
 
