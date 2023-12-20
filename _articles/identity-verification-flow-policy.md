@@ -32,8 +32,22 @@ FlowPolicy has three public methods. They are called from helper methods in IdvS
 
 `undo_future_steps_from_controller!` uses the controller's `StepInfo.next_steps` to find all future steps and tail-recursively call `undo_step` on them.
 
-The FlowPolicy contains a private hash of steps. The new controller's key and step_info need to
-be added to the hash. For example: `agreement: Idv::AgreementController.step_info,`
+### FlowPolicy specs
+
+[FlowPolicy specs for each step in the flow](https://github.com/18F/identity-idp/blob/b157a242d9362050929e47c4f9fd93ec1cfd8bc6/spec/policies/idv/flow_policy_spec.rb#L150)
+
+When a controller is added to the `steps` hash, add a spec to flow_policy_spec that checks whether the flow policy methods handle that controller correctly. For example:
+```
+    context 'preconditions for agreement are present' do
+      it 'returns agreement' do
+        stub_up_to(:welcome, idv_session: idv_session)
+
+        expect(subject.info_for_latest_step.key).to eq(:agreement)
+        expect(subject.controller_allowed?(controller: Idv::AgreementController)).to be
+        expect(subject.controller_allowed?(controller: Idv::HybridHandoffController)).not_to be
+      end
+    end
+```
 
 ## StepInfo
 
@@ -150,6 +164,9 @@ Use the `stub_up_to`
 helper in FlowPolicyHelper with the key of the previous step. For example, 
 `stub_up_to(:ssn, idv_session: idv_session)` prepares the session for testing in
 verify_info_controller_spec, since Ssn is the previous step.
+
+When you add a new key and controller to FlowPolicy, you may also want to extend FlowPolicyHelper to
+set up conditions for that controller.  
 
 ## Future Work
 
