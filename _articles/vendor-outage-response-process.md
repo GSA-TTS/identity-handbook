@@ -30,7 +30,7 @@ outage, or redirected to an error page if they are unable to continue.
 
 Once we have received word that the vendor is back up and running,
 simply re-edit the configuration and delete the vendor status or
-maintenance window.
+maintenance window, and restart server instances again.
 
 ## Manually disable identity verification
 
@@ -53,11 +53,10 @@ individually. Each is controlled by a configuration flag:
 
 | vendor | flag(s) |
 |---------|------|
+| AAMVA | See [manually disable identity verification](#manually-disable-identity-verification) |
 | Acuant  | `vendor_status_acuant` |
 | LexisNexis| `vendor_status_lexisnexis_instant_verify` <br> `vendor_status_lexisnexis_phone_finder` <br> `vendor_status_lexisnexis_trueid` |
 | Pinpoint | `vendor_status_sms` <br> `vendor_status_voice` |
-
-For a full AAMVA outage, see above to completely disable identity verification
 
 The possible values for each flag:
 
@@ -182,3 +181,8 @@ dashboards:
 
 - [Verify Your Identity](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/prod-idv-verify-your-identity-overview)
 - [IdV Monitoring Dashboard](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/prod-idp-idv-vendors)
+
+## AAMVA DLDV Certificate Testing
+
+Login.gov has infrequently been asked to submit transactions to the AAMVA DLDV CERT/Test environment.
+The steps to test in our staging environment are outlined in [this Google doc](https://docs.google.com/document/d/1lfeFOF_965AA8r4SnZFppUgGrZKaEvMagUh4GT5dgF8/edit).
