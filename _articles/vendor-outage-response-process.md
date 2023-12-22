@@ -34,12 +34,12 @@ maintenance window, and restart server instances again.
 
 ## Runbooks for individual vendors
 
-| vendor     | runbook                                                                                                    |
-|------------|------------------------------------------------------------------------------------------------------------|
-| AAMVA      | [Runbook for AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook-for-AAMVA-DLDV-outage) |
-| Acuant     | TBD                                                                                                        |
-| LexisNexis | TBD                                                                                                        |
-| Pinpoint   | TBD                                                                                                        |
+| vendor     | runbook                                                                                              |
+|------------|------------------------------------------------------------------------------------------------------|
+| AAMVA      | [Runbook: AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook:-AAMVA-DLDV-outage) |
+| Acuant     | TBD                                                                                                  |
+| LexisNexis | TBD                                                                                                  |
+| Pinpoint   | TBD                                                                                                  |
 
 ## Manually disable identity verification
 
