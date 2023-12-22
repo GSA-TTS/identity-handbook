@@ -34,8 +34,6 @@ maintenance window, and restart server instances again.
 
 ## Runbooks for individual vendors
 
-Runbooks are being written for each vendor to detail how to analyze/test each vendor:
-
 | vendor     | runbook                                                                                                    |
 |------------|------------------------------------------------------------------------------------------------------------|
 | AAMVA      | [Runbook for AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook-for-AAMVA-DLDV-outage) |
