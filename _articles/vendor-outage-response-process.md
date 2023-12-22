@@ -32,6 +32,17 @@ Once we have received word that the vendor is back up and running,
 simply re-edit the configuration and delete the vendor status or
 maintenance window, and restart server instances again.
 
+## Runbooks for individual vendors
+
+Runbooks are being written for each vendor to detail how to analyze/test each vendor:
+
+| vendor     | runbook                                                                                                    |
+|------------|------------------------------------------------------------------------------------------------------------|
+| AAMVA      | [Runbook for AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook-for-AAMVA-DLDV-outage) |
+| Acuant     | TBD                                                                                                        |
+| LexisNexis | TBD                                                                                                        |
+| Pinpoint   | TBD                                                                                                        |
+
 ## Manually disable identity verification
 
 For a full AAMVA outage, disable identity verification.
@@ -51,12 +62,12 @@ For faster results, [recycle without a migration instance]({% link _articles/app
 Several vendors or third-party services can be turned off
 individually. Each is controlled by a configuration flag:
 
-| vendor | flag(s) |
-|---------|------|
-| AAMVA | See [manually disable identity verification](#manually-disable-identity-verification) |
-| Acuant  | `vendor_status_acuant` |
-| LexisNexis| `vendor_status_lexisnexis_instant_verify` <br> `vendor_status_lexisnexis_phone_finder` <br> `vendor_status_lexisnexis_trueid` |
-| Pinpoint | `vendor_status_sms` <br> `vendor_status_voice` |
+| vendor     | flag(s)                                                                                                                       |
+|------------|-------------------------------------------------------------------------------------------------------------------------------|
+| AAMVA      | See [manually disable identity verification](#manually-disable-identity-verification)                                         |
+| Acuant     | `vendor_status_acuant`                                                                                                        |
+| LexisNexis | `vendor_status_lexisnexis_instant_verify` <br> `vendor_status_lexisnexis_phone_finder` <br> `vendor_status_lexisnexis_trueid` |
+| Pinpoint   | `vendor_status_sms` <br> `vendor_status_voice`                                                                                |
 
 The possible values for each flag:
 
