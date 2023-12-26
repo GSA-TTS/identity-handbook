@@ -36,16 +36,33 @@ If you'd like to volunteer to receive and record letters, please add your name t
 
 ## How to change the designated receiver
 
-**The designated receiver's name and address is PII**. When reaching out to the new receiver, please request that they supply the information to you via an ephemeral channel (typically Google Chat or over a video call).
+Team Ada's oncall engineer updates the designated receiver configuration on (or around) the 15th of every month. Here's the process:
 
-Designated receiver name and address information is stored along with other IdP settings in a YAML secrets file. To update, use the [`app-s3-secret`][app-s3-secret] script to update the `gpo_designated_receiver_pii` key to a JSON string looking something like:
+### 1. Get the new designated receiver's address
+
+Remember: **names and addresses are PII**. When reaching out to the new receiver, please request that they supply the information to you via an ephemeral channel (typically Google Chat or over a video call).
+
+### 2. Update the production application.yml file
+
+Designated receiver name and address information is stored along with other IdP settings in the YAML secrets file. 
+
+To update, use the [`app-s3-secret`][app-s3-secret] script to update the `gpo_designated_receiver_pii` key:
 
 ```yaml
 gpo_designated_receiver_pii: '{"first_name": "Receiver first name", "last_name": "Receiver last name", "address1": "1234 Imaginary Ave.", "address2": "Apt B", "city": "Anytown", "state": "IL", "zipcode": "56789" }'
 ```
 
-`address2` is optional and may be omitted, but all other fields are **required**. Note also that this is a _string_ value containing a JSON object.
+Note also that this is a _string_ value containing a JSON object. `address2` is optional and may be omitted, but all other fields are required. 
+
+### 3. Recycle production
+
+A [config recycle][config-recycle] is required to apply the updated configuration.
+
+### 4. Give the receivers a heads-up
+
+Please ping the new designated receiver in Slack and let them know that they should start to receive GPO letters in a few days. You can link them back to this page to refresh their memory about their responsibilities. Additionally, let the prior receiver that they should stop receiving letters in a few days.
 
 [upcoming-volunteers]: https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY/edit#gid=1451916214
 [app-s3-secret]: /articles/devops-scripts.html#app-s3-secret
 [team-ada-slack]: https://gsa.enterprise.slack.com/archives/CNCGEHG1G
+[config-recycle]: /articles/appdev-deploy.html#config-recycle
