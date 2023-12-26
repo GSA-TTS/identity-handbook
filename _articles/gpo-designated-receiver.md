@@ -32,4 +32,20 @@ It takes 3-7 business days for letters to arrive. It is common to not receive an
 
 ## I want to do this!
 
-If you'd like to volunteer to receive and record letters, don't hesitate to post in #login-appdev or add an agenda item to the [Engineering Huddle](https://docs.google.com/document/d/1g_V2vlT79tScBKIVw7M4UXf15TrG69iUrLHE0yE1GGI/). The information is stored in the secrets storage under `gpo_designated_receiver_pii` and requires the keys `first_name`, `last_name`, `address1`, `city` `state` and `zipcode`.
+If you'd like to volunteer to receive and record letters, please add your name to the [Upcoming Volunteers tab][upcoming-volunteers] of the GPO Designated Receiver Report spreadsheet. If you have any questions about the process, you can ask them in Slack in [#login-team-ada][team-ada-slack].
+
+## How to change the designated receiver
+
+**The designated receiver's name and address is PII**. When reaching out to the new receiver, please request that they supply the information to you via an ephemeral channel (typically Google Chat or over a video call).
+
+Designated receiver name and address information is stored along with other IdP settings in a YAML secrets file. To update, use the [`app-s3-secret`][app-s3-secret] script to update the `gpo_designated_receiver_pii` key to a JSON string looking something like:
+
+```yaml
+gpo_designated_receiver_pii: '{"first_name": "Receiver first name", "last_name": "Receiver last name", "address1": "1234 Imaginary Ave.", "address2": "Apt B", "city": "Anytown", "state": "IL", "zipcode": "56789" }'
+```
+
+`address2` is optional and may be omitted, but all other fields are **required**. Note also that this is a _string_ value containing a JSON object.
+
+[upcoming-volunteers]: https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY/edit#gid=1451916214
+[app-s3-secret]: /articles/devops-scripts.html#app-s3-secret
+[team-ada-slack]: https://gsa.enterprise.slack.com/archives/CNCGEHG1G
