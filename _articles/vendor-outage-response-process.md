@@ -34,12 +34,14 @@ maintenance window, and restart server instances again.
 
 ## Runbooks for individual vendors
 
-| vendor     | runbook                                                                                              |
-|------------|------------------------------------------------------------------------------------------------------|
-| AAMVA      | [Runbook: AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook:-AAMVA-DLDV-outage) |
-| Acuant     | TBD                                                                                                  |
-| LexisNexis | TBD                                                                                                  |
-| Pinpoint   | TBD                                                                                                  |
+| vendor                    | runbook                                                                                                                            |
+|---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| AAMVA                     | [Runbook: AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook:-AAMVA-DLDV-outage)                               |
+| Acuant                    | TBD                                                                                                                                |
+| LexisNexis TrueID         | TBD                                                                                                                                |
+| LexisNexis Instant Verify | [Runbook: LexisNexis Instant Verify outage](https://github.com/18F/identity-devops/wiki/Runbook:-LexisNexis-Instant-Verify-outage) |
+| LexisNexis Phone Finder   | TBD                                                                                                                                |
+| Pinpoint                  | TBD                                                                                                                                |
 
 ## Manually disable identity verification
 
