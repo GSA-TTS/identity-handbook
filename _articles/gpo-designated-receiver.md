@@ -11,11 +11,11 @@ The [U.S. Government Publishing Office](https://www.gpo.gov/) sends letters on b
 
 ## How and Why?
 
-It's difficult to automate testing of the United States Postal Service and the U.S. Government Publishing Office, so to ensure Login.gov is sending letters as expected, a Login.gov team member is sent a letter every day. We record the day the letters were sent and received along with a few other attributes in a [spreadsheet](https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY).
+It's difficult to automate testing of the United States Postal Service and the U.S. Government Publishing Office, so to ensure Login.gov is sending letters as expected, a Login.gov team member is sent a letter every day. We record the day the letters were sent and received along with a few other attributes in a [spreadsheet][the-spreadsheet].
 
 ## What should I expect and how do I do it?
 
-It takes 3-7 business days for letters to arrive. It is common to not receive any for a few days, and then receive multiple in one day. When you receive a letter, the things to record are:
+It takes 3-7 business days for letters to arrive. It is common to not receive any for a few days, and then receive multiple in one day. When you receive a letter, record the following data points in [the GPO Designated Receiver Report][the-spreadsheet]:
 
 * The date it was delivered
 * The date it was printed
@@ -62,6 +62,7 @@ A [config recycle][config-recycle] is required to apply the updated configuratio
 
 Please ping the new designated receiver in Slack and let them know that they should start to receive GPO letters in a few days. You can link them back to this page to refresh their memory about their responsibilities. Additionally, let the prior receiver that they should stop receiving letters in a few days.
 
+[the-spreadsheet]: https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY
 [upcoming-volunteers]: https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY/edit#gid=1451916214
 [app-s3-secret]: /articles/devops-scripts.html#app-s3-secret
 [team-ada-slack]: https://gsa.enterprise.slack.com/archives/CNCGEHG1G
