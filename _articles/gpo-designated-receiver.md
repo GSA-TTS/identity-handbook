@@ -40,7 +40,11 @@ Team Ada's oncall engineer updates the designated receiver configuration on (or 
 
 ### 1. Get the new designated receiver's address
 
-Remember: **names and addresses are PII**. When reaching out to the new receiver, please request that they supply the information to you via an ephemeral channel (typically Google Chat or over a video call).
+Remember: **names and addresses are PII**. When reaching out to the new receiver, please request that they supply the information to you via an ephemeral channel such as:
+
+* Google Chat
+* Private Google doc
+* Video chat
 
 ### 2. Update the production application.yml file
 
