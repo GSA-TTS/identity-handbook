@@ -11,11 +11,11 @@ The [U.S. Government Publishing Office](https://www.gpo.gov/) sends letters on b
 
 ## How and Why?
 
-It's difficult to automate testing of the United States Postal Service and the U.S. Government Publishing Office, so to ensure Login.gov is sending letters as expected, a Login.gov team member is sent a letter every day. We record the day the letters were sent and received along with a few other attributes in a [spreadsheet](https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY).
+It's difficult to automate testing of the United States Postal Service and the U.S. Government Publishing Office, so to ensure Login.gov is sending letters as expected, a Login.gov team member is sent a letter every day. We record the day the letters were sent and received along with a few other attributes in a [spreadsheet][the-spreadsheet].
 
 ## What should I expect and how do I do it?
 
-It takes 3-7 business days for letters to arrive. It is common to not receive any for a few days, and then receive multiple in one day. When you receive a letter, the things to record are:
+It takes 3-7 business days for letters to arrive. It is common to not receive any for a few days, and then receive multiple in one day. When you receive a letter, record the following data points in [the GPO Designated Receiver Report][the-spreadsheet]:
 
 * The date it was delivered
 * The date it was printed
@@ -32,4 +32,42 @@ It takes 3-7 business days for letters to arrive. It is common to not receive an
 
 ## I want to do this!
 
-If you'd like to volunteer to receive and record letters, don't hesitate to post in #login-appdev or add an agenda item to the [Engineering Huddle](https://docs.google.com/document/d/1g_V2vlT79tScBKIVw7M4UXf15TrG69iUrLHE0yE1GGI/). The information is stored in the secrets storage under `gpo_designated_receiver_pii` and requires the keys `first_name`, `last_name`, `address1`, `city` `state` and `zipcode`.
+If you'd like to volunteer to receive and record letters, please add your name to the [Upcoming Volunteers tab][upcoming-volunteers] of the GPO Designated Receiver Report spreadsheet. If you have any questions about the process, you can ask them in Slack in [#login-team-ada][team-ada-slack].
+
+## How to change the designated receiver
+
+Team Ada's oncall engineer updates the designated receiver configuration on (or around) the 15th of every month. Here's the process:
+
+### 1. Get the new designated receiver's address
+
+Remember: **names and addresses are PII**. When reaching out to the new receiver, please request that they supply the information to you via an ephemeral channel such as:
+
+* Google Chat
+* Private Google doc
+* Video chat
+
+### 2. Update the production application.yml file
+
+Designated receiver name and address information is stored along with other IdP settings in the YAML secrets file. 
+
+To update, use the [`app-s3-secret`][app-s3-secret] script to update the `gpo_designated_receiver_pii` key:
+
+```yaml
+gpo_designated_receiver_pii: '{"first_name": "Receiver first name", "last_name": "Receiver last name", "address1": "1234 Imaginary Ave.", "address2": "Apt B", "city": "Anytown", "state": "IL", "zipcode": "56789" }'
+```
+
+Note also that this is a _string_ value containing a JSON object. `address2` is optional and may be omitted, but all other fields are required. 
+
+### 3. Recycle production
+
+A [config recycle][config-recycle] is required to apply the updated configuration.
+
+### 4. Give the receivers a heads-up
+
+Please ping the new designated receiver in Slack and let them know that they should start to receive GPO letters in a few days. You can link them back to this page to refresh their memory about their responsibilities. Additionally, let the prior receiver that they should stop receiving letters in a few days.
+
+[the-spreadsheet]: https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY
+[upcoming-volunteers]: https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY/edit#gid=1451916214
+[app-s3-secret]: /articles/devops-scripts.html#app-s3-secret
+[team-ada-slack]: https://gsa.enterprise.slack.com/archives/CNCGEHG1G
+[config-recycle]: /articles/appdev-deploy.html#config-recycle
