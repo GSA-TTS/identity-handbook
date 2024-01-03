@@ -43,6 +43,8 @@ maintenance window, and restart server instances again.
 | LexisNexis Phone Finder   | TBD                                                                                                                                |
 | Pinpoint                  | TBD                                                                                                                                |
 
+### Contact Information
+
 For escalation contacts at our vendors, see the "Proofing vendors" section of [On Call Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#proofing-vendors).
 
 ## Manually disable identity verification
