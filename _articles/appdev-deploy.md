@@ -113,7 +113,13 @@ A pull request should be created from that latest branch to production: **`stage
    - Review the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
-Share the pull request in `#login-appdev` and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to `#login-ux` and `#login-delivery` channels for awareness.
+#### Share the pull request in `#login-appdev`
+Use the `/Announce pending Login.gov release PR` workflow in `#login-appdev` to announce the start of the deployment
+- Choose whether the PR is for `Identity provider (identity-idp)` or `PIV/CAC (identity-pki)`
+- Enter the the PR link
+- The workflow will send a notification to the `#login-appdev` channel and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to the `#login-ux` and `#login-delivery` channels for awareness.
+
+![Announce release PR workflow]({{ site.baseurl }}/images/announce-release-pr-workflow.png)
 
 #### Resolving merge conflicts
 
@@ -141,6 +147,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
     - Enter the RC number that will be deployed
     - When necessary, create a separate announcement for `identity-pki`
     - The workflow will send a notification to the `#login-appdev` and `#login-devops` channels
+
     ![Announce recycle workflow]({{ site.baseurl }}/images/announce-recycle-workflow.png)
 3. In the `identity-devops` repo:
    ```bash
