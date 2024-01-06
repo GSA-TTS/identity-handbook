@@ -78,14 +78,14 @@ Once you've run through proofing in staging, the next step is to cut a release f
 
 #### Cut a release branch
 
-The release branch should be cut from code tested in staging and it should be the date of the production release (ex `stages/rc-2023-06-17`):
+The release branch should be cut from code tested in staging and it should be the date of the production release (ex `stages/rc-2024-01-09`):
 
 For IdP:
 ```bash
 cd identity-idp
 git fetch
 git checkout $(curl --silent https://idp.staging.login.gov/api/deploy.json | jq -r .git_sha)
-git checkout -b stages/rc-2023-06-17 # CHANGE THIS DATE
+git checkout -b stages/rc-2024-01-09 # CHANGE THIS DATE
 git push -u origin HEAD
 ```
 For pki:
@@ -93,7 +93,7 @@ For pki:
 cd identity-pki
 git fetch
 git checkout $(curl --silent https://checking-deploy.pivcac.staging.login.gov/api/deploy.json | jq -r .git_sha)
-git checkout -b stages/rc-2023-06-17 # CHANGE THIS DATE
+git checkout -b stages/rc-2024-01-09 # CHANGE THIS DATE
 git push -u origin HEAD
 ```
 
