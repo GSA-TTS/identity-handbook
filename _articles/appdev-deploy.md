@@ -255,6 +255,8 @@ To quickly remove new servers and leave old servers up:
 aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod ALL
 ```
 
+**Important:**
+
 As soon as possible, ensure that the deploy is rolled back by reverting the `stages/prod` branch in GitHub by following the steps below. This is important because new instances can start at any time to accommodate increased traffic, and in response to other recycle operations like configuration changes.
 
 ##### Steps to roll back
