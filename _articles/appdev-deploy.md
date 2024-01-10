@@ -257,7 +257,7 @@ aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod ALL
 
 **Important:**
 
-As soon as possible, ensure that the deploy is rolled back by reverting the `stages/prod` branch in GitHub by following the steps below. This is important because new instances can start at any time to accommodate increased traffic, and in response to other recycle operations like configuration changes.
+As soon as possible, ensure that the deploy is rolled back by reverting the `stages/prod` branch in GitHub by following the [steps to roll back](#steps-to-roll-back) below. This is important because new instances can start at any time to accommodate increased traffic, and in response to other recycle operations like configuration changes.
 
 ##### Steps to roll back
 
