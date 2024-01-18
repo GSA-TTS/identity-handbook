@@ -80,7 +80,7 @@ Once you've run through proofing in staging, the next step is to cut a release f
 
 ##### IDP
 
-The IDP includes a script to create deployment PRs. It relies on [`gh`](https://cli.github.com/), the Github cli--install that first and get it connected to the identity-idp repo. Then, run the script to create a PR:
+The IDP includes a script to create deployment PRs. It relies on [`gh`](https://cli.github.com/), the Github cli. Install that first (`brew install gh`) and get it connected to the identity-idp repo. Then, run the script to create a PR:
 
 Use `scripts/create-deploy-pr` to create a new deployment PR:
 
@@ -88,7 +88,19 @@ Use `scripts/create-deploy-pr` to create a new deployment PR:
 scripts/create-deploy-pr
 ```
 
-Be sure and double-check the changelog in the PR description.
+If you want to create a patch release, specify `PATCH=1`:
+
+```shell
+PATCH=1 scripts/create-deploy-pr
+```
+
+This script will create a new RC branch and PR based on the SHA currently deployed to the staging environment. To override this and specify a different SHA or branch, use the `SOURCE` variable:
+
+```shell
+PATCH=1 SOURCE=main scripts/create-deploy-pr
+```
+
+`create-deploy-pr` will print out a link to the new PR. **Be sure to verify the generated changelog after creating the PR.**
 
 ##### PKI
 
@@ -217,8 +229,13 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
 ##### IDP
 
+The IDP includes a script to create a release based on a merged pull request.  It relies on [`gh`](https://cli.github.com/), the Github cli. Install that first (`brew install gh`) and get it connected to the identity-idp repo. Then, run the script to create a release:
 
-</details>
+```shell
+scripts/create-relase <PR_NUMBER>
+```
+
+Where `<PR_NUMBER>` is the number of the _merged_ PR.
 
 ##### PKI
 
