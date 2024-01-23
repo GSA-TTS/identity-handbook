@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '~> 3.2.2'
+ruby '~> 3.3.0'
 
 gem "jekyll", "~> 4"
 gem "kramdown", ">= 2.3.0"
@@ -13,7 +13,8 @@ end
 
 group :test do
   gem 'activesupport', '~> 7.0.7'
+  gem 'google-protobuf', '~> 4.25.2'
   gem 'html-proofer', '~> 4.4.3'
   gem 'nokogiri', '~> 1.16.2'
-  gem 'rspec', '~> 3.9.0'
+  gem 'rspec', '~> 3.12.0'
 end
