@@ -78,16 +78,32 @@ Once you've run through proofing in staging, the next step is to cut a release f
 
 #### Cut a release branch
 
-The release branch should be cut from code tested in staging and it should be the date of the production release (ex `stages/rc-2024-01-09`):
+##### IDP
 
-For IdP:
-```bash
-cd identity-idp
-git fetch
-git checkout $(curl --silent https://idp.staging.login.gov/api/deploy.json | jq -r .git_sha)
-git checkout -b stages/rc-2024-01-09 # CHANGE THIS DATE
-git push -u origin HEAD
+The IDP includes a script to create deployment PRs. It relies on [`gh`](https://cli.github.com/), the Github cli. Install that first (`brew install gh`) and get it connected to the identity-idp repo. Then, run the script to create a PR:
+
+Use `scripts/create-deploy-pr` to create a new deployment PR:
+
+```shell
+scripts/create-deploy-pr
 ```
+
+If you want to create a patch release, specify `PATCH=1`:
+
+```shell
+PATCH=1 scripts/create-deploy-pr
+```
+
+This script will create a new RC branch and PR based on the SHA currently deployed to the staging environment. To override this and specify a different SHA or branch, use the `SOURCE` variable:
+
+```shell
+PATCH=1 SOURCE=main scripts/create-deploy-pr
+```
+
+`create-deploy-pr` will print out a link to the new PR. **Be sure to verify the generated changelog after creating the PR.**
+
+##### PKI
+
 For pki:
 ```bash
 cd identity-pki
@@ -96,9 +112,6 @@ git checkout $(curl --silent https://checking-deploy.pivcac.staging.login.gov/ap
 git checkout -b stages/rc-2024-01-09 # CHANGE THIS DATE
 git push -u origin HEAD
 ```
-
-#### Create pull request
-
 A pull request should be created from that latest branch to production: **`stages/prod`**. When creating the pull request:
 
 - Title it clearly with the RC number, ex **"Deploy RC 112 to Prod"**
@@ -106,11 +119,6 @@ A pull request should be created from that latest branch to production: **`stage
    - If it's a patch release, increment the fractional part, ex **"Deploy RC 112.1 to Prod"**
    - Unsure what the last release was? Check the [releases page](https://github.com/18F/identity-idp/releases/)
 - Add the label **`status - promotion`** to the pull request that will be included in the release.
-- Replace pull request template content with the release notes generated using the changelog script:
-   - ```
-     scripts/changelog_check.rb -b origin/stages/prod
-     ```
-   - Review the generated changelog to fix spelling and grammar issues, clarify or organize changes into correct categories, and assign invalid entries to a valid category.
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
 #### Share the pull request in `#login-appdev`
@@ -215,23 +223,35 @@ Staging used to be deployed by this process, but this was changed to deploy the 
     - Sign up for an account
     - Test proofing (identity verification) on the new account
 
-9. **PRODUCTION ONLY**: This step is required in production
-    1. In the application repository, use your GPG key to tag the release.
-        ```bash
-        git checkout stages/prod && git pull
-        export GPG_TTY=$(tty)
-        bin/tag-release
-        ```
-    2. Add release notes in GitHub:
-        1. Create a new release:
-           - IdP: <https://github.com/18F/identity-idp/releases/new>
-           - PKI: <https://github.com/18F/identity-pki/releases/new>
-        2. Release title: `RC #{NUMBER}`
-        3. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
-        4. Copy the release notes Markdown from the promotion pull request
-        5. Click "Publish release"
+9. If everything looks good, the deploy is complete.
 
-10. If everything looks good, the deploy is complete!
+#### Creating a Release (Production only)
+
+##### IDP
+
+The IDP includes a script to create a release based on a merged pull request.  It relies on [`gh`](https://cli.github.com/), the Github cli. Install that first (`brew install gh`) and get it connected to the identity-idp repo. Then, run the script to create a release:
+
+```shell
+scripts/create-release <PR_NUMBER>
+```
+
+Where `<PR_NUMBER>` is the number of the _merged_ PR.
+
+##### PKI
+
+
+1. In the application repository, use your GPG key to tag the release.
+   ```bash
+   git checkout stages/prod && git pull
+   export GPG_TTY=$(tty)
+   bin/tag-release
+   ```
+2. Add release notes in GitHub:
+   1. Create a new release: <https://github.com/18F/identity-pki/releases/new>
+   2. Release title: `RC #{NUMBER}`
+   3. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
+   4. Copy the release notes Markdown from the promotion pull request
+   5. Click "Publish release"
 
 #### Rolling Back
 
