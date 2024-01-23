@@ -11,9 +11,17 @@ article and it will be automatically linked to from the index of all articles.
 
 ## Running Locally
 
+Ensure that you have the concurrently CLI helper installed.
+
+```
+npm i -g concurrently
+```
+
 ```
 make run
 ```
+
+Open http://127.0.0.1:4000/ in a browser.
 
 ## Running Tests
 
