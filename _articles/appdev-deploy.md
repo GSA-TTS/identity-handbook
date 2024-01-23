@@ -232,7 +232,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 The IDP includes a script to create a release based on a merged pull request.  It relies on [`gh`](https://cli.github.com/), the Github cli. Install that first (`brew install gh`) and get it connected to the identity-idp repo. Then, run the script to create a release:
 
 ```shell
-scripts/create-relase <PR_NUMBER>
+scripts/create-release <PR_NUMBER>
 ```
 
 Where `<PR_NUMBER>` is the number of the _merged_ PR.
