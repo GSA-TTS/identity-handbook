@@ -41,6 +41,7 @@ maintenance window, and restart server instances again.
 | LexisNexis TrueID         | TBD                                                                                                                                |
 | LexisNexis Instant Verify | [Runbook: LexisNexis Instant Verify outage](https://github.com/18F/identity-devops/wiki/Runbook:-LexisNexis-Instant-Verify-outage) |
 | LexisNexis Phone Finder   | TBD                                                                                                                                |
+| ThreatMetrix              | [Runbook: ThreatMetrix outage](https://github.com/18F/identity-devops/wiki/Runbook:-ThreatMetrix-outage)
 | Pinpoint                  | TBD                                                                                                                                |
 
 ### Contact Information
