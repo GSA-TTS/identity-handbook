@@ -125,7 +125,7 @@ A pull request should be created from that latest branch to production: **`stage
 Use the `/Announce pending Login.gov release PR` workflow in `#login-appdev` to announce the start of the deployment
 - Choose whether the PR is for `Identity provider (identity-idp)` or `PIV/CAC (identity-pki)`
 - Enter the the PR link
-- The workflow will send a notification to the `#login-appdev` channel and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to the `#login-ux` and `#login-delivery` channels for awareness.
+- The workflow will send a notification to the `#login-appdev` channel and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to the `#login-delivery` channel for awareness.
 
 ![Announce release PR workflow]({{ site.baseurl }}/images/announce-release-pr-workflow.png)
 
