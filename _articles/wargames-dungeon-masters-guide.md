@@ -189,6 +189,8 @@ Suggested flow:
   action oriented, and generative
 * Sometimes groups are in a quiet mood or not "feeling it", which should not
   be seen as a failing by the DM
+* Limit the incident response time to around 40 minutes to leave enough time for post-game discussion and any planning
+  for the next scenario.
 * [Psychological safety](https://risk-engineering.org/concept/psychological-safety) 
   is a prerequisite for effective incident response and learning to take place, so be sure to take immediate action
   if you see signs of a room where players feel unable to openly share, question,
