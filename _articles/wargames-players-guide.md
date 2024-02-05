@@ -4,6 +4,7 @@ description: "How to prepare for a Wargames scenario as a player"
 layout: article
 category: "Team"
 subcategory: Guides
+cSpell: ignore socio
 ---
 
 ## Overview
