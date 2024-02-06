@@ -14,6 +14,6 @@ end
 group :test do
   gem 'activesupport', '~> 7.0.7'
   gem 'html-proofer', '~> 4.4.3'
-  gem 'nokogiri', '~> 1.14.3'
+  gem 'nokogiri', '~> 1.16.2'
   gem 'rspec', '~> 3.9.0'
 end
