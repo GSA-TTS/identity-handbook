@@ -11,17 +11,17 @@ article and it will be automatically linked to from the index of all articles.
 
 ## Running Locally
 
-Ensure that you have the concurrently CLI helper installed.
+Ensure that you have the required dependencies installed.
 
 ```
-npm i -g concurrently
+make setup
 ```
 
 ```
 make run
 ```
 
-Open http://127.0.0.1:4000/ in a browser.
+Open http://localhost:4000/ in a browser, or run `open http://localhost:4000` from the MacOS CLI.
 
 ## Running Tests
 
