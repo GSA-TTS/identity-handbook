@@ -13,7 +13,7 @@ end
 
 group :test do
   gem 'activesupport', '~> 7.0.7'
-  gem 'google-protobuf', '~> 4.25.2'
+  gem 'google-protobuf', tag: 'v5.26.0-rc2'
   gem 'html-proofer', '~> 4.4.3'
   gem 'nokogiri', '~> 1.16.2'
   gem 'rspec', '~> 3.12.0'
