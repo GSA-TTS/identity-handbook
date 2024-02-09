@@ -110,7 +110,7 @@ procedures.
 * Once the situation is assessed, ping `@login-comms-oncall`
 
 *Mitigate* (Continous)
-* **(Every 30 Minutes)** Check the [Incident Comms Playbook - ACCESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c) section 
+* **(Every 30 Minutes)** Check the [Incident Comms Playbook - ASSESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c) section 
 * **(Every 30 Minutes)** [Update StatusPage]({% link _articles/statuspage-process.md %}#update) (if an incident is posted)
 
 *Resolve and Retrospect*
