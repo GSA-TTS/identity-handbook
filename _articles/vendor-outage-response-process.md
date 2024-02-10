@@ -38,7 +38,7 @@ maintenance window, and restart server instances again.
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | AAMVA                     | [Runbook: AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook:-AAMVA-DLDV-outage)                               |
 | Acuant                    | TBD                                                                                                                                |
-| LexisNexis TrueID         | TBD                                                                                                                                |
+| LexisNexis TrueID         | [Runbook: LexisNexis TrueID outage](https://github.com/18F/identity-devops/wiki/Runbook%3A-LexisNexis-TrueID-outage)               |
 | LexisNexis Instant Verify | [Runbook: LexisNexis Instant Verify outage](https://github.com/18F/identity-devops/wiki/Runbook:-LexisNexis-Instant-Verify-outage) |
 | LexisNexis Phone Finder   | TBD                                                                                                                                |
 | ThreatMetrix              | [Runbook: ThreatMetrix outage](https://github.com/18F/identity-devops/wiki/Runbook:-ThreatMetrix-outage)
@@ -77,16 +77,17 @@ individually. Each is controlled by a configuration flag:
 The possible values for each flag:
 
 - `operational`
+- `partial_outage`
 - `full_outage`
 
 The default value for each of the flags is `operational`.
 
-When one or more of the flags are set to `full_outage`, some parts of
+When one or more of the flags are set to `full_outage` or `partial_outage`, some parts of
 identity verification will be disabled.
 
 As an overview:
 
-- Setting `full_outage` for `acuant`, `lexisnexis_instant_verify`, or
+- Setting `full_outage` or `partial_outage` for `acuant`, `lexisnexis_instant_verify`, or
   `lexisnexis_trueid` turns off pretty much everything. Identity verification
   is completely unavailable.
 
