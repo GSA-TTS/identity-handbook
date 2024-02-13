@@ -38,7 +38,7 @@ maintenance window, and restart server instances again.
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | AAMVA                     | [Runbook: AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook:-AAMVA-DLDV-outage)                               |
 | Acuant                    | TBD                                                                                                                                |
-| LexisNexis TrueID         | TBD                                                                                                                                |
+| LexisNexis TrueID         | [Runbook: LexisNexis TrueID outage](https://github.com/18F/identity-devops/wiki/Runbook%3A-LexisNexis-TrueID-outage)               |
 | LexisNexis Instant Verify | [Runbook: LexisNexis Instant Verify outage](https://github.com/18F/identity-devops/wiki/Runbook:-LexisNexis-Instant-Verify-outage) |
 | LexisNexis Phone Finder   | TBD                                                                                                                                |
 | ThreatMetrix              | [Runbook: ThreatMetrix outage](https://github.com/18F/identity-devops/wiki/Runbook:-ThreatMetrix-outage)
