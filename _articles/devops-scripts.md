@@ -447,7 +447,7 @@ for those uses
 ## `scp-s3`
 
 Imitates `scp` by copying a file in and out of S3. Use the instance ID to refer to remote hosts
-(see [`ls-servers`](#ls-servers) to find them). **You must be on the VPN for this script to work.**
+(see [`ls-servers`](#ls-servers) to find them).
 
 ```bash
 aws-vault exec sandbox-power --
