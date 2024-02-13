@@ -77,17 +77,16 @@ individually. Each is controlled by a configuration flag:
 The possible values for each flag:
 
 - `operational`
-- `partial_outage`
 - `full_outage`
 
 The default value for each of the flags is `operational`.
 
-When one or more of the flags are set to `full_outage` or `partial_outage`, some parts of
+When one or more of the flags are set to `full_outage`, some parts of
 identity verification will be disabled.
 
 As an overview:
 
-- Setting `full_outage` or `partial_outage` for `acuant`, `lexisnexis_instant_verify`, or
+- Setting `full_outage` for `acuant`, `lexisnexis_instant_verify`, or
   `lexisnexis_trueid` turns off pretty much everything. Identity verification
   is completely unavailable.
 
