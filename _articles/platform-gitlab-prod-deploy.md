@@ -31,7 +31,7 @@ downtime when we upgrade these instances, so for a while,
 we will have a manual deploy approval step so that we can control when they roll out.
 
 * **Make sure that the code you are pushing deployed cleanly to the gitstaging environment!!**.
-* Check https://gitlab.login.gov/admin/background_migrations to see if there are any background
+* Check <https://gitlab.login.gov/admin/background_migrations> to see if there are any background
   migrations still going.  There should be none.  If there are, either wait until they are
   complete, or if they don't seem to be moving, 
   [contact gitlab support](https://github.com/18F/identity-devops/wiki/GitLab-Ultimate-Licensing-and-Support)
