@@ -21,7 +21,7 @@ Each Login.gov team has their own personalized [GDoc/Onboarding Template / Check
 - Watch a [Login.gov identity verification overview](https://drive.google.com/file/d/1GanUUpkAcJCopQAPac4DSe10LREdSGZw/view)
 - Watch a [Login.gov security overview](https://drive.google.com/file/d/1ZR4uin3dJZmq7nOvgROcv95_mcRPmx0n/view?usp=sharing)
 - Review the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
-- Review the [Login.gov Design System](https://design.login.gov/)
+- Review the [Login.gov Design System](https://github.com/18f/identity-design-system/)
 - Complete [GSA OLU](https://insite.gsa.gov/topics/training-and-development/online-university-olu?term=olu) IT Security Awareness Training, including accepting the GSA IT Rules of Behavior, which is required before we can give you access to any Login.gov systems. If you joined GSA more than two months ago, you’ve already completed this task. (Detailees must complete similar organization driven training and provide as proof to Login.gov team members)
 - Schedule virtual tea/coffee meetings with your team lead, other members of your team, and anyone else!  Tea is just a short (~20 min) one-on-one video meeting with the purpose of getting to know each other.
 - Once you've been added to Slack:
