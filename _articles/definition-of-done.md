@@ -40,7 +40,7 @@ Expect this DoD to change over time.
 - Interface and user journey changes are approved by the UX Team in order to release the story to production, or the story is controlled by a Feature Flag. Changes are approved by relevant SMEs to ensure consistency and quality of our product.
 - If a usability test is needed, a Jira task to develop a usability testing plan has been created.
 - Conforms to Section 508 standards by both manual and automated scanning methods.
-- The new design uses components from the Login Design System (design.login.gov, Figma).
+- The new design uses components from the [Login.gov Design System](https://github.com/18f/identity-design-system/).
 - Notify the Design System UX SME and Design System Manager when a new design component is not yet in the design system, so it can be considered.
 - Visual graphics and mockups are saved in the relevant Figma shared folder (example: Identity, Authentication). Research artifacts, content, translations, and sensitive artifacts are saved in [the shared Login.gov User Experience Google Drive folder](https://drive.google.com/drive/folders/12qRTGijG9oOU8FRvZfK30qAN4v8LCzHG).
 - For UX Tasks: implementation and/or testing tickets should be created in Jira for the next step to complete the work or hand off to the next phase.
