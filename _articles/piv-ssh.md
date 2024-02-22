@@ -46,7 +46,7 @@ This will not affect devops things, however it will bind your MacOS local user i
 - <https://developers.yubico.com/yubico-piv-tool/SSH_with_PIV_and_PKCS11.html>
 - <https://ludovicrousseau.blogspot.com/2014/03/level-1-smart-card-support-on-mac-os-x.html>
 - <https://resources.jamf.com/documents/technical-papers/macos-smart-card-overview.pdf>
-- <https://piv.idmanagement.gov/engineering/ssh/#ssh-from-macos>
+- <https://www.idmanagement.gov/implement/scl-ssh/>
 
 ## Troubleshooting
 
