@@ -46,7 +46,7 @@ Rotating the certificates happens in two phases: first adding the new certificat
     - Create a new "SAML 20XX" test app on <https://dashboard.int.identitysandbox.gov/> to test the new certificate endpoints.
 
 6. Update <https://developers.login.gov/saml/> article to use the new year endpoints
-    - Update <https://developers.login.gov/saml/> article found in [18F/identity-dev-docs](https://github.com/18F/identity-dev-docs) to use the new year certificate.
+    - Update <https://developers.login.gov/saml/> article found in [GSA-TTS/identity-dev-docs](https://github.com/GSA-TTS/identity-dev-docs) to use the new year certificate.
     - The endpoints change like this:
     - `/api/saml/metadata2021` → `/api/saml/metadata2022`
     - `/api/saml/auth2021` → `/api/saml/auth2022`

@@ -32,4 +32,4 @@ is served by Cloud.gov Pages. The code is a JavaScript-driven Single-Page App th
 data from our cloudfront distribution.
 
 [data-login-gov]: https://data.login.gov
-[frontend-repo]: https://github.com/18f/identity-reporting
+[frontend-repo]: https://github.com/GSA-TTS/identity-reporting
