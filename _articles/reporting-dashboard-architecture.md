@@ -27,7 +27,7 @@ This S3 bucket is exposed publicly via a CloudFront distribution.
 
 ### Frontend
 
-The [data.login.gov][data-login-gov] frontend, [18f/identity-reporting repo][frontend-repo],
+The [data.login.gov][data-login-gov] frontend, [GSA-TTS/identity-reporting repo][frontend-repo],
 is served by Cloud.gov Pages. The code is a JavaScript-driven Single-Page App that dynamically loads
 data from our cloudfront distribution.
 

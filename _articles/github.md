@@ -97,7 +97,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 ### Static Sites
 
-- [**`18f/identity-site`**](https://github.com/18f/identity-site)<br />
+- [**`GSA-TTS/identity-site`**](https://github.com/GSA-TTS/identity-site)<br />
   [login.gov](https://login.gov)<br />
   Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   Public marketing page.
@@ -105,27 +105,26 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**`18f/identity-design-system`**](https://github.com/18f/identity-design-system)<br />
   The Login.gov Design System, an extension of the U.S. Web Design System used on Login.gov sites to consistently identify the Login.gov brand.
 
-- [**`18f/identity-dev-docs`**](https://github.com/18f/identity-dev-docs)<br />
+- [**`GSA-TTS/identity-dev-docs`**](https://github.com/GSA-TTS/identity-dev-docs)<br />
   [developers.login.gov](https://developers.login.gov)<br />
   Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   Developer documentation and integration guides for OpenID Connect and SAML.
 
-- [**`18f/connect.gov`**](https://github.com/18F/connect.gov)<br />
+- [**`18f/connect.gov`**](https://github.com/18F/connect.gov){: .deprecated-link} (Archived)<br />
   [connect.gov](https://connect.gov/)<br />
   Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   A site to disambiguate the Login.gov's predecessor `connect.gov` from Connecticut's ConnectCT `connect.ct.gov`
 
-- [**`18f/identity-partners-site`**](https://github.com/18F/identity-partners-site)<br />
+- [**`18f/identity-partners-site`**](https://github.com/18F/identity-partners-site){: .deprecated-link} (Archived)<br />
   [partners.login.gov](https://partners.login.gov) <br />
-  Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
-  A site to present information for partners
+  A site to present information for partners, now exists as `/partners` in the `identity-site` repo.
 
-- [**`18f/identity-reporting`**](https://github.com/18f/identity-reporting)<br />
+- [**`GSA-TTS/identity-reporting`**](https://github.com/GSA-TTS/identity-reporting)<br />
   [data.login.gov](https://data.login.gov)<br />
   Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   Public reporting dashboard.
 
-- [**`18f/identity-handbook`**](https://github.com/18f/identity-handbook)<br />
+- [**`GSA-TTS/identity-handbook`**](https://github.com/GSA-TTS/identity-handbook)<br />
   [handbook.login.gov](https://handbook.login.gov/)<br />
   Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   This handbook!

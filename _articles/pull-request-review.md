@@ -29,7 +29,7 @@ changes from outside.
 
   - However, in some repositories with default reviewer groups
     (such as [identity-dashboard](https://github.com/18f/identity-dashboard) or
-    [identity-dev-docs](https://github.com/18f/identity-dev-docs) with clear
+    [identity-dev-docs](https://github.com/GSA-TTS/identity-dev-docs) with clear
     owners) it is preferred to wait for a reviewer from those groups before
     merging.
 

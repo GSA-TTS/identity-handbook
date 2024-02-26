@@ -90,17 +90,17 @@ As an overview:
   `lexisnexis_trueid` turns off pretty much everything. Identity verification
   is completely unavailable.
 
-![total-outage](https://github.com/18F/identity-handbook/assets/101212334/710b6e6f-e111-4acb-b568-b234efa03c74)
+![total-outage](https://github.com/GSA-TTS/identity-handbook/assets/101212334/710b6e6f-e111-4acb-b568-b234efa03c74)
 
 - Setting `full_outage` for `lexisnexis_phone_finder` disables instant
   verification, but verification by mail is still available.
 
-![mail-only](https://github.com/18F/identity-handbook/assets/101212334/3785cf49-a813-4774-ab50-2afe36549c11)
+![mail-only](https://github.com/GSA-TTS/identity-handbook/assets/101212334/3785cf49-a813-4774-ab50-2afe36549c11)
 
 - Setting `full_outage` for `sms` or `voice` disables instant
   verification, but verification by mail is still available.
 
-![mail-only](https://github.com/18F/identity-handbook/assets/101212334/767b1145-0f98-4c05-9fba-b410caf548b7)
+![mail-only](https://github.com/GSA-TTS/identity-handbook/assets/101212334/767b1145-0f98-4c05-9fba-b410caf548b7)
 
   ID image uploads must be done on the device with which the user
   began verification. Normally, desktop computer users are able to
