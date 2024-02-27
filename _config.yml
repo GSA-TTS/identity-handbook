@@ -31,6 +31,7 @@ plugins:
 
 exclude:
   - CONTRIBUTING.md
+  - SECURITY.md
   - package-lock.json
   - Makefile
   - package.json
