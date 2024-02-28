@@ -36,6 +36,13 @@ we will have a manual deploy approval step so that we can control when they roll
   complete, or if they don't seem to be moving, 
   [contact gitlab support](https://github.com/18F/identity-devops/wiki/GitLab-Ultimate-Licensing-and-Support)
   and ask for help in getting the migrations unstuck.
+* Check that the repository mirroring for [identity-devops](https://gitlab.gitstaging.gitlab.login.gov/lg/identity-devops/-/settings/repository)
+  and [identity-devops-private](https://gitlab.gitstaging.gitlab.login.gov/lg/identity-devops-private/-/settings/repository)
+  on gitstaging is up to date and has no errors.  Resolve the errors and get the repos up
+  to date before proceeding.  Sometimes this gets jammed up for some reason.
+  Usually clicking on the button to tell it to resync is enough, but other causes
+  have been github having problems or the gitlab ultimate license not being applied
+  properly to gitstaging.
 * Notify people that you are going to do a deploy in `#login-team-mary`, `#login-team-radia`,
   `#login-devops`, and `#login-appdev`.  I usually give 10-30 minutes warning and ask folks
   to ping me if this is a problem.  Also, do it after 5pm eastern, and basically nobody ever
@@ -44,7 +51,7 @@ we will have a manual deploy approval step so that we can control when they roll
   git SHA of the last successful push to gitstaging) and push it up.
 * Go to the pipeline that successfully deployed the code to gitstaging and click on the start
   button for the `gitlabproduction_deploy` job.
-* Go to https://gitlab.gitstaging.gitlab.login.gov/lg/identity-devops/-/pipelines and find
+* Go to <https://gitlab.gitstaging.gitlab.login.gov/lg/identity-devops/-/pipelines> and find
   the pipeline that was triggered.  After the SAST jobs run, you should be able to click on
   the `deploy_production` job.  It will say it needs approval, so go click on the link for
   that and approve it in the environments page under the `production` environment.
@@ -56,7 +63,9 @@ we will have a manual deploy approval step so that we can control when they roll
   the deploy job will take >1h to run, which will cause it to fail.  I usually check the
   build/test runner pool ASGs around the 20 minute marks, and add one to their
   `Maximum capacity` to cause them to start trying to launch instances again and thus
-  prevent the deploy job from timing out.
+  prevent the deploy job from timing out.  If you want to make this most optimal,
+  do the `Maximum capacity` change just after the `production-gitlab` ASG has completed
+  recycling, so that they all can start up and register immediately.
 * The test job should indicate that everything went out OK, but
   it's never bad to check it out yourself and make sure that jobs are working and the UI
   is happy, etc.
