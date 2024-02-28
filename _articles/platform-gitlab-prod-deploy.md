@@ -51,7 +51,7 @@ we will have a manual deploy approval step so that we can control when they roll
   git SHA of the last successful push to gitstaging) and push it up.
 * Go to the pipeline that successfully deployed the code to gitstaging and click on the start
   button for the `gitlabproduction_deploy` job.
-* Go to https://gitlab.gitstaging.gitlab.login.gov/lg/identity-devops/-/pipelines and find
+* Go to <https://gitlab.gitstaging.gitlab.login.gov/lg/identity-devops/-/pipelines> and find
   the pipeline that was triggered.  After the SAST jobs run, you should be able to click on
   the `deploy_production` job.  It will say it needs approval, so go click on the link for
   that and approve it in the environments page under the `production` environment.
