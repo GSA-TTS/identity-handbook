@@ -34,7 +34,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 - [**`18f/identity-hostdata`**](https://github.com/18f/identity-hostdata)
   Gem that provides functionality for our Ruby applications on our EC2 infrastructure to download secrets and read configs.
 
-- [**`18f/identity-loging`**](https://github.com/18f/identity-loging)
+- [**`18f/identity-logging`**](https://github.com/18f/identity-logging)
   Gem that sets up common log formatting and configuration for Rails applications
 
 - [**`18F/omniauth_login_dot_gov`**](https://github.com/18F/omniauth_login_dot_gov)
