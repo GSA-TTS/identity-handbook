@@ -21,8 +21,12 @@ changes from outside.
 
 [github-repositories]: {% link _articles/github.md %}#repositories
 
-- **Who merges**: once there is an approval, the author merges their own Pull
-  Request.
+- **Who merges**: once there is at least one approving review, the author
+  merges their own pull request.
+
+  - In rare circumstances where a merge is time-sensitive and the pull request
+    author is unavailable, it may be acceptable for another to merge on their
+    behalf.
 
 - **Who reviews**: in general, any single approving review from another
   [`18f/identity-core`][github-permissions] member is adequate.
@@ -37,10 +41,10 @@ changes from outside.
 
 ## External Contributions
 
-External contributions are welcome! For security reasons, our CI will not run on
-branches from outside contributors. Since external contributors don't have write
-access, a Login.gov team member will need to run the tests themselves and
-merge the code.
+External contributions are welcome! For security reasons, our continuous
+integration pipeline will not run on branches from outside contributors.
+Since external contributors don't have write access, a Login.gov team
+member will need to run the tests themselves and merge the code.
 
 ## ⛔️ "Changes Requested"
 
@@ -51,5 +55,8 @@ Pull Request, or until that review is dismissed.
 Since *Request Changes* is essentially blocking, as a Login.gov convention, we try to
 minimize usages of it to absolutely critical changes needed.
 
-## Using Github Functionality Without Submitting a PR
-The handbook's github article includes information about other github features, such as [running CI outside of a PR]({% link _articles/github.md %}#running-ci-outside-of-a-pull-request) or [sharing work with other engineers]({% link _articles/github.md %}#sharing-work-with-other-engineers).
+## Using GitGub Functionality Without Submitting a Pull Request
+
+The handbook's GitHub article includes information about other GitHub features, such as:
+
+- [Running continuous integration outside of a pull request]({% link _articles/github.md %}#running-ci-outside-of-a-pull-request) or [sharing work with other engineers]({% link _articles/github.md %}#sharing-work-with-other-engineers)
