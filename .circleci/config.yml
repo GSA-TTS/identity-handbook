@@ -2,9 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/ruby:3.2-node
+      - image: cimg/ruby:3.3-node
         environment:
-          BUNDLER_VERSION: 2.1.4
+          BUNDLER_VERSION: 2.5.6
     working_directory: ~/identity-handbook
     steps:
       - checkout
