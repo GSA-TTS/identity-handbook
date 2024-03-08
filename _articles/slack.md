@@ -35,7 +35,7 @@ These handles ping oncall engineers, use for emergencies or urgent items.
 - `@login-partnerships-team` Group to address Login.gov partnerships team members
 - `@login-ux-feds` Group to tag the Login.gov UX federal employees
 - `@login-ux-practice` Group to tag all of the Login.gov UX practitioners
-- `@login-ux-ops` Group to tag the Login.gov UX Operations team 
+- `@login-ux-ops` Group to tag the Login.gov UX Operations team
 - `@github-admins-login` members of this group can edit [`identity-core`](https://github.com/orgs/18F/teams/identity-core) GitHub team membership
 
 ### Sprint Team Handles
@@ -91,24 +91,24 @@ Here are some common Slack Channels for the Login.gov team
 #### Design/UX
 
 - [`#login-ux`](https://gsa-tts.slack.com/archives/CEUQ9FXNJ):
-  {% include tag.html name='design' color='bg-green' %}
+  {% include tag.html name='design' color='bg-success' %}
   Channel for the user experience design team (research, visual, content)
 
 - [`#login-public-site`](https://gsa-tts.slack.com/archives/CNZCW01PX)
   Discussion around the Login.gov marketing/brochure/public site
 
 - [`#login-design-system`](https://gsa-tts.slack.com/archives/C01JVKYE4KD)
-  {% include tag.html name='design' color='bg-green' %}
+  {% include tag.html name='design' color='bg-success' %}
   Discussion around the Login.gov design system
 
 - [`#login-accessibility-wg`](https://gsa-tts.slack.com/archives/C01C89LM6UF)
-  {% include tag.html name='design' color='bg-green' %}
+  {% include tag.html name='design' color='bg-success' %}
   Accessibility working group
 
 #### Engineering/AppDev
 
 - [`#login-appdev`](https://gsa-tts.slack.com/archives/C0NGESUN5):
-  {% include tag.html name='appdev' color='bg-blue' %}
+  {% include tag.html name='appdev' color='bg-primary' %}
   General IDP and Appdev matters
 
 - [`#login-reporting`](https://gsa-tts.slack.com/archives/C5E7EJWF7):
@@ -117,7 +117,7 @@ Here are some common Slack Channels for the Login.gov team
 #### Engineering/DevOps
 
 - [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49):
-  {% include tag.html name='devops' color='bg-green' %}
+  {% include tag.html name='devops' color='bg-success' %}
   Platform and tools channel
 
 - [`#login-new-env-setup`](https://gsa-tts.slack.com/archives/CMW9H0RFX):
@@ -181,7 +181,7 @@ see data/sprint_teams.yml for the data
   Discussion and coordination around professional development, attending conferences, etc.
 
 - [`#login-situation`](https://gsa-tts.slack.com/archives/C5QUGUANN):
-  {% include tag.html name='devops' color='bg-green' %}
+  {% include tag.html name='devops' color='bg-success' %}
   Incident response coordination channel
 
 - [`#login-random`](https://gsa-tts.slack.com/archives/CNMN7K2MA):
