@@ -21,8 +21,8 @@ changes from outside.
 
 [github-repositories]: {% link _articles/github.md %}#repositories
 
-- **Who merges**: once there is at least one approving review, the author
-  merges their own pull request.
+- **Who merges**: once there is at least one approving review by a member of
+  the engineering team, the author merges their own pull request.
 
   - In rare circumstances where a merge is time-sensitive and the pull request
     author is unavailable, it may be acceptable for another to merge on their
