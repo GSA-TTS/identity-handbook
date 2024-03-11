@@ -55,7 +55,7 @@ Pull Request, or until that review is dismissed.
 Since *Request Changes* is essentially blocking, as a Login.gov convention, we try to
 minimize usages of it to absolutely critical changes needed.
 
-## Using GitGub Functionality Without Submitting a Pull Request
+## Using GitHub Functionality Without Submitting a Pull Request
 
 The handbook's GitHub article includes information about other GitHub features, such as:
 
