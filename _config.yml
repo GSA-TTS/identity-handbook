@@ -17,8 +17,12 @@ sass:
   load_paths:
     - node_modules
 
-copy_to_destination:
-  - node_modules/@18f/identity-design-system/dist/assets
+copy_files:
+  - from:
+      - node_modules/@18f/identity-design-system/dist/assets/css
+      - node_modules/@18f/identity-design-system/dist/assets/fonts
+      - node_modules/@18f/identity-design-system/dist/assets/img
+    to: assets
 
 keep_files:
   - assets/js
