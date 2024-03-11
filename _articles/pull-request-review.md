@@ -21,21 +21,21 @@ changes from outside.
 
 [github-repositories]: {% link _articles/github.md %}#repositories
 
-- **Who merges**: once there is at least one approving review by a member of
-  the engineering team, the author merges their own pull request.
+- **Who reviews**: at least one member of the engineering team must review and
+  approve a pull request before it can be merged.
+
+  - In general, any single approving review from another [`18f/identity-core`][github-permissions]
+    member is adequate. However, in some repositories with default reviewer
+    groups (such as [identity-dashboard](https://github.com/18f/identity-dashboard)
+    or [identity-dev-docs](https://github.com/GSA-TTS/identity-dev-docs) with
+    clear owners) it is preferred to wait for a reviewer from those groups
+    before merging.
+
+- **Who merges**: the author merges their own pull request.
 
   - In rare circumstances where a merge is time-sensitive and the pull request
     author is unavailable, it may be acceptable for another to merge on their
     behalf.
-
-- **Who reviews**: in general, any single approving review from another
-  [`18f/identity-core`][github-permissions] member is adequate.
-
-  - However, in some repositories with default reviewer groups
-    (such as [identity-dashboard](https://github.com/18f/identity-dashboard) or
-    [identity-dev-docs](https://github.com/GSA-TTS/identity-dev-docs) with clear
-    owners) it is preferred to wait for a reviewer from those groups before
-    merging.
 
 [github-permissions]: {% link _articles/github.md %}#permissions
 
