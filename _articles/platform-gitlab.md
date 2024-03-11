@@ -36,7 +36,7 @@ Accounts are provisioned in code by the Login.gov Platform Team.  In general
 this will be done as part of on-boarding.
 
 If you do not have an account or need to change your group membership in
-GitLab ask for help in the `#login-devops` channel and `@login-devtools-oncall`
+GitLab ask for help in the `#login-platform-help` channel and `@login-devtools-oncall`
 
 ## Logging In
 
