@@ -142,7 +142,12 @@ To request access to GitHub:
 
 1. Set up GitHub account per [TTS GitHub guidelines](https://handbook.tts.gsa.gov/tools/github/#1-complete-your-profile)
 1. Join the [#admins-github](https://gsa-tts.slack.com/archives/C02KXM98G) Slack channel
-1. Tag `@github-admins-login` and request to add your GitHub username to the `18f/identity-core` group
+1. Tag `@github-admins-login` and request to add your GitHub username to the following teams/orgs:
+   1. [`18f/identity-core`][18f-identity-core]
+   2. [`GSA-TTS/identity-core`][gsa-tts-identity-core]
+
+[18f-identity-core]: https://github.com/orgs/18f/teams/identity-core
+[gsa-tts-identity-core]: https://github.com/orgs/gsa-tts/teams/identity-core
 
 ### Repository Permissions
 
