@@ -142,24 +142,31 @@ To request access to GitHub:
 
 1. Set up GitHub account per [TTS GitHub guidelines](https://handbook.tts.gsa.gov/tools/github/#1-complete-your-profile)
 1. Join the [#admins-github](https://gsa-tts.slack.com/archives/C02KXM98G) Slack channel
-1. Tag `@github-admins-login` and request to add your GitHub username to the `18f/identity-core` group
+1. Tag `@github-admins-login` and request to add your GitHub username to the following teams/orgs:
+   1. [`18f/identity-core`][18f-identity-core]
+   2. [`GSA-TTS/identity-core`][gsa-tts-identity-core]
+
+[18f-identity-core]: https://github.com/orgs/18f/teams/identity-core
+[gsa-tts-identity-core]: https://github.com/orgs/gsa-tts/teams/identity-core
 
 ### Repository Permissions
 
-All Login.gov repos should have the following permissions. They can be changed by a current admin under "Settings" > "Manage Access" in Github.
+All Login.gov repos should have the following permissions. They can be changed by a current admin under "Settings" > "Manage Access" in GitHub.
 
-| Group Name | Role |
-| -----------|------|
-| identity-admins | Admin |
-| identity-core | Write |
-| identity-partners | Read |
-| identity-ro | Read |
+| Group Name | Role | Applicable Orgs |
+| -----------|------| ---- |
+| identity-admins | Admin | 18f, GSA-TTS |
+| identity-core | Write | 18f, GSA-TTS |
+| identity-partners | Read | 18f |
+| identity-ro | Read | 18f |
 
 We should not have any individual access, only team access.
 
 ![Repository Permissions Screenshot]({{site.baseurl}}/images/github-repo-permissions.png)
 
-## Email Notifications and Filters
+## Workflows
+
+### Email Notifications and Filters
 
 Default settings for GitHub can generate a lot of email that can be tough to sift through. Here
 are some strategies for helping manage these notifications:
@@ -168,7 +175,7 @@ are some strategies for helping manage these notifications:
 
     - A filter to get emails out of the Inbox
 
-      **list:18F.github.com**<br />
+      **list:18F.github.com OR list:gsa-tts.github.com**<br />
       Skip Inbox, Apply label: github
 
     - A mentions/me filter to highlight Pull Requests you're participating in (such as being tagged
@@ -189,26 +196,26 @@ are some strategies for helping manage these notifications:
    | -----------------------|--------------------|
    | ![All Activity]({{site.baseurl}}/images/github-all-activity.png) | ![Participating]({{site.baseurl}}/images/github-participating.png) |
 
-## Running CI Outside of a Pull Request
+### Running CI Outside of a Pull Request
 
 Engineers may want to run CI before submitting their code for review. For example, this can be a helpful way to check that all tests pass. To run CI on a branch without creating a pull request:
 
-1. Push the up to date branch to github
-2. Navigate to https://gitlab.login.gov/lg/identity-idp/-/pipelines/new
+1. Push the up to date branch to GitHub
+2. Navigate to <https://gitlab.login.gov/lg/identity-idp/-/pipelines/new>
 3. In the drop-down below `Run for branch name or tag`, select the branch for which you'd like to run CI
 
-## Sharing Work With Other Engineers
+### Sharing Work With Other Engineers
 
-Engineers might want to share work with other engineers, such as before starting a pairing session. To share work without creating a PR, consider using github's "compare" feature.
+Engineers might want to share work with other engineers, such as before starting a pairing session. To share work without creating a PR, consider using GitHub's "compare" feature.
 
-1. Push the up to date branch to github
+1. Push the up to date branch to GitHub
 2. From the repo's home page, select the branch
 3. Click "Contribute" and select the left button, "Compare"
-   ![ExampleUseOfCompare]({{site.baseurl}}/images/example-use-of-compare.png)
-4. Share the resulting url, eg https://github.com/18F/identity-idp/compare/branch-name-goes-here, with your fellow engineer.
+   ![Screenshot highlighting "Compare Branch" button]({{site.baseurl}}/images/example-use-of-compare.png)
+4. Share the resulting url, eg <https://github.com/18F/identity-idp/compare/branch-name-goes-here>, with your fellow engineer.
 
-Additionally, here is [a script called `git-cmp`](https://github.com/zachmargolis/margs-dev/blob/master/scripts/git-cmp) that allows you to generate github compare urls from local branches.
+Additionally, you can use [a script like `git-cmp`](https://github.com/zachmargolis/margs-dev/blob/main/scripts/git-cmp) that allows you to generate github compare urls from local branches.
 
-## Code Reviews
+### Code Reviews
 
 See [Pull Request Review]({% link _articles/pull-request-review.md %})
