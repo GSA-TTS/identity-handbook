@@ -536,29 +536,6 @@ aws-vault exec sandbox-power --
     ./bin/ssm-command -h
 ```
 
-### `passenger-restart`
-
-{%- capture alert_content -%}
-**2022-03-15**: This script is **not safe for prod use** at this time, it drops live requests instead of rotating smoothly. See [identity-devops#5651](https://github.com/18F/identity-devops/issues/5651) for more information. Only use it in emergency cases, or in a lower environment where live traffic does not matter.
-{%- endcapture -%}
-
-{% include alert.html content=alert_content alert_class="usa-alert--error" %}
-
-"Safely" restart the NGINX/Passenger service which reloads `application.yml` from
-S3.
-
-```bash
-aws-vault exec sandbox-power --
-    ./bin/ssm-command -d passenger-restart -r idp -e dev
-```
-
-If this fails it is recommended that you perform a recycle to ensure
-all instances are running from the same configuration.
-
-Check out [passenger-restart](https://github.com/18F/identity-devops/wiki/Troubleshooting-Quick-Reference#passenger-restart) for more information on what the command can do
-
-### `worker-restart`
-
 Safely restart GoodJob (idp-workers) service.
 
 ```bash

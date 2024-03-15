@@ -18,9 +18,6 @@ environment by merging default values with an environment-specific YAML file.
 * In deployed environments, this file is downloaded from S3 when activating or deploying an instance
   (see [`deploy/activate`][deploy-activate] and the [`activate.rb`][download-from-s3]).
 
-**Changing configuration for a deployed application [requires a passenger restart][passenger-restart]**, since
-this merge step only happens at activation.
-
 The S3 buckets that contain secrets are versioned, so we can recover old versions
 if needed.
 
@@ -30,7 +27,6 @@ machine when done.
 
 [deploy-activate]: https://github.com/18F/identity-idp/blob/main/deploy/activate
 [download-from-s3]: https://github.com/18F/identity-idp/blob/a95fd33d24c6761818993cfbc334a28986783034/lib/deploy/activate.rb#L93-L97
-[passenger-restart]: {% link _articles/appdev-deploy.md %}#passenger-restart
 
 ## Using `app-s3-secret`
 
