@@ -23,7 +23,7 @@ We deploy { two sample apps } &times; { four environments } in cloud.gov:
 
 ## Deploying
 
-The sample apps deploy automatically to both `dev` and `int` environments when changes are merged to the `main` branch.
+The sample apps deploy automatically when changes are merged to the `main` branch.
 
 Refer to each project's CircleCI configuration for details on the deployment workflow:
 
