@@ -13,7 +13,7 @@ envs:
 
 ## Apps
 
-We deploy { two sample apps } &times; { two environments } in cloud.gov:
+We deploy { two sample apps } &times; { four environments } in cloud.gov:
 
 | | [OpenID Connect](https://github.com/18f/identity-oidc-sinatra/) | [SAML](https://github.com/18f/identity-oidc-saml/) |
 |---|-----|
