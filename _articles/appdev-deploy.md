@@ -308,6 +308,9 @@ new configurations (config from S3).
 
 1. Make the config changes
 
+1. Announce the configuration change in `#login-appdev`
+    - Share the diff as a thread comment, omitting any sensitive information
+
 1. Recycle the boxes
 
    ```bash
