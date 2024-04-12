@@ -109,6 +109,13 @@ Finally, read in the certificates from the bundle and look for a replacement:
 openssl pkcs7 -inform DER -in tmp/bundle.p7c -print_certs -text
 ```
 
+## Using FPKI Notifications to prepare for a scheduled replacement
+
+If you aren't able to find a replacement certificate using the options described above, it may not
+be issued yet. GSA's FICAM program publishes [notifications for Federal PKI ecosystem changes](https://www.idmanagement.gov/fpki/notifications/#notifications),
+where you may find a notice describing whether to expect a replacement certificate to be issued
+before the scheduled expiration of the certificate.
+
 ## Using CloudWatch to find issuers and service providers
 
 CloudWatch may be used to find certificate-related errors by issuer and service provider.
