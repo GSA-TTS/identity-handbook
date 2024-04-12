@@ -50,7 +50,9 @@
     "wargames",
     "wireframe",
     "wireframes",
-    "yubikey"
+    "yubikey",
+    "FICAM",
+    "FPKI"
   ],
   "patterns": [
     {
