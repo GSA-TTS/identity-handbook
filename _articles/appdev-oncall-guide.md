@@ -92,14 +92,9 @@ end
 
 ![Screenshot of expiring PKI Slack alert]({{ site.baseurl }}/images/slack-pki-cert-alert.jpg)
 
-If you see a Slack alert like this, it means that a cert used to verify PIV/CAC cards will expire in 30 days. Check the
-[Federal Public Key Infrastructure Guides Certificate Authorities](https://fpki.idmanagement.gov/ca/) list for info
-on the the most up to date certs.
+If you see a Slack alert like this, it means that a certificate used to verify PIV/CAC cards will expire within 30 days.
 
-Related articles:
-  - [Common OpenSSL command line recipes]({% link _articles/openssl-recipes.md %})
-  - [PIV/CAC Debugging guide]({% link _articles/troubleshooting-pivcacs.md %})
-
+Refer to [Troubleshooting expiring PIV/CAC certs]({% link _articles/toubleshooting-expiring-pivcac.md %}) for guidance on replacing an expiring certificate.
 
 ## Response Times
 
