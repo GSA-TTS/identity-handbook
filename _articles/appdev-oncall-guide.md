@@ -94,7 +94,7 @@ end
 
 If you see a Slack alert like this, it means that a certificate used to verify PIV/CAC cards will expire within 30 days.
 
-Refer to [Troubleshooting expiring PIV/CAC certs]({% link _articles/toubleshooting-expiring-pivcac.md %}) for guidance on replacing an expiring certificate.
+Refer to [Troubleshooting expiring PIV/CAC certs]({% link _articles/troubleshooting-expiring-pivcac.md %}) for guidance on replacing an expiring certificate.
 
 ## Response Times
 
