@@ -116,6 +116,25 @@ be issued yet. GSA's FICAM program publishes [notifications for Federal PKI ecos
 where you may find a notice describing whether to expect a replacement certificate to be issued
 before the scheduled expiration of the certificate.
 
+## Handling expiring certificates when no replacements exist
+
+If you've exhausted all of the options described above and there are no replacement certificates
+available up to and beyond the expiration of certificate, then it's quite possible that the
+certificate is expected to expire and not be replaced.
+
+In these scenarios, you should:
+
+1. Check logs for PKI activity issued by this certificate, to understand expected impact over the
+   course of a few weeks leading up to the expiration of the certificate.
+    ```
+    # Log group: prod_/srv/pki-rails/shared/log/production.log
+    filter issuer like /CN=[CN of expiring certificate]/
+    ```
+2. Remove the certificate from [`identity-pki`](https://github.com/18f/identity-pki) if there is
+   no replacement, the certificate has expired, and there is no activity reported in the logs above
+   which would indicate that end-users would be impacted by the expiration and removal of the
+   certificate.
+
 ## Using CloudWatch to find issuers and service providers
 
 CloudWatch may be used to find certificate-related errors by issuer and service provider.
