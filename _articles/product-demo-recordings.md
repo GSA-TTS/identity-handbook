@@ -7,7 +7,7 @@ description: "Creating a simple product demo with a mobile device"
 
 This article describes a few simple tips and tricks for creating a product demo with a mobile device.
 
-#### Setup
+## Setup
 
 * On an iPhone or other iOS device, you may need to change your settings to enable screen recordings. Apple provides [instructions on how to do so in their knowledge base](https://support.apple.com/en-us/HT207935).
 * You may want to create an Apple Note to act as a "title slide." This might be a good way to introduce the demo, and provide future viewers with context about what they're about to see.
