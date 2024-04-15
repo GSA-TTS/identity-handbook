@@ -19,4 +19,3 @@ This article describes a few simple tips and tricks for creating a product demo 
 * As a demo recording, viewers may not be as familiar with Login.gov or the product features you're trying to showcase. It's helpful to set context, whenever possible.
 * When creating a screen recording, you should describe what actions you're taking (eg. "I'm going to scroll" or "I'm going to tap 'Continue' now") so the audience can understand what is happening.
 * You can upload your recording from your iOS device to Google Drive. From there, you can embed it in a presentation or download it on your Mac workstation to use elsewhere.
-
