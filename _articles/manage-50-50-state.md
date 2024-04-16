@@ -33,8 +33,18 @@ existing data.
 
 ### Remove a table or field
 * Deploy 1: Remove all reads in the code
+    * If removing a field from an in-use table, you need to tell ActiveRecord to ignore that field
+
+      ```ruby
+      class MyTable < ApplicationRecord
+        self.ignored_columns = %w[my_column_to_drop]
+      end
+      ```
+
 * Deploy 2: Remove all writes in the code
 * Deploy 3: Remove the table/field
+    * If removing a field, the field can be removed from the ignored columns list
+    * If removing a table, the entire model file can be removed
 
 ## Persistent data structures in redis
 
