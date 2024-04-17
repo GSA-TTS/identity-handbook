@@ -194,6 +194,12 @@ To differentiate, we could say:
 
 > The user proofed their identity to complete identity verification.
 
+### IPP
+**In-Person Proofing**
+
+A form of [Identity Verification](#idv) that involves a user going in-person to a location to have their identity verified,
+such as going to participating U.S. Postal Service locations.
+
 ### IVS
 **Identity Verification Services**
 
