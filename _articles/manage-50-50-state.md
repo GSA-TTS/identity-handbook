@@ -33,8 +33,22 @@ existing data.
 
 ### Remove a table or field
 * Deploy 1: Remove all reads in the code
+    * If removing a field from an in-use table, mark that field as an ignored columns.
+      This is necessary in the IDP because it is [configured to explicitly load columns][idp-explicit-config]
+      instead of using `SELECT *`.
+
+      ```ruby
+      class MyTable < ApplicationRecord
+        self.ignored_columns = %w[my_column_to_drop]
+      end
+      ```
+
 * Deploy 2: Remove all writes in the code
 * Deploy 3: Remove the table/field
+    * If removing a field, the field can be removed from the ignored columns list
+    * If removing a table, the entire model file can be removed
+
+[idp-explicit-config]: https://github.com/18F/identity-idp/blob/c4a0cc098867a209f8196c312024b24001b6fa9b/app/models/application_record.rb#L6-L7
 
 ## Persistent data structures in redis
 
