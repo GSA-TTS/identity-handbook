@@ -3,11 +3,11 @@ run: build_js
 
 build: setup build_js build_jekyll
 
-build_jekyll: .env
-	/bin/bash -c "source .env && bundle exec jekyll build"
+build_jekyll:
+	bundle exec jekyll build
 
-watch_jekyll: .env
-	/bin/bash -c "source .env && bundle exec jekyll serve --watch"
+watch_jekyll:
+	bundle exec jekyll serve --watch
 
 build_js:
 	npm run build
