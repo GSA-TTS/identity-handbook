@@ -27,6 +27,7 @@ export const loadPrivateEye = () => {
       "ea.gsa.gov",
       "email.gsa.gov",
       "gcims.gsa.gov",
+      "gitlab.login.gov",
       "github.com/18f/identity-devops",
       "github.com/18f/identity-devops-private",
       "github.com/18f/identity-handbook-private",
