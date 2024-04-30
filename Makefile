@@ -35,7 +35,4 @@ test: build
 clean:
 	rm -rf _site
 
-.env:
-	cp -n .env.example .env
-
 .PHONY: run build build_jekyll watch_jekyll build_js watch_js setup lint typecheck test clean
