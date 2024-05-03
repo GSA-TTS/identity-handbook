@@ -10,14 +10,11 @@
   },
   "devDependencies": {
     "@18f/eslint-plugin-identity": "^2.0.0",
-    "@types/js-yaml": "^4.0.5",
-    "@types/marked": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
     "@typescript-eslint/parser": "^5.16.0",
     "cspell": "^6.28.0",
     "eslint": "^8.11.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
@@ -39,7 +36,7 @@
     "watch": "concurrently npm:watch:*",
     "prestart": "npm run clean:js",
     "start": "npm run watch",
-    "lint": "eslint assets/js --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint assets/js --ext .js,.ts",
     "typecheck": "tsc",
     "pages": "npm run build"
   }
