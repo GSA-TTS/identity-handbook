@@ -5,6 +5,7 @@ layout: article
 category: Development
 subcategory: Code
 cspell: ignore omniauth
+redirect_from: /articles/github.html
 ---
 
 ## Repositories
@@ -71,7 +72,7 @@ Some repositories in GitHub are mirrored from our self-hosted GitLab.
 
 ### Platform and Infrastructure
 
-- [**`18f/identity-devops`**](https://github.com/18f/identity-devops)
+- [**`lg/identity-devops`**](https://gitlab.login.gov/lg/identity-devops)
   Platform CLI tools, Terraform for infrastructure as code (IaC), Chef for instance (server) provisioning, and so much more!  (Too much more?)
 
 - [**`18f/identity-devops-private`**](https://github.com/18f/identity-devops-private)
