@@ -6,12 +6,6 @@
     "anchor-js": "^4.2.2",
     "concurrently": "^8.0.1",
     "esbuild": "^0.17.15",
-    "htm": "^3.1.0",
-    "js-yaml": "^4.1.0",
-    "marked": "^4.0.12",
-    "preact": "^10.6.6",
-    "preact-fetching": "^0.1.0",
-    "preact-markup": "^2.1.1",
     "simple-jekyll-search": "^1.10.0"
   },
   "devDependencies": {
