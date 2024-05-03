@@ -1,9 +1,13 @@
+{% comment %}
+Includes:
+- article: page to link to (or directly to its .redirect_to)
+{% endcomment %}
 {%- if include.article.redirect_to -%}
-  {%- if include.redirect_to contains '://' -%}
-    {{ article.redirect_to }}
+  {%- if include.article.redirect_to contains '://' -%}
+    {{ include.article.redirect_to }}
   {%- else -%}
-    {{ article.redirect_to | prepend: site.baseurl }}
+    {{ include.article.redirect_to | prepend: site.baseurl }}
   {%- endif -%}
 {%- else -%}
-  {{ article.url | prepend: site.baseurl }}
+  {{ include.article.url | prepend: site.baseurl }}
 {%- endif -%}
