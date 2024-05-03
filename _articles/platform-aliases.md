@@ -4,5 +4,5 @@ description: "Reference/runbook for the custom commands created via the login-al
 layout: article
 category: Platform
 subcategory: References
-redirect_to: https://github.com/18F/identity-devops/wiki/Custom-Aliases-and-Functions-for-identity-devops
+redirect_to: https://gitlab.login.gov/lg/identity-devops/-/wikis/Custom-Aliases-and-Functions-for-identity-devops
 ---

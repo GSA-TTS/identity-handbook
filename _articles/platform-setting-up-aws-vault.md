@@ -4,5 +4,5 @@ description: This runbook is for getting set up with, and using, `aws-vault`, a 
 layout: article
 category: Platform
 subcategory: How To
-redirect_to: https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault
+redirect_to: https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-AWS-Vault
 ---

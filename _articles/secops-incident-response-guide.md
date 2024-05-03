@@ -68,7 +68,7 @@ Initial steps:
     * Call in on-call members using the @login-appdev-oncall and @login-devops-oncall handles in Slack
     * Use @here in [#login-situation][login-situation] if still understaffed
   * After hours:
-    * Use Splunk On-Call page on-call engineers (See [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts)). If you're unsure whether or not to page somebody, lean towards paging them as a way to get a fresh set of eyes.
+    * Use Splunk On-Call page on-call engineers (See [Emergency Contacts](https://gitlab.login.gov/lg/identity-devops/-/wikis/On-Call-Guide-Quick-Reference#emergency-contacts)). If you're unsure whether or not to page somebody, lean towards paging them as a way to get a fresh set of eyes.
 * Roles are assigned when possible as responders join the incident:
   * **Situation Lead (SL)**: - Responsible for ensuring all following steps are completed. [Situation Lead Checklist]({% link _articles/incident-response-checklist.md %}#situation-lead)
   * **Technical Lead (TL)**: Leads technical investigation and mitigation. [Technical Lead Checklist]({% link _articles/incident-response-checklist.md %}#technical-lead)
@@ -83,7 +83,7 @@ Roles proceed as follows:
   * Adjusts the severity of the incident based on [impact assessment](#impact-assessment) as needed
 * **Tech Lead (TL)**:
   * Leads technical response, delegating technical tasks as needed
-  * Checks for relevant [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) and initiates use
+  * Checks for relevant [Incident Response Runbooks](https://gitlab.login.gov/lg/identity-devops/-/wikis/Incident-Response-Runbooks) and initiates use
   * Ensures screen sharing and other methods are used
 * **Scribe (SC)**:
   * Records significant activities in [#login-situation][login-situation] channel to create a timeline
@@ -92,7 +92,7 @@ Roles proceed as follows:
   * Creates the Incident Review document by copying [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and shares a link in #login-situation
 * **Messenger (M)**:
   * Creates the official tracking issue for the incident: [Incident Template](https://github.com/18F/identity-security-private/issues/new?template=incidents.md)
-  * Uses [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov>, IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called), and our [GSA ISSO and ISSM](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/#emergency-contacts) **within 1 hour** of start of incident
+  * Uses [GSA IR Email Template](https://docs.google.com/document/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA) to create and send notice to GSA Incident Response <gsa-ir@gsa.gov>, IT Service Desk <itservicedesk@gsa.gov> (or GSA IT Helpline called), and our [GSA ISSO and ISSM](https://gitlab.login.gov/lg/identity-devops/-/wikis/On-Call-Guide-Quick-Reference/#emergency-contacts) **within 1 hour** of start of incident
   * If incident is an outage (problem impacting users' ability to use Login.gov), SL updates the [Login.gov StatusPage](https://logingov.statuspage.io/) following [StatusPage Process - Managing an Outage]({% link _articles/statuspage-process.md %}#managing-an-outage)
   * Checks the incident against the [Incident Response Thresholds for Communications](https://docs.google.com/document/d/19LfFyjlUeM2bbcztaMCswFm68FL5X51zzG1yNMQapz0/edit?skip_itp2_check=true&pli=1) and notify Login.gov comms before the incident reaches 50% of its length of time limit
 
@@ -284,7 +284,7 @@ shared in the [#login-situation][login-situation] channel.
 
 ### Emergency Contacts
 
-The [Emergency Contact List](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts) includes
+The [Emergency Contact List](https://gitlab.login.gov/lg/identity-devops/-/wikis/On-Call-Guide-Quick-Reference#emergency-contacts) includes
 contact and escalation information for Login.gov, GSA, and vendors.
 
 ### Crisis Comms

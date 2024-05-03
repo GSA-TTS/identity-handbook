@@ -4,5 +4,5 @@ description: Runbooks for scaling out or up various resources in anticipation of
 layout: article
 category: Platform
 subcategory: How To
-redirect_to: https://github.com/18F/identity-devops/wiki/Infrastructure-Scaling
+redirect_to: https://gitlab.login.gov/lg/identity-devops/-/wikis/Infrastructure-Scaling
 ---

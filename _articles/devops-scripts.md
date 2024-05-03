@@ -13,7 +13,7 @@ Each script also has a `--help` with additional documentation.
 
 ## Prerequisites
 
-Before you can access any systems, you will need to [set up AWS-vault](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault)
+Before you can access any systems, you will need to [set up AWS-vault](https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-AWS-Vault)
 
 ## `app-s3-secret`
 
@@ -277,7 +277,7 @@ aws-vault exec prod-power -- \
 
 ### `review-pass`
 
-Activates a user that has a profile deactivated due to a pending ThreatMetrix review status. 
+Activates a user that has a profile deactivated due to a pending ThreatMetrix review status.
 Requires the user UUID from the `uuid-lookup` task.
 
 ```bash
@@ -294,7 +294,7 @@ aws-vault exec prod-power -- \
 ```
 
 ### `review-reject`
-Deactivates a user that has a pending ThreatMetrix review status with the reason "ThreatMetrix review rejected". 
+Deactivates a user that has a pending ThreatMetrix review status with the reason "ThreatMetrix review rejected".
 Requires the user UUID from the `uuid-lookup` task.
 
 ```bash

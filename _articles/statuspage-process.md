@@ -119,7 +119,7 @@ partner communication if maintenance must be performed with less than 14 days
 notice.
 
 Where possible the recommended change window should be used for maintenance.
-See [Runbook: Maintenance Window Tasks](https://github.com/18F/identity-devops/wiki/Runbook:-Maintenance-Window-Tasks)
+See [Runbook: Maintenance Window Tasks](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Maintenance-Window-Tasks)
 for the suggested time window.  It is recommended that you reach out to the
 Partnerships team before scheduling maintenance in production, and that you
 do the same for our `sandbox` (integration testing) environment.

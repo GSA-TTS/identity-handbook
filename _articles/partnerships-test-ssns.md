@@ -15,7 +15,7 @@ On rare occasions, a partner may require us to permit a validly-formatted SSN in
 
 1. Have the partner provide a list of specific SSNs that need to be permitted
 2. Have the latest version of the [`18F/identity-devops`](https://github.com/18F/identity-devops) repo cloned
-2. Have sandbox access in AWS and [AWS Vault set up](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault)
+2. Have sandbox access in AWS and [AWS Vault set up](https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-AWS-Vault)
 
 ## Update the IdP Configuration
 

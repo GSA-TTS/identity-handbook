@@ -28,7 +28,7 @@ Login.gov's Platform Teams support the GitLab service.  For help from an on-call
 platform engineer you can Slack a question in `#login-devops` and `@login-devtools-oncall`
 
 For general GitLab support you can also directly use GitLab support.
-See [GitLab Licensing and Support](https://github.com/18F/identity-devops/wiki/GitLab-Ultimate-Licensing-and-Support)
+See [GitLab Licensing and Support](https://gitlab.login.gov/lg/identity-devops/-/wikis/GitLab-Ultimate-Licensing-and-Support)
 
 ## Getting an Account
 
@@ -56,7 +56,7 @@ To log in:
 
 Note - If `secure.login.gov` is not available, existing Personal Access Tokens
 continue to function.  We also have break-glass procedures if needed.
-See [Runbook: GitLab Access Contingency Plan](https://github.com/18F/identity-devops/wiki/Runbook:-Gitlab-Access-Contingency-Plan)
+See [Runbook: GitLab Access Contingency Plan](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Gitlab-Access-When-IDP-is-Down)
 
 ## Personal Access Tokens
 
@@ -92,13 +92,13 @@ a multitude of installed packages.  Here are some troubleshooting resources:
 
 ### Login.gov GitLab Runbooks
 
-* [GitLab Access when Login.gov Is Down](https://github.com/18F/identity-devops/wiki/Runbook:-Gitlab-Access-When-IDP-is-Down)
-* [GitLab CI Troubleshooting](https://github.com/18F/identity-devops/wiki/Runbook:-Gitlab-CI-Troubleshooting)
-* [GitLab Backup and Disaster Recovery](https://github.com/18F/identity-devops/wiki/Disaster-Recovery:-Gitlab-Backup-and-Restore)
+* [GitLab Access when Login.gov Is Down](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Gitlab-Access-When-IDP-is-Down)
+* [GitLab CI Troubleshooting](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Gitlab-CI-Troubleshooting)
+* [GitLab Backup and Disaster Recovery](https://gitlab.login.gov/lg/identity-devops/-/wikis/Disaster-Recovery:-Gitlab-Backup-and-Restore)
 
 ## Getting Support from GitLab
 
-See [GitLab Licensing and Support](https://github.com/18F/identity-devops/wiki/GitLab-Ultimate-Licensing-and-Support)
+See [GitLab Licensing and Support](https://gitlab.login.gov/lg/identity-devops/-/wikis/GitLab-Ultimate-Licensing-and-Support)
 
 ## Gitlab Staging Environment
 

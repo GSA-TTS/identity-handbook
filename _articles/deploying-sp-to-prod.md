@@ -32,7 +32,7 @@ Here is a list of items that need to be completed to deploy the configuration fo
 
 **Prerequisites:**
 
-Make sure you have prod-power access to run commands for aws-vault. You will have to go through steps listed in [identity-devops](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault) repo for setting up your production access.
+Make sure you have prod-power access to run commands for aws-vault. You will have to go through steps listed in [identity-devops](https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-AWS-Vault) repo for setting up your production access.
 
 **Step 1:**
   - make sure you are in the root directory of the identity-devops repository.

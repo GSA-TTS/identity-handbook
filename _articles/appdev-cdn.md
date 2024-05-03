@@ -10,8 +10,8 @@ redirect_from: /articles/appdev-static-assets-cdn.html
 
 To help reduce load on the IdP application servers, increase resiliency to DDoS attacks, and allow for
 more robust error handling and maintenance pages we use Cloudfront to serve both static and dynamic
-content. To smooth deployments, we serve static assets like images, CSS, and JavaScript from an S3 bucket 
-and dynamic content from the servers using Cloudfront path based behaviors. This solution prevents 404s 
+content. To smooth deployments, we serve static assets like images, CSS, and JavaScript from an S3 bucket
+and dynamic content from the servers using Cloudfront path based behaviors. This solution prevents 404s
 when a browser accesses static content referenced in the newly deployed application server which
 then fails to load when directed to an older application server which does not have the new asset.
 
@@ -36,6 +36,6 @@ to route requests to your static content.
 
 ## Further Information
 
-See [Runbook: CloudFront CDN](https://github.com/18F/identity-devops/wiki/Runbook:-CloudFront-CDN) for technical
+See [Runbook: CloudFront CDN](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-CloudFront-CDN) for technical
 and troubleshooting details.
 

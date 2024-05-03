@@ -92,7 +92,7 @@ Non-authoritative answer:
 _smtp._tls.login.gov	text = "v=TLSRPTv1;rua=mailto:tls.reports@gsa.gov,mailto:tls-reports@login.gov"
 ~~~
 
-See [Runbook: Email - MTA-STS](https://github.com/18F/identity-devops/wiki/Runbook:-Email#MTA-STS) for implementation details.
+<!-- See [Runbook: Email - MTA-STS](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Email#MTA-STS) for implementation details. -->
 
 ## Outbound Sending from @login.gov
 
