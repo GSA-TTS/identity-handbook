@@ -1,15 +1,18 @@
 ---
-title: GitHub
+title: GitHub & GitLab
 description: Team code repos, permissions, notification strategies
 layout: article
 category: Development
 subcategory: Code
 cspell: ignore omniauth
+redirect_from: /articles/github.html
 ---
 
 ## Repositories
 
-View a [list of all repositories](https://github.com/topics/login-gov) tagged for Login.gov
+View a [list of all repositories](https://github.com/topics/login-gov) tagged for Login.gov.
+
+Some repositories in GitHub are mirrored from our self-hosted GitLab.
 
 ### Applications
 
@@ -69,7 +72,7 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
 
 ### Platform and Infrastructure
 
-- [**`18f/identity-devops`**](https://github.com/18f/identity-devops)
+- [**`lg/identity-devops`**](https://gitlab.login.gov/lg/identity-devops)
   Platform CLI tools, Terraform for infrastructure as code (IaC), Chef for instance (server) provisioning, and so much more!  (Too much more?)
 
 - [**`18f/identity-devops-private`**](https://github.com/18f/identity-devops-private)
@@ -129,9 +132,12 @@ View a [list of all repositories](https://github.com/topics/login-gov) tagged fo
   Hosted on: [Cloud.gov Pages](https://pages.cloud.gov/)<br />
   This handbook!
 
-- [**`18f/identity-handbook-private`**](https://github.com/18f/identity-handbook-private) <br />
-  [login-handbook.app.cloud.gov](https://login-handbook.app.cloud.gov/)<br />
-  Hosted on: [Cloud.gov](https://dashboard.fr.cloud.gov/)<br />
+- [**`lg-public/identity-internal-handbook`**](https://gitlab.login.gov/lg-public/identity-internal-handbook/)<br />
+  [lg-public.pages.production.gitlab.login.gov/identity-internal-handbook/](https://lg-public.pages.production.gitlab.login.gov/identity-internal-handbook/)<br />
+  Hosted on: GitLab Pages (self-hosted)<br />
+  Internal version of this handbook (Private to Login.gov team only)
+
+- [**`18f/identity-handbook-private`**](https://github.com/18f/identity-handbook-private){: .deprecated-link} (Archived)<br />
   Old, private version of this handbook! (Private to Login.gov team only)
 
 ## Permissions

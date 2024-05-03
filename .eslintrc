@@ -16,8 +16,5 @@
       "fragment": "Fragment",
       "version": "16.2"
     }
-  },
-  "rules": {
-    "react/jsx-uses-react": "error"
   }
 }

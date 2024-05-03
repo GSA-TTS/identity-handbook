@@ -3,20 +3,5 @@ title: Private Articles
 permalink: /private/
 layout: article
 icon: lock
+redirect_to: https://lg-public.pages.production.gitlab.login.gov/identity-internal-handbook/
 ---
-{% if site.env.BRANCH == 'main' %}
-  {% assign private_handbook_branch = site.env.PRIVATE_HANDBOOK_BRANCH %}
-{% else %}
-  {% assign private_handbook_branch = site.env.PRIVATE_HANDBOOK_BRANCH_PREVIEW %}
-{% endif %}
-{% assign private_handbook_branch = private_handbook_branch | default: 'main' %}
-
-<div id="private-container" data-private-handbook-branch="{{private_handbook_branch}}"></div>
-
-<script type="module">
-  import {
-    setUpPrivatePage
-  } from '{{ "/assets/js/private-articles.js" | prepend: site.baseurl }}';
-
-  setUpPrivatePage();
-</script>

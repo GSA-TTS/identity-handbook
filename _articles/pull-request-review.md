@@ -19,7 +19,7 @@ for contributions from the Login.gov team (anybody in the
 [external contributions](#external-contributions) for more information on
 changes from outside.
 
-[github-repositories]: {% link _articles/github.md %}#repositories
+[github-repositories]: {% link _articles/github-gitlab.md %}#repositories
 
 - **Who reviews**: at least one member of the engineering team must review and
   approve a pull request before it can be merged.
@@ -37,7 +37,7 @@ changes from outside.
     author is unavailable, it may be acceptable for another to merge on their
     behalf.
 
-[github-permissions]: {% link _articles/github.md %}#permissions
+[github-permissions]: {% link _articles/github-gitlab.md %}#permissions
 
 ## External Contributions
 
@@ -59,4 +59,4 @@ minimize usages of it to absolutely critical changes needed.
 
 The handbook's GitHub article includes information about other GitHub features, such as:
 
-- [Running continuous integration outside of a pull request]({% link _articles/github.md %}#running-ci-outside-of-a-pull-request) or [sharing work with other engineers]({% link _articles/github.md %}#sharing-work-with-other-engineers)
+- [Running continuous integration outside of a pull request]({% link _articles/github-gitlab.md %}#running-ci-outside-of-a-pull-request) or [sharing work with other engineers]({% link _articles/github-gitlab.md %}#sharing-work-with-other-engineers)
