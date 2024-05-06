@@ -75,16 +75,16 @@ Some repositories in GitHub are mirrored from our self-hosted GitLab.
 - [**`lg/identity-devops`**](https://gitlab.login.gov/lg/identity-devops)
   Platform CLI tools, Terraform for infrastructure as code (IaC), Chef for instance (server) provisioning, and so much more!  (Too much more?)
 
-- [**`18f/identity-devops-private`**](https://github.com/18f/identity-devops-private)
+- [**`lg/identity-devops-private`**](https://gitlab.login.gov/lg/identity-devops-private)
   Per-application environment additional Terraform and Chef configurations
 
-- [**`18f/identity-terraform`**](https://github.com/18f/identity-terraform)
+- [**`lg/identity-terraform`**](https://gitlab.login.gov/lg/identity-terraform)
   Publicly shared Terraform modules
 
-- [**`18f/identity-cookbooks`**](https://github.com/18f/identity-cookbooks)
+- [**`lg/identity-cookbooks`**](https://gitlab.login.gov/lg/identity-cookbooks)
   Publicly shared Chef cookbooks
 
-- [**`18f/identity-base-image`**](https://github.com/18f/identity-base-image)
+- [**`lg/identity-base-image`**](https://gitlab.login.gov/lg/identity-base-image)
   AWS EC2 Image (AMI) definitions and build pipelines to match
 
 - [**`18f/identity-monitor`**](https://github.com/18f/identity-monitor){: .deprecated-link} (Archived)
