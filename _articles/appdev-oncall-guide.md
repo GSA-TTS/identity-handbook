@@ -31,7 +31,7 @@ See [Splunk On-Call]({% link _articles/platform-splunk-oncall.md %}) for more on
 
 Your first emergency contact should always be `@login-devops-oncall` - Make sure they are aware anytime things are going poorly.
 
-For Login.gov and vendor emergency contact information see [Emergency Contacts](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts)
+For Login.gov and vendor emergency contact information see [Emergency Contacts](https://gitlab.login.gov/lg/identity-devops/-/wikis/On-Call-Guide-Quick-Reference#emergency-contacts)
 
 ## Handoff
 

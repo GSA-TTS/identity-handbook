@@ -57,4 +57,4 @@ the experimental one will be created for all environments.
 
 ## Technical Information
 
-For technical information on creating dashboards and alerts, see [Monitoring and observability: CloudWatch queries, alarms and dashboards](https://github.com/18F/identity-devops/wiki/Monitoring-and-observability:-CloudWatch-queries,-alarms-and-dashboards).
+For technical information on creating dashboards and alerts, see [Monitoring and observability: CloudWatch queries, alarms and dashboards](https://gitlab.login.gov/lg/identity-devops/-/wikis/Monitoring-and-observability:-CloudWatch-queries,-alarms-and-dashboards).

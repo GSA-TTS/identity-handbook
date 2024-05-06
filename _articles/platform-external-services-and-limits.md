@@ -4,5 +4,5 @@ description: Notes on rate and cost limited external services used by IdP and ou
 layout: article
 category: Platform
 subcategory: References
-redirect_to: https://github.com/18F/identity-devops/wiki/External-Services-and-Limits
+redirect_to: https://gitlab.login.gov/lg/identity-devops/-/wikis/External-Services-and-Limits
 ---

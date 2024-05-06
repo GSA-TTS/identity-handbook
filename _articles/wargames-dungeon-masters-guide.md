@@ -96,7 +96,7 @@ except for the [Prior to session] component of breaking something.
 
 A runbook scenario is one that focuses on executing a fixed runbook to verify
 and refine it.  For example, you could conduct a Wargame where the team
-is guided toward needing to use our basic [HA Test Contingency Plan Runbook](https://github.com/18F/identity-devops/wiki/HA-test---Contingency-Plan---Runbook)
+is guided toward needing to use our basic [HA Test Contingency Plan Runbook](https://gitlab.login.gov/lg/identity-devops/-/wikis/HA-test---Contingency-Plan---Runbook)
 to recover from an availability zone outage that did not cleanly failover.
 
 These scenarios are also useful for addressing annual Contingency Plan Training
@@ -191,7 +191,7 @@ Suggested flow:
   be seen as a failing by the DM
 * Limit the incident response time to around 40 minutes to leave enough time for post-game discussion and any planning
   for the next scenario.
-* [Psychological safety](https://risk-engineering.org/concept/psychological-safety) 
+* [Psychological safety](https://risk-engineering.org/concept/psychological-safety)
   is a prerequisite for effective incident response and learning to take place, so be sure to take immediate action
   if you see signs of a room where players feel unable to openly share, question,
   and risk being wrong

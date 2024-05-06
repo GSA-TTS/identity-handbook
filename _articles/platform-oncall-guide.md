@@ -34,10 +34,10 @@ Mission: Take care of production!
 
 #### Quick Reference
 
-* [Oncall Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference/) -
+* [Oncall Guide Quick Reference](https://gitlab.login.gov/lg/identity-devops/-/wikis/On-Call-Guide-Quick-Reference/) -
 emergency contact list and other private information
 * [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arises
-* [Troubleshooting Quick Reference]({{site.baseurl}}/articles/troubleshooting-quick-reference.html) - when you are troubleshooting and not sure where to start 
+* [Troubleshooting Quick Reference]({{site.baseurl}}/articles/troubleshooting-quick-reference.html) - when you are troubleshooting and not sure where to start
 * [Platform Rotations in Splunk On-Call](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/rotations) - to check who is on call
 
 #### Responsibilities
@@ -111,12 +111,12 @@ Mission: Support the Login.gov Platform's customers!
 
 In addition to the [LG Platform: Interrupts board](https://github.com/orgs/18F/projects/34) on GitHub, the following `identity-devops` wiki pages are helpful for most Interrupts responsibilities:
 
-* [Setting Up your Login.gov Infrastructure Configuration](https://github.com/18F/identity-devops/wiki/Setting-Up-your-Login.gov-Infrastructure-Configuration)
-* [Setting Up AWS Vault](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault)
-* [Building a Personal Sandbox Environment](https://github.com/18F/identity-devops/wiki/Building-a-Personal-Sandbox-Environment)
-* [Common Infrastructure Commands and Shortcuts](https://github.com/18F/identity-devops/wiki/Common-Infrastructure-Commands-and-Shortcuts)
-* [IAM Configurations](https://github.com/18F/identity-devops/wiki/IAM-Configurations) - for on/offboarding AWS IAM users
-* [Making Changes via Terraform](https://github.com/18F/identity-devops/wiki/Making-Changes-via-Terraform) - for troubleshooting Terraform deployment issues
+* [Setting Up your Login.gov Infrastructure Configuration](https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-your-Login.gov-Infrastructure-Configuration)
+* [Setting Up AWS Vault](https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-AWS-Vault)
+* [Building a Personal Sandbox Environment](https://gitlab.login.gov/lg/identity-devops/-/wikis/Building-a-Personal-Sandbox-Environment)
+* [Common Infrastructure Commands and Shortcuts](https://gitlab.login.gov/lg/identity-devops/-/wikis/Common-Infrastructure-Commands-and-Shortcuts)
+* [IAM Configurations](https://gitlab.login.gov/lg/identity-devops/-/wikis/IAM-Configurations) - for on/offboarding AWS IAM users
+* [Making Changes via Terraform](https://gitlab.login.gov/lg/identity-devops/-/wikis/Making-Changes-via-Terraform) - for troubleshooting Terraform deployment issues
 
 #### Responsibilities
 
@@ -162,12 +162,12 @@ Mission: Ship!
 
 #### Quick Reference
 
-* [Runbook: Weekly Platform Deployments via Terraform](https://github.com/18F/identity-devops/wiki/Runbook:-Weekly-Platform-Deployments-via-Terraform)
-* [Baking New AWS AMI Images](https://github.com/18F/identity-devops/wiki/Baking-New-AWS-AMI-Images)
+* [Runbook: Weekly Platform Deployments via Terraform](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Weekly-Platform-Deployments)
+* [Baking New AWS AMI Images](https://gitlab.login.gov/lg/identity-devops/-/wikis/Baking-New-AWS-AMI-Images)
 
 #### Responsibilities
 
-* **Prepare weekly `identity-devops` release and deploy it** following the [Weekly Platform Deployments guide](https://github.com/18F/identity-devops/wiki/Runbook:-Weekly-Platform-Deployments-via-Makefile#monday-release-prep)
+* **Prepare weekly `identity-devops` release and deploy it** following the [Weekly Platform Deployments guide](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Weekly-Platform-Deployments#release-prep)
 
 #### Procedures
 

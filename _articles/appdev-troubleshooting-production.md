@@ -9,7 +9,7 @@ These are common scripts and tasks for lookup up data in production
 
 ## Prerequisites
 
-Before you can access any systems, you will need to [set up AWS-vault](https://github.com/18F/identity-devops/wiki/Setting-Up-AWS-Vault)
+Before you can access any systems, you will need to [set up AWS-vault](https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-AWS-Vault)
 
 
 ## SSM Documents
@@ -59,7 +59,7 @@ events.log events for that user.
 
 For a full list of documented events, see [Analytics Events]({% link _articles/analytics-events.md %})
 
-See also [Troubleshooting Quick Reference - Cloudwatch Logs](https://github.com/18F/identity-devops/wiki/Troubleshooting-Quick-Reference#cloudwatch-logs)
+See also [Troubleshooting Quick Reference - Cloudwatch Logs](https://gitlab.login.gov/lg/identity-devops/-/wikis/Troubleshooting-Quick-Reference#cloudwatch-logs)
 
 ### Cloudwatch Insights
 

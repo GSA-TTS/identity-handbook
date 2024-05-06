@@ -36,17 +36,17 @@ maintenance window, and restart server instances again.
 
 | vendor                    | runbook                                                                                                                            |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| AAMVA                     | [Runbook: AAMVA DLDV outage](https://github.com/18F/identity-devops/wiki/Runbook:-AAMVA-DLDV-outage)                               |
+| AAMVA                     | [Runbook: AAMVA DLDV outage](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-AAMVA-DLDV-outage)                               |
 | Acuant                    | TBD                                                                                                                                |
-| LexisNexis TrueID         | [Runbook: LexisNexis TrueID outage](https://github.com/18F/identity-devops/wiki/Runbook%3A-LexisNexis-TrueID-outage)               |
-| LexisNexis Instant Verify | [Runbook: LexisNexis Instant Verify outage](https://github.com/18F/identity-devops/wiki/Runbook:-LexisNexis-Instant-Verify-outage) |
+| LexisNexis TrueID         | [Runbook: LexisNexis TrueID outage](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook%3A-LexisNexis-TrueID-outage)               |
+| LexisNexis Instant Verify | [Runbook: LexisNexis Instant Verify outage](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-LexisNexis-Instant-Verify-outage) |
 | LexisNexis Phone Finder   | TBD                                                                                                                                |
-| ThreatMetrix              | [Runbook: ThreatMetrix outage](https://github.com/18F/identity-devops/wiki/Runbook:-ThreatMetrix-outage)
+| ThreatMetrix              | [Runbook: ThreatMetrix outage](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-ThreatMetrix-outage)
 | Pinpoint                  | TBD                                                                                                                                |
 
 ### Contact Information
 
-For escalation contacts at our vendors, see the "Proofing vendors" section of [On Call Guide Quick Reference](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#proofing-vendors).
+For escalation contacts at our vendors, see the "Proofing vendors" section of [On Call Guide Quick Reference](https://gitlab.login.gov/lg/identity-devops/-/wikis/On-Call-Guide-Quick-Reference#proofing-vendors).
 
 ## Manually disable identity verification
 

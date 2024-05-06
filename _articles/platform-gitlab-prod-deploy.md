@@ -15,7 +15,7 @@ If you need to deploy Gitlab Production, there are two ways to do it
 * Deploy by hand
 
 Unfortunately, creating a HA gitlab instance with the omnibus package install
-system that we are using is a HUGE pain to do, and for an org of our size, 
+system that we are using is a HUGE pain to do, and for an org of our size,
 not recommended by Gitlab, so an upgrade will cause an outage of 8-15 minutes.
 Sigh.  Someday we hope to move to the k8s version which will result in an outage
 of seconds instead of minutes.
@@ -33,8 +33,8 @@ we will have a manual deploy approval step so that we can control when they roll
 * **Make sure that the code you are pushing deployed cleanly to the gitstaging environment!!**.
 * Check <https://gitlab.login.gov/admin/background_migrations> to see if there are any background
   migrations still going.  There should be none.  If there are, either wait until they are
-  complete, or if they don't seem to be moving, 
-  [contact gitlab support](https://github.com/18F/identity-devops/wiki/GitLab-Ultimate-Licensing-and-Support)
+  complete, or if they don't seem to be moving,
+  [contact gitlab support](https://gitlab.login.gov/lg/identity-devops/-/wikis/GitLab-Ultimate-Licensing-and-Support)
   and ask for help in getting the migrations unstuck.
 * Check that the repository mirroring for [identity-devops](https://gitlab.gitstaging.gitlab.login.gov/lg/identity-devops/-/settings/repository)
   and [identity-devops-private](https://gitlab.gitstaging.gitlab.login.gov/lg/identity-devops-private/-/settings/repository)

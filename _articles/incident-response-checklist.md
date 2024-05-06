@@ -77,7 +77,7 @@ procedures.
 
 *Mitigate* (Continous)
 * Technical context shared with responders in the room
-* [Incident Response Runbooks](https://github.com/18F/identity-devops/wiki/Incident-Response-Runbooks) used where appropriate and steps executed
+* [Incident Response Runbooks](https://gitlab.login.gov/lg/identity-devops/-/wikis/Incident-Response-Runbooks) used where appropriate and steps executed
 * Creates parallel lines of investigation and mitigation to delegate to [other responders](#responder)
 
 *Resolve and Retrospect*
@@ -110,7 +110,7 @@ procedures.
 * Once the situation is assessed, ping `@login-comms-oncall`
 
 *Mitigate* (Continous)
-* **(Every 30 Minutes)** Check the [Incident Comms Playbook - ASSESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c) section 
+* **(Every 30 Minutes)** Check the [Incident Comms Playbook - ASSESS](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c) section
 * **(Every 30 Minutes)** [Update StatusPage]({% link _articles/statuspage-process.md %}#update) (if an incident is posted)
 
 *Resolve and Retrospect*
@@ -166,7 +166,7 @@ procedures.
 # Resources
 
 * [Login.gov Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %}): IR guidance and overview, defer to the official IR plan
-* [Emergency Contact List](https://github.com/18F/identity-devops/wiki/On-Call-Guide-Quick-Reference#emergency-contacts): Private emergency contact list
+* [Emergency Contact List](https://gitlab.login.gov/lg/identity-devops/-/wikis/On-Call-Guide-Quick-Reference#emergency-contacts): Private emergency contact list
 * [Official Login.gov Incident Response plan](https://drive.google.com/file/d/1SVz5keBYiDSXvzBdkLFOqdnAplZWqL9D/view): The authoritative source for login
 * [TTS incident response process](https://handbook.tts.gsa.gov/security-incidents/)
 * [GSA IT - IT Security Procedural Guide: Incident Response](https://www.gsa.gov/cdnstatic/Incident_Response_%5BCIO_IT_Security_01-02_Rev_18%5D_03-26-2021docx.pdf)

@@ -4,5 +4,5 @@ description: 'This is a guide to follow when you are standing up your own person
 layout: article
 category: Platform
 subcategory: How To
-redirect_to: https://github.com/18F/identity-devops/wiki/Building-a-Personal-Sandbox-Environment
+redirect_to: https://gitlab.login.gov/lg/identity-devops/-/wikis/Building-a-Personal-Sandbox-Environment
 ---
