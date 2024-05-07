@@ -101,6 +101,9 @@ PATCH=1 SOURCE=main scripts/create-deploy-pr
 
 `create-deploy-pr` will print out a link to the new PR. **Be sure to verify the generated changelog after creating the PR.**
 
+**Troubleshooting note**:
+- If for any reason you lose the changelog notes, open `tmp/.rc-changelog.md`
+
 ##### PKI
 
 For pki:
