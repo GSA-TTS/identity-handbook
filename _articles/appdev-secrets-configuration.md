@@ -21,10 +21,6 @@ environment by merging default values with an environment-specific YAML file.
 The S3 buckets that contain secrets are versioned, so we can recover old versions
 if needed.
 
-At the end of the day, since these are just files in S3, you can use whatever workflow
-you want to download, edit, and write them. Make sure you clean up files on your local
-machine when done.
-
 [deploy-activate]: https://github.com/18F/identity-idp/blob/main/deploy/activate
 [download-from-s3]: https://github.com/18F/identity-idp/blob/a95fd33d24c6761818993cfbc334a28986783034/lib/deploy/activate.rb#L93-L97
 
