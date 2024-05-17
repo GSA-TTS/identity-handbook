@@ -50,7 +50,7 @@ procedures.
 * Incident declared in [#login-situation][login-situation] using the [Slack "Declare Incident Workflow"]({% link _articles/secops-incident-response-guide.md %}#incident-declaration)
 * Additional responders called in using Splunk On-Call, Slack, or voice
 * [Tech Lead](#technical-lead) role assigned and focused on technical response
-* [Scribe](#scribe) role assigned and taking notes in situation thread
+* [Scribe](#scribe) role assigned and taking notes in Slack in situation thread
 * [Messenger](#messenger) roles assigned
 
 *Mitigate*
@@ -87,7 +87,7 @@ procedures.
 
 *Initiate and Assess*
 * In situation room
-* Impact assessment notes recorded in situation thread
+* Impact assessment notes recorded in Slack in situation thread
 * Incident Review document created using [Incident Review Google Doc](https://docs.google.com/document/d/1Yaqnb9QsHRrlaBvlTeO_qHGmuP-0h4z-CCustU8gBdk/copy) and moved to the year's subfolder under the [Incident Reviews Folder](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui?usp=sharing)
 * Link to Incident Review shared in situation thread
 
