@@ -18,7 +18,6 @@
 
 - name: Annie
   namesake_markdown: "[Annie Easley](https://en.wikipedia.org/wiki/Annie_Easley), a computer scientist and mathematician who made critical contributions to NASA's rocket systems and energy technologies"
-  slack_appdev_oncall_handle: login-annie
   focus_area: Static Sites
   slack_channel_url: https://gsa.enterprise.slack.com/archives/C06S329FUA2
   slack_channel_name: login-team-annie
