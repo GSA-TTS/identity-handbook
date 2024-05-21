@@ -22,7 +22,6 @@
   slack_channel_url: https://gsa.enterprise.slack.com/archives/C06S329FUA2
   slack_channel_name: login-team-annie
   readme: https://docs.google.com/document/d/1DG9uRocHFDAFCdagVW4c4dF2bi4eBqJ_9SfSzgHg9fM/edit
-  product: true
 
 - name: Grace
   namesake_markdown: "[Admiral Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), a computer scientist and navy officer"

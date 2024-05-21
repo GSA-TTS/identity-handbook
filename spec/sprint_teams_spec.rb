@@ -11,6 +11,12 @@ RSpec.describe '_data/sprint_teams.yml' do
         expect(team['slack_channel_name']).not_to be_nil
         expect(team['slack_channel_url']).not_to be_nil
       end
+
+      context 'product team', if: !team['archived'] && team['product'] do
+        it 'includes required product team properties' do
+          expect(team['slack_appdev_oncall_handle']).not_to be_nil
+        end
+      end
     end
   end
 end
