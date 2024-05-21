@@ -14,7 +14,6 @@ We use Slack extensively!
 - All channels begin with `#login-`
 - All channels with external collaborators start with `#login-partners-`
 - Sprint team channels look like `#login-team-<name>`
-- All program working group channels start with `#login-wg-`
 
 ## Groups
 
@@ -82,7 +81,7 @@ Here are some common Slack Channels for the Login.gov team
 
 ### All-team Channel
 
-- [`#login`](https://gsa-tts.slack.com/archives/C5AUR5XUK):
+- [`#login`](https://gsa.enterprise.slack.com/archives/C5AUR5XUK):
   {% include tag.html name='important' %}
   Channel for the whole team, team-wide announcements and so on
 
@@ -90,68 +89,70 @@ Here are some common Slack Channels for the Login.gov team
 
 #### Design/UX
 
-- [`#login-ux`](https://gsa-tts.slack.com/archives/CEUQ9FXNJ):
+- [`#login-ux`](https://gsa.enterprise.slack.com/archives/CEUQ9FXNJ):
   {% include tag.html name='design' color='bg-success' %}
   Channel for the user experience design team (research, visual, content)
 
-- [`#login-public-site`](https://gsa-tts.slack.com/archives/CNZCW01PX)
+- [`#login-public-site`](https://gsa.enterprise.slack.com/archives/CNZCW01PX)
   Discussion around the Login.gov marketing/brochure/public site
 
-- [`#login-design-system`](https://gsa-tts.slack.com/archives/C01JVKYE4KD)
+- [`#login-design-system`](https://gsa.enterprise.slack.com/archives/C01JVKYE4KD)
   {% include tag.html name='design' color='bg-success' %}
   Discussion around the Login.gov design system
 
-- [`#login-accessibility-wg`](https://gsa-tts.slack.com/archives/C01C89LM6UF)
+- [`#login-accessibility`](https://gsa.enterprise.slack.com/archives/C01C89LM6UF)
   {% include tag.html name='design' color='bg-success' %}
   Accessibility working group
 
 #### Engineering/AppDev
 
-- [`#login-appdev`](https://gsa-tts.slack.com/archives/C0NGESUN5):
+- [`#login-appdev`](https://gsa.enterprise.slack.com/archives/C0NGESUN5):
   {% include tag.html name='appdev' color='bg-primary' %}
   General IDP and Appdev matters
 
-- [`#login-reporting`](https://gsa-tts.slack.com/archives/C5E7EJWF7):
+- [`#login-reporting`](https://gsa.enterprise.slack.com/archives/C5E7EJWF7):
   Analytics and reporting channel
 
 #### Engineering/DevOps
 
-- [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49):
+- [`#login-devops`](https://gsa.enterprise.slack.com/archives/C16RSBG49):
   {% include tag.html name='devops' color='bg-success' %}
   Platform and tools channel
 
-- [`#login-new-env-setup`](https://gsa-tts.slack.com/archives/CMW9H0RFX):
+- [`#login-platform-support`](https://gsa.enterprise.slack.com/archives/CMW9H0RFX):
+  {% include tag.html name='appdev' color='bg-primary' %}
+  {% include tag.html name='devops' color='bg-success' %}
   Platform channel specifically for helping people set up their environments (AWS, Terraform, etc.)
 
-- [`#login-containers`](https://gsa-tts.slack.com/archives/CUBGZS3SB):
-  Channel for workflows on containerization in Docker
+- [`#login-alarms`](https://gsa.enterprise.slack.com/archives/C06M08T8LE5):
+  Channel for critical automated notifications from production
 
-- [`#login-events`](https://gsa-tts.slack.com/archives/C42TZ3K5H):
-  Channel for automated notifications from AWS monitoring
+- [`#login-events`](https://gsa.enterprise.slack.com/archives/C42TZ3K5H):
+  Channel for automated notifications from production
 
-- [`#login-security`](https://gsa-tts.slack.com/archives/CA7NE63SB):
+- [`#login-security`](https://gsa.enterprise.slack.com/archives/CA7NE63SB):
   Channel for security-related discussions
 
-- [`#login-soc-events`](https://gsa-tts.slack.com/archives/C9HUJFC6R):
+- [`#login-soc-events`](https://gsa.enterprise.slack.com/archives/C9HUJFC6R):
   Channel for automated notifications from AWS SOC monitoring
 
-- [`#login-load-testing`](https://gsa-tts.slack.com/archives/C010L0SE4E8):
+- [`#login-load-testing`](https://gsa.enterprise.slack.com/archives/C010L0SE4E8):
   Discussion around load testing of Login.gov
 
-- [`#login-compliance`](https://gsa-tts.slack.com/archives/C3X5AJ8RK)
+- [`#login-compliance`](https://gsa.enterprise.slack.com/archives/C3X5AJ8RK)
   FedRAMP and other Compliance information
 
 #### Partners
 
-- [`#login-partnerships`](https://gsa-tts.slack.com/archives/C23LEJLMC):
+- [`#login-partnerships`](https://gsa.enterprise.slack.com/archives/C23LEJLMC):
   Internal discussion around partnerships initiatives
 
-- [`#login-partner-support`](https://gsa-tts.slack.com/archives/CG64NU5C7):
+- [`#login-partner-support`](https://gsa.enterprise.slack.com/archives/CG64NU5C7):
   Channel for providing customer support, we often grant guest Slack access to partners
 
 #### Product
 
-- [`#login-product-strategy`](https://gsa-tts.slack.com/archives/CR2SSAFRQ):
+- [`#login-product-strategy`](https://gsa.enterprise.slack.com/archives/CR2SSAFRQ):
   Cross-team product strategy
 
 #### Sprint Teams
@@ -160,7 +161,7 @@ Here are some common Slack Channels for the Login.gov team
 see data/sprint_teams.yml for the data
 {% endcomment %}
 
-{% assign sprint_team_channels = site.data.sprint_teams | sort: "name" %}
+{% assign sprint_team_channels = site.data.sprint_teams | sort: "name" | where: "archived", nil %}
 
 {% for sprint_team in sprint_team_channels %}
 {% if sprint_team.slack_channel_name and sprint_team.slack_channel_url %}
@@ -171,34 +172,31 @@ see data/sprint_teams.yml for the data
 
 ### Other Channels
 
-- [`#login-handbook`](https://gsa-tts.slack.com/archives/CR6BF3CQK):
+- [`#login-handbook`](https://gsa.enterprise.slack.com/archives/CR6BF3CQK):
   Discussion and coordination around this handbook
 
-- [`#login-leads`](https://gsa-tts.slack.com/archives/CR3TL6JTB):
+- [`#login-leads`](https://gsa.enterprise.slack.com/archives/CR3TL6JTB):
   Login.gov leadership team channel
 
-- [`#login-professional-development`](https://gsa-tts.slack.com/archives/C013NBL04AF):
+- [`#login-professional-development`](https://gsa.enterprise.slack.com/archives/C013NBL04AF):
   Discussion and coordination around professional development, attending conferences, etc.
 
-- [`#login-situation`](https://gsa-tts.slack.com/archives/C5QUGUANN):
+- [`#login-situation`](https://gsa.enterprise.slack.com/archives/C5QUGUANN):
   {% include tag.html name='devops' color='bg-success' %}
   Incident response coordination channel
 
-- [`#login-random`](https://gsa-tts.slack.com/archives/CNMN7K2MA):
+- [`#login-random`](https://gsa.enterprise.slack.com/archives/CNMN7K2MA):
   {% include tag.html name='important' %}
   Fun/random/miscellaneous channel
 
-- [`#login-fraud-mitigation`](https://gsa-tts.slack.com/archives/C01987XHBM2):
+- [`#login-fraud-mitigation`](https://gsa.enterprise.slack.com/archives/C01987XHBM2):
   Discussion around fraud mitigation
 
-- [`#login-recruiting`](https://gsa-tts.slack.com/archives/CHK3G5XGX)
-  Channel to talk about hiring and recruiting
-
-- [`#login-summit`](https://gsa-tts.slack.com/archives/C53JYK1CH):
-  Used to coordinate all-team meetings (IRLs) that happen semi-annually
-
-- [`#login-user-support`](https://gsa-tts.slack.com/archives/C20J64X6V):
+- [`#login-user-support`](https://gsa.enterprise.slack.com/archives/C20J64X6V):
   Escalations and triage from user support
+
+- [`#cop-containers`](https://gsa.enterprise.slack.com/archives/CUBGZS3SB):
+  Channel for workflows on containerization in Docker across TTS
 
 <script type="text/javascript">
   function setButtonHighlighted(button, highlighted) {
