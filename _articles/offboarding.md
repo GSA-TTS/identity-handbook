@@ -15,8 +15,8 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
 
 ### For offboarding assistant to complete
 
-- [Create a new issue in the `identity-devops` GitHub repository using the off-boarding template](https://github.com/18F/identity-devops/issues/new?template=offboard-devops.md) and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue.  Tip: [view current AWS users](https://github.com/18F/identity-devops/blob/main/terraform/master/global/main.tf#L93)
-- Check in `#admins-github` to ensure that GitHub access for this person has been removed (TTS `#people-ops` is usually on top of this). If this person is moving elsewhere in TTS ensure they have been removed from `identity-*` [GitHub teams](https://github.com/orgs/18F/teams/). Cc `@github-admins-slack` on your request.
+- Work with the devops team to remove AWS access (this is moving from GitHub to GitLab) and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue.  Tip: [view current AWS users](https://github.com/18F/identity-devops/blob/main/terraform/master/global/main.tf#L93)
+- Check in `#admins-github` to ensure that GitHub access for this person has been removed (TTS `#people-ops` is usually on top of this). If this person is moving elsewhere in TTS ensure they have been removed from `identity-*` [18F teams](https://github.com/orgs/18F/teams/), [GSA-TTS teams](https://github.com/orgs/GSA-TTS/teams/). Cc `@github-admins-slack` on your request.
   - Note that CircleCI, CodeClimate, and Snyk rights are removed via GitHub integration
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request that the user be removed from the Login.gov project (and deactivated if they are no longer working for GSA).
 - Remove from [Login.gov Slack groups]({% link _articles/slack.md %}).
@@ -29,7 +29,7 @@ If a person leaves temporarily, for example to fill a Detail, they can have priv
 
 ### For offboarding assistant to complete
 
-- [Create a new issue in the `identity-devops` GitHub repository using the partial off-boarding template](https://github.com/18F/identity-devops/issues/new?template=offboard-devops-partial.md) and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue
+- Work with the devops team to remove AWS access (this is moving from GitHub to GitLab) and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue
 - Remove user from [`identity-admins` GitHub team](https://github.com/orgs/18F/teams/identity-admins/members?query=)
 - [Remove user from login-devops and login-security](https://groups.google.com/a/gsa.gov/forum/#!myforums)
 - Update the [Login.gov org chart](https://docs.google.com/spreadsheets/d/1tiTR2ohdl0NIsrF4gJjNipEZ0z0oq1pOFWYjHg8Tbi0/edit#gid=0)
