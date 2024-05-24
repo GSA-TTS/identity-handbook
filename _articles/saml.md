@@ -51,19 +51,9 @@ If, when logging in to the SAML Sinatra sample app, you get an error saying:
 
 This is usually caused by a mismatch between the IdP certificate used to sign the response, and the recorded signature of the certificate which is saved in the environment variable `idp_cert_fingerprint` (either in config/application.yml, or the environment variables in the deployed environment).
 
-To fix this, grab the certificate from the response, e.g.,
+To fix this, you'll first need to get the X509 Certificate from the appropriate SAML metadata endpoint, ie `https://idp.dev.identitysandbox.gov/api/saml/metadata2024` for `https://dev-identity-saml-sinatra.app.cloud.gov/`.
 
-```
-<KeyInfo
-    xmlns="http://www.w3.org/2000/09/xmldsig#">
-    <ds:X509Data>
-        <ds:X509Certificate>
-        MII/KeepCopyingButBreakItUpInto64CharacterLinesWhenYouSaveItHere...TheLastLineMayNotBeExactly64CharactersAndThatsOK=
-        </ds:X509Certificate>
-    </ds:X509Data>
-</KeyInfo>
-```
-edit it to look like a normal certificate (or find the orig), e.g.,
+Edit it to look like a normal certificate (or find the orig), e.g.,
 ```
 -----BEGIN CERTIFICATE-----
 MII/KeepCopyingButBreakItUpInto64CharacterLinesWhenYouSaveItHere
@@ -76,3 +66,11 @@ and finally calculate the fingerprint:
 $ openssl x509 -noout -fingerprint -sha1 -inform pem -in file.crt
 SHA1 Fingerprint=AB:CD:EF:12:34:56:78:90:A1:B2:C3:D4:E5:F6:1A:2B:3C:4D:5E:6F
 ```
+
+If you are running the SAML Sinatra app locally, the process is a little more complex:  
+1. Run the application (`identity-idp` and `identity-saml-sinatra`).
+2. Try to login, setting `skip_encryption=true`.
+3. On the ACS_URL (`/consume`), get the `SAMLResponse` value from the payload in the Network tab.
+4. Decode the Base64 string (ie, at ([https://samltool.com/decode.php]))
+5. Get the X509 Certificate from the resulting XML
+6. Calculate the fingerprint as described above.
