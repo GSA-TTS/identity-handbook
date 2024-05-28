@@ -83,7 +83,7 @@
 
 - name: Melba
   namesake_markdown: "[Melba Roy Mouton](https://en.wikipedia.org/wiki/Melba_Roy_Mouton), Head Mathematician, Head Computer Programmer, instructor and Program Production Chief at NASA whose work tracked early Echo satellites in orbit."
-  focus_area: Protocols and RISC API
+  focus_area: Protocols like OpenID Connect, SAML and RISC API
   slack_channel_url: https://gsa.enterprise.slack.com/archives/C07152J9ACT
   slack_channel_name: login-team-melba
   readme: https://docs.google.com/document/d/1UymNbB7mxOP1zV2BOA2ajk8FHxEm8CplKu8dOsIBStM/edit
