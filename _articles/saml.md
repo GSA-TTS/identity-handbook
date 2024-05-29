@@ -51,7 +51,8 @@ If, when logging in to the SAML Sinatra sample app, you get an error saying:
 
 This is usually caused by a mismatch between the IdP certificate used to sign the response, and the recorded signature of the certificate which is saved in the environment variable `idp_cert_fingerprint` (either in config/application.yml, or the environment variables in the deployed environment).
 
-To fix this, you'll first need to get the X509 Certificate from the appropriate SAML metadata endpoint, ie ([https://idp.dev.identitysandbox.gov/api/saml/metadata2024]) for ([https://dev-identity-saml-sinatra.app.cloud.gov/]).
+To fix this, you'll first need to get the X509 Certificate from the appropriate SAML metadata endpoint, ie [https://idp.dev.identitysandbox.gov/api/saml/metadata2024](https://idp.dev.identitysandbox.gov/api/saml/metadata2024) for [https://dev-identity-saml-sinatra.app.cloud.gov/](https://dev-identity-saml-sinatra.app.cloud.gov/).  
+
 The local `identity-saml-sinatra` app uses the certificate from `identity-idp`, so that XML can be found at [identity-idp/config/artifacts.example/local/saml${YEAR}.crt](https://github.com/18F/identity-idp/tree/main/config/artifacts.example/local/).
 
 Edit it to look like a normal certificate (or find the orig), e.g.,
