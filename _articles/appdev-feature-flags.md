@@ -41,7 +41,6 @@ Consider the following when adding a new feature flag:
 
     - **Pros:**
       - This helps ensure broad test coverage for your new feature in continuous integration (CI) builds.
-      - You will want to ensure that a feature flag is enabled in test environments before going live in production, so enabling it early saves a future step.
       - Enabling your new feature by default may cause existing tests to fail where it breaks expectations of how a user proceeds through the application, but this is inevitable and easier to address earlier in the feature development than later.
     - **Cons:**
       - Enabling by default can introduce a risk that continuous integration will not be running tests against what users will experience in the production environment. This can be offset by ensuring branch test coverage for the disabled state in affected codes' specs (see [Test Coverage](#test-coverage))
