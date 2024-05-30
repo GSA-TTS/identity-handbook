@@ -11,7 +11,7 @@ action: issue
 # Policies
 approvalCount: 1
 blockForce: true
-dismissStale: true
+dismissStale: false # Login.gov override
 enforceDefault: true
 enforceOnAdmins: true
 optOutArchivedRepos: true
