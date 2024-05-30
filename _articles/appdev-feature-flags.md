@@ -31,12 +31,12 @@ Consider the following when adding a new feature flag:
 - **Default Value**:
   - The simplest option is to enable a new feature flag by default, and disable it in production environments. The feature can then be enabled in specific deployed environments using [`app-s3-secret`][app-s3-secret].
   ```yaml
-  # config/application.yml.default
-  new_feature_enabled: true
+# config/application.yml.default
+new_feature_enabled: true
 
-  production:
-    new_feature_enabled: false
-  ```
+production:
+  new_feature_enabled: false
+```
     - **Pros:**
       - This helps ensure broad test coverage for your new feature in continuous integratration (CI) builds.
       - You will want to ensure that a feature flag is enabled in test environments before going live in production, so enabling it early saves a future step.
