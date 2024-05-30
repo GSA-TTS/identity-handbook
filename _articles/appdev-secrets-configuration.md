@@ -34,7 +34,7 @@ See [guide to app-s3-secret]({% link _articles/devops-scripts.md %}#app-s3-secre
 To use a value in the `application.yml` in our Rails apps, follow these steps. The IDP, PKI,
 and Dashboard apps all use this approach, with files named the same way.
 
-1. Declare the feature flag in `lib/identity_config.rb`'s `#build_store` method.
+1. Declare the configuration value in `lib/identity_config.rb`'s `#build_store` method.
 
     Example:
     ```ruby
@@ -65,3 +65,7 @@ my_feature_flag: 'true'
     ```ruby
 IdentityConfig.store.my_feature_flag
 ```
+
+This process can be used for any type of configuration value. To learn more about feature flags
+specifically, refer to the [Feature Flags]({% link _articles/appdev-feature-flgs.md %}) for an
+overview of how they are used used.
