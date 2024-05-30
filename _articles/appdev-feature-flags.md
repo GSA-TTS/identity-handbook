@@ -55,7 +55,7 @@ A new feature flag is expected to be disabled by default in production. You can 
 
 Refer to [Environment Descriptions][environment-descriptions] to understand the purpose of each environment, and when it might make sense to enable a feature in that environment.
 
-Typically, the `dev` environment is the first deployed environment where a feature is enabled, since this environment is used exclusively by internal team members for testing, which limits the impact and risk for unstable code behaving unexpectedly.
+Typically, the `dev` environment is the first deployed environment where a feature is enabled, since this environment is used exclusively by internal team members for testing, which limits the impact and risk for unstable code behaving unexpectedly. Similarly, enabling a feature in `staging` can be beneficial before enabling in `prod` when a feature involves an integration with a third-party vendor, since the `staging` environment is configured to integrate with live endpoints and is therefore more realistic to what a production user will experience.
 
 Before enabling a feature flag in the `prod` environment, make sure that the feature is enabled in continuous integration (CI) tests, to increase confidence that there are no bugs in the code.
 
