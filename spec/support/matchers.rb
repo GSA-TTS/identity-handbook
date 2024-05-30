@@ -44,3 +44,17 @@ RSpec::Matchers.define :link_internally_for_handbook_articles do
     "expected that #{actual.url} would not link to external version of articles in this handbook, but found:\n#{articles.to_a.join("\n")}"
   end
 end
+
+RSpec::Matchers.define :escape_newlines_in_bash_code_snippets do
+  match do |actual|
+    doc = actual
+
+    doc.css('.language-bash code').each do |code_elem|
+      expect(code_elem.inner_text).to_not match(/ --\s*$/)
+    end
+  end
+
+  failure_message do |actual|
+    "expected that #{actual.url} would escape newlines with \\ in bash scripts"
+  end
+end
