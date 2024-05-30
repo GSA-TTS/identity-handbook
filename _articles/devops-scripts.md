@@ -315,7 +315,7 @@ aws-vault exec prod-power -- \
 Lists servers in an environment as a table
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/ls-servers -e dev
 ```
 
@@ -398,7 +398,7 @@ split up slices that have 10k responses (the limit) to ensure a complete
 listing of results.
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/query-cloudwatch \
   --app idp --env dev --log events.log \
   --from 10d --slice 1d --query "$QUERY"
@@ -450,7 +450,7 @@ Imitates `scp` by copying a file in and out of S3. Use the instance ID to refer 
 (see [`ls-servers`](#ls-servers) to find them).
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/scp-s3 i-abcdef1234:/tmp/file.txt ./file.txt
 ```
 
@@ -481,7 +481,7 @@ Shows usage plus a list of the available SSM session documents for the
 application environment.
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/ssm-instance -h
 ```
 
@@ -490,7 +490,7 @@ aws-vault exec sandbox-power --
 Opens a Rails console (in read-only mode)
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/ssm-instance --document rails-c --any asg-dev-idp
 ```
 
@@ -499,7 +499,7 @@ aws-vault exec sandbox-power --
 Opens a Rails console (in read-write mode). **Be careful please**.
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/ssm-instance --document rails-w --any asg-dev-idp
 ```
 
@@ -508,7 +508,7 @@ aws-vault exec sandbox-power --
 Tails and streams cloudwatch logs, specifically `/var/log/cloud-init-output.log`. Useful for checking that a box spins up correctly, such as [during a deploy]({% link _articles/appdev-deploy.md %}#follow-the-process).
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/ssm-instance --document tail-cw --any asg-dev-idp
 ```
 
@@ -532,14 +532,14 @@ Shows usage plus a list of the available SSM command documents for the
 application environment.
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/ssm-command -h
 ```
 
 Safely restart GoodJob (idp-workers) service.
 
 ```bash
-aws-vault exec sandbox-power --
+aws-vault exec sandbox-power -- \
     ./bin/ssm-command -d worker-restart -r worker -e dev
 ```
 
