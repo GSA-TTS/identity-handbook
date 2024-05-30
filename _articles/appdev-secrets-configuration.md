@@ -67,5 +67,5 @@ IdentityConfig.store.my_feature_flag
 ```
 
 This process can be used for any type of configuration value. To learn more about feature flags
-specifically, refer to the [Feature Flags]({% link _articles/appdev-feature-flgs.md %}) for an
+specifically, refer to the [Feature Flags]({% link _articles/appdev-feature-flags.md %}) for an
 overview of how they are used used.
