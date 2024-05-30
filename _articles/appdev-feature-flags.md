@@ -19,7 +19,7 @@ Our Rails applications use [configuration values][rails-configuration] to suppor
 
 Most code changes don't require a feature flag, since the code that's being merged is self-contained and should be expected to go live immediately for all users in all environments.
 
-Feature flags are best suited for large features which are planned to be implemented across multiple pull requests over a longer period of time, usually anywhere from a few weeks to several months of development.
+Feature flags are best suited for large features which are planned to be implemented across multiple pull requests over a longer period of time, usually anywhere from a few weeks to several months of development. They can also be used as a faster alternative to incremental deploys when [managing 50/50 state changes][managing-50-50-state].
 
 Consider the following when adding a new feature flag:
 
@@ -46,6 +46,7 @@ Consider the following when adding a new feature flag:
     - **Cons:**
       - Enabling by default can introduce a risk that continuous integration will not be running tests against what users will experience in the production environment. This can be offset by ensuring branch test coverage for the disabled state in affected codes' specs (see [Test Coverage](#test-coverage))
 
+[managing-50-50-state]: {% link _articles/manage-50-50-state.md %}
 [app-s3-secret]: {% link _articles/devops-scripts.md %}#app-s3-secret
 [rails-configuration]: {% link _articles/appdev-secrets-configuration.md %}#configuration-in-rails-apps
 
