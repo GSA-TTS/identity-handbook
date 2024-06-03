@@ -1,12 +1,29 @@
 ---
 title: Identity Proofing Testing
 description: >
-  Tips and tricks for testing identity proofing (IAL2 accounts) including
-  example fake phone numbers and example PII
+  Tips and tricks for testing identity verification ("proofing")
 category: "AppDev"
 subcategory: "Development"
 layout: article
 ---
+
+## Choose your environment
+
+We operate a number of differnet environments, and testing behavior is different in our lower environments (such as `int` or `dev`). 
+
+You can use a sample application to start an identity-verified authentication: 
+* `prod` - https://prod-identity-oidc-sinatra.app.cloud.gov/
+* `staging` - https://staging-identity-oidc-sinatra.app.cloud.gov/
+* `int` - https://int-identity-oidc-sinatra.app.cloud.gov/
+* `dev` - https://dev-identity-oidc-sinatra.app.cloud.gov/
+
+Remember that `prod` and `staging` are typically hitting real vendors; but other environments typically use our "mock proofers" which simulate different experiences.
+
+## Choose your verification level
+
+At the sample application, you need to choose a "Level of Service" which simulates the different request types that a partner agency might send to Login.gov: 
+* **Identity-verified** is our legacy identity proofing experience, which does not require a biometric comparison.
+* **Biometric Comparison** is our new identity proofing experience, which either requires a **remote biometric** or requires that the user completes **in-person proofing**.
 
 ## Gmail Extra Emails Trick
 
@@ -32,17 +49,21 @@ And as an easy way to keep track of the emails, consider date-stamping them:
 
 [gmail-trick]: https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html
 
-## Pass a YML for images
+## Pass a YML for images (in `int` and `dev`)
 
 Instead of uploading images of IDs (since we aren't supposed to have PII in sandbox environments),
 you can upload a [specially-formatted YML file](https://developers.login.gov/testing/#data-testing).
 
-## Sample SSN
+## Sample SSN (in `int` and `dev`)
 
 Our developer docs have [sample SSNs](https://developers.login.gov/testing/#personal-information-verification)
 to get desired behavior.
 
-## Sample Phone Numbers
+## Simulate fraud tooling (in `int` and `dev`)
+
+See [Device profiling and fraud detection](/articles/device-profiling.html) for testing details.
+
+## Sample Phone Numbers (in `int` and `dev`)
 
 We also have [sample phone numbers](https://developers.login.gov/testing/#phone-number-verification)
 to generate various proofing responses.
