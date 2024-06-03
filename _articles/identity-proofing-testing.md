@@ -9,7 +9,7 @@ layout: article
 
 ## Choose your environment
 
-We operate a number of differnet environments, and testing behavior is different in our lower environments (such as `int` or `dev`). 
+We operate a number of different environments, and testing behavior is different in our lower environments (such as `int` or `dev`). 
 
 You can use a sample application to start an identity-verified authentication: 
 * `prod` - https://prod-identity-oidc-sinatra.app.cloud.gov/
