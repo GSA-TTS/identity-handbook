@@ -11,11 +11,7 @@ layout: article
 
 We operate a number of different environments, and testing behavior is different in our lower environments (such as `int` or `dev`). 
 
-You can use a sample application to start an identity-verified authentication: 
-* `prod` - https://prod-identity-oidc-sinatra.app.cloud.gov/
-* `staging` - https://staging-identity-oidc-sinatra.app.cloud.gov/
-* `int` - https://int-identity-oidc-sinatra.app.cloud.gov/
-* `dev` - https://dev-identity-oidc-sinatra.app.cloud.gov/
+You can use a [sample partner application]({% link _articles/appdev-cloud-gov-deploy.md %}) to start an identity-verified authentication.
 
 Remember that `prod` and `staging` are typically hitting real vendors; but other environments typically use our "mock proofers" which simulate different experiences.
 
