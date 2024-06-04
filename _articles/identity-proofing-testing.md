@@ -57,7 +57,7 @@ to get desired behavior.
 
 ## Simulate fraud tooling (in `int` and `dev`)
 
-See [Device profiling and fraud detection](/articles/device-profiling.html) for testing details.
+See [Device profiling and fraud detection]({% link _articles/device-profiling.md %}) for testing details.
 
 ## Sample Phone Numbers (in `int` and `dev`)
 
