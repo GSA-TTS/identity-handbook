@@ -4,7 +4,7 @@ description: "GitLab Setup"
 layout: article
 category: Platform
 redirect_from: /articles/gitlab.html
-cSpell: ignore omniauth
+cSpell: ignore omniauth loadtest secops hostdata fraudops cloudlib
 ---
 
 # Introduction
