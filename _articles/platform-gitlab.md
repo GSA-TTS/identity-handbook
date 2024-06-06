@@ -58,8 +58,8 @@ Note - If `secure.login.gov` is not available, existing Personal Access Tokens
 continue to function.  We also have break-glass procedures if needed.
 See [Runbook: GitLab Access Contingency Plan](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Gitlab-Access-When-IDP-is-Down)
 
-## Gitlab Migration
-We are in the process of moving our repos to using Gitlab as their primary source of truth.  Most repos will continue to mirror back to Github, in order to allow us to maintain public visibility.  Once we have migrated a Repo, merging from any branch other than Gitlab will be blocked, and all PR's will need to be submitted via Gitlab.  Our current timeline for migration is below:
+## GitLab Migration
+We are in the process of moving our repos to using GitLab as their primary source of truth.  Most repos will continue to mirror back to GitHub, in order to allow us to maintain public visibility.  Once we have migrated a repository, merging from any branch other than GitLab will be blocked, and all pull requests will need to be submitted via GitLab.  Our current timeline for migration is below:
 
  
 | Repo Name                            | Planned Move Date | Status    |
