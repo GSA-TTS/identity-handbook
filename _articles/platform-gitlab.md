@@ -74,11 +74,7 @@ We are in the process of moving our repos to using GitLab as their primary sourc
 | identity-design-system               | 6/6/24            | moved     |
 | identity-oidc-sinatra                | 6/6/24            | moved     |
 | identity-saml-sinatra                | 6/6/24            | moved     |
-| identity-pki                         | 6/13/24           | planned   |
-| identity-analytics-etl               | 6/13/24           | planned   |
-| identity-saml-rails                  | 6/13/24           | planned   |
-| identity-design-assets               | 6/13/24           | planned   |
-| identity-oidc-java-spring-boot       | 6/20/24           | planned   |
+| identity-pki                         | 6/13/24           | moved     |
 | identity-loadtest                    | 6/20/24           | planned   |
 | bpa-identity-management              | 6/20/24           | planned   |
 | identity-usability-testing           | 6/20/24           | planned   |
