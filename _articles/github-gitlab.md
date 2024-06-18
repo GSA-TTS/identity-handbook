@@ -172,6 +172,22 @@ We should not have any individual access, only team access.
 
 ## Workflows
 
+### Signed Commits
+
+Repositories hosted in the [GSA-TTS org](https://github.com/GSA-TTS/) on GitHub (the mostly [static sites](#static-sites)) **require signed commits**. See GitHub's documentation on [configuring git to sign commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+
+We strongly recommend that you configure git to autosign commits (so you don't have to add `-S` to every commit)
+  - The default settings for GPG only prompt for a password once every 10 minutes
+  - You can set this up globally or per-repo (locally)
+  - To verify that the signing has been enabled, in either your `~/.gitconfig` (global) or the `.git/config` in each repository (local), check for these values:
+
+    ```
+    [commit]
+            gpgsign = true
+    [user]
+            signingkey = <<YOUR ID HERE>>
+    ```
+
 ### Email Notifications and Filters
 
 Default settings for GitHub can generate a lot of email that can be tough to sift through. Here
