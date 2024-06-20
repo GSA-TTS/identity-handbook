@@ -56,6 +56,8 @@ module to `all/<account name>` terraform.
 The default keyname used by the env_runners is `image_signing`.  These keys
 are already created in the tooling-sandbox and tooling-prod accounts.
 
+The key is also available via KMS alias of `alias/image_signing_cosign_signature_key`.
+
 ## Sign Image
 
 Once an image is built and you want to use it, you will look at the
@@ -64,11 +66,8 @@ scan results, etc).  If you approve, then run sign_image.sh, and then you can
 specified the approved image to be used by gitlab in the `.gitlab-ci.yml` file.
 
 ```
-bin/sign_image.sh image_signing <accountid>.dkr.ecr.us-west-2.amazonaws.com/cd/terraform_plan:@sha256:<SHA>
+bin/sign_image.sh <accountid>.dkr.ecr.us-west-2.amazonaws.com/cd/terraform_plan:@sha256:<SHA>
 ```
 
-Notice that we are signing a particular sha256, not an image tag.  Tags can change for an image,
-but not the image SHA, so that's what we want to use.
-
-Also notice that we are using the default `image_signing` key to sign it in the example.
-You may change that if you have your own key for your env.
+Notice that we are signing a particular sha256 digest, not an image tag. Tags
+can change for an image, but not the digest, so that's what we want to use.
