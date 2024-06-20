@@ -75,9 +75,7 @@ We are in the process of moving our repos to using GitLab as their primary sourc
 | identity-oidc-sinatra                | 6/6/24            | moved     |
 | identity-saml-sinatra                | 6/6/24            | moved     |
 | identity-pki                         | 6/13/24           | moved     |
-| identity-loadtest                    | 6/20/24           | planned   |
-| bpa-identity-management              | 6/20/24           | planned   |
-| identity-usability-testing           | 6/20/24           | planned   |
+| identity-loadtest                    | 6/20/24           | moved     |
 | identity-secops                      | 6/27/24           | planned   |
 | identity-playbook                    | 6/27/24           | planned   |
 | wg-identity                          | 6/27/24           | planned   |
