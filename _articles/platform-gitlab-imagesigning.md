@@ -30,9 +30,9 @@ just become simpler and better once we containerize.
 
 # Implementation
 
-A cosign signing key is set up by an admin using the `identity-devops/bin/create_image_signing_key.sh`
-script.  It creates an asymmetric KMS key, stores the key ID in S3, and pulls the public key out and
-stores it in S3 as well.  The key is only usable by FullAdmins.
+A cosign signing key is set up in Terraform. It creates an asymmetric KMS key,
+stores the key ID in S3, and pulls the public key out and stores it in S3 as
+well. The key is only usable by FullAdmins.
 
 Administrators then can sign images with `identity-devops/bin/sign_image.sh`, which pulls the
 key ID down and uses the KMS key to sign the specified image.
@@ -49,12 +49,9 @@ or whether the key is common or env-specific.
 
 ## Create Cosign Signing Key
 
-This creates an asymmetric KMS signing key and puts `<keyname>.keyid` and `<keyname>.pub`
-in the common secrets bucket.
-
-```
-bin/create_image_signing_key.sh <keyname>
-```
+The terraform module `image_signing` creates an asymmetric KMS signing key and
+puts `<keyname>.keyid` and `<keyname>.pub` in the common secrets bucket. Add the
+module to `all/<account name>` terraform.
 
 The default keyname used by the env_runners is `image_signing`.  These keys
 are already created in the tooling-sandbox and tooling-prod accounts.
