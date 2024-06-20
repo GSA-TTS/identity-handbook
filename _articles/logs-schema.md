@@ -6,8 +6,6 @@ category: "Reporting"
 subcategory: "Data Warehouse"
 ---
 
-# Data Warehouse Logs Schema
-
 This is a guide to provide the schema definitions for the four log tables in our Data Warehouse:
 
 - `events.logs`
