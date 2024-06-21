@@ -393,9 +393,15 @@ In the web UI, cloudwatch results are limited to:
 
 So to get around that, we have a script that can help split up the query into
 multiple slices of time and help combine the results, use the `--slice` to
-specify different slice durations. Use the `--complete` flag to automatically
-split up slices that have 10k responses (the limit) to ensure a complete
+specify different slice durations.
+
+Use the `--complete` flag to automatically split up slices that have 10k responses (the limit) to ensure a complete
 listing of results.
+  - **Note**: When using `--complete`, the query itself *must* contain a limit of 10k, otherwise the script will not be able to effectively detect missing data.
+    ```
+| limit 10000
+    ```
+
 
 ```bash
 aws-vault exec sandbox-power -- \
