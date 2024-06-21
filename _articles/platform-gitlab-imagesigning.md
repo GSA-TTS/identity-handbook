@@ -71,3 +71,11 @@ bin/sign_image.sh <accountid>.dkr.ecr.us-west-2.amazonaws.com/cd/terraform_plan:
 
 Notice that we are signing a particular sha256 digest, not an image tag. Tags
 can change for an image, but not the digest, so that's what we want to use.
+
+### Troubleshooting
+
+If you get a `401 Unauthorized` error with cosign, you may need to `cosign login`.
+
+```
+aws-vault exec tooling-prod-admin -- aws ecr get-login-password --region us-west-2 | cosign login --username AWS --password-stdin <accountid>.dkr.ecr.us-west-2.amazonaws.com
+```
