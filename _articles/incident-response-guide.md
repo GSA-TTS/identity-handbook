@@ -98,7 +98,7 @@ A **functional impact** is assessed if any part of Login.gov’s usability, func
 
 An **informational impact** is tracked when any data elements categorized as PII is exposed to an unauthorized party. Internal and confidential information such as API keys, private configuration or business data are also included in this impact category.
 
-The Login.gov team tasked with responding to the event must determine the **Recoverability** which is defined as the level of effort they believe the incident will take to recover from. This will help shape the type of response that is required and determine the amount of time and resources needed to return to a nominal state. 
+The Login.gov team tasked with responding to the event must determine the **recoverability** which is defined as the level of effort they believe the incident will take to recover from. This will help shape the type of response that is required and determine the amount of time and resources needed to return to a nominal state. 
 
 
 ## Incident Severities
