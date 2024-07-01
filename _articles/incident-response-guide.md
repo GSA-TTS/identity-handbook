@@ -98,7 +98,7 @@ A **functional impact** is assessed if any part of Login.gov’s usability, func
 
 An **informational impact** is tracked when any data elements categorized as PII is exposed to an unauthorized party. Internal and confidential information such as API keys, private configuration or business data are also included in this impact category.
 
-The Login.gov team tasked with responding to the event must determine the level of effort they believe the incident will take to recover. This will help shape the type of response that is required and determine the amount of time and resources needed to return to a nominal state. 
+The Login.gov team tasked with responding to the event must determine the **Recoverability** which is defined as the level of effort they believe the incident will take to recover from. This will help shape the type of response that is required and determine the amount of time and resources needed to return to a nominal state. 
 
 
 ## Incident Severities
@@ -208,15 +208,15 @@ Roles are assigned when possible as responders join the incident.
 
 ### Internal Reporting
 
-Initiation of the reporting process is the responsibility of any person, staff, or contractor who observes suspicious security activities that involve GSA data or systems. Any incident with a functional, information, or recovery impact, must be reported IMMEDIATELY to the Login.gov’s DevOps and Security Engineering teams through real-time chat via #login-situation channel in Slack or email to identity-devops@login.gov and security@login.gov
+Initiation of the reporting process is the responsibility of any person, staff, or contractor who observes suspicious security activities that involve GSA data or systems. Any incident with a functional, information, or recovery impact, must be reported _IMMEDIATELY_ to Login.gov’s DevOps and Security Engineering teams through real-time chat via [#login-situation][login-situation] channel in Slack or email to **identity-devops@login.gov** and **security@login.gov**.
 
 ### External Reporting
 
-If a person outside the Login.gov team notices a Login.gov-related incident, they are instructed to email security@login.gov. If an acknowledgement from the Login.gov team is NOT received in one hour, the individual escalates by contacting a Login.gov lead directly.
+If a person outside the Login.gov team notices a Login.gov-related incident, they are instructed to email **security@login.gov**. If an acknowledgement from the Login.gov team is NOT received in one hour, the individual must escalates by contacting a Login.gov lead directly.
 
 ### Reporting an Incident to GSA Incident Response
 
-Once the situation room has been established, the Situation Lead will instruct the Messenger to create an incident tracking issue. A brief notification must be sent to GSA Incident Response gsa-ir@gsa.gov, IT Service Desk itservicedesk@gsa.gov (or GSA IT Helpline called), and Login.gov’s ISSO and ISSM.
+Once the situation room has been established, the Situation Lead will instruct the Messenger to create an incident tracking issue. A brief notification must be sent to GSA Incident Response **gsa-ir@gsa.gov**, IT Service Desk **itservicedesk@gsa.gov** (or GSA IT Helpline called), and Login.gov’s ISSO and ISSM.
 
 The Messenger will also update the public status page when the incident relates to service impacts or creates outages which prohibits customers from using the platform.
 
@@ -280,7 +280,7 @@ Anyone with access to production, including:
 
 * Situation Lead (SL) - Once declared, leads the process until the incident is resolved OR Situation Lead role is handed off
   * Ensures process is followed
-  * Stays in the [situation room](#situation-room)
+  * Stays in the situation room
   * Delegates activities - Does NOT act as Technical Lead
   * Ensures communication and mitigation are being addressed by others
   * Makes sure everything that needs doing is being done
