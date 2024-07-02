@@ -3,7 +3,7 @@ title: "Incident Response Guide"
 description: "Security Incident Response Guide"
 layout: article
 category: "Security"
-cSpell: ignore sitrep sitreps
+cSpell: ignore sitrep sitreps ISCP
 redirect_from: /articles/secops-incident-response-guide.html
 ---
 
@@ -16,7 +16,7 @@ In a situation? Check the [Incident Response Checklist]({% link _articles/incide
 
 This document outlines Login.gov’s process for responding to incidents. It outlines roles and responsibilities during and after incidents, and it lays out the steps we’ll take to resolve them.
 
-The complete [Login.gov Incident Response Plan](https://docs.google.com/document/d/1KxV9jSY3VvckX01Q3UnqjfxFpGO33bMY4Rvx0ovBZqc/) is avaliable on Google Drive and is provided as a part of our FedRAMP ATO Package.
+The complete [Login.gov Incident Response Plan](https://docs.google.com/document/d/1KxV9jSY3VvckX01Q3UnqjfxFpGO33bMY4Rvx0ovBZqc/) is available on Google Drive and is provided as a part of our FedRAMP ATO Package.
 
 
 ## Contents
