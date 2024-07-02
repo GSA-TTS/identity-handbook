@@ -222,7 +222,7 @@ The Messenger will also update the public status page when the incident relates 
 
 ### PII Reporting Requirements
 
-GSA requires additional reporting of incidents which involve Personally Identifiable Information (PII). Confirmed or suspected incidents involving the potential loss or compromise of PII must be reported immediately as stated in _CIO-IT Security-01-02, Incident Response_.
+GSA requires additional reporting of incidents which involve Personally Identifiable Information (PII). Confirmed or suspected incidents involving the potential loss or compromise of PII must be reported immediately as stated in [CIO-IT Security-01-02, Incident Response](https://insite.gsa.gov/system/files/Incident-Response%20%28IR%29-%5BCIO-IT-Security-01-02-Rev-20%5D-02-08-2024.pdf).
 
 ### Crisis Comms
 
