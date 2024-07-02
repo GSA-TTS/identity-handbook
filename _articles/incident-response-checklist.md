@@ -221,7 +221,7 @@ and incident. To use:
         ![Screenshot of declare workflow in menus]({{site.baseurl}}/images/declare-incident-menu.png){:height="125"}
 
 Early in the response is may be hard to assess impact. The Situation Lead should
-perform a quick [impact assessment](#impact-assessment) to set the initial impact,
+perform a quick [impact assessment]{% link _articles/incident-response-guide.md %}#incident-severities) to set the initial impact,
 and it can be revised as needed later.
 
 The full list of roles may not be known at the time of posting. Leave unassigned
