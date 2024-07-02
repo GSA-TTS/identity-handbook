@@ -102,3 +102,7 @@ Key items as part of an acceptance thread:
     - Scrum Master
     - Anyone tagged as a reviewer in the ticket
     - A UX team member (if designs were referenced in the ticket)
+
+Once verified, the reviewer can accept the thread:
+- Move the JIRA ticket to Done
+- Link to the acceptance thread in the JIRA ticket (preferably in the comment for the "move to done" step)

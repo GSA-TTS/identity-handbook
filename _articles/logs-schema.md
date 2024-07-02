@@ -8,10 +8,10 @@ subcategory: "Data Warehouse"
 
 This is a guide to provide the schema definitions for the four log tables in our Data Warehouse:
 
-- `events.logs`
-- `production.logs`
-- `unextracted_events.logs`
-- `unextracted_production.logs`
+- `logs.events`
+- `logs.production`
+- `logs.unextracted_events`
+- `logs.unextracted_production`
 
 ## logs.production
 
@@ -19,7 +19,7 @@ The `logs.production` table contains the following fields:
 
 - `cloudwatch_timestamp`
 - `message`
-- `uuid` (primary key)
+- `uuid`
 - `method`
 - `path`
 - `format`
@@ -42,7 +42,7 @@ The `logs.events` table contains the following fields:
 
 - `cloudwatch_timestamp`
 - `message`
-- `id` (primary key)
+- `id`
 - `name`
 - `time`
 - `visitor_id`
