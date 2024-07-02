@@ -46,7 +46,7 @@ emergency contact list and other private information
 * **Appropriately respond to alerts** - Assess an alert's impact to end users and service providers and judge severity, acting as Incident Response reporter/Situation Lead if appropriate
 * **Check production (`prod`) environment** - Review systems and logs for indicators of issues which are not yet monitored, or unexpected behaviors
 * **Alert `@login-appdev-oncall` if production may be impacted** - Make sure they are aware anytime things are going poorly in production
-* **Initiate Incident Response (IR) process** - Act as Situation Lead/Incident Commander following the [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
+* **Initiate Incident Response (IR) process** - Act as Situation Lead/Incident Commander following the [Security Incident Response Guide]({% link _articles/incident-response-guide.md %})
 * **Monitor Channels** - Keep an eye on [`#login-events`](https://gsa-tts.slack.com/archives/C42TZ3K5H) for problems requiring response or investigation
 * **Review any open PRs that have been sitting over 48 hours in [`identity-devops`](https://github.com/18F/identity-devops/pulls), [`identity-terraform`](https://github.com/18F/identity-terraform/pulls), [`identity-base-image`](https://github.com/18F/identity-base-image/pulls), or [`identity-cookbooks`](https://github.com/18F/identity-cookbooks/pulls)**
 * **Ensure clean handoff of ongoing issues** - Review and update as is appropriate in the [LG Platform - Interrupts board](https://github.com/orgs/18F/projects/34)
@@ -222,7 +222,7 @@ Before joining the Primary/Secondary On-Call rotation schedules for the Platform
 * Comfortable navigating APM and Infrastructure areas in NewRelic
 * Comfortable reviewing logs in AWS CloudWatch and/or with `tail-cw` SSM command
 * Shadowed full set of deploys: `dev`, `int`, `staging`, `dm`, and `prod` application deployments, and other platform code (**Deployment** rotation)
-* Reviewed [Security Incident Response Guide]({% link _articles/secops-incident-response-guide.md %})
+* Reviewed [Security Incident Response Guide]({% link _articles/incident-response-guide.md %})
 * Reviewed [past postmortems](https://drive.google.com/drive/folders/1ZdroGfCbGmeUPuCqiR8BetUhEXRfk4ui)
 * Joined [`#login-situation`](https://gsa-tts.slack.com/archives/C5QUGUANN) channel
 * Participated in at least one bi-weekly Contingency Plan Training Wargames session
