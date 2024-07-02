@@ -49,7 +49,7 @@ If you are comfortable with the command line, you can also use our [query-cloudw
 ### Filtering by event
 
 {%- capture info -%}
-See [Analytics Events]({% link _articles/analytics-events.md %}) for the most up-to-date documentation of individual events and their fields.
+See [Analytics Events][analytics-events] for the most up-to-date documentation of individual events and their fields.
 {%- endcapture %}
 {% include alert.html content=info alert_class="usa-alert--info" %}
 
@@ -145,3 +145,11 @@ To work around this, consider doing post processing externally. Another option, 
 [count-distinct]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Stats.html#:~:text=Returns%20the%20number%20of%20unique%20values%20for%20the%20field.%20If%20the%20field%20has%20very%20high%20cardinality%20(contains%20many%20unique%20values)%2C%20the%20value%20returned%20by%20count_distinct%20is%20just%20an%20approximation.
 
 [query-cloudwatch]: {% link _articles/devops-scripts.md %}#query-cloudwatch
+
+## See Also
+
+- [Devops CloudWatch guide](https://gitlab.login.gov/lg/identity-devops/-/wikis/Guide:-Cloudwatch-Logs,-Metrics-and-Dashboards)
+- [Analytics Events Documentation][analytics-events]
+- [AWS documentation for CloudWatch Insights][aws-docs]
+
+[analytics-events]: {% link _articles/analytics-events.md %}
