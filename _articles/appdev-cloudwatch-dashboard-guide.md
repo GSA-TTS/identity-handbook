@@ -1,17 +1,18 @@
 ---
-title: "Cloudwatch Dashboards"
-description: "How to search for, create, and manage cloudwatch dashboards"
+title: "CloudWatch Dashboards"
+description: "How to search for, create, and manage CloudWatch dashboards"
 layout: article
-category: "AppDev"
+category: "Reporting"
+subcategory: "CloudWatch"
 ---
 
 ## Overview
 
-Amazon Cloudwatch makes it possible to search Login.gov logs and AWS metrics to
+Amazon CloudWatch makes it possible to search Login.gov logs and AWS metrics to
 create visualizations or display statistics.
-Cloudwatch Insights is the tool that makes it possible to query logs.
-Information on how to build Cloudwatch Insights queries can be found in the
-[AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
+CloudWatch Insights is the tool that makes it possible to query logs. See [CloudWatch 101][cloudwatch-101] for more information on how to write queries.
+
+[cloudwatch-101]: {% link _articles/cloudwatch-101.md %}
 
 [Login.gov's CloudWatch Dashboards](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards:)
 can be found by navigating to the Cloudwatch service in the AWS Console and
