@@ -10,9 +10,10 @@ subcategory: "CloudWatch"
 
 Amazon CloudWatch makes it possible to search Login.gov logs and AWS metrics to
 create visualizations or display statistics.
-CloudWatch Insights is the tool that makes it possible to query logs. See [CloudWatch 101][cloudwatch-101] for more information on how to write queries.
+CloudWatch Insights is the tool that makes it possible to query logs. See [CloudWatch 101][cloudwatch-101] for more information on how to write queries, or the [Devops CloudWatch Guide][devops-cloudwatch].
 
 [cloudwatch-101]: {% link _articles/cloudwatch-101.md %}
+[devops-cloudwatch]: https://gitlab.login.gov/lg/identity-devops/-/wikis/Guide:-Cloudwatch-Logs,-Metrics-and-Dashboards
 
 [Login.gov's CloudWatch Dashboards](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards:)
 can be found by navigating to the Cloudwatch service in the AWS Console and
