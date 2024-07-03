@@ -22,14 +22,6 @@ using https://gitlab.login.gov
 See [Learning More About GitLab](#learning-more-about-gitlab) for a list of
 documentation and training resources.
 
-## Getting Support
-
-Login.gov's Platform Teams support the GitLab service.  For help from an on-call
-platform engineer you can Slack a question in `#login-devops` and `@login-devtools-oncall`
-
-For general GitLab support you can also directly use GitLab support.
-See [GitLab Licensing and Support](https://gitlab.login.gov/lg/identity-devops/-/wikis/GitLab-Ultimate-Licensing-and-Support)
-
 ## Getting an Account
 
 Accounts are provisioned in code by the Login.gov Platform Team.  In general
@@ -54,6 +46,15 @@ To log in:
 * Sign in with your official duty email address
 * Multi-factor authenticate with a security key, face/touch unlock, or PIV
 
+## Getting Support
+
+Login.gov's Platform Teams support the GitLab service.  For help from an on-call
+platform engineer you can Slack a question in `#login-devops` and `@login-devtools-oncall`
+
+For general GitLab support you can also directly use GitLab support.
+See [GitLab Licensing and Support](https://gitlab.login.gov/lg/identity-devops/-/wikis/GitLab-Ultimate-Licensing-and-Support)
+
+
 Note - If `secure.login.gov` is not available, existing Personal Access Tokens
 continue to function.  We also have break-glass procedures if needed.
 See [Runbook: GitLab Access Contingency Plan](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Gitlab-Access-When-IDP-is-Down)
@@ -76,10 +77,6 @@ We are in the process of moving our repos to using GitLab as their primary sourc
 | identity-saml-sinatra                | 6/6/24            | moved     |
 | identity-pki                         | 6/13/24           | moved     |
 | identity-loadtest                    | 6/20/24           | moved     |
-| identity-secops                      | 6/27/24           | planned   |
-| identity-playbook                    | 6/27/24           | planned   |
-| wg-identity                          | 6/27/24           | planned   |
-| identity-deed                        | 6/27/24           | planned   |
 | identity-ux                          | 7/11/24           | planned   |
 | identity-oidc-phoenix                | 7/11/24           | planned   |
 | identity-private                     | 7/11/24           | planned   |
