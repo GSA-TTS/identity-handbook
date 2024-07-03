@@ -115,7 +115,8 @@ CloudWatch Insights does not support joins
 
 #### Max 10,000 rows
 
-[query-cloudwatch][query-cloudwatch] script with the `--complete` option
+Use the [query-cloudwatch][query-cloudwatch] script with the `--complete` option, it will
+automatically break re-query for shorter time ranges until it has all matching rows.
 
 #### Too many fields
 
