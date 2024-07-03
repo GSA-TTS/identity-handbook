@@ -135,11 +135,13 @@ From the [AWS documentation on `count_distinct`][count-distinct]:
 
 > Returns the number of unique values for the field. If the field has very high cardinality (contains many unique values), the value returned by count_distinct is just an approximation.
 
-To work around this, consider doing post processing externally. Another option, if there are fewer than 10,000 things is to do:
+To work around this, there are a few options
+- Consider doing post processing externally, the [`query-cloudwatch`][query-cloudwatch] script has a `--count-distinct` option to streamline this
+- If there are fewer than 10,000 things, you can use plain `count(*)`:
 
-```
-| stats count(*) by PROPERTY_TO_COUNT
-```
+    ```
+    | stats count(*) by PROPERTY_TO_COUNT
+    ```
 
 [aws-docs]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html
 [count-distinct]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Stats.html#:~:text=Returns%20the%20number%20of%20unique%20values%20for%20the%20field.%20If%20the%20field%20has%20very%20high%20cardinality%20(contains%20many%20unique%20values)%2C%20the%20value%20returned%20by%20count_distinct%20is%20just%20an%20approximation.
