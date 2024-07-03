@@ -119,7 +119,7 @@ CloudWatch Insights does not support joins
 
 #### Too many fields
 
-CloudwatchInsights gives up on parsing after there are too many fields in a blob. To work around it, export the full `@message` field and parse it externally, such as in Ruby
+CloudWatch Insights gives up on parsing after there are too many fields in a blob. To work around it, export the full `@message` field and parse it externally, such as in Ruby
 
 #### Array iteration
 
