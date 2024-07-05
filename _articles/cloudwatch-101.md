@@ -103,7 +103,7 @@ fields @timestamp, name, properties.event_properties.success, @message
 
 ## Writing Queries
 
-The [AWS documentation for CloudWatch Insights][aws-docs] is fairly thorough. If anything is left unaswered after reading this guide, that documentation is likely to contain the answer.
+The [AWS documentation for CloudWatch Insights][aws-docs] is fairly thorough. If anything is left unanswered after reading this guide, that documentation is likely to contain the answer.
 
 ### Similarity to SQL
 
