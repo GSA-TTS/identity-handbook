@@ -25,14 +25,14 @@ You will need an AWS account and access. See [setting up aws-vault][aws-vault] f
     ```
     - Via AWS GUI:
     The console login method does not allow a user to switch roles or environments (ie, `sandbox-power`). If you know you will need to switch back and forth, it may be easier to log in via the AWS GUI.
-    https://us-east-2.signin.aws.amazon.com
-    Click the `Sign In to the Console` button on the top right
-    Input Account ID as `login-master`, your IAM username and password
-    Click `Sign In`
-    Generate an MFA Code [with your Yubikey](https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-your-Login.gov-Infrastructure-Configuration#configuring-a-mfa-authenticator)
-    Enter MFA code
-    Click `Submit`
-    Click on the top right user dropdown and click on `Switch role` to log into the appropriate role.
+        - [Navigate to AWS](https://us-east-2.signin.aws.amazon.com)
+        - Click the `Sign In to the Console` button on the top right
+        - Input Account ID as `login-master`, and your IAM username and password
+        - Click `Sign In`
+        - Generate an MFA Code [with your Yubikey](https://gitlab.login.gov/lg/identity-devops/-/wikis/Setting-Up-your-Login.gov-Infrastructure-Configuration#configuring-a-mfa-authenticator)
+        - Enter MFA code
+        - Click `Submit`
+        - Click on the top right user dropdown and click on `Switch role` to log into the appropriate role.
 
 1. Search for "CloudWatch"
 
