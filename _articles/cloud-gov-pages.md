@@ -15,7 +15,7 @@ Login.gov uses [Cloud.gov Pages][cloud-gov-pages] as its hosting provider for ou
 
 ## Requesting Access to Cloud.gov Pages
 
-**For those requesting access:** Reach out to any of the organization managers listed in the [Handbook Appendix][handbook-appendix-cloud-gov]. After you have been added to the organization, you will need to [sign in to the Cloud.gov Pages dashboard with GSA.gov][cloud-gov-pages-login].
+**For those requesting access:** Reach out to any of the organization managers listed in the [Handbook Appendix][handbook-appendix-cloud-gov]. After you have been added to the organization, you will need to [sign in to the Cloud.gov Pages dashboard with GSA.gov][cloud-gov-pages-login] _before_ authenticating with Netlify CMS.
 
 **For managers granting access:** [Sign in to the Cloud.gov Pages dashboard with GSA.gov][cloud-gov-pages-login], then add a new member under the "Add user" option of the [Login.gov Organization][cloud-gov-login-gov-org]
 
