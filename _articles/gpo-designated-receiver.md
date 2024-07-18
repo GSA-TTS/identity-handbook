@@ -34,6 +34,10 @@ It takes 3-7 business days for letters to arrive. It is common to not receive an
 
 If you'd like to volunteer to receive and record letters, please add your name to the [Upcoming Volunteers tab][upcoming-volunteers] of the GPO Designated Receiver Report spreadsheet. If you have any questions about the process, you can ask them in Slack in [#login-team-ada][team-ada-slack].
 
+## Please: See something, say something!
+
+Please make sure to record any unusual behavior observed with the letter on the Notes column of the [spreadsheet][the-spreadsheet]. If you believe the issue requires immediate attention, please post on #login-team-ada and tag @login-oncall-ada.
+
 ## How to change the designated receiver
 
 Team Ada's oncall engineer updates the designated receiver configuration on (or around) the 15th of every month. Here's the process:
