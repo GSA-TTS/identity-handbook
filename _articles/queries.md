@@ -92,6 +92,26 @@ date = Date.new(2021, 1, 1)
 Profile.where(active: true).where('activated_at < ?', date).count
 ```
 
+## Cumulative Unique IDV Accounts at Partner
+
+Returns the number of active, unique users at a partner (across all apps/integrations/service providers).
+
+```ruby
+values = {
+  agency_id: agency.id, # UPDATE THIS
+}
+sql = format(<<~SQL, values)
+  SELECT COUNT(DISTINCT profiles.id)
+  FROM profiles
+  JOIN identities ON profiles.user_id = identities.user_id
+  JOIN service_providers ON identities.service_provider = service_providers.issuer
+  WHERE
+    service_providers.agency_id = %{agency_id}
+    AND profiles.active = TRUE
+SQL
+ActiveRecord::Base.connection.execute(sql).to_a
+```
+
 ## Active Partners
 
 **Note**: The queries below can be run locally in the [`18F/identity-idp-config`](https://github.com/18F/identity-idp-config) project by running `bin/data_console` from within the root directory, instead of from a production instance. You will need to remove the `Agreements::` module from the Model name (i.e. start with just `PartnerAccount`) for queries run in the config repo.
