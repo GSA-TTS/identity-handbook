@@ -51,7 +51,7 @@ reminder with 👀 and reply in thread with:
 - The path to document capture
   - hybrid (start on desktop, switch to phone for capture)
   - standard (start on phone)
-- The git sha of the idp tested (available from the Environment stats)
+- The git sha of the idp tested (available from the Environment status page)
 - Any issues encountered!
 
 If an issue is found, we need to work quickly to triage and determine if the problem is being
