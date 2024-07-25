@@ -9,7 +9,7 @@ toc_h_max: 4
 
 ## General Information
 
-Automated testing of the Acuant SDK, used for capturing pictures of a user's ID or face, is not
+Automated testing of the Acuant SDK, used for capturing pictures of a user's ID and face, is not
 currently available. Prior to each bi-weekly deploy, Team Timnit wants to manually verify that the 
 SDK is functioning as expected.
 
@@ -39,7 +39,7 @@ details and up-to-date cadence.
   - Does capture happen automatically?
   - Does voice over work as expected?
   - Is your ID successfully verified?
-  - Is the new feature we're are deploying working properly?
+  - Is the new feature we're deploying working properly?
 
 
 ### Communications
@@ -56,4 +56,5 @@ reminder with 👀 and reply in thread with:
 
 If an issue is found, we need to work quickly to triage and determine if the problem is being
 introduced in the current deploy or if it is an existing bug. If new, work with `@login-deployer`
-to try and revert the breaking changes prior to deployment. If old, file a bug in Jira.
+to try and revert the breaking changes prior to deployment. If old, file a bug in Jira and share
+on the team's channel for visibility.
