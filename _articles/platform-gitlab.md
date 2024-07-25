@@ -77,36 +77,21 @@ We are in the process of moving our repos to using GitLab as their primary sourc
 | identity-saml-sinatra                | 6/6/24            | moved     |
 | identity-pki                         | 6/13/24           | moved     |
 | identity-loadtest                    | 6/20/24           | moved     |
-| identity-ux                          | 7/11/24           | planned   |
-| identity-oidc-phoenix                | 7/11/24           | planned   |
-| identity-private                     | 7/11/24           | planned   |
-| identity-hostdata                    | 7/11/24           | planned   |
-| identity-security-private            | 7/18/24           | planned   |
-| identity-analysis-sandbox            | 7/18/24           | planned   |
-| identity-oidc-nodejs-express         | 7/18/24           | planned   |
-| identity-fake-server                 | 7/18/24           | planned   |
-| identity-charts                      | 7/25/24           | planned   |
-| identity-validations                 | 7/25/24           | planned   |
-| identity-reporting                   | 7/25/24           | planned   |
-| identity-logging                     | 7/25/24           | planned   |
-| identity-roadmap                     | 8/1/24            | planned   |
-| identity-community                   | 8/1/24            | planned   |
-| identity-acuant-test                 | 8/1/24            | planned   |
-| identity-pki-elixir                  | 8/1/24            | planned   |
-| identity-fraudops-private            | 8/8/24            | planned   |
-| identity-device-id-demo              | 8/8/24            | planned   |
-| identity-billing-reporter            | 8/8/24            | planned   |
+| identity-hostdata                    | 7/11/24           | moved     |
+| identity-fake-server                 | 7/18/24           | moved     |
+| identity-validations                 | 7/25/24           | moved     |
+| identity-reporting                   | 7/25/24           | moved     |
 | identity-handbook-private            | 8/8/24            | planned   |
 | identity-cloudlib-lambdas            | 8/15/24           | planned   |
 | identity-partners-site               | 8/15/24           | planned   |
 | identity-secops-nessus-public        | 8/15/24           | planned   |
 | identity-lambda-functions            | 8/15/24           | planned   |
-| identity-idp                         | 8/31/24           | planned   |
-| identity-idv                         | 8/31/24           | planned   |
-| identity-idp-config                  | 8/31/24           | planned   |
-| identity-idp-functions               | 8/31/24           | planned   |
-| identity-idp-attempts-tracker-events | 8/31/24           | planned   |
-| idp-emacs                            | 8/31/24           | planned   |
+| identity-idp                         | 8/28/24           | planned   |
+| identity-idv                         | 8/28/24           | planned   |
+| identity-idp-config                  | 8/28/24           | planned   |
+| identity-idp-functions               | 8/28/24           | planned   |
+| identity-idp-attempts-tracker-events | 8/28/24           | planned   |
+| idp-emacs                            | 8/28/24           | planned   |
 | identity-handbook                    |                   | unplanned |
 | identity-site                        |                   | unplanned |
 
