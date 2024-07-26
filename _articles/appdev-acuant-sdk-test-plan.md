@@ -18,7 +18,8 @@ SDK is functioning as expected.
 **When to test:** ✅
 
 Manual testing should be done prior to the regular full deploy of IDP to `prod`. Typically we do a
-full deploy twice weekly, on Tuesdays and Thursdays - see [Deploying new IDP and PKI code]({% link _articles/appdev-deploy.md %}) for
+full deploy twice weekly, on Tuesdays and Thursdays - see
+[Deploying new IDP and PKI code]({% link _articles/appdev-deploy.md %}) for
 details and up-to-date cadence.
 
 ### Test Procedure
@@ -45,8 +46,8 @@ details and up-to-date cadence.
 ### Communications
 
 Slack: `@login-oncall-timnit` receives a reminder, in `#login-team-timnit` on Tuesday and Thursday
-mornings, to test the release prior to the day's deploy. When conducting the test, react to the
-reminder with 👀 and reply in thread with:
+mornings, to test the release prior to the day's deploy (others are welcome to test as well!). When
+conducting the test, react to the reminder with 👀 and reply in thread with:
 - The mobile platform used (OS, browser, version)
 - The path to document capture
   - hybrid (start on desktop, switch to phone for capture)
