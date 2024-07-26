@@ -32,7 +32,7 @@ details and up-to-date cadence.
   then click `Sign in`.
 - From the Login.gov sign in page, choose `Create an account`, enter your email with a modifier
   to make it unique, e.g., `first.last+yymmdd@gsa.gov`, and create your new account.
-- Go through identity verification up through document/selfie capture and note any issues with the
+- Using a mobile device or the hybrid handoff flow, go through identity verification up through document/selfie capture and note any issues with the
   SDK. Things to look for may include:
   - Does the SDK start?
   - Does the SDK use the full screen?
