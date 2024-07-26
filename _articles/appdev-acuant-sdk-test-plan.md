@@ -18,7 +18,7 @@ SDK is functioning as expected.
 **When to test:** ✅
 
 Manual testing should be done prior to the regular full deploy of IDP to `prod`. Typically we do a
-full deploy twice weekly, on Tuesdays and Thursdays - see {% link _articles/appdev-deploy.md %} for
+full deploy twice weekly, on Tuesdays and Thursdays - see [Deploying new IDP and PKI code]({% link _articles/appdev-deploy.md %}) for
 details and up-to-date cadence.
 
 ### Test Procedure
