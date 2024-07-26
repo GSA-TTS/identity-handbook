@@ -128,12 +128,12 @@ These additional roles are external to, and highly engaged with, responders in t
 ## Messenger
 ### Initiate
 1. For public impacting incidents, post initial incident notice following StatusPage Process
-1. Situation Report (sitrep) ticket created in identity-security-private repo
+1. Situation Report (sitrep) ticket created in [identity-security-private](https://github.com/18F/identity-security-private) repo
 1. Create email notice to GSA IR, ISSM, ISSO using the [Incident Response - GSA IR Email Template](https://docs.google.com/document/u/0/d/16h4gDq9JeW8JBhBDswSvoGRWx6qQvX_4spyEZVbjlcA/edit)
 1. Once the situation is assessed, ping @login-comms-oncall with brief triage summary
 
 ### Assess
-- Check the Incident Comms Playbook every 30 minutes
+- Check the [Incident Comms Playbook](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.vjtsg6mj5w6c) every 30 minutes
 - Update the platform [StatusPage]({% link _articles/statuspage-process.md %}#update) (if an incident is posted) every 30 minutes
 
 ### Contain
