@@ -81,7 +81,7 @@ Once you've run through proofing in staging, the next step is to cut a release f
 
 ###### Prerequisites
 
-The IDP includes a script to create deployment PRs. It relies on [`gh`](https://cli.github.com/), the Github cli. Install that first and authenticate it:
+The IdP includes a script to create deployment PRs. It relies on [`gh`](https://cli.github.com/), the GitHub cli. Install that first and authenticate it:
 
 ```
 brew install gh
