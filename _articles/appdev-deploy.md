@@ -257,7 +257,15 @@ Where `<PR_NUMBER>` is the number of the _merged_ PR.
    export GPG_TTY=$(tty)
    bin/tag-release
    ```
-2. Add release notes in GitHub:
+
+2. Add release notes in Gitlab:
+   1. Create a new release: <https://gitlab.login.gov/lg/identity-pki/-/releases/new>
+   2. Release title: `RC #{NUMBER}`
+   3. In the "Tag name" dropdown, enter the tag output by the `bin/tag-release` script
+   4. Copy the release notes Markdown from the promotion pull request
+   5. Click "Create release"
+
+3. Add release notes in GitHub:
    1. Create a new release: <https://github.com/18F/identity-pki/releases/new>
    2. Release title: `RC #{NUMBER}`
    3. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
