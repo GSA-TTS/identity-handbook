@@ -30,6 +30,8 @@ The cases described below sound similar, but each situation has its own consider
 existing data.
 * After deploy (optional): Run the rake task to update existing data.
 * Deploy 2: Read from the table/field
+* **Optional**: If a new column is not PII and we want it to be available in the Data Warehouse, add it
+  to the [DMS config YML file][data-warehouse-config] in the devops repo.
 
 ### Remove a table or field
 * Deploy 1: Remove all reads in the code
@@ -47,6 +49,9 @@ existing data.
 * Deploy 3: Remove the table/field
     * If removing a field, the field can be removed from the ignored columns list
     * If removing a table, the entire model file can be removed
+* Devops Repo: Check if the table/column was replicated to the Data Warehouse via DMS (check the [DMS config YML file][data-warehouse-config], and make a PR to remove).
+
+[data-warehouse-config]: https://gitlab.login.gov/lg/identity-devops/-/blob/main/terraform/app/dms-filter-columns-transformation-rules.yml
 
 [idp-explicit-config]: https://github.com/18F/identity-idp/blob/c4a0cc098867a209f8196c312024b24001b6fa9b/app/models/application_record.rb#L6-L7
 
