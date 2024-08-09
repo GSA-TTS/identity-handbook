@@ -81,17 +81,9 @@ We are in the process of moving our repos to using GitLab as their primary sourc
 | identity-fake-server                 | 7/18/24           | moved     |
 | identity-validations                 | 7/25/24           | moved     |
 | identity-reporting                   | 7/25/24           | moved     |
-| identity-handbook-private            | 8/8/24            | planned   |
-| identity-cloudlib-lambdas            | 8/15/24           | planned   |
-| identity-partners-site               | 8/15/24           | planned   |
-| identity-secops-nessus-public        | 8/15/24           | planned   |
-| identity-lambda-functions            | 8/15/24           | planned   |
+| identity-handbook-private            | 8/28/24           | planned   |
 | identity-idp                         | 8/28/24           | planned   |
-| identity-idv                         | 8/28/24           | planned   |
 | identity-idp-config                  | 8/28/24           | planned   |
-| identity-idp-functions               | 8/28/24           | planned   |
-| identity-idp-attempts-tracker-events | 8/28/24           | planned   |
-| idp-emacs                            | 8/28/24           | planned   |
 | identity-handbook                    |                   | unplanned |
 | identity-site                        |                   | unplanned |
 
