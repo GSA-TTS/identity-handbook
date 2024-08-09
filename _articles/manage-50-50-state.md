@@ -49,7 +49,7 @@ existing data.
 * Deploy 3: Remove the table/field
     * If removing a field, the field can be removed from the ignored columns list
     * If removing a table, the entire model file can be removed
-* Devops Repo: Check if the table/column was replicated to the Data Warehouse via DMS (check the [DMS config YML file][data-warehouse-config], and make a PR to remove).
+* Devops Repo: Check if the table/column was replicated to the Data Warehouse via DMS (check the [DMS config YML file][data-warehouse-config]) and make a PR to remove.
 
 [data-warehouse-config]: https://gitlab.login.gov/lg/identity-devops/-/blob/main/terraform/app/dms-filter-columns-transformation-rules.yml
 
