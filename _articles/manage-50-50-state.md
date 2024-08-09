@@ -30,8 +30,12 @@ The cases described below sound similar, but each situation has its own consider
 existing data.
 * After deploy (optional): Run the rake task to update existing data.
 * Deploy 2: Read from the table/field
-* **Optional**: If a new column is not PII and we want it to be available in the Data Warehouse, add it
-  to the [DMS config YML file][data-warehouse-config] in the devops repo.
+* **Optional**: If a new column is not PII and we want it to be available in the Data Warehouse:
+    * Add it to the [DMS config YML file][data-warehouse-config] in the devops repo
+    * Request a review from Team Agnes members (Data Enablement team). An easy way to notify the team
+      is to leave a link to the PR/MR in [#login-team-agnes-pull-requests][team-agnes-pulls]
+
+[team-agnes-pulls]: https://gsa.enterprise.slack.com/archives/C06EQPURK6D
 
 ### Remove a table or field
 * Deploy 1: Remove all reads in the code
