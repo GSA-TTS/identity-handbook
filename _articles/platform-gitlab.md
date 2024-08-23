@@ -82,8 +82,8 @@ We are in the process of moving our repos to using GitLab as their primary sourc
 | identity-validations                 | 7/25/24           | moved     |
 | identity-reporting                   | 7/25/24           | moved     |
 | identity-handbook-private            | 8/28/24           | planned   |
-| identity-idp                         | 8/28/24           | planned   |
-| identity-idp-config                  | 8/28/24           | planned   |
+| identity-idp                         | tbd               | on hold   |
+| identity-idp-config                  | tbd               | on hold   |
 | identity-handbook                    |                   | unplanned |
 | identity-site                        |                   | unplanned |
 
