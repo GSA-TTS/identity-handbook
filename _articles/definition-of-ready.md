@@ -48,6 +48,7 @@ Additional context is always useful, such as:
   - Other Jira tickets (including the original story if possible)
   - Customer support inquiries
   - Slack conversations
+- Includes stack traces or logs, or links to them in places like NewRelic or CloudWatch
 
 ## Tasks
 
