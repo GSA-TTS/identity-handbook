@@ -55,6 +55,14 @@ app-s3-secret: Upload changes to S3? (y/n)
 y
 ```
 
+{%- capture production_warning -%}
+**Note**: When editing secrets, especially in **production**,
+it's a best practice to share the diff in the `#login-appdev` channel for visibility.
+Make sure to redact sensitive values!
+{%- endcapture %}
+
+{% include alert.html content=production_warning alert_class="usa-alert--warning" %}
+
 After updating, [recycle the configuration][config-recycle] so that
 this updated config is picked up.
 
