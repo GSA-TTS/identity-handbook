@@ -7,19 +7,9 @@ category: "Reporting"
 
 ## Requesting
 
-If you have a data question about login.gov data, post it in [`#login-reporting`](https://gsa-tts.slack.com/archives/C5E7EJWF7). Make sure to include key information such as:
+If you have a data question about login.gov data, refer to the [Report Request Process Standard Operating Procedure (SOP)](https://docs.google.com/document/d/17cqWyFU6fftD-ZXiVw3ingfj64SyRAaj5Fce0q1XYHs/edit). Make sure to complete the [Report Request Form](https://docs.google.com/forms/d/e/1FAIpQLScdyPO8JqATuHmUsIsmCMs07xz2ANzEjXm7PuMDZXsQW4Oj9g/viewform) and include all the required information.
 
-- What is the data you are requesting? What question are you trying to answer?
-- When do you need this information by?
-
-Once that happens, someone from one of the data teams below will acknowledge and file your question as a JIRA ticket,
-which will be assigned to a sprint. Once the data has been collected, a summary will be posted to
-that Slack thread.
-
-### Teams
-
-- **Team Ursula**: handles questions or reports from partner requests
-- **Team Agnes**: handles all other requests (including billing, fraud, etc)
+Once that occurs, someone from the Data Analytics team will acknowledge your request and follow the process outlined in the [Report Request Process Standard Operating Procedure (SOP)](https://docs.google.com/document/d/17cqWyFU6fftD-ZXiVw3ingfj64SyRAaj5Fce0q1XYHs/edit).
 
 ## Examples
 
