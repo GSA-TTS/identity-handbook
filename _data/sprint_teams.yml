@@ -25,6 +25,13 @@
   readme: https://docs.google.com/document/d/1DG9uRocHFDAFCdagVW4c4dF2bi4eBqJ_9SfSzgHg9fM/edit
   product: true
 
+- name: Evelyn
+  namesake_markdown: "[Evelyn Boyd Granville](https://en.wikipedia.org/wiki/Evelyn_Boyd_Granville), the second African-American woman to receive a Ph.D. in mathematics from an American University (Yale), and pioneered work in computing"
+  focus_area: Data Analytics
+  slack_channel_url: https://gsa.enterprise.slack.com/archives/C07N2E8AGRK
+  slack_channel_name: login-team-evelyn
+  readme: https://docs.google.com/document/d/1XbeMRJ4ZzIIUGGjuenaUo71vpDhr9YzsLdqzKK0bRvg/edit
+
 - name: Grace
   namesake_markdown: "[Admiral Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), a computer scientist and navy officer"
   focus_area: KYC/Non-biometric verification
