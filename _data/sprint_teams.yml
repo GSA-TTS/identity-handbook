@@ -31,7 +31,6 @@
   slack_channel_url: https://gsa.enterprise.slack.com/archives/C07N2E8AGRK
   slack_channel_name: login-team-evelyn
   readme: https://docs.google.com/document/d/1XbeMRJ4ZzIIUGGjuenaUo71vpDhr9YzsLdqzKK0bRvg/edit
-  product: true
 
 - name: Grace
   namesake_markdown: "[Admiral Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper), a computer scientist and navy officer"
