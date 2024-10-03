@@ -39,7 +39,7 @@ Make sure you have prod-power access to run commands for aws-vault. You will hav
   - run `git pull` to make sure you have the latest in identity-devops.
 
 **Step 2:**
-  - run `aws-vault exec prod-power -- ./bin/ls-servers -e prod`.
+  - `aws-vault exec prod-power -- ./bin/ls-servers -e prod`
 
 This lists the production servers, including workers. Check that the number of instances running are what you would expect (numbers should match what is in the config - [asg_idp_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L88) and [asg_worker_desired](https://github.com/18F/identity-devops-private/blob/db5cbb3e124fb18b0177271c5488a717f9caa6b6/vars/prod.tfvars#L96)).
 
@@ -51,10 +51,11 @@ Notify in *#[login-devops](https://gsa-tts.slack.com/archives/C16RSBG49)* and *#
 **Step 4:**
 
 *If uploading new logos:*
-  - run `aws-vault exec prod-power -- ./bin/asg-recycle prod idp`.
+  - `aws-vault exec prod-power -- ./bin/asg-recycle prod idp`
 
 *If no new logos:*
-  - run `aws-vault exec prod-power -- ./bin/asg-recycle prod migration`. This will kick off recycling *without* needing to scale out old instances.
+  - `aws-vault exec prod-power -- ./bin/asg-recycle prod migration`
+  - This will kick off recycling *without* needing to scale out old instances.
 
 **Step 5:**
 
@@ -79,10 +80,11 @@ Tailing the logs is just for visual confirmation that the recycle has finished.
 This step is optional, but you can confirm the config was updated/added by running rails console.
 You will need to specify the reason you are running the console.
 
-  - run `aws-vault exec prod-power -- ./bin/ssm-instance -d rails-c --any asg-prod-idp`
-  - run `sp = ServiceProvider.find_by(issuer: 'ISSUER_URN_HERE')`
-  - run `sp.attributes` to see the details for the Service Provider
   - provide justification, such as `Confirming partner configuration deployed`
+  - `aws-vault exec prod-power -- ./bin/ssm-instance -d rails-c --any asg-prod-idp`
+  - `sp = ServiceProvider.find_by(issuer: 'ISSUER_URN_HERE')`
+  - `sp.attributes`
+ 
 
 **Step 8:**
 
@@ -93,7 +95,7 @@ If config is updated as expected, and you needed to do a full recycle for a new/
 **Step 9:**
 
 Scale out old instances of prod-worker and prod-idp
-  - run `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL`
+  - `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL`
 
 **Step 10:**
   - confirm instances are scaling out by running step 2 again. You should see that old instances say “shutting down” under status.
