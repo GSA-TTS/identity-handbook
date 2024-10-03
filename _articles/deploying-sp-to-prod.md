@@ -80,6 +80,8 @@ This step is optional, but you can confirm the config was updated/added by runni
 You will need to specify the reason you are running the console.
 
   - run `aws-vault exec prod-power -- ./bin/ssm-instance -d rails-c --any asg-prod-idp`
+  - run `sp = ServiceProvider.find_by(issuer: 'ISSUER_URN_HERE'`
+  - run `sp.attributes` to see the details for the Service Provider
   - provide justification, such as `Confirming partner configuration deployed`
 
 **Step 8:**
