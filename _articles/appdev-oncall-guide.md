@@ -69,7 +69,7 @@ Throughout the week, check for automated vulnerability pull requests and try to 
 * Requests will be forwarded via email.
 * It is expected that the AppDev who receives the request will be the one to complete it, even if it extends beyond the on-call week.
 
-[ig-requests]: https://github.com/18F/identity-security-private/wiki/Responding-to-Inspector-General-(IG)-Data-Requests
+[ig-requests]: https://gitlab.login.gov/lg-people/security/login-security-handbook/-/wikis/resources/Runbooks/Inspector-General-Data-Requests
 
 ### Resetting User Passwords
 
