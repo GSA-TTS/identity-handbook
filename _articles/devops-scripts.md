@@ -420,8 +420,43 @@ aws-vault exec sandbox-power -- \
 
 There are many options! Run with `--help` to see them all.
 
-- The script can output as new-line delimited JSON (`--json`) or as a CSV (`--csv`).
+- The script can output as new-line delimited JSON (`--json`), CSV (`--csv`), or a SQLite database (`--sqlite`)
 - The script can run a query on disjoint dates via the `--date` flag like `--date 2023-01-01,2023-02-02`
+
+### SQLite output
+
+Specifying the `--sqlite` option will make `query-cloudwatch` store events returned in a local SQLite database (named `events.db` by default; change this by doing `--sqlite [filename]`).
+
+Event data is written to a table called `events` with the following schema:
+
+```sql
+CREATE TABLE IF NOT EXISTS events (
+  id TEXT PRIMARY KEY NOT NULL,
+  timestamp TEXT NOT NULL,
+  name TEXT NULL,
+  user_id TEXT NULL,
+  success INTEGER NULL,
+  message TEXT NOT NULL,
+  log_stream TEXT NULL,
+  log TEXT NULL  
+)
+```
+
+`timestamp` contains an ISO-8601 timestamp (in UTC). You can use [SQLite's built-in date and time functions](https://sqlite.org/lang_datefunc.html) to work with it, e.g.:
+
+```sql
+SELECT timestamp, timediff(current_timestamp, timestamp) AS time_ago FROM events;
+```
+
+For events.log, `message` contains the original JSON, and you can use [SQLite's JSON functions](https://sqlite.org/json1.html#jex) to work with that, e.g.:
+
+```sql
+SELECT json_extract(message, '$.visitor_id') AS visitor_id, COUNT(*) FROM events GROUP BY visitor_id;
+```
+
+`name`, `user_id`, and `success` are all automatically populated when using `events.log`.
+
+`log_stream` and `log` are optional, and will be set to `@logStream` and `@log` if your query includes them.
 
 ##  `copy-cloudwatch-dashboard`
 
