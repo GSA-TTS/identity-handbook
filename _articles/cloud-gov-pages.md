@@ -15,7 +15,7 @@ Login.gov uses [Cloud.gov Pages][cloud-gov-pages] as its hosting provider for ou
 
 ## Requesting Access to Cloud.gov Pages
 
-To be able to manage Login.gov's static sites in Cloud.gov Pages or edit content on those sites using Netlify CMS, you will need to be a part of the `identity-core` team within the [GSA-TTS GitHub organization](https://github.com/gsa-tts). If you are not already part of this team, you must first [request access to be added](https://handbook.login.gov/articles/github-gitlab.html#requesting-access).
+To be able to manage Login.gov's static sites in Cloud.gov Pages or edit content on those sites using Netlify CMS, you will need to be a part of the `identity-core` team within the [GSA-TTS GitHub organization](https://github.com/gsa-tts). If you are not already part of this team, you must first [request access to be added]({% link _articles/github-gitlab.md %}#requesting-access).
 
 **For those requesting access:** Reach out to any of the organization managers listed in the [Handbook Appendix][handbook-appendix-cloud-gov]. After you have been added to the organization, you will need to [sign in to the Cloud.gov Pages dashboard with GSA.gov][cloud-gov-pages-login] _before_ authenticating with Netlify CMS.
 
