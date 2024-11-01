@@ -28,7 +28,6 @@ This page lists various services that Login.gov team uses to do work.
 - NewRelic
 - NPM Package registry
 - search.gov dashboard
-- Splunk On-Call
 - StatusPage
 
 [onboarding]: {% link _articles/onboarding.md %}

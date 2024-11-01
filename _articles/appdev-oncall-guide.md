@@ -11,21 +11,19 @@ subcategory: Oncall
 Any engineer should be able to be oncall and we encourage all engineers to join the rotation to help
 distribute the load. Before being added to the oncall rotation, an engineer must have these prerequisites:
 
-1. Access to Splunk On-Call
+1. Access to AWS Incident Manager
 2. Deploy access to production
 3. SSM access to production
-4. Join #identity-situation channel and #login-partnerships
+4. Join the #login-situation channel
 
-## Splunk On-Call Team & Rotations
+## AWS Incident Manager Team & Rotations
 
-Team: [AppDev](https://portal.victorops.com/dash/gsa_login#/team/team-0Ua2JuOlypN0Jssx/users)
-
-[Rotations](https://portal.victorops.com/dash/gsa_login#/team/team-0Ua2JuOlypN0Jssx/rotations):
+Rotations:
 
 1. appdev-primary
 2. appdev-secondary
 
-See [Splunk On-Call]({% link _articles/platform-splunk-oncall.md %}) for more on our paging system.
+See [AWS Incident Manager]({% link _articles/platform-aws-incident-manager.md %}) for more on our paging system.
 
 ## Emergency Contacts
 

@@ -274,7 +274,7 @@ Anyone with access to production, including:
   * The current Application (AppDev) Primary and Secondary on-call
   * The current Platform (DevOps) Primary and Secondary on-call
   * Additional Responders as needed - The Situation Lead can call in anyone defined in [Who does the Incident Response Guide apply to?](#who-does-the-incident-response-guide-apply-to)
-* After hours - Platform On Call and Application On Call - Additional resources will be brought in via Splunk On-Call notification
+* After hours - Platform On Call and Application On Call - Additional resources will be brought in via AWS Incident Manager notification
 
 ### What is expected when participating?
 

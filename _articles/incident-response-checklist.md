@@ -175,7 +175,7 @@ These additional roles are external to, and highly engaged with, responders in t
 
 ## Comms Lead
 
-* Notified by the `@login-comms-oncall` Slack handle; Manually notified via Splunk On-Call [comms-primary rotation](https://portal.victorops.com/dash/gsa_login/#/team/team-uDT03dJxKxWOvUTx/rotations) after-hours (Target: 30 minutes before crisis comms level reached)
+* Notified by the `@login-comms-oncall` Slack handle; (Target: 30 minutes before crisis comms level reached)
 * Monitors the situation thread
 * If needed, briefly joins situation room to gather context
 * Follows the [Login.gov Incident Comms Playbook](https://docs.google.com/document/d/1kG7LXaEThJFJfCVP3jnimEvqbHKlFNvJ_PokZkpu1K8/edit#heading=h.330ecfi08z29)
@@ -184,7 +184,7 @@ These additional roles are external to, and highly engaged with, responders in t
 
 * Notified by partner email to Partner Down address
 * Check in with Situation Lead if incident is active
-* Use Splunk On-Call or phone to pull in responders if a situation has not been declared
+* Use AWS Incident Manager or phone to pull in responders if a situation has not been declared
 * NOT acting as Login.gov Situation Lead
 * Joins partner situation room (or equivalent)
 * Important status and context communicated between Login.gov and partner situation rooms

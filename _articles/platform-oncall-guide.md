@@ -38,11 +38,11 @@ Mission: Take care of production!
 emergency contact list and other private information
 * [Incident Response Checklist]({{site.baseurl}}/articles/incident-response-checklist.html) - when an incident arises
 * [Troubleshooting Quick Reference]({{site.baseurl}}/articles/troubleshooting-quick-reference.html) - when you are troubleshooting and not sure where to start
-* [Platform Rotations in Splunk On-Call](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/rotations) - to check who is on call
+* [Platform Rotations in AWS Incident Manager](https://us-east-1.console.aws.amazon.com/systems-manager/incidents/engagement/home?region=us-east-1#/oncallschedules) - to check who is on call
 
 #### Responsibilities
 
-* **Acknowledge pages** - ACK Splunk On-Call pages within 5 minutes (if possible) to ensure a timely response and to avoid rollover to the Secondary On-Call
+* **Acknowledge pages** - ACK pages within 5 minutes (if possible) to ensure a timely response and to avoid rollover to the Secondary On-Call
 * **Appropriately respond to alerts** - Assess an alert's impact to end users and service providers and judge severity, acting as Incident Response reporter/Situation Lead if appropriate
 * **Check production (`prod`) environment** - Review systems and logs for indicators of issues which are not yet monitored, or unexpected behaviors
 * **Alert `@login-appdev-oncall` if production may be impacted** - Make sure they are aware anytime things are going poorly in production
@@ -59,7 +59,7 @@ emergency contact list and other private information
 ##### Entering
 
 Do these as you enter the Primary On-Call rotation:
-1. **Update the `@login-devops-oncall` Slack group handle** - In [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49), click on `@login-devops-oncall` in the channel topic, and then edit the list of users to match the new Primary and Seconday On-Call engineers, as per [the schedule in Splunk On-Call](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/rotations)
+1. **Update the `@login-devops-oncall` Slack group handle** - In [`#login-devops`](https://gsa-tts.slack.com/archives/C16RSBG49), click on `@login-devops-oncall` in the channel topic, and then edit the list of users to match the new Primary and Seconday On-Call engineers, as per [the schedule in AWS Incident Manager](https://us-east-1.console.aws.amazon.com/systems-manager/incidents/engagement/home?region=us-east-1#/oncallschedules)
 2. **Discuss recent issues with previous Primary On-Call engineer**, if any
 
 ##### Daily
@@ -90,7 +90,7 @@ Mission: Support the Primary On-Call engineer!
 #### Responsibilities
 
 * **Acknowledge and work on escalated pages** - ACK pages that Primary On-Call is unable to reach in initial 5-minute period
-* **[Override Splunk On-Call schedule](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/scheduled-overrides) to act as Primary On-Call if scheduled Primary is unavailable**
+* **[Override On-Call schedule](https://us-east-1.console.aws.amazon.com/systems-manager/incidents/engagement/home?region=us-east-1#/oncallschedules) to act as Primary On-Call if scheduled Primary is unavailable**
 * **Assist with active incidents** - Provide additional technical support or offer to take Situation Lead duties
 * **Help out with excess toil** - Assist the Interrupts engineer if necessary
 * **Offer material and psychological support to Primary** - Empathize! Proactively reach out if they have experienced high stress situations or worked over 8 hours without any breaks
@@ -197,11 +197,14 @@ __Note - This is not currently a rotation.  We will reassess our approach to Git
 
 To temporarily take over the Primary or Secondary On-Call schedule:
 
-1. Open [Platform Team Overrides](https://portal.victorops.com/dash/gsa_login#/team/team-oMJ7AAPwdFSwsMJc/scheduled-overrides)
-1. Click "Create Override"
-1. In "Override for" select which team member should get alerts during the override period
+1. Open [Platform Team Overrides](https://us-east-1.console.aws.amazon.com/systems-manager/incidents/engagement/home?region=us-east-1#/oncallschedules)
+1. Click "platform_primary"
+1. Click "Schedule Calendar"
+1. Click "Create shift override"
+1. In "Select rotation" select "Platform Primary"
 1. Select the start and end time of the override
-1. Click "Create" to set the override
+1. Select the person who will be taking over the scheduled time.
+1. Click "Create shift override" to set the override
 
 ## Participating in Rotations
 
@@ -229,8 +232,7 @@ Before joining the Primary/Secondary On-Call rotation schedules for the Platform
 * Participated in at least one "Klaxon" session (if sessions are running)
 * Joined [`identity-devops` Google Hangout group](https://chat.google.com/room/AAAAJIpl9Oo) (in case of Slack outage)
 * Able to SSM into `prod` EC2 instances
-* [Splunk On-Call - Paging Policy]({% link _articles/platform-splunk-oncall.md %}#paging-policy) configured
-* [Splunk On-Call - iOS App]({% link _articles/platform-splunk-oncall.md %}#ios-app) installed and configured
+* [AWS Incident Manager]({% link _articles/platform-aws-incident-manager.md %}) configured
 * Created and tested GSA email IdP account with SMS and PIV enabled in:
   * `int`
   * `staging`
