@@ -9,7 +9,7 @@ subcategory: Development
 
 ## Overview
 
-Our Rails applications use [configuration values][rails-configuration] to support per-environment configuration. This allows us to create new configuration values which control whether a specific application feature is enabled in an environment, so that we can incrementally iterate on a large feature over time before enabling it in sandbox and eventually production environments. These are referred to as "feature flags", and are nothing more than boolean configuration values which are used in code to gate user and logic pathways.
+Our Rails applications use [configuration values][rails-configuration] to support per-environment configuration. This allows us to create new configuration values which control whether a specific application feature is enabled in an environment, so that we can incrementally iterate on a large feature over time before enabling it in lower environments and eventually the production environment. These are referred to as "feature flags", and are nothing more than boolean configuration values which are used in code to gate user and logic pathways.
 
 [rails-configuration]: {% link _articles/appdev-secrets-configuration.md %}#configuration-in-rails-apps
 
@@ -29,7 +29,7 @@ Consider the following when adding a new feature flag:
   - As with any configuration value, the name of a feature flag should be clear, and it should be obvious for someone outside the team implementing the feature to know which user flows it impacts. A verbose-but-clear feature flag name is better than a succinct-but-ambiguous name.
   - Feature flag names are typically suffixed with `_enabled`, indicating that it's a boolean controlling whether something is enabled or not.
 - **Default Value**:
-  - The simplest option is to enable a new feature flag by default, and disable it in production environments. The feature can then be enabled in specific deployed environments using [`app-s3-secret`][app-s3-secret].
+  - The simplest option is to enable a new feature flag by default, and disable it in the `production` section of the config. The `production` section is used as the default in all [deployed environments](https://docs.google.com/document/d/1N_R53Cjk-L7sHpS0G65an1_l4s8B9KRzgFRU27-WAfs/). The feature can then be enabled in specific deployed environments using [`app-s3-secret`][app-s3-secret].
 
   ```yaml
   # config/application.yml.default
@@ -51,7 +51,7 @@ Consider the following when adding a new feature flag:
 
 ### Enabling a feature flag
 
-A new feature flag is expected to be disabled by default in production. You can then enable it in specific deployed environments using [`app-s3-secret`][app-s3-secret].
+A new feature flag is expected to be disabled by default in the `production` section of the config. You can then enable it in specific deployed environments using [`app-s3-secret`][app-s3-secret].
 
 Refer to [Environment Descriptions][environment-descriptions] to understand the purpose of each environment, and when it might make sense to enable a feature in that environment.
 
