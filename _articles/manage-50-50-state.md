@@ -139,6 +139,11 @@ of the cases above.
 * Deploy 1: Change the flag value
 * Make any changes to routes, jobs, and persistent data in following deploys as described above.
 
+## JavaScript Requests from API Endpoints
+We can hit 50/50 state errors when JavaScript requests to an API endpoint assume that the data will take a certain shape. If an older instance responds to the request, it could cause the request to fail.
+
+To avoid such an error, consider modifying the JavaScript request to be less coupled with the shape of the data that the API returns.
+
 ## Test in the 50/50 state
 When making a large change such as adding a new page to the Identity Verification flow, it can be
 helpful to test in the 50/50 state. Large changes are developed behind a feature flag and then
