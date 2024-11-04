@@ -15,7 +15,7 @@ envs:
 
 We deploy { two sample apps } &times; { four environments } in cloud.gov:
 
-| | [OpenID Connect](https://github.com/18f/identity-oidc-sinatra/) | [SAML](https://github.com/18f/identity-oidc-saml/) |
+| | [OpenID Connect](https://gitlab.login.gov/lg/identity-oidc-sinatra) | [SAML](https://gitlab.login.gov/lg/identity-saml-sinatra) |
 |---|-----|
 {% for env in page.envs -%}
 | {{ env }} | <https://{{ env }}-identity-oidc-sinatra.app.cloud.gov> | <https://{{ env }}-identity-saml-sinatra.app.cloud.gov> |
@@ -25,7 +25,7 @@ We deploy { two sample apps } &times; { four environments } in cloud.gov:
 
 The sample apps deploy automatically when changes are merged to the `main` branch.
 
-Refer to each project's CircleCI configuration for details on the deployment workflow:
+Refer to each project's GitLab CI/CD configuration for details on the deployment workflow:
 
-- [identity-oidc-sinatra/.circleci/config.yml](https://github.com/18F/identity-oidc-sinatra/blob/main/.circleci/config.yml)
-- [identity-saml-sinatra/.circleci/config.yml](https://github.com/18F/identity-saml-sinatra/blob/main/.circleci/config.yml)
+- [identity-oidc-sinatra/.gitlab-ci.yml](https://gitlab.login.gov/lg/identity-oidc-sinatra/-/blob/main/.gitlab-ci.yml?ref_type=heads)
+- [identity-saml-sinatra/.gitlab-ci.yml](https://gitlab.login.gov/lg/identity-saml-sinatra/-/blob/main/.gitlab-ci.yml?ref_type=heads)
