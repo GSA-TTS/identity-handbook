@@ -9,7 +9,7 @@ subcategory: Development
 
 ## Overview
 
-Our Rails applications use [configuration values][rails-configuration] to support per-environment configuration. This allows us to create new configuration values which control whether a specific application feature is enabled in an environment, so that we can incrementally iterate on a large feature over time before enabling it in lower environments and eventually the production environment. These are referred to as "feature flags", and are nothing more than boolean configuration values which are used in code to gate user and logic pathways.
+Our Rails applications use [configuration values][rails-configuration] to support per-environment configuration. This allows us to create new configuration values which control whether a specific application feature is enabled in an environment, so that we can iterate on a large feature over time while [rolling it out](#rolling-out-a-feature-flag). These are referred to as "feature flags", and are nothing more than boolean configuration values which are used in code to gate user and logic pathways.
 
 [rails-configuration]: {% link _articles/appdev-secrets-configuration.md %}#configuration-in-rails-apps
 
@@ -49,15 +49,22 @@ Consider the following when adding a new feature flag:
 [app-s3-secret]: {% link _articles/devops-scripts.md %}#app-s3-secret
 [rails-configuration]: {% link _articles/appdev-secrets-configuration.md %}#configuration-in-rails-apps
 
-### Enabling a feature flag
+### Rolling out a feature flag
 
 A new feature flag is expected to be disabled by default in the `production` section of the config. You can then enable it in specific deployed environments using [`app-s3-secret`][app-s3-secret].
 
 Refer to [Environment Descriptions][environment-descriptions] to understand the purpose of each environment, and when it might make sense to enable a feature in that environment.
 
-Typically, the `dev` environment is the first deployed environment where a feature is enabled, since this environment is used exclusively by internal team members for testing, which limits the impact and risk for unstable code behaving unexpectedly. Similarly, enabling a feature in `staging` can be beneficial before enabling in `prod` when a feature involves an integration with a third-party vendor, since the `staging` environment is configured to integrate with live endpoints and is therefore more realistic to what a production user will experience.
+The recommended process is:
 
-Before enabling a feature flag in the `prod` environment, make sure that the feature is enabled in continuous integration (CI) tests, to increase confidence that there are no bugs in the code.
+1. Enable the feature flag in local development and testing as described in [adding a feature flag](#adding-a-new-feature-flag)
+1. Enable the feature flag in `dev`
+  - This environment is primarily used by internal team members for testing, which limits the impact and risk of less stable features.
+1. Enable the feature flag in `int` and/or `staging`
+  - The `int` environment has a wider usage base, including partners testing and developing their integrations, and those accessing the partner portal. This has tradeoffs in that it increases potential impact, but also offers a better test prior to deploying a feature to prod.
+  - `staging` is similar to `dev` in that it is very low traffic, but it can be useful to use when the feature involves an integration with a third-party vendor. The `staging` environment is configured to integrate with live endpoints and is therefore more realistic to what a production user will experience.
+1. Enable the feature flag in `prod`
+  - Before enabling a feature flag in the `prod` environment, make sure that the feature is enabled in continuous integration (CI) tests, to increase confidence that there are no bugs in the code.
 
 [app-s3-secret]: {% link _articles/devops-scripts.md %}#app-s3-secret
 [environment-descriptions]: {% link _articles/sandboxes-and-staging-environments.md %}
