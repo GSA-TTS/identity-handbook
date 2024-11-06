@@ -336,7 +336,7 @@ new configurations (config from S3).
     ```
 
 ### No-Migration Recycle
-When responding to a production incident with a config change, or otherwise in a hurry, you might want to recycle without waiting for a migration instance. For environments other than prod, note that if a migration has been introduced on `main`, new instances will fail to start until migrations are run.
+When responding to a production incident with a config change, or otherwise in a hurry, you might want to recycle without waiting for a migration instance.
 1. Recycle the boxes without a migration instance
 ```bash
 aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
@@ -346,3 +346,10 @@ aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
 ```bash
 aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
 ```
+
+#### Risks with No-Migrations Recycle
+For environments other than prod, note that if a migration has been introduced on `main`, new instances will fail to start until migrations are run.
+
+Additionally, migration instances are responsible for compiling assets.  If assets have changed since the last migration, we recommend against running a no-migration recycle.  Otherwise, the new servers will look for fingerprinted asset files that don't exist, because the migration instances never created them.
+
+To tell if assets have changed since the last migration, inspect the [Environments status page](https://dashboard.int.identitysandbox.gov/env).  Click "pending changes" and determine if any files changed in `app/assets/stylesheets` or `app/javascript`.
