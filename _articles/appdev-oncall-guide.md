@@ -12,9 +12,11 @@ Any engineer should be able to be oncall and we encourage all engineers to join 
 distribute the load. Before being added to the oncall rotation, an engineer must have these prerequisites:
 
 1. Access to AWS Incident Manager
-2. Deploy access to production
-3. SSM access to production
-4. Join the #login-situation channel
+2. Access to NewRelic
+3. Access to Salesforce
+4. Deploy access to production
+5. SSM access to production
+6. Join the #login-situation channel
 
 ## AWS Incident Manager Team & Rotations
 
