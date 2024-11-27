@@ -13,14 +13,11 @@ A few notes on our deploy process.
 
 ### Cadence
 
-**When to deploy:** ✅
-- Typically we do a full deploy twice weekly, on Tuesdays and Thursdays.
-
-**When _not_ to deploy:** ❌
-- We try to avoid deploying on Fridays, to minimize the chances of introducing a
-  bug and having to scramble to fix it before the weekend
-- When the deploy falls on a holiday, or any other time when many team members are on vacation, such
-  as New Years / end of year.
+- Most weeks, we plan to do a full deploy on Tuesday and Thursday.
+- We are able to deploy at any time, but off-cycle deploys should be communicated with on-callers if possible
+- However, we do try to avoid deploying on days when more people will be out. This includes:
+   - Fridays to minimize scrambling to fix before the weekend.
+   - Before holidays, or any other time when many team members are on vacation, such as New Years / end of year.
 
 ### Types of Deploys
 
