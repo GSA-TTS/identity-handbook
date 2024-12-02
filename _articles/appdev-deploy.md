@@ -15,10 +15,10 @@ A few notes on our deploy process.
 
 - Most weeks, we plan to do a full deploy on Tuesday and Thursday.
 - We are able to deploy at any time, but off-cycle deploys should be communicated with on-callers if possible
-- We default to not deploying if we expect most of the team will be out on the following day. Some examples are:
+- We default to not deploying if we expect most of the team will be out on the day(s) following. Some examples are:
    - Fridays
-   - The day before a Federal holiday
-   - The day before a large swath of the team is expected to be on vacation
+   - Before a holiday
+   - Before a large part of the team is expected to be on leave
 
 ### Types of Deploys
 
