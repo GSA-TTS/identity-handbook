@@ -42,7 +42,7 @@ For Login.gov and vendor emergency contact information see [Emergency Contacts](
 
 ## Handoff
 
-The AppDev Rotation hands off every **Monday at 1pm Eastern (10 Pacific)**.
+The AppDev Rotation hands off every **Monday at 1pm Eastern (10am Pacific)**.
 
 Handoffs on holidays will be managed on a case-by-case basis.
 
