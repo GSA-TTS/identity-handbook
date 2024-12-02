@@ -18,14 +18,21 @@ distribute the load. Before being added to the oncall rotation, an engineer must
 5. SSM access to production
 6. Join the #login-situation channel
 
-## AWS Incident Manager Team & Rotations
+## AWS Incident Manager
 
-Rotations:
+See [AWS Incident Manager]({% link _articles/platform-aws-incident-manager.md %}) for more on our paging system.
+
+## Rotations
 
 1. appdev-primary
 2. appdev-secondary
 
-See [AWS Incident Manager]({% link _articles/platform-aws-incident-manager.md %}) for more on our paging system.
+### Logistics
+
+* Expected frequency is about once/every two months but depends on the number of engineers in the rotation.
+* If an employee is unable to cover a specific time frame during their rotation schedule they will need to coordinate with another employee to ensure coverage for the time frame.
+* If primary on-call has not responded within 15 min, secondary on-call will be paged.
+* Every effort will be made to ensure that the same person does not work on the same holidays.
 
 ## Emergency Contacts
 
@@ -36,6 +43,8 @@ For Login.gov and vendor emergency contact information see [Emergency Contacts](
 ## Handoff
 
 The AppDev Rotation hands off every **Monday at 12pm Eastern (9am Pacific)**.
+
+Handoffs on holidays will be managed on a case-by-case basis.
 
 When handing off:
 
