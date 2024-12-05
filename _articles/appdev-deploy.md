@@ -252,7 +252,6 @@ Where `<PR_NUMBER>` is the number of the _merged_ PR.
 1. In the application repository, use your GPG key to tag the release.
    ```bash
    git checkout stages/prod && git pull
-   export GPG_TTY=$(tty)
    bin/tag-release
    ```
 2. Add release notes in GitHub:
