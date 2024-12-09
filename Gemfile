@@ -2,8 +2,12 @@ source "https://rubygems.org"
 
 ruby '~> 3.2.2'
 
+gem "actionpack", "~> 8.0.0"
+gem "activesupport", "~> 8.0.0"
+gem "actionview", "~> 8.0.0"
 gem "jekyll", "~> 4"
 gem "kramdown", ">= 2.3.0"
+gem "view_component", "~> 3.20.0"
 
 group :jekyll_plugins do
   gem "jekyll-redirect-from"
@@ -12,7 +16,6 @@ group :jekyll_plugins do
 end
 
 group :test do
-  gem 'activesupport', '~> 7.0.7'
   gem 'html-proofer', '~> 4.4.3'
   gem 'nokogiri', '~> 1.16.5'
   gem 'rspec', '~> 3.9.0'

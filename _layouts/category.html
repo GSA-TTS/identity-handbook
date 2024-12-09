@@ -35,6 +35,12 @@ layout: default
 
   <div class="tablet:grid-col-8">
     <div class="usa-prose" role="main">
+      {% assign home_url = "/" | prepend: site.baseurl %}
+      {% component breadcrumb %}
+        {% component breadcrumb_item href=home_url %}Home{% endcomponent %}
+        {% component breadcrumb_item href=page.url current %}{{ page.title }}{% endcomponent %}
+      {% endcomponent %}
+
       <h1>
         {% if page.icon %}
           {% include uswds-icon.html icon=page.icon %}
