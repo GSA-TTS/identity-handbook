@@ -6,6 +6,7 @@
     "anchor-js": "^4.2.2",
     "concurrently": "^8.0.1",
     "esbuild": "^0.17.15",
+    "pagefind": "^1.2.0",
     "simple-jekyll-search": "^1.10.0"
   },
   "devDependencies": {
@@ -38,6 +39,7 @@
     "start": "npm run watch",
     "lint": "eslint assets/js --ext .js,.ts",
     "typecheck": "tsc",
-    "pages": "npm run build"
+    "pages": "npm run build",
+    "index": "pagefind --site _site"
   }
 }
