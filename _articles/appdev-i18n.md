@@ -6,7 +6,7 @@ category: AppDev
 subcategory: Tasks
 ---
 
-Login.gov is currently available in English, Spanish, and French. This guide covers the tools available to translate the application, and the processes around introducing and translating new strings.
+Login.gov is currently available in English, Spanish, French, and Chinese. This guide covers the tools available to translate the application, and the processes around introducing and translating new strings.
 
 ## Translating content guidance
 
@@ -15,8 +15,9 @@ Content on [secure.login.gov](https://secure.login.gov) and [login.gov](https://
 - English (U.S.)
 - French (Canada)
 - Spanish (Mexico)
+- Chinese (Simplified)
 
-Translations are requested when content is added or updated on secure.login.gov and login.gov. You can find specific guidance on how to request translations in the [Login.gov guidance document](https://docs.google.com/document/d/1-wNXxyvxrsUeHkMOfhBpoSTCTZULOXNlCkBdNxiLa3c/edit).
+Translations are requested when content is added or updated on secure.login.gov and login.gov. You can find specific guidance on how to request translations in the [Login.gov standard operating procedure](https://docs.google.com/document/d/16MacAb1WKiQJJ634Cpjg8WkziiyMJMopA07rUpHP2Vs/edit?tab=t.0#heading=h.l6bljy4rjlyu).
 
 **NOTE:** partners.login.gov and developers.login.gov are not expected to be translated.
 
