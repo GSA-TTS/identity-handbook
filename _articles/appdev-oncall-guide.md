@@ -46,11 +46,12 @@ The AppDev Rotation hands off every **Monday at 1pm Eastern (10am Pacific)**.
 
 Handoffs on holidays will be managed on a case-by-case basis.
 
-When handing off:
+During hand off:
 
-* Update the `@login-appdev-oncall` Slack handle to be the new person
+* Update the `@login-appdev-oncall` Slack handle with the new team
+* Update the `@login-support-escalation` Slack handle with the new team
+* Transfer knowledge of any outstanding issues or bugs from the outgoing team to the incoming team
 
-The outgoing oncall person should let the incoming person know about any outstanding issues or bugs
 
 ## Responsibilities
 
@@ -69,8 +70,8 @@ Throughout the week, check for automated vulnerability pull requests and try to 
 * [snyk-bot][snyk]
 * [dependabot][dependabot]
 
-[snyk]: https://github.com/search?q=user%3A18F+user%3AGSA+is%3Aopen+archived%3Afalse+author%3Asnyk-bot&type=Issues
-[dependabot]: https://github.com/search?o=asc&q=user%3A18F+user%3AGSA+author%3Aapp%2Fdependabot+is%3Aopen+archived%3Afalse&s=created&type=Issues
+[snyk]: https://github.com/search?q=user%3A18F+user%3AGSA+is%3Aopen+archived%3Afalse+author%3Asnyk-bot&type=pullrequests
+[dependabot]: https://github.com/search?o=asc&q=user%3A18F+user%3AGSA+author%3Aapp%2Fdependabot+is%3Aopen+archived%3Afalse&s=created&type=pullrequests
 
 ###  Inspector General (IG) Requests
 
