@@ -1,9 +1,9 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    actionpack (8.0.0)
-      actionview (= 8.0.0)
-      activesupport (= 8.0.0)
+    actionpack (8.0.0.1)
+      actionview (= 8.0.0.1)
+      activesupport (= 8.0.0.1)
       nokogiri (>= 1.8.5)
       rack (>= 2.2.4)
       rack-session (>= 1.0.1)
@@ -11,13 +11,13 @@ GEM
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
       useragent (~> 0.16)
-    actionview (8.0.0)
-      activesupport (= 8.0.0)
+    actionview (8.0.0.1)
+      activesupport (= 8.0.0.1)
       builder (~> 3.1)
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    activesupport (8.0.0)
+    activesupport (8.0.0.1)
       base64
       benchmark (>= 0.3)
       bigdecimal
