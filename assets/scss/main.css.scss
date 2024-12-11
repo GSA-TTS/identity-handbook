@@ -1,6 +1,15 @@
 // Imports
 @use "uswds-core" as *;
 
+:root {
+  --pagefind-ui-primary: #{color("primary")};
+  --pagefind-ui-text: #{color("ink")};
+  --pagefind-ui-border: #{color("base-lighter")};
+  --pagefind-ui-border-width: #{units(2px)};
+  --pagefind-ui-border-radius: #{units(1)};
+  --pagefind-ui-font: inherit;
+}
+
 .usa-header--extended .usa-navbar {
   align-items: initial;
 }
