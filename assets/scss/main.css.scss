@@ -1,31 +1,25 @@
 // Imports
 @use "uswds-core" as *;
 
-.usa-header--extended .usa-navbar {
-  // The header has a default overflow which prevents search results from showing outside.
-  overflow: visible;
+:root {
+  --pagefind-ui-primary: #{color("primary")};
+  --pagefind-ui-text: #{color("ink")};
+  --pagefind-ui-border: #{color("base-lighter")};
+  --pagefind-ui-border-width: #{units(2px)};
+  --pagefind-ui-border-radius: #{units(1)};
+  --pagefind-ui-font: inherit;
 }
 
-#search-results {
-  background-color: #ebf3fa;
-  position: absolute;
-  top: 20px;
-  z-index: 20;
+.usa-header--extended .usa-navbar {
+  align-items: initial;
+}
 
-  li {
-    width: 250px;
+.usa-header [role="search"] {
+  max-width: none;
+  float: none;
 
-    &:first-child {
-      padding-top: 20px;
-    }
-
-    &:last-child {
-      padding-bottom: 20px;
-    }
-
-    &.no-results {
-      list-style: none;
-    }
+  .pagefind-ui__result:last-of-type {
+    border-bottom: none;
   }
 }
 
