@@ -18,7 +18,7 @@ Naming convention: Test names are written in `SCREAMING_TEXT`, e.g. `SOCURE_IDV_
 Required settings:
 - `experiment_name (String)`: Friendly name of the A/B test
 - `should_log (Array)`: Name of test in `app/services/analytics.rb` that corresponds to the metrics that willl be measured when logging
-- `buckets (Hash)`: 
+- `buckets (Hash)`: Can set the percentage of users who will experience the A/B test experience vs. the present default experience, as well as if the test is enabled. 
 
 #### Unit Testing
 The team **strongly encourages** that all A/B tests have a corresponding unit test in `spec/config/initializers/ab_test_spec.rb`. Your test should demonstrate that:
