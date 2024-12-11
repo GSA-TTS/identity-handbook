@@ -29,10 +29,11 @@ unless defined?(Rails)
   end
 end
 
+require './_components/base_component.rb'
 Dir['_components/**/*.rb'].each { |f| require File.join('.', f) }
 
 class ComponentTag < Liquid::Block
-  PARAM_SYNTAX = /(\w+)(?:=(?:"([^"]+?)"|(\S+)))?/.freeze
+  PARAM_SYNTAX = /(\w+)(?:=(?:"([^"]+?)"|(:[a-z_]+)|(\S+)))?/.freeze
 
   def initialize(tag_name, variables, context)
     super
@@ -53,9 +54,11 @@ class ComponentTag < Liquid::Block
   # would be assigned to a string literal, and `current` would be `true`.
   def parse_params(context)
     params = {}
-    @params.scan(PARAM_SYNTAX) do |key, string, variable|
+    @params.scan(PARAM_SYNTAX) do |key, string, symbol, variable|
       if string
         params[key] = string
+      elsif symbol
+        params[key] = symbol[1..].to_sym
       elsif variable
         parts = variable.split('.')
         value = context
@@ -71,7 +74,13 @@ class ComponentTag < Liquid::Block
   end
 
   def render(context)
-    content = super.html_safe
+    content = super
+    if !content.include?('<')
+      content = context.registers[:site].
+        find_converter_instance(Jekyll::Converters::Markdown).
+        convert(super).sub(/^<p>(.+)<\/p>$/, '\1')
+    end
+    content = content.html_safe
 
     component_class = "#{@component_name.camelize}Component".constantize
     component = component_class.new(**parse_params(context).symbolize_keys).with_content(content)
