@@ -1,1 +1,1 @@
-class BreadcrumbComponent < ViewComponent::Base; end
+class BreadcrumbComponent < BaseComponent; end
