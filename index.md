@@ -4,11 +4,6 @@ permalink: /
 layout: article
 ---
 
-<div id="search"></div>
-<link href="{{ site.baseurl }}/pagefind/pagefind-ui.css" rel="stylesheet">
-<script src="{{ site.baseurl }}/pagefind/pagefind-ui.js"></script>
-<script>new PagefindUI({ element: '#search', showImages: false });</script>
-
 Welcome to the Login.gov handbook! This is our open source team documentation!
 
 Please help us contribute and keep things up to date, and make sure

@@ -23,17 +23,11 @@
             <em class="usa-logo__text">Handbook</em>
           </a>
         </div>
-        <div class="grid-container tablet:margin-0 tablet:padding-0">
-          <div class="flex-row flex-align-center grid-row grid-gap-1">
-            <form class="usa-search usa-search--small grid-col grid-col-fill" role="search">
-              <label class="usa-sr-only" for="search-input">Search articles</label>
-              <input class="usa-input width-auto" type="search" id="search-input" placeholder="Search articles...">
-              <button class="usa-button" type="submit">
-                <span class="usa-search__submit-text">Search</span>
-              </button>
-              <ul id="search-results" tabindex="-1"></ul>
-            </form>
-          </div>
+        <div class="flex-fill display-flex flex-justify-end flex-align-center padding-left-4 padding-y-2">
+          <div id="search"></div>
+          <link href="{{ site.baseurl }}/pagefind/pagefind-ui.css" rel="stylesheet">
+          <script src="{{ site.baseurl }}/pagefind/pagefind-ui.js"></script>
+          <script>new PagefindUI({ element: '#search', showImages: false });</script>
         </div>
       </div>
     </header>
@@ -80,7 +74,6 @@
       document.addEventListener('DOMContentLoaded', () => {
         loadAnchors();
         loadPrivateEye();
-        loadSimpleJekyllSearch();
         installCustomTimeElements();
       }, false);
     </script>

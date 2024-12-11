@@ -2,31 +2,12 @@
 @use "uswds-core" as *;
 
 .usa-header--extended .usa-navbar {
-  // The header has a default overflow which prevents search results from showing outside.
-  overflow: visible;
+  align-items: initial;
 }
 
-#search-results {
-  background-color: #ebf3fa;
-  position: absolute;
-  top: 20px;
-  z-index: 20;
-
-  li {
-    width: 250px;
-
-    &:first-child {
-      padding-top: 20px;
-    }
-
-    &:last-child {
-      padding-bottom: 20px;
-    }
-
-    &.no-results {
-      list-style: none;
-    }
-  }
+.usa-header [role="search"] {
+  max-width: none;
+  float: none;
 }
 
 .deprecated-link {
