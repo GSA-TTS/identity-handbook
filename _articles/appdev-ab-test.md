@@ -12,7 +12,7 @@ subcategory: "Development"
 - Discriminator: Additional information about the user journey that the test will capture
 
 ### Process
-All new tests are created in `config/initializers/ab_tests.rb` as a new `AbTest` object. As of 12/9/24, all tests are created in date order, so add new tests to the bottom of the file
+All new tests are created in `config/initializers/ab_tests.rb` as a new `AbTest` object.
 
 Naming convention: Test names are written in `SCREAMING_TEXT`, e.g. `SOCURE_IDV_SHADOW_MODE`
 Required settings:
