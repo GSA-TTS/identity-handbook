@@ -2,6 +2,7 @@
 title: Login.gov Handbook
 permalink: /
 layout: article
+exclude_from_index: true
 ---
 
 Welcome to the Login.gov handbook! This is our open source team documentation!
