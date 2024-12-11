@@ -1,7 +1,5 @@
 import Anchor from "anchor-js";
 import PrivateEye from "@18f/private-eye";
-import "simple-jekyll-search";
-import type { SimpleJekyllSearchGlobals } from "simple-jekyll-search-types";
 import { installCustomTimeElements } from "./timezone";
 
 export const loadAnchors = () => {
@@ -49,24 +47,6 @@ export const loadPrivateEye = () => {
       "figma.com",
       "dashboard.fr.cloud.gov",
     ],
-  });
-};
-
-export const loadSimpleJekyllSearch = () => {
-  const searchResults = document.getElementById("search-results")!;
-  (window as SimpleJekyllSearchGlobals).SimpleJekyllSearch({
-    searchInput: document.getElementById("search-input") as HTMLElement,
-    resultsContainer: searchResults,
-    json: `${document.body.dataset.baseUrl}/search.json`,
-    noResultsText: '<li class="no-results">No results were found.</li>',
-  });
-
-  const searchForm = document.querySelector<HTMLFormElement>(
-    '.usa-header [role="search"]'
-  )!;
-  searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    searchResults.focus();
   });
 };
 
