@@ -7,6 +7,7 @@
       {% endif %}
       Login.gov handbook
     </title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/pagefind/pagefind-ui.css">
     <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/styles.css" />
     <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/css/main.css" />
     <link rel="icon" type="image/x-icon" href="{{site.baseurl}}/favicon.ico" />
@@ -25,9 +26,6 @@
         </div>
         <div class="flex-fill display-flex flex-justify-end flex-align-center padding-left-4 padding-y-2">
           <div id="search"></div>
-          <link href="{{ site.baseurl }}/pagefind/pagefind-ui.css" rel="stylesheet">
-          <script src="{{ site.baseurl }}/pagefind/pagefind-ui.js"></script>
-          <script>new PagefindUI({ element: '#search', showImages: false });</script>
         </div>
       </div>
     </header>
@@ -63,14 +61,15 @@
         </div>
       </div>
     </footer>
+    <script src="{{ site.baseurl }}/pagefind/pagefind-ui.js"></script>
     <script type="module">
       import {
         loadAnchors,
         loadPrivateEye,
-        loadSimpleJekyllSearch,
         installCustomTimeElements
       } from '{{ "/assets/js/setup.js" | prepend: site.baseurl }}';
 
+      new PagefindUI({ element: '#search', showImages: false });
       document.addEventListener('DOMContentLoaded', () => {
         loadAnchors();
         loadPrivateEye();

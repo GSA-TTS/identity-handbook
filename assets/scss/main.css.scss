@@ -8,6 +8,10 @@
 .usa-header [role="search"] {
   max-width: none;
   float: none;
+
+  .pagefind-ui__result:last-of-type {
+    border-bottom: none;
+  }
 }
 
 .deprecated-link {
