@@ -17,7 +17,7 @@ All new tests are created in `config/initializers/ab_tests.rb` as a new `AbTest`
 Naming convention: Test names are written in `SCREAMING_TEXT`, e.g. `SOCURE_IDV_SHADOW_MODE`
 Required settings:
 - `experiment_name (String)`: Friendly name of the A/B test
-- `should_log (Array)`: Name of test in `app/services/analytics.rb` that corresponds to the metrics that willl be measured when logging
+- `should_log (Array)`: Name of test in `app/services/analytics.rb` that corresponds to the metrics that will be measured when logging
 - `buckets (Hash)`: Can set the percentage of users who will experience the A/B test experience vs. the present default experience, as well as if the test is enabled. 
 
 #### Unit Testing
@@ -27,7 +27,7 @@ The team **strongly encourages** that all A/B tests have a corresponding unit te
 - Returns the correct bucket when your A/B test is enabled
 
 #### Configuration
-Configurations related to testing percentages are added in `lib/identity_config.rb`. A common practice in the config balues sis that the name has some kind of indicator that it is related to a specific test. Some examples in the application include:
+Configurations related to testing percentages are added in `lib/identity_config.rb`. A common practice in the config values sis that the name has some kind of indicator that it is related to a specific test. Some examples in the application include:
 - `config.add(:idv_acuant_sdk_upgrade_a_b_testing_percent, type: :integer)`
 - `config.add(:recommend_webauthn_platform_for_sms_ab_test_account_creation_percent, type: :integer)`
 
