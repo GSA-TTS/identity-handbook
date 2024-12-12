@@ -4,8 +4,9 @@ layout: article
 category: "Product"
 description: "Documentation Templates including SBARs, 1-Pagers, RFCs"
 redirect_from:
-- /articles/sbar-template.html
-- /articles/rfc-template.html
+  - /articles/sbar-template.html
+  - /articles/rfc-template.html
+  - /articles/eng-design-doc.html
 cSpell: ignore rollplans
 ---
 
@@ -28,7 +29,7 @@ Brief explanatory documents. Not actually restricted to one page.
 
 - Providing background information on a topic
 - Documenting a problem or an issue that users experience
-- Building alignment around a problem that we might want to solve or communicating potential work 
+- Building alignment around a problem that we might want to solve or communicating potential work
 - Ideally used when building consensus
 
 
@@ -83,5 +84,4 @@ Brief explanatory documents. Not actually restricted to one page.
 ## Other Documentation Templates
 
 - [Rollplans]({% link _articles/rollplans.md %}), for live changes to production
-- [Engineering Design Docs]({% link _articles/eng-design-doc.md %}){: #eng-design-doc .deprecated-link} (deprecated), superceded by [RFCs](#rfcs)
 - [Incident Review]({% link _articles/incident-review-template.md %}), for a retrospective on incidents
