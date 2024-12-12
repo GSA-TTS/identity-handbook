@@ -1,3 +1,12 @@
+---
+title: Gitlab Roadmapping
+description: >
+  Guide to roadmapping in Gitlab
+layout: article
+category: Product
+subcategory: Gitlab
+---
+
 # Step-by-Step Guide: Creating and Accessing a Roadmap in GitLab
 This guide explains how to create and manage a roadmap in GitLab, offering a structured approach to track progress and align work with strategic goals. It includes an overview of GitLab’s hierarchy to provide the necessary context for roadmap creation.
 ## GitLab Hierarchy: Building the Foundation for a Roadmap
