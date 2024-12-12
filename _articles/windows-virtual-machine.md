@@ -35,11 +35,9 @@ subcategory: "Setup"
 
 8. Log in to the virtual machine
 
-   {%- capture alert_content -%}
+   {% component alert type=:info %}
    The password is `Passw0rd!`
-   {%- endcapture -%}
-
-   {% include alert.html content=alert_content %}
+   {% endcomponent %}
 
 ## Configuring applications for local development
 

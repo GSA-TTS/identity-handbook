@@ -7,10 +7,9 @@ cSpell: ignore sitrep sitreps ISCP
 redirect_from: /articles/secops-incident-response-guide.html
 ---
 
-{%- capture alert_content -%}
+{% component alert type=:info %}
 In a situation? Check the [Incident Response Checklist]({% link _articles/incident-response-checklist.md %}) for a quick reference.
-{%- endcapture -%}
-{% include alert.html content=alert_content %}
+{% endcomponent %}
 
 ## Introduction
 
@@ -34,7 +33,7 @@ The complete [Login.gov Incident Response Plan](https://docs.google.com/document
 
 ## Response Process Quick Reference
 
-Specific activities associated with each phase of response, with the exception of Preparation, are generally documented by type of event in the Login.gov Incident Response runbooks. 
+Specific activities associated with each phase of response, with the exception of Preparation, are generally documented by type of event in the Login.gov Incident Response runbooks.
 
 Activities for _Initiate, Assess, Contain and Remediate_ are done in a circular flow until the suspicious or system impacting activity is no longer found in the environment.
 
@@ -46,7 +45,7 @@ An incident is any event that presents an immediate risk to **Confidentiality, I
 
 ### Assess
 
-**GOAL:** Determine the status of the event as either a true positive or false alarm, then assign an impact and severity. 
+**GOAL:** Determine the status of the event as either a true positive or false alarm, then assign an impact and severity.
 
 The Response team should determine the impact classification, make a best guess at severity to move forward quickly.
 
@@ -67,7 +66,7 @@ The Response team should determine the impact classification, make a best guess 
 </details>
 
 ### Contain
-**GOAL:** Document the scope of the incident.  Limit the spread and impact of the incident and begin to formulate what remediation actions are required. 
+**GOAL:** Document the scope of the incident.  Limit the spread and impact of the incident and begin to formulate what remediation actions are required.
 
 ### Remediate
 
@@ -75,7 +74,7 @@ The Response team should determine the impact classification, make a best guess 
 
 ### Retrospect
 
-**GOAL:** Review details of the incident to improve the incident handling processes. Create follow up actions for system improvements. Close the incident report. 
+**GOAL:** Review details of the incident to improve the incident handling processes. Create follow up actions for system improvements. Close the incident report.
 
 
 ## Response Process Flow Diagram
@@ -94,11 +93,11 @@ Note the severities may (and often will) change during the lifecycle of the inci
 
 We assess an incident on three areas, **Functional Impact**, **Informational Impact** and **Recoverability**.
 
-A **functional impact** is assessed if any part of Login.gov’s usability, functionality or service becomes unavailable to end users, relaying partners or internal staff. 
+A **functional impact** is assessed if any part of Login.gov’s usability, functionality or service becomes unavailable to end users, relaying partners or internal staff.
 
 An **informational impact** is tracked when any data elements categorized as PII is exposed to an unauthorized party. Internal and confidential information such as API keys, private configuration or business data are also included in this impact category.
 
-The Login.gov team tasked with responding to the event must determine the **recoverability** which is defined as the level of effort they believe the incident will take to recover from. This will help shape the type of response that is required and determine the amount of time and resources needed to return to a nominal state. 
+The Login.gov team tasked with responding to the event must determine the **recoverability** which is defined as the level of effort they believe the incident will take to recover from. This will help shape the type of response that is required and determine the amount of time and resources needed to return to a nominal state.
 
 
 ## Incident Severities
@@ -164,7 +163,7 @@ Both Functionality and Information Impact examples:
 
 Recoverability Level is used to gauge how much time and resources will be needed to return the system to normal operational state.
 
-| Level           |  Definition  | 
+| Level           |  Definition  |
 | --------------- | ------------ |
 | Regular         | Time to recovery is predictable with existing resources |
 | Normal          | Time to recover is unpredictable; no additional resources are needed |
@@ -178,7 +177,7 @@ Recoverability Level is used to gauge how much time and resources will be needed
 Roles are assigned when possible as responders join the incident.
 
 ### Situation Lead (SL)
-* Responsible for leading all members of the initial incident response. 
+* Responsible for leading all members of the initial incident response.
 * Requests additional responders as needed, including a new SL if they need to cycle off.
 * Ensures roles and team are coordinated and have what they need
 * Shares context on what is happening and asks clarifying questions

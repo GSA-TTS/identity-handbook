@@ -11,12 +11,11 @@ subcategory: "Tasks"
 The backend to the Login.gov marketing site [Contact Form](https://login.gov/contact/) is
 a Salesforce instance.
 
-{%- capture alert_content -%}
+{% component alert type=:error %}
 The backend will reject form posts that contain dropdown values it does not know about,
 so new field options need to be added explicitly with the help of the Salesforce team
 before we can deploy changes on our side.
-{%- endcapture -%}
-{% include alert.html content=alert_content alert_class="usa-alert--error" %}
+{% endcomponent %}
 
 ## Configuration
 
