@@ -3,7 +3,9 @@ title: "Background Jobs: Proofing Ruby Workers"
 description: "Overview and architecture of our proofing background jobs"
 layout: article
 category: "Architecture"
-redirect_from: /articles/appdev-ruby-worker-jobs.html
+redirect_from:
+  - /articles/appdev-ruby-worker-jobs.html
+  - /articles/appdev-lambda-jobs.html
 cSpell: ignore PSQL
 ---
 
