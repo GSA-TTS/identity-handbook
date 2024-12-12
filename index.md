@@ -5,10 +5,8 @@ layout: article
 exclude_from_index: true
 ---
 
-Welcome to the Login.gov handbook! This is our open source team documentation!
-
-Please help us contribute and keep things up to date, and make sure
-to [avoid contributing sensitive information][sensitive-information].
+Welcome to the Login.gov handbook! This is our open source team documentation. Please help us keep
+things up to date, and make sure to [avoid contributing sensitive information][sensitive-information].
 
 [sensitive-information]: {{ site.baseurl }}/articles/contributing.html#sensitive-information
 
