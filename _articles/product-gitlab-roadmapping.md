@@ -42,7 +42,7 @@ Click Epics in the sidebar, then select New Epic.
 Add the following details:
 Title: Name the epic clearly (e.g., Improve Reporting Capabilities).
 Description: Provide a detailed objective or goal.
-Start Date and Due Date: Define the timeframe for the epic.
+Start Date and Due Date: Define the time frame for the epic.
 Labels: Select appropriate labels for categorization (e.g., Priority: Now, Team: Evelyn, EpicType: Parent). Labels are optional but greatly enhance the organization, searchability, and filtering of issues, epics, making it easier for teams to prioritize tasks, track progress, and collaborate effectively.
 Save the epic.
 
@@ -66,7 +66,7 @@ The roadmap will display all epics with start and end dates on a timeline.
 ## Key Components of the Roadmap Page
 Timeline: 
 Displays epics as horizontal bars based on their start and end dates.
-Adjust the timeframe to show weekly, monthly, or quarterly views.
+Adjust the time frame to show weekly, monthly, or quarterly views.
 
 ### Epics:
 Parent epics are bold, and child epics are indented beneath them.
