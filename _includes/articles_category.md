@@ -1,6 +1,6 @@
 {% comment %}
 
-A list of articles in a category, handles marking links as deprecated
+A list of articles in a category
 
 includes:
 - category: category object (page)
@@ -19,9 +19,6 @@ includes:
 {%     for article in articles %}
  - <span markdown="1" {% if article.redirect_to %}data-anchor{% endif %}>
    [{{article.title}}]({% include article_url.txt article=article %})
-     {%- if article.deprecated -%}
-       {: .deprecated-link} (deprecated)
-     {%- endif -%}
     </span>
      {% if article.description %}<br/>{{ article.description }}{% endif %}
 {%     endfor %}
@@ -38,9 +35,6 @@ includes:
 {% unless article.subcategory %}
  - <span markdown="1" {% if article.redirect_to %}data-anchor{% endif %}>
    [{{article.title}}]({% include article_url.txt article=article %})
-   {%- if article.deprecated -%}
-    {: .deprecated-link} (deprecated)
-   {%- endif -%}
    </span>
    {% if article.description %}<br/>{{ article.description }}{% endif %}
 {% endunless %}
