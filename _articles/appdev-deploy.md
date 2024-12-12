@@ -37,12 +37,9 @@ the `stages/prod` branch.
 
 ### Communications
 
-Err on the side of overcommunication about deploys: make sure to post in the
-steps in Slack as they are happening.
-
-Especially overcommunicate about off-cycle/mid-cycle deploys: especially
-as they are being planned or evaluated. Most people expect changes deployed
-on a schedule so early releases can be surprising.
+Err on the side of overcommunication about planned/unplanned deploys–-make sure to post in the
+steps in Slack as they are happening and coordinate with [@login-deployer][deployer-rotation].
+Most people expect changes deployed on a schedule so early releases can be surprising.
 
 ## Deploy Guide
 
@@ -67,11 +64,9 @@ Note: it is a good idea to make sure you have the latest pulled down from identi
 
 Since identity proofing requires an actual person's PII, we don't have a good mechanism for automated testing of the live proofing flow.
 As a work-around, we test by proofing in staging, then cutting a release from the code deployed to staging.
-
-Before cutting a release, make sure to test in staging.
 If there are specific commits that need to be deployed, make sure to recycle staging first to include those commits.
 
-Once you've run through proofing in staging, the next step is to cut a release from the code that is deployed to staging.
+Once you've run through proofing in staging, the next step is to cut a release from the code that is deployed to staging in `main`.
 
 #### Cut a release branch
 
@@ -106,10 +101,7 @@ This script will create a new RC branch and PR based on the SHA currently deploy
 PATCH=1 SOURCE=main scripts/create-deploy-pr
 ```
 
-`create-deploy-pr` will print out a link to the new PR. **Be sure to verify the generated changelog after creating the PR.**
-
-**Troubleshooting note**:
-- If for any reason you lose the changelog notes, open `tmp/.rc-changelog.md`
+`create-deploy-pr` will print out a link to the new PR located in `tmp/.rc-changelog.md`. **Be sure to verify the generated changelog after creating the PR.**
 
 ##### PKI
 
@@ -123,11 +115,16 @@ git push -u origin HEAD
 ```
 A pull request should be created from that latest branch to production: **`stages/prod`**. When creating the pull request:
 
-- Title it clearly with the RC number, ex **"Deploy RC 112 to Prod"**
+#### Pull request release
+Naming and labeling releases are automatically done in `identity-idp` after running `scripts/create-deploy-pr`
+
+In the `identity-pki` repo:
+- Title the pull request clearly with the RC number, ex **"Deploy RC 112 to Prod"**
    - If it's a full release of changes from the main branch, add one to the last release number
    - If it's a patch release, increment the fractional part, ex **"Deploy RC 112.1 to Prod"**
-   - Unsure what the last release was? Check the [releases page](https://github.com/18F/identity-idp/releases/)
+   - Unsure what the last `identity-pki` release was? Check the [releases page](https://github.com/18F/identity-pki/releases/)
 - Add the label **`status - promotion`** to the pull request that will be included in the release.
+
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
 #### Share the pull request in `#login-appdev`
@@ -220,7 +217,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
 6. **PRODUCTION ONLY**: This step is required in production
 
-    Production boxes need to be manually marked as safe to remove (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
+    Production boxes need to be manually marked as safe to remove by scaling in the new instance (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
     ```
@@ -247,7 +244,6 @@ scripts/create-release <PR_NUMBER>
 Where `<PR_NUMBER>` is the number of the _merged_ PR.
 
 ##### PKI
-
 
 1. In the application repository, use your GPG key to tag the release.
    ```bash
