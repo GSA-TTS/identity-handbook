@@ -1,6 +1,6 @@
 ---
 title: Development
 layout: category
-description: Common Dev things across AppDev and DevOps
+description: Development topics common to AppDev and DevOps
 icon: keyboard
 ---

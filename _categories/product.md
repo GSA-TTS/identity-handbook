@@ -1,6 +1,6 @@
 ---
 title: Product
 layout: category
-description: Product and process
+description: Product delivery and process
 icon: science
 ---
