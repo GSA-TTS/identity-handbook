@@ -1,7 +1,7 @@
 ---
 title: GitLab Roadmapping
 description: >
-  Guide to roadmapping in Gitlab
+  Guide to roadmapping in GitLab
 layout: article
 category: Product
 subcategory: Gitlab
