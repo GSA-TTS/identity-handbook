@@ -23,7 +23,7 @@
   },
   "scripts": {
     "clean:js": "rm -rf _site/assets/js",
-    "cspell": "cspell --config cspell.json --no-progress '**/*.md' --exclude 'vendor/**' --exclude 'node_modules/**'",
+    "cspell": "cspell --config cspell.json --show-suggestions --no-progress '**/*.md' --exclude 'vendor/**' --exclude 'node_modules/**'",
     "prebuild:js:common": "npm run clean:js",
     "build:js:common": "esbuild `find assets/js -type f -not -name '*.min.*'` --outdir=_site/assets/js --bundle --format=esm --splitting",
     "build:js:dev": "npm run build:js:common -- --sourcemap=inline",

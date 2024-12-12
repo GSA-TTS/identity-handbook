@@ -57,6 +57,14 @@
     "FICAM",
     "FPKI"
   ],
+  "flagWords": [
+    "Github->GitHub",
+    "Gitlab->GitLab",
+    "pki->PKI",
+    "Idp->IdP",
+    "idp->IdP",
+    "IDP->IdP"
+  ],
   "patterns": [
     {
       "name": "Markdown links",
