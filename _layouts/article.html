@@ -23,7 +23,7 @@ layout: default
       {% if page.category %}
         {% assign home_url = "/" | prepend: site.baseurl %}
         {% assign category_url = page.category | slugify | prepend: "/categories/" | prepend: site.baseurl | append: ".html" %}
-        {% component breadcrumb %}
+        {% component breadcrumb class="padding-y-0" %}
           {% component breadcrumb_item href=home_url %}Home{% endcomponent %}
           {% component breadcrumb_item href=category_url %}{{ page.category }}{% endcomponent %}
           {% component breadcrumb_item href=page.url current %}{{ page.title }}{% endcomponent %}
