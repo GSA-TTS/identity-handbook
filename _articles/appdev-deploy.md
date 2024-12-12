@@ -217,7 +217,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
 6. **PRODUCTION ONLY**: This step is required in production
 
-    Production boxes need to be manually marked as safe to remove by scaling down the old instances while scaling in the instances (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
+    Production boxes need to be manually marked as safe to remove by scaling down the old instances while scaling in the newly deployed instances (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
     ```
