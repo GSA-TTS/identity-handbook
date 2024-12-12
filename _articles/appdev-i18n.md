@@ -15,7 +15,7 @@ Content on [secure.login.gov](https://secure.login.gov) and [login.gov](https://
 - English (U.S.)
 - French (Canada)
 - Spanish (Mexico)
-- Chinese (Simplified)
+- Chinese (Simplified) 
 
 Translations are requested when content is added or updated on secure.login.gov and login.gov. You can find specific guidance on how to request translations in the [Login.gov Standard operating procedure](https://docs.google.com/document/d/16MacAb1WKiQJJ634Cpjg8WkziiyMJMopA07rUpHP2Vs/edit?tab=t.0#heading=h.l6bljy4rjlyu).
 
