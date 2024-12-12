@@ -1,5 +1,5 @@
-<nav class="usa-breadcrumb" aria-label="Breadcrumbs,,">
+<%= tag.nav(**tag_options, class: css_class, aria: { label: 'Breadcrumbs,,' }) do %>
   <ol class="usa-breadcrumb__list">
     <%= content %>
   </ol>
-</nav>
+<% end %>
