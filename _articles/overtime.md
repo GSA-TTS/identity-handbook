@@ -1,5 +1,6 @@
 ---
 title: Overtime
+description: Guidance around working overteam as a contractor or federal employee
 layout: article
 category: Team
 subcategory: People Ops

@@ -33,6 +33,8 @@ RSpec.describe 'Markdown' do
           expect(frontmatter).to be
 
           aggregate_failures do
+            expect(frontmatter['description']).to be
+
             category = frontmatter['category']
             expect(category).to be
             expect(category_exists?(category)).to be, "it links to a real category (#{category})"

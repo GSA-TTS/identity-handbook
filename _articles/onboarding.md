@@ -1,5 +1,6 @@
 ---
 title: Onboarding
+description: List of steps to be completed when a person joins the Login.gov program
 layout: article
 category: Team
 subcategory: People Ops
