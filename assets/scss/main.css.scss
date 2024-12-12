@@ -23,6 +23,21 @@
   }
 }
 
+.article-categories {
+  .usa-card {
+    @include u-margin-bottom(2);
+  }
+
+  .usa-card__heading {
+    display: flex;
+    align-items: center;
+
+    .usa-icon {
+      @include u-margin-right(1);
+    }
+  }
+}
+
 .deprecated-link {
   color: gray;
 }

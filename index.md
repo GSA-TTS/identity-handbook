@@ -20,7 +20,7 @@ Internal documentation can be found in our [Internal Login.gov Handbook](https:/
 
 <div class="margin-bottom-4"></div>
 
-<ul class="usa-card-group">
+<ul class="article-categories usa-card-group">
   {% assign sorted_categories = site.categories | group_by: 'order' | sort: 'name' %}
   {% for category_group in sorted_categories %}
     {% assign sorted_category_items = category_group.items | sort: 'title' %}
