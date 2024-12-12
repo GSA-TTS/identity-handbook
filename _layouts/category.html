@@ -36,7 +36,7 @@ layout: default
   <div class="tablet:grid-col-8">
     <div class="usa-prose" role="main">
       {% assign home_url = "/" | prepend: site.baseurl %}
-      {% component breadcrumb %}
+      {% component breadcrumb class="padding-y-0" %}
         {% component breadcrumb_item href=home_url %}Home{% endcomponent %}
         {% component breadcrumb_item href=page.url current %}{{ page.title }}{% endcomponent %}
       {% endcomponent %}
