@@ -13,7 +13,7 @@ to [avoid contributing sensitive information][sensitive-information].
 [sensitive-information]: {{ site.baseurl }}/articles/contributing.html#sensitive-information
 
 {% component alert type=:info %}
-Internal documentation can be found in our [🔒 Internal Login.gov Handbook](https://lg-public.pages.production.gitlab.login.gov/identity-internal-handbook/).
+Internal documentation can be found in our [Internal Login.gov Handbook](https://lg-public.pages.production.gitlab.login.gov/identity-internal-handbook/).
 {% endcomponent %}
 
 ## Categories
