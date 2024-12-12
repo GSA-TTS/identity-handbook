@@ -1,5 +1,5 @@
 ---
-title: Gitlab Roadmapping
+title: GitLab Roadmapping
 description: >
   Guide to roadmapping in Gitlab
 layout: article
