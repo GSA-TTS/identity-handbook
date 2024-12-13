@@ -15,7 +15,7 @@
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body {% unless page.exclude_from_index %}data-pagefind-body{% endunless %}>
+  <body {% unless page.exclude_from_index or layout.exclude_from_index %}data-pagefind-body{% endunless %}>
     <header class="usa-header usa-header--extended">
       <div class="usa-navbar">
         <div class="usa-logo">

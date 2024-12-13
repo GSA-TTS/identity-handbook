@@ -1,5 +1,6 @@
 ---
 title: "Offboarding"
+description: List of steps which must be completed when a person leaves the Login.gov program
 layout: article
 category: Team
 subcategory: People Ops

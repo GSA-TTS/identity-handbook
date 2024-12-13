@@ -1,5 +1,6 @@
 ---
 title: Leave Guidance
+description: Reasons, types, and conventions around taking leave as a Login.gov Login.gov employee
 layout: article
 category: Team
 subcategory: People Ops

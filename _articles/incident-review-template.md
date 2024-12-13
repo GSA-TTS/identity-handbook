@@ -1,6 +1,6 @@
 ---
 title: "Incident Review Template"
-description:
+description: A template document for incident reviews, outlining causes, a timeline of events, and action items
 layout: article
 category: "Development"
 subcategory: Documentation
