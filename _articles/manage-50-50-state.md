@@ -40,7 +40,7 @@ existing data.
 ### Remove a table or field
 * Deploy 1: Remove all reads in the code
     * If removing a field from an in-use table, mark that field as an ignored columns.
-      This is necessary in the IDP because it is [configured to explicitly load columns][idp-explicit-config]
+      This is necessary in the IdP because it is [configured to explicitly load columns][idp-explicit-config]
       instead of using `SELECT *`.
 
       ```ruby
@@ -169,7 +169,7 @@ Notify in #login-appdev about the recycle and 50/50 state testing
 ```
 aws-vault exec sandbox-power -- ./bin/asg-recycle int idp
 ```
-This will take 10-15 minutes. You will know it is ready when you only have new workers and idp
+This will take 10-15 minutes. You will know it is ready when you only have new workers and IdP
 instances up.
 1. Set your feature flag to true
 ```

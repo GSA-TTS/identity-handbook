@@ -18,12 +18,12 @@ Some repositories in GitHub are mirrored from our self-hosted GitLab.
 
 - [**`18f/identity-idp`**](https://github.com/18f/identity-idp)<br />
   [secure.login.gov](https://secure.login.gov)<br />
-  IDP (main application)
+  IdP (main application)
 
 - [**`18f/identity-pki`**](https://github.com/18f/identity-pki)
   PIV/CAC application
 
-- [**`18f/identity-idp-config`**](https://github.com/18f/identity-idp-config) Service Provider (`service_providers.yml`) and Agency (`agencies.yml`) configuration repo that can be updated and deployed independently of the IDP.
+- [**`18f/identity-idp-config`**](https://github.com/18f/identity-idp-config) Service Provider (`service_providers.yml`) and Agency (`agencies.yml`) configuration repo that can be updated and deployed independently of the IdP.
 
 - [**`18f/identity-dashboard`**](https://github.com/18f/identity-dashboard)
   Partner Dashboard for viewing and editing service provider configurations (only in the INT environment).
@@ -44,22 +44,22 @@ Some repositories in GitHub are mirrored from our self-hosted GitLab.
   Provides an Omniauth strategy for Login.gov that helps other projects integrate with Login.gov more easily. Some use cases include the [identity-dashboard](https://github.com/18f/identity-dashboard) as well as Touchpoints, USMC and search.gov
 
 - [**`18f/identity-validations`**](https://github.com/18f/identity-validations)
-  Gem that provides shared validations for the ServiceProvider model across the IDP and dashboard
+  Gem that provides shared validations for the ServiceProvider model across the IdP and dashboard
 
 - [**`18f/identity-telephony`**](https://github.com/18f/identity-telephony){: .deprecated-link} (Archived)
-  Gem that provides a common interface for voice and SMS features across multiple vendor backends. This code has been moved into the IDP codebase.
+  Gem that provides a common interface for voice and SMS features across multiple vendor backends. This code has been moved into the IdP codebase.
 
 - [**`18f/identity-doc-auth`**](https://github.com/18f/identity-doc-auth){: .deprecated-link} (Archived)
-  Provides a library for performing document authentication. This code has been moved into the IDP codebase.
+  Provides a library for performing document authentication. This code has been moved into the IdP codebase.
 
 - [**`18f/identity-proofer-gem`**](https://github.com/18f/identity-proofer-gem){: .deprecated-link} (Archived)
-  Provides a generic interface around identity proofing (IDV, identity verification) that is implemented by other proofers. This code has been moved into the IDP codebase.
+  Provides a generic interface around identity proofing (IDV, identity verification) that is implemented by other proofers. This code has been moved into the IdP codebase.
 
 - [**`18f/identity-lexisnexis-api-client-gem`**](https://github.com/18f/identity-lexisnexis-api-client-gem){: .deprecated-link} (Archived)
-  Implementation of the identity-proofer interface for LexisNexis. This code has been moved into the IDP codebase.
+  Implementation of the identity-proofer interface for LexisNexis. This code has been moved into the IdP codebase.
 
 - [**`18f/identity-aamva-api-client-gem`**](https://github.com/18f/identity-aamva-api-client-gem){: .deprecated-link} (Archived)
-  Implementation of the identity-proofer interface for AAMVA for drivers licenses. This code has been moved into the IDP codebase.
+  Implementation of the identity-proofer interface for AAMVA for drivers licenses. This code has been moved into the IdP codebase.
 
 ### Example Applications
 

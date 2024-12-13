@@ -1,7 +1,7 @@
 ---
 title: "Secrets and Configuration"
 description: >
-  How to update IDP and Rails app configuration (feature flags) and secrets application.yml, and
+  How to update IdP and Rails app configuration (feature flags) and secrets application.yml, and
   how to use the `app-s3-secret` script
 layout: article
 category: "AppDev"
@@ -31,7 +31,7 @@ See [guide to app-s3-secret]({% link _articles/devops-scripts.md %}#app-s3-secre
 
 ## Configuration in Rails Apps
 
-To use a value in the `application.yml` in our Rails apps, follow these steps. The IDP, PKI,
+To use a value in the `application.yml` in our Rails apps, follow these steps. The IdP, PKI,
 and Dashboard apps all use this approach, with files named the same way.
 
 1. Declare the configuration value in `lib/identity_config.rb`'s `#build_store` method.

@@ -62,7 +62,7 @@ See [Runbook: GitLab Access Contingency Plan](https://gitlab.login.gov/lg/identi
 ## GitLab Migration
 We are in the process of moving our repos to using GitLab as their primary source of truth.  Most repos will continue to mirror back to GitHub, in order to allow us to maintain public visibility.  Once we have migrated a repository, merging from any branch other than GitLab will be blocked, and all pull requests will need to be submitted via GitLab.  Our current timeline for migration is below:
 
- 
+
 | Repo Name                            | Planned Move Date | Status    |
 | ------------------------------------ | ----------------- | --------- |
 | identity-devops                      | 4/30/24           | moved     |
@@ -130,7 +130,7 @@ a multitude of installed packages.  Here are some troubleshooting resources:
 
 See [GitLab Licensing and Support](https://gitlab.login.gov/lg/identity-devops/-/wikis/GitLab-Ultimate-Licensing-and-Support)
 
-## Gitlab Staging Environment
+## GitLab Staging Environment
 
 We have a staging environment which is used to test out deploys destined for production.  It
 can be found at <https://gitlab.gitstaging.gitlab.login.gov/>.  Right now, whenever the `stages/gitstaging` branch
@@ -150,7 +150,7 @@ GitLab leverages Omniauth to allow users to sign in using a variety of services,
 openssl req -nodes -x509 -days 365 -newkey rsa:2048 -keyout private.pem -out public.crt
 ```
 
-1. Grab the IDP sandbox signing certificate from <https://developers.login.gov/saml/> and get its fingerprint (use secure.login.gov instead of idp.int.identitysandbox.gov if you are doing this for gitlab prod/staging):
+1. Grab the IdP sandbox signing certificate from <https://developers.login.gov/saml/> and get its fingerprint (use secure.login.gov instead of idp.int.identitysandbox.gov if you are doing this for gitlab prod/staging):
 ```
 curl -s https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.time | date: '%Y' }}
  \
@@ -167,7 +167,7 @@ curl -s https://idp.int.identitysandbox.gov/api/saml/metadata{{ site.time | date
 | sed -E 's/.*=//'
 ```
 
-1. Copy the IDP cert fingerprint, generated certificate, and generated private key to the per-environment S3 secrets bucket. Name them `saml_idp_cert_fingerprint`, `saml_certificate` and `saml_private_key`, respectively:
+1. Copy the IdP cert fingerprint, generated certificate, and generated private key to the per-environment S3 secrets bucket. Name them `saml_idp_cert_fingerprint`, `saml_certificate` and `saml_private_key`, respectively:
 ```
 aws s3 cp - "s3://${SECRET_BUCKET}/alpha/saml_private_key" --no-guess-mime-type --content-type="text/plain" --metadata-directive="REPLACE"
     [...]

@@ -15,7 +15,7 @@ Review the [Leaving TTS page in the TTS Handbook](https://handbook.tts.gsa.gov/l
 
 ### For offboarding assistant to complete
 
-- Create an issue in the [Interrupts project in Gitlab](https://gitlab.login.gov/lg-people/platform/interrupts/-/issues) using the `offboard-devops` template and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue.  Tip: [view current AWS users](https://github.com/18F/identity-devops/blob/main/terraform/master/global/main.tf#L93)
+- Create an issue in the [Interrupts project in GitLab](https://gitlab.login.gov/lg-people/platform/interrupts/-/issues) using the `offboard-devops` template and ping `@login-devops-oncall` in Slack to alert them to the new offboarding issue.  Tip: [view current AWS users](https://github.com/18F/identity-devops/blob/main/terraform/master/global/main.tf#L93)
 - Check in `#admins-github` to ensure that GitHub access for this person has been removed (TTS `#people-ops` is usually on top of this). If this person is moving elsewhere in TTS ensure they have been removed from `identity-*` [18F teams](https://github.com/orgs/18F/teams/), [GSA-TTS teams](https://github.com/orgs/GSA-TTS/teams/). Cc `@github-admins-slack` on your request.
   - Note that CircleCI, CodeClimate, and Snyk rights are removed via GitHub integration
 - [Using the JIRA Portal](https://cm-jira.usa.gov/servicedesk/customer/portal/11), choose `Application Access` and request that the user be removed from the Login.gov project (and deactivated if they are no longer working for GSA).

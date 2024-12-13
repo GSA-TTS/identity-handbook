@@ -1,6 +1,6 @@
 ---
 title: "GitLab Production Deploys"
-description: How to deploy changes to the production Gitlab system
+description: How to deploy changes to the production GitLab system
 layout: article
 category: Platform
 cSpell: ignore SAST
@@ -8,19 +8,19 @@ cSpell: ignore SAST
 
 ## Overview
 
-If you need to deploy Gitlab Production, there are two ways to do it
+If you need to deploy GitLab Production, there are two ways to do it
 (in order of preference):
 
-* Gitlab Automatic Deployments
+* GitLab Automatic Deployments
 * Deploy by hand
 
 Unfortunately, creating a HA gitlab instance with the omnibus package install
 system that we are using is a HUGE pain to do, and for an org of our size,
-not recommended by Gitlab, so an upgrade will cause an outage of 8-15 minutes.
+not recommended by GitLab, so an upgrade will cause an outage of 8-15 minutes.
 Sigh.  Someday we hope to move to the k8s version which will result in an outage
 of seconds instead of minutes.
 
-## Gitlab Automatic Deployments
+## GitLab Automatic Deployments
 
 Someday, we will make it so that when changes land on main, they will deploy to gitstaging,
 and if they pass all the tests, then the prod pipeline will trigger a pipeline in

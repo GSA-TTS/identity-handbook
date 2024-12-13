@@ -6,7 +6,7 @@ category: AppDev
 ---
 ## Prerequisites
 
-Follow the instructions in the [Troubleshooting the IDP]({% link _articles/appdev-troubleshooting-production.md %}) prerequisites section.
+Follow the instructions in the [Troubleshooting the IdP]({% link _articles/appdev-troubleshooting-production.md %}) prerequisites section.
 
 ## Purging a user's PII
 If a user accidentally uploads real PII to our sandbox environment, follow the steps below to delete it.

@@ -108,7 +108,7 @@ Here are some common Slack Channels for the Login.gov team
 
 - [`#login-appdev`](https://gsa.enterprise.slack.com/archives/C0NGESUN5):
   {% include tag.html name='appdev' color='bg-primary' %}
-  General IDP and Appdev matters
+  General IdP and Appdev matters
 
 - [`#login-reporting`](https://gsa.enterprise.slack.com/archives/C5E7EJWF7):
   Analytics and reporting channel

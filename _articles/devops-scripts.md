@@ -17,7 +17,7 @@ Before you can access any systems, you will need to [set up AWS-vault](https://g
 
 ## `app-s3-secret`
 
-These examples are for the IDP app in the `sandbox` AWS account and the `dev` environment:
+These examples are for the IdP app in the `sandbox` AWS account and the `dev` environment:
 
 ### Viewing Secrets
 
@@ -438,7 +438,7 @@ CREATE TABLE IF NOT EXISTS events (
   success INTEGER NULL,
   message TEXT NOT NULL,
   log_stream TEXT NULL,
-  log TEXT NULL  
+  log TEXT NULL
 )
 ```
 

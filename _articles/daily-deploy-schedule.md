@@ -1,6 +1,6 @@
 ---
 title: "Deploy Schedule for Automated Deploys"
-description: "The daily deploy schedule for IDP, PKI and Dashboard in lower environments"
+description: "The daily deploy schedule for IdP, PKI and Dashboard in lower environments"
 layout: article
 category: "AppDev"
 subcategory: "Deploying"
@@ -10,7 +10,7 @@ subcategory: "Deploying"
 
 These apps are deployed on weekdays:
 
-- IDP
+- IdP
 - PKI
 - Dashboard
 
