@@ -33,7 +33,7 @@ RSpec.describe 'Markdown' do
           expect(frontmatter).to be
 
           aggregate_failures do
-            expect(frontmatter['description']).to be
+            expect(frontmatter['description']).to_not be_empty
 
             category = frontmatter['category']
             expect(category).to be
