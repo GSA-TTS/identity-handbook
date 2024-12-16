@@ -9,7 +9,7 @@ cSpell: ignore Vogon
 ## Overview
 
 Login.gov needs automation.  We finally have acquired GitLab and are
-able to use it for deploying idp environments!  This document will tell
+able to use it for deploying IdP environments!  This document will tell
 you how the environment deploy process works, how to set up your
 environment so that it is deployed by gitlab (skip ahead to
 ["Adding new application sandbox environments"](#adding-new-sandbox-environments) if you are impatient
@@ -18,7 +18,7 @@ operational tips on how to debug issues.
 
 ## Architecture
 
-As code gets merged into `main`, a pipeline will build `env_deploy` 
+As code gets merged into `main`, a pipeline will build `env_deploy`
 and `env_test` docker images, save them to ECR, and
 tag them with `latest` and the git SHA of the code that was used to create
 the image.  This image will be available for us to hardcode into our
@@ -51,7 +51,7 @@ results are available in the pipeline.
 
 ### Future Architecture
 
-We hope to tie these pipelines together so that when new code is introduced in 
+We hope to tie these pipelines together so that when new code is introduced in
 certain branches, it will be deployed to a staging or CI environment or something,
 tested, and if successful, go on to deploy to the final environment.
 
@@ -143,7 +143,7 @@ There are two ways to test this out in your environment:
     restart gitlab runner with `systemctl restart gitlab-runner`.  Your runner will
     now allow all images to run on it, which is not secure, but it'll increase your
     iteration speed because you don't need to recycle your env_runner for every new
-    image you create.  
+    image you create.
 
     After that, change your branch that your env deploys from so that it uses the new
     image in your `.gitlab-ci.yml` to get it to run a deploy and test the new
@@ -169,7 +169,7 @@ There are two ways to test this out in your environment:
     image in your `.gitlab-ci.yml` to get it to run a deploy and test the new
     functionality out.
 
-Once you've verified it works, you should add the new image to the 
+Once you've verified it works, you should add the new image to the
 `s3://login-gov.secrets.<account>-us-west-2/common/gitlab_env_runner_allowed_images`
 file and maybe remove some old ones, but not if they are being used by any of the
 environments.  This will let other environments know that it is an approved image
@@ -288,7 +288,7 @@ arguments to the main testing software, which is [Terratest](https://terratest.g
 
 #### Running tests locally
 
-You can run tests locally with 
+You can run tests locally with
 ```
 go test -v
 ```

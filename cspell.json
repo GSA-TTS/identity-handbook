@@ -57,6 +57,14 @@
     "FICAM",
     "FPKI"
   ],
+  "flagWords": [
+    "Github->GitHub",
+    "Gitlab->GitLab",
+    "pki->PKI",
+    "Idp->IdP",
+    "idp->IdP",
+    "IDP->IdP"
+  ],
   "patterns": [
     {
       "name": "Markdown links",
@@ -118,6 +126,10 @@
       "name": "Liquid Syntax With Dashes",
       "pattern": "\\{[%]-? (.*) -?[%]\\}",
       "description": "Some of the GitHub docs have this syntax"
+    },
+    {
+      "name": "Source Control Repository",
+      "pattern": "identity-[a-z-]+"
     }
   ],
   "ignoreRegExpList": [
@@ -133,6 +145,7 @@
     "Liquid Syntax",
     "Frontmatter",
     "Liquid Syntax With Dashes",
-    "Liquid Syntax 2"
+    "Liquid Syntax 2",
+    "Source Control Repository"
   ]
 }

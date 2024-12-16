@@ -1,5 +1,5 @@
 ---
-title: "Deploying new IDP and PKI code"
+title: "Deploying new IdP and PKI code"
 layout: article
 description: "Release Manager's Guide for Production"
 category: AppDev
@@ -50,7 +50,7 @@ When deploying a new release, the release manager should make sure to deploy new
 - [18f/identity-idp](https://github.com/18f/identity-idp)
 - [18f/identity-pki](https://github.com/18f/identity-pki)
 
-This guide is written for the idp, but also applies to the pivcac (identity-pki) server.
+This guide is written for the IdP, but also applies to the pivcac (identity-pki) server.
 
 This guide assumes that:
 - You have a [GPG key set up with GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account) (for signing commits)
@@ -70,7 +70,7 @@ Once you've run through proofing in staging, the next step is to cut a release f
 
 #### Cut a release branch
 
-##### IDP
+##### IdP
 
 ###### Prerequisites
 
@@ -172,7 +172,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
    aws-vault exec prod-power -- ./bin/ls-servers -e prod
    aws-vault exec prod-power -- ./bin/asg-size prod idp
    ```
-5. Recycle the IDP instances to get the new code. It automatically creates a new migration instance first.
+5. Recycle the IdP instances to get the new code. It automatically creates a new migration instance first.
    ```bash
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
@@ -201,7 +201,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
    Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
 
-   2. Follow the progress of the IDP hosts spinning up
+   2. Follow the progress of the IdP hosts spinning up
 
       ```bash
       aws-vault exec prod-power -- ./bin/ls-servers -e prod -r idp # check the load balance pool health
@@ -234,9 +234,9 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
 #### Creating a Release (Production only)
 
-##### IDP
+##### IdP
 
-The IDP includes a script to create a release based on a merged pull request.  It relies on [`gh`](https://cli.github.com/), the Github cli. Install that first (`brew install gh`) and get it connected to the identity-idp repo. Then, run the script to create a release:
+The IdP includes a script to create a release based on a merged pull request.  It relies on [`gh`](https://cli.github.com/), the GitHub cli. Install that first (`brew install gh`) and get it connected to the identity-idp repo. Then, run the script to create a release:
 
 ```shell
 scripts/create-release <PR_NUMBER>
@@ -260,7 +260,7 @@ Where `<PR_NUMBER>` is the number of the _merged_ PR.
 
 #### Rolling Back
 
-It's safer to roll back the IDP to a known good state than leave it up in a possibly bad one.
+It's safer to roll back the IdP to a known good state than leave it up in a possibly bad one.
 
 Some criteria for rolling back:
 - Is the error visible for users?
@@ -323,7 +323,7 @@ new configurations (config from S3).
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
 
-1. In production, it's important to remember to still scale out old IDP instances.
+1. In production, it's important to remember to still scale out old IdP instances.
 
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
@@ -336,7 +336,7 @@ When responding to a production incident with a config change, or otherwise in a
 aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
 ```
 
-1. In production, remove old IDP instances afterward
+1. In production, remove old IdP instances afterward
 ```bash
 aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
 ```

@@ -10,16 +10,16 @@ toc_h_max: 4
 ## General Information
 
 Automated testing of the Acuant SDK, used for capturing pictures of a user's ID and face, is not
-currently available. Prior to each bi-weekly deploy, Team Timnit wants to manually verify that the 
+currently available. Prior to each bi-weekly deploy, Team Timnit wants to manually verify that the
 SDK is functioning as expected.
 
 ### Cadence
 
 **When to test:** ✅
 
-Manual testing should be done prior to the regular full deploy of IDP to `prod`. Typically we do a
+Manual testing should be done prior to the regular full deploy of IdP to `prod`. Typically we do a
 full deploy twice weekly, on Tuesdays and Thursdays - see
-[Deploying new IDP and PKI code]({% link _articles/appdev-deploy.md %}) for
+[Deploying new IdP and PKI code]({% link _articles/appdev-deploy.md %}) for
 details and up-to-date cadence.
 
 ### Test Procedure
@@ -28,7 +28,7 @@ details and up-to-date cadence.
   Dashboard.
   - Under Staging, click on either the `oidc-sinatra` or the `saml-sinatra` links
     to go to a sample app.
-  - Note the git sha of the idp in `staging`.
+  - Note the git sha of the IdP in `staging`.
 - From the sample app, under `Options > Level of Service`, select `Biometric Comparison`,
   then click `Sign in`.
 - From the Login.gov sign in page, choose `Create an account`, enter your email with a modifier
@@ -52,7 +52,7 @@ conducting the test, react to the reminder with 👀 and reply in thread with:
 - The path to document capture
   - hybrid (start on desktop, switch to phone for capture)
   - standard (start on phone)
-- The git sha of the idp tested (available from the Environment status page)
+- The git sha of the IdP tested (available from the Environment status page)
 - Any issues encountered!
 
 If an issue is found, we need to work quickly to triage and determine if the problem is being

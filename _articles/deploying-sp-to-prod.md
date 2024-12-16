@@ -84,7 +84,7 @@ You will need to specify the reason you are running the console.
   - `aws-vault exec prod-power -- ./bin/ssm-instance -d rails-c --any asg-prod-idp`
   - `sp = ServiceProvider.find_by(issuer: 'ISSUER_URN_HERE')`
   - `sp.attributes`
- 
+
 
 **Step 8:**
 
@@ -94,7 +94,7 @@ If config is updated as expected, and you needed to do a full recycle for a new/
 
 **Step 9:**
 
-Scale out old instances of prod-worker and prod-idp
+Scale out old instances of `prod-worker` and `prod-idp`
   - `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL`
 
 **Step 10:**

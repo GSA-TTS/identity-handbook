@@ -46,7 +46,7 @@ You will need an AWS account and access. See [setting up aws-vault][aws-vault] f
 
 ![screenshot of the query interface for CloudWatch Insights]({{ site.baseurl }}/images/aws-cloudwatch-query.png)
 
-1. Make sure to select a log group. For most queries, we want **prod_/srv/idp/shared/log/events.log**. In the "Select up to 50 log groups" combobox, type in "events.log" to filter down the list and select the **prod_** one.
+1. Make sure to select a log group. For most queries, we want **`prod_/srv/idp/shared/log/events.log`**. In the "Select up to 50 log groups" combobox, type in "events.log" to filter down the list and select the **prod_** one.
 
 1. Set the time range. For consistency across timezones, we recommend the **UTC** timezone.
 

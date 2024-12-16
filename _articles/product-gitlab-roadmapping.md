@@ -4,7 +4,7 @@ description: >
   Guide to roadmapping in GitLab
 layout: article
 category: Product
-subcategory: Gitlab
+subcategory: GitLab
 ---
 
 # Step-by-Step Guide: Creating and Accessing a Roadmap in GitLab
@@ -64,7 +64,7 @@ Go to Plan in the left sidebar and select Roadmap.
 The roadmap will display all epics with start and end dates on a timeline.
 
 ## Key Components of the Roadmap Page
-Timeline: 
+Timeline:
 Displays epics as horizontal bars based on their start and end dates.
 Adjust the time frame to show weekly, monthly, or quarterly views.
 

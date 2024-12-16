@@ -20,7 +20,7 @@ To minimize the impact of external HTTP requests on our application performance,
 The lifecycle of a job:
 
 1. User performs an action that triggers a notification (such as changing their MFA)
-2. IDP enqueues a job
+2. IdP enqueues a job
     - The JWT payload is constructed and signed in the foreground, and the entire payload body is persisted temporarily as a job argument
     - See [data](#data) for payload contents
 3. Worker host picks up the job and sends it
@@ -40,7 +40,7 @@ See the full list of [supported events and example payloads](https://developers.
 
 ## Deploys
 
-The code for the workers lives in the same repository as the IDP, but is deployed to separate worker
+The code for the workers lives in the same repository as the IdP, but is deployed to separate worker
 instances.
 
 ## Configuration

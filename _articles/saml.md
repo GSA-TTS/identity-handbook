@@ -3,10 +3,10 @@ title: "SAML: Development"
 layout: article
 category: AppDev
 subcategory: "Development"
-description: "High-level overview of the flow of SAML in the IDP code"
+description: "High-level overview of the flow of SAML in the IdP code"
 ---
 
-Just a place to collect helpful SAML links and/or discussion on how the SAML code in IDP works.
+Just a place to collect helpful SAML links and/or discussion on how the SAML code in IdP works.
 
 ## Sample flow through code
 Starts in the IdP ([18f/identity-idp](https://github.com/18f/identity-idp))
@@ -16,7 +16,7 @@ SamlIdpController#handle_successful_handoff
 SamlIdpAuthConcern#saml_response
 ```
 
-Then calls in to the our fork of the saml_idp gem ([18f/saml_idp](https://github.com/18f/saml_idp))
+Then calls in to the our fork of the `saml_idp` gem ([18f/saml_idp](https://github.com/18f/saml_idp))
 ```
 SamlIdp::Controller#encode_response
 SamlIdp::Controller#encode_authn_response

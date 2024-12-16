@@ -1,6 +1,6 @@
 ---
 title: "Triage User Issues"
-description: Rails console scripts and Cloudwatch queries, for debugging the IDP
+description: Rails console scripts and Cloudwatch queries, for debugging the IdP
 layout: article
 category: AppDev
 ---

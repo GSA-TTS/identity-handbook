@@ -11,7 +11,7 @@ cSpell: ignore PSQL
 
 ## Overview
 
-To minimize long-running requests in the IDP, we've moved calls that talk to vendors
+To minimize long-running requests in the IdP, we've moved calls that talk to vendors
 to background jobs. We have implemented those background jobs as jobs using
 [GoodJob](https://github.com/bensheldon/good_job).
 
@@ -25,7 +25,7 @@ We currently use proofing jobs for PII verification.
 
 The lifecycle of a job:
 
-1. The user submits a form to the IDP
+1. The user submits a form to the IdP
     - For PII verification jobs, the payload will contain PII:
         - First name
         - Last name
@@ -33,10 +33,10 @@ The lifecycle of a job:
         - SSN
         - Driver's license number
         - Address
-1. The IDP will enqueue a background job
+1. The IdP will enqueue a background job
     - Job parameters are persisted to the PSQL database
-    - Sensitive parameters are symmetrically encrypted by a server-side IDP key (see notes on [server-side encryption](#server-side-encryption))
-1. The IDP will show a waiting page to the user
+    - Sensitive parameters are symmetrically encrypted by a server-side IdP key (see notes on [server-side encryption](#server-side-encryption))
+1. The IdP will show a waiting page to the user
 1. The Worker host polls the background jobs table. When it pulls a job:
     - Writes to the jobs table to mark the job as claimed
     - It will make HTTP requests via our outbound proxy to vendors
@@ -51,10 +51,10 @@ The lifecycle of a job:
         - Date of Birth
         - Driver's license number
         - Address
-1. The user waiting page will be polling for the result of the background job, where the IDP will
+1. The user waiting page will be polling for the result of the background job, where the IdP will
    check Redis for the result for that particular job. Once it is complete, the user will continue
    to the next step of the flow.
-    - If after 60 seconds the IDP has not seen a response for the job, the IDP will decide the job
+    - If after 60 seconds the IdP has not seen a response for the job, the IdP will decide the job
       has timed out, and show an error screen to the user, giving them an option to retry.
 
 ### Server-Side Encryption
@@ -67,14 +67,14 @@ pulled down when the app launches and read into memory.
 
 ### Logging
 
-Logging for the workers will go to `log/production.log` just like the IDP web hosts,
+Logging for the workers will go to `log/production.log` just like the IdP web hosts,
 which will be ingested into Cloudwatch.
 
 GoodJob logs job durations by default.
 
 ## Deploys
 
-The code for the workers lives in the same repository as the IDP, but is deployed to separate worker
+The code for the workers lives in the same repository as the IdP, but is deployed to separate worker
 instances.
 
 ## Configuration
@@ -82,11 +82,11 @@ instances.
 To enable ruby workers in an environment:
 
 1. Update the environment's [`application.yml`]({% link _articles/appdev-secrets-configuration.md %})
-  - Set **ruby_workers_idv_enabled**: `'true'` (this enables async for resolution, address jobs)
+  - Set **`ruby_workers_idv_enabled`**: `'true'` (this enables async for resolution, address jobs)
 2. Set terraform variables:
     - Positive worker sizes to be positive integers [(example pull request)](https://github.com/18F/identity-devops-private/pull/1513/files):
-        - **asg_worker_min**: 2
-        - **asg_worker_desired**: 2
-        - **asg_worker_max**: 8 (or something)
+        - **`asg_worker_min`**: 2
+        - **`asg_worker_desired`**: 2
+        - **`asg_worker_max`**: 8 (or something)
     - Enable worker alarms for alerting [(example pull request)](https://github.com/18F/identity-devops-private/pull/1514/files)
-        - **idp_worker_alarms_enabled**: 1
+        - **`idp_worker_alarms_enabled`**: 1

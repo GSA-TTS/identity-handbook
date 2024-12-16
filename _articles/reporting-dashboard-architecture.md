@@ -18,7 +18,7 @@ share with the public
 
 ### Data
 
-Reporting jobs in the IDP run once a day or so by compiling data from the RDS instance,
+Reporting jobs in the IdP run once a day or so by compiling data from the RDS instance,
 and then and write JSON files to a private S3 bucket.
 (<abbr title="nota bene">nb</abbr> this is a *different* bucket than for Login.gov internal
 reports which includes billing information).

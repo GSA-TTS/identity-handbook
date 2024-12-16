@@ -41,8 +41,8 @@ brand new to incident management.
 ### Useful things to have up in a browser:
 - [Incident response runbooks](https://gitlab.login.gov/lg/identity-devops/-/wikis/Incident-Response-Runbooks){:target="_blank"}
 - [Troubleshooting Devops quick reference -- includes devops commands](https://gitlab.login.gov/lg/identity-devops/-/wikis/Troubleshooting-Quick-Reference){:target="_blank"}
-- [Identity IdP Github](https://github.com/18f/identity-idp){:target="_blank"}
-- [Identity Devops Github](https://github.com/18f/identity-devops){:target="_blank"}
+- [Identity IdP GitHub](https://github.com/18f/identity-idp){:target="_blank"}
+- [Identity Devops GitHub](https://github.com/18f/identity-devops){:target="_blank"}
 
 ### Optional
 - Fun hat

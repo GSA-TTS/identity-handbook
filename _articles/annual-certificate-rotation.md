@@ -41,7 +41,7 @@ Rotating the certificates happens in two phases: first adding the new certificat
 	 saml_endpoint_configs: '[{"suffix":"2021","secret_key_passphrase":"XXXXXXXXXXXX"},{"suffix":"2022","secret_key_passphrase":"XXXXXXXXXXXX"}]'
 	 ```
     - Recycle the env to make new configs take effect.
-4. Confirm the new endpoint is live by going to `/api/saml/metadata20XX` in that environment's idp.
+4. Confirm the new endpoint is live by going to `/api/saml/metadata20XX` in that environment's IdP.
 5. New SAML 20XX has been tested using a new test app on the Dashboard
     - Create a new "SAML 20XX" test app on <https://dashboard.int.identitysandbox.gov/> to test the new certificate endpoints.
 
