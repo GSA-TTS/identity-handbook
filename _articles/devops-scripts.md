@@ -55,13 +55,11 @@ app-s3-secret: Upload changes to S3? (y/n)
 y
 ```
 
-{%- capture production_warning -%}
+{% component alert type=:warning %}
 **Note**: When editing secrets, especially in **production**,
 it's a best practice to share the diff in the `#login-appdev` channel for visibility.
 Make sure to redact sensitive values!
-{%- endcapture %}
-
-{% include alert.html content=production_warning alert_class="usa-alert--warning" %}
+{% endcomponent %}
 
 After updating, [recycle the configuration][config-recycle] so that
 this updated config is picked up.
@@ -334,7 +332,9 @@ repository.
 
 ## `oncall/download-piv-certs`
 
-{% include alert.html content=idp_script_alert alert_class="usa-alert--info" %}
+{% component alert type=:info %}
+{{ idp_script_alert }}
+{% endcomponent %}
 
 This script takes a user UUID and downloads the public PIV certs they have tried to use
 over the last 2 weeks:
@@ -346,7 +346,9 @@ Downloading cert to: /tmp/certs/uuid1/cert1.pem
 
 ## `oncall/email-deliveries`
 
-{% include alert.html content=idp_script_alert alert_class="usa-alert--info" %}
+{% component alert type=:info %}
+{{ idp_script_alert }}
+{% endcomponent %}
 
 This script checks for email deliveries (and bounces) for emails by user UUID.
 It queries within the last week.
@@ -368,7 +370,9 @@ It queries within the last week.
 
 ## `oncall/otp-deliveries`
 
-{% include alert.html content=idp_script_alert alert_class="usa-alert--info" %}
+{% component alert type=:info %}
+{{ idp_script_alert }}
+{% endcomponent %}
 
 This script looks up SMS and voice OTP delivieries within the last 72 hours, specifically to streamline
 escalating delivery issues to AWS Pinpoint support (they require traces within 72 hours).
@@ -389,11 +393,10 @@ escalating delivery issues to AWS Pinpoint support (they require traces within 7
 
 ## `query-cloudwatch`
 
-{%- capture alert_content -%}
+{% component alert type=:warning %}
 **Note**: This script has moved to the [identity-idp](https://github.com/18f/identity-idp)
 repository.
-{%- endcapture %}
-{% include alert.html content=alert_content alert_class="usa-alert--warning" %}
+{% endcomponent %}
 
 In the web UI, cloudwatch results are limited to:
 - 15 minutes of time

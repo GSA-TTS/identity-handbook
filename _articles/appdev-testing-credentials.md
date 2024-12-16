@@ -38,11 +38,9 @@ See also: [TTS Handbook page on Sensitive Information][tts-handbook-sensitive-in
 
 **Goal:** test against a brand new partner API using live credentials for their test/sandbox/staging environment
 
-{%- capture alert_content -%}
+{% component alert type=:warning %}
 **Note**: Production credentials and sending production data should only happen in the production environment (`prod`, `staging`, `dm`)
-{%- endcapture -%}
-
-{% include alert.html content=alert_content alert_class="usa-alert--warning" %}
+{% endcomponent %}
 
 1. Write code locally, read secrets from [`IdentityConfig.store.xyz`]({% link _articles/appdev-secrets-configuration.md %}#configuration-in-rails-apps)
 1. Upload actual credentials to S3 YML in a sandbox env (for test credentials) or prod env (for live credentials), use [app-s3-secret]({% link _articles/devops-scripts.md %}#app-s3-secret)

@@ -75,16 +75,29 @@ class ComponentTag < Liquid::Block
 
   def render(context)
     content = super
-    if !content.include?('<')
-      content = context.registers[:site].
-        find_converter_instance(Jekyll::Converters::Markdown).
-        convert(super).sub(/^<p>(.+)<\/p>$/, '\1')
+    if !/^\s+</m.match?(content)
+      # If the rendered content doesn't appear to be HTML, treat it as markdown. This implementation
+      # is similar to that of Jekyll's built-in `markdownify` filter. Default markdownification will
+      # add a wrapping `<p>`, which isn't always compatible as component content, so it's removed.
+      content = context.registers[:site]
+        .find_converter_instance(Jekyll::Converters::Markdown)
+        .convert(super)
+        .sub(/^\s*<p>(.+)<\/p>\s*$/m, '\1')
     end
     content = content.html_safe
 
     component_class = "#{@component_name.camelize}Component".constantize
     component = component_class.new(**parse_params(context).symbolize_keys).with_content(content)
-    ActionController::Base.new.render_to_string(component)
+    rendered = ActionController::Base.new.render_to_string(component)
+
+    # Rendered component output may span multiple lines of HTML, which isn't always compatible when
+    # rendered in indented content (e.g. lists), where the sudden unindentation may be incorrectly
+    # interpreted as a termination of the list. Replacing newlines with spaces should be relatively
+    # safe for how HTML whitespace is interpreted, since newlines are converted to spaces anyways as
+    # part of the process.
+    #
+    # See: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace#explanation
+    rendered.gsub("\n", ' ')
   end
 end
 

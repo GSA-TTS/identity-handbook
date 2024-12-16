@@ -58,10 +58,9 @@ If you are comfortable with the command line, you can also use our [query-cloudw
 
 ### Filtering by event
 
-{%- capture info -%}
-See [Analytics Events][analytics-events] for the most up-to-date documentation of individual events and their fields.
-{%- endcapture %}
-{% include alert.html content=info alert_class="usa-alert--info" %}
+{% component alert type=:info %}
+See [Analytics Events]({% link _articles/analytics-events.md %}) for the most up-to-date documentation of individual events and their fields.
+{% endcomponent %}
 
 This query filters down to one event, ["SP redirect initiated"][sp-redirect-initiated]:
 
