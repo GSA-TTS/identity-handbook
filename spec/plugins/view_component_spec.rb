@@ -55,13 +55,13 @@ RSpec.describe ComponentTag do
         end
 
         def call
-          tag.div(@arg.class.name + @arg.to_s)
+          tag.div("arg_class=#{@arg.class.name} arg=#{@arg}")
         end
       end
     end
 
     it 'renders with component provided string as argument' do
-      expect(rendered).to eq("<div>Stringstring</div>\n")
+      expect(rendered).to eq("<div>arg_class=String arg=string</div>\n")
     end
   end
 
@@ -74,13 +74,13 @@ RSpec.describe ComponentTag do
         end
 
         def call
-          tag.div(@arg.class.name + @arg.to_s)
+          tag.div("arg_class=#{@arg.class.name} arg=#{@arg}")
         end
       end
     end
 
     it 'renders with component provided string as argument' do
-      expect(rendered).to eq("<div>Symbolsymbol</div>\n")
+      expect(rendered).to eq("<div>arg_class=Symbol arg=symbol</div>\n")
     end
   end
 
@@ -94,13 +94,13 @@ RSpec.describe ComponentTag do
         end
 
         def call
-          tag.div(@arg.class.name + @arg.to_s)
+          tag.div("arg_class=#{@arg.class.name} arg=#{@arg}")
         end
       end
     end
 
     it 'renders with resolved deep payload value' do
-      expect(rendered).to eq("<div>Stringhttp://example.com</div>\n")
+      expect(rendered).to eq("<div>arg_class=String arg=http://example.com</div>\n")
     end
   end
 
@@ -113,13 +113,13 @@ RSpec.describe ComponentTag do
         end
 
         def call
-          tag.div(@arg.class.name + @arg.to_s)
+          tag.div("arg_class=#{@arg.class.name} arg=#{@arg}")
         end
       end
     end
 
     it 'renders with component provided string as argument' do
-      expect(rendered).to eq("<div>TrueClasstrue</div>\n")
+      expect(rendered).to eq("<div>arg_class=TrueClass arg=true</div>\n")
     end
   end
 end
