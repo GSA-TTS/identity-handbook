@@ -64,7 +64,8 @@ span {
  * Mimics private-eye lock emoji, but for GitLab repos
  * See https://github.com/18F/private-eye/blob/c08740d838eb2b95b318a916894c6cb6aae76e41/private-eye.js#L5
  */
-a[href*="gitlab.login.gov/lg"] {
+a[href*="gitlab.login.gov/lg"],
+a[href*="gitlab.login.gov/groups/lg"] {
   & > strong::after,
   &::after {
     content: "\1F98A"; // 🦊
