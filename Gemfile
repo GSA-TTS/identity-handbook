@@ -13,7 +13,6 @@ gem "view_component", "~> 3.20.0"
 group :jekyll_plugins do
   gem "jekyll-redirect-from"
   gem "jekyll-last-modified-at"
-  gem "jekyll-environment-variables"
 end
 
 group :test do

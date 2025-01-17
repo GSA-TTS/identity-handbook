@@ -31,7 +31,6 @@ keep_files:
 plugins:
   - jekyll-redirect-from
   - jekyll-last-modified-at
-  - jekyll-environment-variables
 
 exclude:
   - .cache
