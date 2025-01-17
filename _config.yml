@@ -34,13 +34,17 @@ plugins:
   - jekyll-environment-variables
 
 exclude:
+  - .cache
   - CONTRIBUTING.md
-  - SECURITY.md
-  - package-lock.json
-  - Makefile
-  - package.json
+  - cspell.json
+  - federalist.json
   - Gemfile
   - Gemfile.lock
+  - package-lock.json
+  - package.json
+  - Makefile
   - node_modules
+  - SECURITY.md
+  - spec
+  - tsconfig.json
   - vendor
-  - .cache
