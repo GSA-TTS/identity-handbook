@@ -39,6 +39,7 @@ to find in each.
   an approvals process
 - Content is discoverable through Google search, but it can be difficult to find timely and
   program-specific documents without extensive use of filters
+- Sometimes copied from specific templates, see [Product Artifacts]({% link _articles/product-artifacts.html %})
 
 ## Login.gov Project Repositories
 
