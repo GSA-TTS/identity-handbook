@@ -62,6 +62,7 @@ Examples:
 ## GitLab Wikis
 
 - Contains team-specific or project-specific content
+- Requires a GitLab account to access
 - Content changes can be made without an approvals process
 - Wikis offer basic top-down (parent-child) structuring, without much flexibility for further
   customization (e.g. ordering)
