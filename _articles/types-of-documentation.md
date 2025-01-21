@@ -43,6 +43,7 @@ to find in each.
 
 ## Login.gov Project Repositories
 
+- Usually public information, since most repositories are public
 - Contains project-specific content
 - Content is written in [Markdown](https://en.wikipedia.org/wiki/Markdown)
 - Content is readable through local copies of the project or in the GitHub/GitLab web interface, but
