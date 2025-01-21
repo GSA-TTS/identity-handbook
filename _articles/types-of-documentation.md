@@ -64,6 +64,7 @@ Examples:
 - Wikis offer basic top-down (parent-child) structuring, without much flexibility for further
   customization (e.g. ordering)
 - Content is discoverable through GitHub/GitLab search, which often produces low-quality results
+- Changing the title of a page can break links to the page
 
 Examples:
 
