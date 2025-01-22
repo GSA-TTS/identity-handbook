@@ -20,6 +20,8 @@ to find in each.
 - Content is changed through pull requests in [the GitHub repository](https://github.com/GSA-TTS/identity-handbook),
   which requires some understanding of Git, and requires an approving peer review
 - Content is intended to be highly discoverable using website search functionality
+- Can have pages that redirect to to [Login.gov Google Drive](#logingov-google-drive) to make them
+  easier to find
 
 ## [Login.gov Internal Handbook](https://lg-public.pages.production.gitlab.login.gov/identity-internal-handbook/)
 
@@ -30,8 +32,6 @@ to find in each.
 - Content is changed through pull requests in [the GitHub repository](https://github.com/GSA-TTS/identity-handbook),
   which requires some understanding of Git, and requires an approving peer review
 - Content is intended to be highly discoverable using website search functionality
-- Can have pages that redirect to to [Login.gov Google Drive](#logingov-google-drive) to make them
-  easier to find
 
 ## [Login.gov Google Drive](https://drive.google.com/drive/folders/0AJJ3eelM4E-NUk9PVA)
 
