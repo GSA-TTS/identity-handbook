@@ -57,9 +57,16 @@ user.identities
 Once you have a user's UUID (from [`uuid-lookup`]({% link _articles/devops-scripts.md %}#uuid-lookup)), you can look in Cloudwatch logs for
 events.log events for that user.
 
-For a full list of documented events, see [Analytics Events]({% link _articles/analytics-events.md %})
-
 See also [Troubleshooting Quick Reference - Cloudwatch Logs](https://gitlab.login.gov/lg/identity-devops/-/wikis/Troubleshooting-Quick-Reference#cloudwatch-logs)
+
+### Commonly used logs
+
+| Log Group Name | AWS Environment | Notes|
+|----------------|-----------------|------|
+| `prod_/srv/idp/shared/log/events.log`     | login-prod      | For a full list of documented events, see [Analytics Events]({% link _articles/analytics-events.md %}) |
+| `prod_/srv/idp/shared/log/production.log` | login-prod      | The Rails log |
+| `/aws/lambda/SESAllEvents_Lambda` | login-prod | Simple Email service (SES) events with usernames redacted.|
+| `/aws/lambda/pinpoint_event_logger` | login-sms-prod | Pinpoint (SMS) service events with phone numbers redacted. See [SMS delivery](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-Pinpoint-SMS-and-Voice#sms-delivery) for more information.|
 
 ### Cloudwatch Insights
 
