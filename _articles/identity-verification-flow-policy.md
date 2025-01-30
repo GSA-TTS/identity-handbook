@@ -72,9 +72,9 @@ this step. Called from `clear_future_steps!`. For example, the AgreementControll
 * **action** - a symbol for the controller action to use if jumping to this step. Defaults to `:show`,
 so it is only needed for controllers that use `:new` or `:index`.
 
-### Idv::Session state mural
-The implementations of `preconditions` and `undo_step` procs were guided by this [Mural of idv_session
-changes](https://app.mural.co/t/loginteamada4499/m/loginteamada4499/1694024611822/03ec0f4abe389ac5eb4eda772fe00de02439e00c?sender=u4b5c802b0baf08d2d7cf2223) during the Identity Verification flow.
+### Idv::Session state figma
+The implementations of `preconditions` and `undo_step` procs were guided by this [Figma of idv_session
+changes](https://www.figma.com/board/zAHnLoTnrPqFUAK6ZBT2vQ/Map-of-idv_session-changes-during-IdV?node-id=23-1589&t=x9i52S6jvVAA0z7c-0) during the Identity Verification flow.
 
 ## IdvStepConcern methods
 
