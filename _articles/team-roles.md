@@ -11,7 +11,6 @@ This is a living document and will evolve as our teams do.
 
 ## All Team Members
 
-- Continuously supports diversity, equity and inclusion of our teams and the work we do for the public
 - Attends agile ceremonies (daily standup, backlog refinement, planning, retros)
 - Look for ways the team can work more efficiently, save cost, and brings that up in a helpful way.
 - Demos work at Demo day
