@@ -5,7 +5,7 @@
     "@18f/private-eye": "^2.1.0",
     "anchor-js": "^4.2.2",
     "concurrently": "^8.0.1",
-    "esbuild": "^0.17.15",
+    "esbuild": "^0.25.0",
     "pagefind": "^1.2.0"
   },
   "devDependencies": {
