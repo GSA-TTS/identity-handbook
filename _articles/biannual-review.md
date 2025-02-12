@@ -57,7 +57,7 @@ Your Team lead will:
 
 ### Writing Reviews
 
-- TTS has a very helpful [training deck on recognizing bias and creating equity in performance reviews](https://docs.google.com/presentation/d/1Jn_cEVhxJ4Vzmj0pJOnjxHYXp5xoMUHyCbyFl1foPXw/edit#slide=id.p). Please review it.
+- TTS has a very helpful training deck on recognizing bias and creating equity in performance reviews. Please review it.
 - Spend some time thinking about the raw feedback for each person, and the shape of review it defines. Make some notes. Review content should be ~ 98% Self Review and Peer Feedback content -- edited by you for clarity.
 - Spend some time thinking about aligning and normalizing the feedback across all of the people on your team. Review your notes.
 - Use provided templates to create your review documents
