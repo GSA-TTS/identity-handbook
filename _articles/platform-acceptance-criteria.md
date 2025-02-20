@@ -80,7 +80,7 @@ As much as possible, PRs containing changes to cookbooks (whether in `identity-d
 
 Most of the style/formatting guidelines listed above for PRs can be similarly followed for Issues. As much as possible, use the in-repo templates (shown in the GitHub web interface, and/or the `.github/ISSUE_TEMPLATE` directory in the repo itself) when creating issues.
 
-Detailed information on how to effectively write and define Issues can be found in the [Definition Of Ready document in this handbook](https://handbook.login.gov/articles/definition-of-ready.html).
+Detailed information on how to effectively write and define Issues can be found in the [Definition Of Ready document in this handbook]({% link _articles/definition-of-ready.md %})
 
 ## Appendix
 

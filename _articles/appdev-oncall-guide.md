@@ -108,7 +108,7 @@ Refer to [Troubleshooting expiring PIV/CAC certs]({% link _articles/troubleshoot
 
 ## Response Times
 
-SecOps Incident Response Guide located [here](https://handbook.login.gov/articles/secops-incident-response-guide.html)
+SecOps Incident Response Guide located [here]({% link _articles/incident-response-guide.md %})
 
 Things to consider when assessing severity:
 * If PII is involved
