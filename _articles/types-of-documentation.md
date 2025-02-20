@@ -14,7 +14,7 @@ to find in each.
 ## [Login.gov Public Handbook](https://handbook.login.gov/)
 
 - Contains up-to-date content relevant for the entire Login.gov program which is suitable to share
-  with the general public (see [_Sensitive Information_](https://handbook.login.gov/articles/contributing.html#sensitive-information))
+  with the general public (see [_Sensitive Information_]({% link _articles/contributing.md %}#sensitive-information))
 - Anyone can and should contribute, but content is written in [Markdown](https://en.wikipedia.org/wiki/Markdown)
   and therefore requires some understanding of Markdown syntax
 - Content is changed through pull requests in [the GitHub repository](https://github.com/GSA-TTS/identity-handbook),
@@ -26,7 +26,7 @@ to find in each.
 ## [Login.gov Internal Handbook](https://lg-public.pages.production.gitlab.login.gov/identity-internal-handbook/)
 
 - Contains up-to-date content relevant for the entire Login.gov program which is not suitable to
-  share with the general public (see [_Sensitive Information_](https://handbook.login.gov/articles/contributing.html#sensitive-information))
+  share with the general public (see [_Sensitive Information_]({% link _articles/contributing.md %}#sensitive-information))
 - Anyone can and should contribute, but content is written in [Markdown](https://en.wikipedia.org/wiki/Markdown)
   and therefore requires some understanding of Markdown syntax
 - Content is changed through pull requests in [the GitHub repository](https://github.com/GSA-TTS/identity-handbook),
