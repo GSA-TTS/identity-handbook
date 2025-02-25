@@ -152,7 +152,7 @@ To work around this, there are a few options
     ```
     | stats count(*) by PROPERTY_TO_COUNT
     ```
-- If you're trying to deduplicate events logged in the same session, you can `filter properties.new_event` to consider events logged for the first time in a session
+- If you're trying to deduplicate events logged in the same session, you can `filter properties.new_event` to consider events logged for the first time in a session. Note that `new_event` will always be `true` for "successful" events (`properties.event_properties.success`).
 - CloudWatch supports multiple `stats` aggregation, so you can group by a property occurring at least once before summing a count. Note that these can be query-intensive and take a long time to run.
 
     ```
