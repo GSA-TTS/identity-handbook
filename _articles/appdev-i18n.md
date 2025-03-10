@@ -104,6 +104,7 @@ Content updates: When you are notified that a new or revised English content is 
 4. Run the script to test its functionality
 
 ##### How to provide feedback
+
 Create an issue in the [repository](https://github.com/18F/hackathon-translations-import).
 
 ### Screenshot Automation Script
@@ -118,6 +119,7 @@ This script is an automated tool that helps capture screenshots for Login.gov. R
 - **Scenario 2:** When an engineer has multiple screenshots to post in a PR or share in an acceptance thread.
 
 ##### Team workflow example
+
 1. Stakeholder notifies an engineer that they need multiple screenshots from a user flow
 2. Engineer receives the URL strings requested to screenshot
 3. Engineer runs the script
