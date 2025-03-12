@@ -142,4 +142,3 @@ This script is an automated tool that helps capture screenshots for Login.gov. R
 ##### How to provide feedback
 
 Unlike the first script, this script doesn’t have a dedicated repository. For now, please leave your feedback in the `login-appdev` channel.
-
