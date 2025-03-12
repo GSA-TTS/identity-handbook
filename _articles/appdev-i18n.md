@@ -72,3 +72,74 @@ You can also take advantage of some automated tooling to assist in this process:
   - [See documentation for "Managing translation files"](https://github.com/18f/identity-idp#managing-translation-files)
 - Running `i18n-tasks add-missing` will generate placeholder values for all missing keys.
   - [See documentation for "`i18n-tasks add-missing`"](https://github.com/glebm/i18n-tasks#add-missing-keys)
+
+## Translation Integration Automation
+
+Currently, we have two scripts to streamline workflows to ensure consistency and efficiency across multilingual content
+
+1. Automate the process of integrating and updating translations
+2. Automate the process of screenshots
+
+### Translation Integration Script
+
+#### What it does
+This script automates the process of updating translations, streamlining what is currently a manual and cumbersome task. Instead of relying on error-prone copy-pasting between different formats, this script introduces a new workflow that eliminates the manual step altogether. This means faster and more accurate updates for new translations.
+
+##### When will this script come in handy?
+Content updates: When you are notified that a new or revised English content is ready to implement, the script can quickly add translations in seconds/minutes
+
+##### Team workflow example
+
+1. Translation Team Rep notifies an engineer that the translations have been returned from DoS and are ready to implement
+2. Engineer downloads the translation sheet tab (e.g., Sprint XYZ) as a .csv file ([Video demo in Slack](https://gsa-tts.slack.com/archives/C0847VCD3RT/p1734030685203639))
+3. Engineer runs the script
+4. Engineer creates and shares a PR with UX/Product to review and approve (Alternatively, a screenshot of the change can be shared in an acceptance thread) 
+
+#### Get started
+
+1. Clone the [repository]( https://github.com/18F/hackathon-translations-import) to your local machine
+2. Ensure you have the necessary dependencies installed
+3. Download your team translation tracker spreadsheet as a `.csv` file (Ensure that you are in the correct tab)
+    - Use this [sample copy](https://docs.google.com/spreadsheets/d/1RwV9JC7NL2Z7B8cdjKn3g8XwcUEKjONmZq98gZRHQfc/edit?gid=1723091228#gid=1723091228) to test beforehand, if you want twiddle without touching the real one
+4. Run the script to test its functionality
+
+##### How to provide feedback
+
+Create an issue in the [repository](https://github.com/18F/hackathon-translations-import).
+
+### Screenshot Automation Script
+
+#### What it does
+
+This script is an automated tool that helps capture screenshots for Login.gov. Right now, the manual process of taking screenshots is slow. The script makes it easier and faster to grab visuals, so we can share updates with those who need them  quickly and efficiently. It takes the hassle out of manual screenshotting, helping everyone stay on the same page.
+
+##### When will this script come in handy?
+
+- **Scenario 1:** When stakeholders (UX, Product, Partnerships, etc.) request screenshots of new user flows or multiple pages, especially for 5+ pages.
+- **Scenario 2:** When an engineer has multiple screenshots to post in a PR or share in an acceptance thread.
+
+##### Team workflow example
+
+1. Stakeholder notifies an engineer that they need multiple screenshots from a user flow
+2. Engineer receives the URL strings requested to screenshot
+3. Engineer runs the script
+    - Script generates a file package
+4. Engineer downloads the file package
+5. Engineer shares the file package with the stakeholder
+6. Stakeholder opens the file package
+    - Stakeholder receives the screenshot images
+    - Stakeholder receives HTML files to view individual pages in their own web browser without needing to grab screenshots in the lower environment
+
+#### Get started
+
+1. Script is available in the `identity-idp` on a [branch](https://github.com/18F/identity-idp/tree/jmax/hackathon-dumping-screens-and-strings): 
+2. Ensure that you have the necessary dependencies installed
+3. Assign a few designated URL strings you’d like to capture [Video demo in Slack](https://gsa-tts.slack.com/archives/C0847VCD3RT/p1734032192838459)
+3. Execute the `bin/ux-dump` script. The script takes the name of a scenario to execute. There are two sample scenarios currently, `ux-dumper/biometric_spec.rb` and `ux-dumper/mobile_flow_spec.rb`
+4. Review the output directory for the captured screenshots
+    - Feel free to test different user flows or scenarios to ensure the script works as expected in various situations
+
+##### How to provide feedback
+
+Unlike the first script, this script doesn’t have a dedicated repository. For now, please leave your feedback in the `login-appdev` channel.
+
