@@ -111,7 +111,7 @@ Create an issue in the [repository](https://github.com/18F/hackathon-translation
 
 #### What it does
 
-This script is an automated tool that helps capture screenshots for Login.gov. Right now, the manual process of taking screenshots is slow. The script makes it easier and faster to grab visuals, so we can share updates with those who need them  quickly and efficiently. It takes the hassle out of manual screenshotting, helping everyone stay on the same page.
+This script is an automated tool that helps capture screenshots for Login.gov. Right now, the manual process of taking screenshots is slow. The script makes it easier and faster to grab visuals, so we can share updates with those who need them quickly and efficiently. It takes the hassle out of taking manual screenshots, helping everyone stay on the same page.
 
 ##### When will this script come in handy?
 
