@@ -1,0 +1,31 @@
+name: Tests
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  test:
+    name: Specs
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - uses: actions/setup-node@v4
+      with:
+        cache: 'npm'
+    - name: Install NPM dependencies
+      run: npm ci
+    - name: Run markdown source spec (catches things that might break the build)
+      run: bundle exec rspec spec/markdown_spec.rb
+    - name: Run lints
+      run: make lint
+    - name: Run typecheck
+      run: make typecheck
+    - name: Run tests
+      run: make test
+    - name: Run spellcheck
+      run: make spellcheck
