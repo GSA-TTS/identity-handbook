@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby '~> 3.2.2'
+ruby '~> 3.4.3'
 
 gem "activemodel", "~> 8.0.0"
 gem "actionpack", "~> 8.0.0"
@@ -16,7 +16,7 @@ group :jekyll_plugins do
 end
 
 group :test do
-  gem 'html-proofer', '~> 4.4.3'
+  gem 'html-proofer', '~> 5.0'
   gem 'nokogiri', '~> 1.18.8'
-  gem 'rspec', '~> 3.9.0'
+  gem 'rspec', '~> 3.13.0'
 end
