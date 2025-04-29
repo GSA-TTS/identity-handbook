@@ -13,6 +13,8 @@ export const loadPrivateEye = () => {
   new PrivateEye({
     defaultMessage: "This link is private to TTS.",
     ignoreUrls: [
+      "airtable.com",
+      "gsa.enterprise.slack.com",
       "18f.slack.com",
       "anywhere.gsa.gov",
       "bookit.gsa.gov",
