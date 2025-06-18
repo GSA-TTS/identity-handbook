@@ -225,12 +225,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
 7. Set a timer for one hour, then check NewRelic again for errors.
 
-8. Manually test the app in production:
-    - Sign in to an account
-    - Sign up for an account
-    - Test proofing (identity verification) on the new account
-
-9. If everything looks good, the deploy is complete.
+8. If everything looks good, the deploy is complete.
 
 #### Creating a Release (Production only)
 
