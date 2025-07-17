@@ -22,9 +22,12 @@ full deploy twice weekly, on Tuesdays and Thursdays - see
 [Deploying new IdP and PKI code]({% link _articles/appdev-deploy.md %}) for
 details and up-to-date cadence.
 
+**Mock IDs:**
+If you want test using a mock ID, you can access them using the link [here](https://docs.google.com/spreadsheets/d/15Npyy5Qc9gHs8d-RWvdgWciNYwGGVmur_3GLcRDpwAA/edit?gid=0#gid=0).
+
 ### Test Procedure
 
-- Visit the [Environments status](https://dashboard.int.identitysandbox.gov/env) page of the
+- Visit the [Environments status](https://portal.int.identitysandbox.gov/env) page of the
   Dashboard.
   - Under Staging, click on either the `oidc-sinatra` or the `saml-sinatra` links
     to go to a sample app.
@@ -41,11 +44,22 @@ details and up-to-date cadence.
   - Does voice over work as expected?
   - Is your ID successfully verified?
   - Is the new feature we're deploying working properly?
+- Attempt to upload mismatched ID types:
+  - Proceed through the identity verification flow and select `Driver's License`, but upload a `Passport`
+  - Proceed through the identity verification and select `Passport` but upload a `Driver's License`
+  - The expected result should be that the IDP rejects the upload and displays an error message.
+- Perform a valid passport test.
+  - Select `Passport` on the `Choose your ID page` and verify your identity using a `Passport`
+- Test the Socure flow:
+  - Lexis Nexis and Socure are typically split 50/50 in staging. If your run lands on the Lexis Nexis flow, create additional new accounts until you enter the Socure flow.
+  - Once in the `Socure` flow, complete it, ensuring Socure validation passes successfully
+- Complete the full Identity Verification flow (including steps after Doc Auth).
+  - Previously, testing stopped after Doc Auth, but now the full Identity Verification journey must be completed.
 
 
 ### Communications
 
-Slack: `@login-oncall-timnit` receives a reminder, in `#login-team-timnit` on Tuesday and Thursday
+Slack: `@login-oncall-charity` receives a reminder, in `#login-team-charity` on Tuesday and Thursday
 mornings, to test the release prior to the day's deploy (others are welcome to test as well!). When
 conducting the test, react to the reminder with 👀 and reply in thread with:
 - The mobile platform used (OS, browser, version)
