@@ -47,7 +47,7 @@ If you want test using a mock ID, you can access them using the link [here](http
 - Attempt to upload mismatched ID types:
   - Proceed through the identity verification flow and select `Driver's License`, but upload a `Passport`
   - Proceed through the identity verification and select `Passport` but upload a `Driver's License`
-  - The expected result should be that the IDP rejects the upload and displays an error message.
+  - The expected result should be that the IdP rejects the upload and displays an error message.
 - Perform a valid passport test.
   - Select `Passport` on the `Choose your ID page` and verify your identity using a `Passport`
 - Test the Socure flow:
