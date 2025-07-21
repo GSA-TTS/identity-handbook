@@ -9,4 +9,5 @@ assets/build
 .vscode
 .idea
 .env
+.tool-versions
 

@@ -1,5 +1,5 @@
 ---
-title: "Acuant SDK Test Plan"
+title: "Doc Auth Test Plan"
 layout: article
 description: "Pre-deploy manual test plan for the Acuant SDK"
 category: AppDev
@@ -9,9 +9,9 @@ toc_h_max: 4
 
 ## General Information
 
-Automated testing of the Acuant SDK, used for capturing pictures of a user's ID and face, is not
-currently available. Prior to each bi-weekly deploy, Team Timnit wants to manually verify that the
-SDK is functioning as expected.
+Team Charity currently handles two different vendors for Document Authentication, used for capturing pictures of a user's ID or passport and face. 
+One uses a SDK provided by Acuant, the other uses a service called Socure. 
+Prior to each bi-weekly deploy, Team Charity should manually verify that Doc Auth is functioning as expected.
 
 ### Cadence
 
@@ -23,7 +23,7 @@ full deploy twice weekly, on Tuesdays and Thursdays - see
 details and up-to-date cadence.
 
 **Mock IDs:**
-If you want test using a mock ID, you can access them using the link [here](https://docs.google.com/spreadsheets/d/15Npyy5Qc9gHs8d-RWvdgWciNYwGGVmur_3GLcRDpwAA/edit?gid=0#gid=0).
+If you want to test using a mock ID, you can access them using the link [here](https://docs.google.com/spreadsheets/d/15Npyy5Qc9gHs8d-RWvdgWciNYwGGVmur_3GLcRDpwAA/edit?gid=0#gid=0).
 
 ### Test Procedure
 
@@ -37,7 +37,7 @@ If you want test using a mock ID, you can access them using the link [here](http
 - From the Login.gov sign in page, choose `Create an account`, enter your email with a modifier
   to make it unique, e.g., `first.last+yymmdd@gsa.gov`, and create your new account.
 - Using a mobile device or the hybrid handoff flow, go through identity verification up through document/selfie capture and note any issues with the
-  SDK. Things to look for may include:
+  Acuant SDK. Things to look for may include:
   - Does the SDK start?
   - Does the SDK use the full screen?
   - Does capture happen automatically?
