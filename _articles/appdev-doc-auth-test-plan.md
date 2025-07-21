@@ -1,7 +1,7 @@
 ---
 title: "Doc Auth Test Plan"
 layout: article
-description: "Pre-deploy manual test plan for the Acuant SDK"
+description: "Pre-deploy manual test plan for Doc Auth"
 category: AppDev
 subcategory: "Deploying"
 toc_h_max: 4
