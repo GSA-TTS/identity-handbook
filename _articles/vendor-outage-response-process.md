@@ -43,6 +43,7 @@ maintenance window, and restart server instances again.
 | LexisNexis Phone Finder   | TBD                                                                                                                                |
 | ThreatMetrix              | [Runbook: ThreatMetrix outage](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-ThreatMetrix-outage)
 | Pinpoint                  | TBD                                                                                                                                |
+| DoS Passport API          | [Runbook: DoS Passport API outage](https://gitlab.login.gov/lg/identity-devops/-/wikis/Runbook:-DoS-Passport-API-outage)           |
 
 ### Contact Information
 
