@@ -330,6 +330,22 @@ aws-vault exec prod-power -- \
 +--------------------------------------+-------------------------------------------+
 ```
 
+### `clear-device-profiling-failure`
+Unblocks a user that has been originally rejected by TMX on account creation
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/action-account --any asg-prod-idp clear-device-profiling-failure uuid-1 uuid-2 uuid-3 wrong-uuid
++----------------+------------------------------------------------------------------+
+| uuid           | status                                                           |
++----------------+------------------------------------------------------------------+
+| uuid-1         | Device profiling result has been updated to pass                 |
+| uuid-2         | Device profiling result already passed.                          |
+| uuid-3         | Error updating device profiling result to pass                   |
+| wrong-uuid     | Error: Could not find user with that UUID                        |
++--------------------------------------+-------------------------------------------+
+```
+
 ## `ls-servers`
 
 Lists servers in an environment as a table
