@@ -224,7 +224,7 @@ aws-vault exec prod-power -- \
 +--------------------------------------+-------------+----------------------------+---------------+
 ```
 
-### `ssn-signature-report` 900-00-1234
+### `ssn-signature-report`
 
 Looks up the accounts associated with an SSN signature
 
