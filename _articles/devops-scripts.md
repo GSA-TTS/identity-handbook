@@ -238,6 +238,22 @@ aws-vault exec prod-power -- \
 +--------------------------------------+------------+--------+------------------------------------------------------------------+---------------------+-------------------------+-----------------+------------------------------------+--------------------------------+---------------------------+
 ```
 
+### `duplicate-profile-lookup`
+
+Looks up the accounts with profiles that were identified as duplicates of the given accounts
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp  duplicate-profile-lookup email1@example.com email2@example.com nonexistent@example.com
++-------------------------+--------------------------------------+-------------------------+------------------------------------------+
+| email                   | uuid                                 | service_provider        | duplicate_uuids                          |
++----------------------------------------------------------------+-------------------------+------------------------------------------+
+| email1@example.com      | 6ebc3211-4bee-491c-a6d6-ff536e4a2158 | urn:gov:gsa:sp:sinatra  | ["87e4630e-7c4a-444d-92ac-8bb13572f809"] |
+| email2@example.com      | [DUPLICATES NOT FOUND]               |                         |                                          |
+| nonexistent@example.com | [EMAIL NOT FOUND]                    |                         |                                          |
++-------------------------+--------------------------------------+-------------------------+------------------------------------------+
+
+```
 ## `action-account`
 
 This script helps streamline common account action tasks from production.
