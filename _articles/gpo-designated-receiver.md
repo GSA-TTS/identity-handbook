@@ -32,15 +32,15 @@ It takes 3-7 business days for letters to arrive. It is common to not receive an
 
 ## I want to do this!
 
-If you'd like to volunteer to receive and record letters, please add your name to the [Upcoming Volunteers tab][upcoming-volunteers] of the GPO Designated Receiver Report spreadsheet. If you have any questions about the process, you can ask them in Slack in [#login-team-ada][team-ada-slack].
+If you'd like to volunteer to receive and record letters, please add your name to the [Upcoming Volunteers tab][upcoming-volunteers] of the GPO Designated Receiver Report spreadsheet. If you have any questions about the process, you can ask them in Slack in [#login-team-charity][team-charity-slack].
 
 ## Please: See something, say something!
 
-Please make sure to record any unusual behavior observed with the letter on the Notes column of the [spreadsheet][the-spreadsheet]. If you believe the issue requires immediate attention, please post on #login-team-ada and tag @login-oncall-ada.
+Please make sure to record any unusual behavior observed with the letter on the Notes column of the [spreadsheet][the-spreadsheet]. If you believe the issue requires immediate attention, please post on #login-team-charity and tag @login-oncall-identityproofing.
 
 ## How to change the designated receiver
 
-Team Ada's oncall engineer updates the designated receiver configuration on (or around) the 15th of every month. Here's the process:
+Team Charity's oncall engineer updates the designated receiver configuration on (or around) the 15th of every month. Here's the process:
 
 ### 1. Get the new designated receiver's address
 
@@ -73,5 +73,5 @@ Please ping the new designated receiver in Slack and let them know that they sho
 [the-spreadsheet]: https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY
 [upcoming-volunteers]: https://docs.google.com/spreadsheets/d/1fgRrwNk5GJZbs68Y9JFa4WbmH5OAUKkVrfjNetEh1TY/edit#gid=1451916214
 [app-s3-secret]: /articles/devops-scripts.html#app-s3-secret
-[team-ada-slack]: https://gsa.enterprise.slack.com/archives/CNCGEHG1G
+[team-charity-slack]: https://gsa.enterprise.slack.com/archives/C08JUHUQYNA
 [config-recycle]: /articles/appdev-deploy.html#config-recycle
