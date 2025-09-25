@@ -29,8 +29,7 @@ see [All things money](https://docs.google.com/document/d/1bnySzQ8xX3-Q7PHJUDyss
 Login.gov will continue to operate in case of a temporary lapse in Federal government
 appropriations.
 
-* Per [2430.2 ADM The U.S. General Services Administration Continuity of Operations Mission Essential Functions](https://insite.gsa.gov/directives-library/the-us-general-services-administration-continuity-of-operations-mission-essential-functions-24302-adm?term=OMA%202430.2%20MEF), Login.gov is classified as a Mission Essential Function (MEF) and must continue to operate as part of the Continuity of Operations (COOP) Federal initiative.
+* Per [2430.2 ADM The U.S. General Services Administration Continuity of Operations Mission Essential Functions](https://insite.gsa.gov/directives-library/the-us-general-services-administration-continuity-of-operations-mission-essential-functions-2), Login.gov is classified as a Mission Essential Function (MEF) and must continue to operate as part of the Continuity of Operations (COOP) Federal initiative.
 
-* Login.gov is funded through the Acquisition Service Fund (ASF).  Per [4220.1N ADM Operations in the Absence of Appropriations](https://www.gsa.gov/directive/operations-in-the-absence-of-appropriations-):
-"The ASF is an exempt funding source not immediately affected by a lapse in appropriations."
-
+* Login.gov is funded through the Acquisition Services Fund (ASF).  Per [4220.1N ADM Operations in the Absence of Appropriations](https://insite.gsa.gov/directives-library/operations-in-the-absence-of-appropriations-14):
+"FAS activities that are funded through the ASF are exempt as the ASF is a revolving fund that is not immediately affected by a lapse in appropriations. These activities may initiate a phased shutdown based on available resources."
