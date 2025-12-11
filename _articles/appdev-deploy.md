@@ -122,7 +122,7 @@ In the `identity-pki` repo:
 - Title the pull request clearly with the RC number, ex **"Deploy RC 112 to Prod"**
    - If it's a full release of changes from the `main` branch, add one to the last release number
    - If it's a patch release, increment the fractional part, ex **"Deploy RC 112.1 to Prod"**
-   - Unsure what the last `identity-pki` release was? Check the [releases page](https://github.com/18F/identity-pki/releases/)
+   - Unsure what the last `identity-pki` release was? Check the [releases page](https://gitlab.login.gov/lg/identity-pki/-/releases/)
 - Add the label **`status - promotion`** to the pull request that will be included in the release.
 
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
