@@ -111,7 +111,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
    aws-vault exec prod-power -- ./bin/asg-recycle prod pivcac
    ```
 
-   1. Follow the progress of the IdP hosts spinning up
+   1. Follow the progress of the PKI hosts spinning up
 
       ```bash
       aws-vault exec prod-power -- ./bin/ls-servers -e prod -r pivcac # check the load balance pool health
