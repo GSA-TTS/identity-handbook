@@ -38,8 +38,6 @@ When deploying a new release, the engineer should make sure to deploy new code f
 
 - [gitlab/identity-pki](https://gitlab.login.gov/lg/identity-pki)
 
-Note: it is a good idea to make sure you have the latest pulled down from identity-devops - lots of good improvements all the time!
-
 ### Pre-deploy
 
 #### Cut a release branch
@@ -102,12 +100,13 @@ Staging used to be deployed by this process, but this was changed to deploy the 
    ```bash
    cd identity-devops
    ```
-4. Check current server status, and confirm that there aren't extra servers running. If there are, scale in old instances before deploying.
+4. Ensure you have the latest code with a `git pull`.
+5. Check current server status, and confirm that there aren't extra servers running. If there are, scale in old instances before deploying.
    ```bash
    aws-vault exec prod-power -- ./bin/ls-servers -e prod
    aws-vault exec prod-power -- ./bin/asg-size prod pivcac
    ```
-5. Recycle the IdP instances to get the new code. It automatically creates a new migration instance first.
+6. Recycle the PKI instances to get the new code. It automatically creates a new migration instance first.
    ```bash
    aws-vault exec prod-power -- ./bin/asg-recycle prod pivcac
    ```
@@ -117,7 +116,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
       ```bash
       aws-vault exec prod-power -- ./bin/ls-servers -e prod -r pivcac # check the load balance pool health
       ```
-6. **PRODUCTION ONLY**: This step is required in production
+7. **PRODUCTION ONLY**: This step is required in production
 
     Production boxes need to be manually marked as safe to remove by scaling down the old instances (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
 
