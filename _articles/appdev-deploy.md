@@ -1,7 +1,7 @@
 ---
-title: "Deploying new IdP and PKI code"
+title: "Deploying new IdP code"
 layout: article
-description: "Release Manager's Guide for Production"
+description: "Deployer's Guide for Production"
 category: AppDev
 subcategory: "Deploying"
 toc_h_max: 4
@@ -33,24 +33,21 @@ the `stages/prod` branch.
 | **Config Recycle** | A deploy that just updates configurations, and does not deploy any new code, see [config recycle](#config-recycle) | As needed | The engineer that needs the changes deployed |
 | **No-Migration Recycle** | A deploy that skips migrations, see [no-migration recycle](#no-migration-recycle) | As needed | The engineer that needs the changes deployed |
 
-[deployer-rotation]: {% link _articles/appdev-deploy-rotation.md %}
+[appdev-oncall-guide]: {% link _articles/appdev-oncall-guide.md %}
 
 ### Communications
 
 Err on the side of overcommunication about planned/unplanned deploys–-make sure to post in the
-steps in Slack as they are happening and coordinate with [@login-deployer][deployer-rotation].
+steps in Slack as they are happening and coordinate with [@login-appdev-oncall][appdev-oncall-guide].
 Most people expect changes deployed on a schedule so early releases can be surprising.
 
 ## Deploy Guide
 
-This is a guide for the Release Manager, the engineer who shepherds code to production for a given release.
+This is a guide for the Deployer, the engineer who shepherds code to production for a given release.
 
-When deploying a new release, the release manager should make sure to deploy new code for the following:
+When deploying a new release, the Deployer should make sure to deploy new code for the following:
 
 - [18f/identity-idp](https://github.com/18f/identity-idp)
-- [18f/identity-pki](https://github.com/18f/identity-pki)
-
-This guide is written for the IdP, but also applies to the pivcac (identity-pki) server.
 
 This guide assumes that:
 - You have a [GPG key set up with GitHub](https://help.github.com/en/github/authenticating-to-github/adding-a-new-gpg-key-to-your-github-account) (for signing commits)
@@ -70,9 +67,7 @@ Once you've run through proofing in staging, the next step is to cut a release f
 
 #### Cut a release branch
 
-##### IdP
-
-###### Prerequisites
+##### Prerequisites
 
 The IdP includes a script to create deployment PRs. It relies on [`gh`](https://cli.github.com/), the GitHub command line interface. Install that first and authenticate it:
 
@@ -103,27 +98,9 @@ PATCH=1 SOURCE=main scripts/create-deploy-pr
 
 `create-deploy-pr` will print out a link to the new PR located in `tmp/.rc-changelog.md`. **Be sure to verify the generated changelog after creating the PR.**
 
-##### PKI
-
-For pki:
-```bash
-cd identity-pki
-git fetch
-git checkout $(curl --silent https://checking-deploy.pivcac.staging.login.gov/api/deploy.json | jq -r .git_sha)
-git checkout -b stages/rc-2024-01-09 # CHANGE THIS DATE
-git push -u origin HEAD
-```
-A pull request should be created from that latest branch to production: **`stages/prod`**. When creating the pull request:
 
 #### Pull request release
 Naming and labeling releases are automatically done in `identity-idp` after running `scripts/create-deploy-pr`
-
-In the `identity-pki` repo:
-- Title the pull request clearly with the RC number, ex **"Deploy RC 112 to Prod"**
-   - If it's a full release of changes from the `main` branch, add one to the last release number
-   - If it's a patch release, increment the fractional part, ex **"Deploy RC 112.1 to Prod"**
-   - Unsure what the last `identity-pki` release was? Check the [releases page](https://gitlab.login.gov/lg/identity-pki/-/releases/)
-- Add the label **`status - promotion`** to the pull request that will be included in the release.
 
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
@@ -159,7 +136,6 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
 2. Use the `/Announce a recycle` workflow in `#login-appdev` to announce the start of the deployment
     - Enter the RC number that will be deployed
-    - When necessary, create a separate announcement for `identity-pki`
     - The workflow will send a notification to the `#login-appdev` and `#login-devops` channels
 
     ![Announce recycle workflow]({{ site.baseurl }}/images/announce-recycle-workflow.png)
@@ -229,8 +205,6 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
 #### Creating a Release (Production only)
 
-##### IdP
-
 The IdP includes a script to create a release based on a merged pull request.  It relies on [`gh`](https://cli.github.com/), the GitHub cli. Install that first (`brew install gh`) and get it connected to the identity-idp repo. Then, run the script to create a release:
 
 ```shell
@@ -238,20 +212,6 @@ scripts/create-release <PR_NUMBER>
 ```
 
 Where `<PR_NUMBER>` is the number of the _merged_ PR.
-
-##### PKI
-
-1. In the application repository, use your GPG key to tag the release.
-   ```bash
-   git checkout stages/prod && git pull
-   bin/tag-release
-   ```
-2. Add release notes in GitHub:
-   1. Create a new release: <https://github.com/18F/identity-pki/releases/new>
-   2. Release title: `RC #{NUMBER}`
-   3. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
-   4. Copy the release notes Markdown from the promotion pull request
-   5. Click "Publish release"
 
 #### Rolling Back
 
