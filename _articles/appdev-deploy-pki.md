@@ -22,10 +22,12 @@ A few notes on our deploy process.
 
 [appdev-oncall-guide]: {% link _articles/appdev-oncall-guide.md %}
 
+[deployer-rotation]: {% link _articles/appdev-deploy-rotation.md %}
+
 ### Communications
 
 Err on the side of overcommunication about planned/unplanned deploys–-make sure to post in the
-steps in Slack as they are happening and coordinate with [@login-appdev-oncall][appdev-oncall-guide].
+steps in Slack as they are happening and coordinate with [@login-appdev-oncall][appdev-oncall-guide] and [@login-deployer][deployer-rotation].
 Most people expect changes deployed on a schedule so early releases can be surprising.
 
 ## Deploy Guide
@@ -63,7 +65,7 @@ A pull request should be created from that latest branch to production: **`stage
 
 #### Share the pull request in `#login-appdev`
 Use the `/Announce pending Login.gov release PR` workflow in `#login-appdev` to announce the start of the deployment
-- Choose whether the PR is for `Identity provider (identity-idp)` or `PIV/CAC (identity-pki)`
+- Choose `PIV/CAC (identity-pki)` for the application
 - Enter the the PR link
 - The workflow will send a notification to the `#login-appdev` channel and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to the `#login-delivery` channel for awareness.
 
@@ -120,7 +122,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
     Production boxes need to be manually marked as safe to remove by scaling down the old instances (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
 
     ```bash
-    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
+    aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod pivcac
     ```
 
 7. Set a timer for one hour, then check NewRelic again for errors.
@@ -160,7 +162,7 @@ the bug in staging, where it won't affect end users.
 To quickly remove new servers and leave old servers up:
 
 ```bash
-aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod ALL
+aws-vault exec prod-power -- ./bin/scale-remove-new-instances prod pivcac
 ```
 
 **Important:**

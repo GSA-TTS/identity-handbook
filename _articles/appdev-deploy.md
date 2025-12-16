@@ -106,7 +106,7 @@ Naming and labeling releases are automatically done in `identity-idp` after runn
 
 #### Share the pull request in `#login-appdev`
 Use the `/Announce pending Login.gov release PR` workflow in `#login-appdev` to announce the start of the deployment
-- Choose whether the PR is for `Identity provider (identity-idp)` or `PIV/CAC (identity-pki)`
+- Choose `Identity provider (identity-idp)` for the application
 - Enter the the PR link
 - The workflow will send a notification to the `#login-appdev` channel and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to the `#login-delivery` channel for awareness.
 
