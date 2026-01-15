@@ -271,13 +271,13 @@ new configurations (config from S3).
 1. Announce the configuration change in `#login-appdev`
     - Share the diff as a thread comment, omitting any sensitive information
 
-1. Recycle the boxes
+1. Recycle the instances:
 
    ```bash
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
 
-1. In production, it's important to remember to still scale out old IdP instances.
+1. In production, it's important to remember to still scale out old IdP instances. You must **wait at least 15 minutes**, then run:
 
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
@@ -285,12 +285,12 @@ new configurations (config from S3).
 
 ### No-Migration Recycle
 When responding to a production incident with a config change, or otherwise in a hurry, you might want to recycle without waiting for a migration instance.
-1. Recycle the boxes without a migration instance
+1. Recycle the instances without a migration instance:
 ```bash
 aws-vault exec prod-power -- ./bin/asg-recycle prod idp --skip-migration
 ```
 
-1. In production, remove old IdP instances afterward
+1. In production, remove old IdP instances after a 15 minute waiting period:
 ```bash
 aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
 ```
