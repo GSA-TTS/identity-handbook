@@ -57,6 +57,8 @@ This guide assumes that:
 
 #### Test the proofing flow in staging
 
+If the version in staging (that would be deployed) has been verified by Team Charity (as reported in the #login-team-charity Slack channel), you can skip this step.
+
 Since identity proofing requires an actual person's PII, we don't have a good mechanism for automated testing of the live proofing flow.
 As a work-around, we test by proofing in staging, then cutting a release from the code deployed to staging.
 If there are specific commits that need to be deployed, make sure to recycle staging first to include those commits.
