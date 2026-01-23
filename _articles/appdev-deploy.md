@@ -135,21 +135,23 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
 2. Use the `/Announce a recycle` workflow in `#login-appdev` to announce the start of the deployment
-    - Enter the RC number that will be deployed
+    - Select `Deploying` from the first dropdown menu
+    - Select `IDP` for Application (should be the default)
+    - Enter the RC number that will be deployed under `Version or Reason`
     - The workflow will send a notification to the `#login-appdev` and `#login-devops` channels
 
     ![Announce recycle workflow]({{ site.baseurl }}/images/announce-recycle-workflow.png)
-3. In the `identity-devops` repo:
+4. In the `identity-devops` repo:
    ```bash
    cd identity-devops
    ```
-4. Ensure you have the latest code with a `git pull`.
-5. Check current server status, and confirm that there aren't extra servers running. If there are, scale in old instances before deploying.
+5. Ensure you have the latest code with a `git pull`.
+6. Check current server status, and confirm that there aren't extra servers running. If there are, scale in old instances before deploying.
    ```bash
    aws-vault exec prod-power -- ./bin/ls-servers -e prod
    aws-vault exec prod-power -- ./bin/asg-size prod idp
    ```
-6. Recycle the IdP instances to get the new code. It automatically creates a new migration instance first.
+7. Recycle the IdP instances to get the new code. It automatically creates a new migration instance first.
    ```bash
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
@@ -192,7 +194,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
         ```
       - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
-7. **PRODUCTION ONLY**: This step is required in production
+8. **PRODUCTION ONLY**: This step is required in production
 
     Production boxes need to be manually marked as safe to remove by scaling down the old instances (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
 
@@ -200,9 +202,9 @@ Staging used to be deployed by this process, but this was changed to deploy the 
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
     ```
 
-8. Set a timer for one hour, then check NewRelic again for errors.
+9. Set a timer for one hour, then check NewRelic again for errors.
 
-9. If everything looks good, the deploy is complete.
+10. If everything looks good, the deploy is complete.
 
 #### Creating a Release (Production only)
 
