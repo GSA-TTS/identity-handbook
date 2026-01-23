@@ -137,6 +137,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 2. Use the `/Announce a recycle` workflow in `#login-appdev` to announce the start of the deployment
     - Select `Deploying` from the first dropdown menu
     - Select `IDP` for Application (should be the default)
+    - Select `Full recycle` for Recycle type (should be the default)
     - Enter the RC number that will be deployed under `Version or Reason`
     - The workflow will send a notification to the `#login-appdev` and `#login-devops` channels
 
