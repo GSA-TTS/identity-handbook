@@ -153,8 +153,13 @@ Staging used to be deployed by this process, but this was changed to deploy the 
    ```bash
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
-
-   1. Follow the progress of the migrations, ensure that they are working properly <a id="follow-the-process" />
+   1. Be sure to post the estimated time of completion to the recycle announcment thread. This should be part of the recycle command output and it will allow others to know when the recycle should complete by. Example of completion message should look like the following (with different dates and times):
+      ```bash
+      Recycling prod-idp:
+      Will increase to 24 instances in 300s (at 2026-02-04 08:27:58)
+      Will return to 12 instances in 900s (at 2026-02-04 08:37:58)
+      ```
+   2. Follow the progress of the migrations, ensure that they are working properly <a id="follow-the-process" />
    ```bash
    # may need to wait a few minutes after the recycle
    aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --newest asg-prod-migration
