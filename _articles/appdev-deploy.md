@@ -55,6 +55,10 @@ This guide assumes that:
 
 ### Pre-deploy
 
+#### Check NewRelic
+
+Bring up [NewRelic (prod.login.gov)](https://one.newrelic.com/nr1-core/errors-ui/overview/MTM3NjM3MHxBUE18QVBQTElDQVRJT058NTIxMzY4NTg) to check that the rate of errors is "typical" of the IdP to ensure that we are in a clean state and ready to deploy. Have NewRelic up throughout the deploy to monitor and watch for issues due to the deploy.
+
 #### Test the proofing flow in staging
 
 If the version in staging (that would be deployed) has been verified by Team Charity (as reported in the #login-team-charity Slack channel), you can skip this step.
@@ -149,7 +153,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 4. Ensure you have the latest code with a `git pull`.
 5. Check current server status, and confirm that there aren't extra servers running. If there are, scale in old instances before deploying.
    ```bash
-   aws-vault exec prod-power -- ./bin/ls-servers -e prod
+   aws-vault exec prod-power -- ./bin/ls-servers -e prod --compact
    aws-vault exec prod-power -- ./bin/asg-size prod idp
    ```
 6. Recycle the IdP instances to get the new code. It automatically creates a new migration instance first.
@@ -163,54 +167,58 @@ Staging used to be deployed by this process, but this was changed to deploy the 
       Will return to 12 instances in 900s (at 2026-02-04 08:37:58)
       ```
    2. Follow the progress of the migrations, ensure that they are working properly <a id="follow-the-process" />
-   ```bash
-   # may need to wait a few minutes after the recycle
-   aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --newest asg-prod-migration
-   ```
+      ```bash
+      # may need to wait a few minutes after the recycle
+      aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --newest asg-prod-migration
+      ```
+      Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
 
-   <details markdown="1">
-     <summary>
-      View multi-step manual instructions to tail logs
-     </summary>
+      Once the migration instance spin up is complete, Ctrl-C out of the tail command and run the same for the now starting idp instances:
+      ```bash
+      aws-vault exec prod-power -- ./bin/ssm-instance --document tail-cw --newest asg-prod-idp
+      ```
 
-   ```bash
-   aws-vault exec prod-power -- ./bin/ssm-instance --newest asg-prod-migration
-   ```
-   On the remote box
-   ```bash
-   tail -f /var/log/cloud-init-output.log
-   # OR
-   tail -f /var/log/syslog
-   ```
-   </details>
+      <details markdown="1">
+        <summary>
+         View multi-step manual instructions to tail logs
+        </summary>
 
-   Check the log output to make sure that `db:migrate` runs cleanly. Check for `All done! provision.sh finished for identity-devops` which indicates everything has run
+      ```bash
+      aws-vault exec prod-power -- ./bin/ssm-instance --newest asg-prod-migration
+      ```
+      On the remote box
+      ```bash
+      tail -f /var/log/cloud-init-output.log
+      # OR
+      tail -f /var/log/syslog
+      ```
+      </details>
 
-   2. Follow the progress of the IdP hosts spinning up
+   3. Follow the progress of the IdP hosts spinning up
 
       ```bash
       aws-vault exec prod-power -- ./bin/ls-servers -e prod -r idp # check the load balance pool health
       ```
 
-    3. Manual Inspection
-      - Check [NewRelic (prod.login.gov)](https://one.newrelic.com/nr1-core/errors-ui/overview/MTM3NjM3MHxBUE18QVBQTElDQVRJT058NTIxMzY4NTg) for errors
-      - Optionally, use the deploy monitoring script to compare error rates and success rates for critical flows
-        ```bash
-        aws-vault exec prod-power -- ./bin/monitor-deploy prod idp
-        ```
-      - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
+   4. Manual Inspection
+     - Check [NewRelic (prod.login.gov)](https://one.newrelic.com/nr1-core/errors-ui/overview/MTM3NjM3MHxBUE18QVBQTElDQVRJT058NTIxMzY4NTg) for errors
+     - Optionally, use the deploy monitoring script to compare error rates and success rates for critical flows
+       ```bash
+       aws-vault exec prod-power -- ./bin/monitor-deploy prod idp
+       ```
+     - If you notice any errors that make you worry, [roll back the deploy](#rolling-back)
 
-7. **PRODUCTION ONLY**: This step is required in production
+8. **PRODUCTION ONLY**: This step is required in production
 
-    Production boxes need to be manually marked as safe to remove by scaling down the old instances (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (15 minutes after recycle).
+    Production boxes need to be manually marked as safe to remove by scaling down the old instances (one more step that helps us prevent ourselves from accidentally taking production down). You must wait until after the original scale-down delay before running these commands (the time when the recycle command reported that it would return to its normal count of instances, roughly 15 minutes after recycle).
 
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL
     ```
 
-8. Set a timer for one hour, then check NewRelic again for errors.
+9. Set a timer for one hour, then check NewRelic again for errors.
 
-9. If everything looks good, the deploy is complete.
+10. If everything looks good, the deploy is complete.
 
 #### Creating a Release (Production only)
 
