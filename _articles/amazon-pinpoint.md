@@ -7,11 +7,11 @@ subcategory: Architecture
 ---
 
 ## Introduction
-In the `identity-idp` repo, we gather information about Amazon Pinpoint support for [voice](https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-voice-support-by-country.html) and [SMS](https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-sms-by-country.html) messaging. Support information is obtained using the `make update_pinpoint_supporting_countries` script. The script gathers and outputs supports into the following three files:
-
+In the `identity-idp` repo, we gather information about Amazon Pinpoint support for [voice](https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-voice-support-by-country.html) and [SMS](https://docs.aws.amazon.com/sms-voice/latest/userguide/phone-numbers-sms-by-country.html) messaging. Support information is obtained using the `make update_pinpoint_supporting_countries` script. The script gathers support information from:
 1. `pinpoint_supported_countries.yml` is the file that has programmatically generated information about Pinpoint supports. Information can be found on Pinpoint’s website.
 2. `pinpoint_overrides.yml` is the file that we manually update when we have to make changes to supported countries.
-3. `country_dialing_codes.yml` is the source of truth that combines the above files
+
+Data is then combined in `country_dialing_codes.yml`.
 
 All of the above documents are in the `config/` folder.
 
