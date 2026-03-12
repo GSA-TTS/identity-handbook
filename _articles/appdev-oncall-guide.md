@@ -106,6 +106,11 @@ If you see a Slack alert like this, it means that a certificate used to verify P
 
 Refer to [Troubleshooting expiring PIV/CAC certs]({% link _articles/troubleshooting-expiring-pivcac.md %}) for guidance on replacing an expiring certificate.
 
+### Manual (phone) Review requests
+
+* Requests will be ticketed as issues [here](https://gitlab.login.gov/lg-teams/identity-verification-exception-review-board/-/issues)
+* Check [Manual (phone) Review for IdV](https://gitlab.login.gov/lg-teams/security/login-security-handbook/-/wikis/resources/Runbooks/IdV-Phone-Manual-Review)for guidance on ticket implementation
+
 ## Response Times
 
 SecOps Incident Response Guide located [here]({% link _articles/incident-response-guide.md %})
