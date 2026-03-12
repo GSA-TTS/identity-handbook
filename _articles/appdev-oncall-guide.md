@@ -108,7 +108,7 @@ Refer to [Troubleshooting expiring PIV/CAC certs]({% link _articles/troubleshoot
 
 ### Manual (phone) Review requests
 
-* Requests will be ticketed by the (IVERB)[https://gitlab.login.gov/lg-teams/identity-verification-exception-review-board] as issues [here](https://gitlab.login.gov/lg-teams/identity-verification-exception-review-board/-/issues)
+* Requests will be ticketed by the [IVERB](https://gitlab.login.gov/lg-teams/identity-verification-exception-review-board) as issues [here](https://gitlab.login.gov/lg-teams/identity-verification-exception-review-board/-/issues)
 * Check [Manual (phone) Review for IdV](https://gitlab.login.gov/lg-teams/security/login-security-handbook/-/wikis/resources/Runbooks/IdV-Phone-Manual-Review) guide for instructions
 
 ## Response Times
