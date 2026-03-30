@@ -55,7 +55,7 @@ Notify in *#[login-devops](https://gsa-tts.slack.com/archives/C16RSBG49)* and *#
 
 *If no new logos:*
   - `aws-vault exec prod-power -- ./bin/asg-recycle prod migration`
-  - This will kick off recycling *without* needing to scale out old instances.
+  - This will kick off recycling *without* needing to scale in old instances.
 
 **Step 5:**
 
@@ -94,10 +94,10 @@ If config is updated as expected, and you needed to do a full recycle for a new/
 
 **Step 9:**
 
-Scale out old instances of `prod-worker` and `prod-idp`
+Scale in old instances of `prod-worker` and `prod-idp`
   - `aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL`
 
 **Step 10:**
-  - confirm instances are scaling out by running step 2 again. You should see that old instances say “shutting down” under status.
+  - confirm instances are scaling in by running step 2 again. You should see that old instances say “shutting down” under status.
 
 

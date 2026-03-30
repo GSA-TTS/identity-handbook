@@ -244,7 +244,7 @@ If any of these are "yes", roll back. See more criteria at <https://outage.party
 Staging is a pretty good match for production, so you should be able to fix and verify
 the bug in staging, where it won't affect end users.
 
-##### Scaling Out
+##### Scaling In
 
 To quickly remove new servers and leave old servers up:
 
@@ -295,7 +295,7 @@ new configurations (config from S3).
    aws-vault exec prod-power -- ./bin/asg-recycle prod idp
    ```
 
-1. In production, it's important to remember to still scale out old IdP instances. You must **wait at least 15 minutes**, then run:
+1. In production, it's important to remember to still scale in old IdP instances. You must **wait at least 15 minutes**, then run:
 
     ```bash
     aws-vault exec prod-power -- ./bin/scale-remove-old-instances prod ALL

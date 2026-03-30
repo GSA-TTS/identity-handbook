@@ -156,7 +156,7 @@ If any of these are "yes", roll back. See more criteria at <https://outage.party
 Staging is a pretty good match for production, so you should be able to fix and verify
 the bug in staging, where it won't affect end users.
 
-##### Scaling Out
+##### Scaling In
 
 To quickly remove new servers and leave old servers up:
 
