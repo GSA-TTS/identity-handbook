@@ -89,7 +89,7 @@ On rare occasions partners will ask us to reset passwords for accounts. In a Rai
 emails = %w[email1@example.com email2@example.com]
 
 emails.each do |email|
-  user = User.find_by_email(email)
+  user = User.find_with_email(email)
   if user
     ResetUserPassword.new(user: user).call
   else
