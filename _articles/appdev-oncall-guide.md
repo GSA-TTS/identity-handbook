@@ -98,6 +98,20 @@ emails.each do |email|
 end
 ```
 
+Or with UUIDs:
+```ruby
+uuids = %w[aaaaaaaa-bbbb-cccc dddddddd-eeee-ffff]
+
+uuids.each do |uuid|
+  user = User.find_by(uuid: uuid)
+  if user
+    ResetUserPassword.new(user: user).call
+  else
+    puts "no user for #{uuid}"
+  end
+end
+```
+
 ### Expiring PKI Certs
 
 ![Screenshot of expiring PKI Slack alert]({{ site.baseurl }}/images/slack-pki-cert-alert.jpg)
