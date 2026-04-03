@@ -194,8 +194,9 @@ window.
 We now trigger an alert to slack if we see 3 or more occurrences in a
 15 minute window. If this alert fires, we should be looking for problems
 with our third party vendors. Some places to start include the following
-dashboards:
+queries/dashboards:
 
+- [Cloudwatch query](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights$3FqueryDetail$3D~(end~0~start~-10800~timeType~'RELATIVE~tz~'UTC~unit~'seconds~editorString~'fields*20*40timestamp*2c*20properties.user_id*20as*20user_id*2c*20*40message*0a*7cfilter*20name*20*3d*20*27IdV*3a*20proofing*20resolution*20result*20missing*27*0a*7c*20sort*20*40timestamp*20desc*0a*7c*20limit*2010000~queryId~'65abe9cf-4abd-4133-81ff-a94852466eea~source~(~'prod_*2fsrv*2fidp*2fshared*2flog*2fevents.log)~lang~'CWLI~logClass~'STANDARD~queryBy~'logGroupName))
 - [Verify Your Identity](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/prod-idv-verify-your-identity-overview)
 - [IdV Monitoring Dashboard](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#dashboards/dashboard/prod-idp-idv-vendors)
 
