@@ -4,7 +4,7 @@
     "@18f/identity-design-system": "^9.4.0",
     "@18f/private-eye": "^2.1.0",
     "anchor-js": "^4.2.2",
-    "concurrently": "^8.0.1",
+    "concurrently": "^8.2.2",
     "esbuild": "^0.25.0",
     "pagefind": "^1.2.0"
   },
