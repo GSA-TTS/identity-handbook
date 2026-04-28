@@ -397,23 +397,6 @@ aws-vault exec prod-power -- \
 +--------------------------------------+----------------------------------------------+
 ```
 
-### `close-inconclusive-duplicate`
-Records that the fraud investigation of duplicates was inconclusive. Notifies the user.
-Leaves the profiles as active. Closes the case.
-
-```bash
-aws-vault exec prod-power -- \
-  ./bin/action-account --any asg-prod-idp close-inconclusive-duplicate uuid-1 uuid-2 uuid-3 wrong-uuid
-+----------------+--------------------------------------------------------------------+
-| uuid           | status                                                             |
-+----------------+--------------------------------------------------------------------+
-| uuid-1         | User has been notified that the fraud investigation is inconclusive|
-| uuid-2         | Error: User's profile is not active                                |
-| uuid-3         | Error: Profile not a duplicate                                     |
-| wrong-uuid     | Error: Could not find user with that UUID                          |
-+--------------------------------------+----------------------------------------------+
-```
-
 ## `ls-servers`
 
 Lists servers in an environment as a table
