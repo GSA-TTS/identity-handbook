@@ -25,6 +25,8 @@ Download and unzip the file without uploading to s3:
 Download and update the file in sandbox:
 
 ```bash
+# log in to AWS sandbox-power in your terminal
+aws-vault login sandbox-power
 # sandbox
 ./scripts/pwned-passwords.sh -s
 ```
@@ -32,6 +34,8 @@ Download and update the file in sandbox:
 Download and update the files in production:
 
 ```bash
+# log in to AWS prod-power in your terminal
+aws-vault login prod-power
 # prod
 ./scripts/pwned-passwords.sh -p
 ```
