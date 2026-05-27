@@ -140,7 +140,7 @@ We don't have indexed lookups by phone number so we need to combine a few approa
    fields
      properties.user_id,
      @timestamp
-   | filter name = 'Telephoy: OTP sent'
+   | filter name = 'Telephony: OTP sent'
    | filter properties.event_properties.phone_fingerprint in ["aaa", "bbb", "ccc"] # CHANGE THIS
    ```
 
