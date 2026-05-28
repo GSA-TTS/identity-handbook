@@ -108,11 +108,11 @@ Naming and labeling releases are automatically done in `identity-idp` after runn
 
 - If there are merge conflicts, check out how to [resolve merge conflicts](#resolving-merge-conflicts).
 
-#### Share the pull request in `#login-appdev`
-Use the `/Announce pending Login.gov release PR` workflow in `#login-appdev` to announce the start of the deployment
+#### Share the pull request in `#login-prod-changes`
+Use the `/Announce pending Login.gov release PR` workflow in `#login-prod-changes` to announce the start of the deployment
 - Choose `Identity provider (identity-idp)` for the application
 - Enter the the PR link
-- The workflow will send a notification to the `#login-appdev` channel and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to the `#login-delivery` channel for awareness.
+- The workflow will send a notification to the `#login-prod-changes` channel and [cross-post](https://slack.com/help/articles/203274767-Share-messages-in-Slack) to the `#login-appdev` and  `#login-delivery` channels for awareness.
 
 ![Announce release PR workflow]({{ site.baseurl }}/images/announce-release-pr-workflow.png)
 
@@ -138,12 +138,12 @@ Staging used to be deployed by this process, but this was changed to deploy the 
 ### Production
 
 1. Merge the production promotion pull request (**NOT** a squashed merge, just a normal merge)
-2. Use the `/Production App Recycle` workflow in `#login-appdev` to announce the start of the deployment
+2. Use the `/Production App Recycle` workflow in `#login-prod-changes` to announce the start of the deployment
     - Select `Deploying` from the first dropdown menu
     - Select `IDP` for Application (should be the default)
     - Select `Full recycle` for Recycle type (should be the default)
     - Enter the RC number that will be deployed under `Version or Reason`
-    - The workflow will send a notification to the `#login-appdev` and `#login-devops` channels
+    - The workflow will send a notification to the `#login-prod-changes`, `#login-appdev` and `#login-devops` channels
 
     ![Announce recycle workflow]({{ site.baseurl }}/images/announce-recycle-workflow.png)
 3. In the `identity-devops` repo:
@@ -286,7 +286,7 @@ new configurations (config from S3).
 
 1. Make the config changes
 
-1. Announce the configuration change in `#login-appdev`
+1. Announce the configuration change in `#login-prod-changes`
     - Share the diff as a thread comment, omitting any sensitive information
 
 1. Recycle the instances:
