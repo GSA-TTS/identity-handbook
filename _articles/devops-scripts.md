@@ -415,6 +415,8 @@ repository.
 
 {% component alert type=:info %}
 {{ idp_script_alert }}
+
+Only failed certificates are available for download.
 {% endcomponent %}
 
 This script takes a user UUID and downloads the public PIV certs they have tried to use
