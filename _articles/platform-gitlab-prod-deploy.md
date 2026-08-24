@@ -85,7 +85,10 @@ here it is just in case.
 * Merge the code you want deployed into the `stages/gitlabproduction` branch and push it up.
 * Terraform the system:  `aws-vault exec tooling-prod-admin -- bin/tf-deploy gitlab/production apply`
 * Relaunch all the regular instances: `aws-vault exec tooling-prod-admin -- terraform/gitlab/recycle.sh production`
-* Relaunch all the env-runner instances: `export RECYCLE_ENV_RUNNERS_ONLY=true ; aws-vault exec tooling-prod-admin -- terraform/gitlab/recycle.sh production`
+* Relaunch all the env-runner instances:
+  ```
+  export RECYCLE_ENV_RUNNERS_ONLY=true ; aws-vault exec tooling-prod-admin -- terraform/gitlab/recycle.sh production
+  ```
 * Wait until the ASG instance refreshes have completed.
 * Test the system to make sure it's happy: `cd terraform/gitlab/tests ; aws-vault exec tooling-prod-admin -- ./test.sh production gitlab.login.gov`
 * The test.sh should indicate that everything went out OK, but
