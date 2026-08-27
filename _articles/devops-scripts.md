@@ -151,6 +151,20 @@ aws-vault exec prod-power -- \
 +--------------------------------------+-------------+-------------------------+
 ```
 
+### `mfa-lookup`
+
+Looks up the MFA configurations associated with UUIDs and shows how many of each a user has
+
+```bash
+aws-vault exec prod-power -- \
+  ./bin/data-pull --any asg-prod-idp mfa-lookup 370e3f27-7376-4438-9be8-805eff343f35
++--------------------------------------+-------------+----------------+----------------+---------------+-------------------+
+| uuid                                 | phone_count | auth_app_count | webauthn_count | piv_cac_count | backup_code_count |
++--------------------------------------+-------------+----------------+----------------+---------------+-------------------+
+| 370e3f27-7376-4438-9be8-805eff343f35 | 0           | 1              | 2              | 0             | 0                 |
++--------------------------------------+-------------+----------------+----------------+---------------+-------------------+
+```
+
 ### `uuid-convert`
 
 Looks up the internal Login.gov UUID from a partner agency UUID
