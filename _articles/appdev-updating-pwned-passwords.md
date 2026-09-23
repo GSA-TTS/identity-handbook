@@ -8,7 +8,7 @@ appendix_url: https://docs.google.com/document/d/1ZMpi7Gj-Og1dn-qUBfQHqLc1Im7rUz
 ---
 
 This article walks through updating our Pwned Passwords dataset in S3.
-The script will download the (at the time of this posting) 17.2 gb Pwned Passwords file from [haveibeenpwned](https://haveibeenpwned.com/Passwords)
+The script is located in the `identity-idp` repo and will download the (at the time of this posting) 17.2 gb Pwned Passwords file from [haveibeenpwned](https://haveibeenpwned.com/Passwords)
 and then post it to our AWS environments as specified.
 
 We have separate buckets for sandbox and production. To upload the files you must:
@@ -21,6 +21,7 @@ Download and unzip the file without uploading to s3:
 ```bash
 ./scripts/pwned-passwords.sh
 ```
+When prompted `Do you want to remove tmp/pwned? (y/n)`, choose `n` or else you will have to download the file all over again.
 
 Download and update the file in sandbox:
 
@@ -40,3 +41,4 @@ aws-vault login prod-power
 ./scripts/pwned-passwords.sh -p
 ```
 
+Now when prompted to remove `tmp/pwned`, you can choose `y`.
