@@ -1,6 +1,6 @@
 ---
-title: "Troubleshooting PIV/CAC logins and Managing Certificates"
-description: "If somebody has trouble using their PIV/CAC with Login.gov, and also how to download new certificates from Certificate Authorities"
+title: "Troubleshooting PIV/CAC login certificate chains"
+description: "Diagnose an invalid PIV/CAC login and resolve missing issuing certificates"
 layout: article
 subcategory: "X509 and PIV/CAC Certificates"
 category: "AppDev"
@@ -8,102 +8,109 @@ category: "AppDev"
 
 ## Background
 
-Using a PIV/CAC with Login.gov relies on a certificate trust chain. The [identity-pki](https://github.com/18f/identity-pki)
-repo tracks trusted issuing certificates in source control. We need to know that a certificate is used to issue PIVs
-before we trust it (since not all certificates are used for issuing PIVs).
+Login.gov validates a PIV/CAC by building a certificate chain to a trusted root.
+The [identity-pki](https://github.com/18f/identity-pki) repository gets most
+trusted intermediate and root certificates from the generated FICAM bundle at
+`config/cert_bundles/ficam_bundle.pem`. The `config/certs` directory contains
+only exceptions that are required for validation and are not available in the
+FICAM bundle.
+
+Use this guide to investigate a specific login failure. For scheduled
+certificate expiration, replacement, or removal work, see
+[Troubleshooting expiring PIV/CAC certs]({% link _articles/troubleshooting-expiring-pivcac.md %}).
 
 Related article: [Common OpenSSL command line recipes]({% link _articles/openssl-recipes.md %})
 
-## Steps
+## Retrieve the presented certificate
 
-If a user writes in that they can't log in to Login.gov with their PIV and get errors like "The certificate you selected is invalid",
-then we are probably missing an issuing certificate for their PIV. These steps outline how to find out what that certificate is,
-and how to add it.
+An invalid-certificate error can be caused by expiration, revocation, policy,
+or an incomplete certificate chain. Do not assume that an issuing certificate
+is missing before validating the certificate.
 
-1. Get a user UUID, usually via [`uuid-lookup`]({% link _articles/devops-scripts.md %}#uuid-lookup) or
-   [`salesforce-email-lookup`]({% link _articles/devops-scripts.md %}#salesforce-email-lookup)
+1. Get the user's UUID with [`uuid-lookup`]({% link _articles/devops-scripts.md %}#uuid-lookup)
+   or [`salesforce-email-lookup`]({% link _articles/devops-scripts.md %}#salesforce-email-lookup).
+1. Download the user's public certificate from S3 with
+   [`oncall/download-piv-certs`]({% link _articles/devops-scripts.md %}#oncalldownload-piv-certs).
 
+The certificate subject can contain identifying information. Keep the file out
+of tickets and public chat, and delete the local troubleshooting copy according
+to team data-handling practices when the investigation is complete.
 
-1. Download the user's public key (we log this to S3) using [`oncall/download-piv-certs`]({% link _articles/devops-scripts.md %}#oncalldownload-piv-certs)
+## Validate against the current store
 
+From the `identity-pki` repository, run:
 
-1. Use the rails console in [identity-pki](https://github.com/18f/identity-pki) to inspect the certificate that was downloaded from S3,
-   by using the [CertificateChainService](https://github.com/18F/identity-pki/blob/main/app/services/certificate_chain_service.rb).
+```shell
+bundle exec rake 'certs:validate_client_cert[path/to/cert.pem]'
+```
 
-    ```ruby
-    cert = Certificate.new(OpenSSL::X509::Certificate.new(File.read("path/to/cert")))
-    chain = CertificateChainService.new.debug(cert)
-    ```
+This reports whether the certificate validates against the currently loaded
+FICAM bundle and any exceptions in `config/certs`. A valid result confirms the
+local certificate chain, but it does not rule out a different problem in the
+deployed environment or login flow.
 
-    It will print out a list of certificates, their issuers, and `key_id`s.
+## Refresh the FICAM bundle
 
-    ```
-    ///////////////////////////////////////
-    ///////////// [ CA Step: 0 ] /////////////
-    ///////////////////////////////////////
-    Subject: /C=US/O=U.S. Government/OU=Department of State/OU=PIV/OU=Certification Authorities/OU=U.S. Department of State PIV CA2
-    Issuer: /DC=sbu/DC=state/CN=Configuration/CN=Services/CN=Public Key Services/CN=AIA/CN=U.S. Department of State AD Root CA
-    -----BEGIN CERTIFICATE-----
-    MIIJ5TCCB82gAwIBAgIEUbC5fzANBgkqhkiG9w0BAQsFADCBsTETMBEGCgmSJomT
-    8ixkARkWA3NidTEVMBMGCgmSJomT8ixkARkWBXN0YXRlMRYwFAYDVQQDDA1Db25m
-    ....
-    ....
-    -----END CERTIFICATE-----
-    key_id: 8C:D6:D4:69:A9:E4:85:41:3A:6A:A6:5E:DA:51:1A:17:8D:92:8B:6C
-    signing_key_id: CC:00:68:61:A6:A5:03:93:10:0A:1B:61:B7:87:18:C1:45:56:DA:82
-    ca_issuer_dn: /DC=sbu/DC=state/CN=Configuration/CN=Services/CN=Public Key Services/CN=AIA/CN=U.S. Department of State AD Root CA
-    ca_issuer_url: http://crls.pki.state.gov/AIA/CertsIssuedToDoSADRootCA.p7c
-    fetching: http://crls.pki.state.gov/AIA/CertsIssuedToDoSADRootCA.p7c
-    ///////////////////////////////////////
+Before adding an individual certificate, regenerate the primary certificate
+source:
 
-   ```
+```shell
+bundle exec rake certs:generate_certificate_bundles
+git diff -- config/cert_bundles/ficam_bundle.pem
+bundle exec rake certs:check_certificate_bundle
+bundle exec rake 'certs:validate_client_cert[path/to/cert.pem]'
+```
 
-1. If a certificate is missing from our tracked issuing certificates, this will be `nil`:
+Review the bundle diff for the expected additions or removals and for unrelated
+churn. If the refreshed FICAM bundle fixes validation, commit the bundle change.
+Do not also add the same certificate to `config/certs`.
 
-    ```ruby
-    key_id = '8C:D6:D4:69:A9:E4:85:41:3A:6A:A6:5E:DA:51:1A:17:8D:92:8B:6C'
-    CertificateStore.instance[key_id]
-    # => nil
-    ```
+## Investigate a missing chain
 
-    Load all the missing certs in the chain:
+If validation still fails because the issuing chain is incomplete, inspect the
+missing certificates in the Rails console:
 
-    ```ruby
-    missing = CertificateChainService.new.missing(cert)
-    # => [Certificate .... ]
-    ```
+```ruby
+cert = Certificate.new(OpenSSL::X509::Certificate.new(File.read("path/to/cert.pem")))
+missing = CertificateChainService.new.missing(cert)
 
-1. If you want to add the missing certificates to our repo, run `rake certs:find_missing_intermediate_certs[path/to/cert.pem]`
+missing.each do |certificate|
+  puts "Subject: #{certificate.subject}"
+  puts "Issuer: #{certificate.issuer}"
+  puts "Key ID: #{certificate.key_id}"
+  puts "Expiration: #{certificate.not_after}"
+end
+```
 
-    The script will prompt you to add missing certificates to the `config/certs` folder:
+Alternatively, use the interactive task:
 
-    ```shell
-    Expiration: 2023-02-18 16:08:44 UTC
-    Subject: /C=US/O=CertiPath/OU=Certification Authorities/CN=CertiPath Bridge CA - G3
-    Issuer: /C=US/O=U.S. Government/OU=FPKI/CN=Federal Bridge CA G4
-    SHA1 Fingerpint: 77d6cf512ec6054e9ddf37a37d83c4955228e21c
-    Key ID: 7A:8B:3C:06:92:DC:1E:A8:D2:82:AC:1B:74:6F:74:3D:4E:D1:A8:9B
+```shell
+bundle exec rake 'certs:find_missing_intermediate_certs[path/to/cert.pem]'
+```
 
-    Would you like to save this cert? Type (y)es to save.
-    y
-    Writing certificate to ./config/certs/C=US, O=CertiPath, OU=Certification Authorities, CN=CertiPath Bridge CA - G3.pem
-    ```
+The task follows issuer metadata, excludes certificates already available from
+the configured sources, and prompts before saving a candidate to `config/certs`.
+Before answering `y`, confirm that the candidate:
 
-    1. Test that the certificate(s) was added correctly by **closing and opening the Rails console** (the certificates are loaded by [`config/initializers/`](https://github.com/18F/identity-pki/blob/main/config/initializers/certificate_store.rb) so it's easier than manually running the initializer)
+- is a certificate authority required by the presented chain;
+- is absent from the refreshed FICAM bundle;
+- has the expected subject, issuer, key ID, and expiration; and
+- is appropriate for Login.gov to trust.
 
-        ```ruby
-        key_id = '7A:8B:3C:06:92:DC:1E:A8:D2:82:AC:1B:74:6F:74:3D:4E:D1:A8:9B'
-        CertificateStore.instance[key_id]
-        => #<Certificate:0x00007fd564fa89a8 ...>
-        ```
-    1. Test that the end-user certificate is now valid by running `rake certs:validate_client_cert[path/to/cert.pem]`
+Do not paste full certificate PEM or raw repository responses into tickets or
+shared logs.
 
-        The script will print whether the certificate is now valid.
+## Verify an exception
 
-        ```shell
-        Certificate is valid!
-        ```
+After saving a reviewed exception, run:
 
-    1. Commit the new `.pem` file(s) to source control and make a pull request
+```shell
+bundle exec rspec spec/certs/store_spec.rb
+bundle exec rake 'certs:validate_client_cert[path/to/cert.pem]'
+git diff -- config/certs config/cert_bundles/ficam_bundle.pem
+```
 
-    1. Once merged, deploy the change to **INT** and ask the reporters to confirm the fixes
+Confirm that the new PEM is the intended certificate, no duplicate was added,
+and the bundle has no unrelated changes. Commit the reviewed certificate change,
+open a pull request, deploy it to **INT**, and ask the reporter to confirm the
+login works.

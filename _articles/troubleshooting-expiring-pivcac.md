@@ -1,144 +1,153 @@
 ---
 title: "Troubleshooting expiring PIV/CAC certs"
-description: "Guide on finding new certs if a cert is expiring"
+description: "Identify, replace, or remove expiring PIV/CAC certificate authorities"
 layout: article
 subcategory: "X509 and PIV/CAC Certificates"
 category: "AppDev"
 redirect_from: /articles/toubleshooting-expiring-pivcac.html
 ---
 
-Whenever a certificate is due to expire, we should verify that a replacement is
-in place and remove the expiring cert.
-PIV issuers will usually issue a new certificate which will have a later
-expiration and probably a new subject key and subject key ID.
+Whenever a certificate authority is due to expire, verify whether a replacement
+is available and determine whether the expiring certificate is still needed.
+PIV issuers usually publish a replacement with a later expiration and often a
+new subject key and subject key ID.
 
-The best place to look for a re-issued certificate is on the signing cert for
-that certificate.
-Within the PKI sphere, the signing or parent cert will have a "Subject Information
-Access" extension.
-This extension will contain a URL to a repository containing the bundle of
-certificates issued by the signing cert.
+Most trusted intermediate and root certificates come from the generated FICAM
+bundle at `config/cert_bundles/ficam_bundle.pem`. The `config/certs` directory
+contains only exceptions that are required for validation and are not available
+in the FICAM bundle.
 
-You can manually inspect the cert, download the bundle, and search for the
-replacement, or you can use the `certs:find_replacement` rake task.
-The rake task will make a best effort to locate the certificate and add it to
-the repository.
+Use this guide for scheduled certificate lifecycle work. For a specific PIV/CAC
+login failure, see
+[Troubleshooting PIV/CAC login certificate chains]({% link _articles/troubleshooting-pivcacs.md %}).
 
-Finding replacement certificates is tricky because there are a lot of edge
-cases.
-A group that issues PIVs may change the structure of their branch of the PKI graph.
-Also, if the signing cert has been re-issued, and the replacement cert was issued
-with the new signing cert you may need to go further up the tree.
+## Identify expiring certificates
 
-Moreover, replacement certificates are often re-issued well before they expire,
-and PIVs are issued with the new certs.
-This means that often times the new certificate will already be in place.
-Be careful about adding duplicates.
-
-## Using the cert:find_replacement rake task
-
-The `certs:find_replacement` rake task will make a best effort to find a
-replacement for a cert and save it for you.
-
-To run the rake task, invoke it like this:
+From the `identity-pki` repository, list certificates that expire within the
+next 30 days:
 
 ```shell
-# Replace the following with the expiring cert key ID:
-export expiring_key_id='CF:79:3C:ED:4D:BC:19:25:F2:45:69:4E:12:2F:9C:29:53:C9:A7:46'
-bundle exec rake certs:find_replacement\[$expiring_key_id\]
+bundle exec rake 'certs:print_expiring[30]'
 ```
 
-This will display all of the certs that are potential replacements:
+The argument is the deadline in days and defaults to 30. The task checks the
+complete loaded store, including the FICAM bundle and exceptions in
+`config/certs`. It exits with a nonzero status when it finds an expiring
+certificate so it can be used by scheduled checks.
 
-```
-- Index: 0
-  Expiration: 2029-06-22 13:53:22 UTC
-  Subject: /C=US/O=U.S. Government/OU=Department of Veterans Affairs/OU=Certification Authorities/OU=Department of Veterans Affairs CA
-  Issuer: /C=US/O=U.S. Government/OU=Department of the Treasury/OU=Certification Authorities/OU=US Treasury Root CA
-  SHA1 Fingerpint: 76cc898f03eb0fc7e0877aac30a0c1340bb34879
-  Key ID: DA:9C:B6:1F:FF:67:9D:47:91:0D:26:E7:29:66:14:65:97:E6:80:58
-  In Certificate Store: false
-- Index: 1
-  Expiration: 2025-10-17 14:31:27 UTC
-  Subject: /C=US/O=U.S. Government/OU=Department of Veterans Affairs/OU=Certification Authorities/OU=Department of Veterans Affairs CA
-  Issuer: /C=US/O=U.S. Government/OU=Department of the Treasury/OU=Certification Authorities/OU=US Treasury Root CA
-  SHA1 Fingerpint: e2edb0df1fe8068717a08e38741b5bc4c38029d0
-  Key ID: 75:61:DA:1F:31:92:6E:2E:2A:64:5E:A3:65:19:85:65:80:E8:C7:2B
-  In Certificate Store: true
+## Identify the certificate source
 
-Which cert(s) would you like to download? Use the format 1,2 if selecting multiple.
-Press enter to skip
-```
-
-You can select the index of a cert to add it to the store.
-The test suite should validate that the certificate is valid and signed by a trusted root.
-You can run `bundle exec rspec spec/certs/store_spec.rb` to validate this.
-
-## Using the Subject Information Access extension
-
-It is possible to use openssl to perform the checks this rake task performs in
-your terminal.
-
-First determine which certificate is the signing key for the expiring cert.
-You can do this by using the rails console.
-
-Next, look up the SIA endpoint for the signing key:
+List the certificates provided by FICAM:
 
 ```shell
-# Replace the following with the path to the expiring cert's signing cert's file
-export signing_key_path='config/certs/C=US, O=U.S. Government, OU=Department of the Treasury, OU=Certification Authorities, OU=US Treasury Root CA.pem'
-openssl x509 -noout -text -in $signing_key_path
+bundle exec rake certs:list_ficam_certs
 ```
 
-Look for the following in the output:
+Match the expiring certificate's key ID or subject against this output. If it is
+listed, follow the FICAM workflow below. Otherwise, look for its PEM file in
+`config/certs` and follow the exception workflow.
 
-```
-Subject Information Access:
-    CA Repository - URI:http://pki.treasury.gov/root_sia.p7c
-```
+## Refresh the FICAM bundle
 
-Next, download the p7c bundle for the repository:
+Generate the bundle from GSA's current published source:
 
 ```shell
-curl http://pki.treasury.gov/root_sia.p7c -o tmp/bundle.p7c
+bundle exec rake certs:generate_certificate_bundles
+git diff -- config/cert_bundles/ficam_bundle.pem
+bundle exec rake certs:check_certificate_bundle
+bundle exec rake certs:list_ficam_certs
+bundle exec rspec spec/certs/store_spec.rb
 ```
 
-Finally, read in the certificates from the bundle and look for a replacement:
+Review the diff before committing it. Confirm that expected replacements were
+added or removed and that there is no unrelated churn.
+
+`certs:check_certificate_bundle` verifies that the bundle exists, can be parsed,
+and contains certificate authorities. The store spec provides the additional
+repository validation. Neither check determines whether a newly published
+certificate is the operational replacement for a particular issuer, so review
+the subject, issuer, key ID, and expiration.
+
+Do not edit `ficam_bundle.pem` by hand. Regeneration overwrites manual changes.
+Regeneration also does not remove a certificate merely because it expired; a
+certificate disappears only after GSA removes it from the published bundle. If
+GSA still publishes an expiring or expired certificate without a replacement,
+check FPKI notifications and activity logs before escalating the issue.
+
+## Investigate an exception certificate
+
+For a certificate maintained in `config/certs`, the signing certificate may
+contain a Subject Information Access (SIA) extension with a CA Repository URL.
+That repository contains certificates issued by the signing certificate.
+
+Use the Rails console to locate the expiring certificate and its signing
+certificate by key ID:
+
+```ruby
+expiring_key_id = "EXPIRING:CERTIFICATE:KEY:ID"
+expiring_cert = CertificateStore.instance[expiring_key_id]
+signing_cert = CertificateStore.instance[expiring_cert.signing_key_id]
+
+puts signing_cert.subject_info_access
+File.write("tmp/signing-cert.pem", signing_cert.to_pem)
+```
+
+You can also inspect the SIA extension with OpenSSL:
 
 ```shell
-openssl pkcs7 -inform DER -in tmp/bundle.p7c -print_certs -text
+openssl x509 -noout -text -in tmp/signing-cert.pem
 ```
 
-## Using FPKI Notifications to prepare for a scheduled replacement
+Look for a CA Repository URI, download its PKCS7 bundle, and inspect the
+certificates. Replace the URL with the URI from the signing certificate:
 
-If you aren't able to find a replacement certificate using the options described above, it may not
-be issued yet. GSA's FICAM program publishes [notifications for Federal PKI ecosystem changes](https://www.idmanagement.gov/fpki/notifications/#notifications),
-where you may find a notice describing whether to expect a replacement certificate to be issued
-before the scheduled expiration of the certificate.
+```shell
+curl 'https://example.gov/path/to/ca-repository.p7c' -o tmp/ca-repository.p7c
+openssl pkcs7 -inform DER -in tmp/ca-repository.p7c -print_certs -text
+```
 
-## Handling expiring certificates when no replacements exist
+Compare candidate subjects, issuers, key IDs, and expiration dates. A PKI branch
+may have been reorganized, or the replacement may have been issued by a
+replacement signing certificate farther up the chain. Also check that the
+candidate is not already present in the refreshed FICAM bundle or
+`config/certs` before adding an exception.
 
-If you've exhausted all of the options described above and there are no replacement certificates
-available up to and beyond the expiration of certificate, then it's quite possible that the
-certificate is expected to expire and not be replaced.
+The `certs:find_missing_intermediate_certs` task is for troubleshooting a
+presented PIV/CAC chain with missing intermediates. It is not a replacement
+finder for an expiring certificate authority.
 
-In these scenarios, you should:
+## Check FPKI notifications
 
-1. Check logs for PKI activity issued by this certificate, to understand expected impact over the
-   course of a few weeks leading up to the expiration of the certificate.
-    ```
+If a replacement is not available, it may not have been issued yet. GSA's FICAM
+program publishes
+[notifications for Federal PKI ecosystem changes](https://www.idmanagement.gov/fpki/notifications/#notifications).
+Check for a notice describing whether a replacement is expected before the
+scheduled expiration.
+
+## Handle certificates without replacements
+
+If no replacement is available near or after the expiration date, the
+certificate may be expected to expire without replacement.
+
+1. Check PKI activity over the weeks leading up to expiration to understand the
+   expected impact:
+
+    ```text
     # Log group: prod_/srv/pki-rails/shared/log/production.log
     filter issuer like /CN=[CN of expiring certificate]/
     ```
-2. Remove the certificate from [`identity-pki`](https://github.com/18f/identity-pki) if there is
-   no replacement, the certificate has expired, and there is no activity reported in the logs above
-   which would indicate that end-users would be impacted by the expiration and removal of the
-   certificate.
 
-## Using CloudWatch to find issuers and service providers
+2. If the certificate is an exception in `config/certs`, remove its PEM file
+   only after it has expired, no replacement exists, and the activity review
+   indicates that removal will not affect users.
 
-CloudWatch may be used to find certificate-related errors by issuer and service provider.
+For a FICAM certificate, do not remove it manually from the generated bundle.
+If GSA continues to publish an expired certificate and it creates an operational
+problem, escalate the upstream bundle issue with the evidence gathered from
+notifications and logs.
 
-Navigate to
-[CloudWatch Logs Insights](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights)
-and select one of the saved queries from the **Queries->Saved Queries->$env->pivcac** menu.
+## Find issuers and service providers in CloudWatch
+
+CloudWatch can identify certificate activity and errors by issuer and service
+provider. Open[CloudWatch Logs Insights](https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logsV2:logs-insights)
+and query for the issuer and service provider 
