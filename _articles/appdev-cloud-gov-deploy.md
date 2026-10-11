@@ -128,7 +128,7 @@ Use `cf spaces` after selecting the org so you can confirm the correct `CF_SPACE
 These repos use GitLab as the primary source of truth. GitHub remains available as a public mirror.
 
 ```bash
-git clone "git@github.com:GSA-TTS/${REPO}.git"
+git clone "git@github.com:18F/${REPO}.git"
 cd "$REPO"
 ```
 
