@@ -136,7 +136,7 @@ Staging used to be deployed by this process, but this was changed to deploy the 
    bin/tag-release
    ```
 2. Add release notes in GitHub:
-   1. Create a new release: <https://github.com/18F/identity-pki/releases/new>
+   1. Create a new release: <https://gitlab.login.gov/lg/identity-pki/-/releases/new>
    2. Release title: `RC #{NUMBER}`
    3. In the "Choose a tag" dropdown, enter the tag output by the `bin/tag-release` script
    4. Copy the release notes Markdown from the promotion pull request

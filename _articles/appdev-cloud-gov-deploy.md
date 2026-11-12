@@ -7,6 +7,7 @@ subcategory: "Deploying"
 toc_h_max: 4
 envs:
 - dev
+- dm
 - int
 - staging
 - prod
@@ -14,7 +15,7 @@ envs:
 
 ## Shared sample apps
 
-We deploy { two sample apps } &times; { four environments } in cloud.gov:
+We deploy { two sample apps } &times; { five environments } in cloud.gov:
 
 | | [OpenID Connect](https://gitlab.login.gov/lg/identity-oidc-sinatra) | [SAML](https://gitlab.login.gov/lg/identity-saml-sinatra) |
 |---|-----|
@@ -23,6 +24,15 @@ We deploy { two sample apps } &times; { four environments } in cloud.gov:
 {% endfor %}
 
 The sample apps deploy automatically when changes are merged to the `main` branch.
+
+The actual deploys are managed by service accounts created in each space and whose credentials are configured in GitLab:
+
+|Service account               | Service Key                    | User                     |    Password|
+|------------------------------|--------------------------------|--------------------------|------------|
+{% for env in page.envs -%}
+| gitlab-ci-{{ env }}-deployer | gitlab-ci-{{ env }}-service-key|CF_{{ env | upcase }}_USER|CF_{{ env | upcase }}_PASS|
+{% endfor %}
+
 
 Refer to each project's GitLab CI/CD configuration for details on the shared deployment workflow:
 
